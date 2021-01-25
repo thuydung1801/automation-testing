@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="order an item" skipped="0" tests="3" time="58.36" timestamp="2021-01-22T16:47:46.017+07:00[Asia/Ho_Chi_Minh]"><testcase name="view an item"/><testcase name="add item to cart without selecting ringsize"/><testcase name="add item to cart sucessfully"/></testsuite>

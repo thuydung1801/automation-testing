@@ -1,0 +1,384 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "view an item",
+        "description": "",
+        "id": "order-an-item;view-an-item",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4655511802,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "Go to \"category\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "category",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7028305973,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Click on \"item\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "item",
+                  "offset": 10
+                }
+              ],
+              "location": "CommonStepdefs.clickOn(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 228553246,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "The site will redirect to \"itemDetail\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "itemDetail",
+                  "offset": 27
+                }
+              ],
+              "location": "CommonStepdefs.theSiteWillRedirectToUrl(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "add item to cart without selecting ringsize",
+        "description": "",
+        "id": "order-an-item;add-item-to-cart-without-selecting-ringsize",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5820262520,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Go to \"itemDetail\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "itemDetail",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2344724177,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on \"AddToCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "AddToCart",
+                  "offset": 10
+                }
+              ],
+              "location": "CommonStepdefs.clickOn(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10223429203,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "The \"errorMessage\" \"Phải nhập thông tin.\" is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "errorMessage",
+                  "offset": 5
+                },
+                {
+                  "val": "Phải nhập thông tin.",
+                  "offset": 20
+                }
+              ],
+              "location": "CommonStepdefs.theIsShown(String,String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 12,
+        "name": "add item to cart sucessfully",
+        "description": "",
+        "id": "order-an-item;add-item-to-cart-sucessfully",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5336762150,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Go to \"itemDetail\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "itemDetail",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1514013330,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Click on \"SelectSizeButton\" then select \"selectSize\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "SelectSizeButton",
+                  "offset": 10
+                },
+                {
+                  "val": "selectSize",
+                  "offset": 41
+                }
+              ],
+              "location": "CommonStepdefs.clickOnThenSelect(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2324835372,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Click on \"AddToCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "AddToCart",
+                  "offset": 10
+                }
+              ],
+              "location": "CommonStepdefs.clickOn(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6463277248,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Click on \"ViewCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ViewCart",
+                  "offset": 10
+                }
+              ],
+              "location": "CommonStepdefs.clickOn(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1209210704,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "The \"ringSize\" is \"selectedSize\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ringSize",
+                  "offset": 5
+                },
+                {
+                  "val": "selectedSize",
+                  "offset": 19
+                }
+              ],
+              "location": "CommonStepdefs.theIs(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1212660611,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "The \"ringWidth\" is \"selectedWidth\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ringWidth",
+                  "offset": 5
+                },
+                {
+                  "val": "selectedWidth",
+                  "offset": 20
+                }
+              ],
+              "location": "CommonStepdefs.theIs(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1220822726,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "The \"metal\" is \"selectedMetal\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "metal",
+                  "offset": 5
+                },
+                {
+                  "val": "selectedMetal",
+                  "offset": 16
+                }
+              ],
+              "location": "CommonStepdefs.theIs(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1208013983,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "The \"stoneType\" is \"selectedStoneType\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "stoneType",
+                  "offset": 5
+                },
+                {
+                  "val": "selectedStoneType",
+                  "offset": 20
+                }
+              ],
+              "location": "CommonStepdefs.theIs(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1187124192,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "The \"profile\" is \"selectedProfile\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "profile",
+                  "offset": 5
+                },
+                {
+                  "val": "selectedProfile",
+                  "offset": 18
+                }
+              ],
+              "location": "CommonStepdefs.theIs(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1197627219,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "The \"finish\" is \"selectedFinish\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "finish",
+                  "offset": 5
+                },
+                {
+                  "val": "selectedFinish",
+                  "offset": 17
+                }
+              ],
+              "location": "CommonStepdefs.theIs(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1185142777,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "The \"thickness\" is \"selectedThickness\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "thickness",
+                  "offset": 5
+                },
+                {
+                  "val": "selectedThickness",
+                  "offset": 20
+                }
+              ],
+              "location": "CommonStepdefs.theIs(String,String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "order an item",
+    "description": "",
+    "id": "order-an-item",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/consult_mektoube_page/startAutoTest/order.feature"
+  }
+]

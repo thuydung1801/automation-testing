@@ -1,0 +1,40 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "add an item to cart",
+        "description": "",
+        "id": "order-an-item;add-an-item-to-cart",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4927313286,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "Go to \"simple\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "simple",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs.goToUrl(String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      }
+    ],
+    "name": "order an item",
+    "description": "",
+    "id": "order-an-item",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/consult_mektoube_page/startAutoTest/order.feature"
+  }
+]

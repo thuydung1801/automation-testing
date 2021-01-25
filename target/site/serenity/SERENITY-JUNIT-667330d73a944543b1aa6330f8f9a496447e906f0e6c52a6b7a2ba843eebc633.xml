@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Login" skipped="0" tests="1" time="1.34" timestamp="2020-12-12T09:41:46.550+07:00[Asia/Ho_Chi_Minh]"><testcase name="Login with correct account"><error message="Could not instantiate new WebDriver instance of type class org.openqa.selenium.chrome.ChromeDriver (unknown error: cannot find Chrome binary&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-56-generic', java.version: '1.8.0_275'&#10;Driver info: driver.version: ChromeDriver&#10;remote stacktrace: #0 0x555ebc093d99 &lt;unknown&gt;&#10;" type="net.thucydides.core.webdriver.UnsupportedDriverException">Could not instantiate new WebDriver instance of type class org.openqa.selenium.chrome.ChromeDriver (unknown error: cannot find Chrome binary
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-56-generic', java.version: '1.8.0_275'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: #0 0x555ebc093d99 &lt;unknown&gt;
+</error><system-err>Could not instantiate new WebDriver instance of type class org.openqa.selenium.chrome.ChromeDriver (unknown error: cannot find Chrome binary
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-56-generic', java.version: '1.8.0_275'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: #0 0x555ebc093d99 &lt;unknown&gt;
+
+autoTest.pages.DemoPage.goToUrl(DemoPage.java:9)
+autoTest.steps.serenity.DemoEndUserSteps.goToUrl(DemoEndUserSteps.java:10)
+autoTest.steps.DemoStepDef.goToUrl(DemoStepDef.java:16)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase></testsuite>
