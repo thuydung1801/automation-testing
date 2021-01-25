@@ -1,0 +1,66 @@
+package autoTest.steps;
+import autoTest.steps.serenity.CommonEndUserSteps;
+import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import net.thucydides.core.annotations.Steps;
+
+public class CommonStepdefs {
+    @Steps
+    CommonEndUserSteps commonEndUserSteps;
+    @When("^Click on \"([^\"]*)\"$")
+    public void clickOn(String signinBtn)  {
+       // Write code here that turns the phrase above into concrete actions
+       commonEndUserSteps.clickSigin(signinBtn);
+    }
+
+    @Given("^Go to \"([^\"]*)\" url$")
+    public void goToUrl(String url) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        commonEndUserSteps.goToUrl(url);
+    }
+
+    
+
+
+
+
+
+    @And("^input \"([^\"]*)\" into \"([^\"]*)\"$")
+    public void inputInto(String arg0, String arg1) throws Throwable {
+
+        // Write code here that turns the phrase above into concrete actions
+        commonEndUserSteps.input(arg0, arg1);
+    }
+
+
+
+    @Then("^The \"([^\"]*)\" \"([^\"]*)\" is shown$")
+    public void theIsShown(String arg0, String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        commonEndUserSteps.assertMsg(arg0, arg1);
+    }
+
+
+    @Then("^The site will redirect to \"([^\"]*)\" url$")
+    public void theSiteWillRedirectToUrl(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        commonEndUserSteps.redirectTo(arg0);
+    }
+
+    @When("^Click on \"([^\"]*)\" then select \"([^\"]*)\"$")
+    public void clickOnThenSelect(String arg0, String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        commonEndUserSteps.selectOption(arg0, arg1);
+    }
+
+
+    @Then("^The \"([^\"]*)\" is \"([^\"]*)\"$")
+    public void theIs(String arg0, String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        commonEndUserSteps.validateInformation(arg0, arg1);
+    }
+}
+
