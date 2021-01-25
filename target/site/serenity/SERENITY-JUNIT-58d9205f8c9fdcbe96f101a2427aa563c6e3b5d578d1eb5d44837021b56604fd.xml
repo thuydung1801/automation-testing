@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Login" skipped="0" tests="2" time="47.18" timestamp="2021-01-22T16:46:48.640+07:00[Asia/Ho_Chi_Minh]"><testcase name="Login with incorrect account"/><testcase name="Login sucessfully"/></testsuite>
