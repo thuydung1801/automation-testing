@@ -25,7 +25,7 @@ public class PropertyGenerator {
                 prop.setProperty("webdriver.chrome.driver", "src/test/main/resources/chromedriver.exe");
             }
 
-            prop.setProperty("serenity.project.name", "Automation test for mektoube");
+            prop.setProperty("serenity.project.name", "Automation test for Glamira 2");
             // Storing the properties in the file with a heading comment.
             prop.store(inputStream, "configuration information");
         } catch (IOException ex) {

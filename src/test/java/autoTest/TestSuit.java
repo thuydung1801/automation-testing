@@ -7,7 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features={"src/test/resources/features/consult_mektoube_page/startAutoTest/order.feature"},
+@CucumberOptions(features={"src/test/resources/features/consult_mektoube_page/startAutoTest/Checkout.feature"},
         plugin={ "pretty", "json:target/cucumber-reports.json" },
         monochrome = true
 )

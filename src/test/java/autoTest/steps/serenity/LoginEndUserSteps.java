@@ -4,10 +4,10 @@ import autoTest.pages.LoginPage;
 
 public class LoginEndUserSteps {
 
-    LoginPage demoPage;
+    LoginPage loginPage;
 
     public void goToUrl(String url){
-        demoPage.goToUrl(url);
+        loginPage.goToUrl(url);
     }
 
 //    public void clickSigin(String signinBtn) {
@@ -15,12 +15,29 @@ public class LoginEndUserSteps {
 //    }
 
     public void inputAccount(String email, String password) throws InterruptedException {
-        demoPage.inputAccount(email, password);
+        loginPage.inputAccount(email, password);
 
     }
 
 
     public void showErrorMessage(String errorMessage) throws InterruptedException {
-        demoPage.showErrorMessage(errorMessage);
+        loginPage.showErrorMessage(errorMessage);
+    }
+
+    public void click() {
+        loginPage.clickOnSigin();
+
+    }
+
+    public void clickOnSiginButton() {
+        loginPage.clickOnSiginBtn();
+    }
+
+    public void redirectToLink(String arg0) {
+        loginPage.redirectToLink(arg0);
+    }
+
+    public void loginAdminPageWithAnd(String adminPage, String account, String password) {
+        loginPage.loginAdminPageWithAnd(adminPage, account, password);
     }
 }

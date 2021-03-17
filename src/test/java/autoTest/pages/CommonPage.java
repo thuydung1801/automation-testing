@@ -2,11 +2,11 @@ package autoTest.pages;
 
 import autoTest.service.TestDataService;
 import net.thucydides.core.pages.PageObject;
-import org.openqa.selenium.*;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
@@ -15,8 +15,18 @@ import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
 
+//import org.openqa.selenium.interactions.Action;
+//import org.openqa.selenium.interactions.Actions;
+//import static org.apache.xml.serialize.LineSeparator.Web;
+
 
 public class CommonPage extends PageObject {
+    String theFirstItemLocator = "table.data-grid tbody tr:nth-of-type(1) input";
+    String loadingMaskLocator = "div.loading-mask";
+    String confirmBtnLocator = "div.modal-inner-wrap button.action-accept";
+    String messageLocator = "div.messages div div";
+
+
     public void gotoUrl(String urlName) {
         String url = TestDataService.properties.getProperty(urlName);
         if (url == null) {
@@ -24,6 +34,12 @@ public class CommonPage extends PageObject {
         }
         getDriver().get(url);
         getDriver().manage().window().maximize();
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
     }
 
@@ -37,12 +53,17 @@ public class CommonPage extends PageObject {
             System.out.println(cssSelector);
         }
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("css " + cssSelector);
-        getDriver().findElement(By.cssSelector(cssSelector)).click();
+        WebDriverWait waiter = new WebDriverWait(getDriver(), 15);
+//        System.out.println("css " + cssSelector);
+        WebElement el = waiter.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)));
+        el.click();
+        System.out.println("clicked");
+        waitAboutSecond(3);
+//        getDriver().findElement(By.cssSelector(cssSelector)).click();
 
     }
 
@@ -68,8 +89,8 @@ public class CommonPage extends PageObject {
         if (cssSelector == null) {
             cssSelector = button;
         }
-        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssSelector)));
+        WebDriverWait wait = new WebDriverWait(getDriver(), 20);
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)));
     }
 
     public void scrollToView(String element) {
@@ -93,20 +114,18 @@ public class CommonPage extends PageObject {
         return getDriver().getCurrentUrl();
     }
 
-    public boolean redirectToLink(String url) {
+    public void redirectToLink(String url) {
         String urlName = TestDataService.properties.getProperty(url);
         if (urlName == null) {
             urlName = url;
         }
-        String realUrl = getDriver().getCurrentUrl();
-        if (realUrl.contentEquals(urlName)) {
-
-            System.out.println(realUrl + " " + urlName + " pass");
-            return true;
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        System.out.println(realUrl + " " + urlName + " fail");
-        return false;
+        String realUrl = getDriver().getCurrentUrl();
+        assertEquals(urlName, realUrl);
     }
 
     public void clickButton(String button) {
@@ -150,10 +169,31 @@ public class CommonPage extends PageObject {
         if (inputTxt == null) {
             inputTxt = text;
         }
-
-        getDriver().findElement(By.cssSelector(cssSelector)).sendKeys(inputTxt);
+        WebDriverWait wait = new WebDriverWait(getDriver(),15);
+        WebElement el = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)));
+        el.clear();
+        el.sendKeys(inputTxt);
+//        getDriver().findElement(By.cssSelector(cssSelector)).sendKeys(inputTxt);
         System.out.println(text);
     }
+    public void enterTextIntoField(String text, String fieldName) {
+        String cssSelector = TestDataService.properties.getProperty(fieldName);
+        String inputTxt = TestDataService.properties.getProperty(text);
+        if (cssSelector == null) {
+            cssSelector = fieldName;
+        }
+        if (inputTxt == null) {
+            inputTxt = text;
+        }
+        WebDriverWait wait = new WebDriverWait(getDriver(),15);
+        WebElement el = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)));
+        el.clear();
+        el.sendKeys(inputTxt+Keys.ENTER);
+//        getDriver().findElement(By.cssSelector(cssSelector)).sendKeys(inputTxt);
+        System.out.println(text);
+        waitAboutSecond(3);
+    }
+
 
     public void logoutCurrentFemaleAccount() {
         WebElement myProfileButton = getDriver().findElement(By.cssSelector("div[class='header__aside hidden-xs']"));
@@ -200,11 +240,42 @@ public class CommonPage extends PageObject {
         if (cssSelector == null) {
             cssSelector = button;
         }
+        try {
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         WebElement Element = getDriver().findElement(By.cssSelector(cssSelector));
         JavascriptExecutor jse = (JavascriptExecutor) getDriver();
         jse.executeScript("arguments[0].scrollIntoView()", Element);
         Element.click();
         System.out.println(Element);
+    }
+
+    public void selectOption(String element, String selectObject){
+        String elCssSelector = TestDataService.properties.getProperty(element);
+        if (elCssSelector == null) {
+            elCssSelector = element;
+        }
+        String selectedText = TestDataService.properties.getProperty(selectObject);
+        if (selectedText == null) {
+            selectedText = selectObject;
+        }
+        Select selector = new Select(getDriver().findElement(By.cssSelector(elCssSelector)));
+        selector.selectByValue(selectedText);
+    }
+    public void selectOtionByText(String element, String selectObject) {
+        String elCssSelector = TestDataService.properties.getProperty(element);
+        if (elCssSelector == null) {
+            elCssSelector = element;
+        }
+        String selectedText = TestDataService.properties.getProperty(selectObject);
+        if (selectedText == null) {
+            selectedText = selectObject;
+        }
+        Select selector = new Select(getDriver().findElement(By.cssSelector(elCssSelector)));
+        selector.selectByVisibleText(selectedText);
     }
 
     public void cleareLocalStorage() {
@@ -404,15 +475,203 @@ public class CommonPage extends PageObject {
             expectedText = expectedInfo;
         }
         try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        WebElement el = getDriver().findElement(By.cssSelector(cssSelector));
+        String actualInfo = el.getText();
+
+
+        if (actualInfo == null) {
+            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) getDriver();
+            actualInfo = javascriptExecutor.executeScript("return arguments[0].value", el).toString();;
+
+        }
+        System.out.println(el);
+        System.out.println(el.isDisplayed());
+
+        assertEquals(expectedText.toLowerCase(), actualInfo.toLowerCase());
+
+
+
+    }
+    public void validatePrice(String element, String expectedInfo) {
+
+        String cssSelector = TestDataService.properties.getProperty(element);
+        if (cssSelector == null){
+            cssSelector = element;
+        }
+        String expectedText = TestDataService.properties.getProperty(expectedInfo);
+        if (expectedText == null) {
+            expectedText = expectedInfo;
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        WebElement el = getDriver().findElement(By.cssSelector(cssSelector));
+        String actualInfo = el.getText();
+
+
+        if (actualInfo == null) {
+            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) getDriver();
+            actualInfo = javascriptExecutor.executeScript("return arguments[0].value", el).toString();;
+
+        }
+        System.out.println(el);
+        System.out.println(el.isDisplayed());
+
+        assertEquals(expectedText.substring(2), actualInfo.substring(1));
+
+
+
+    }
+    public void validateNumber(String element, String expectedInfo) {
+
+        String cssSelector = TestDataService.properties.getProperty(element);
+        if (cssSelector == null) {
+            cssSelector = element;
+        }
+        String expectedText = TestDataService.properties.getProperty(expectedInfo);
+        if (expectedText == null) {
+            expectedText = expectedInfo;
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        WebElement el = getDriver().findElement(By.cssSelector(cssSelector));
+
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) getDriver();
+        String actualInfo = javascriptExecutor.executeScript("return arguments[0].value", el).toString();
+        ;
+
+        System.out.println(el);
+        System.out.println(el.isDisplayed());
+
+        assertEquals(expectedText, actualInfo);
+
+    }
+
+
+
+        public void moveMouseOver(String element) {
+        String elCSSselector = TestDataService.properties.getProperty(element);
+        if (elCSSselector == null) {
+            elCSSselector = element;
+
+        }
+        WebElement movedToElement = getDriver().findElement(By.cssSelector(elCSSselector));
+        Actions action = new Actions(getDriver());
+        action.moveToElement(movedToElement).perform();
+        try {
             Thread.sleep(1000);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        String actualInfo = getDriver().findElement(By.cssSelector(cssSelector)).getText();
-        assertEquals(expectedText, actualInfo);
 
 
     }
+
+    public void hoverThenClickOn(String arg0, String arg1) {
+        String elToHoverLocator = TestDataService.properties.getProperty(arg0);
+        if (elToHoverLocator == null) {
+            elToHoverLocator = arg0;
+        }
+        String elToClickLocator = TestDataService.properties.getProperty(arg1);
+        if (elToClickLocator == null) {
+            elToClickLocator = arg1;
+        }
+
+
+        WebElement elToHover = getDriver().findElement(By.cssSelector(elToHoverLocator));
+
+        String javaScript = "var evObj = document.createEvent('MouseEvents');" +
+                "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);" +
+                "arguments[0].dispatchEvent(evObj);";
+
+
+        ((JavascriptExecutor) getDriver()).executeScript(javaScript, elToHover);
+
+        WebElement elToClick = getDriver().findElement(By.cssSelector(elToClickLocator));
+
+
+        ((JavascriptExecutor) getDriver()).executeScript(javaScript, elToClick);
+        try {
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        elToClick.click();
+
+
+    }
+
+    public void waitUntilElementDisapear(String arg0) {
+        String elCSSlocator = TestDataService.properties.getProperty(arg0);
+        if (elCSSlocator == null) {
+            elCSSlocator = arg0;
+        }
+        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(elCSSlocator)));
+        System.out.println("check wait element disapear");
+
+
+    }
+
+    public void selectRadioBox(String element) {
+        String elCSSLocator = TestDataService.properties.getProperty(element);
+        if (elCSSLocator == null) {
+            elCSSLocator = element;
+        }
+
+        WebElement el = getDriver().findElement(By.cssSelector(elCSSLocator));
+        System.out.println(el.isEnabled());
+        el.click();
+        System.out.println(el.isSelected());
+
+    }
+
+    public void chooseAnItem() {
+        waitAboutSecond(3);
+        waitUntilElementDisapear(loadingMaskLocator);
+        getDriver().findElement(By.cssSelector(theFirstItemLocator)).click();
+//        waitAboutSecond(3);
+
+    }
+
+    public void actionConfirmation() {
+        click(confirmBtnLocator);
+        waitAboutSecond(20);
+
+
+
+
+    }
+
+    public void validateResultMsg(String message) {
+        validateInformation(messageLocator,message);
+
+    }
+
+//    public void isExitElement(String arg0) {
+//        String elCSSlocator = TestDataService.properties.getProperty(arg0);
+//        if (elCSSlocator == null) {
+//            elCSSlocator = arg0;
+//        }
+//        try {
+//            Thread.sleep(5000);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        WebElement element = getDriver().findElement(By.cssSelector(elCSSlocator));
+//
+//
+//    }
 }
 
 
