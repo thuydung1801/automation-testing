@@ -1,0 +1,163 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 5857192084,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "Go to adminPage url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 6
+                }
+              ],
+              "location": "BasePageSteps.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3345107985,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Insert thanh.tester into box have id: emailAdmin",
+            "match": {
+              "arguments": [
+                {
+                  "val": "thanh.tester",
+                  "offset": 7
+                },
+                {
+                  "val": "emailAdmin",
+                  "offset": 38
+                }
+              ],
+              "location": "BasePageSteps.insertId(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3247995915,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Insert !test123! into box have id: passAdmin",
+            "match": {
+              "arguments": [
+                {
+                  "val": "!test123!",
+                  "offset": 7
+                },
+                {
+                  "val": "passAdmin",
+                  "offset": 35
+                }
+              ],
+              "location": "BasePageSteps.insertId(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6219030874,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Click button by class signInBtn",
+            "match": {
+              "arguments": [
+                {
+                  "val": "signInBtn",
+                  "offset": 22
+                }
+              ],
+              "location": "BasePageSteps.clickButtonByClass(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13123389651,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Successfully into DashboardPage front site",
+            "match": {
+              "arguments": [
+                {
+                  "val": "DashboardPage",
+                  "offset": 18
+                }
+              ],
+              "location": "BasePageSteps.Successfully(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 150813986,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BasePageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "",
+        "description": "",
+        "id": ";",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11763641572,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Go to ManageInstockRequest url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ManageInstockRequest",
+                  "offset": 6
+                }
+              ],
+              "location": "BasePageSteps.goToUrl(String)"
+            },
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Test01"
+          }
+        ]
+      }
+    ],
+    "name": "",
+    "description": "",
+    "id": "",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/BackEnd/instockItemSuite.feature"
+  }
+]

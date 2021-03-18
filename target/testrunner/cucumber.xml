@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="44.705292">
+<testcase classname="" name="_2" time="44.705292">
+<system-out><![CDATA[Given Go to adminPage url...................................................passed
+When Insert thanh.tester into box have id: emailAdmin.......................passed
+And Insert !test123! into box have id: passAdmin............................passed
+And Click button by class signInBtn.........................................passed
+Then Successfully into DashboardPage front site.............................passed
+Given Go to ManageInstockRequest url........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
