@@ -3,7 +3,7 @@ package autoframework.steps;
 
 import autoframework.pages.CheckOutPage;
 import org.openqa.selenium.By;
-import org.testng.annotations.BeforeMethod;
+//import org.testng.annotations.BeforeMethod;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
