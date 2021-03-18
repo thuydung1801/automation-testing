@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="24.434582">
+<testcase classname="As a user, i want to login into the Mektoube" name="login successfully" time="24.434582">
+<system-out><![CDATA[Given Go to 'https://mektoube.fr/login' url.................................passed
+When Insert 'yassine_yes' into the Email field..............................passed
+When Insert 'Mektoubi2017' into the Password field..........................passed
+When Click login button.....................................................passed
+Then User login successfully into 'https://mektoube.fr/main/discoveries' front site.passed
+]]></system-out>
+</testcase>
+</testsuite>

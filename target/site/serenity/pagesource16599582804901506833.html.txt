@@ -1,0 +1,1209 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- Update your html tag to include the itemscope and itemtype attributes. --><head><title>Login Page | Test Creator - TestYou</title><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <script async="" src="https://static-v.tawk.to/698/app.js" charset="UTF-8" crossorigin="*"></script><script async="" src="https://embed.tawk.to/5b3dca284af8e57442dc5a38/default" charset="UTF-8" crossorigin="*"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-PK7R2G"></script><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="CommonTool/Js/notification.css" type="text/css" media="all">
+    <script type="text/javascript" src="CommonTool/Js/notification.js"></script>
+    <!-- Add the following three tags inside head. -->
+ 
+   
+    
+    <meta name="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="TestYou is an online system that allows you to conduct online test for free, you can conduct online exam, online test. Test you is a free online test creator. Test yourself with the variety of tests available">
+        <meta name="keywords" content="online test creator,conduct online test,free online test maker,test your skills online,online examination system, create test online, online test maker, free test maker, online testing, test maker, free quiz maker">
+    <meta name="robots" content="NOODP"><meta name="revisit" content="3 days"><meta name="ROBOTS" content="INDEX, FOLLOW"><meta name="Rating" content="General"><meta name="Content-Language" content="EN"><meta name="distribution" content="global"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <script src="CommonTool/Js/jquery.blockUI.js" type="text/javascript"></script>
+    <script src="CommonTool/Js/jsCommon.js" type="text/jscript"></script>
+    
+    
+    <noscript>
+        <meta http-equiv="refresh" content="3; url=BrowserChecker.aspx" />
+    </noscript>
+  
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var textp;
+
+
+
+            $('.txtplaceholder').bind("focusin", function () {
+
+                textp = $(this).attr('rel');
+
+                if ($(this).val() == textp) {
+                    $(this).val("");
+                }
+
+            });
+            $('.txtplaceholder').bind("focusout", function () {
+
+                if ($(this).val() == "") {
+                    $(this).val(textp);
+
+
+
+
+
+                }
+            });
+
+        });
+
+    </script>
+    <script type="text/javascript">
+        //jQuery for tooltip 2
+        $(document).ready(function () {
+            //Tooltips
+            var data;
+            var tip;
+            $(".tooltip a").hover(function () {
+                data = $(this).attr('title');
+                $(this).attr('title', '');
+                $(this).append('<span class="tip"></span>');
+                tip = $(this).find('.tip');
+                tip.html(data);
+                tip.show(); //Show tooltip
+            }, function () {
+                $(this).find('.tip').remove();
+                $(this).attr('title', data);
+                tip.hide(); //Hide tooltip
+            }).mousemove(function (e) {
+
+
+            });
+
+
+
+            $('.navigation ul li').hover(function () {
+
+                $('.lowerheader').css("z-index", "180");
+
+
+
+            }, function () {
+
+                $('.lowerheader').css("z-index", "150");
+
+
+            });
+        });
+    </script>
+    <link href="CommonTool/Css/960.css" rel="stylesheet" type="text/css"><link href="General/Css/GeneralStyle.css" rel="stylesheet" type="text/css"><link href="CommonTool/Css/CommonStyle.css" rel="stylesheet" type="text/css"><link sizes="24x24" href="CommonTool/Images/titleicon.png" rel="icon">
+    <script src="CommonTool/JS/jquery.marquee.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            // basic version is: $('div.className marquee').marquee().mouseover - but we're doing some sexy extras
+            /*$('div.marquee_text marquee').marquee('pointer').mouseover(function() {
+            $(this).trigger('stop');
+            }).mouseout(function() {
+            $(this).trigger('start');
+            }).mousemove(function(event) {
+            if ($(this).data('drag') == true) {
+            this.scrollLeft = $(this).data('scrollX') + ($(this).data('x') - event.clientX);
+            }
+            }).mousedown(function(event) {
+            $(this).data('drag', true).data('x', event.clientX).data('scrollX', this.scrollLeft);
+            }).mouseup(function() {
+            $(this).data('drag', false);
+            });*/
+        });
+    </script>
+    
+    <style type="text/css">
+        .lnkForgot
+        {
+            text-decoration: none;
+            color: #00A7F4;
+            font-size: 12px;
+            text-transform: capitalize;
+        }
+        .login_box
+        {
+            border: 1px solid #c5c5c5;
+            padding: 30px 40px;
+        }
+        .ribbion_box
+        {
+            background-color: #00A7F4;
+            font-size: 22px;
+            font-family: OpenSans-Semibold;
+            text-align: center;
+            height: 64px;
+            color: White;
+            line-height: 2.6;
+            text-transform: uppercase;
+        }
+        .adm_ctrl_left_box_1 span
+        {
+            font-size: 14px;
+            color: #363636;
+            text-transform: capitalize;
+            float: left;
+            margin-bottom: 5px;
+        }
+        .common_label a
+        {
+            color: #00A7F4;
+            text-decoration: none;
+        }
+        .common_textbox
+        {
+            width: 347px;
+        }
+        .signup_link a
+        {
+            color: #00A7F4;
+            text-decoration: none;
+            float: left;
+            font-size: 13px;
+            line-height: 2.6;
+        }
+        .common_label
+        {
+            color: #111111;
+        }
+        input[type="checkbox"]
+        {
+            float: left;
+            margin: 2px -3px 0px 2px;
+        }
+        .common_btn .normal_btn
+        {
+            line-height: 0;
+        }
+        .output_label
+        {
+            padding: 0px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script type="text/javascript" language="javascript">
+
+        function disableBackButton() {
+
+            window.history.forward();
+
+            return true;
+        }
+        
+    </script>
+<style type="text/css">@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#dyAoTO7-1608883062297{outline:none!important;visibility:visible!important;resize:none!important;box-shadow:none!important;overflow:visible!important;background:none!important;opacity:1!important;filter:alpha(opacity=100)!important;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity1)!important;-moz-opacity:1!important;-khtml-opacity:1!important;top:auto!important;right:10px!important;bottom:0px!important;left:auto!important;position:fixed!important;border:0!important;min-height:0!important;min-width:0!important;max-height:none!important;max-width:none!important;padding:0!important;margin:0!important;-moz-transition-property:none!important;-webkit-transition-property:none!important;-o-transition-property:none!important;transition-property:none!important;transform:none!important;-webkit-transform:none!important;-ms-transform:none!important;width:auto!important;height:auto!important;display:none!important;z-index:2000000000!important;background-color:transparent!important;cursor:auto!important;float:none!important;border-radius:unset!important;pointer-events:auto!important}#gJTXysK-1608883062299.open{animation : tawkMaxOpen .25s ease!important;}</style></head>
+<body><div class="notification_push" style="display: none;"></div>
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PK7R2G" height="0" width="0"
+            style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <script type="text/javascript">        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({ 'gtm.start':
+new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+'//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PK7R2G');</script>
+    <!-- End Google Tag Manager -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var d = new Date();
+            lstyear = d.getFullYear();
+            $('#lbLatestYear').text(lstyear);
+            d = null;
+            lstyear = null;
+        });
+
+        
+
+    </script>
+    <form name="aspnetForm" method="post" action="./Login.aspx?UL=KplwGLOUIdQkuYqvxfZsow%3d%3d&amp;pwdToken=N7KYaLvTOCbWt5jpdqhFDw%3d%3d&amp;refId=0&amp;tid=0" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTQ2NTc5MjIzNg8WCB4DdGlkBQEwHgZhY3RpdmUFBmFjdGl2ZR4HTG9naW5JZAUMaG9haXRoYW5obmlhHghQd2RUb2tlbgUYTjdLWWFMdlRPQ2JXdDVqcGRxaEZEdz09FgJmD2QWAgIED2QWCAIFD2QWAgIDD2QWAgIFDxYCHgVzdHlsZQUNZGlzcGxheTpub25lO2QCCQ9kFgoCAQ8WAh4FY2xhc3MFCW1uX3NlbGVjdGQCAw8WAh8FBQttbl91bnNlbGVjdGQCBw8WAh8FBQttbl91bnNlbGVjdGQCCQ8WAh8FBQttbl91bnNlbGVjdGQCEw8WAh8FBQttbl91bnNlbGVjdGQCDw9kFgICAQ8PFgIeBFRleHQFSFlvdXIgQWNjb3VudCBpcyBBbHJlYWR5IEFjdGl2YXRlZCAsIFBsZWFzZSBsb2dpbiB3aXRoIHlvdXIgY3JlZGVudGlhbCAhIRYCHwUFCmxibHN1Y2Nlc3NkAhMPZBYCAgMPZBYMAgEPFgIeCWlubmVyaHRtbAUGMTU1NTA0ZAIDDxYCHwcFBTIyNTY3ZAIFDxYCHwcFBjM3MTI1OWQCBw8WAh8HBQYzMDI1MjlkAgkPFgIfBwUBOWQCCw8WAh8HBQI1MmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFH2N0bDAwJGluZGV4TG9naW4yJGNoa1JlbWVtYmVyTWUFIGN0bDAwJENQSENvbnRhaW5lciRjaGtSZW1lbWJlck1lM+pZ6yjxuTGBnF4TDLWJS+VaG8CazgOU/Z/JazerM54=">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=Y8Tz_pa1lLOoOqUX4hG2M0gfNowHWp8sBpQdVvnsOTfjeubo4GoWVWjWX7nr0hml0U7NZ_rkrAeWXRhdtdMSeHfg9NI-gG-PbbTp_GJh79Y1&amp;t=636208414709882692" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=NcoIi6fBVX3JKMf7hP9KkvzB8joXZCQeZX2_MlueeUE2XJkxgs00RNRJRXCVGIu9eqjRJOiLXee-R2MkU3W1QAZTtROMtqP5HbYwdFyQt0l8VliaJqTPR_1Yvh4KtzoevT1oV6pJLfO9pktrS2bywmkXzhWtXHjZjjqjnFb_WFI1&amp;t=606580bd" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Hx96eIvckqS2V-s5Nrn0x0I9hraxZjYxyYG6cTqKCmWfL2bpR9wIx1_p3ahRrsa4vJsA929ZhS1zyEXdGwZEPwVuGpHYJIviSysSGd6FEbbBiDRZqdwx_lZcark_c6A2h2PB2Bd2w0a3CG90sqfBX5iUbmFxgFknVNJkauf_gvNdj3ReYZTUxrtR2_4KB_GG0&amp;t=7e14f9a4" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=7EOp34AWwhLzonsuSnnDqA0yf0llW61nE0VoMTizvR1NGGoLTHnB8wLY3ZFPeqg5Dzx8dMKIixXccFfnE4rfo_sdSS_rcjZT9UAs88DE7HgkMYNrpLrMczoIvO5cguR4uH1QnsUOWtO4v6mXZtlibSH4rLZdPJHkbFOGTs78hDYD1KML6ZU6JdMbGA67zYTK0&amp;t=7e14f9a4" type="text/javascript"></script>
+<script src="/WebResource.axd?d=ptX9Sofj1otZhuFykiONHXClAVx3HBf8-a7ey32XK_nqnZnw3kaY2CGxGJtqL_dnNuPE5aXT5GU_049fdWtsVCZMLUrJnjLIi_ZYfyWg-2Y1&amp;t=636208414709882692" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABUOZcBbRCfKfRskiUI0lEDo7e6YA6Q0MUfZkKOBcuWwrpdmr9WsHKln2oK5gOJfDRwbzlLI3/qbr0AhOTzLE/eHeebHhSSS8a6g5diVBFaZJtegA/6Vr6Xb4FugDj4lneNYIMdJFJsUFO+VXiGvW1OImZkuhCVUG4S5yArQyWsxgcAuqhPvomKLAi+5dhqq5sX9ZE7+cVfhwF7xpD1zUZMraFzgEmZNvVyzY7vHZ6l8h1zEXjyTRhBdBAvMoKvu3/g0Aat3/n+2SQdee/8cd4aK9oh8Tb99LdRSKUn7j3VWf6PApCdrMaG5vSQeZ5eh6HwUAntnZpHvh+WN4kEzqiWiJgpCbVICTDJAoNuuEctW+0JKRC8SfnWYZaVbyVS412HwTNgQQwcccGlwvoCMtJphu8CZYZbTOLiucpOptwN/TGPJflY3rnZc2ZF5X5P7OIcRJviAFQhvLZbmvWS17luzMvbSSe9PrxkGIXSZnHXzvw==">
+</div>
+    <input name="ctl00$BrowserChecker1" id="ctl00_BrowserChecker1" type="hidden" value="1">
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+    <div class="header_wrappe clearfix">
+        
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#idSearchKey input.search_text").click(function() {
+            var search_val = $(this).val();
+            if (search_val == 'Search keyword') {
+
+                $(this).val(' ');
+            }
+        });
+
+        $("#idSearchKey input.search_text").blur(function() {
+            var search_val = $(this).val();
+            if (search_val == ' ') {
+
+                $(this).val('Search keyword');
+            }
+        });
+
+       
+    });
+</script>
+
+<div class="hdr_top_wrappe" style="top: 0px;">
+    <div class="container_24 clearfix">
+        <div class="float_left">
+            <div class="clearfix">
+                <div id="ctl00_headerTop_signin1" class="grid_13 lh_3 pull_1">
+                    
+                    <div class="welcome grid_13">
+                        <span class="float_left">Hi! Visitor You Can </span><a id="ctl00_headerTop_Signindiv" class="float_left login popup-link-1"><span id="ctl00_headerTop_Signin" class="color_red  ">Login
+                            </span></a><span class="float_left or">Or</span> <a href="SignUp.aspx" class="grid_5 color_red createaccount">Create an Account </a>
+                    </div>
+                </div>
+                <div id="ctl00_headerTop_signout1" class="grid_18 pull_1 lh_3 disply_none">
+                    
+                    <div class="welcome float_left">
+                        <span class="float_left">Welcome</span> <span id="ctl00_headerTop_username" class="float_left color_red ">Login </span><span class="float_left">You have</span> <span id="ctl00_headerTop_sp_point" class="float_left color_red ">point </span><span class="float_left">TestYou
+                                    Points.</span>
+                        <div id="ctl00_headerTop_SignOutdiv" class="float_left" style="display:none;">
+                            <a id="ctl00_headerTop_lnkbtnSignout" class="signout" href="javascript:__doPostBack('ctl00$headerTop$lnkbtnSignout','')"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="float_right push_1">
+            <div id="social-icon-top" class="pull-right" style="padding-top:3px">                        
+			<span style="font-size:18px; color:#00a6f4; display:none;">Contact: 099266-06552</span>
+
+
+
+						
+						 
+						
+					
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="clearfix container_24">
+            
+<div class="popup-box" id="popup-box-1" style="width: 550px; height: 900px !important; left: 0px; top: 105px; margin: 0px auto; right: 0px;">
+    <div class="close">
+        X</div>
+    <div class="top">
+        <div class="clearfix">
+            <div class="grid_12 clearfix" style="background-color: #ffffff">
+                <div id="ctl00_indexLogin2_LoginPanel" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_indexLogin2_lnkbtnSiginIn')">
+	
+                    <div class="ribbion_box clearfix">
+                        <span>TestYou Login</span>
+                    </div>
+                    
+                    
+                    
+                    <div class="login_box clearfix">
+                    
+                    <div class="adm_control_box grid_10 clearfix">
+                                <div class="float_left" style="color: #00A7F4">
+                                    Login with Social Sites :</div>
+                                <div class="facebbok_border_bg_login">
+                                </div>
+                            </div>
+                            <div class="adm_control_box grid_10 clearfix">
+                                <div class="common_btn grid_4 push_0 alpha  clearfix">
+                                    <input type="submit" name="ctl00$indexLogin2$Button3" value="" id="ctl00_indexLogin2_Button3" tabindex="5" class="facebook_login_small  alpha omega">
+                                </div>
+                              
+                                  <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;access_type=online&amp;client_id=1048343955122-g1qhj0ts3m3ekt1m748cmaoqghifkaec.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Faddon.testyou.in%2Fgoogle-login%2Findex.php&amp;state&amp;scope=email%20profile&amp;approval_prompt=auto"><img src="/sign-in-with-google.png" style="height: 30px;"></a>
+                        
+                            </div>
+                    
+                    
+                    <div class="adm_control_box grid_10 clearfix">
+                                <div class="float_left" style="color: #00A7F4">
+                                    Login with Email Address / Login Id :</div>
+                                <div class="facebbok_border_bg_login">
+                                </div>
+                            </div>
+                        <div class="clearfix">
+                            <div class="adm_control_box clearfix">
+                                <div id="ctl00_indexLogin2_valsAll" class="common_validation_summary" style="color:Red;display:none;">
+
+	</div>
+                            </div>
+                            <div class="adm_control_box clearfix">
+                                <div class="adm_ctrl_left_box_1 grid_10">
+                                    <span>Email Address / Login Id :  </span>
+                                </div>
+                                <div class="adm_ctrl_right_box grid_10">
+                                    <div class="common_txt_box clearfix">
+                                        <input name="ctl00$indexLogin2$txtUserLogin" type="text" id="ctl00_indexLogin2_txtUserLogin" tabindex="1" class="common_textbox" onkeypress="return avoidTiltSign(event)" style="width:347px;">
+                                        <div class="validators">
+                                            <span id="ctl00_indexLogin2_rfvLoginId" style="color:Red;visibility:hidden;">*</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="adm_control_box clearfix">
+                                <div class="adm_ctrl_left_box_1 grid_10 ">
+                                    <span>Password : </span>
+                                </div>
+                                <div class="adm_ctrl_right_box grid_10">
+                                    <div class="common_txt_box clearfix">
+                                        <input name="ctl00$indexLogin2$txtPassword" type="password" id="ctl00_indexLogin2_txtPassword" tabindex="2" class="common_textbox" style="width:347px;">
+                                        <div class="validators">
+                                            <span id="ctl00_indexLogin2_rfvPassword" style="color:Red;visibility:hidden;">*</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span id="ctl00_indexLogin2_lblEmailAlreadyExist" class="common_label" style="color:#FF3300;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="adm_control_box clearfix">
+                                <div class="adm_ctrl_right_box grid_10">
+                                    <div class="float_left common_label">
+                                        &nbsp;&nbsp;
+                                        <input id="ctl00_indexLogin2_chkRememberMe" type="checkbox" name="ctl00$indexLogin2$chkRememberMe" tabindex="3">
+                                        &nbsp; Stay Signed In
+                                    </div>
+                                    <div class="float_left common_label align_center" style="width: 20px">
+                                        |
+                                    </div>
+                                    <div class="float_left">
+                                        <a id="ctl00_indexLogin2_hprlnkForgetPassword" tabindex="6" class="lnkForgot" href="ForgetPassword.aspx">Forgot Password ?</a>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="adm_control_box clearfix">
+                                <table id="ctl00_indexLogin2_rdoChooseMode" class="common_rdobtn_list" border="0">
+		<tr>
+			<td><input id="ctl00_indexLogin2_rdoChooseMode_0" type="radio" name="ctl00$indexLogin2$rdoChooseMode" value="1" /><label for="ctl00_indexLogin2_rdoChooseMode_0">I want to Create Test</label></td><td><input id="ctl00_indexLogin2_rdoChooseMode_1" type="radio" name="ctl00$indexLogin2$rdoChooseMode" value="2" /><label for="ctl00_indexLogin2_rdoChooseMode_1">I want to Attempt Test</label></td>
+		</tr>
+	</table>
+                            </div>-->
+                            <div class="adm_control_box grid_10 clearfix">
+                                <div class="common_btn grid_4 alpha  clearfix">
+                                    <input type="submit" name="ctl00$indexLogin2$lnkbtnSiginIn" value="Login" onclick="return disableBackButton();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$indexLogin2$lnkbtnSiginIn&quot;, &quot;&quot;, true, &quot;login1&quot;, &quot;&quot;, false, false))" id="ctl00_indexLogin2_lnkbtnSiginIn" tabindex="4" class="normal_btn grid_4 alpha omega">
+                                </div>
+                                <div class="signup_link">
+                                    <a href="SignUp.aspx" title="You have not Register than Please Click here for SignUp">
+                                        <span>Or Signup for TestYou</span> </a>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="blackout" style="width: 1027px; height: 979px;">
+</div>
+<script>
+    $(document).ready(function () {
+        var boxWidth = 550;
+
+        function centerBox() {
+
+            /* Preliminary information */
+            var winWidth = $(window).width();
+            var winHeight = $(document).height();
+            var scrollPos = $(window).scrollTop();
+            /* auto scroll bug */
+
+            /* Calculate positions */
+
+            //var disWidth = (winWidth - boxWidth) / 2
+            var disHeight = scrollPos + 40;
+            var disWidth = 0;
+            //var disHeight = 50;
+
+            /* Move stuff about */
+            $('.popup-box').css({ 'width': boxWidth + 'px', 'left': disWidth + 'px', 'top': disHeight + 'px', 'margin': '0 auto', 'right': '0' });
+            $('#blackout').css({ 'width': winWidth + 'px', 'height': winHeight + 'px' });
+
+            return false;
+        }
+
+
+        $(window).resize(centerBox);
+        $(window).scroll(centerBox);
+        centerBox();
+
+        $('[class*=popup-link]').click(function (e) {
+
+            /* Prevent default actions */
+            e.preventDefault();
+            e.stopPropagation();
+
+            /* Get the id (the number appended to the end of the classes) */
+            var name = $(this).attr('class');
+            var id = name[name.length - 1];
+            var scrollPos = $(window).scrollTop();
+
+            /* Show the correct popup box, show the blackout and disable scrolling */
+            $('#popup-box-' + id).show();
+            $('#blackout').show();
+            $('html,body').css('overflow', 'auto', 'height');
+
+            /* Fixes a bug in Firefox */
+            $('html').scrollTop(scrollPos);
+        });
+        $('[class*=popup-box]').click(function (e) {
+            /* Stop the link working normally on click if it's linked to a popup */
+            e.stopPropagation();
+        });
+        $('html').click(function () {
+            var scrollPos = $(window).scrollTop();
+            /* Hide the popup and blackout when clicking outside the popup */
+            $('[id^=popup-box-]').hide();
+            $('#blackout').hide();
+            $("html,body").css("overflow", "visible");
+            $('html').scrollTop(scrollPos);
+        });
+        $('.close').click(function () {
+            var scrollPos = $(window).scrollTop();
+            /* Similarly, hide the popup and blackout when the user clicks close */
+            $('[id^=popup-box-]').hide();
+            $('#blackout').hide();
+            $("html,body").css("overflow", "visible");
+            $('html').scrollTop(scrollPos);
+        });
+    });
+
+</script>
+
+        </div>
+        
+            <div class="lowerheader">
+                <div class="clearfix">
+                    <div class="container_24">
+                        <div class="header_main clearfix">
+                            <a href="index.aspx">
+                                <div class="grid_7 logo pull_1">
+                                </div>
+                            </a>
+                            <div class="navigation-wrap float_right nav push_1 clearfix">
+								<div class="main-menu-toggle">
+									<span></span>
+								</div>
+								<div class="navigation-inner">
+                                <div class="navigation float_left">
+                                    <ul class="clearfix">
+                                        <li>
+                                            <div id="ctl00_CPHHeader_dvHome" class="mn_select">
+                                                <div class="menu_unselected">
+                                                    <a href="index.aspx">Home </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div id="ctl00_CPHHeader_dvTestCategory" class="mn_unselect">
+                                                <div class="menu_unselected">
+                                                    <a id="ctl00_CPHHeader_HyperLink1" href="Test.aspx">Online Tests  </a>
+                                                </div>
+                                            </div>
+                                        </li>
+										<li>
+                                            <div id="ctl00_CPHHeader_dvTestSeries" class="mn_unselect">
+                                                <div class="menu_unselected">
+                                                    <a id="ctl00_CPHHeader_HyperLink5" href="http://testseries.testyou.in/">Test Series </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div id="ctl00_CPHHeader_dvPraiseAndPackage" class="mn_unselect">
+                                                <div class="menu_unselected">
+                                                    <a id="ctl00_CPHHeader_HyperLink2" href="Pricing.aspx">Pricing </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        
+                                        <li>
+                                            <div id="ctl00_CPHHeader_dvAboutUs" class="mn_unselect">
+                                                <div class="menu_unselected">
+                                                    <a id="ctl00_CPHHeader_hpr4" href="AboutUs.aspx"><span>About Us</span><div class="float_right pointer_header">
+                                                    </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <ul class="menudip">
+                                                <li>
+                                                    <div class="menu_child">
+                                                        <a id="ctl00_CPHHeader_HyperLink4" href="AboutUs.aspx">About Us</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="menu_child">
+                                                        <a id="ctl00_CPHHeader_hyper2" href="Featured.aspx">Features</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="menu_child">
+                                                        <a id="ctl00_CPHHeader_HyperLink3" href="ContactUs.aspx">Contact Us</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="menu_child">
+                                                        <a href="Testimonials.aspx">Testimonials </a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="menu_child">
+                                                        <a href="http://blog.testyou.in/" target="_blank" title="TestYou Blog">Blog </a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div id="ctl00_CPHHeader_dvHowToUse" class="mn_unselect">
+                                                <div class="menu_unselected">
+                                                    <a href="HowToUse.aspx"><span>Help</span><div class="float_right pointer_header">
+                                                    </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <ul class="menudip">
+                                                <li>
+                                                    <div class="menu_child">
+                                                        <a href="HowToUse.aspx">How To Use</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="menu_child">
+                                                        <a href="Tour.aspx">Take A Tour</a>
+                                                    </div>
+                                                </li>
+                                               
+                                            </ul>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                                
+
+<script type="text/javascript">
+    function CheckSearchString() {
+        if ($('.searchtexbox_header').val().trim() != '' && $('.searchtexbox_header').val() != 'Enter Search Text. . .')
+        { return true; }
+        else
+        { alert('Please enter search text !'); $('.searchtexbox_header').focus(); return false; }
+    }
+
+    $(document).ready(function() {
+
+        $('.searchtexbox_header').bind("focusin", function(event) {
+            event.stopPropagation();
+            if ($(this).val() == 'Enter Search Text. . .') {
+                $('.searchtexbox_header').val("");
+            }
+        });
+
+        $('.searchtexbox_header').bind("focusout", function(event) {
+            //event.stopPropagation();
+            if ($(this).val() == "") {
+                $('.searchtexbox_header').val("Enter Search Text. . .");
+                $('.searchtexbox_header').animate({ width: "0px" });
+
+                $('.main_searchbox').hide();
+                $('.main_searchbox').css("border", "none");
+                $('.search_icon_header').show();
+            }
+        });
+
+
+
+        $('.search_icon_header').click(function(event) {
+
+            event.stopPropagation();
+            $('.searchtexbox_header').animate({ width: "140px" });
+            $('.main_searchbox').show();
+            $('.main_searchbox').css("border", "1px solid black");
+            $('.search_icon_header').hide();
+        });
+
+        $('html').click(function(e) {
+            var $target = $(e.target);
+            if ($target.closest('#ctl00_CPHHeader_he1_txtSearch').length == 0) {
+                if ($('.searchtexbox_header').val() == "") {
+                    $('.searchtexbox_header').val("Enter Search Text. . .");
+                }
+                $('.searchtexbox_header').animate({ width: "0px" });
+
+                $('.main_searchbox').hide();
+                $('.main_searchbox').css("border", "none");
+                $('.search_icon_header').show();
+            }
+
+
+        });
+
+
+
+
+    });
+</script>
+
+
+<div class="search_wrapper" id="idSearchKey" style="width:42px">
+    <div id="ctl00_CPHHeader_he1_pnlheadersearch" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_CPHHeader_he1_lnkbtnSearch')">
+	
+        <div class="main_searchbox clearfix" style="display: none">
+            <div id="ctl00_CPHHeader_he1_searchPanel" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_CPHHeader_he1_lnkbtnSearch')">
+		
+                <div class="clearfix float_left">
+                    <input name="ctl00$CPHHeader$he1$txtSearch" type="text" value="Enter Search Text. . ." id="ctl00_CPHHeader_he1_txtSearch" class="searchtexbox_header">
+                </div>
+                <a onclick="return CheckSearchString();" id="ctl00_CPHHeader_he1_lnkbtnSearch" class="searchbtn_header" href="javascript:__doPostBack('ctl00$CPHHeader$he1$lnkbtnSearch','')">&nbsp;</a>
+                    <input type="hidden" name="ctl00$CPHHeader$he1$hd" id="ctl00_CPHHeader_he1_hd">
+            
+	</div>
+        </div>
+    
+</div>
+    <div id="ctl00_CPHHeader_he1_search_icon_new">
+	
+        <div class="search_icon_header">
+            <div class="searchbtn_header">
+            </div>
+        </div>
+    
+</div>
+</div>
+
+								</div>
+                            </div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        
+        <div class="clear">
+        </div>
+    </div>
+    
+    
+    
+        <div class="clear">
+        </div>
+    
+    
+        <div class="clear">
+        </div>
+    
+    <div class="content_wrapper">
+        
+    <div class="container_24">
+        <div class="content clearfix">
+            <div class="output_label grid_18 push_3">
+                <span id="ctl00_CPHContainer_lblOutput" class="lblsuccess">Your Account is Already Activated , Please login with your credential !!</span>
+            </div>
+            <img id="ctl00_CPHContainer_imgLoader" src="http://www.testyou.in/CommonTool/Images/loading/loading5.gif" style="height:1px;width:1px;border-width:0px;">
+            <div class="clear">
+            </div>
+            <div class="grid_18 push_3 clearfix">
+                <div id="ctl00_CPHContainer_pnl_login" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_CPHContainer_btnLoginn')">
+	
+                    <div class="ribbion_box clearfix">
+                        <span>TestYou Login</span>
+                    </div>
+                    <div class="login_box clearfix">
+                        <div class="clearfix grid_10">
+                            <div class="adm_control_box clearfix">
+                                <div id="ctl00_CPHContainer_valsAll" class="common_validation_summary" style="color:Red;display:none;">
+
+	</div>
+                            </div>
+                            <div class="adm_control_box clearfix">
+                                <div class="adm_ctrl_left_box_1 grid_10">
+                                    <span>Email Address / Login Id: </span>
+                                </div>
+                                <div class="adm_ctrl_right_box grid_10">
+                                    <div class="common_txt_box clearfix">
+                                        <input name="ctl00$CPHContainer$txtUserLogin" type="text" id="ctl00_CPHContainer_txtUserLogin" tabindex="1" class="common_textbox" onkeypress="return avoidTiltSign(event)">
+                                        <div class="validators">
+                                            <span id="ctl00_CPHContainer_rfvLoginId" style="color:Red;visibility:hidden;">*</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="adm_control_box clearfix">
+                                <div class="adm_ctrl_left_box_1 grid_10 ">
+                                    <span>Password : </span>
+                                </div>
+                                <div class="adm_ctrl_right_box grid_10">
+                                    <div class="common_txt_box clearfix">
+                                        <input name="ctl00$CPHContainer$txtPassword" type="password" id="ctl00_CPHContainer_txtPassword" tabindex="2" class="common_textbox">
+                                        <div class="validators">
+                                            <span id="ctl00_CPHContainer_rfvPassword" style="color:Red;visibility:hidden;">*</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span id="ctl00_CPHContainer_lblEmailAlreadyExist" class="common_label" style="color:#FF3300;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="adm_control_box clearfix">
+                                <div class="adm_ctrl_right_box grid_10" style="line-height: 17px">
+                                    <div class="float_left common_label">
+                                        &nbsp;&nbsp;
+                                        <input id="ctl00_CPHContainer_chkRememberMe" type="checkbox" name="ctl00$CPHContainer$chkRememberMe" tabindex="3">
+                                        &nbsp; Stay Signed In
+                                    </div>
+                                    <div class="float_left common_label align_center" style="width: 20px">
+                                        |
+                                    </div>
+                                    <div class="float_left">
+                                        <a id="ctl00_CPHContainer_hprlnkForgetPassword" tabindex="6" class="lnkForgot" href="ForgetPassword.aspx">Forgot Password ?</a>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="adm_control_box clearfix">
+                                <table id="ctl00_CPHContainer_rdoChooseMode" class="common_rdobtn_list" border="0">
+		<tr>
+			<td><input id="ctl00_CPHContainer_rdoChooseMode_0" type="radio" name="ctl00$CPHContainer$rdoChooseMode" value="1" /><label for="ctl00_CPHContainer_rdoChooseMode_0">I want to Create Test</label></td><td><input id="ctl00_CPHContainer_rdoChooseMode_1" type="radio" name="ctl00$CPHContainer$rdoChooseMode" value="2" /><label for="ctl00_CPHContainer_rdoChooseMode_1">I want to Attempt Test</label></td>
+		</tr>
+	</table>
+                            </div>-->
+                            <div class="adm_control_box grid_10 clearfix">
+                                <div class="common_btn grid_4 alpha  clearfix">
+                                    <input type="submit" name="ctl00$CPHContainer$btnLoginn" value="Login" onclick="return disableBackButton();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$CPHContainer$btnLoginn&quot;, &quot;&quot;, true, &quot;login&quot;, &quot;&quot;, false, false))" id="ctl00_CPHContainer_btnLoginn" tabindex="4" class="normal_btn grid_4 alpha omega">
+                                </div>
+                                <div class="signup_link">
+                                    <a href="SignUp.aspx?tid=0" title="You have not Register than Please Click here for SignUp">
+                                        <span>Or Signup for TestYou</span> </a>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="float_left" style="border-left: 1px solid #c1c1c1; width: 20px; height: 160px;
+                            position: relative; top: 35px;">
+                        </div>
+                        <div class="adm_control_box  float_left clearfix">
+                            <div class="clearfix" style="margin-top: 20px;">
+                                <input type="submit" name="ctl00$CPHContainer$Button3" value="" id="ctl00_CPHContainer_Button3" tabindex="4" class="facebook_login_btn  alpha omega">
+                            </div>
+                          
+                            <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;access_type=online&amp;client_id=1048343955122-g1qhj0ts3m3ekt1m748cmaoqghifkaec.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Faddon.testyou.in%2Fgoogle-login%2Findex.php&amp;state&amp;scope=email%20profile&amp;approval_prompt=auto"><img src="/sign-in-with-google.png" style="height: 34px; margin-top: 20px;"></a>
+                        </div>
+                    </div>
+                
+</div>
+            </div>
+        </div>
+    </div>
+
+        <div class="clear">
+        </div>
+    </div>
+    <div class="testinonial_wrapper">
+        
+        
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer_wrapper">
+        
+            <div class="footer_bottom">
+                <div class="">
+                    <div class="container_24 clearfix">
+                        <div class="grid_7">
+                            <div class="footer_label">
+                                Find Us On FaceBook
+                            </div>
+                        </div>
+                        <div class="grid_4 suffix_1 prefix_1">
+                            <div class="footer_label">
+                                WHAT WE OFFER
+                            </div>
+                        </div>
+                        <div class="grid_5 suffix_1 ">
+                            <div class="footer_label">
+                                Keep Connected
+                            </div>
+                        </div>
+                        <div class="grid_5">
+                            <div class="footer_label">
+                                QUICK STATS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container_24 clearfix">
+                    <div class="grid_7" style="padding-top: 10px;">
+                        <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Ftestyou.in&amp;width=240&amp;height=258&amp;colorscheme=dark&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true" scrolling="no" frameborder="0" style="border: 1px solid #ffffff; overflow: hidden;
+                            width: 240px; height: 214px;" allowtransparency="true"></iframe>
+                    </div>
+                    <div class="grid_4 suffix_1 prefix_1">
+                        
+
+<div class="grid_4 ">
+    <ul>
+        <li>
+            <a id="ctl00_CPHFooter_FooterCompany_HyperLink1" href="Test.aspx"> 
+            Exclusive Test</a></li>
+        <li>
+            <a id="ctl00_CPHFooter_FooterCompany_HyperLink2" href="AllCategoryTest.aspx"> 
+           Test Categories</a></li>
+        <li><a href="HowToUse.aspx?#id25" target="_blank">Private Tests</a> </li>
+        <li><a href="HowToUse.aspx?#id25" target="_blank">Group Tests </a></li>
+        <li><a href="ContactUs.aspx">Contact Us </a>
+        </li>
+        <li><a href="TermsAndCondition.aspx" target="_blank">Terms &amp; Conditions </a></li>
+        <li><a href="Login.aspx" title="Login or SignUp Click Here">Login/Create Account </a>
+        </li>
+        <li><a href="ResendPCMail.aspx" title="Resend Account Verification Link">Get Verification Mail</a>
+        </li>
+    </ul>
+</div>
+
+                    </div>
+                    <div class="grid_6 footer_social">
+                        <ul>
+                            <li>
+                                <div class="social_normal clearfix">
+                                    <div class="grid_1 fb_image alpha">
+                                    </div>
+                                    <div class="grid_4">
+                                        <a href="https://www.facebook.com/TestYou.in " target="_blank">Like us on Facebook</a></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="social_normal clearfix">
+                                    <div class="grid_1 twitter_image alpha">
+                                    </div>
+                                    <div class="grid_4">
+                                        <a href="https://twitter.com/TestYou_In" target="_blank">Follow us on Twitter</a></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="social_normal clearfix">
+                                    <div class="grid_1 linkedin_image alpha">
+                                    </div>
+                                    <div class="grid_4">
+                                        <a href="https://www.linkedin.com/company/testyou" target="_blank">Follow us on Linkedin</a></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="social_normal clearfix">
+                                    <div class="grid_1 googleplus_image alpha">
+                                    </div>
+                                    <div class="grid_4">
+                                        <a href="https://plus.google.com/u/0/+TestyouIn-Online-Exam-Partner/posts" rel="publisher" target="_blank">Follow us on Google+</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid_5 alpha omega">
+                        
+<div class="grid_4 alpha omega">
+    <ul>
+        <li>
+            <label>
+                Total Users:</label>
+        </li>
+        <li>
+            <label>
+                Total Tests:
+            </label>
+        </li>
+        <li>
+            <label>
+                Total Questions:</label></li>
+        <li>
+            <label>
+                Total Attempts:
+            </label>
+        </li>
+        <li>
+            <label>
+                Today's Users:
+            </label>
+        </li>
+        <li>
+            <label>
+                Online Users:
+            </label>
+        </li>
+    </ul>
+</div>
+<div class="grid_1 alpha omega">
+    <ul>
+        <li class="statesparmeter clearfix">
+            <label id="ctl00_CPHFooter_currentState1_lblNOofUsers">155504</label>
+        </li>
+        <li class="statesparmeter clearfix">
+            <label id="ctl00_CPHFooter_currentState1_lblNoofTest">22567</label>
+        </li>
+        <li class="statesparmeter clearfix">
+            <label id="ctl00_CPHFooter_currentState1_lblNoofQBank">371259</label></li>
+        <li class="statesparmeter clearfix">
+            <label id="ctl00_CPHFooter_currentState1_lblNoofAttemps">302529</label>
+        </li>
+        <li class="statesparmeter clearfix">
+            <label id="ctl00_CPHFooter_currentState1_lblTodayUser">9</label>
+        </li>
+        <li class="statesparmeter clearfix">
+            <label id="ctl00_CPHFooter_currentState1_lblOnlineUser">52</label>
+        </li>
+    </ul>
+</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="footer_powered_by">
+                <div class="container_24 clearfix">
+                    <div class="grid_9">
+                        <label class="tbl_text">
+                            Copyright © 2011 -
+                            <label id="lbLatestYear">2020</label>&nbsp; TestYou All Rights Reserved</label>
+                    </div>
+                    <div class="grid_7 float_right">
+                        <label class="tbl_text float_right">
+                            Powered by <a title="A  Software and Web development company" href="http://www.techinfini.com/" target="_blank">TechInfini Solutions</a></label>
+                    </div>
+                </div>
+            </div>
+        
+        <div class="clear">
+        </div>
+    </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_indexLogin2_valsAll"), document.getElementById("ctl00_CPHContainer_valsAll"));
+var Page_Validators =  new Array(document.getElementById("ctl00_indexLogin2_rfvLoginId"), document.getElementById("ctl00_indexLogin2_rfvPassword"), document.getElementById("ctl00_CPHContainer_rfvLoginId"), document.getElementById("ctl00_CPHContainer_rfvPassword"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_indexLogin2_valsAll = document.all ? document.all["ctl00_indexLogin2_valsAll"] : document.getElementById("ctl00_indexLogin2_valsAll");
+ctl00_indexLogin2_valsAll.displaymode = "SingleParagraph";
+ctl00_indexLogin2_valsAll.validationGroup = "login1";
+var ctl00_indexLogin2_rfvLoginId = document.all ? document.all["ctl00_indexLogin2_rfvLoginId"] : document.getElementById("ctl00_indexLogin2_rfvLoginId");
+ctl00_indexLogin2_rfvLoginId.controltovalidate = "ctl00_indexLogin2_txtUserLogin";
+ctl00_indexLogin2_rfvLoginId.errormessage = "Enter Login Id , ";
+ctl00_indexLogin2_rfvLoginId.validationGroup = "login1";
+ctl00_indexLogin2_rfvLoginId.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_indexLogin2_rfvLoginId.initialvalue = "";
+var ctl00_indexLogin2_rfvPassword = document.all ? document.all["ctl00_indexLogin2_rfvPassword"] : document.getElementById("ctl00_indexLogin2_rfvPassword");
+ctl00_indexLogin2_rfvPassword.controltovalidate = "ctl00_indexLogin2_txtPassword";
+ctl00_indexLogin2_rfvPassword.errormessage = "Enter Login Password , ";
+ctl00_indexLogin2_rfvPassword.validationGroup = "login1";
+ctl00_indexLogin2_rfvPassword.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_indexLogin2_rfvPassword.initialvalue = "";
+var ctl00_CPHContainer_valsAll = document.all ? document.all["ctl00_CPHContainer_valsAll"] : document.getElementById("ctl00_CPHContainer_valsAll");
+ctl00_CPHContainer_valsAll.displaymode = "SingleParagraph";
+ctl00_CPHContainer_valsAll.validationGroup = "login";
+var ctl00_CPHContainer_rfvLoginId = document.all ? document.all["ctl00_CPHContainer_rfvLoginId"] : document.getElementById("ctl00_CPHContainer_rfvLoginId");
+ctl00_CPHContainer_rfvLoginId.controltovalidate = "ctl00_CPHContainer_txtUserLogin";
+ctl00_CPHContainer_rfvLoginId.errormessage = "Enter Login Id , ";
+ctl00_CPHContainer_rfvLoginId.validationGroup = "login";
+ctl00_CPHContainer_rfvLoginId.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_CPHContainer_rfvLoginId.initialvalue = "";
+var ctl00_CPHContainer_rfvPassword = document.all ? document.all["ctl00_CPHContainer_rfvPassword"] : document.getElementById("ctl00_CPHContainer_rfvPassword");
+ctl00_CPHContainer_rfvPassword.controltovalidate = "ctl00_CPHContainer_txtPassword";
+ctl00_CPHContainer_rfvPassword.errormessage = "Enter Login Password , ";
+ctl00_CPHContainer_rfvPassword.validationGroup = "login";
+ctl00_CPHContainer_rfvPassword.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_CPHContainer_rfvPassword.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ctl00_indexLogin2_valsAll');
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ctl00_CPHContainer_valsAll');
+WebForm_AutoFocus('ctl00_CPHContainer_txtUserLogin');document.getElementById('ctl00_BrowserChecker1').value=1;
+document.getElementById('ctl00_indexLogin2_rfvLoginId').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_indexLogin2_rfvLoginId'));
+}
+
+document.getElementById('ctl00_indexLogin2_rfvPassword').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_indexLogin2_rfvPassword'));
+}
+
+document.getElementById('ctl00_CPHContainer_rfvLoginId').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CPHContainer_rfvLoginId'));
+}
+
+document.getElementById('ctl00_CPHContainer_rfvPassword').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CPHContainer_rfvPassword'));
+}
+//]]>
+</script>
+</form>
+    <!-- Google Analytic 1 code -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-25764405-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <!-- Google Analytic 1 code -->
+    <!-- Google Translator code -->
+    <!-- Google Translator code -->
+    <!-- Notification Bar PRO Starts Here -->
+   
+    <div id="notificationbar" class="Sample1" style="display: none;">
+        <a class="nbar_downArr" href="#nbar_downArr" style="display: none;"></a>
+        <div class="nbar_wrapper">
+            <div class="nbar_topwrap">
+                <div class="nbar_msg nbar_topitem">
+                    <div class="nbar_extclick" style="display: block; margin-top: -3px; float: left;">
+                         <a href="http://www.demo.testyou.in" target="_blank">
+                            <img src="General/Images/demo_header_btn.png" title="Click here for demo" style="float: left;"></a></div>
+                </div>
+                <a href="JavaScript:void(0);" title="close" class="nbar_close"></a>
+            </div>
+        </div>
+    </div>
+    <a id="nbar_downArr" href="JavaScript:void(0);" style="display: inline;"></a>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            jQuery('body').prepend('<div class="notification_push"></div>');
+            jQuery("#notificationbar").notificationbar({
+                'defaultstate': 'open',
+                'staytime': '15000',
+                'exmsgstate': 'open',
+                'exmsgopentm': '4000',
+                'exmsgclosetm': '4000',
+                'disablecmsg': ''
+            });
+        });
+    </script>
+    <!-- Notification Bar PRO Ends Here -->
+
+	<!-- Responsive menu -->
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+		jQuery(".main-menu-toggle").on( "click", function(){
+		jQuery(this).toggleClass("mt-active");
+		jQuery(".header_main").toggleClass("header_main_open");
+		jQuery(".header_main").toggleClass("header_main_open");
+		jQuery(".header_main .navigation-inner").slideToggle("slow");
+		});
+		});
+	</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5b3dca284af8e57442dc5a38/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+
+
+
+<div id="dyAoTO7-1608883062297" class="" style="display: block !important;"><iframe id="gJTXysK-1608883062299" src="about:blank" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: auto !important; position: static !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 350px !important; z-index: 999999 !important; cursor: auto !important; float: none !important; border-radius: unset !important; pointer-events: auto !important; display: none !important; height: 120px !important;"></iframe><iframe id="Bcwozcg-1608883062305" src="about:blank" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: auto 10px 0px auto !important; position: fixed !important; border: 0px !important; padding: 0px !important; transition-property: none !important; z-index: 1000001 !important; cursor: auto !important; float: none !important; pointer-events: auto !important; height: 40px !important; min-height: 40px !important; max-height: 40px !important; width: 260px !important; min-width: 260px !important; max-width: 260px !important; border-radius: 0px !important; transform: rotate(0deg) translateZ(0px) !important; transform-origin: 0px center !important; margin: 0px !important; display: block !important;"></iframe><iframe id="lA5vy9v-1608883062306" src="about:blank" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: auto 1px 25px auto !important; position: fixed !important; border: 0px !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; display: none !important; z-index: 1000003 !important; cursor: auto !important; float: none !important; border-radius: unset !important; pointer-events: auto !important; width: 21px !important; max-width: 21px !important; min-width: 21px !important; height: 21px !important; max-height: 21px !important; min-height: 21px !important;"></iframe><iframe id="gnqOvGC-1608883062307" src="about:blank" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: auto 69px 44px auto !important; position: fixed !important; border: 0px !important; padding: 0px !important; transition-property: none !important; cursor: auto !important; float: none !important; border-radius: unset !important; pointer-events: auto !important; transform: rotate(0deg) translateZ(0px) !important; transform-origin: 0px center !important; width: 142px !important; max-width: 142px !important; min-width: 142px !important; height: 86px !important; max-height: 86px !important; min-height: 86px !important; z-index: 1000002 !important; margin: 0px !important; display: none !important;"></iframe><div class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: 0px auto auto 0px !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 100% !important; display: none !important; z-index: 1000001 !important; cursor: move !important; float: left !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="LepKQgS-1608883062297" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: 0px auto auto 0px !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 6px !important; height: 100% !important; display: block !important; z-index: 999998 !important; cursor: w-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="kAd7NT2-1608883062297" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: 0px 0px auto auto !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 6px !important; height: 100% !important; display: block !important; z-index: 999998 !important; cursor: e-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="qxbkYYC-1608883062297" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: 0px 0px auto auto !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 6px !important; display: block !important; z-index: 999998 !important; cursor: n-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="ZV2mnFg-1608883062298" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: auto 0px 0px auto !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 6px !important; display: block !important; z-index: 999998 !important; cursor: s-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="ET1vnRr-1608883062298" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: 0px auto auto 0px !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999998 !important; cursor: nw-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="mSzMkm6-1608883062298" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: 0px 0px auto auto !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999998 !important; cursor: ne-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="q03aeMo-1608883062298" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: auto auto 0px 0px !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999998 !important; cursor: sw-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="SEQQWd8-1608883062298" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: auto 0px 0px auto !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999999 !important; cursor: se-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><iframe id="GG4o0Ua-1608883062441" src="about:blank" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; inset: auto 10px 50px auto !important; position: fixed !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 378px !important; height: 525px !important; display: none !important; z-index: 999999 !important; cursor: auto !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></iframe></div><iframe src="about:blank" title="chat widget logging" style="display: none !important;"></iframe></body></html>

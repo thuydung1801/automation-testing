@@ -1,0 +1,10 @@
+autoframework/DefinitionTestSuite.java
+ autoframework.DefinitionTestSuite
+autoframework/steps/serenity/Data/DataTest.java
+ autoframework.steps.serenity.Data.DataTest
+autoframework/steps/serenity/EndUserSteps.java
+ autoframework.steps.serenity.EndUserSteps
+autoframework/pages/DictionaryPage.java
+ autoframework.pages.DictionaryPage
+autoframework/steps/DefinitionSteps.java
+ autoframework.steps.DefinitionSteps
