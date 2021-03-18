@@ -3,109 +3,161 @@
     "line": 1,
     "elements": [
       {
-        "line": 4,
-        "name": "login successfully",
+        "line": 2,
+        "name": "",
         "description": "",
-        "id": "as-a-user--i-want-to-login-into-the-mektoube;login-successfully",
-        "type": "scenario",
-        "keyword": "Scenario",
+        "type": "background",
+        "keyword": "Background",
         "steps": [
           {
             "result": {
-              "duration": 5536840936,
+              "duration": 5857192084,
               "status": "passed"
             },
-            "line": 5,
-            "name": "Go to \u0027https://mektoube.fr/login\u0027 url",
+            "line": 3,
+            "name": "Go to adminPage url",
             "match": {
               "arguments": [
                 {
-                  "val": "https://mektoube.fr/login",
-                  "offset": 7
+                  "val": "adminPage",
+                  "offset": 6
                 }
               ],
-              "location": "DefinitionSteps.goToUrl(String)"
+              "location": "BasePageSteps.goToUrl(String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 10482774545,
+              "duration": 3345107985,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Insert thanh.tester into box have id: emailAdmin",
+            "match": {
+              "arguments": [
+                {
+                  "val": "thanh.tester",
+                  "offset": 7
+                },
+                {
+                  "val": "emailAdmin",
+                  "offset": 38
+                }
+              ],
+              "location": "BasePageSteps.insertId(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3247995915,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Insert !test123! into box have id: passAdmin",
+            "match": {
+              "arguments": [
+                {
+                  "val": "!test123!",
+                  "offset": 7
+                },
+                {
+                  "val": "passAdmin",
+                  "offset": 35
+                }
+              ],
+              "location": "BasePageSteps.insertId(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6219030874,
               "status": "passed"
             },
             "line": 6,
-            "name": "Insert \u0027yassine_yes\u0027 into the Email field",
+            "name": "Click button by class signInBtn",
             "match": {
               "arguments": [
                 {
-                  "val": "yassine_yes",
-                  "offset": 8
+                  "val": "signInBtn",
+                  "offset": 22
                 }
               ],
-              "location": "DefinitionSteps.insertAIntoTheEmailField(String)"
+              "location": "BasePageSteps.clickButtonByClass(String)"
             },
-            "keyword": "When "
+            "keyword": "And "
           },
           {
             "result": {
-              "duration": 527465404,
+              "duration": 13123389651,
               "status": "passed"
             },
             "line": 7,
-            "name": "Insert \u0027Mektoubi2017\u0027 into the Password field",
+            "name": "Successfully into DashboardPage front site",
             "match": {
               "arguments": [
                 {
-                  "val": "Mektoubi2017",
-                  "offset": 8
+                  "val": "DashboardPage",
+                  "offset": 18
                 }
               ],
-              "location": "DefinitionSteps.insertAIntoThePasswordField(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 439368088,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "Click login button",
-            "match": {
-              "location": "DefinitionSteps.clickLoginButton()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 5372813592,
-              "status": "passed"
-            },
-            "line": 9,
-            "name": "User login successfully into \u0027https://mektoube.fr/main/discoveries\u0027 front site",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://mektoube.fr/main/discoveries",
-                  "offset": 30
-                }
-              ],
-              "location": "DefinitionSteps.userLoginSuccessfullyIntoHttpsMektoubeFrMainDiscoveriesFrontSite(String)"
+              "location": "BasePageSteps.Successfully(String)"
             },
             "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 150813986,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BasePageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "",
+        "description": "",
+        "id": ";",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11763641572,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Go to ManageInstockRequest url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ManageInstockRequest",
+                  "offset": 6
+                }
+              ],
+              "location": "BasePageSteps.goToUrl(String)"
+            },
+            "keyword": "Given "
           }
         ],
         "tags": [
           {
-            "name": "@test01"
+            "name": "@Test01"
           }
         ]
       }
     ],
-    "name": "As a user, i want to login into the Mektoube",
+    "name": "",
     "description": "",
-    "id": "as-a-user--i-want-to-login-into-the-mektoube",
+    "id": "",
     "keyword": "Feature",
-    "uri": "src/test/resources/features/MyTest.feature"
+    "uri": "src/test/resources/features/BackEnd/instockItemSuite.feature"
   }
 ]

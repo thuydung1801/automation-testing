@@ -1,65 +1,83 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/features/MyTest.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/features/BackEnd/instockItemSuite.feature");
 formatter.feature({
-  "name": "As a user, i want to login into the Mektoube",
+  "name": "",
   "description": "",
   "keyword": "Feature"
 });
+formatter.background({
+  "name": "",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Go to adminPage url",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "BasePageSteps.goToUrl(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Insert thanh.tester into box have id: emailAdmin",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "BasePageSteps.insertId(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Insert !test123! into box have id: passAdmin",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "BasePageSteps.insertId(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click button by class signInBtn",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "BasePageSteps.clickButtonByClass(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Successfully into DashboardPage front site",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "BasePageSteps.Successfully(String)"
+});
+formatter.result({
+  "status": "passed"
+});
 formatter.scenario({
-  "name": "login successfully",
+  "name": "",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@test01"
+      "name": "@Test01"
     }
   ]
 });
 formatter.step({
-  "name": "Go to \u0027https://mektoube.fr/login\u0027 url",
+  "name": "Go to ManageInstockRequest url",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "DefinitionSteps.goToUrl(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Insert \u0027yassine_yes\u0027 into the Email field",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "DefinitionSteps.insertAIntoTheEmailField(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Insert \u0027Mektoubi2017\u0027 into the Password field",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "DefinitionSteps.insertAIntoThePasswordField(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Click login button",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "DefinitionSteps.clickLoginButton()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User login successfully into \u0027https://mektoube.fr/main/discoveries\u0027 front site",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "DefinitionSteps.userLoginSuccessfullyIntoHttpsMektoubeFrMainDiscoveriesFrontSite(String)"
+  "location": "BasePageSteps.goToUrl(String)"
 });
 formatter.result({
   "status": "passed"

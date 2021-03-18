@@ -1,10 +1,62 @@
+autoframework/pages/SearchProductsPage.java
+ autoframework.pages.SearchProductsPage
+autoframework/SearchProductSuite.java
+ autoframework.SearchProductSuite
+autoframework/pages/BasePage.java
+ autoframework.pages.BasePage
+autoframework/ReturnFormSuite.java
+ autoframework.ReturnFormSuite
+autoframework/pages/AddToCartPage.java
+ autoframework.pages.AddToCartPage
+autoframework/steps/BasePageSteps.java
+ autoframework.steps.BasePageSteps
 autoframework/DefinitionTestSuite.java
  autoframework.DefinitionTestSuite
-autoframework/steps/serenity/Data/DataTest.java
- autoframework.steps.serenity.Data.DataTest
-autoframework/steps/serenity/EndUserSteps.java
- autoframework.steps.serenity.EndUserSteps
-autoframework/pages/DictionaryPage.java
- autoframework.pages.DictionaryPage
-autoframework/steps/DefinitionSteps.java
- autoframework.steps.DefinitionSteps
+autoframework/steps/ManageItemsArrivedStep.java
+ autoframework.steps.ManageItemsArrivedStep
+autoframework/pages/RegisterAccPage.java
+ autoframework.pages.RegisterAccPage
+autoframework/pages/PackageReadyShippingPage.java
+ autoframework.pages.PackageReadyShippingPage
+autoframework/pages/InstockItemPage.java
+ autoframework.pages.InstockItemPage
+autoframework/InstockItemSuite.java
+ autoframework.InstockItemSuite
+autoframework/AddToCartSuite.java
+ autoframework.AddToCartSuite
+autoframework/steps/addAnItemToCartSteps.java
+ autoframework.steps.addAnItemToCartSteps
+autoframework/steps/PackageReadyShippingSteps.java
+ autoframework.steps.PackageReadyShippingSteps
+autoframework/steps/checkOutWithTax.java
+ autoframework.steps.checkOutWithTax
+autoframework/pages/ReturnFormPage.java
+ autoframework.pages.ReturnFormPage
+autoframework/ManageItemsArrivedSuite.java
+ autoframework.ManageItemsArrivedSuite
+autoframework/PackageReadyShippingSuite.java
+ autoframework.PackageReadyShippingSuite
+autoframework/steps/InstockItemStep.java
+ autoframework.steps.InstockItemStep
+autoframework/ForgotPassSuite.java
+ autoframework.ForgotPassSuite
+autoframework/pages/ManageItemsArrivedPage.java
+ autoframework.pages.ManageItemsArrivedPage
+autoframework/pages/ForgotPassPage.java
+ autoframework.pages.ForgotPassPage
+autoframework/steps/ReturnFormStep.java
+ autoframework.steps.ReturnFormStep
+autoframework/CheckOutSuite.java
+ autoframework.CheckOutSuite
+autoframework/service/TestDataService.java
+ autoframework.service.TestDataService
+autoframework/RegisterAccSuite.java
+ autoframework.RegisterAccSuite
+autoframework/pages/CheckOutPage.java
+ autoframework.pages.CheckOutPage
+autoframework/steps/RegisterAccStep.java
+ autoframework.steps.RegisterAccStep
+autoframework/steps/ForgotPassStep.java
+ autoframework.steps.ForgotPassStep
+autoframework/steps/SearchProductsStep.java
+ autoframework.steps.SearchProductsStep
