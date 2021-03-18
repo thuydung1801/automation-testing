@@ -58,6 +58,12 @@
             <version>${serenity.cucumber.version}</version>
             <scope>test</scope>
         </dependency>
+        
+        <dependency>
+            <groupId>com.squareup</groupId>
+            <artifactId>javapoet</artifactId>
+            <version>1.9.0</version>
+        </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
