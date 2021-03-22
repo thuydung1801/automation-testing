@@ -1,9 +1,9 @@
 package autoframework.steps;
 
 import autoframework.pages.RegisterAccPage;
-import net.thucydides.core.annotations.Steps;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.thucydides.core.annotations.Steps;
 
 public class RegisterAccStep  {
     @Steps

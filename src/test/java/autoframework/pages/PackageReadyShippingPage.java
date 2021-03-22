@@ -4,7 +4,7 @@ import autoframework.service.TestDataService;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class PackageReadyShippingPage extends BasePage{
+public class PackageReadyShippingPage extends CommonPage{
     By acceptBtn = By.className("action-accept");
     By createdMes = By.className("//*[@id=\"messages\"]/div/div[1]/div");
     By emailMes = By.className("//*[@id=\"messages\"]/div/div[2]/div");

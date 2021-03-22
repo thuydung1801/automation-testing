@@ -1,11 +1,11 @@
 Feature:
   Background:
-    Given Go to adminPage url
+    Given Go to "adminPage" url
     When Insert adminM2 into box have id: emailAdmin
     And Insert admin123 into box have id: passAdmin
     And Click button by class signInBtn
     Then Successfully into DashboardPage front site
-    Given Go to ManageItemsArrivedStep url
+    Given Go to "ManageItemsArrivedStep" url
   #    viết môi trường lọc
   @Test01
   Scenario: create ship fail: The selected items are not the same dispacth location. Please select again!
@@ -34,3 +34,12 @@ Feature:
     Then The system show success message
     Then Show Messages in back end: afasfasdgsafg
 
+#Feature: Transfer to ship out waiting
+
+  @0test03-lan
+
+  Scenario: transfer an item to shipout waiting
+    Given Go to "manageProductionRequest" url
+    When Enter "needTransferToShipoutWaitingBarcode" to scan barcode box
+    And Take action "transferToShipoutWaiting"
+    Then The "transferItemSuccessfully" Message is shown

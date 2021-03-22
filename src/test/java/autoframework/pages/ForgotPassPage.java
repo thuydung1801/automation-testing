@@ -3,9 +3,7 @@ package autoframework.pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
-
-public class ForgotPassPage extends BasePage {
+public class ForgotPassPage extends CommonPage {
 
     By forgotPassBtn =  By.className("remind");
     By resetMyPassBtn = By.xpath("//*[@id=\"form-validate\"]/div/div[1]/button");

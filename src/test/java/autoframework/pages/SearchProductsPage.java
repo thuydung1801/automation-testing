@@ -4,9 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
-import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
-
-public class SearchProductsPage extends BasePage {
+public class SearchProductsPage extends CommonPage {
     By searchInp = By.id("search");
     By searchBtn =  By.xpath("//*[@id=\"search_mini_form\"]/div[2]/button");
     By msgError_search = By.xpath("//*[@id=\"maincontent\"]/div[2]/div[1]/div[2]");

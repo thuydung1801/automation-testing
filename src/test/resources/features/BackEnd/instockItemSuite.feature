@@ -1,11 +1,11 @@
 Feature:
   Background:
-    Given Go to adminPage url
+    Given Go to "adminPage" url
     When Insert adminM2 into box have id: emailAdmin
     And Insert admin123 into box have id: passAdmin
     And Click button by class signInBtn
     Then Successfully into DashboardPage front site
-    Given Go to ManageInstockRequest url
+    Given Go to "ManageInstockRequest" url
 #    viết môi trường lọc
 
 
@@ -20,7 +20,7 @@ Feature:
 #    And Item state update: Ship out waiting
   @Test02
   Scenario: Tranfer 5 items
-    Given Go to ManageInstockRequest url
+    Given Go to "ManageInstockRequest" url
     And Wait about 2 seconds
     When Insert barcode: 7029261493-572439 into barcode box and click Enter
     And Wait about 2 seconds

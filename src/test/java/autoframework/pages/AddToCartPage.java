@@ -4,10 +4,11 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddToCartPage extends BasePage{
+public class AddToCartPage extends CommonPage{
 
     By addBtn = By.id("product-addtocart-button");
     By countItem = By.className("counter-number");

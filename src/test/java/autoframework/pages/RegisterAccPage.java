@@ -3,9 +3,7 @@ package autoframework.pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
-
-public class RegisterAccPage extends BasePage {
+public class RegisterAccPage extends CommonPage {
 
     By signUpBtn = By.className("authorization-text");
     By acceptBtn = By.name("is_subscribed");

@@ -1,11 +1,9 @@
 package autoframework.pages;
 
-import autoframework.service.TestDataService;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-public class ReturnFormPage extends BasePage{
+public class ReturnFormPage extends CommonPage{
     By btnSubmitReturn = By.id("submit-return-form");
     public void clickSubmitReturn(){
         getDriver().findElement(btnSubmitReturn).click();

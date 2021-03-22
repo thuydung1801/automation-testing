@@ -4,14 +4,9 @@ import autoframework.service.TestDataService;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
-
-import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
-
-public class InstockItemPage {
+public class InstockItemPage extends CommonPage{
     By MsgTranfer = By.className("message");
     By barcodeBox = By.name("barcode");
     By selectBox = By.className("data-grid-checkbox-cell-inner");

@@ -3,11 +3,7 @@ package autoframework.pages;
 import autoframework.service.TestDataService;
 import org.openqa.selenium.By;
 
-import org.openqa.selenium.WebElement;
-
-import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
-
-public class ManageItemsArrivedPage {
+public class ManageItemsArrivedPage extends CommonPage {
 
     public void chooseRowManageItemsArrivedPage(int numberOfRow) {
         String Row = "rowManageItemsArrived";
