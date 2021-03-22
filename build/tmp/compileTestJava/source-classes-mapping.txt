@@ -1,0 +1,106 @@
+autoframework/pages/SearchProductsPage.java
+ autoframework.pages.SearchProductsPage
+autoframework/pages/LoginPages.java
+ autoframework.pages.LoginPages
+autoframework/steps/CommonPageSteps.java
+ autoframework.steps.CommonPageSteps
+autoframework/steps/ProductionRequestStep.java
+ autoframework.steps.ProductionRequestStep
+autoframework/pages/CommonPage.java
+ autoframework.pages.CommonPage
+autoframework/steps/ManageChainStep.java
+ autoframework.steps.ManageChainStep
+autoframework/steps/DiscountStep.java
+ autoframework.steps.DiscountStep
+autoframework/steps/ManageItemsArrivedStep.java
+ autoframework.steps.ManageItemsArrivedStep
+autoframework/pages/RegisterAccPage.java
+ autoframework.pages.RegisterAccPage
+autoframework/steps/ManageMetalStep.java
+ autoframework.steps.ManageMetalStep
+autoframework/pages/HomePage.java
+ autoframework.pages.HomePage
+autoframework/pages/InstockItemPage.java
+ autoframework.pages.InstockItemPage
+autoframework/steps/RawMaterialStep.java
+ autoframework.steps.RawMaterialStep
+autoframework/pages/ReturnFormPage.java
+ autoframework.pages.ReturnFormPage
+autoframework/steps/UpdateDegreeCodeStepdefs.java
+ autoframework.steps.UpdateDegreeCodeStepdefs
+autoframework/steps/checkOut.java
+ autoframework.steps.checkOut
+autoframework/pages/LogoutPages.java
+ autoframework.pages.LogoutPages
+autoframework/steps/CartPageStep.java
+ autoframework.steps.CartPageStep
+autoframework/pages/ProductionRequestPage.java
+ autoframework.pages.ProductionRequestPage
+autoframework/steps/UpdateProcessStep.java
+ autoframework.steps.UpdateProcessStep
+autoframework/pages/UpdateProcessPage.java
+ autoframework.pages.UpdateProcessPage
+configurationGenerator/RunnerGenerator.java
+ configurationGenerator.RunnerGenerator
+ configurationGenerator.RunnerGenerator$1
+ configurationGenerator.RunnerGenerator$FileDetail
+autoframework/pages/CheckOutPage.java
+ autoframework.pages.CheckOutPage
+autoframework/steps/RegisterAccStep.java
+ autoframework.steps.RegisterAccStep
+autoframework/pages/ManageChainPage.java
+ autoframework.pages.ManageChainPage
+autoframework/pages/CartPage.java
+ autoframework.pages.CartPage
+autoframework/steps/MenuStep.java
+ autoframework.steps.MenuStep
+autoframework/steps/ForgotPassStep.java
+ autoframework.steps.ForgotPassStep
+autoframework/steps/LoginToASminStepdefs.java
+ autoframework.steps.LoginToASminStepdefs
+autoframework/pages/ManageMetalPage.java
+ autoframework.pages.ManageMetalPage
+autoframework/pages/AddToCartPage.java
+ autoframework.pages.AddToCartPage
+configurationGenerator/PropertyGenerator.java
+ configurationGenerator.PropertyGenerator
+autoframework/DefinitionTestSuite.java
+ autoframework.DefinitionTestSuite
+autoframework/steps/LogoutStepdefs.java
+ autoframework.steps.LogoutStepdefs
+autoframework/pages/PackageReadyShippingPage.java
+ autoframework.pages.PackageReadyShippingPage
+autoframework/pages/RawMaterialPage.java
+ autoframework.pages.RawMaterialPage
+autoframework/steps/UpdateStoneProcessStepdefs.java
+ autoframework.steps.UpdateStoneProcessStepdefs
+autoframework/steps/LoginStepDefs.java
+ autoframework.steps.LoginStepDefs
+autoframework/pages/InvoiceOrderPages.java
+ autoframework.pages.InvoiceOrderPages
+autoframework/steps/addAnItemToCartSteps.java
+ autoframework.steps.addAnItemToCartSteps
+autoframework/pages/LoginToAdminPages.java
+ autoframework.pages.LoginToAdminPages
+autoframework/steps/InvoiceOrderStepdefs.java
+ autoframework.steps.InvoiceOrderStepdefs
+autoframework/steps/PackageReadyShippingSteps.java
+ autoframework.steps.PackageReadyShippingSteps
+autoframework/pages/UpdateStoneProcessPages.java
+ autoframework.pages.UpdateStoneProcessPages
+autoframework/steps/InstockItemStep.java
+ autoframework.steps.InstockItemStep
+autoframework/pages/CartPriceRulePage.java
+ autoframework.pages.CartPriceRulePage
+autoframework/pages/ManageItemsArrivedPage.java
+ autoframework.pages.ManageItemsArrivedPage
+autoframework/pages/ForgotPassPage.java
+ autoframework.pages.ForgotPassPage
+autoframework/steps/ReturnFormStep.java
+ autoframework.steps.ReturnFormStep
+autoframework/service/TestDataService.java
+ autoframework.service.TestDataService
+autoframework/pages/UpdateDegreeCodePage.java
+ autoframework.pages.UpdateDegreeCodePage
+autoframework/steps/SearchProductsStep.java
+ autoframework.steps.SearchProductsStep

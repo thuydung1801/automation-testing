@@ -2,7 +2,7 @@ Feature: As a user, i want to add some item to cart.
 
   @test01
   Scenario: add a ring into cart successfully
-    Given Go to diamondRingPage url
+    Given Go to "diamondRingPage" url
     When I click item has name: GLAMIRA Ring Gratia
     And Chose ring size: 14,6
     And I add this item to cart
@@ -15,7 +15,7 @@ Feature: As a user, i want to add some item to cart.
 
   @test03
   Scenario: dont chose the ring size
-    Given Go to diamondRingPage url
+    Given Go to "diamondRingPage" url
     And Wait until display button has text GLAMIRA Ring Gratia
     And Wait about 9 seconds
     When I click item has name: GLAMIRA Ring Gratia
