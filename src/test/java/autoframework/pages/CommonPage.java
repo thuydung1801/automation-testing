@@ -231,7 +231,7 @@ public class CommonPage extends PageObject {
     
 //    ----Huong's Code
 String theFirstItemLocator = "table.data-grid tbody tr:nth-of-type(1) input";
-    String loadingMaskLocator = "div.loading-mask";
+    public String loadingMaskLocator = "div.loading-mask";
     String confirmBtnLocator = "div.modal-inner-wrap button.action-accept";
     String messageLocator = "div.messages div div";
 

@@ -1,9 +1,10 @@
 @tag
 Feature: InvoiceOrder
   Background:
-    Given Go to "adminPageurl" url
-    When I login to admin with valid username and password
-    Then I should  be on Admin Porfile pages
+#    Given Go to "adminPageurl" url
+#    When I login to admin with valid username and password
+#    Then I should  be on Admin Porfile pages
+    Given Login "adminPage" with "adminM2" and "admin123"
   @Test
     @tag-01
   Scenario: create new invoice

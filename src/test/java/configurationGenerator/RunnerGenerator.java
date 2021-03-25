@@ -1,5 +1,5 @@
 package configurationGenerator;
-//import com.squareup.javapoet.*;
+import com.squareup.javapoet.*;
 import cucumber.api.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.BeforeClass;
@@ -14,23 +14,23 @@ import java.util.Objects;
 
 
 public class RunnerGenerator {
-//    public static void main(String[] args) throws IOException {
-//        final File folder = new File("src/test/resources/features/glamira2");
-//        List<FileDetail> result = new ArrayList<>();
-//        search(".*\\.feature", folder, result);
-//
-//        for (FileDetail s : result) {
-//            String runnerName = s.name + "Runner";
-//            String cucumberFormat = "{\"pretty\", \"json:target/" + s.name + ".json\"}";
-//            String featurePath = "{\"" + s.path + "\"}";
-//            TypeSpec runner = TypeSpec.classBuilder(runnerName)
-//                    .addModifiers(Modifier.PUBLIC)
-//                    .addAnnotation(AnnotationSpec.builder(RunWith.class).addMember("value", "$T.class", CucumberWithSerenity.class).build()).addAnnotation(AnnotationSpec.builder(CucumberOptions.class).addMember("features", "$L",featurePath ).addMember("plugin", "$L", cucumberFormat).build()).addMethod(MethodSpec.methodBuilder("initConfiguration").addModifiers(Modifier.PUBLIC, Modifier.STATIC).addAnnotation(AnnotationSpec.builder(BeforeClass.class).build()).addStatement("$T.setProperties($S)", ClassName.get(" autoTest.service", "TestDataService"),"/src/test/resources/data_test/lanData.properties").build()).build();
-//            JavaFile javaFile = JavaFile.builder("autoTest", runner)
-//                    .build();
-//            javaFile.writeTo(Paths.get("src/test/java"));
-//        }
-//    }
+    public static void main(String[] args) throws IOException {
+        final File folder = new File("src/test/resources/features");
+        List<FileDetail> result = new ArrayList<>();
+        search(".*\\.feature", folder, result);
+
+        for (FileDetail s : result) {
+            String runnerName = s.name + "Runner";
+            String cucumberFormat = "{\"pretty\", \"json:target/" + s.name + ".json\"}";
+            String featurePath = "{\"" + s.path + "\"}";
+            TypeSpec runner = TypeSpec.classBuilder(runnerName)
+                    .addModifiers(Modifier.PUBLIC)
+                    .addAnnotation(AnnotationSpec.builder(RunWith.class).addMember("value", "$T.class", CucumberWithSerenity.class).build()).addAnnotation(AnnotationSpec.builder(CucumberOptions.class).addMember("features", "$L",featurePath ).addMember("plugin", "$L", cucumberFormat).build()).addMethod(MethodSpec.methodBuilder("initConfiguration").addModifiers(Modifier.PUBLIC, Modifier.STATIC).addAnnotation(AnnotationSpec.builder(BeforeClass.class).build()).addStatement("$T.setProperties($S)", ClassName.get(" autoframework.service", "TestDataService"),"/src/test/resources/data_test/data.properties").build()).build();
+            JavaFile javaFile = JavaFile.builder("autoframework", runner)
+                    .build();
+            javaFile.writeTo(Paths.get("src/test/java"));
+        }
+    }
 
     private static void search(final String pattern, final File folder, List<FileDetail> result) {
         for (final File f : Objects.requireNonNull(folder.listFiles())) {
@@ -61,3 +61,4 @@ public class RunnerGenerator {
         }
     }
 }
+

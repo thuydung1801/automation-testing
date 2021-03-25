@@ -1,9 +1,10 @@
 Feature: InvoiceOrder
   Background:
-    Given go to the admin "adminPage"
-    When I login to admin with valid username and password
-    Then I should  be on Admin Porfile pages
-
+#    Given go to the admin "adminPage"
+#    When I login to admin with valid username and password
+#    Then I should  be on Admin Porfile pages
+    Given Login "adminPage" with "adminM2" and "admin123"
+    @test01
     Scenario: Update stone process
       Given  When I click Productions menu
       When  I click in Update Stone Process grid

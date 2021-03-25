@@ -7,35 +7,35 @@ Feature: As a user, i forgot my password, i want to reset my password
   Scenario: Visit the Forgot Password page
     Given Go to "signInPage" url
     When Click forgot Password button
-    Then Successfully into  forgotPassPage  front site
+    Then Successfully into forgotPassPage front site
 
   @test02
   Scenario: Get email to reset Password
     Given Go to "forgotPassPage" url
-    And Insert thanh.opentechiz1@gmail.com into box have id: email
+    And Insert thanh.opentechiz1@gmail.com into box have name: emailLogIn
     When Click Reset My Password button
     And Wait about 1 seconds
-    Then Successfully into  signInPage  front site
+    Then Successfully into signInPage front site
 
   @test03
   Scenario: Click Reset Password many times
     Given Go to "forgotPassPage" url
-    And Insert thanh.opentechiz1@gmail.com into box have id: email
+    And Insert thanh.opentechiz1@gmail.com into box have name: emailLogIn
     When Click Reset My Password button
     And Wait about 1 seconds
-    Then Show Error Messages :  We received too many requests for password resets. Please wait and try again later or contact service@glamira.co.uk.
+    Then Show Error Messages :We received too many requests for password resets. Please wait and try again later or contact service@glamira.co.uk.
 
   @test04
   Scenario: leave email blank
     Given Go to "forgotPassPage" url
     When Click Reset My Password button
     And Wait about 1 seconds
-    Then Show Error Messages :  Please enter your email.
+    Then Show Error Messages :Please enter your email.
 
   @test05
   Scenario: Cancel reset password
     Given Go to "forgotPassPage" url
-    And Insert thanh.opentechiz1@gmail.com into box have id: email
+    And Insert thanh.opentechiz1@gmail.com into box have name: emailLogIn
     When Click Go Back button
     And Wait about 1 seconds
-    Then Successfully into  signInPage  front site
+    Then Successfully into signInPage front site

@@ -19,10 +19,7 @@ public class CommonPageSteps {
             TestDataService.setProperties("//src//test//resources//data_test//data.properties");
         }
     }
-    @Given("^Go to \"([^\"]*)\" url$")
-    public void goToUrl(String url) {
-        nia.gotoUrl(url);
-    }
+
     @And("Wait about (.*) seconds")
     public void waitAboutSeconds(int second) throws InterruptedException {
         nia.waitAboutSeconds(second);
@@ -61,7 +58,7 @@ public class CommonPageSteps {
         System.out.println(" Insert "+ text+ " into " + id);
         nia.insertIntoFieldById(text, id);
     }
-    @Then("Show Error Messages : (.*)")
+    @Then("Show Error Messages :(.*)")
     public void checkErrorMsg(String expectMsg){
         System.out.println("show Messages: " + expectMsg );
         nia.getMsgError_fail(expectMsg);
@@ -170,7 +167,10 @@ public class CommonPageSteps {
         // Write code here that turns the phrase above into concrete actions
         nia.scrollToAndClick(message);
     }
-    
+    @Given("^Go to \"([^\"]*)\" url$")
+    public void goToUrl(String url) {
+        nia.gotoUrl(url);
+    }
 
 // -----Lan's code
 
