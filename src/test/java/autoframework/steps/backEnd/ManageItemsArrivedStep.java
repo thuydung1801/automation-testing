@@ -2,6 +2,7 @@ package autoframework.steps.backEnd;
 
 import autoframework.pages.backEnd.ManageItemsArrivedPage;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class ManageItemsArrivedStep {
@@ -19,5 +20,10 @@ public class ManageItemsArrivedStep {
     @And("^Click button : Ok$")
     public void clickButtonOk() {
         nia.clickButtonOk();
+    }
+    @Then("Show Messages in Manage Items Arrived: (.*)")
+    public void getMsgItem(String expectMsg){
+        System.out.println("show Messages: " + expectMsg );
+        nia.getMsgTranferInManageItemsArrivedPage(expectMsg);
     }
 }

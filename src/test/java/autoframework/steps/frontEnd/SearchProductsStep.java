@@ -9,14 +9,14 @@ public class SearchProductsStep {
     @Steps
     SearchProductsPage nia;
     @When("Insert key to block Search : (.*)")
-    public void insertKeySearch(String key) throws InterruptedException {
+    public void insertKeySearch(String key)  {
         System.out.println(" Insert key :"+ key);
         nia.insertSearch(key);
     }
     @When("Insert key to block Search and press down 4 time : (.*)")
     public void insertKey(String key) throws InterruptedException {
         System.out.println(" Insert key :"+ key);
-        nia.insertKey(key);
+        nia.insertKeyAndPress4Times(key);
     }
     @When("click search button")
     public void clickSearchBtn() throws InterruptedException {
@@ -30,7 +30,7 @@ public class SearchProductsStep {
     }
     @Then("Go to link: HOME /(.*)")
     public void getLk_Search(String expectLk){
-        System.out.println("Go to link: HOME / " + expectLk );
+
         nia.getLink_Search(expectLk);
     }
 }

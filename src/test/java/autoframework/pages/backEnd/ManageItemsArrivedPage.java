@@ -2,9 +2,11 @@ package autoframework.pages.backEnd;
 
 import autoframework.pages.CommonPage;
 import autoframework.service.TestDataService;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 
 public class ManageItemsArrivedPage extends CommonPage {
+    By MsgTranfer = By.className("message");
 
     public void chooseRowManageItemsArrivedPage(int numberOfRow) {
         String Row = "rowManageItemsArrived";
@@ -31,5 +33,9 @@ public class ManageItemsArrivedPage extends CommonPage {
     public void clickButtonOk() {
         getDriver().findElement(By.className("action-accept")).click();
 
+    }
+    public void getMsgTranferInManageItemsArrivedPage(String expectMsg) {
+        System.out.println("show actual msg:" +getDriver().findElement(MsgTranfer).getText());
+        Assert.assertEquals(expectMsg,getDriver().findElement(MsgTranfer).getText());
     }
 }

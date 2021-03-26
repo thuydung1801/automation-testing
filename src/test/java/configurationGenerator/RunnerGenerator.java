@@ -25,7 +25,15 @@ public class RunnerGenerator {
             String featurePath = "{\"" + s.path + "\"}";
             TypeSpec runner = TypeSpec.classBuilder(runnerName)
                     .addModifiers(Modifier.PUBLIC)
-                    .addAnnotation(AnnotationSpec.builder(RunWith.class).addMember("value", "$T.class", CucumberWithSerenity.class).build()).addAnnotation(AnnotationSpec.builder(CucumberOptions.class).addMember("features", "$L",featurePath ).addMember("plugin", "$L", cucumberFormat).build()).addMethod(MethodSpec.methodBuilder("initConfiguration").addModifiers(Modifier.PUBLIC, Modifier.STATIC).addAnnotation(AnnotationSpec.builder(BeforeClass.class).build()).addStatement("$T.setProperties($S)", ClassName.get(" autoframework.service", "TestDataService"),"/src/test/resources/data_test/data.properties").build()).build();
+                    .addAnnotation(AnnotationSpec.builder(RunWith.class).addMember("value", "$T.class", CucumberWithSerenity.class)
+                            .build()).addAnnotation(AnnotationSpec.builder(CucumberOptions.class).addMember("features", "$L",featurePath )
+                            .addMember("plugin", "$L", cucumberFormat).build())
+                    .addMethod(MethodSpec.methodBuilder("initConfiguration")
+                            .addModifiers(Modifier.PUBLIC, Modifier.STATIC)
+                            .addAnnotation(AnnotationSpec.builder(BeforeClass.class)
+                                    .build())
+                            .addStatement("$T.setProperties($S)", ClassName.get(" autoframework.service", "TestDataService"),"/src/test/resources/data_test/data.properties")
+                            .build()).build();
             JavaFile javaFile = JavaFile.builder("autoframework", runner)
                     .build();
             javaFile.writeTo(Paths.get("src/test/java"));

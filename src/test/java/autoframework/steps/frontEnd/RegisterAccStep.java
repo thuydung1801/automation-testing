@@ -20,22 +20,22 @@ public class RegisterAccStep  {
         nia.AcceptBtn();
     }
     @When("Click Submit button")
-    public void clickSubmitBtn() throws InterruptedException {
+    public void clickSubmitBtn()  {
         System.out.println("Click Submit Button");
         nia.SubmitBtn();
     }
     @Then("^Show error-box$")
-    public void error_box() throws Exception {
+    public void error_box() {
         System.out.println("login fail");
     }
 
-    @Then("Show Error Messages under button : (.*)")
+    @Then("Show Error Messages under button :(.*)")
     public void getMsgError_acceptBtn(String expectMsg){
         System.out.println("show Messages: " + expectMsg );
         nia.getMsgError_acceptBtn(expectMsg);
     }
 
-     @Then("Show Error Messages under blank : (.*)")
+     @Then("Show Error Messages under blank :(.*)")
     public void checkErrorMsg_firstName_blank(String expectMsg){
         System.out.println("show Messages: " + expectMsg );
         nia.getMsgError_all_blank(expectMsg);

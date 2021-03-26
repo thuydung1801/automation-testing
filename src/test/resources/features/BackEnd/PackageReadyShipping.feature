@@ -1,14 +1,13 @@
-Feature:
+Feature: Create Ship and generate label
   Background:
     Given Go to "adminPage" url
-    When Insert adminM2 into box have id: emailAdmin
-    And Insert admin123 into box have id: passAdmin
-    And Click button by class signInBtn
+    When Insert adminM2 into box have id: username
+    And Insert admin123 into box have id: login
+    And Click button by class action-primary
+      # click sign in btn
     Then Successfully into DashboardPage front site
     Given Go to "PackageReadyShipping" url
 #    viết môi trường lọc
-
-
 
 
   @Test01

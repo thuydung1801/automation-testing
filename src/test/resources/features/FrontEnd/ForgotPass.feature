@@ -12,15 +12,15 @@ Feature: As a user, i forgot my password, i want to reset my password
   @test02
   Scenario: Get email to reset Password
     Given Go to "forgotPassPage" url
-    And Insert thanh.opentechiz1@gmail.com into box have name: emailLogIn
+    And Insert emailForgot into box have name: email
     When Click Reset My Password button
-    And Wait about 1 seconds
+    And Wait about 10 seconds
     Then Successfully into signInPage front site
 
   @test03
   Scenario: Click Reset Password many times
     Given Go to "forgotPassPage" url
-    And Insert thanh.opentechiz1@gmail.com into box have name: emailLogIn
+    And Insert emailForgot into box have name: email
     When Click Reset My Password button
     And Wait about 1 seconds
     Then Show Error Messages :We received too many requests for password resets. Please wait and try again later or contact service@glamira.co.uk.
@@ -35,7 +35,7 @@ Feature: As a user, i forgot my password, i want to reset my password
   @test05
   Scenario: Cancel reset password
     Given Go to "forgotPassPage" url
-    And Insert thanh.opentechiz1@gmail.com into box have name: emailLogIn
+    And Insert emailForgot into box have name: email
     When Click Go Back button
     And Wait about 1 seconds
     Then Successfully into signInPage front site

@@ -12,12 +12,12 @@ public class ForgotPassStep {
         nia.forgotPassBtn();
     }
     @When("Click Reset My Password button")
-    public void clickResetMyPassBtn() throws InterruptedException {
+    public void clickResetMyPassBtn() {
         System.out.println("Click Reset my Password Button");
         nia.resetMyPassBtn();
     }
     @When("Click Go Back button")
-    public void clickGoBackBtn() throws InterruptedException {
+    public void clickGoBackBtn()  {
         System.out.println("Click Go Back Button");
         nia.goBackBtn();
     }
@@ -26,4 +26,10 @@ public class ForgotPassStep {
         System.out.println("show Messages: " + expectMsg );
         nia.getMsgSuc_forgotPass(expectMsg);
     }
+    @Then("Show Error Messages :(.*)")
+    public void checkErrorMsg(String expectMsg){
+        System.out.println("show Messages: " + expectMsg );
+        nia.getMsgError_fail(expectMsg);
+    }
+
 }

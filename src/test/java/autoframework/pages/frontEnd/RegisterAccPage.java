@@ -16,7 +16,7 @@ public class RegisterAccPage extends CommonPage {
     By msgError_emailConfirm_blank = By.id("emailconfirm-error");
     By msgError_password_blank = By.id("password-error");
     By msgError_passwordConfirmation_blank = By.id("password-confirmation-error");
-    By msgError_acceptBtn= By.id("advice-required-entry-agreement-6");
+    By msgError_acceptBtn= By.id("is_subscribed-error");
 
 
     // Click button
@@ -26,7 +26,7 @@ public class RegisterAccPage extends CommonPage {
     public void AcceptBtn(){
         getDriver().findElement(acceptBtn).click();
     }
-    public void SubmitBtn() throws InterruptedException {
+    public void SubmitBtn()  {
         getDriver().findElement(submitBtn).click();
     }
     // register fail
