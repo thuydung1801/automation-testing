@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="As a user, i forgot my password, i want to reset my password" skipped="0" tests="5" time="74.91" timestamp="2021-03-27T10:49:48.383505081+07:00[Asia/Ho_Chi_Minh]"><testcase name="Visit the Forgot Password page"/><testcase name="Get email to reset Password"/><testcase name="Click Reset Password many times"/><testcase name="leave email blank"><error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;maincontent&quot;]/div[1]/div[2]/div/div/div&quot;}&#10;  (Session info: chrome=89.0.4389.90)&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'huong-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '15.0.2'&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.90, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: /tmp/.com.google.Chrome.EhfdGL}, goog:chromeOptions: {debuggerAddress: localhost:43937}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: a3409f455d1b0e881869b67d7dbdd17e&#10;*** Element info: {Using=xpath, value=//*[@id=&quot;maincontent&quot;]/div[1]/div[2]/div/div/div}&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'huong-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '15.0.2'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException">no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="maincontent"]/div[1]/div[2]/div/div/div"}
+  (Session info: chrome=89.0.4389.90)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'huong-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '15.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.90, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: /tmp/.com.google.Chrome.EhfdGL}, goog:chromeOptions: {debuggerAddress: localhost:43937}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a3409f455d1b0e881869b67d7dbdd17e
+*** Element info: {Using=xpath, value=//*[@id="maincontent"]/div[1]/div[2]/div/div/div}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'huong-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '15.0.2'
+Driver info: driver.version: unknown</error><system-err>no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="maincontent"]/div[1]/div[2]/div/div/div"}
+  (Session info: chrome=89.0.4389.90)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'huong-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '15.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.90, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: /tmp/.com.google.Chrome.EhfdGL}, goog:chromeOptions: {debuggerAddress: localhost:43937}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a3409f455d1b0e881869b67d7dbdd17e
+*** Element info: {Using=xpath, value=//*[@id="maincontent"]/div[1]/div[2]/div/div/div}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'huong-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '15.0.2'
+Driver info: driver.version: unknown
+java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+autoframework.pages.frontEnd.ForgotPassPage.getMsgError_fail(ForgotPassPage.java:26)
+autoframework.steps.frontEnd.ForgotPassStep.checkErrorMsg(ForgotPassStep.java:32)
+✽.Show Error Messages :Please enter your email.(src/test/resources/features/FrontEnd/ForgotPass.feature:33)
+</system-err></testcase><testcase name="Cancel reset password"/></testsuite>

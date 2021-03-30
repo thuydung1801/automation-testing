@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Login" skipped="0" tests="2" time="29.05" timestamp="2021-03-30T10:07:31.614477755+07:00[Asia/Ho_Chi_Minh]"><testcase name="Verify Login success with valid username and password"/><testcase name="Verify Login fail with invalid username and password"/></testsuite>
