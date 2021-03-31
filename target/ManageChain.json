@@ -1,0 +1,1131 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "login in admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 16186544448,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 166369712,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "Add new chain",
+        "description": "",
+        "id": "manage-chain;add-new-chain;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4871446913,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Go to \"manageChain\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "manageChain",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8044860490,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Click on New Semi Product/Chain button",
+            "match": {
+              "location": "ManageChainStepdefs.clickOnNewSemiProductChainButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 8979821217,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Input chain information \"stockID1\" \"Forzentina\" \"375 Gold - 9K\" \"Rose\" \"weightOfChain\" \"rawMaterialserialNo1\" \"chainQty\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "stockID1",
+                  "offset": 25
+                },
+                {
+                  "val": "Forzentina",
+                  "offset": 36
+                },
+                {
+                  "val": "375 Gold - 9K",
+                  "offset": 49
+                },
+                {
+                  "val": "Rose",
+                  "offset": 65
+                },
+                {
+                  "val": "weightOfChain",
+                  "offset": 72
+                },
+                {
+                  "val": "rawMaterialserialNo1",
+                  "offset": 88
+                },
+                {
+                  "val": "chainQty",
+                  "offset": 111
+                }
+              ],
+              "location": "ManageChainStepdefs.inputChainInformation(String,String,String,String,String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8539108464,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Click on Save",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnSave()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: expected:\u003ctrue\u003e but was:\u003cfalse\u003e\n\tat junit.framework.Assert.fail(Assert.java:57)\n\tat junit.framework.Assert.failNotEquals(Assert.java:329)\n\tat junit.framework.Assert.assertEquals(Assert.java:78)\n\tat junit.framework.Assert.assertEquals(Assert.java:174)\n\tat junit.framework.Assert.assertEquals(Assert.java:181)\n\tat junit.framework.TestCase.assertEquals(TestCase.java:341)\n\tat autoframework.pages.CommonPageL.validateInformation(CommonPageL.java:507)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.CGLIB$validateInformation$8(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7$$FastClassByCGLIB$$f6b7e0e8.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.validateInformation(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL.validateResultMsg(CommonPageL.java:672)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.CGLIB$validateResultMsg$30(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7$$FastClassByCGLIB$$f6b7e0e8.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.validateResultMsg(\u003cgenerated\u003e)\n\tat autoframework.steps.CommonStepdefs_L.theMessageIsShown(CommonStepdefs_L.java:104)\n\tat ✽.The \"successfulSaveChain\" Message is shown(src/test/resources/features/BackEnd/ManageChain.feature:11)\n",
+              "duration": 3779381056,
+              "status": "failed"
+            },
+            "line": 11,
+            "name": "The \"successfulSaveChain\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulSaveChain",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "login in admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13271041709,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5318404,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "Add new chain",
+        "description": "",
+        "id": "manage-chain;add-new-chain;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4092929829,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Go to \"manageChain\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "manageChain",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9152122567,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Click on New Semi Product/Chain button",
+            "match": {
+              "location": "ManageChainStepdefs.clickOnNewSemiProductChainButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 8865687769,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Input chain information \"stockID2\" \"Diamond Cut Spiga\" \"585 Gold - 14K\" \"Yellow\" \"weightOfChain\" \"rawMaterialserialNo1\" \"chainQty\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "stockID2",
+                  "offset": 25
+                },
+                {
+                  "val": "Diamond Cut Spiga",
+                  "offset": 36
+                },
+                {
+                  "val": "585 Gold - 14K",
+                  "offset": 56
+                },
+                {
+                  "val": "Yellow",
+                  "offset": 73
+                },
+                {
+                  "val": "weightOfChain",
+                  "offset": 82
+                },
+                {
+                  "val": "rawMaterialserialNo1",
+                  "offset": 98
+                },
+                {
+                  "val": "chainQty",
+                  "offset": 121
+                }
+              ],
+              "location": "ManageChainStepdefs.inputChainInformation(String,String,String,String,String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8586694417,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Click on Save",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnSave()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: expected:\u003ctrue\u003e but was:\u003cfalse\u003e\n\tat junit.framework.Assert.fail(Assert.java:57)\n\tat junit.framework.Assert.failNotEquals(Assert.java:329)\n\tat junit.framework.Assert.assertEquals(Assert.java:78)\n\tat junit.framework.Assert.assertEquals(Assert.java:174)\n\tat junit.framework.Assert.assertEquals(Assert.java:181)\n\tat junit.framework.TestCase.assertEquals(TestCase.java:341)\n\tat autoframework.pages.CommonPageL.validateInformation(CommonPageL.java:507)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.CGLIB$validateInformation$8(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7$$FastClassByCGLIB$$f6b7e0e8.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.validateInformation(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL.validateResultMsg(CommonPageL.java:672)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.CGLIB$validateResultMsg$30(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7$$FastClassByCGLIB$$f6b7e0e8.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.validateResultMsg(\u003cgenerated\u003e)\n\tat autoframework.steps.CommonStepdefs_L.theMessageIsShown(CommonStepdefs_L.java:104)\n\tat ✽.The \"successfulSaveChain\" Message is shown(src/test/resources/features/BackEnd/ManageChain.feature:11)\n",
+              "duration": 3720352005,
+              "status": "failed"
+            },
+            "line": 11,
+            "name": "The \"successfulSaveChain\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulSaveChain",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "login in admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13641954895,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5017572,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Add new chain",
+        "description": "",
+        "id": "manage-chain;add-new-chain;;4",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3972856164,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Go to \"manageChain\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "manageChain",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7793008512,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Click on New Semi Product/Chain button",
+            "match": {
+              "location": "ManageChainStepdefs.clickOnNewSemiProductChainButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: The following error occurred: Cannot locate element with text: Curb  With Bar\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.7.1\u0027, revision: \u00278a0099a\u0027, time: \u00272017-11-06T21:01:39.354Z\u0027\nSystem info: host: \u0027lan-HP-Compaq-Pro-6300-SFF\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00275.8.0-48-generic\u0027, java.version: \u00271.8.0_282\u0027\nDriver info: driver.version: unknown\n\tat org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)\n\tat autoframework.pages.CommonPageL.selectOtionByText(CommonPageL.java:290)\n\tat autoframework.pages.backEnd.ManageChainPage$$EnhancerByCGLIB$$3a0a25fc.CGLIB$selectOtionByText$47(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.ManageChainPage$$EnhancerByCGLIB$$3a0a25fc$$FastClassByCGLIB$$48d637fd.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.ManageChainPage$$EnhancerByCGLIB$$3a0a25fc.selectOtionByText(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.ManageChainPage.inputChainInformation(ManageChainPage.java:29)\n\tat autoframework.pages.backEnd.ManageChainPage$$EnhancerByCGLIB$$3a0a25fc.CGLIB$inputChainInformation$1(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.ManageChainPage$$EnhancerByCGLIB$$3a0a25fc$$FastClassByCGLIB$$48d637fd.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.ManageChainPage$$EnhancerByCGLIB$$3a0a25fc.inputChainInformation(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.ManageChainStepdefs.inputChainInformation(ManageChainStepdefs.java:18)\n\tat ✽.Input chain information \"stockID3\" \"Curb  With Bar\" \"750 Gold - 18K\" \"Yellow\" \"weightOfChain\" \"rawMaterialserialNo1\" \"chainQty\"(src/test/resources/features/BackEnd/ManageChain.feature:9)\n",
+              "duration": 2870799308,
+              "status": "failed"
+            },
+            "line": 9,
+            "name": "Input chain information \"stockID3\" \"Curb  With Bar\" \"750 Gold - 18K\" \"Yellow\" \"weightOfChain\" \"rawMaterialserialNo1\" \"chainQty\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "stockID3",
+                  "offset": 25
+                },
+                {
+                  "val": "Curb  With Bar",
+                  "offset": 36
+                },
+                {
+                  "val": "750 Gold - 18K",
+                  "offset": 53
+                },
+                {
+                  "val": "Yellow",
+                  "offset": 70
+                },
+                {
+                  "val": "weightOfChain",
+                  "offset": 79
+                },
+                {
+                  "val": "rawMaterialserialNo1",
+                  "offset": 95
+                },
+                {
+                  "val": "chainQty",
+                  "offset": 118
+                }
+              ],
+              "location": "ManageChainStepdefs.inputChainInformation(String,String,String,String,String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "Click on Save",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnSave()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "The \"successfulSaveChain\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulSaveChain",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "login in admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 15328997502,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4327079,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "Add new chain",
+        "description": "",
+        "id": "manage-chain;add-new-chain;;5",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3920925755,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Go to \"manageChain\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "manageChain",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7749762155,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Click on New Semi Product/Chain button",
+            "match": {
+              "location": "ManageChainStepdefs.clickOnNewSemiProductChainButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 8932786735,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Input chain information \"stockID4\" \"Twist Chain\" \"925 Silver\" \"White\" \"weightOfChain\" \"abcde\" \"chainQty\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "stockID4",
+                  "offset": 25
+                },
+                {
+                  "val": "Twist Chain",
+                  "offset": 36
+                },
+                {
+                  "val": "925 Silver",
+                  "offset": 50
+                },
+                {
+                  "val": "White",
+                  "offset": 63
+                },
+                {
+                  "val": "weightOfChain",
+                  "offset": 71
+                },
+                {
+                  "val": "abcde",
+                  "offset": 87
+                },
+                {
+                  "val": "chainQty",
+                  "offset": 95
+                }
+              ],
+              "location": "ManageChainStepdefs.inputChainInformation(String,String,String,String,String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8464050238,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Click on Save",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnSave()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: expected:\u003ctrue\u003e but was:\u003cfalse\u003e\n\tat junit.framework.Assert.fail(Assert.java:57)\n\tat junit.framework.Assert.failNotEquals(Assert.java:329)\n\tat junit.framework.Assert.assertEquals(Assert.java:78)\n\tat junit.framework.Assert.assertEquals(Assert.java:174)\n\tat junit.framework.Assert.assertEquals(Assert.java:181)\n\tat junit.framework.TestCase.assertEquals(TestCase.java:341)\n\tat autoframework.pages.CommonPageL.validateInformation(CommonPageL.java:507)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.CGLIB$validateInformation$8(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7$$FastClassByCGLIB$$f6b7e0e8.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.validateInformation(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL.validateResultMsg(CommonPageL.java:672)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.CGLIB$validateResultMsg$30(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7$$FastClassByCGLIB$$f6b7e0e8.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.validateResultMsg(\u003cgenerated\u003e)\n\tat autoframework.steps.CommonStepdefs_L.theMessageIsShown(CommonStepdefs_L.java:104)\n\tat ✽.The \"errorSaveChain\" Message is shown(src/test/resources/features/BackEnd/ManageChain.feature:11)\n",
+              "duration": 3652356003,
+              "status": "failed"
+            },
+            "line": 11,
+            "name": "The \"errorSaveChain\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "errorSaveChain",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "login in admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13722568961,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4688696,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 27,
+        "name": "Edit a chain (add plus chain weight)",
+        "description": "",
+        "id": "manage-chain;edit-a-chain-(add-plus-chain-weight);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4952594854,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "Go to \"manageChain\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "manageChain",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 11104525444,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "View detail of the chain has \"stockID1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "stockID1",
+                  "offset": 30
+                }
+              ],
+              "location": "ManageChainStepdefs.viewDetailOfTheChainHas(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 579997261,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Input plus weight \"plusChainWeight\" \"0.01\" \"0.01\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "plusChainWeight",
+                  "offset": 19
+                },
+                {
+                  "val": "0.01",
+                  "offset": 37
+                },
+                {
+                  "val": "0.01",
+                  "offset": 44
+                }
+              ],
+              "location": "ManageChainStepdefs.inputPlusWeight(String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8542285415,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Click on Save",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnSave()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3247819204,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "The \"successfulSaveChain\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulSaveChain",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "login in admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13250313610,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3327590,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 28,
+        "name": "Edit a chain (add plus chain weight)",
+        "description": "",
+        "id": "manage-chain;edit-a-chain-(add-plus-chain-weight);;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4001409925,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "Go to \"manageChain\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "manageChain",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 11057859451,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "View detail of the chain has \"stockID1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "stockID1",
+                  "offset": 30
+                }
+              ],
+              "location": "ManageChainStepdefs.viewDetailOfTheChainHas(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 585212989,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Input plus weight \"plusChainWeight\" \"\" \"\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "plusChainWeight",
+                  "offset": 19
+                },
+                {
+                  "val": "",
+                  "offset": 37
+                },
+                {
+                  "val": "",
+                  "offset": 40
+                }
+              ],
+              "location": "ManageChainStepdefs.inputPlusWeight(String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10857096044,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Click on Save",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnSave()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: expected:\u003ctrue\u003e but was:\u003cfalse\u003e\n\tat junit.framework.Assert.fail(Assert.java:57)\n\tat junit.framework.Assert.failNotEquals(Assert.java:329)\n\tat junit.framework.Assert.assertEquals(Assert.java:78)\n\tat junit.framework.Assert.assertEquals(Assert.java:174)\n\tat junit.framework.Assert.assertEquals(Assert.java:181)\n\tat junit.framework.TestCase.assertEquals(TestCase.java:341)\n\tat autoframework.pages.CommonPageL.validateInformation(CommonPageL.java:507)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.CGLIB$validateInformation$8(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7$$FastClassByCGLIB$$f6b7e0e8.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.validateInformation(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL.validateResultMsg(CommonPageL.java:672)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.CGLIB$validateResultMsg$30(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7$$FastClassByCGLIB$$f6b7e0e8.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.validateResultMsg(\u003cgenerated\u003e)\n\tat autoframework.steps.CommonStepdefs_L.theMessageIsShown(CommonStepdefs_L.java:104)\n\tat ✽.The \"errorSaveChain\" Message is shown(src/test/resources/features/BackEnd/ManageChain.feature:24)\n",
+              "duration": 3653968086,
+              "status": "failed"
+            },
+            "line": 24,
+            "name": "The \"errorSaveChain\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "errorSaveChain",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "login in admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13315606124,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3240947,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 31,
+        "name": "Log usage when update chain code for an item",
+        "description": "",
+        "id": "manage-chain;log-usage-when-update-chain-code-for-an-item",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3626157681,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "Go to \"updateProductionProcess\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "updateProductionProcess",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 6353911067,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "Input \"needAddChainCodeBarcode\" to the barcode box",
+            "match": {
+              "arguments": [
+                {
+                  "val": "needAddChainCodeBarcode",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateProcessStepdefs.inputToTheBarcodeBox(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: The following error occurred: Expected condition failed: waiting for presence of element located by: By.cssSelector: input#chain_code (tried for 15 second(s) with 500 MILLISECONDS interval)\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)\n\tat autoframework.pages.CommonPageL.insertIntoField(CommonPageL.java:185)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.CGLIB$insertIntoField$59(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea$$FastClassByCGLIB$$56a79c47.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.insertIntoField(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateProcessPage.inputChainCode(UpdateProcessPage.java:96)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.CGLIB$inputChainCode$13(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea$$FastClassByCGLIB$$56a79c47.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.inputChainCode(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.UpdateProcessStepdefs.inputChainCode(UpdateProcessStepdefs.java:95)\n\tat ✽.Input \"chainCode\" and \"chainWeight\"(src/test/resources/features/BackEnd/ManageChain.feature:34)\nCaused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.cssSelector: input#chain_code\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.7.1\u0027, revision: \u00278a0099a\u0027, time: \u00272017-11-06T21:01:39.354Z\u0027\nSystem info: host: \u0027lan-HP-Compaq-Pro-6300-SFF\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00275.8.0-48-generic\u0027, java.version: \u00271.8.0_282\u0027\nDriver info: driver.version: unknown\n\tat org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)\n\tat java.util.Optional.orElseThrow(Optional.java:290)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)\n\tat autoframework.pages.CommonPageL.insertIntoField(CommonPageL.java:185)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.CGLIB$insertIntoField$59(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea$$FastClassByCGLIB$$56a79c47.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.insertIntoField(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateProcessPage.inputChainCode(UpdateProcessPage.java:96)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.CGLIB$inputChainCode$13(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea$$FastClassByCGLIB$$56a79c47.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.inputChainCode(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.UpdateProcessStepdefs.inputChainCode(UpdateProcessStepdefs.java:95)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat cucumber.runtime.Utils$1.call(Utils.java:32)\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\n\tat cucumber.runtime.Utils.invoke(Utils.java:26)\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:37)\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:40)\n\tat cucumber.api.TestStep.executeStep(TestStep.java:102)\n\tat cucumber.api.TestStep.run(TestStep.java:83)\n\tat cucumber.api.TestCase.run(TestCase.java:58)\n\tat cucumber.runner.Runner.runPickle(Runner.java:80)\n\tat cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:99)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:41)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:108)\n\tat org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220)\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53)\n",
+              "duration": 17834415885,
+              "status": "failed"
+            },
+            "line": 34,
+            "name": "Input \"chainCode\" and \"chainWeight\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "chainCode",
+                  "offset": 7
+                },
+                {
+                  "val": "chainWeight",
+                  "offset": 23
+                }
+              ],
+              "location": "UpdateProcessStepdefs.inputChainCode(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 35,
+            "name": "Click on Take in button",
+            "match": {
+              "location": "UpdateProcessStepdefs.clickOnTakeInButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 36,
+            "name": "Go to \"manageChain\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "manageChain",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 37,
+            "name": "View detail of the chain has \"chainCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "chainCode",
+                  "offset": 30
+                }
+              ],
+              "location": "ManageChainStepdefs.viewDetailOfTheChainHas(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 38,
+            "name": "View the chain\u0027s history usage",
+            "match": {
+              "location": "ManageChainStepdefs.viewTheChainSHistoryUsage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 39,
+            "name": "The weight usage logged is \"chainWeight\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "chainWeight",
+                  "offset": 28
+                }
+              ],
+              "location": "ManageMetalStepdefs.theWeightUsageLoggedIs(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Manage Chain",
+    "description": "",
+    "id": "manage-chain",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/BackEnd/ManageChain.feature"
+  }
+]

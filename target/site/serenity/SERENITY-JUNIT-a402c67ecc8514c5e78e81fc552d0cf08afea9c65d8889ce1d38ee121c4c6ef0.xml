@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="2" failures="4" name="Manage Chain" skipped="0" tests="7" time="309.51" timestamp="2021-03-31T11:03:52.621+07:00[Asia/Ho_Chi_Minh]"><testcase name="Add new chain"><error message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">expected:&lt;true&gt; but was:&lt;false&gt;</error><system-err>expected:&lt;true&gt; but was:&lt;false&gt;
+junit.framework.Assert.fail(Assert.java:57)
+junit.framework.Assert.failNotEquals(Assert.java:329)
+junit.framework.Assert.assertEquals(Assert.java:78)
+junit.framework.Assert.assertEquals(Assert.java:174)
+junit.framework.Assert.assertEquals(Assert.java:181)
+junit.framework.TestCase.assertEquals(TestCase.java:341)
+autoframework.pages.CommonPageL.validateInformation(CommonPageL.java:507)
+autoframework.pages.CommonPageL.validateResultMsg(CommonPageL.java:672)
+autoframework.steps.CommonStepdefs_L.theMessageIsShown(CommonStepdefs_L.java:104)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase><testcase name="Edit a chain (add plus chain weight)"><failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">expected:&lt;true&gt; but was:&lt;false&gt;</failure><system-err>expected:&lt;true&gt; but was:&lt;false&gt;
+junit.framework.Assert.fail(Assert.java:57)
+junit.framework.Assert.failNotEquals(Assert.java:329)
+junit.framework.Assert.assertEquals(Assert.java:78)
+junit.framework.Assert.assertEquals(Assert.java:174)
+junit.framework.Assert.assertEquals(Assert.java:181)
+junit.framework.TestCase.assertEquals(TestCase.java:341)
+autoframework.pages.CommonPageL.validateInformation(CommonPageL.java:507)
+autoframework.pages.CommonPageL.validateResultMsg(CommonPageL.java:672)
+autoframework.steps.CommonStepdefs_L.theMessageIsShown(CommonStepdefs_L.java:104)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase><testcase name="Log usage when update chain code for an item"><error message="The following error occurred: Expected condition failed: waiting for presence of element located by: By.cssSelector: input#chain_code (tried for 15 second(s) with 500 MILLISECONDS interval)&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.TimeoutException">The following error occurred: Expected condition failed: waiting for presence of element located by: By.cssSelector: input#chain_code (tried for 15 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown</error><system-err>The following error occurred: Expected condition failed: waiting for presence of element located by: By.cssSelector: input#chain_code (tried for 15 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown
+autoframework.pages.CommonPageL.insertIntoField(CommonPageL.java:185)
+autoframework.pages.backEnd.UpdateProcessPage.inputChainCode(UpdateProcessPage.java:96)
+autoframework.steps.backEnd.UpdateProcessStepdefs.inputChainCode(UpdateProcessStepdefs.java:95)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase></testsuite>

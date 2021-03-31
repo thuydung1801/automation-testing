@@ -1,0 +1,666 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "An item is added into the cart",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14774461752,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Go to \"itemDetail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "itemDetail",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 525951361,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Click on \"selectSizeButton\" then select \"selectSize\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "selectSizeButton",
+                  "offset": 10
+                },
+                {
+                  "val": "selectSize",
+                  "offset": 41
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOnThenSelect(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6363714445,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Click on \"addToCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "addToCart",
+                  "offset": 10
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOn(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 175763270,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "Add two similar products into the cart",
+        "description": "",
+        "id": "the-cart-page;add-two-similar-products-into-the-cart",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10846213526,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Go to \"itemDetail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "itemDetail",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 385252898,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Click on \"selectSizeButton\" then select \"selectSize\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "selectSizeButton",
+                  "offset": 10
+                },
+                {
+                  "val": "selectSize",
+                  "offset": 41
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOnThenSelect(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6394579894,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Click on \"addToCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "addToCart",
+                  "offset": 10
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOn(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 14740862433,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Click on \"viewCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "viewCart",
+                  "offset": 10
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOn(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3180675688,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "The site will redirect to \"theCart\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "theCart",
+                  "offset": 27
+                }
+              ],
+              "location": "CommonStepdefs_L.theSiteWillRedirectToUrl(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3299472950,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "The current quantity is \"2\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 25
+                }
+              ],
+              "location": "CartPageStepdefs.theCurrentQuantityIs(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "An item is added into the cart",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 11406831175,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Go to \"itemDetail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "itemDetail",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 397534596,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Click on \"selectSizeButton\" then select \"selectSize\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "selectSizeButton",
+                  "offset": 10
+                },
+                {
+                  "val": "selectSize",
+                  "offset": 41
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOnThenSelect(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6400536939,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Click on \"addToCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "addToCart",
+                  "offset": 10
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOn(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 6939669,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Change the quantity in the cart",
+        "description": "",
+        "id": "the-cart-page;change-the-quantity-in-the-cart",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12244603903,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Go to \"theCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "theCart",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 26462127997,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "input \"newQuantity\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "newQuantity",
+                  "offset": 7
+                }
+              ],
+              "location": "CartPageStepdefs.input(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3240734575,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "The subTotalPrice is \"changedPrice\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "changedPrice",
+                  "offset": 22
+                }
+              ],
+              "location": "CartPageStepdefs.theSubTotalPriceIs(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "An item is added into the cart",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 11023829837,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Go to \"itemDetail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "itemDetail",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 419183100,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Click on \"selectSizeButton\" then select \"selectSize\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "selectSizeButton",
+                  "offset": 10
+                },
+                {
+                  "val": "selectSize",
+                  "offset": 41
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOnThenSelect(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6418540826,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Click on \"addToCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "addToCart",
+                  "offset": 10
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOn(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5762463,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 21,
+        "name": "Add another item into the cart",
+        "description": "",
+        "id": "the-cart-page;add-another-item-into-the-cart",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 23142227122,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Go to \"anotherItemDetail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "anotherItemDetail",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 431687712,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Click on \"selectSizeButton\" then select \"selectSize\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "selectSizeButton",
+                  "offset": 10
+                },
+                {
+                  "val": "selectSize",
+                  "offset": 41
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOnThenSelect(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6391401632,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Click on \"addToCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "addToCart",
+                  "offset": 10
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOn(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15270723769,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Click on \"viewCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "viewCart",
+                  "offset": 10
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOn(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3297882416,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "The totalPrice is \"newTotalPrice\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "newTotalPrice",
+                  "offset": 19
+                }
+              ],
+              "location": "CartPageStepdefs.theTotalPriceIs(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "An item is added into the cart",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 10897698616,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Go to \"itemDetail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "itemDetail",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 469352264,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Click on \"selectSizeButton\" then select \"selectSize\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "selectSizeButton",
+                  "offset": 10
+                },
+                {
+                  "val": "selectSize",
+                  "offset": 41
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOnThenSelect(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6368745430,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Click on \"addToCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "addToCart",
+                  "offset": 10
+                }
+              ],
+              "location": "CommonStepdefs_L.clickOn(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4922155,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 28,
+        "name": "Remove an item from the cart",
+        "description": "",
+        "id": "the-cart-page;remove-an-item-from-the-cart",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 13535207621,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "Go to \"theCart\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "theCart",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9952343282,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "Click on removedBtn",
+            "match": {
+              "location": "CartPageStepdefs.clickOnRemovedBtn()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3237609186,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "The shoping bag is empty",
+            "match": {
+              "location": "CartPageStepdefs.theShopingBagIsEmpty()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "The cart page",
+    "description": "",
+    "id": "the-cart-page",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/FrontEnd/CartPage.feature"
+  }
+]

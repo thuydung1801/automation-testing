@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="3" failures="0" name="Update degree code" skipped="0" tests="5" time="271.9" timestamp="2021-03-31T11:52:33.828+07:00[Asia/Ho_Chi_Minh]"><testcase name="Update degree code successfully"/><testcase name="Update too degree code successfully"><error message="The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: button#new_degree (tried for 15 second(s) with 500 MILLISECONDS interval)&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.TimeoutException">The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: button#new_degree (tried for 15 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown</error><system-err>The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: button#new_degree (tried for 15 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown
+autoframework.pages.CommonPageL.click(CommonPageL.java:74)
+autoframework.pages.backEnd.UpdateDegreeCodePage.clickOnAddMoreButton(UpdateDegreeCodePage.java:37)
+autoframework.steps.backEnd.UpdateDegreeCodeStepdefs.clickOnAddMoreButton(UpdateDegreeCodeStepdefs.java:23)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase><testcase name="Can not update when the gold types are not the same"/><testcase name="Update three degree code for three barcodes successfully"><error message="The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: tbody.list_barcode tr:nth-of-type(2) td.item2 input (tried for 15 second(s) with 500 MILLISECONDS interval)&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.TimeoutException">The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: tbody.list_barcode tr:nth-of-type(2) td.item2 input (tried for 15 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown</error><system-err>The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: tbody.list_barcode tr:nth-of-type(2) td.item2 input (tried for 15 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown
+autoframework.pages.CommonPageL.click(CommonPageL.java:74)
+autoframework.pages.backEnd.UpdateDegreeCodePage.clickOnCheckboxes(UpdateDegreeCodePage.java:63)
+autoframework.steps.backEnd.UpdateDegreeCodeStepdefs.clickOnCheckboxes(UpdateDegreeCodeStepdefs.java:48)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase><testcase name="Can not update added degree codes"><error message="The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: tbody.list_barcode tr:nth-of-type(2) td.item2 input (tried for 15 second(s) with 500 MILLISECONDS interval)&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.TimeoutException">The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: tbody.list_barcode tr:nth-of-type(2) td.item2 input (tried for 15 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown</error><system-err>The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: tbody.list_barcode tr:nth-of-type(2) td.item2 input (tried for 15 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown
+autoframework.pages.CommonPageL.click(CommonPageL.java:74)
+autoframework.pages.backEnd.UpdateDegreeCodePage.clickOnCheckboxes(UpdateDegreeCodePage.java:63)
+autoframework.steps.backEnd.UpdateDegreeCodeStepdefs.clickOnCheckboxes(UpdateDegreeCodeStepdefs.java:48)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase></testsuite>

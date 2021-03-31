@@ -1,0 +1,907 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Login in backend",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14079037255,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 190675131,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "Update degree code successfully",
+        "description": "",
+        "id": "update-degree-code;update-degree-code-successfully",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3606672488,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Go to \"updateDegreeCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "updateDegreeCode",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3364540624,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Enter \"haveToUpdateDegreeCodeBarcode\" to the barcode box",
+            "match": {
+              "arguments": [
+                {
+                  "val": "haveToUpdateDegreeCodeBarcode",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.enterBarcode(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 9205889596,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Enter \"degreeCode\" and \"goldWeight\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode",
+                  "offset": 7
+                },
+                {
+                  "val": "goldWeight",
+                  "offset": 24
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.enterGoldCode(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3238334570,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "The \"successfulUpdateDegreeCode\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulUpdateDegreeCode",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@updateSuccessfully"
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "Login in backend",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13720854326,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5025452,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Update too degree code successfully",
+        "description": "",
+        "id": "update-degree-code;update-too-degree-code-successfully",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3697874836,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Go to \"updateDegreeCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "updateDegreeCode",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3292069316,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Enter \"haveToUpdateDegreeCodeBarcode\" to the barcode box",
+            "match": {
+              "arguments": [
+                {
+                  "val": "haveToUpdateDegreeCodeBarcode",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.enterBarcode(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 9110788938,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Enter \"degreeCode\" and \"goldWeight\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode",
+                  "offset": 7
+                },
+                {
+                  "val": "goldWeight",
+                  "offset": 24
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.enterGoldCode(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: button#new_degree (tried for 15 second(s) with 500 MILLISECONDS interval)\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)\n\tat autoframework.pages.CommonPageL.click(CommonPageL.java:74)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.CGLIB$click$9(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40$$FastClassByCGLIB$$6f5f9def.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.click(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage.clickOnAddMoreButton(UpdateDegreeCodePage.java:37)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.CGLIB$clickOnAddMoreButton$0(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40$$FastClassByCGLIB$$6f5f9def.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.clickOnAddMoreButton(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.UpdateDegreeCodeStepdefs.clickOnAddMoreButton(UpdateDegreeCodeStepdefs.java:23)\n\tat ✽.Click on Add More button(src/test/resources/features/BackEnd/UpdateDegreeCode.feature:17)\nCaused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.cssSelector: button#new_degree\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.7.1\u0027, revision: \u00278a0099a\u0027, time: \u00272017-11-06T21:01:39.354Z\u0027\nSystem info: host: \u0027lan-HP-Compaq-Pro-6300-SFF\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00275.8.0-48-generic\u0027, java.version: \u00271.8.0_282\u0027\nDriver info: driver.version: unknown\n\tat org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)\n\tat java.util.Optional.orElseThrow(Optional.java:290)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:643)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:640)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)\n\tat autoframework.pages.CommonPageL.click(CommonPageL.java:74)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.CGLIB$click$9(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40$$FastClassByCGLIB$$6f5f9def.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.click(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage.clickOnAddMoreButton(UpdateDegreeCodePage.java:37)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.CGLIB$clickOnAddMoreButton$0(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40$$FastClassByCGLIB$$6f5f9def.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.clickOnAddMoreButton(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.UpdateDegreeCodeStepdefs.clickOnAddMoreButton(UpdateDegreeCodeStepdefs.java:23)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat cucumber.runtime.Utils$1.call(Utils.java:32)\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\n\tat cucumber.runtime.Utils.invoke(Utils.java:26)\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:37)\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:40)\n\tat cucumber.api.TestStep.executeStep(TestStep.java:102)\n\tat cucumber.api.TestStep.run(TestStep.java:83)\n\tat cucumber.api.TestCase.run(TestCase.java:58)\n\tat cucumber.runner.Runner.runPickle(Runner.java:80)\n\tat cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:99)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:41)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:108)\n\tat org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220)\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53)\n",
+              "duration": 18952331031,
+              "status": "failed"
+            },
+            "line": 17,
+            "name": "Click on Add More button",
+            "match": {
+              "location": "UpdateDegreeCodeStepdefs.clickOnAddMoreButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "Enter \"degreeCode2\" and \"goldWeight2\" to the second row",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode2",
+                  "offset": 7
+                },
+                {
+                  "val": "goldWeight2",
+                  "offset": 25
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.enterGoldCodeToTheSecondRow(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 19,
+            "name": "The \"successfulUpdateDegreeCode\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulUpdateDegreeCode",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "Login in backend",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14639685848,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 7483144,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "Can not update when the gold types are not the same",
+        "description": "",
+        "id": "update-degree-code;can-not-update-when-the-gold-types-are-not-the-same",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3676173164,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Go to \"updateDegreeCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "updateDegreeCode",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3289190815,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Enter \"notSameGoldTypeBarcode\" to the barcode box",
+            "match": {
+              "arguments": [
+                {
+                  "val": "notSameGoldTypeBarcode",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.enterBarcode(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 9227521797,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Enter \"degreeCode\" and \"goldWeight\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode",
+                  "offset": 7
+                },
+                {
+                  "val": "goldWeight",
+                  "offset": 24
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.enterGoldCode(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3203011296,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "The \"notSameGoldTypeMsg\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "notSameGoldTypeMsg",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@canNotUpdate"
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "Login in backend",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13223759249,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 6838111,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 30,
+        "name": "Update three degree code for three barcodes successfully",
+        "description": "",
+        "id": "update-degree-code;update-three-degree-code-for-three-barcodes-successfully",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3610610671,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "Go to \"updateDegreeCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "updateDegreeCode",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 6435601053,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "Input \"degreeCode\" to degree code box and click on Add to list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.inputToDegreeCodeBoxAndClickOnAddToList(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6370699467,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "Input \"degreeCode2\" to degree code box and click on Add to list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode2",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.inputToDegreeCodeBoxAndClickOnAddToList(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6350523630,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "Input \"degreeCode3\" to degree code box and click on Add to list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode3",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.inputToDegreeCodeBoxAndClickOnAddToList(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6360376784,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "Input \"degreeCodeBarcode1\" to barcode box and click on Add to list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCodeBarcode1",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.inputToBarcodeBoxAndClickOnAddToList(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6300288009,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "Input \"degreeCodeBarcode2\" to barcode box and click on Add to list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCodeBarcode2",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.inputToBarcodeBoxAndClickOnAddToList(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6325600896,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "Input \"degreeCodeBarcode3\" to barcode box and click on Add to list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCodeBarcode3",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.inputToBarcodeBoxAndClickOnAddToList(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: tbody.list_barcode tr:nth-of-type(2) td.item2 input (tried for 15 second(s) with 500 MILLISECONDS interval)\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)\n\tat autoframework.pages.CommonPageL.click(CommonPageL.java:74)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.CGLIB$click$9(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40$$FastClassByCGLIB$$6f5f9def.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.click(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage.clickOnCheckboxes(UpdateDegreeCodePage.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.CGLIB$clickOnCheckboxes$5(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40$$FastClassByCGLIB$$6f5f9def.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.clickOnCheckboxes(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.UpdateDegreeCodeStepdefs.clickOnCheckboxes(UpdateDegreeCodeStepdefs.java:48)\n\tat ✽.Click on checkboxes(src/test/resources/features/BackEnd/UpdateDegreeCode.feature:38)\nCaused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.cssSelector: tbody.list_barcode tr:nth-of-type(2) td.item2 input\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.7.1\u0027, revision: \u00278a0099a\u0027, time: \u00272017-11-06T21:01:39.354Z\u0027\nSystem info: host: \u0027lan-HP-Compaq-Pro-6300-SFF\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00275.8.0-48-generic\u0027, java.version: \u00271.8.0_282\u0027\nDriver info: driver.version: unknown\n\tat org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)\n\tat java.util.Optional.orElseThrow(Optional.java:290)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:643)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:640)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)\n\tat autoframework.pages.CommonPageL.click(CommonPageL.java:74)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.CGLIB$click$9(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40$$FastClassByCGLIB$$6f5f9def.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.click(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage.clickOnCheckboxes(UpdateDegreeCodePage.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.CGLIB$clickOnCheckboxes$5(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40$$FastClassByCGLIB$$6f5f9def.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.clickOnCheckboxes(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.UpdateDegreeCodeStepdefs.clickOnCheckboxes(UpdateDegreeCodeStepdefs.java:48)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat cucumber.runtime.Utils$1.call(Utils.java:32)\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\n\tat cucumber.runtime.Utils.invoke(Utils.java:26)\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:37)\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:40)\n\tat cucumber.api.TestStep.executeStep(TestStep.java:102)\n\tat cucumber.api.TestStep.run(TestStep.java:83)\n\tat cucumber.api.TestCase.run(TestCase.java:58)\n\tat cucumber.runner.Runner.runPickle(Runner.java:80)\n\tat cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:99)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:41)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:108)\n\tat org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220)\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53)\n",
+              "duration": 18785765600,
+              "status": "failed"
+            },
+            "line": 38,
+            "name": "Click on checkboxes",
+            "match": {
+              "location": "UpdateDegreeCodeStepdefs.clickOnCheckboxes()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 39,
+            "name": "Click on Save button",
+            "match": {
+              "location": "UpdateDegreeCodeStepdefs.clickOnSaveButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 40,
+            "name": "The \"successfulMultipleUpdateDegreeCode\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulMultipleUpdateDegreeCode",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@multipleUpdateSuccessfully"
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "Login in backend",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13136299716,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4095819,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 43,
+        "name": "Can not update added degree codes",
+        "description": "",
+        "id": "update-degree-code;can-not-update-added-degree-codes",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5118059865,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "Go to \"updateDegreeCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "updateDegreeCode",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 6445799050,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "Input \"degreeCode\" to degree code box and click on Add to list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.inputToDegreeCodeBoxAndClickOnAddToList(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6368985671,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "Input \"degreeCode2\" to degree code box and click on Add to list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode2",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.inputToDegreeCodeBoxAndClickOnAddToList(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6356587631,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "Input \"degreeCode3\" to degree code box and click on Add to list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode3",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.inputToDegreeCodeBoxAndClickOnAddToList(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6382487096,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "Input \"degreeCodeBarcode1\" to barcode box and click on Add to list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCodeBarcode1",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.inputToBarcodeBoxAndClickOnAddToList(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6314695759,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "Input \"degreeCodeBarcode2\" to barcode box and click on Add to list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCodeBarcode2",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.inputToBarcodeBoxAndClickOnAddToList(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6344723687,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "Input \"degreeCodeBarcode3\" to barcode box and click on Add to list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCodeBarcode3",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.inputToBarcodeBoxAndClickOnAddToList(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: tbody.list_barcode tr:nth-of-type(2) td.item2 input (tried for 15 second(s) with 500 MILLISECONDS interval)\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)\n\tat autoframework.pages.CommonPageL.click(CommonPageL.java:74)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.CGLIB$click$9(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40$$FastClassByCGLIB$$6f5f9def.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.click(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage.clickOnCheckboxes(UpdateDegreeCodePage.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.CGLIB$clickOnCheckboxes$5(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40$$FastClassByCGLIB$$6f5f9def.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.clickOnCheckboxes(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.UpdateDegreeCodeStepdefs.clickOnCheckboxes(UpdateDegreeCodeStepdefs.java:48)\n\tat ✽.Click on checkboxes(src/test/resources/features/BackEnd/UpdateDegreeCode.feature:51)\nCaused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.cssSelector: tbody.list_barcode tr:nth-of-type(2) td.item2 input\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.7.1\u0027, revision: \u00278a0099a\u0027, time: \u00272017-11-06T21:01:39.354Z\u0027\nSystem info: host: \u0027lan-HP-Compaq-Pro-6300-SFF\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00275.8.0-48-generic\u0027, java.version: \u00271.8.0_282\u0027\nDriver info: driver.version: unknown\n\tat org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)\n\tat java.util.Optional.orElseThrow(Optional.java:290)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:643)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:640)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)\n\tat autoframework.pages.CommonPageL.click(CommonPageL.java:74)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.CGLIB$click$9(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40$$FastClassByCGLIB$$6f5f9def.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.click(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage.clickOnCheckboxes(UpdateDegreeCodePage.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.CGLIB$clickOnCheckboxes$5(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40$$FastClassByCGLIB$$6f5f9def.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateDegreeCodePage$$EnhancerByCGLIB$$6465bf40.clickOnCheckboxes(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.UpdateDegreeCodeStepdefs.clickOnCheckboxes(UpdateDegreeCodeStepdefs.java:48)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat cucumber.runtime.Utils$1.call(Utils.java:32)\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\n\tat cucumber.runtime.Utils.invoke(Utils.java:26)\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:37)\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:40)\n\tat cucumber.api.TestStep.executeStep(TestStep.java:102)\n\tat cucumber.api.TestStep.run(TestStep.java:83)\n\tat cucumber.api.TestCase.run(TestCase.java:58)\n\tat cucumber.runner.Runner.runPickle(Runner.java:80)\n\tat cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:99)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:41)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:108)\n\tat org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220)\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53)\n",
+              "duration": 18812193388,
+              "status": "failed"
+            },
+            "line": 51,
+            "name": "Click on checkboxes",
+            "match": {
+              "location": "UpdateDegreeCodeStepdefs.clickOnCheckboxes()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 52,
+            "name": "Click on Save button",
+            "match": {
+              "location": "UpdateDegreeCodeStepdefs.clickOnSaveButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 53,
+            "name": "The \"degreeCodeExistedMsg\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCodeExistedMsg",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@canNotUpdate"
+          }
+        ]
+      }
+    ],
+    "name": "Update degree code",
+    "description": "",
+    "id": "update-degree-code",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/BackEnd/UpdateDegreeCode.feature"
+  }
+]

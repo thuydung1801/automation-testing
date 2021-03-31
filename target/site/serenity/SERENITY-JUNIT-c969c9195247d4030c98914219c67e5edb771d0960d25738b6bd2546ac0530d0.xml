@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="2" failures="0" name="Manageitemsarrived" skipped="0" tests="2" time="21.86" timestamp="2021-03-31T14:15:56.394+07:00[Asia/Ho_Chi_Minh]"><testcase name="create ship fail"><error message="The following error occurred: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#emailAdmin&quot;}&#10;  (Session info: chrome=89.0.4389.114)&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: /tmp/.com.google.Chrome.SSBJSO}, goog:chromeOptions: {debuggerAddress: localhost:42085}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: e4810b0bcd40c9b3189eb4ead5424c2e&#10;*** Element info: {Using=id, value=emailAdmin}&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException">The following error occurred: no such element: Unable to locate element: {"method":"css selector","selector":"#emailAdmin"}
+  (Session info: chrome=89.0.4389.114)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: /tmp/.com.google.Chrome.SSBJSO}, goog:chromeOptions: {debuggerAddress: localhost:42085}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e4810b0bcd40c9b3189eb4ead5424c2e
+*** Element info: {Using=id, value=emailAdmin}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown</error><system-err>The following error occurred: no such element: Unable to locate element: {"method":"css selector","selector":"#emailAdmin"}
+  (Session info: chrome=89.0.4389.114)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: /tmp/.com.google.Chrome.SSBJSO}, goog:chromeOptions: {debuggerAddress: localhost:42085}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e4810b0bcd40c9b3189eb4ead5424c2e
+*** Element info: {Using=id, value=emailAdmin}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown
+autoframework.pages.CommonPage.insertIntoFieldById(CommonPage.java:146)
+autoframework.steps.CommonPageSteps.insertId(CommonPageSteps.java:60)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase><testcase name="create ship successfully"><error message="The following error occurred: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#emailAdmin&quot;}&#10;  (Session info: chrome=89.0.4389.114)&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: /tmp/.com.google.Chrome.OLGieM}, goog:chromeOptions: {debuggerAddress: localhost:41471}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 3006cd2436897c05b9c67f0cd9db14b6&#10;*** Element info: {Using=id, value=emailAdmin}&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException">The following error occurred: no such element: Unable to locate element: {"method":"css selector","selector":"#emailAdmin"}
+  (Session info: chrome=89.0.4389.114)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: /tmp/.com.google.Chrome.OLGieM}, goog:chromeOptions: {debuggerAddress: localhost:41471}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3006cd2436897c05b9c67f0cd9db14b6
+*** Element info: {Using=id, value=emailAdmin}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown</error><system-err>The following error occurred: no such element: Unable to locate element: {"method":"css selector","selector":"#emailAdmin"}
+  (Session info: chrome=89.0.4389.114)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: /tmp/.com.google.Chrome.OLGieM}, goog:chromeOptions: {debuggerAddress: localhost:41471}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3006cd2436897c05b9c67f0cd9db14b6
+*** Element info: {Using=id, value=emailAdmin}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown
+autoframework.pages.CommonPage.insertIntoFieldById(CommonPage.java:146)
+autoframework.steps.CommonPageSteps.insertId(CommonPageSteps.java:60)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase></testsuite>

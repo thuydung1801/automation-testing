@@ -1,0 +1,578 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 5258936046,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "Go to \"adminPage\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonPageSteps.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: The following error occurred: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#emailAdmin\"}\n  (Session info: chrome\u003d89.0.4389.114)\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.7.1\u0027, revision: \u00278a0099a\u0027, time: \u00272017-11-06T21:01:39.354Z\u0027\nSystem info: host: \u0027lan-HP-Compaq-Pro-6300-SFF\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00275.8.0-48-generic\u0027, java.version: \u00271.8.0_282\u0027\nDriver info: org.openqa.selenium.remote.RemoteWebDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: /tmp/.com.google.Chrome.SSBJSO}, goog:chromeOptions: {debuggerAddress: localhost:42085}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: e4810b0bcd40c9b3189eb4ead5424c2e\n*** Element info: {Using\u003did, value\u003demailAdmin}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:416)\n\tat org.openqa.selenium.By$ById.findElement(By.java:218)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)\n\tat net.thucydides.core.webdriver.WebDriverFacade.findElement(WebDriverFacade.java:276)\n\tat autoframework.pages.CommonPage.insertIntoFieldById(CommonPage.java:146)\n\tat autoframework.pages.CommonPage$$EnhancerByCGLIB$$ad81e5.CGLIB$insertIntoFieldById$11(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPage$$EnhancerByCGLIB$$ad81e5$$FastClassByCGLIB$$73ec79ef.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.CommonPage$$EnhancerByCGLIB$$ad81e5.insertIntoFieldById(\u003cgenerated\u003e)\n\tat autoframework.steps.CommonPageSteps.insertId(CommonPageSteps.java:60)\n\tat ✽.Insert adminM2 into box have id: emailAdmin(src/test/resources/features/BackEnd/ManageItemsArrived.feature:4)\n",
+              "duration": 5446331465,
+              "status": "failed"
+            },
+            "line": 4,
+            "name": "Insert adminM2 into box have id: emailAdmin",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminM2",
+                  "offset": 7
+                },
+                {
+                  "val": "emailAdmin",
+                  "offset": 33
+                }
+              ],
+              "location": "CommonPageSteps.insertId(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 5,
+            "name": "Insert admin123 into box have id: passAdmin",
+            "match": {
+              "arguments": [
+                {
+                  "val": "admin123",
+                  "offset": 7
+                },
+                {
+                  "val": "passAdmin",
+                  "offset": 34
+                }
+              ],
+              "location": "CommonPageSteps.insertId(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "Click button by class signInBtn",
+            "match": {
+              "arguments": [
+                {
+                  "val": "signInBtn",
+                  "offset": 22
+                }
+              ],
+              "location": "CommonPageSteps.clickButtonByClass(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "Successfully into DashboardPage front site",
+            "match": {
+              "arguments": [
+                {
+                  "val": "DashboardPage",
+                  "offset": 18
+                }
+              ],
+              "location": "CommonPageSteps.Successfully(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "Go to \"ManageItemsArrivedStep\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ManageItemsArrivedStep",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonPageSteps.goToUrl(String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 212117584,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "create ship fail: The selected items are not the same dispacth location. Please select again!",
+        "description": "",
+        "id": ";create-ship-fail:-the-selected-items-are-not-the-same-dispacth-location.-please-select-again-",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Wait about 2 seconds",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 11
+                }
+              ],
+              "location": "CommonPageSteps.waitAboutSeconds(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "Choose item have row in Manage Items Arrived Page : 2",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 52
+                }
+              ],
+              "location": "ManageItemsArrivedStep.chooseRowManageItemsArrivedPage(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "Choose item have row in Manage Items Arrived Page : 4",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 52
+                }
+              ],
+              "location": "ManageItemsArrivedStep.chooseRowManageItemsArrivedPage(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "I click button has text Create Ship and generate label",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Create Ship and generate label",
+                  "offset": 24
+                }
+              ],
+              "location": "CommonPageSteps.iClickButtonHasText(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "Click button to ship out",
+            "match": {
+              "location": "ManageItemsArrivedStep.clickButtonToShipOut()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "Click button : Ok",
+            "match": {
+              "location": "ManageItemsArrivedStep.clickButtonOk()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 19,
+            "name": "The system show success message",
+            "match": {
+              "location": "PackageReadyShippingSteps.theSystemShowSuccessMessage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "Show Messages in Manage Items Arrived: The selected items are not the same dispacth location. Please select again!",
+            "match": {
+              "arguments": [
+                {
+                  "val": "The selected items are not the same dispacth location. Please select again!",
+                  "offset": 39
+                }
+              ],
+              "location": "ManageItemsArrivedStep.getMsgItem(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Test01"
+          }
+        ]
+      },
+      {
+        "line": 2,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 4648451167,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "Go to \"adminPage\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonPageSteps.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: The following error occurred: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#emailAdmin\"}\n  (Session info: chrome\u003d89.0.4389.114)\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.7.1\u0027, revision: \u00278a0099a\u0027, time: \u00272017-11-06T21:01:39.354Z\u0027\nSystem info: host: \u0027lan-HP-Compaq-Pro-6300-SFF\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00275.8.0-48-generic\u0027, java.version: \u00271.8.0_282\u0027\nDriver info: org.openqa.selenium.remote.RemoteWebDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: /tmp/.com.google.Chrome.OLGieM}, goog:chromeOptions: {debuggerAddress: localhost:41471}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3006cd2436897c05b9c67f0cd9db14b6\n*** Element info: {Using\u003did, value\u003demailAdmin}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:416)\n\tat org.openqa.selenium.By$ById.findElement(By.java:218)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)\n\tat net.thucydides.core.webdriver.WebDriverFacade.findElement(WebDriverFacade.java:276)\n\tat autoframework.pages.CommonPage.insertIntoFieldById(CommonPage.java:146)\n\tat autoframework.pages.CommonPage$$EnhancerByCGLIB$$ad81e5.CGLIB$insertIntoFieldById$11(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPage$$EnhancerByCGLIB$$ad81e5$$FastClassByCGLIB$$73ec79ef.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.CommonPage$$EnhancerByCGLIB$$ad81e5.insertIntoFieldById(\u003cgenerated\u003e)\n\tat autoframework.steps.CommonPageSteps.insertId(CommonPageSteps.java:60)\n\tat ✽.Insert adminM2 into box have id: emailAdmin(src/test/resources/features/BackEnd/ManageItemsArrived.feature:4)\n",
+              "duration": 5397502159,
+              "status": "failed"
+            },
+            "line": 4,
+            "name": "Insert adminM2 into box have id: emailAdmin",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminM2",
+                  "offset": 7
+                },
+                {
+                  "val": "emailAdmin",
+                  "offset": 33
+                }
+              ],
+              "location": "CommonPageSteps.insertId(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 5,
+            "name": "Insert admin123 into box have id: passAdmin",
+            "match": {
+              "arguments": [
+                {
+                  "val": "admin123",
+                  "offset": 7
+                },
+                {
+                  "val": "passAdmin",
+                  "offset": 34
+                }
+              ],
+              "location": "CommonPageSteps.insertId(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "Click button by class signInBtn",
+            "match": {
+              "arguments": [
+                {
+                  "val": "signInBtn",
+                  "offset": 22
+                }
+              ],
+              "location": "CommonPageSteps.clickButtonByClass(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "Successfully into DashboardPage front site",
+            "match": {
+              "arguments": [
+                {
+                  "val": "DashboardPage",
+                  "offset": 18
+                }
+              ],
+              "location": "CommonPageSteps.Successfully(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "Go to \"ManageItemsArrivedStep\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ManageItemsArrivedStep",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonPageSteps.goToUrl(String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5588646,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "create ship successfully",
+        "description": "",
+        "id": ";create-ship-successfully",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 23,
+            "name": "Wait about 2 seconds",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 11
+                }
+              ],
+              "location": "CommonPageSteps.waitAboutSeconds(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 24,
+            "name": "Choose item have row in Manage Items Arrived Page : 2",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 52
+                }
+              ],
+              "location": "ManageItemsArrivedStep.chooseRowManageItemsArrivedPage(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "Wait about 2 seconds",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 11
+                }
+              ],
+              "location": "CommonPageSteps.waitAboutSeconds(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "I click button has text Create Ship and generate label",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Create Ship and generate label",
+                  "offset": 24
+                }
+              ],
+              "location": "CommonPageSteps.iClickButtonHasText(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 27,
+            "name": "Wait about 2 seconds",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 11
+                }
+              ],
+              "location": "CommonPageSteps.waitAboutSeconds(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 28,
+            "name": "Click button to ship out",
+            "match": {
+              "location": "ManageItemsArrivedStep.clickButtonToShipOut()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 29,
+            "name": "Wait about 2 seconds",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 11
+                }
+              ],
+              "location": "CommonPageSteps.waitAboutSeconds(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 30,
+            "name": "Click button : Ok",
+            "match": {
+              "location": "ManageItemsArrivedStep.clickButtonOk()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 31,
+            "name": "The system show success message",
+            "match": {
+              "location": "PackageReadyShippingSteps.theSystemShowSuccessMessage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 32,
+            "name": "Show Messages in Manage Items Arrived: afasfasdgsafg",
+            "match": {
+              "arguments": [
+                {
+                  "val": "afasfasdgsafg",
+                  "offset": 39
+                }
+              ],
+              "location": "ManageItemsArrivedStep.getMsgItem(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Test02"
+          }
+        ]
+      }
+    ],
+    "name": "",
+    "description": "",
+    "id": "",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/BackEnd/ManageItemsArrived.feature"
+  }
+]

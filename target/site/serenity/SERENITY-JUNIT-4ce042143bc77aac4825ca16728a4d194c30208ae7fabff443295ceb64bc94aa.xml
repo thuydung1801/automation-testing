@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Login to Backend" skipped="0" tests="2" time="24.22" timestamp="2021-03-30T11:26:48.475859779+07:00[Asia/Ho_Chi_Minh]"><testcase name="Login failed"/><testcase name="Login success"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Login to Backend" skipped="0" tests="2" time="19.51" timestamp="2021-03-31T14:07:25.818+07:00[Asia/Ho_Chi_Minh]"><testcase name="Login failed"/><testcase name="Login success"/></testsuite>

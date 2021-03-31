@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Create Ship and generate label" skipped="0" tests="3" time="162.38" timestamp="2021-03-31T14:08:46.047+07:00[Asia/Ho_Chi_Minh]"><testcase name="create ship successfully"/><testcase name="create ship when don't choose item"/><testcase name="click cancel"/></testsuite>

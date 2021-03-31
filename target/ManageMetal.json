@@ -1,0 +1,1638 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Login to admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 15458094962,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 175198345,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Add a new metal with a raw material",
+        "description": "",
+        "id": "manage-metal;add-a-new-metal-with-a-raw-material;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 7269580758,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Go to \"mangageMetal\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "mangageMetal",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8052374257,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Click on Add new metal button",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnAddNewMetalButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6286727509,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Choose the \"diamondRing\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "diamondRing",
+                  "offset": 12
+                }
+              ],
+              "location": "ManageMetalStepdefs.chooseManufacturer(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 336322590,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Select \"750\" and \"Red\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "750",
+                  "offset": 8
+                },
+                {
+                  "val": "Red",
+                  "offset": 18
+                }
+              ],
+              "location": "ManageMetalStepdefs.selectGoldType$GoldColor(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 475613767,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Input \"metalWeight\" \"qty\" \"AB13\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "metalWeight",
+                  "offset": 7
+                },
+                {
+                  "val": "qty",
+                  "offset": 21
+                },
+                {
+                  "val": "AB13",
+                  "offset": 27
+                }
+              ],
+              "location": "ManageMetalStepdefs.inputMetalWeight$RawMaterialNo(String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16745767541,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Click on New metal checkbox and click Save button",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnNewMetalCheckboxAndClickSaveButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3221277742,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "The \"successfulSaveMetal\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulSaveMetal",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "Login to admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13452954354,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5621141,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "Add a new metal with a raw material",
+        "description": "",
+        "id": "manage-metal;add-a-new-metal-with-a-raw-material;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5880966240,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Go to \"mangageMetal\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "mangageMetal",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7676463144,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Click on Add new metal button",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnAddNewMetalButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6251317586,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Choose the \"weddingRing\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "weddingRing",
+                  "offset": 12
+                }
+              ],
+              "location": "ManageMetalStepdefs.chooseManufacturer(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 296037400,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Select \"585\" and \"Yellow\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "585",
+                  "offset": 8
+                },
+                {
+                  "val": "Yellow",
+                  "offset": 18
+                }
+              ],
+              "location": "ManageMetalStepdefs.selectGoldType$GoldColor(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 472452074,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Input \"metalWeight\" \"qty\" \"AB13\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "metalWeight",
+                  "offset": 7
+                },
+                {
+                  "val": "qty",
+                  "offset": 21
+                },
+                {
+                  "val": "AB13",
+                  "offset": 27
+                }
+              ],
+              "location": "ManageMetalStepdefs.inputMetalWeight$RawMaterialNo(String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17281964837,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Click on New metal checkbox and click Save button",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnNewMetalCheckboxAndClickSaveButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3256592568,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "The \"successfulSaveMetal\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulSaveMetal",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "Login to admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13581627458,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4716899,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "Add a new metal with a raw material",
+        "description": "",
+        "id": "manage-metal;add-a-new-metal-with-a-raw-material;;4",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 6020263454,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Go to \"mangageMetal\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "mangageMetal",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7794566890,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Click on Add new metal button",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnAddNewMetalButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6291488444,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Choose the \"diamondRing\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "diamondRing",
+                  "offset": 12
+                }
+              ],
+              "location": "ManageMetalStepdefs.chooseManufacturer(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 352633024,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Select \"925 S\" and \"White\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "925 S",
+                  "offset": 8
+                },
+                {
+                  "val": "White",
+                  "offset": 20
+                }
+              ],
+              "location": "ManageMetalStepdefs.selectGoldType$GoldColor(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 485199692,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Input \"metalWeight\" \"qty\" \"\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "metalWeight",
+                  "offset": 7
+                },
+                {
+                  "val": "qty",
+                  "offset": 21
+                },
+                {
+                  "val": "",
+                  "offset": 27
+                }
+              ],
+              "location": "ManageMetalStepdefs.inputMetalWeight$RawMaterialNo(String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17413725816,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Click on New metal checkbox and click Save button",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnNewMetalCheckboxAndClickSaveButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3215654360,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "The \"successfulSaveMetal\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulSaveMetal",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "Login to admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 15294948572,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3170504,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 32,
+        "name": "Add a new metal with two raw materials",
+        "description": "",
+        "id": "manage-metal;add-a-new-metal-with-two-raw-materials;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 6485885925,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Go to \"mangageMetal\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "mangageMetal",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7742503804,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Click on Add new metal button",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnAddNewMetalButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6280203475,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Choose the \"diamondRing\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "diamondRing",
+                  "offset": 12
+                }
+              ],
+              "location": "ManageMetalStepdefs.chooseManufacturer(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 339048826,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Select \"750\" and \"Red\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "750",
+                  "offset": 8
+                },
+                {
+                  "val": "Red",
+                  "offset": 18
+                }
+              ],
+              "location": "ManageMetalStepdefs.selectGoldType$GoldColor(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 455918055,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Input \"metalWeight\" \"qty\" \"rawMaterialserialNo1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "metalWeight",
+                  "offset": 7
+                },
+                {
+                  "val": "qty",
+                  "offset": 21
+                },
+                {
+                  "val": "rawMaterialserialNo1",
+                  "offset": 27
+                }
+              ],
+              "location": "ManageMetalStepdefs.inputMetalWeight$RawMaterialNo(String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 391756513,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "Input second raw material \"rawMaterialserialNo2\", \"secondRawMaterialWeight\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "rawMaterialserialNo2",
+                  "offset": 27
+                },
+                {
+                  "val": "secondRawMaterialWeight",
+                  "offset": 51
+                }
+              ],
+              "location": "ManageMetalStepdefs.inputSecondRawMaterial(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17656775236,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "Click on New metal checkbox and click Save button",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnNewMetalCheckboxAndClickSaveButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3205663121,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "The \"successfulSaveMetal\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulSaveMetal",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "Login to admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13843970644,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3419667,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 33,
+        "name": "Add a new metal with two raw materials",
+        "description": "",
+        "id": "manage-metal;add-a-new-metal-with-two-raw-materials;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 6039235867,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Go to \"mangageMetal\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "mangageMetal",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7723518318,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Click on Add new metal button",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnAddNewMetalButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6264369498,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Choose the \"weddingRing\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "weddingRing",
+                  "offset": 12
+                }
+              ],
+              "location": "ManageMetalStepdefs.chooseManufacturer(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 344979964,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Select \"585\" and \"Yellow\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "585",
+                  "offset": 8
+                },
+                {
+                  "val": "Yellow",
+                  "offset": 18
+                }
+              ],
+              "location": "ManageMetalStepdefs.selectGoldType$GoldColor(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 472748731,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Input \"metalWeight\" \"qty\" \"rawMaterialserialNo1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "metalWeight",
+                  "offset": 7
+                },
+                {
+                  "val": "qty",
+                  "offset": 21
+                },
+                {
+                  "val": "rawMaterialserialNo1",
+                  "offset": 27
+                }
+              ],
+              "location": "ManageMetalStepdefs.inputMetalWeight$RawMaterialNo(String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 375476709,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "Input second raw material \"rawMaterialserialNo1\", \"secondRawMaterialWeight\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "rawMaterialserialNo1",
+                  "offset": 27
+                },
+                {
+                  "val": "secondRawMaterialWeight",
+                  "offset": 51
+                }
+              ],
+              "location": "ManageMetalStepdefs.inputSecondRawMaterial(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15843356010,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "Click on New metal checkbox and click Save button",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnNewMetalCheckboxAndClickSaveButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3216133742,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "The \"successfulSaveMetal\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulSaveMetal",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "Login to admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13569638664,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 2892589,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 36,
+        "name": "log usage when update degree code for items",
+        "description": "",
+        "id": "manage-metal;log-usage-when-update-degree-code-for-items",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3831438345,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "Go to \"updateDegreeCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "updateDegreeCode",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3323412048,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "Enter \"haveToUpdateDegreeCodeBarcode\" to the barcode box",
+            "match": {
+              "arguments": [
+                {
+                  "val": "haveToUpdateDegreeCodeBarcode",
+                  "offset": 7
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.enterBarcode(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 9414515697,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "Enter \"degreeCode\" and \"goldWeight\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode",
+                  "offset": 7
+                },
+                {
+                  "val": "goldWeight",
+                  "offset": 24
+                }
+              ],
+              "location": "UpdateDegreeCodeStepdefs.enterGoldCode(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6182973815,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "Go to \"mangageMetal\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "mangageMetal",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 14894053676,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "View detail of the metal has \"degreeCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode",
+                  "offset": 30
+                }
+              ],
+              "location": "ManageMetalStepdefs.viewDetailOfTheMetalHas(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6341854540,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "View the metal log usage",
+            "match": {
+              "location": "ManageMetalStepdefs.viewTheMetalLogUsage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: expected:\u003ctrue\u003e but was:\u003cfalse\u003e\n\tat junit.framework.Assert.fail(Assert.java:57)\n\tat junit.framework.Assert.failNotEquals(Assert.java:329)\n\tat junit.framework.Assert.assertEquals(Assert.java:78)\n\tat junit.framework.Assert.assertEquals(Assert.java:174)\n\tat junit.framework.Assert.assertEquals(Assert.java:181)\n\tat junit.framework.TestCase.assertEquals(TestCase.java:341)\n\tat autoframework.pages.CommonPageL.validateInformation(CommonPageL.java:507)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be.CGLIB$validateInformation$24(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be$$FastClassByCGLIB$$3762409a.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be.validateInformation(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.ManageMetalPage.theWeightUsageLoggedIs(ManageMetalPage.java:106)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be.CGLIB$theWeightUsageLoggedIs$13(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be$$FastClassByCGLIB$$3762409a.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be.theWeightUsageLoggedIs(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.ManageMetalStepdefs.theWeightUsageLoggedIs(ManageMetalStepdefs.java:84)\n\tat ✽.The weight usage logged is \"goldWeight\"(src/test/resources/features/BackEnd/ManageMetal.feature:43)\n",
+              "duration": 3680312719,
+              "status": "failed"
+            },
+            "line": 43,
+            "name": "The weight usage logged is \"goldWeight\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "goldWeight",
+                  "offset": 28
+                }
+              ],
+              "location": "ManageMetalStepdefs.theWeightUsageLoggedIs(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "Login to admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14418432411,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 6313415,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 45,
+        "name": "log usage when batch update from casting to Sliver manufacturing",
+        "description": "",
+        "id": "manage-metal;log-usage-when-batch-update-from-casting-to-sliver-manufacturing",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3808387449,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "Go to \"updateProductionProcess\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "updateProductionProcess",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7741860034,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "Click on Multiple Update",
+            "match": {
+              "location": "UpdateProcessStepdefs.clickOnMultipleUpdate()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12553495623,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "Input \"barcode1\" \"barcode2\" \"barcode3\" to the barcode box",
+            "match": {
+              "arguments": [
+                {
+                  "val": "barcode1",
+                  "offset": 7
+                },
+                {
+                  "val": "barcode2",
+                  "offset": 18
+                },
+                {
+                  "val": "barcode3",
+                  "offset": 29
+                }
+              ],
+              "location": "UpdateProcessStepdefs.inputMultipleBarcode(String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: The following error occurred: Expected condition failed: waiting for presence of element located by: By.cssSelector: input[name\u003d\"degree_code\"] (tried for 15 second(s) with 500 MILLISECONDS interval)\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)\n\tat autoframework.pages.CommonPageL.insertIntoField(CommonPageL.java:185)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.CGLIB$insertIntoField$59(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea$$FastClassByCGLIB$$56a79c47.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.insertIntoField(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateProcessPage.inputMetalInfo(UpdateProcessPage.java:133)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.CGLIB$inputMetalInfo$18(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea$$FastClassByCGLIB$$56a79c47.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.inputMetalInfo(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.UpdateProcessStepdefs.inputMetalInfo(UpdateProcessStepdefs.java:135)\n\tat ✽.Input \"degreeCode\" \"totalWeight\" and \"leftOverWeight\"(src/test/resources/features/BackEnd/ManageMetal.feature:49)\nCaused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.cssSelector: input[name\u003d\"degree_code\"]\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.7.1\u0027, revision: \u00278a0099a\u0027, time: \u00272017-11-06T21:01:39.354Z\u0027\nSystem info: host: \u0027lan-HP-Compaq-Pro-6300-SFF\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00275.8.0-48-generic\u0027, java.version: \u00271.8.0_282\u0027\nDriver info: driver.version: unknown\n\tat org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)\n\tat java.util.Optional.orElseThrow(Optional.java:290)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)\n\tat autoframework.pages.CommonPageL.insertIntoField(CommonPageL.java:185)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.CGLIB$insertIntoField$59(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea$$FastClassByCGLIB$$56a79c47.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.insertIntoField(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateProcessPage.inputMetalInfo(UpdateProcessPage.java:133)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.CGLIB$inputMetalInfo$18(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea$$FastClassByCGLIB$$56a79c47.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.UpdateProcessPage$$EnhancerByCGLIB$$50b05cea.inputMetalInfo(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.UpdateProcessStepdefs.inputMetalInfo(UpdateProcessStepdefs.java:135)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat cucumber.runtime.Utils$1.call(Utils.java:32)\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\n\tat cucumber.runtime.Utils.invoke(Utils.java:26)\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:37)\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:40)\n\tat cucumber.api.TestStep.executeStep(TestStep.java:102)\n\tat cucumber.api.TestStep.run(TestStep.java:83)\n\tat cucumber.api.TestCase.run(TestCase.java:58)\n\tat cucumber.runner.Runner.runPickle(Runner.java:80)\n\tat cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:99)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:41)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:108)\n\tat org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220)\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53)\n",
+              "duration": 17796780101,
+              "status": "failed"
+            },
+            "line": 49,
+            "name": "Input \"degreeCode\" \"totalWeight\" and \"leftOverWeight\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode",
+                  "offset": 7
+                },
+                {
+                  "val": "totalWeight",
+                  "offset": 20
+                },
+                {
+                  "val": "leftOverWeight",
+                  "offset": 38
+                }
+              ],
+              "location": "UpdateProcessStepdefs.inputMetalInfo(String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 50,
+            "name": "Click on To Silver Manufacturer button",
+            "match": {
+              "location": "UpdateProcessStepdefs.clickOnToSilverManufacturerButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 51,
+            "name": "Go to \"mangageMetal\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "mangageMetal",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 52,
+            "name": "View detail of the metal has \"degreeCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "degreeCode",
+                  "offset": 30
+                }
+              ],
+              "location": "ManageMetalStepdefs.viewDetailOfTheMetalHas(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 53,
+            "name": "The leftover weight is \"leftOverWeight\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "leftOverWeight",
+                  "offset": 24
+                }
+              ],
+              "location": "ManageMetalStepdefs.theLeftoverWeightIs(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 54,
+            "name": "View the metal log usage",
+            "match": {
+              "location": "ManageMetalStepdefs.viewTheMetalLogUsage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 55,
+            "name": "The weight usages of three items is \"weightUsage\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "weightUsage",
+                  "offset": 37
+                }
+              ],
+              "location": "ManageMetalStepdefs.theWeightUsagesOfThreeItemsIs(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "Login to admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14893817748,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4199686,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 57,
+        "name": "Edit a metal in Glamira Wedding",
+        "description": "",
+        "id": "manage-metal;edit-a-metal-in-glamira-wedding",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5956340231,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "Go to \"mangageMetal\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "mangageMetal",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 14713529023,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "View detail of the metal has \"weddingDegreeCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "weddingDegreeCode",
+                  "offset": 30
+                }
+              ],
+              "location": "ManageMetalStepdefs.viewDetailOfTheMetalHas(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 279537363,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "Input \"pipeWeight\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "pipeWeight",
+                  "offset": 7
+                }
+              ],
+              "location": "ManageMetalStepdefs.inputPipeWeight(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9146930897,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "Click on Save",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnSave()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3221139285,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "The \"successfulUpdateMetal\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulUpdateMetal",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "Login to admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 15641227065,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3746859,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 64,
+        "name": "Close a metal",
+        "description": "",
+        "id": "manage-metal;close-a-metal",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6019430320,
+              "status": "passed"
+            },
+            "line": 65,
+            "name": "Go to \"mangageMetal\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "mangageMetal",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 14688292734,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "View detail of the metal has \"wantToCloseDegreeCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "wantToCloseDegreeCode",
+                  "offset": 30
+                }
+              ],
+              "location": "ManageMetalStepdefs.viewDetailOfTheMetalHas(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: #close (tried for 15 second(s) with 500 MILLISECONDS interval)\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)\n\tat autoframework.pages.CommonPageL.click(CommonPageL.java:74)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be.CGLIB$click$17(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be$$FastClassByCGLIB$$3762409a.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be.click(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.ManageMetalPage.clickOnClose(ManageMetalPage.java:100)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be.CGLIB$clickOnClose$12(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be$$FastClassByCGLIB$$3762409a.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be.clickOnClose(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.ManageMetalStepdefs.clickOnClose(ManageMetalStepdefs.java:79)\n\tat ✽.Click on Close then confirm(src/test/resources/features/BackEnd/ManageMetal.feature:67)\nCaused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.cssSelector: #close\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.7.1\u0027, revision: \u00278a0099a\u0027, time: \u00272017-11-06T21:01:39.354Z\u0027\nSystem info: host: \u0027lan-HP-Compaq-Pro-6300-SFF\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00275.8.0-48-generic\u0027, java.version: \u00271.8.0_282\u0027\nDriver info: driver.version: unknown\n\tat org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)\n\tat java.util.Optional.orElseThrow(Optional.java:290)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:643)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:640)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)\n\tat autoframework.pages.CommonPageL.click(CommonPageL.java:74)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be.CGLIB$click$17(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be$$FastClassByCGLIB$$3762409a.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be.click(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.ManageMetalPage.clickOnClose(ManageMetalPage.java:100)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be.CGLIB$clickOnClose$12(\u003cgenerated\u003e)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be$$FastClassByCGLIB$$3762409a.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.backEnd.ManageMetalPage$$EnhancerByCGLIB$$63e5e7be.clickOnClose(\u003cgenerated\u003e)\n\tat autoframework.steps.backEnd.ManageMetalStepdefs.clickOnClose(ManageMetalStepdefs.java:79)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat cucumber.runtime.Utils$1.call(Utils.java:32)\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\n\tat cucumber.runtime.Utils.invoke(Utils.java:26)\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:37)\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:40)\n\tat cucumber.api.TestStep.executeStep(TestStep.java:102)\n\tat cucumber.api.TestStep.run(TestStep.java:83)\n\tat cucumber.api.TestCase.run(TestCase.java:58)\n\tat cucumber.runner.Runner.runPickle(Runner.java:80)\n\tat cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:99)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:41)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:108)\n\tat org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220)\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53)\n",
+              "duration": 18811393695,
+              "status": "failed"
+            },
+            "line": 67,
+            "name": "Click on Close then confirm",
+            "match": {
+              "location": "ManageMetalStepdefs.clickOnClose()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 68,
+            "name": "The \"successfulCloseMetal\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "successfulCloseMetal",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Manage Metal",
+    "description": "",
+    "id": "manage-metal",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/BackEnd/ManageMetal.feature"
+  }
+]

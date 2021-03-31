@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Transfer to ship out waiting" skipped="0" tests="1" time="131.52" timestamp="2021-03-31T11:49:24.081+07:00[Asia/Ho_Chi_Minh]"><testcase name="transfer an item to shipout waiting"><failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">expected:&lt;true&gt; but was:&lt;false&gt;</failure><system-err>expected:&lt;true&gt; but was:&lt;false&gt;
+junit.framework.Assert.fail(Assert.java:57)
+junit.framework.Assert.failNotEquals(Assert.java:329)
+junit.framework.Assert.assertEquals(Assert.java:78)
+junit.framework.Assert.assertEquals(Assert.java:174)
+junit.framework.Assert.assertEquals(Assert.java:181)
+junit.framework.TestCase.assertEquals(TestCase.java:341)
+autoframework.pages.CommonPageL.validateInformation(CommonPageL.java:508)
+autoframework.pages.CommonPageL.validateResultMsg(CommonPageL.java:673)
+autoframework.steps.CommonStepdefs_L.theMessageIsShown(CommonStepdefs_L.java:104)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase></testsuite>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="start a production" skipped="0" tests="2" time="220.27" timestamp="2021-03-31T11:43:59.165+07:00[Asia/Ho_Chi_Minh]"><testcase name="start a production in Manage production requests grid suceessfully"/><testcase name="start a production in Manage production requests to stock grid suceessfully"><failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">expected:&lt;true&gt; but was:&lt;false&gt;</failure><system-err>expected:&lt;true&gt; but was:&lt;false&gt;
+junit.framework.Assert.fail(Assert.java:57)
+junit.framework.Assert.failNotEquals(Assert.java:329)
+junit.framework.Assert.assertEquals(Assert.java:78)
+junit.framework.Assert.assertEquals(Assert.java:174)
+junit.framework.Assert.assertEquals(Assert.java:181)
+junit.framework.TestCase.assertEquals(TestCase.java:341)
+autoframework.pages.CommonPageL.validateInformation(CommonPageL.java:508)
+autoframework.pages.CommonPageL.validateResultMsg(CommonPageL.java:673)
+autoframework.steps.CommonStepdefs_L.theMessageIsShown(CommonStepdefs_L.java:104)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase></testsuite>

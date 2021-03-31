@@ -1,0 +1,141 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "login to admin page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14331872544,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Login \"adminPage\" with \"account\" and \"passWord\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminPage",
+                  "offset": 7
+                },
+                {
+                  "val": "account",
+                  "offset": 24
+                },
+                {
+                  "val": "passWord",
+                  "offset": 38
+                }
+              ],
+              "location": "CommonStepdefs_L.loginWithAnd(String,String,String)"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 157940158,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CommonPageSteps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "transfer an item to shipout waiting",
+        "description": "",
+        "id": "transfer-to-ship-out-waiting;transfer-an-item-to-shipout-waiting",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 57600898506,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Go to \"manageProductionRequest\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "manageProductionRequest",
+                  "offset": 7
+                }
+              ],
+              "location": "CommonStepdefs_L.goToUrl(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3525236770,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Enter \"needTransferToShipoutWaitingBarcode\" to scan barcode box",
+            "match": {
+              "arguments": [
+                {
+                  "val": "needTransferToShipoutWaitingBarcode",
+                  "offset": 7
+                }
+              ],
+              "location": "ProductionRequestStepdefs.enterToScanBarcodeBox(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 50761294534,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Take action \"transferToShipoutWaiting\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "transferToShipoutWaiting",
+                  "offset": 13
+                }
+              ],
+              "location": "ProductionRequestStepdefs.takeAction(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "net.serenitybdd.core.exceptions.SerenityManagedException: expected:\u003ctrue\u003e but was:\u003cfalse\u003e\n\tat junit.framework.Assert.fail(Assert.java:57)\n\tat junit.framework.Assert.failNotEquals(Assert.java:329)\n\tat junit.framework.Assert.assertEquals(Assert.java:78)\n\tat junit.framework.Assert.assertEquals(Assert.java:174)\n\tat junit.framework.Assert.assertEquals(Assert.java:181)\n\tat junit.framework.TestCase.assertEquals(TestCase.java:341)\n\tat autoframework.pages.CommonPageL.validateInformation(CommonPageL.java:508)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.CGLIB$validateInformation$8(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7$$FastClassByCGLIB$$f6b7e0e8.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.validateInformation(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL.validateResultMsg(CommonPageL.java:673)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.CGLIB$validateResultMsg$30(\u003cgenerated\u003e)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7$$FastClassByCGLIB$$f6b7e0e8.invoke(\u003cgenerated\u003e)\n\tat net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)\n\tat net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:10)\n\tat net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:20)\n\tat net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:338)\n\tat net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:127)\n\tat net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:63)\n\tat autoframework.pages.CommonPageL$$EnhancerByCGLIB$$a80121c7.validateResultMsg(\u003cgenerated\u003e)\n\tat autoframework.steps.CommonStepdefs_L.theMessageIsShown(CommonStepdefs_L.java:104)\n\tat ✽.The \"transferItemSuccessfully\" Message is shown(src/test/resources/features/BackEnd/TransferToShipoutWaiting.feature:10)\n",
+              "duration": 3792603751,
+              "status": "failed"
+            },
+            "line": 10,
+            "name": "The \"transferItemSuccessfully\" Message is shown",
+            "match": {
+              "arguments": [
+                {
+                  "val": "transferItemSuccessfully",
+                  "offset": 5
+                }
+              ],
+              "location": "CommonStepdefs_L.theMessageIsShown(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Transfer to ship out waiting",
+    "description": "",
+    "id": "transfer-to-ship-out-waiting",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/BackEnd/TransferToShipoutWaiting.feature"
+  }
+]

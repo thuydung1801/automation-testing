@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="2" failures="1" name="Manage Metal" skipped="0" tests="9" time="514.99" timestamp="2021-03-31T11:13:22.322+07:00[Asia/Ho_Chi_Minh]"><testcase name="Add a new metal with a raw material"/><testcase name="Add a new metal with two raw materials"/><testcase name="log usage when update degree code for items"><failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">expected:&lt;true&gt; but was:&lt;false&gt;</failure><system-err>expected:&lt;true&gt; but was:&lt;false&gt;
+junit.framework.Assert.fail(Assert.java:57)
+junit.framework.Assert.failNotEquals(Assert.java:329)
+junit.framework.Assert.assertEquals(Assert.java:78)
+junit.framework.Assert.assertEquals(Assert.java:174)
+junit.framework.Assert.assertEquals(Assert.java:181)
+junit.framework.TestCase.assertEquals(TestCase.java:341)
+autoframework.pages.CommonPageL.validateInformation(CommonPageL.java:507)
+autoframework.pages.backEnd.ManageMetalPage.theWeightUsageLoggedIs(ManageMetalPage.java:106)
+autoframework.steps.backEnd.ManageMetalStepdefs.theWeightUsageLoggedIs(ManageMetalStepdefs.java:84)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase><testcase name="log usage when batch update from casting to Sliver manufacturing"><error message="The following error occurred: Expected condition failed: waiting for presence of element located by: By.cssSelector: input[name=&quot;degree_code&quot;] (tried for 15 second(s) with 500 MILLISECONDS interval)&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.TimeoutException">The following error occurred: Expected condition failed: waiting for presence of element located by: By.cssSelector: input[name="degree_code"] (tried for 15 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown</error><system-err>The following error occurred: Expected condition failed: waiting for presence of element located by: By.cssSelector: input[name="degree_code"] (tried for 15 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown
+autoframework.pages.CommonPageL.insertIntoField(CommonPageL.java:185)
+autoframework.pages.backEnd.UpdateProcessPage.inputMetalInfo(UpdateProcessPage.java:133)
+autoframework.steps.backEnd.UpdateProcessStepdefs.inputMetalInfo(UpdateProcessStepdefs.java:135)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase><testcase name="Edit a metal in Glamira Wedding"/><testcase name="Close a metal"><error message="The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: #close (tried for 15 second(s) with 500 MILLISECONDS interval)&#10;Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'&#10;System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.TimeoutException">The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: #close (tried for 15 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown</error><system-err>The following error occurred: Expected condition failed: waiting for element to be clickable: By.cssSelector: #close (tried for 15 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'lan-HP-Compaq-Pro-6300-SFF', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.8.0-48-generic', java.version: '1.8.0_282'
+Driver info: driver.version: unknown
+autoframework.pages.CommonPageL.click(CommonPageL.java:74)
+autoframework.pages.backEnd.ManageMetalPage.clickOnClose(ManageMetalPage.java:100)
+autoframework.steps.backEnd.ManageMetalStepdefs.clickOnClose(ManageMetalStepdefs.java:79)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase></testsuite>
