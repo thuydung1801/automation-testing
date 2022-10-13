@@ -3,11 +3,12 @@ package Page_Lib;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Flow_Lib {
-    private ChromeDriver driver;
+    private RemoteWebDriver driver;
 
-    public Flow_Lib(ChromeDriver driver) {
+    public Flow_Lib(RemoteWebDriver driver) {
         this.driver = driver;
     }
 
