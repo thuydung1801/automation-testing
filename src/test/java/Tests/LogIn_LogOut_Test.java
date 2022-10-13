@@ -19,6 +19,7 @@ public class LogIn_LogOut_Test {
         System.setProperty("webdriver.chrome.driver", "D:\\Setup\\chromedriver.exe");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        //dfhgjjj
 
         driver.navigate().to("https://dev1.glamira.com/glgb");
     }
