@@ -1,13 +1,14 @@
 package Page_Lib;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class App_Lib {
-    private WebDriver driver;
+    private ChromeDriver driver;
     private Page_Lib page;
     private Flow_Lib flow;
 
-    public App_Lib(WebDriver driver) {
+    public App_Lib(ChromeDriver driver) {
         this.driver = driver;
         page = new Page_Lib(this.driver);
         flow = new Flow_Lib(this.driver);

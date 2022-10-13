@@ -8,7 +8,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 public class AbstractBase_Test {
-    WebDriver driver;
+    ChromeDriver driver;
     private App_Lib app;
 
     @BeforeTest
