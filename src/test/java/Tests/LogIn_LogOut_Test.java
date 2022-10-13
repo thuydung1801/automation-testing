@@ -11,58 +11,61 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
+
 public class LogIn_LogOut_Test {
-    static WebDriver driver;
+//    static WebDriver driver;
+    ChromeDriver driver;
 
-    public void Setup() {
-//        WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "D:\\Setup\\chromedriver.exe");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        //dfhgjjj
+    @BeforeMethod
+    public void Setup(){
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
 
-        driver.navigate().to("https://dev1.glamira.com/glgb");
     }
     @Test
-    public void loginLocationElement() {
-        WebDriver driver = new ChromeDriver();
-        driver.findElement(By.xpath("//li[@data-label='or']//a")).click();
+    public void loginLocationElement() throws InterruptedException {
+        driver.get("https://dev1.glamira.com/glgb");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//span[contains(text(),'Log In/Sign Up')]")).click();
     }
-    @Test
-    public void status() {
-        boolean status = driver.findElement(By.xpath("//h2[@id='block-customer-login-heading']")).isDisplayed();
-        if (status) {
-            System.out.println("This is form login !");
-        }
-    }
-    @Test
-    public void useNamElement() {
-        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("nguyenthilien1962@gmail.com");
-    }
-    @Test
-    public void passWordElement() {
-        driver.findElement(By.xpath("//field-set[@class='field-set login']//input[@id='pass']")).sendKeys("Lien1962@");
-    }
-
-    @Test
-    public void actionElement() {
-        driver.findElement(By.xpath("//button[@id='send2']")).submit();
-    }
-
-    //
-    @Test
-    public void checkdisplayElement() {
-        boolean status1 = driver.findElement(By.linkText("My Orders")).isDisplayed();
-        if (status1) {
-            System.out.println("This is my order");
-        }
-    }
-    @Test
-    public void SelectItem() {
-        driver.findElement(By.linkText("My Orders")).click();
-    }
-    //		checkblock
-    @AfterClass
+//    @Test
+//    public void status() {
+//        boolean status = driver.findElement(By.xpath("//h2[@id='block-customer-login-heading']")).isDisplayed();
+//        if (status) {
+//            System.out.printf("This is form login !");
+//        }
+//    }
+//    @Test
+//    public void useNamElement() {
+//        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("nguyenthilien1962@gmail.com");
+//    }
+//    @Test
+//    public void passWordElement() {
+//        driver.findElement(By.xpath("//field-set[@class='field-set login']//input[@id='pass']")).sendKeys("Lien1962@");
+//    }
+//
+//    @Test
+//    public void actionElement() {
+//        driver.findElement(By.xpath("//button[@id='send2']")).submit();
+//    }
+//
+//    //
+//    @Test
+//    public void checkdisplayElement() {
+//        boolean status1 = driver.findElement(By.linkText("My Orders")).isDisplayed();
+//        if (status1) {
+//            System.out.println("This is my order");
+//        }
+//    }
+//    @Test
+//    public void SelectItem() {
+//        driver.findElement(By.linkText("My Orders")).click();
+//    }
+//    //		checkblock
+    @AfterMethod
     public void editProgram() {
         driver.quit();
     }

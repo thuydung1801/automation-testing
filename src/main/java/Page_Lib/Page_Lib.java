@@ -5,15 +5,16 @@ import Page.LogIn_LogOut_Page;
 import Page.ProductDetail_Page;
 import Page_Element.ListingPage_Element;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Page_Lib {
-    private WebDriver driver;
+    private ChromeDriver driver;
     private Header_Page headerPage;
     private LogIn_LogOut_Page logInOutPage;
     private ProductDetail_Page productDetailPage;
     private ListingPage_Element listingPage;
 
-    public Page_Lib(WebDriver driver) {
+    public Page_Lib(ChromeDriver driver) {
         this.driver = driver;
         listingPage = new ListingPage_Element(this.driver);
         headerPage = new Header_Page(this.driver);
