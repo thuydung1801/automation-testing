@@ -2,11 +2,12 @@ package Page_Lib;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Flow_Lib {
-    private WebDriver driver;
+    private ChromeDriver driver;
 
-    public Flow_Lib(WebDriver driver) {
+    public Flow_Lib(ChromeDriver driver) {
         this.driver = driver;
     }
 

@@ -1,16 +1,15 @@
 package Page_Lib;
 
 import Page.Header_Page;
-import Page.LogIn_LogOut_Page;
+import Page.Login_Page;
 import Page.ProductDetail_Page;
 import Page_Element.ListingPage_Element;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Page_Lib {
     private ChromeDriver driver;
     private Header_Page headerPage;
-    private LogIn_LogOut_Page logInOutPage;
+    private Login_Page logInOutPage;
     private ProductDetail_Page productDetailPage;
     private ListingPage_Element listingPage;
 
@@ -18,7 +17,7 @@ public class Page_Lib {
         this.driver = driver;
         listingPage = new ListingPage_Element(this.driver);
         headerPage = new Header_Page(this.driver);
-        logInOutPage = new LogIn_LogOut_Page(this.driver);
+        logInOutPage = new Login_Page(this.driver);
         productDetailPage = new ProductDetail_Page(this.driver);
     }
 
@@ -26,7 +25,7 @@ public class Page_Lib {
         return headerPage;
     }
 
-    public LogIn_LogOut_Page LogInOutage() {
+    public Login_Page LogInOutage() {
         return logInOutPage;
     }
 
