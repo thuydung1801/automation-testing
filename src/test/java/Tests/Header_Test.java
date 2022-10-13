@@ -1,46 +1,46 @@
 package Tests;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import Common_Page.AbstractBase_Test;
 import Page.Header_Page;
+import Page_Lib.App_Lib;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class Header_Test {
-    ChromeDriver driver;
-    Header_Page hp;
-    @BeforeMethod
-    public void Setup(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+public class Header_Test extends AbstractBase_Test {
+
+
+    @Test
+    public void RunLogin(){
+            App().Flow().navigateToUrl("https://dev1.glamira.com/glgb");
+            App().Pages().HeaderPage().clickBtnLogIn();
 
     }
     @Test
-    public void Run(){
-        driver.get("https://dev1.glamira.com/glgb");
-        hp.click();
+    public void RunSearch(){
+        App().Flow().navigateToUrl("https://dev1.glamira.com/glgb/");
+        App().Pages().HeaderPage().senKeySearch();
 
-//        driver.findElement(By.xpath("//span[contains(text(),'Log In/Sign Up')]")).click();
-    }
-    @AfterMethod
-    public void Clean(){
-
-
+        App().Pages().HeaderPage().clickBtnSearch();
+        App().Pages().HeaderPage().clickBtnNext();
     }
 
-//    @BeforeClass
-//    public void SetupHeaderPage(){
-//
-//    }
+
+
 }
 
 
