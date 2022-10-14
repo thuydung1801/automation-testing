@@ -25,8 +25,8 @@ public class AbstractBase_Test {
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("version", "70.0");
         capabilities.setCapability("platform", "win11"); // If this cap isn't specified, it will just get any available one.
-        capabilities.setCapability("build", "LambdaTest_Dung");
-        capabilities.setCapability("name", "LambdaTestJava_Dung");
+        capabilities.setCapability("build", "GLAMIRA_Automation");
+        capabilities.setCapability("name", "GLAMIRA_Automation");
         try {
             driver = new RemoteWebDriver(new URL("https://" + username + ":" + accesskey + gridURL), capabilities);
         } catch (MalformedURLException e) {
