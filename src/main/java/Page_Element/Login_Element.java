@@ -12,7 +12,7 @@ public class Login_Element {
     //    WebDriver driver;
     RemoteWebDriver driver;
     //    BNINE
-    @FindBy(xpath = "//span[@class='authorization-text']") public WebElement LoginPage;
+    @FindBy(xpath = "//li[@data-label='or']//a") public WebElement LoginPage;
     @FindBy(xpath = "//input[@id='email']") public WebElement EnterEmail;
     @FindBy(xpath = "(//input[@id='pass'])[1]") public WebElement EnterPass;
     @FindBy(xpath = "(//button[@id='send2'])[1]") public WebElement Submit;

@@ -29,7 +29,7 @@ public class Header_Page {
         headerElement.headerBtnSearch.click();
     }
     public void clickBtnNext(){
-        headerElement.headerBtnNext.submit();
+        headerElement.headerBtnNext.click();
     }
 
 

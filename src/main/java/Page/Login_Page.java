@@ -27,8 +27,6 @@ public class Login_Page {
     public void EnterPw() {
         Login.EnterPass.sendKeys("Lien1962@");
     }
-    public void SubmitBtn() {
-        Login.Submit.click();
-    }
+    public void SubmitBtn() {Login.Submit.click();}
 
 }
