@@ -14,8 +14,6 @@ public class Header_Element {
 //    @FindBy(xpath = "//span[contains(text(),'Log In/Sign Up')]") public WebElement headerLogin;
 //    @FindBy(xpath = "//span[contains(text(),'Log In/Sign Up')]") public WebElement headerLogin;
 
-
-
     public Header_Element(ChromeDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
