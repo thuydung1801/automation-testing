@@ -14,7 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class AbstractBase_Test {
-   // ChromeDriver driver;
+    // ChromeDriver driver;
     private App_Lib App;
     boolean status = false;
     String username = "webmasterglamira-group";
@@ -30,14 +30,14 @@ public class AbstractBase_Test {
 //        capabilities.setCapability("name", "GLAMIRA_Automation");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("version", "105.0");
+        capabilities.setCapability("version", "70.0");
         capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get any available one.
         capabilities.setCapability("build", "GLAMIRA_Automation");
         capabilities.setCapability("name", "GLAMIRA_Automation");
-        capabilities.setCapability("network", true); // To enable network logs
-        capabilities.setCapability("visual", true); // To enable step by step screenshot
-        capabilities.setCapability("video", true); // To enable video recording
-        capabilities.setCapability("console", true); // To capture console logs
+        capabilities.setCapability("network", true); 
+        capabilities.setCapability("visual", true);
+        capabilities.setCapability("video", true);
+        capabilities.setCapability("console", true);
         try {
             driver = new RemoteWebDriver(new URL("https://" + username + ":" + accesskey + gridURL), capabilities);
         } catch (MalformedURLException e) {
@@ -51,7 +51,7 @@ public class AbstractBase_Test {
     public void setUp() throws Exception {
         setup();
         WebDriverManager.chromedriver().setup();
-          //  driver = new ChromeDriver();
+        //  driver = new ChromeDriver();
         App = new App_Lib(driver);
 
 
@@ -62,9 +62,9 @@ public class AbstractBase_Test {
     {
         if (driver != null) {
             ((JavascriptExecutor) driver).executeScript("lambda-status=" + status);
-            driver.quit(); //really important statement for preventing your test execution from a timeout.
+            driver.quit();
         }
-        driver.quit();
+//        driver.quit();
     }
 
     public App_Lib App() {

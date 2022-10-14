@@ -13,7 +13,10 @@ public class Flow_Lib {
     }
 
     public void navigateToUrl(String url) {
-        this.driver.get(url);
+        driver.get(url);
+    }
+    public void getURL(String url) {
+        this.driver.navigate().to(url);
     }
 
     public String getCurrentPageUrl() {

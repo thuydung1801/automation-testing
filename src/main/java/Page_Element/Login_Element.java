@@ -12,10 +12,10 @@ public class Login_Element {
     //    WebDriver driver;
     RemoteWebDriver driver;
     //    BNINE
-    @FindBy(xpath = "//li[@data-label='or']//a") public WebElement LoginPage;
+    @FindBy(xpath = "//span[contains(text(),'Log In/Sign Up')]") public WebElement LoginPage;
     @FindBy(xpath = "//input[@id='email']") public WebElement EnterEmail;
     @FindBy(xpath = "(//input[@id='pass'])[1]") public WebElement EnterPass;
-    @FindBy(xpath = "(//button[@id='send2'])[1]") public WebElement Submit;
+    @FindBy(css = "button#send2.action.login.primary") public WebElement Submit;
     public Login_Element(RemoteWebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
