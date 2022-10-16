@@ -3,7 +3,6 @@ package Tests;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import Common_Page.AbstractBase_Test;
 import Page.Header_Page;
 import Page.Login_Page;
@@ -25,6 +24,12 @@ public class LogIn extends AbstractBase_Test {
         App().Pages().LogInOutage().EnterMail();
         App().Pages().LogInOutage().EnterPw();
         App().Pages().LogInOutage().SubmitBtn();
+    }
+    @Test
+    public void LogOut(){
+        App().Flow().getCurrentPageUrl();
+//        App().Pages().LogInOutage().LogOutBtn();
+
     }
 }
 

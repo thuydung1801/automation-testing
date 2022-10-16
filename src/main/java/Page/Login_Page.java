@@ -1,14 +1,14 @@
 
 package Page;
 
-        import Page_Element.Header_Element;
-        import Page_Element.Login_Element;
-        import org.openqa.selenium.WebDriver;
-        import org.openqa.selenium.chrome.ChromeDriver;
-        import org.openqa.selenium.remote.RemoteWebDriver;
+import Page_Element.Header_Element;
+import Page_Element.Login_Element;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Login_Page {
-    RemoteWebDriver driver ;
+    RemoteWebDriver driver;
     Login_Element Login;
 
 
@@ -21,12 +21,19 @@ public class Login_Page {
     public void click() {
         Login.LoginPage.click();
     }
+
     public void EnterMail() {
         Login.EnterEmail.sendKeys("nguyenthilien1962@gmail.com");
     }
     public void EnterPw() {
         Login.EnterPass.sendKeys("Lien1962@");
     }
-    public void SubmitBtn() {Login.Submit.click();}
+    public void SubmitBtn() {
+        Login.Submit.click();
+    }
+    public void LogOutBtn() {
+        Login.Click_BtnLogout.isDisplayed();
+    }
+
 
 }

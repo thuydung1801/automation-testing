@@ -16,6 +16,9 @@ public class Login_Element {
     @FindBy(xpath = "//input[@id='email']") public WebElement EnterEmail;
     @FindBy(xpath = "(//input[@id='pass'])[1]") public WebElement EnterPass;
     @FindBy(css = "button#send2.action.login.primary") public WebElement Submit;
+//    LogOut
+
+    @FindBy(className = "authorization-text") public  WebElement Click_BtnLogout;
     public Login_Element(RemoteWebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);

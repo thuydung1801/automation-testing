@@ -31,10 +31,10 @@ public class AbstractBase_Test {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("version", "70.0");
-        capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get any available one.
+        capabilities.setCapability("platform", "win10");
         capabilities.setCapability("build", "GLAMIRA_Automation");
         capabilities.setCapability("name", "GLAMIRA_Automation");
-        capabilities.setCapability("network", true); 
+        capabilities.setCapability("network", true);
         capabilities.setCapability("visual", true);
         capabilities.setCapability("video", true);
         capabilities.setCapability("console", true);
