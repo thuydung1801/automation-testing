@@ -21,6 +21,7 @@ public class AbstractBase_Test {
     String accesskey = "Zc41qUZTrlgQTWKjCGAuPpsFrZiCNW8yyOmbo9pY9e8V5TIyXP";
     static RemoteWebDriver driver = null;
     String gridURL = "@hub.lambdatest.com/wd/hub";
+
     private void setup() {
 //        DesiredCapabilities capabilities = new DesiredCapabilities();
 //        capabilities.setCapability("browserName", "chrome");
@@ -58,8 +59,7 @@ public class AbstractBase_Test {
     }
 
     @AfterTest
-    public void tearDown()
-    {
+    public void tearDown() {
         if (driver != null) {
             ((JavascriptExecutor) driver).executeScript("lambda-status=" + status);
             driver.quit();

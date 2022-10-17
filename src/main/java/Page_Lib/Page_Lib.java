@@ -1,10 +1,9 @@
 package Page_Lib;
 
-import Page.Header_Page;
-import Page.Login_Page;
-import Page.ProductDetail_Page;
-import Page_Element.ListingPage_Element;
-import org.openqa.selenium.chrome.ChromeDriver;
+import Page.Header_Footer.Header_Page;
+import Page.Catalog.ListingPage_Page;
+import Page.Customer.Login_Page;
+import Page.Catalog.ProductDetail_Page;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Page_Lib {
@@ -13,11 +12,11 @@ public class Page_Lib {
     private Header_Page headerPage;
     private Login_Page logInOutPage;
     private ProductDetail_Page productDetailPage;
-    private ListingPage_Element listingPage;
+    private ListingPage_Page listingPage;
 
     public Page_Lib(RemoteWebDriver driver) {
         this.driver = driver;
-        listingPage = new ListingPage_Element(this.driver);
+        listingPage = new ListingPage_Page(this.driver);
         headerPage = new Header_Page(this.driver);
         logInOutPage = new Login_Page(this.driver);
         productDetailPage = new ProductDetail_Page(this.driver);
@@ -34,5 +33,5 @@ public class Page_Lib {
     public ProductDetail_Page ProductDetailPage() {
         return productDetailPage;
     }
-    public ListingPage_Element ListingPage(){ return listingPage; }
+    public ListingPage_Page ListingPage(){ return listingPage; }
 }
