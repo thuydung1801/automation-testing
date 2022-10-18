@@ -7,14 +7,17 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Flow_Lib {
-    private RemoteWebDriver driver;
+  public static   RemoteWebDriver driver ;
+    //    WebDriver driver;
     private WebDriverWait wait;
+
     public Flow_Lib(RemoteWebDriver driver) {
         this.driver = driver;
     }
 
+    //    String url = "https://dev1.glamira.com/glde";
     public void navigateToUrl(String url) {
-        driver.get(url);
+        driver.navigate().to(url);
     }
 
     public String getCurrentPageUrl() {

@@ -17,12 +17,12 @@ public class AbstractBase_Test {
     // ChromeDriver driver;
     private App_Lib App;
     boolean status = false;
-    String username = "webmasterglamira-group";
-    String accesskey = "Zc41qUZTrlgQTWKjCGAuPpsFrZiCNW8yyOmbo9pY9e8V5TIyXP";
+    String username = "nguyenthingoc1052000";
+    String accesskey = "mL1BJLIDr2WgDbjtQVaw1hJISaAssHzGB1FVNNxH6t9SLzbt7r";
     static RemoteWebDriver driver = null;
     String gridURL = "@hub.lambdatest.com/wd/hub";
 
-    private void setup() {
+    private void setup() throws MalformedURLException {
 //        DesiredCapabilities capabilities = new DesiredCapabilities();
 //        capabilities.setCapability("browserName", "chrome");
 //        capabilities.setCapability("version", "105.0");
@@ -31,7 +31,7 @@ public class AbstractBase_Test {
 //        capabilities.setCapability("name", "GLAMIRA_Automation");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("version", "70.0");
+        capabilities.setCapability("version", "70");
         capabilities.setCapability("platform", "win10");
         capabilities.setCapability("build", "GLAMIRA_Automation");
         capabilities.setCapability("name", "GLAMIRA_Automation");
@@ -39,6 +39,8 @@ public class AbstractBase_Test {
         capabilities.setCapability("visual", true);
         capabilities.setCapability("video", true);
         capabilities.setCapability("console", true);
+//        URL url = new URL("https://dev1.glamira.com");
+//        driver = new AppiumDriver(url,cap);
         try {
             driver = new RemoteWebDriver(new URL("https://" + username + ":" + accesskey + gridURL), capabilities);
         } catch (MalformedURLException e) {

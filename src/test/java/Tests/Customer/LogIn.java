@@ -6,7 +6,7 @@ public class LogIn extends AbstractBase_Test {
     // ChromeDriver driver;
     @Test
     public void Run() {
-        App().Flow().navigateToUrl("https://dev1.glamira.com/glgb");
+        App().Flow().navigateToUrl("https://dev1.glamira.com/glde");
         App().Pages().LogInOutage().click();
         App().Pages().LogInOutage().EnterMail();
         App().Pages().LogInOutage().EnterPw();
