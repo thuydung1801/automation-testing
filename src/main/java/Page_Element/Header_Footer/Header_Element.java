@@ -17,7 +17,7 @@ public class Header_Element {
 
     @FindBy(xpath = "(//button[@title='Search'])[2]") public WebElement headerBtnSearch;
 
-    @FindBy(xpath = "//span[@class='remove_search_keyword active']") public WebElement headerBtnNext;
+    @FindBy(xpath = "//input[@id='search']") public WebElement headerBtnNext;
 
 
     public Header_Element(RemoteWebDriver driver) {
