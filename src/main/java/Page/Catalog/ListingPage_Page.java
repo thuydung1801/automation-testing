@@ -14,6 +14,7 @@ public class ListingPage_Page {
     public ListingPage_Page(RemoteWebDriver driver) {
         this.driver = driver;
         ListingPage = new ListingPage_Element(driver);
+        driver.manage().window().maximize();
     }
 
     public void ClickOnView() {

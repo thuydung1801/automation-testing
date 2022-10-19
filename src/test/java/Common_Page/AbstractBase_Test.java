@@ -14,7 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class AbstractBase_Test {
-    // ChromeDriver driver;
+    ChromeDriver chromeDriver;
     private App_Lib App;
     boolean status = false;
     String username = "nguyenthingoc1052000";
@@ -52,12 +52,10 @@ public class AbstractBase_Test {
 
     @BeforeTest
     public void setUp() throws Exception {
-        setup();
+//        setup();
         WebDriverManager.chromedriver().setup();
-        //  driver = new ChromeDriver();
-        App = new App_Lib(driver);
-
-
+        chromeDriver = new ChromeDriver();
+        App = new App_Lib(chromeDriver);
     }
 
     @AfterTest

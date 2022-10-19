@@ -7,12 +7,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class Login_Page {
     RemoteWebDriver driver;
     Login_Element Login;
-
-
     public Login_Page(RemoteWebDriver driver) {
         this.driver = driver;
         Login = new Login_Element(driver);
-
+        driver.manage().window().maximize();
     }
 
     public void click() {
