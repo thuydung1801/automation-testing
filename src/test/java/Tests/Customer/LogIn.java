@@ -1,11 +1,12 @@
 package Tests.Customer;
 
 import Common_Page.AbstractBase_Test;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class LogIn extends AbstractBase_Test {
     // ChromeDriver driver;
-    Thread thread;
+
 
     @Test
     public void Run() {
@@ -14,7 +15,8 @@ public class LogIn extends AbstractBase_Test {
         App().Pages().LogInOutage().click();
         App().Pages().LogInOutage().EnterMail();
         App().Pages().LogInOutage().EnterPw();
-        App().Pages().LogInOutage().SubmitBtn();
+        App().Pages().LogInOutage().SubmitBtnCookies();
+//        App().Pages().LogInOutage().SubmitBtn();
     }
 
     @Test
