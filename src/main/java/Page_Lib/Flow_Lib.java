@@ -7,7 +7,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Flow_Lib {
-  public static   RemoteWebDriver driver ;
+    public static RemoteWebDriver driver;
     //    WebDriver driver;
     private WebDriverWait wait;
 
@@ -19,7 +19,6 @@ public class Flow_Lib {
     public void navigateToUrl(String url) {
         driver.navigate().to(url);
     }
-
     public String getCurrentPageUrl() {
         return this.driver.getCurrentUrl();
     }

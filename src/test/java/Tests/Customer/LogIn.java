@@ -2,18 +2,23 @@ package Tests.Customer;
 
 import Common_Page.AbstractBase_Test;
 import org.testng.annotations.Test;
+
 public class LogIn extends AbstractBase_Test {
     // ChromeDriver driver;
+    Thread thread;
+
     @Test
     public void Run() {
-        App().Flow().navigateToUrl("https://dev1.glamira.com/glde");
+
+        App().Flow().navigateToUrl("https://dev3.glamira.com/");
         App().Pages().LogInOutage().click();
         App().Pages().LogInOutage().EnterMail();
         App().Pages().LogInOutage().EnterPw();
         App().Pages().LogInOutage().SubmitBtn();
     }
+
     @Test
-    public void LogOut(){
+    public void LogOut() {
         App().Flow().getCurrentPageUrl();
 //        App().Pages().LogInOutage().LogOutBtn();
 
