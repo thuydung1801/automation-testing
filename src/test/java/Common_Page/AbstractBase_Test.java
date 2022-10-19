@@ -67,7 +67,7 @@ public class AbstractBase_Test {
             ((JavascriptExecutor) driver).executeScript("lambda-status=" + status);
             driver.quit();
         }
-        dr.quit();
+//        dr.quit();
     }
 
     public App_Lib App() {
