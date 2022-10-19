@@ -20,6 +20,7 @@ public class AbstractBase_Test {
     String username = "nguyenthingoc1052000";
     String accesskey = "mL1BJLIDr2WgDbjtQVaw1hJISaAssHzGB1FVNNxH6t9SLzbt7r";
     static RemoteWebDriver driver = null;
+    ChromeDriver dr;
     String gridURL = "@hub.lambdatest.com/wd/hub";
 
     private void setup() throws MalformedURLException {
@@ -31,7 +32,7 @@ public class AbstractBase_Test {
 //        capabilities.setCapability("name", "GLAMIRA_Automation");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("version", "70");
+        capabilities.setCapability("version", "103");
         capabilities.setCapability("platform", "win10");
         capabilities.setCapability("build", "GLAMIRA_Automation");
         capabilities.setCapability("name", "GLAMIRA_Automation");
@@ -52,10 +53,10 @@ public class AbstractBase_Test {
 
     @BeforeTest
     public void setUp() throws Exception {
-        setup();
+//        setup();
         WebDriverManager.chromedriver().setup();
-        //  driver = new ChromeDriver();
-        App = new App_Lib(driver);
+        dr = new ChromeDriver();
+        App = new App_Lib(dr);
 
 
     }
@@ -66,7 +67,7 @@ public class AbstractBase_Test {
             ((JavascriptExecutor) driver).executeScript("lambda-status=" + status);
             driver.quit();
         }
-//        driver.quit();
+        dr.quit();
     }
 
     public App_Lib App() {
