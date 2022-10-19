@@ -5,10 +5,9 @@ import java.util.Properties;
 
 public class ReadData {
     private Properties properties;
-    private final String propertyFilePath= "/home/vu/IdeaProjects/project_Glamaria/src/main/Data_Test/data.properties";
+    private final String propertyFilePath = "D:\\Automation_Glamira\\src\\main\\Data_Test\\data.properties";
 
-
-    public ReadData(){
+    public ReadData() {
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(propertyFilePath));
@@ -24,7 +23,7 @@ public class ReadData {
             throw new RuntimeException("Configuration.properties not found at " + propertyFilePath);
         }
     }
-    public String getKey(String key ){
+    public String getKey(String key) {
         String data = properties.getProperty(key);
         return data;
     }
