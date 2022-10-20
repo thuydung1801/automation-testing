@@ -12,7 +12,7 @@ import java.util.List;
 public class ListingPage_Element
 {
     RemoteWebDriver driver;
-    @FindBy(css = "a[title='VIEW ALL RINGS']") public WebElement BtnViewAll;
+    @FindBy(css = "//a[@title='VIEW ALL RINGS']") public WebElement BtnViewAll;
     @FindBy(xpath = "//ol[contains(@class,'stone-filter-desktop')]//img[contains(@alt,'Black Diamond')]") public WebElement SelectStones;
    @FindBy(xpath = "(//dt[contains(@role,'heading')])[2]") public  WebElement SelectCarat;
 

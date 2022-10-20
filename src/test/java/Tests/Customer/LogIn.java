@@ -6,11 +6,8 @@ import org.testng.annotations.Test;
 
 public class LogIn extends AbstractBase_Test {
     // ChromeDriver driver;
-
-
     @Test
     public void Run() {
-
         App().Flow().navigateToUrl("https://dev3.glamira.com/");
         App().Pages().LogInOutage().click();
         App().Pages().LogInOutage().EnterMail();
@@ -18,7 +15,6 @@ public class LogIn extends AbstractBase_Test {
         App().Pages().LogInOutage().SubmitBtnCookies();
 //        App().Pages().LogInOutage().SubmitBtn();
     }
-
     @Test
     public void LogOut() {
         App().Flow().getCurrentPageUrl();
