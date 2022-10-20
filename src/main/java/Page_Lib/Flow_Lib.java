@@ -23,6 +23,9 @@ public class Flow_Lib {
     public String getCurrentPageUrl() {
         return this.driver.getCurrentUrl();
     }
+    public void printfCurrentPageUrl() {
+        System.out.printf("url"+this.driver.getCurrentUrl());
+    }
 
     public String getCurrentPageTitle() {
         return this.driver.getTitle();

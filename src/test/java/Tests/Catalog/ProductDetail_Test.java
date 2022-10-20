@@ -14,21 +14,26 @@ public class ProductDetail_Test extends AbstractBase_Test {
         System.out.printf("-----test 1: Show  detail image" +"\n");
 
         App().Pages().ProductDetailPage().clickShowImg();
-        System.out.printf("test 1 done");
+        System.out.printf("test 1 done"+"\n");
         Thread.sleep(2000);
 
-        System.out.printf("-----test 2: Default option ");
-        App().Pages().ProductDetailPage().selectOption();
-        System.out.printf("test 2 done");
+        System.out.printf("-----test 2: Default option "+"\n");
+        App().Pages().ProductDetailPage().skipAllow();
 
-        System.out.printf("------test 2.1: Dropdown");
+        App().Flow().printfCurrentPageUrl();
+        App().Flow().getCurrentPageUrl();
+
+        App().Pages().ProductDetailPage().selectOption();
+        System.out.printf("test 2 done"+"\n");
+
+        System.out.printf("------test 2.1: Dropdown"+"\n");
         Thread.sleep(1000);
         App().Pages().ProductDetailPage().clickDropdown();
-        System.out.printf("test 2.1 done");
+        System.out.printf("test 2.1 done"+"\n");
 
-        System.out.printf("------test 2.2: Add to cart");
+        System.out.printf("------test 2.2: Add to cart"+"\n");
         App().Pages().ProductDetailPage().clickAddCart();
-        System.out.printf("test 2.2 done");
+        System.out.printf("test 2.2 done"+"\n");
 
 
     }

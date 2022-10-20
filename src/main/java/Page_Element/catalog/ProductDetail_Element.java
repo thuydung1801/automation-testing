@@ -38,6 +38,12 @@ public class ProductDetail_Element {
 
     @FindBy(xpath = "(//span[contains(text(),'View Detail')])[1]") public WebElement viewDetail;
     @FindBy(xpath = "(//div[@class='option-detail add-engraving'])[2]") public WebElement getTextengr;
+    @FindBy(linkText = "Stay Here on www.glamira.de") public WebElement clickAllow;
+//
+//    @FindBy(xpath = "") public WebElement ;
+//    @FindBy(xpath = "") public WebElement ;
+//    @FindBy(xpath = "") public WebElement ;
+
 
 
 

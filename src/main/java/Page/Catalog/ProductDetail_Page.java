@@ -26,6 +26,12 @@ public class ProductDetail_Page {
         productDetailElement = new ProductDetail_Element(driver);
 
     }
+    public void skipAllow(){
+        System.out.printf("skip" + "\n");
+        productDetailElement.clickAllow.click();
+
+
+    }
     public void clickProduct(){
         productDetailElement.clickProduct.click();
     }
@@ -55,11 +61,29 @@ public class ProductDetail_Page {
 //    }
 
     public void selectOption() throws InterruptedException {
-        productDetailElement.mainStone.click();
-        productDetailElement.stone2.click();
-        productDetailElement.metal_alloy.click();
-        productDetailElement.engraving.click();
-        productDetailElement.engravingText.sendKeys(data.getKey("engravingTextKey"));
+        Thread.sleep(100);
+        ArrayList<WebElement> arr = new ArrayList<>();
+        arr.add(productDetailElement.mainStone);
+        arr.add(productDetailElement.stone2);
+        arr.add(productDetailElement.metal_alloy);
+        arr.add(productDetailElement.engraving);
+
+        for (WebElement option : arr ){
+            if(option != arr.get(arr.size()-1)){
+                option.click();
+
+            }
+            else{
+                option.click();
+                option.sendKeys(data.getKey("engravingTextKey"));
+            }
+        }
+//        productDetailElement.mainStone.click();
+//        System.out.printf("option 1 done");
+//        productDetailElement.stone2.click();
+//        productDetailElement.metal_alloy.click();
+//        productDetailElement.engraving.click();
+//        productDetailElement.engravingText.sendKeys(data.getKey("engravingTextKey"));
 
 
     }
