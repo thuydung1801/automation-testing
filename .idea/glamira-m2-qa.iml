@@ -17,7 +17,6 @@
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-java:4.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-api:4.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-devtools-v104:4.5.0" level="project" />
-    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-devtools-v105:4.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-devtools-v106:4.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-devtools-v85:4.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-edge-driver:4.5.0" level="project" />
@@ -265,5 +264,6 @@
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-json:4.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-chrome-driver:4.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-chromium-driver:4.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-devtools-v105:4.5.0" level="project" />
   </component>
 </module>

@@ -32,7 +32,7 @@ public class AbstractBase_Test {
 //        capabilities.setCapability("name", "GLAMIRA_Automation");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("version", "103");
+        capabilities.setCapability("version", "86");
         capabilities.setCapability("platform", "win10");
         capabilities.setCapability("build", "GLAMIRA_Automation");
         capabilities.setCapability("name", "GLAMIRA_Automation");

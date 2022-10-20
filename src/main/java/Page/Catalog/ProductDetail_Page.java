@@ -29,8 +29,12 @@ public class ProductDetail_Page {
     public void clickProduct(){
         productDetailElement.clickProduct.click();
     }
-    public void clickShowImg(){
+    public void clickShowImg() throws InterruptedException {
+        productDetailElement.submitCookie.click();
+        Thread.sleep(1000);
         productDetailElement.clickImg.click();
+        Thread.sleep(1000);
+        productDetailElement.clickClose.click();
     }
 //    public void click(){
 //
@@ -50,8 +54,13 @@ public class ProductDetail_Page {
 //        listImg.get(randomValue).click();
 //    }
 
-    public void closeDialog(){
-        productDetailElement.clickClose.click();
+    public void selectOption() throws InterruptedException {
+        productDetailElement.mainStone.click();
+        productDetailElement.stone2.click();
+        productDetailElement.metal_alloy.click();
+        productDetailElement.engraving.click();
+        productDetailElement.engravingText.sendKeys(data.getKey("engravingTextKey"));
+
 
     }
     public void clickDropdown() throws InterruptedException {
@@ -59,5 +68,17 @@ public class ProductDetail_Page {
         Thread.sleep(1000);
         productDetailElement.clickOptionSize.click();
 
+    }
+    public void clickAddCart() throws InterruptedException {
+        Thread.sleep(500);
+        productDetailElement.clickBtnAddCart.click();
+        Thread.sleep(100);
+        productDetailElement.clickCart.click();
+        productDetailElement.viewCart.click();
+        Thread.sleep(100);
+        productDetailElement.viewDetail.click();
+
+        System.out.printf("check engravingText");
+        productDetailElement.getTextengr.getText().equalsIgnoreCase(data.getKey("engravingTextKey"));
     }
 }
