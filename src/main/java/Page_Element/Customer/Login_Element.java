@@ -13,20 +13,14 @@ public class Login_Element {
     RemoteWebDriver driver;
 
     //    BNINE
-    @FindBy(xpath = "//a[@title='Einloggen/Anmelden']") public WebElement LoginPage;
-
+    @FindBy(css = "li.authorization-link.login") public WebElement LoginPage;
     @FindBy(xpath = "//input[@id='login-email']") public WebElement EnterEmail;
     @FindBy(xpath = "//input[@id='login-password']") public WebElement EnterPass;
     @FindBy(className = "amgdprcookie-policy") public WebElement Submit;
-//    @FindBy(className = ".amgdprcookie-button -allow") public WebElement Submit1;
-
-
-//    @FindBy(className = "//form[@class='form login-form']//div[@class='actions-toolbar']") public WebElement ClickLogin;
-
-//    LogOut
-
-    @FindBy(className = "authorization-text") public WebElement Click_BtnLogout;
-
+    @FindBy(css = "button.amgdprcookie-button.-allow") public WebElement Submit1;
+    @FindBy(xpath = "//form[@class='form login-form']//button[@type='submit']") public WebElement SubMitLogin;
+    @FindBy(css = "li.authorization-link.login") public WebElement slectAAA;
+    @FindBy(xpath = "//a[@title='My Account']") public WebElement MyAccLogOut;
     public Login_Element(RemoteWebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);

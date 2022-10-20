@@ -7,19 +7,24 @@ import org.testng.annotations.Test;
 public class LogIn extends AbstractBase_Test {
     // ChromeDriver driver;
     @Test
-    public void Run() {
+    public void Run() throws InterruptedException {
         App().Flow().navigateToUrl("https://dev3.glamira.com/");
+//        App().Pages().LogInOutage().SubmitBtnCookies();
+        App().Pages().LogInOutage().SubmitBtnCookies1();
+        Thread.sleep(4000);
         App().Pages().LogInOutage().click();
         App().Pages().LogInOutage().EnterMail();
         App().Pages().LogInOutage().EnterPw();
-        App().Pages().LogInOutage().SubmitBtnCookies();
-//        App().Pages().LogInOutage().SubmitBtn();
-    }
-    @Test
-    public void LogOut() {
-        App().Flow().getCurrentPageUrl();
+//        App().Pages().LogInOutage().SubmitBtnCookies();
+//        App().Pages().LogInOutage().SubmitBtnCookies1();
+        App().Pages().LogInOutage().SubmitBtnAction();
 //        App().Pages().LogInOutage().LogOutBtn();
-
     }
+   @Test
+    public void LogOut() {
+        App().Pages().LogInOutage().LogOut();
+   }
+
+
 }
 
