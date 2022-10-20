@@ -40,8 +40,11 @@ public class Login_Page {
 public  void  LogOut(){
         Login.MyAccLogOut.click();
 }
+public  void  ClickLogOuts(){
+        Login.ClickLogOut.click();
+}
 
-
+//
 
 
 }

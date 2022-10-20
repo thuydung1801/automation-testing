@@ -1,6 +1,7 @@
 
 package Page_Element.Customer;
 
+import org.apache.xmlgraphics.image.loader.cache.ExpirationPolicy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,6 +22,7 @@ public class Login_Element {
     @FindBy(xpath = "//form[@class='form login-form']//button[@type='submit']") public WebElement SubMitLogin;
     @FindBy(css = "li.authorization-link.login") public WebElement slectAAA;
     @FindBy(xpath = "//a[@title='My Account']") public WebElement MyAccLogOut;
+    @FindBy(xpath = "//a[normalize-space()='Logout']") public WebElement ClickLogOut;
     public Login_Element(RemoteWebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
