@@ -47,6 +47,7 @@ public class AbstractBase_Test {
             System.out.println("Invalid grid URL");
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 

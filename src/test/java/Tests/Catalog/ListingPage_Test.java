@@ -15,7 +15,36 @@ public class ListingPage_Test extends AbstractBase_Test {
         Thread.sleep(2000);
         App().Pages().ListingPage().isDplSwitchTo();
         System.out.println("---> Click Success Button Close");
-//        App().Pages().ListingPage().SelectStn();
-//        App().Pages().ListingPage().SelectCR();
+//Scroll
+//        App().Pages().ListingPage().scrollToElement();
+//        System.out.println("---> Scrolled to Element");
     }
+
+    @Test
+    public void MainLissting() throws Exception {
+        App().Flow().getCurrentPageUrl();
+        System.out.println(App().Flow().getCurrentPageUrl());
+        Thread.sleep(2000);
+        App().Pages().ListingPage().CheckDplBookSlide();
+        System.out.println("MESSAGE:~~~~~ Click Next Btn Successfully");
+    }
+
+    @Test
+    public void FiltersStones() throws Exception {
+        App().Flow().getCurrentPageUrl();
+        Thread.sleep(1000);
+        App().Pages().ListingPage().CheckDplBookDiamonds();
+        System.out.println("MESSAGE:~~~~~ Click Item Diamonds Successfully");
+        Thread.sleep(2000);
+    }
+
+    @Test
+    public void ScrollToElement() throws Exception {
+        App().Flow().getCurrentPageUrl();
+        Thread.sleep(1000);
+        App().Pages().ListingPage().ScrollElement();
+        System.out.println("MESSAGE:~~~~~Scroll to Element Successfully");
+        Thread.sleep(2000);
+    }
+
 }
