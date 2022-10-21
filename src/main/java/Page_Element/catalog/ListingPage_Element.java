@@ -27,6 +27,16 @@ public class ListingPage_Element
     @FindBy(css = "li.item.label.filter-diamonds") public WebElement CheckBookDiamonds;
     @FindBy(xpath = "(//label[contains(text(),'Blue Diamond')])[1]") public WebElement ClickElementDiamonds;
 
+     @FindBy(xpath = "(//label[contains(text(),'Tanzanite')])[1]") public WebElement ClicElementGreenTourmaline;
+
+//  Case:  Sorting
+    @FindBy(css = "div.sort-product-content") public WebElement SortingProduct;
+
+    @FindBy(css = "ul.dropdown_select.show") public WebElement CheckBookTypeSort;
+    @FindBy(css = "span.direction_asc") public WebElement SelectElementSort0;
+    @FindBy(css = "span.direction_desc") public WebElement SelectElementSort1;
+
+
     public ListingPage_Element(RemoteWebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);

@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
 
 import java.sql.Driver;
+import java.util.ArrayList;
 
 public class ListingPage_Page {
     RemoteWebDriver driver;
@@ -22,14 +23,6 @@ public class ListingPage_Page {
 
     public void ClickOnView() {
         ListingPage.BtnViewAll.click();
-    }
-
-    public void SelectStn() {
-        ListingPage.SelectStones.click();
-    }
-
-    public void SelectCR() {
-        ListingPage.SelectCarat.click();
     }
 
     //    steep 2:
@@ -52,17 +45,10 @@ public class ListingPage_Page {
         if (!status1) {
             System.out.println("ĐANG CHẠY LÀM GÌ CĂNG :))");
         } else {
-
             System.out.println("STATUS: ~~~~~~~ Is Display " + '\n');
             Thread.sleep(1000);
             ListingPage.CloseBook.click();
         }
-    }
-
-    public void scrollToElement() throws Exception {
-        ((JavascriptExecutor) driver).executeScript(
-                "arguments[0].scrollIntoView();", ListingPage.ScrollElement);
-        Thread.sleep(500);
     }
 
     public void CheckDplBookSlide() throws Exception {
@@ -84,17 +70,45 @@ public class ListingPage_Page {
         boolean statusDiamond = ListingPage.CheckBookDiamonds.isDisplayed();
         if (statusDiamond) {
             System.out.println("STATUS: ~~~~~~~ Is Display " + '\n');
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         }
     }
 
     //    Scr
-    public void ScrollElement() {
+    public void ScrollElement() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         System.out.println(" scroll the page till the element is found");
         js.executeScript("arguments[0].scrollIntoView();", ListingPage.ClickElementDiamonds);
+        System.out.println("MESSAGE:~~~~~Scroll to Element Successfully");
+        Thread.sleep(1000);
         ListingPage.ClickElementDiamonds.click();
     }
 
+    public void ScrollElement2() throws Exception {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", ListingPage.ClicElementGreenTourmaline);
+        Thread.sleep(5000);
+        ListingPage.ClicElementGreenTourmaline.click();
+    }
 
+    //    Sorting
+    public void Sorting() throws Exception {
+        System.out.println(" CHECK: ~~~~~~ IS DisPlay SortElement");
+        boolean statusSort = ListingPage.SortingProduct.isDisplayed();
+        if (statusSort) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView();", ListingPage.SortingProduct);
+            Thread.sleep(2000);
+            ListingPage.SortingProduct.click();
+//
+            Thread.sleep(3000);
+            boolean statusBookSort = ListingPage.CheckBookTypeSort.isDisplayed();
+            if (statusBookSort) {
+                System.out.println(" CHECK: ~~~~~~ IS DisPlay BookSortElement");
+                Thread.sleep(2000);
+                ListingPage.SelectElementSort1.click();
+            }
+        }
+
+    }
 }

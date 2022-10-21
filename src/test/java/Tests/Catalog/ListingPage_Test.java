@@ -3,6 +3,8 @@ package Tests.Catalog;
 import Common_Page.AbstractBase_Test;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 public class ListingPage_Test extends AbstractBase_Test {
     @Test
     public void ClickAllView() throws InterruptedException {
@@ -34,7 +36,6 @@ public class ListingPage_Test extends AbstractBase_Test {
         App().Flow().getCurrentPageUrl();
         Thread.sleep(1000);
         App().Pages().ListingPage().CheckDplBookDiamonds();
-        System.out.println("MESSAGE:~~~~~ Click Item Diamonds Successfully");
         Thread.sleep(2000);
     }
 
@@ -43,8 +44,19 @@ public class ListingPage_Test extends AbstractBase_Test {
         App().Flow().getCurrentPageUrl();
         Thread.sleep(1000);
         App().Pages().ListingPage().ScrollElement();
-        System.out.println("MESSAGE:~~~~~Scroll to Element Successfully");
-        Thread.sleep(2000);
+        System.out.println("MESSAGE:~~~~~ Click Item 1 Diamonds Successfully");
+        Thread.sleep(5000);
+        App().Pages().ListingPage().ScrollElement2();
+        System.out.println("MESSAGE:~~~~~ Click Item Diamonds Successfully");
+        Thread.sleep(1000);
+    }
+
+    @Test
+    public void SortProduct() throws Exception{
+        App().Flow().getCurrentPageUrl();
+        Thread.sleep(5000);
+        App().Pages().ListingPage().Sorting();
+        Thread.sleep(1000);
     }
 
 }
