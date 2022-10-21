@@ -12,9 +12,14 @@ import java.util.List;
 public class ListingPage_Element
 {
     RemoteWebDriver driver;
-    @FindBy(css = "//a[@title='VIEW ALL RINGS']") public WebElement BtnViewAll;
+    @FindBy(xpath = "//a[@title='VIEW ALL RINGS']") public WebElement BtnViewAll;
     @FindBy(xpath = "//ol[contains(@class,'stone-filter-desktop')]//img[contains(@alt,'Black Diamond')]") public WebElement SelectStones;
    @FindBy(xpath = "(//dt[contains(@role,'heading')])[2]") public  WebElement SelectCarat;
+   @FindBy(css ="div.amgdprcookie-bar-container" ) public  WebElement checkCookies;
+    @FindBy(css ="button.amgdprcookie-button.-allow" ) public  WebElement ClickBtnAccCookies;
+
+    @FindBy(css = "div.tab-content.content-popup.geoip-popup-content") public WebElement CheckBookSwitchTo;
+    @FindBy (css = "span.geoip-close") public WebElement CloseBook;
 
     public ListingPage_Element(RemoteWebDriver driver) {
         this.driver = driver;
