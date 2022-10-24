@@ -5,6 +5,7 @@ import Page.Catalog.ListingPage_Page;
 import Page.Customer.Login_Page;
 import Page.Catalog.ProductDetail_Page;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import Page.CheckOut.MiniCart_Page;
 
 public class Page_Lib {
     //private ChromeDriver driver;
@@ -13,6 +14,7 @@ public class Page_Lib {
     private Login_Page logInOutPage;
     private ProductDetail_Page productDetailPage;
     private ListingPage_Page listingPage;
+    private MiniCart_Page miniCartPage;
 
     public Page_Lib(RemoteWebDriver driver) {
         this.driver = driver;
@@ -20,6 +22,7 @@ public class Page_Lib {
         headerPage = new Header_Page(this.driver);
         logInOutPage = new Login_Page(this.driver);
         productDetailPage = new ProductDetail_Page(this.driver);
+        miniCartPage = new MiniCart_Page((this.driver));
     }
 
     public Header_Page HeaderPage() {
@@ -34,4 +37,5 @@ public class Page_Lib {
         return productDetailPage;
     }
     public ListingPage_Page ListingPage(){ return listingPage; }
+    public MiniCart_Page miniCartPage() {return  miniCartPage;}
 }

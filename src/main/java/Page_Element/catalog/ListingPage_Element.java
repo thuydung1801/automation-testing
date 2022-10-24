@@ -26,10 +26,10 @@ public class ListingPage_Element
 //   Filter
     @FindBy(css = "li.item.label.filter-diamonds") public WebElement CheckBookDiamonds;
     @FindBy(xpath = "(//label[contains(text(),'Blue Diamond')])[1]") public WebElement ClickElementDiamonds;
-
      @FindBy(xpath = "(//label[contains(text(),'Tanzanite')])[1]") public WebElement ClicElementGreenTourmaline;
+    @FindBy(xpath = "//ul[@class='dropdown_select show']/li") public  WebElement ListSelectOption;
 
-//  Case:  Sorting
+    //  Case:  Sorting
     @FindBy(css = "div.sort-product-content") public WebElement SortingProduct;
 
     @FindBy(css = "ul.dropdown_select.show") public WebElement CheckBookTypeSort;

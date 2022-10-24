@@ -28,6 +28,7 @@ public class Login_Element {
     @FindBy(css = "li.account-link") public WebElement ClickLogOut;
     @FindBy(xpath = "//div[@class='logout-action']") public WebElement isDisplayBookLogOut;
     @FindBy(xpath = "//a[normalize-space()='Logout']") public WebElement LogOuts;
+
     public Login_Element(RemoteWebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);

@@ -109,10 +109,10 @@ public class ListingPage_Page {
                 System.out.println(" CHECK: ~~~~~~ IS DisPlay BookSortElement");
                 Thread.sleep(2000);
 //                ListingPage.SelectElementSort1.click();
-
-                List<WebElement> list = driver.findElements(By.xpath(".//ul/li"));
+                List<WebElement> list = (List<WebElement>) ListingPage.ListSelectOption;
                 for(WebElement option : list) {
                     String text = option.getText();
+                    System.out.println("====================================="+list);
                     if (text.equals("Relevance")) {
                         option.click();
                         break;

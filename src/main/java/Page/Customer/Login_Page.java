@@ -68,7 +68,6 @@ public class Login_Page {
         System.out.println("CHECK:~~~~~~~~~~Is Display LogOut");
         boolean StatusBookLogOut = Login.isDisplayBookLogOut.isDisplayed();
         if (!StatusBookLogOut) {
-
             System.out.println("~~~~~~~~~OUT~~~~~~~~~~~");
         } else {
             System.out.println("\n" + "STATUS:~~~~~~~~~~Is Display");
