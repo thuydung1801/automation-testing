@@ -46,9 +46,21 @@ public class ProductDetail_Test extends AbstractBase_Test {
     @Test
     public void RunProductRingSize(){
         App().Flow().navigateToUrl("https://dev3.glamira.com/glde/herrenohrringe/diamant/");
-//        App().Pages().ProductDetailPage().skipAllow();
-        App().Pages().ProductDetailPage().optionEarringMen();
 
+        App().Pages().ProductDetailPage().optionEarringMen();
+//        App().Pages().ProductDetailPage().skipAllow();
+
+    }
+    @Test void RunDemo1(){
+        App().Flow().navigateToUrl("https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant");
+        App().Pages().ProductDetailPage().optionFreeSize();
+
+
+//        App().Pages().ProductDetailPage().skipAllow();
+    }
+    @Test void RunDemo2(){
+        App().Flow().getCurrentPageUrl();
+        App().Pages().ProductDetailPage().optionFindSize();
     }
 
 }

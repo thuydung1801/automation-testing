@@ -108,9 +108,40 @@ public class ProductDetail_Page {
     }
 
     public void optionEarringMen(){
+        productDetailElement.submitCookie.click();
+//        skipAllow();
         Actions actions = new Actions(driver);
         actions.moveToElement(productDetailElement.hoverMens);
         actions.moveToElement(productDetailElement.clickEaring);
         actions.click().build().perform();
     }
+    public void optionFreeSize(){
+        productDetailElement.submitCookie.click();
+
+        productDetailElement.clickDropdown.click();
+        productDetailElement.optionSize.click();
+        productDetailElement.optionFreeSize.click();
+        productDetailElement.prd_FirstName.sendKeys(data.getKey("prd_FirstName"));
+        productDetailElement.prd_LastName.sendKeys(data.getKey("prd_LastName"));
+        productDetailElement.prd_Email.sendKeys(data.getKey("prd_Email"));
+        productDetailElement.prd_Street.sendKeys(data.getKey("prd_Street"));
+        productDetailElement.prd_Code.sendKeys(data.getKey("prd_Code"));
+        productDetailElement.prd_City.sendKeys(data.getKey("prd_City"));
+
+        productDetailElement.check1.click();
+        productDetailElement.check2.click();
+        productDetailElement.prd_submit.click();
+
+    }
+
+    public void optionFindSize(){
+
+        productDetailElement.clickDropdown.click();
+        productDetailElement.optionSize.click();
+        productDetailElement.optionFindSize.click();
+        productDetailElement.pageSizeGuide.click();
+
+
+    }
+
 }

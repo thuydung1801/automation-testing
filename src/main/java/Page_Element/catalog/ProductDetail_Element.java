@@ -42,7 +42,29 @@ public class ProductDetail_Element {
 //
     @FindBy(css = "#ui-id-202") public WebElement hoverMens;
     @FindBy(xpath = "(//font[contains(text(),'earrings')])[2]") public WebElement clickEaring;
-//    @FindBy(xpath = "") public WebElement ;
+
+    //------------Dimension Guide----------
+    @FindBy(xpath = "//span[@class='discover-size link']") public WebElement optionSize;
+    @FindBy(xpath = "//body[1]/div[6]/div[3]/div[1]/div[1]/div[2]/div[2]/div[1]") public WebElement optionFindSize;
+    @FindBy(linkText = "ring size guide") public WebElement pageSizeGuide;
+
+    //-----------------Form free a ring size------
+    @FindBy(xpath = "///body[1]/div[6]/div[3]/div[1]/div[1]/div[2]/div[3]/div[1]") public WebElement optionFreeSize;
+    @FindBy(xpath = "//input[@id='firstname']") public WebElement prd_FirstName;
+    @FindBy(xpath = "//input[@id='lastname']") public WebElement prd_LastName;
+    @FindBy(xpath = "//input[@id='email_address']") public WebElement prd_Email;
+    @FindBy(xpath = "//input[@id='street_1']") public WebElement prd_Street;
+    @FindBy(xpath = "//input[@id='zip']") public WebElement prd_Code;
+    @FindBy(xpath = "//input[@id='city']") public WebElement prd_City;
+    @FindBy(xpath = "(//body)[1]") public WebElement check1;
+    @FindBy(xpath = "(//input[@id='agreement-36'])[1]") public WebElement check2;
+    @FindBy(xpath = "(//button[@title='From you'])[2]") public WebElement prd_submit;
+
+
+//    @FindBy(xpath = "//span[@class='discover-size link']") public WebElement optionSize;
+
+
+
 
 
 
