@@ -1,15 +1,17 @@
 package Page.Catalog;
 
 import Page_Element.catalog.ListingPage_Element;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
-
+import org.openqa.selenium.support.ui.Select;
 import java.sql.Driver;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListingPage_Page {
     RemoteWebDriver driver;
@@ -106,7 +108,17 @@ public class ListingPage_Page {
             if (statusBookSort) {
                 System.out.println(" CHECK: ~~~~~~ IS DisPlay BookSortElement");
                 Thread.sleep(2000);
-                ListingPage.SelectElementSort1.click();
+//                ListingPage.SelectElementSort1.click();
+
+                List<WebElement> list = driver.findElements(By.xpath(".//ul/li"));
+                for(WebElement option : list) {
+                    String text = option.getText();
+                    if (text.equals("Relevance")) {
+                        option.click();
+                        break;
+                    }
+                }
+
             }
         }
 

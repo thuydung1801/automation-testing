@@ -22,7 +22,11 @@ public class Login_Element {
     @FindBy(xpath = "//form[@class='form login-form']//button[@type='submit']") public WebElement SubMitLogin;
     @FindBy(css = "li.authorization-link.login") public WebElement slectAAA;
     @FindBy(xpath = "//a[@title='My Account']") public WebElement MyAccLogOut;
-    @FindBy(xpath = "//a[normalize-space()='Logout']") public WebElement ClickLogOut;
+    @FindBy(css = "li.account-link") public WebElement ClickLogOut;
+
+    @FindBy (css = "div.tab-content.content-popup.geoip-popup-content") public WebElement isDisplayBookSwithch;
+    @FindBy (css = "a.btn-stay-here.geoip-close") public WebElement ClickStayOnHere;
+
     public Login_Element(RemoteWebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);

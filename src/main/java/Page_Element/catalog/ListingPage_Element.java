@@ -34,7 +34,7 @@ public class ListingPage_Element
 
     @FindBy(css = "ul.dropdown_select.show") public WebElement CheckBookTypeSort;
     @FindBy(css = "span.direction_asc") public WebElement SelectElementSort0;
-    @FindBy(css = "span.direction_desc") public WebElement SelectElementSort1;
+    @FindBy(xpath = "//a[@id='relevance']") public WebElement SelectElementSort1;
 
 
     public ListingPage_Element(RemoteWebDriver driver) {
