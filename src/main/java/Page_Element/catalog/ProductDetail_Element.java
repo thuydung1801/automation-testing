@@ -19,15 +19,15 @@ public class ProductDetail_Element {
     @FindBy(xpath = "(//a[@class='selector-item selector-item-img'])[2]") public WebElement clickShowImg2;
     @FindBy(xpath = "(//a[@class='selector-item selector-item-video'])[1]") public WebElement clickShowVideo3;
 
-    @FindBy(xpath = "//main[@id='maincontent']//a[1]//img[1]") public WebElement clickImg;
-    @FindBy(xpath = "(//button[@type='button'])[17]") public WebElement clickClose;
+    @FindBy(xpath = "(//span[@class='selector-item selector-item-img'])[1]") public WebElement clickImg;
+    @FindBy(css = "button.mz-button mz-button-close") public WebElement clickClose;
 
     //---------Default option-------
     @FindBy(xpath = "//div[@id='stone_diamonds']//div[@class='option_label inactive']") public WebElement mainStone;
     @FindBy(css = "div[id='stone_2'] div[class='option_label inactive']") public WebElement stone2;
     @FindBy(xpath = "//div[@id='alloy_colour']//div[@class='option_label inactive']") public WebElement metal_alloy;
     @FindBy(xpath = "//div[@id='engraving']//div[@class='option_label inactive']") public WebElement engraving;
-    @FindBy(xpath = "//div[@placeholder='Please enter your text here']") public WebElement engravingText;
+    @FindBy(css = "div[placeholder='Bitte geben Sie Ihren Text hier ein']") public WebElement engravingText;
     @FindBy(xpath = "//div[@class='dropdown-input sprite-bf']") public WebElement clickDropdown;
     @FindBy(xpath = "//option[@value='15,3']") public WebElement clickOptionSize;
 
@@ -39,7 +39,7 @@ public class ProductDetail_Element {
     @FindBy(xpath = "(//span[contains(text(),'View Detail')])[1]") public WebElement viewDetail;
     @FindBy(xpath = "(//div[@class='option-detail add-engraving'])[2]") public WebElement getTextengr;
     @FindBy(linkText = "Stay Here on www.glamira.de") public WebElement clickAllow;
-//
+//------------Quantity option for earring men---------
     @FindBy(css = "#ui-id-202") public WebElement hoverMens;
     @FindBy(xpath = "(//font[contains(text(),'earrings')])[2]") public WebElement clickEaring;
 

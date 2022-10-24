@@ -64,7 +64,7 @@ public class ProductDetail_Page {
     public void selectOption() throws InterruptedException {
         Thread.sleep(100);
         ArrayList<WebElement> arr = new ArrayList<>();
-        arr.add(productDetailElement.mainStone);
+//        arr.add(productDetailElement.mainStone);
         arr.add(productDetailElement.stone2);
         arr.add(productDetailElement.metal_alloy);
         arr.add(productDetailElement.engraving);
@@ -76,7 +76,8 @@ public class ProductDetail_Page {
             }
             else{
                 option.click();
-                option.sendKeys(data.getKey("engravingTextKey"));
+                productDetailElement.engravingText.click();
+                productDetailElement.engravingText.sendKeys(data.getKey("engravingTextKey"));
             }
         }
 //        productDetailElement.mainStone.click();
@@ -103,8 +104,9 @@ public class ProductDetail_Page {
         Thread.sleep(100);
         productDetailElement.viewDetail.click();
 
-        System.out.printf("check engravingText");
+        System.out.printf("check engravingText" + "\n");
         productDetailElement.getTextengr.getText().equalsIgnoreCase(data.getKey("engravingTextKey"));
+        System.out.printf("True" + "\n");
     }
 
     public void optionEarringMen(){
