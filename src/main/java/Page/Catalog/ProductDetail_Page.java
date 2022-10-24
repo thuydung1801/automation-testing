@@ -4,6 +4,7 @@ import Page_Element.catalog.ProductDetail_Element;
 import Page_Lib.ReadData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.ArrayList;
@@ -104,5 +105,12 @@ public class ProductDetail_Page {
 
         System.out.printf("check engravingText");
         productDetailElement.getTextengr.getText().equalsIgnoreCase(data.getKey("engravingTextKey"));
+    }
+
+    public void optionEarringMen(){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(productDetailElement.hoverMens);
+        actions.moveToElement(productDetailElement.clickEaring);
+        actions.click().build().perform();
     }
 }

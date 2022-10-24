@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class ProductDetail_Test extends AbstractBase_Test {
     @Test
-    public void RunProductDetail() throws InterruptedException {
+    public void RunProductInfo() throws InterruptedException {
         App().Flow().navigateToUrl("https://dev3.glamira.com/glde/diamantringe/diamant/");
 
         App().Pages().ProductDetailPage().clickProduct();
@@ -35,6 +35,19 @@ public class ProductDetail_Test extends AbstractBase_Test {
         App().Pages().ProductDetailPage().clickAddCart();
         System.out.printf("test 2.2 done"+"\n");
 
+
+        System.out.printf("---------test 3: Quantity option for earring men" +"\n");
+        App().Flow().openNewTab("https://dev3.glamira.com/glde/herrenohrringe/diamant/");
+
+
+        System.out.printf("test 3 done");
+
+    }
+    @Test
+    public void RunProductRingSize(){
+        App().Flow().navigateToUrl("https://dev3.glamira.com/glde/herrenohrringe/diamant/");
+//        App().Pages().ProductDetailPage().skipAllow();
+        App().Pages().ProductDetailPage().optionEarringMen();
 
     }
 
