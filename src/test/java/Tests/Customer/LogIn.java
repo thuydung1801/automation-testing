@@ -37,15 +37,9 @@ public class LogIn extends AbstractBase_Test {
         App().Flow().getCurrentPageUrl();
         System.out.println(App().Flow().getCurrentPageUrl());
         App().Pages().LogInOutage().ClickLogOuts();
-        System.out.println("SteepII:----- ClickIconAccound");
-        App().Pages().LogInOutage().ClickLogOuts();
         System.out.println("STATUS:----- LogOut Succesfuly !");
     }
 
-    @AfterTest
-    public void LogOut() throws InterruptedException {
-
-    }
 
 }
 

@@ -24,7 +24,6 @@ public class Login_Page {
 
     public void click() {
         Login.LoginPage.click();
-
     }
 
     public void EnterMail() {
@@ -62,14 +61,24 @@ public class Login_Page {
         }
     }
 
-    public void LogOut() throws InterruptedException {
-        Thread.sleep(10000);
-        Login.MyAccLogOut.click();
-    }
-
     public void ClickLogOuts() throws InterruptedException {
         Thread.sleep(2000);
         Login.ClickLogOut.click();
+        Thread.sleep(1000);
+        System.out.println("CHECK:~~~~~~~~~~Is Display LogOut");
+        boolean StatusBookLogOut = Login.isDisplayBookLogOut.isDisplayed();
+        if (!StatusBookLogOut) {
+
+            System.out.println("~~~~~~~~~OUT~~~~~~~~~~~");
+        } else {
+            System.out.println("\n" + "STATUS:~~~~~~~~~~Is Display");
+            Thread.sleep(3000);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView();", Login.LogOuts);
+            System.out.println("\n" + "Scroll to Element");
+            Thread.sleep(2000);
+            Login.LogOuts.click();
+        }
     }
 
 //
