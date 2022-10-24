@@ -2,6 +2,7 @@ package Page.Catalog;
 
 import Page_Element.catalog.ProductDetail_Element;
 import Page_Lib.ReadData;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -27,11 +28,16 @@ public class ProductDetail_Page {
         productDetailElement = new ProductDetail_Element(driver);
 
     }
+    public void submitCookie(){
+        productDetailElement.submitCookie.click();
+    }
     public void skipAllow(){
         System.out.printf("skip" + "\n");
         productDetailElement.clickAllow.click();
-
-
+    }
+    public void scrollToBottom() {
+        ((JavascriptExecutor) driver)
+                .executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
     public void clickProduct(){
         productDetailElement.clickProduct.click();
@@ -117,10 +123,17 @@ public class ProductDetail_Page {
         actions.moveToElement(productDetailElement.clickEaring);
         actions.click().build().perform();
     }
-    public void optionFreeSize(){
-        productDetailElement.submitCookie.click();
+    public void optionFreeSize() throws InterruptedException {
+//        productDetailElement.submitCookie.click();
+        Thread.sleep(1000);
+        submitCookie();
+        scrollToBottom();
+//        Thread.sleep(1000);
 
+        skipAllow();
         productDetailElement.clickDropdown.click();
+//        skipAllow();
+
         productDetailElement.optionSize.click();
         productDetailElement.optionFreeSize.click();
         productDetailElement.prd_FirstName.sendKeys(data.getKey("prd_FirstName"));

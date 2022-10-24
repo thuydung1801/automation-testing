@@ -5,7 +5,7 @@ import java.util.Properties;
 
 public class ReadData {
     private Properties properties;
-    private final String propertyFilePath = "D:\\Automation_Glamira\\src\\main\\Data_Test\\data.properties";
+    private final String propertyFilePath = "C:\\Users\\Thuy Dung\\Documents\\Automation test\\project_Glamira\\src\\main\\Data_Test\\data.properties";
 
     public ReadData() {
         BufferedReader reader;

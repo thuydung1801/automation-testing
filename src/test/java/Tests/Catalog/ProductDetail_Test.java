@@ -37,7 +37,9 @@ public class ProductDetail_Test extends AbstractBase_Test {
 
 
         System.out.printf("---------test 3: Quantity option for earring men" +"\n");
-        App().Flow().openNewTab("https://dev3.glamira.com/glde/herrenohrringe/diamant/");
+//        App().Flow().openNewTab("https://dev3.glamira.com/glde/herrenohrringe/diamant/");
+        App().Flow().openNewTab("https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant");
+        App().Pages().ProductDetailPage().optionFreeSize();
 
 
         System.out.printf("test 3 done");
@@ -51,15 +53,18 @@ public class ProductDetail_Test extends AbstractBase_Test {
 //        App().Pages().ProductDetailPage().skipAllow();
 
     }
-    @Test void RunDemo1(){
+    @Test void RunDemo1() throws InterruptedException {
         App().Flow().navigateToUrl("https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant");
+
         App().Pages().ProductDetailPage().optionFreeSize();
 
 
 //        App().Pages().ProductDetailPage().skipAllow();
     }
     @Test void RunDemo2(){
-        App().Flow().getCurrentPageUrl();
+//        App().Flow().getCurrentPageUrl();
+        App().Flow().navigateToUrl("https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant");
+
         App().Pages().ProductDetailPage().optionFindSize();
     }
 

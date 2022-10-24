@@ -20,7 +20,7 @@ public class ProductDetail_Element {
     @FindBy(xpath = "(//a[@class='selector-item selector-item-video'])[1]") public WebElement clickShowVideo3;
 
     @FindBy(xpath = "(//span[@class='selector-item selector-item-img'])[1]") public WebElement clickImg;
-    @FindBy(css = "button.mz-button mz-button-close") public WebElement clickClose;
+    @FindBy(css = "button.mz-button.mz-button-close") public WebElement clickClose;
 
     //---------Default option-------
     @FindBy(xpath = "//div[@id='stone_diamonds']//div[@class='option_label inactive']") public WebElement mainStone;
@@ -45,11 +45,11 @@ public class ProductDetail_Element {
 
     //------------Dimension Guide----------
     @FindBy(xpath = "//span[@class='discover-size link']") public WebElement optionSize;
-    @FindBy(xpath = "//body[1]/div[6]/div[3]/div[1]/div[1]/div[2]/div[2]/div[1]") public WebElement optionFindSize;
+    @FindBy(xpath = "/html[1]/body[1]/div[11]/aside[14]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]") public WebElement optionFindSize;
     @FindBy(linkText = "ring size guide") public WebElement pageSizeGuide;
 
     //-----------------Form free a ring size------
-    @FindBy(xpath = "///body[1]/div[6]/div[3]/div[1]/div[1]/div[2]/div[3]/div[1]") public WebElement optionFreeSize;
+    @FindBy(css = "body.pl-thm-opentechiz.pl-thm-opentechiz-glamira.catalog-product-view.product-glamira-ring-mutia.categorypath-diamantringe.category-diamantringe.locale-de_de.language-de.page-layout-1column._has-modal:nth-child(2) div.modals-wrapper:nth-child(23) aside.modal-slide.ringsize-modal.modal-sm._inner-scroll._show:nth-child(14) div.modal-inner-wrap:nth-child(2) div.modal-content div:nth-child(1) div.accordion-container.modal-size-info div.accordion-collapse:nth-child(3) > div.collapse-title.sprite-bf") public WebElement optionFreeSize;
     @FindBy(xpath = "//input[@id='firstname']") public WebElement prd_FirstName;
     @FindBy(xpath = "//input[@id='lastname']") public WebElement prd_LastName;
     @FindBy(xpath = "//input[@id='email_address']") public WebElement prd_Email;

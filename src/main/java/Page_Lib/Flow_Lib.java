@@ -1,6 +1,7 @@
 package Page_Lib;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,4 +38,5 @@ public class Flow_Lib {
         return this.driver.getTitle();
 
     }
+
 }
