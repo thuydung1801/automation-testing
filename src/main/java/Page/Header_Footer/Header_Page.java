@@ -1,24 +1,20 @@
 package Page.Header_Footer;
 
 import Page_Element.Header_Footer.Header_Element;
+import Page_Lib.ReadData;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
 
 public class Header_Page {
     //  ChromeDriver driver;
     RemoteWebDriver driver;
     Header_Element headerElement;
+    ReadData data;
 
 
     public Header_Page(RemoteWebDriver driver) {
         this.driver = driver;
         headerElement = new Header_Element(driver);
-
+        data = new ReadData();
 
     }
 
@@ -29,23 +25,7 @@ public class Header_Page {
 
     public void senKeySearch() {
 
-        File file = new File("/home/vu/IdeaProjects/project_Glamaria/src/main/Data_Test/data.properties");
-
-        FileInputStream fileInput = null;
-        try {
-            fileInput = new FileInputStream(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        Properties prop = new Properties();
-
-        //load properties file
-        try {
-            prop.load(fileInput);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        headerElement.headerSearch.sendKeys(prop.getProperty("searchKey"));
+        headerElement.headerSearch.sendKeys(data.getKey("searchKey"));
     }
 
     public void clickBtnSearch() {
