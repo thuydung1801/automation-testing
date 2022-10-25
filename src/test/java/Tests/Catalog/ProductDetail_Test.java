@@ -56,12 +56,12 @@ public class ProductDetail_Test extends AbstractBase_Test {
     @Test void RunDemo1() throws InterruptedException {
         App().Flow().navigateToUrl("https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant");
 
-        App().Pages().ProductDetailPage().optionFreeSize();
+        App().Pages().ProductDetailPage().optionDimensionGuide();
 
 
 //        App().Pages().ProductDetailPage().skipAllow();
     }
-    @Test void RunDemo2(){
+    @Test void RunFindSize() throws InterruptedException {
 //        App().Flow().getCurrentPageUrl();
         App().Flow().navigateToUrl("https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant");
 

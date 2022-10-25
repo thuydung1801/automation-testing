@@ -43,13 +43,13 @@ public class ProductDetail_Element {
     @FindBy(css = "#ui-id-202") public WebElement hoverMens;
     @FindBy(xpath = "(//font[contains(text(),'earrings')])[2]") public WebElement clickEaring;
 
-    //------------Dimension Guide----------
+    //------------Dimension Guide/ Find size----------
     @FindBy(xpath = "//span[@class='discover-size link']") public WebElement optionSize;
-    @FindBy(xpath = "/html[1]/body[1]/div[11]/aside[14]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]") public WebElement optionFindSize;
-    @FindBy(linkText = "ring size guide") public WebElement pageSizeGuide;
+    @FindBy(xpath = "(//div[@id='ringsize-link-form'])[2]") public WebElement optionFindSize;
+    @FindBy(xpath = "//font[contains(text(),'ring size guide.')]") public WebElement pageSizeGuide;
 
     //-----------------Form free a ring size------
-    @FindBy(css = "body.pl-thm-opentechiz.pl-thm-opentechiz-glamira.catalog-product-view.product-glamira-ring-mutia.categorypath-diamantringe.category-diamantringe.locale-de_de.language-de.page-layout-1column._has-modal:nth-child(2) div.modals-wrapper:nth-child(23) aside.modal-slide.ringsize-modal.modal-sm._inner-scroll._show:nth-child(14) div.modal-inner-wrap:nth-child(2) div.modal-content div:nth-child(1) div.accordion-container.modal-size-info div.accordion-collapse:nth-child(3) > div.collapse-title.sprite-bf") public WebElement optionFreeSize;
+    @FindBy(xpath = "(//div[contains(@class,'collapse-title sprite-bf')])[6]") public WebElement optionFreeSize;
     @FindBy(xpath = "//input[@id='firstname']") public WebElement prd_FirstName;
     @FindBy(xpath = "//input[@id='lastname']") public WebElement prd_LastName;
     @FindBy(xpath = "//input[@id='email_address']") public WebElement prd_Email;
@@ -58,12 +58,10 @@ public class ProductDetail_Element {
     @FindBy(xpath = "//input[@id='city']") public WebElement prd_City;
     @FindBy(xpath = "(//body)[1]") public WebElement check1;
     @FindBy(xpath = "(//input[@id='agreement-36'])[1]") public WebElement check2;
-    @FindBy(xpath = "(//button[@title='From you'])[2]") public WebElement prd_submit;
+    @FindBy(css = "form[id='form-validate-ringsizer'] button[title='From you']") public WebElement prd_submit;
 
 
 //    @FindBy(xpath = "//span[@class='discover-size link']") public WebElement optionSize;
-
-
 
 
 

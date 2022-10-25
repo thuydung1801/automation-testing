@@ -2,6 +2,7 @@ package Page.Catalog;
 
 import Page_Element.catalog.ProductDetail_Element;
 import Page_Lib.ReadData;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -123,40 +125,68 @@ public class ProductDetail_Page {
         actions.moveToElement(productDetailElement.clickEaring);
         actions.click().build().perform();
     }
-    public void optionFreeSize() throws InterruptedException {
+    public void optionFindSize() throws InterruptedException {
 //        productDetailElement.submitCookie.click();
-        Thread.sleep(1000);
+//        boolean present;
+//        try {
+//            driver.findElement(By.cssSelector("button.amgdprcookie-button.-allow"));
+//            present = true;
+//        } catch (NoSuchElementException e) {
+//            present =false ;
+//        }
+//        System.out.printf("present: " +present);
+//        if(present){
+//            Thread.sleep(500);
+//        scrollToBottom();
+//        skipAllow();
+//        System.out.printf("click 1");
+        Thread.sleep(600);
         submitCookie();
+        System.out.printf("click 2");
+//        }
+
         scrollToBottom();
 //        Thread.sleep(1000);
 
         skipAllow();
+        System.out.printf("click3");
         productDetailElement.clickDropdown.click();
-//        skipAllow();
-
+        System.out.printf("btn dropdown");
         productDetailElement.optionSize.click();
-        productDetailElement.optionFreeSize.click();
-        productDetailElement.prd_FirstName.sendKeys(data.getKey("prd_FirstName"));
-        productDetailElement.prd_LastName.sendKeys(data.getKey("prd_LastName"));
-        productDetailElement.prd_Email.sendKeys(data.getKey("prd_Email"));
-        productDetailElement.prd_Street.sendKeys(data.getKey("prd_Street"));
-        productDetailElement.prd_Code.sendKeys(data.getKey("prd_Code"));
-        productDetailElement.prd_City.sendKeys(data.getKey("prd_City"));
+        productDetailElement.optionFindSize.click();
 
-        productDetailElement.check1.click();
-        productDetailElement.check2.click();
-        productDetailElement.prd_submit.click();
+            productDetailElement.prd_FirstName.sendKeys(data.getKey("prd_FirstName"));
+            productDetailElement.prd_LastName.sendKeys(data.getKey("prd_LastName"));
+            productDetailElement.prd_Email.sendKeys(data.getKey("prd_Email"));
+            productDetailElement.prd_Street.sendKeys(data.getKey("prd_Street"));
+            productDetailElement.prd_Code.sendKeys(data.getKey("prd_Code"));
+            productDetailElement.prd_City.sendKeys(data.getKey("prd_City"));
+            Thread.sleep(200);
+//            productDetailElement.check1.click();
+            productDetailElement.check2.click();
+            productDetailElement.prd_submit.click();
 
     }
 
-    public void optionFindSize(){
-
+    public void optionDimensionGuide() throws InterruptedException {
+//        scrollToBottom();
         productDetailElement.clickDropdown.click();
+        skipAllow();
+        submitCookie();
+//        Thread.sleep(200);
+        productDetailElement.clickDropdown.click();
+        System.out.printf("1");
         productDetailElement.optionSize.click();
+        System.out.printf("2");
         productDetailElement.optionFindSize.click();
+        System.out.printf("3");
         productDetailElement.pageSizeGuide.click();
 
-
+    }
+    public void optionFreeSize(){
+        productDetailElement.clickDropdown.click();
+        productDetailElement.optionSize.click();
+        productDetailElement.optionFreeSize.click();
     }
 
 }
