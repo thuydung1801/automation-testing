@@ -17,9 +17,6 @@ public class ListingPage_Test extends AbstractBase_Test {
         Thread.sleep(2000);
         App().Pages().ListingPage().isDplSwitchTo();
         System.out.println("---> Click Success Button Close");
-//Scroll
-//        App().Pages().ListingPage().scrollToElement();
-//        System.out.println("---> Scrolled to Element");
     }
 
     @Test

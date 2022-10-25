@@ -11,9 +11,23 @@ public class MiniCart_Test extends AbstractBase_Test {
         App().Pages().miniCartPage().ClickProductSelected();
         Thread.sleep(1000);
         App().Flow().getCurrentPageUrl();
-        System.out.println(  App().Flow().getCurrentPageUrl());
-        App().Pages().miniCartPage().ClickAddToCart();
-        App().Pages().miniCartPage().Clickkkkkk();
+        System.out.println(App().Flow().getCurrentPageUrl());
+        App().Pages().miniCartPage().ClickElement();
+        Thread.sleep(1000);
+        App().Flow().navigateToUrl("https://dev3.glamira.com/glgb/diamond-rings/");
+        App().Pages().miniCartPage().AddProDuctTwo();
+        Thread.sleep(1000);
+        System.out.println("~~~~~ CHECK VIEW DETAIL CART ~~~~~");
+        Thread.sleep(1000);
+        App().Pages().miniCartPage().CheckMiniCart();
+        Thread.sleep(1000);
+        System.out.println("~~~~~ CHECK VIEW CART~~~~~");
+        Thread.sleep(1000);
+        App().Pages().miniCartPage().CheckViewCart();
+        Thread.sleep(1000);
     }
+
+
+//
 
 }

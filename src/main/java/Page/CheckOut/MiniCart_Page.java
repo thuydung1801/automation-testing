@@ -3,6 +3,7 @@ package Page.CheckOut;
 import Page_Element.CheckOut.MiniCart_Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -24,9 +25,10 @@ public class MiniCart_Page {
         System.out.println(" ======== scroll the page till the element is found ========");
         Thread.sleep(1000);
         MiniCart.SelectProductCheckOut.click();
-        //côkies
 
-        Thread.sleep(7000);
+        //================================ ACCEPT COOLIES ================================
+
+        Thread.sleep(1000);
         boolean status = MiniCart.checkCookies.isDisplayed();
         System.out.println("CHECK: ~~~~~~~ Is Display AccepCookies Book:" + '\n');
         if (status) {
@@ -37,7 +39,7 @@ public class MiniCart_Page {
         }
         Thread.sleep(2000);
         js.executeScript("window.scrollBy(0,500)");
-        Thread.sleep(10000);
+        Thread.sleep(2000);
         System.out.println("CHECK: ~~~~~~~ Is Display Switch To Book:" + '\n');
         boolean status1 = MiniCart.CheckBookSwitchTo.isDisplayed();
         if (!status1) {
@@ -49,44 +51,68 @@ public class MiniCart_Page {
             System.out.println("MESAGE:~~~~~~~ Close Success.~~~~~~~");
         }
         Thread.sleep(1000);
-
+    }
+    //================================ ADD PRODUCT TO CART ================================
+    public void ClickElement() throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,800)");
+        Thread.sleep(2000);
+        MiniCart.selectRingSize.click();
+        Thread.sleep(2000);
+        Actions action = new Actions(driver);
+        action.scrollToElement(MiniCart.SelectTypeRingSize).perform();
+        Thread.sleep(1000);
+        MiniCart.SelectTypeRingSize.click();
+        Thread.sleep(1000);
+        MiniCart.AddToCarts.click();
     }
 
-    public void ClickAddToCart() throws InterruptedException {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", MiniCart.isDisplayBookRingSize);
-        System.out.println("CHECK:==isDisplayBookRingSize==");
-        boolean stt = MiniCart.isDisplayBookRingSize.isDisplayed();
-        if (!stt) {
-            System.out.println("==========");
+    // ======================================CHECK DETAIL VIEW======================================
+    public void CheckMiniCart() throws InterruptedException {
+        System.out.println("~~~~~~~~~~~~~~~CheckMiniCart~~~~~~~~~~~~~~~");
+        Thread.sleep(1000);
+        boolean statusMessage = MiniCart.CloseMessage.isDisplayed();
+        if (!statusMessage) {
+            System.out.println(" NO MESSAGE ");
+        } else if (statusMessage) {
+            MiniCart.CloseIcon.click();
         } else {
-            Thread.sleep(5000);
-            System.out.println("STATUS:~~~~~~~~isDisplayBookRingSize==");
-            Thread.sleep(5000);
-            MiniCart.isDisplayBookRingSize.click();
-            System.out.println("MESSAGE:~~~~~~~~ Click Success ==");
-            Thread.sleep(10000);
-
+            System.out.println(" NEXT STEEP ");
         }
 
     }
-    public void Clickkkkkk () throws InterruptedException {
+
+    // =========================================  CHECK VIEW CART BUTTON=================================
+    public void CheckViewCart() throws InterruptedException {
+        Thread.sleep(1000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        boolean stt2 = MiniCart.isDisplayContentRingSize.isDisplayed();
-        if (stt2) {
-            System.out.println("==========");
-        } else {
-            Thread.sleep(5000);
-            js.executeScript("arguments[0].scrollIntoView();", MiniCart.selectRingSize);
-            Thread.sleep(5000);
-            Select selects = new Select(driver.findElement(By.xpath("//div[@class='dropdown-container']")));
-            Thread.sleep(5000);
-            js.executeScript("arguments[0].scrollIntoView();", MiniCart.selectRingSize);
-            selects.selectByIndex(21);
-            System.out.println("AAAAAAAAAAAA");
-        }
-        js.executeScript("arguments[0].scrollIntoView();", MiniCart.AddToCarts);
-        Thread.sleep(20000);
+        js.executeScript("window.scrollBy(0,-500)");
+        MiniCart.CheckMiniCart.click();
+        Thread.sleep(2000);
+        MiniCart.CloseCheckMiniCart.click();
+        Thread.sleep(2000);
+        MiniCart.CheckMiniCart.click();
+        Thread.sleep(2000);
+        MiniCart.CheckViewCart.click();
+        Thread.sleep(1000);
+    }
+    // ========================================= add two =================================
+    public void AddProDuctTwo() throws InterruptedException {
+        Thread.sleep(2000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", MiniCart.SelectProductCheckOut);
+        System.out.println(" ======== scroll the page till the element is found ========");
+        Thread.sleep(1000);
+        MiniCart.SelectProductCheckOut1.click();
+        js.executeScript("window.scrollBy(0,800)");
+        Thread.sleep(2000);
+        MiniCart.selectRingSize.click();
+        Thread.sleep(2000);
+        Actions action = new Actions(driver);
+        action.scrollToElement(MiniCart.SelectTypeRingSize).perform();
+        Thread.sleep(1000);
+        MiniCart.SelectTypeRingSize.click();
+        Thread.sleep(1000);
         MiniCart.AddToCarts.click();
     }
 }

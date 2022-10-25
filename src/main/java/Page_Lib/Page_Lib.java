@@ -1,5 +1,6 @@
 package Page_Lib;
 
+import Page.CheckOut.ShoppingPage_Page;
 import Page.Header_Footer.Header_Page;
 import Page.Catalog.ListingPage_Page;
 import Page.Customer.Login_Page;
@@ -15,6 +16,7 @@ public class Page_Lib {
     private ProductDetail_Page productDetailPage;
     private ListingPage_Page listingPage;
     private MiniCart_Page miniCartPage;
+    private ShoppingPage_Page shoppingPage;
 
     public Page_Lib(RemoteWebDriver driver) {
         this.driver = driver;
@@ -23,6 +25,7 @@ public class Page_Lib {
         logInOutPage = new Login_Page(this.driver);
         productDetailPage = new ProductDetail_Page(this.driver);
         miniCartPage = new MiniCart_Page((this.driver));
+        shoppingPage = new ShoppingPage_Page(this.driver);
     }
 
     public Header_Page HeaderPage() {
@@ -38,4 +41,5 @@ public class Page_Lib {
     }
     public ListingPage_Page ListingPage(){ return listingPage; }
     public MiniCart_Page miniCartPage() {return  miniCartPage;}
+    public  ShoppingPage_Page shoppingPagePage(){return shoppingPage; }
 }

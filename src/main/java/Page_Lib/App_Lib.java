@@ -9,7 +9,6 @@ public class App_Lib {
    static RemoteWebDriver driver = null;
     private Page_Lib page;
     private Flow_Lib flow;
-
     public App_Lib(RemoteWebDriver driver) {
         this.driver = driver;
         page = new Page_Lib(this.driver);
