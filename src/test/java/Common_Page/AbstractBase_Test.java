@@ -20,6 +20,7 @@ public class AbstractBase_Test {
     String username = "nguyenthingoc1052000";
     String accesskey = "mL1BJLIDr2WgDbjtQVaw1hJISaAssHzGB1FVNNxH6t9SLzbt7r";
     static RemoteWebDriver driver = null;
+
     String gridURL = "@hub.lambdatest.com/wd/hub";
 
     private void setup() throws MalformedURLException {
@@ -57,6 +58,7 @@ public class AbstractBase_Test {
         WebDriverManager.chromedriver().setup();
         chromeDriver = new ChromeDriver();
         App = new App_Lib(chromeDriver);
+        chromeDriver.manage().deleteAllCookies();
     }
 
     @AfterTest
