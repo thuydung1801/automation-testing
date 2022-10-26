@@ -86,6 +86,7 @@ public class ProductDetail_Page {
                 option.click();
                 productDetailElement.engravingText.click();
                 productDetailElement.engravingText.sendKeys(data.getKey("engravingTextKey"));
+
             }
         }
 //        productDetailElement.mainStone.click();
@@ -113,7 +114,8 @@ public class ProductDetail_Page {
         productDetailElement.viewDetail.click();
 
         System.out.printf("check engravingText" + "\n");
-        productDetailElement.getTextengr.getText().equalsIgnoreCase(data.getKey("engravingTextKey"));
+//        productDetailElement.getTextengr.getText().equalsIgnoreCase(data.getKey("engravingTextKey"));
+        productDetailElement.getTextengr.sendKeys("test");
         System.out.printf("True" + "\n");
     }
 
@@ -141,14 +143,14 @@ public class ProductDetail_Page {
 //        skipAllow();
 //        System.out.printf("click 1");
         Thread.sleep(600);
-        submitCookie();
+//        submitCookie();
         System.out.printf("click 2");
 //        }
 
-        scrollToBottom();
+//        scrollToBottom();
 //        Thread.sleep(1000);
 
-        skipAllow();
+//        skipAllow();
         System.out.printf("click3");
         productDetailElement.clickDropdown.click();
         System.out.printf("btn dropdown");
@@ -172,15 +174,15 @@ public class ProductDetail_Page {
 //        scrollToBottom();
         productDetailElement.clickDropdown.click();
         skipAllow();
-        submitCookie();
+//        submitCookie();
 //        Thread.sleep(200);
         productDetailElement.clickDropdown.click();
-        System.out.printf("1");
-        productDetailElement.optionSize.click();
-        System.out.printf("2");
-        productDetailElement.optionFindSize.click();
-        System.out.printf("3");
-        productDetailElement.pageSizeGuide.click();
+//        System.out.printf("1");
+//        productDetailElement.optionSize.click();
+//        System.out.printf("2");
+//        productDetailElement.optionFindSize.click();
+//        System.out.printf("3");
+//        productDetailElement.pageSizeGuide.click();
 
     }
     public void optionFreeSize(){

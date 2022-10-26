@@ -5,6 +5,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
@@ -12,6 +13,8 @@ import org.testng.annotations.BeforeTest;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AbstractBase_Test {
     // ChromeDriver driver;
@@ -54,8 +57,22 @@ public class AbstractBase_Test {
     @BeforeTest
     public void setUp() throws Exception {
 //        setup();
+//        ChromeOptions options = new ChromeOptions();
+//        HashMap<String, Integer> cookie = new HashMap<>();
+//        cookie.put("profile.default_content_settings.cookies", 2);
+//        options.setExperimentalOption("prefs", cookie);
+
+        ChromeOptions options = new ChromeOptions();
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("profile.default_content_settings.cookies", 2);
+        options.setExperimentalOption("prefs", prefs);
+        String[] arguments = {"-----start-maximized"};
+        options.addArguments(arguments);
+//        driver = new ChromeDriver(options);
+
+
         WebDriverManager.chromedriver().setup();
-        dr = new ChromeDriver();
+        dr = new ChromeDriver(options);
         App = new App_Lib(dr);
 
 
