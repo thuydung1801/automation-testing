@@ -63,7 +63,7 @@ public class ProductDetail_Element {
     @FindBy(xpath = "//a[contains(text(),'Ringe')]") public WebElement rings;
 
 
-//    @FindBy(xpath = "//span[@class='discover-size link']") public WebElement optionSize;
+    @FindBy(xpath = "(//select[@name=\'options[250976][EU]\'])[1]") public WebElement test;
 
 
 

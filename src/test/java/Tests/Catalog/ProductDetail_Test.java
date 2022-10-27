@@ -63,5 +63,11 @@ public class ProductDetail_Test extends AbstractBase_Test {
         App().Flow().navigateToUrl(data.getKey("url_ProductDetail"));
         App().Pages().ProductDetailPage().optionFindSize();
     }
+    @Test
+    public void test(){
+        App().Flow().navigateToUrl(data.getKey("url_ProductDetail"));
+
+        App().Pages().ProductDetailPage().dropdown();
+    }
 
 }

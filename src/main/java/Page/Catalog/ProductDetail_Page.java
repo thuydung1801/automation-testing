@@ -3,13 +3,17 @@ package Page.Catalog;
 import Page_Element.catalog.ProductDetail_Element;
 import Page_Lib.Common;
 import Page_Lib.ReadData;
-import org.jetbrains.annotations.NotNull;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class ProductDetail_Page extends Common {
@@ -27,13 +31,13 @@ public class ProductDetail_Page extends Common {
         productDetailElement = new ProductDetail_Element(driver);
 
     }
-    public void submitCookie(){
-        click(productDetailElement.submitCookie , "accept cookie");
-    }
-    public void skipAllow(){
-        click(productDetailElement.clickAllow , "skip");
-
-    }
+//    public void submitCookie(){
+//        click(productDetailElement.submitCookie , "accept cookie");
+//    }
+//    public void skipAllow(){
+//        click(productDetailElement.clickAllow , "skip");
+//
+//    }
     public void scrollToBottom() {
         ((JavascriptExecutor) driver)
                 .executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -75,6 +79,17 @@ public class ProductDetail_Page extends Common {
         click(productDetailElement.clickDropdown , "dropdown");
         Thread.sleep(1000);
         click(productDetailElement.clickOptionSize , "select option");
+    }
+
+    public void dropdown(){
+        click(productDetailElement.clickDropdown , "dropdown");
+//        List<WebElement> link = (List<WebElement>) productDetailElement.test;
+
+        List<WebElement> links = driver.findElements(By.xpath("(//select[@name=\'options[250976][EU]\'])[1]"));
+//        link.get(new Random().nextInt(link.size())).click();
+        links.get(new Random().nextInt(links.size())).click();
+
+
     }
     public void clickAddCart() throws InterruptedException {
         Thread.sleep(500);
@@ -139,9 +154,11 @@ public class ProductDetail_Page extends Common {
 
     public void optionDimensionGuide() throws InterruptedException {
         click(productDetailElement.clickDropdown , "dropdown");
+//        submitCookie();
         skipAllow();
         submitCookie();
         click(productDetailElement.clickDropdown , "dropdown");
+        System.out.printf("done" +"\n");
         click(productDetailElement.optionSize , "discover size options");
         click(productDetailElement.optionFindSize, "option find size");
         click(productDetailElement.pageSizeGuide, "navigate to SizeGuide page");
