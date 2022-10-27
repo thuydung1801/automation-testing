@@ -92,6 +92,17 @@
             <artifactId>selenium-devtools-v105</artifactId>
             <version>4.5.0</version>
         </dependency>
+        <dependency>
+            <groupId>clojure.options</groupId>
+            <artifactId>clojure.options</artifactId>
+            <version>0.2.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>

@@ -1,29 +1,26 @@
 package Page.Catalog;
 
 import Page_Element.catalog.ProductDetail_Element;
+import Page_Lib.Common;
 import Page_Lib.ReadData;
-import org.openqa.selenium.By;
+import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import static java.lang.Math.random;
-
-public class ProductDetail_Page {
+public class ProductDetail_Page extends Common {
     RemoteWebDriver driver;
     ProductDetail_Element productDetailElement;
     ReadData data;
 
 
+
     public ProductDetail_Page(RemoteWebDriver driver) {
+        super(driver);
         this.driver = driver;
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         data = new ReadData();
@@ -31,43 +28,27 @@ public class ProductDetail_Page {
 
     }
     public void submitCookie(){
-        productDetailElement.submitCookie.click();
+        click(productDetailElement.submitCookie , "accept cookie");
     }
     public void skipAllow(){
-        System.out.printf("skip" + "\n");
-        productDetailElement.clickAllow.click();
+        click(productDetailElement.clickAllow , "skip");
+
     }
     public void scrollToBottom() {
         ((JavascriptExecutor) driver)
                 .executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
     public void clickProduct(){
-        productDetailElement.clickProduct.click();
+        click(productDetailElement.clickProduct , "product 1");
     }
     public void clickShowImg() throws InterruptedException {
-        productDetailElement.submitCookie.click();
+        submitCookie();
         Thread.sleep(1000);
-        productDetailElement.clickImg.click();
+        click(productDetailElement.clickImg , "show img");
         Thread.sleep(1000);
-        productDetailElement.clickClose.click();
+        click(productDetailElement.clickClose, "close img");
+
     }
-//    public void click(){
-//
-//        List <WebElement> listImg = new ArrayList<WebElement>();
-//
-//        listImg.add(productDetailElement.clickShowImg1);
-//        listImg.add(productDetailElement.clickShowImg2);
-//        listImg.add(productDetailElement.clickShowVideo3);
-//
-//        System.out.printf("img1 : " + productDetailElement.clickShowImg1 + "\n");
-//
-//        System.out.printf("listImg: " +listImg + "\n");
-//
-//        Random r = new Random();
-//        int randomValue = r.nextInt(listImg.size()); //Getting a random value that is between 0 and (list's size)-1
-//        System.out.printf("vị trí : " + listImg.get(randomValue));
-//        listImg.get(randomValue).click();
-//    }
 
     public void selectOption() throws InterruptedException {
         Thread.sleep(100);
@@ -84,38 +65,28 @@ public class ProductDetail_Page {
             }
             else{
                 option.click();
-                productDetailElement.engravingText.click();
-                productDetailElement.engravingText.sendKeys(data.getKey("engravingTextKey"));
-
+                click(productDetailElement.engravingText , "input engraving");
+                sendKey(productDetailElement.engravingText , data.getKey("engravingTextKey"));
             }
         }
-//        productDetailElement.mainStone.click();
-//        System.out.printf("option 1 done");
-//        productDetailElement.stone2.click();
-//        productDetailElement.metal_alloy.click();
-//        productDetailElement.engraving.click();
-//        productDetailElement.engravingText.sendKeys(data.getKey("engravingTextKey"));
-
 
     }
     public void clickDropdown() throws InterruptedException {
-        productDetailElement.clickDropdown.click();
+        click(productDetailElement.clickDropdown , "dropdown");
         Thread.sleep(1000);
-        productDetailElement.clickOptionSize.click();
-
+        click(productDetailElement.clickOptionSize , "select option");
     }
     public void clickAddCart() throws InterruptedException {
         Thread.sleep(500);
-        productDetailElement.clickBtnAddCart.click();
+        click(productDetailElement.clickBtnAddCart , "btn add to cart");
         Thread.sleep(100);
-        productDetailElement.clickCart.click();
-        productDetailElement.viewCart.click();
+        click(productDetailElement.clickCart , "btn cart");
+        click(productDetailElement.viewCart, "show view cart");
         Thread.sleep(100);
-        productDetailElement.viewDetail.click();
+        click(productDetailElement.viewDetail , "show detail product");
 
-        System.out.printf("check engravingText" + "\n");
-//        productDetailElement.getTextengr.getText().equalsIgnoreCase(data.getKey("engravingTextKey"));
-        productDetailElement.getTextengr.sendKeys("test");
+        System.out.printf("check engravingText : " );
+        productDetailElement.getTextengr.getText().equalsIgnoreCase(data.getKey("engravingTextKey"));
         System.out.printf("True" + "\n");
     }
 
@@ -127,7 +98,7 @@ public class ProductDetail_Page {
         actions.moveToElement(productDetailElement.clickEaring);
         actions.click().build().perform();
     }
-    public void optionFindSize() throws InterruptedException {
+    public void optionFindSize() throws InterruptedException  {
 //        productDetailElement.submitCookie.click();
 //        boolean present;
 //        try {
@@ -143,52 +114,44 @@ public class ProductDetail_Page {
 //        skipAllow();
 //        System.out.printf("click 1");
         Thread.sleep(600);
-//        submitCookie();
-        System.out.printf("click 2");
 //        }
+        submitCookie();
+        scrollToBottom();
 
-//        scrollToBottom();
-//        Thread.sleep(1000);
+        skipAllow();
+        click(productDetailElement.clickDropdown , "dropdown");
+        click(productDetailElement.optionSize , "discover size options");
+        click(productDetailElement.optionFindSize , "option find size");
 
-//        skipAllow();
-        System.out.printf("click3");
-        productDetailElement.clickDropdown.click();
-        System.out.printf("btn dropdown");
-        productDetailElement.optionSize.click();
-        productDetailElement.optionFindSize.click();
-
-            productDetailElement.prd_FirstName.sendKeys(data.getKey("prd_FirstName"));
-            productDetailElement.prd_LastName.sendKeys(data.getKey("prd_LastName"));
-            productDetailElement.prd_Email.sendKeys(data.getKey("prd_Email"));
-            productDetailElement.prd_Street.sendKeys(data.getKey("prd_Street"));
-            productDetailElement.prd_Code.sendKeys(data.getKey("prd_Code"));
-            productDetailElement.prd_City.sendKeys(data.getKey("prd_City"));
-            Thread.sleep(200);
+//        productDetailElement.check1.click();
+        sendKey(productDetailElement.prd_FirstName , data.getKey("prd_FirstName"));
+        sendKey(productDetailElement.prd_LastName, data.getKey("prd_LastName"));
+        sendKey(productDetailElement.prd_Email,data.getKey("prd_Email") );
+        sendKey(productDetailElement.prd_Street, data.getKey("prd_Street"));
+        sendKey(productDetailElement.prd_Code, data.getKey("prd_Code"));
+        sendKey(productDetailElement.prd_City,data.getKey("prd_City") );
+        Thread.sleep(200);
 //            productDetailElement.check1.click();
-            productDetailElement.check2.click();
-            productDetailElement.prd_submit.click();
+        click(productDetailElement.check2 , "verify");
+        click(productDetailElement.prd_submit , "btn from you");
 
     }
 
     public void optionDimensionGuide() throws InterruptedException {
-//        scrollToBottom();
-        productDetailElement.clickDropdown.click();
+        click(productDetailElement.clickDropdown , "dropdown");
         skipAllow();
-//        submitCookie();
-//        Thread.sleep(200);
-        productDetailElement.clickDropdown.click();
-//        System.out.printf("1");
-//        productDetailElement.optionSize.click();
-//        System.out.printf("2");
-//        productDetailElement.optionFindSize.click();
-//        System.out.printf("3");
-//        productDetailElement.pageSizeGuide.click();
+        submitCookie();
+        click(productDetailElement.clickDropdown , "dropdown");
+        click(productDetailElement.optionSize , "discover size options");
+        click(productDetailElement.optionFindSize, "option find size");
+        click(productDetailElement.pageSizeGuide, "navigate to SizeGuide page");
 
     }
     public void optionFreeSize(){
-        productDetailElement.clickDropdown.click();
-        productDetailElement.optionSize.click();
-        productDetailElement.optionFreeSize.click();
+        click(productDetailElement.clickDropdown , "dropdown");
+        click(productDetailElement.optionSize , "discover size options");
+        click(productDetailElement.optionFreeSize , "option free size");
     }
+
 
 }

@@ -24,6 +24,8 @@ public class AbstractBase_Test {
     String accesskey = "mL1BJLIDr2WgDbjtQVaw1hJISaAssHzGB1FVNNxH6t9SLzbt7r";
     static RemoteWebDriver driver = null;
     ChromeDriver dr;
+//    WebDriver dr;
+
     String gridURL = "@hub.lambdatest.com/wd/hub";
 
     private void setup() throws MalformedURLException {
@@ -61,18 +63,31 @@ public class AbstractBase_Test {
 //        HashMap<String, Integer> cookie = new HashMap<>();
 //        cookie.put("profile.default_content_settings.cookies", 2);
 //        options.setExperimentalOption("prefs", cookie);
+//        WebDriverManager.chromedriver().setup();
+
 
         ChromeOptions options = new ChromeOptions();
-        Map<String, Object> prefs = new HashMap<String, Object>();
-        prefs.put("profile.default_content_settings.cookies", 2);
-        options.setExperimentalOption("prefs", prefs);
-        String[] arguments = {"-----start-maximized"};
-        options.addArguments(arguments);
-//        driver = new ChromeDriver(options);
+        HashMap<String,Integer> conen = new HashMap<String,Integer>();
+        HashMap<String,Object> pro = new HashMap<String,Object>();
+        HashMap<String,Object> pre = new HashMap<String,Object>();
+
+        conen.put("notifications" , 1);
+        pro.put("manege_default_content_settings" , conen);
+        pre.put("profile" ,pro);
+        options.setExperimentalOption("prefs" , pre);
+
+
 
 
         WebDriverManager.chromedriver().setup();
+//        String[] arguments = {"-----start-maximized"};
+//        options.addArguments(arguments);
+//        driver = new ChromeDriver(options);
+
+
+
         dr = new ChromeDriver(options);
+
         App = new App_Lib(dr);
 
 

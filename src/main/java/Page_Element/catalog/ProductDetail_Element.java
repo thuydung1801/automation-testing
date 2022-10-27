@@ -19,7 +19,7 @@ public class ProductDetail_Element {
     @FindBy(xpath = "(//a[@class='selector-item selector-item-img'])[2]") public WebElement clickShowImg2;
     @FindBy(xpath = "(//a[@class='selector-item selector-item-video'])[1]") public WebElement clickShowVideo3;
 
-    @FindBy(xpath = "(//span[@class='selector-item selector-item-img'])[1]") public WebElement clickImg;
+    @FindBy(xpath = "//div[@id='product-media-container']//span[1]//img[1]") public WebElement clickImg;
     @FindBy(css = "button.mz-button.mz-button-close") public WebElement clickClose;
 
     //---------Default option-------
@@ -33,20 +33,20 @@ public class ProductDetail_Element {
 
     @FindBy(xpath = "//button[@id='product-addtocart-button']") public WebElement clickBtnAddCart;
 
-    @FindBy(xpath = "//a[@title='warenkorb']") public WebElement clickCart;
-    @FindBy(xpath = "//a[@class='action primary viewcart']") public WebElement viewCart;
+    @FindBy(xpath = "//i[@class='minicart-icon sprite-bf has-items']") public WebElement clickCart;
+    @FindBy(xpath = "(//a[@class='action primary viewcart'])[1]") public WebElement viewCart;
 
     @FindBy(xpath = "(//span[contains(text(),'View Detail')])[1]") public WebElement viewDetail;
-    @FindBy(xpath = "(//div[@class='option-detail add-engraving'])[2]") public WebElement getTextengr;
+    @FindBy(xpath = "(//div[@class='option-detail add-engraving'])[2]/span") public WebElement getTextengr;
     @FindBy(linkText = "Stay Here on www.glamira.de") public WebElement clickAllow;
 //------------Quantity option for earring men---------
     @FindBy(css = "#ui-id-202") public WebElement hoverMens;
     @FindBy(xpath = "(//font[contains(text(),'earrings')])[2]") public WebElement clickEaring;
 
     //------------Dimension Guide/ Find size----------
-    @FindBy(xpath = "//span[@class='discover-size link']") public WebElement optionSize;
+    @FindBy(xpath = "//span[contains(text(),'Discover size options')]") public WebElement optionSize;
     @FindBy(xpath = "(//div[@id='ringsize-link-form'])[2]") public WebElement optionFindSize;
-    @FindBy(xpath = "//font[contains(text(),'ring size guide.')]") public WebElement pageSizeGuide;
+    @FindBy(css = "div.ringsizer-popup-content div:nth-child(1) div.ringmass.ringsizer div.ringmass-text-bottom:nth-child(4) p.link-ringsize:nth-child(1) > a:nth-child(1)") public WebElement pageSizeGuide;
 
     //-----------------Form free a ring size------
     @FindBy(xpath = "(//div[contains(@class,'collapse-title sprite-bf')])[6]") public WebElement optionFreeSize;
@@ -59,6 +59,8 @@ public class ProductDetail_Element {
     @FindBy(xpath = "(//body)[1]") public WebElement check1;
     @FindBy(xpath = "(//input[@id='agreement-36'])[1]") public WebElement check2;
     @FindBy(css = "form[id='form-validate-ringsizer'] button[title='From you']") public WebElement prd_submit;
+    //-------------
+    @FindBy(xpath = "//a[contains(text(),'Ringe')]") public WebElement rings;
 
 
 //    @FindBy(xpath = "//span[@class='discover-size link']") public WebElement optionSize;
