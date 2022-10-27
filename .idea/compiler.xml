@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="glamira-m2-qa" />
+        <module name="Ass1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="glamira-m2-qa" target="11" />
+      <module name="Assignment1_LinhPH18" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

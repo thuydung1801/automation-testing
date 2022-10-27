@@ -1,0 +1,18 @@
+INFO  | 2022-10-27 12:03:13 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:33) - Open browser
+INFO  | 2022-10-27 12:03:14 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO  | 2022-10-27 12:03:14 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\AD\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO  | 2022-10-27 12:03:15 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - open browser successfullyCHROME
+INFO  | 2022-10-27 12:03:15 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - go to url: https://dev1.glamira.com/glgb/customer/account/login/
+INFO  | 2022-10-27 12:03:15 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:52) - url: [Ljava.lang.String;@6a0ac48e
+INFO  | 2022-10-27 12:03:22 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:108) - Maximizing browser window...
+INFO  | 2022-10-27 12:03:22 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:252) - webDriverWaitForElementPresent
+INFO  | 2022-10-27 12:03:25 | [main] core.KeywordWeb (KeywordWeb.java:click:62) - click//button[@class='amgdprcookie-button -allow']
+INFO  | 2022-10-27 12:03:25 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='firstname']
+INFO  | 2022-10-27 12:03:27 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='lastname']
+INFO  | 2022-10-27 12:03:33 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='mobile_number']
+INFO  | 2022-10-27 12:03:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='email_address']
+INFO  | 2022-10-27 12:03:37 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='emailconfirm']
+INFO  | 2022-10-27 12:03:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='password']
+INFO  | 2022-10-27 12:03:41 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='password-confirmation']
+INFO  | 2022-10-27 12:03:44 | [main] core.KeywordWeb (KeywordWeb.java:click:62) - click//button[@class ='action submit primary']
+INFO  | 2022-10-27 12:03:44 | [main] core.KeywordWeb (KeywordWeb.java:closeBrowser:58) - close browser: 
