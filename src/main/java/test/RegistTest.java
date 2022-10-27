@@ -14,7 +14,7 @@ public class RegistTest extends BaseTest {
     public void testcase001() throws InterruptedException {
         objRegist = new Register(this.keyword);
         objRegist.acceptAllCookie();
-        //objRegist.registFail();
+        objRegist.registFail();
         objRegist.registSuccess();
     }
 
