@@ -9,9 +9,11 @@ import org.testng.annotations.Test;
 public class BaseTest {
     private static Logger logger = LogHelper.getLogger();
     protected KeywordWeb keyword;
-    public BaseTest(){
+
+    public BaseTest() {
         keyword = new KeywordWeb();
     }
+
     @BeforeSuite
     public void beforeSuite() throws Exception {
         PropertiesFile.setPropertiesFile();
@@ -19,11 +21,13 @@ public class BaseTest {
 
     @BeforeTest
     public void beforeTest() throws Exception {
-        keyword.openBrowser(PropertiesFile.getPropValue("BROWSER_NAME"),PropertiesFile.getPropValue("BASE_URL"));
+        keyword.openBrowser(PropertiesFile.getPropValue("BROWSER_NAME"), PropertiesFile.getPropValue("BASE_URL"));
         keyword.maximizeWindow();
     }
+
     @AfterTest
     public void afterTest() throws Exception {
+//        Thread.sleep(20000);
         keyword.closeBrowser();
     }
 

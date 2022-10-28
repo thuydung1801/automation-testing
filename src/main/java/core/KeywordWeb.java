@@ -62,6 +62,10 @@ public class KeywordWeb {
         logger.info("click" + element);
         driver.findElement(By.xpath(element)).click();
     }
+    public void clickUseCss(String element){
+        logger.info("click" + element);
+        driver.findElement(By.cssSelector(element)).click();
+    }
     public void sendKeys(String element, String content){
         logger.info("send keys" + element);
         driver.findElement(By.xpath(element)).sendKeys(content);
@@ -90,6 +94,7 @@ public class KeywordWeb {
         WebElement editMenuItem = driver.findElement(By.xpath(menuItem));
         builder.contextClick(clickMe).moveToElement(editMenuItem).click().perform();
     }
+
 
     public void executeJavaScript(String command){
         logger.info("Executing JavaScript");
@@ -199,7 +204,7 @@ public class KeywordWeb {
             }
         }
     }
-    public void scrollDown(String xPath){
+    public void scrollDownToElement (String xPath){
         WebElement element = driver.findElement(By.xpath(xPath));
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
