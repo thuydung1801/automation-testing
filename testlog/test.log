@@ -1,19 +1,19 @@
-INFO  | 2022-10-27 14:20:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:33) - Open browser
-INFO  | 2022-10-27 14:20:27 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 106.0.5249.61 (resolved driver for Chrome 106)
-INFO  | 2022-10-27 14:20:27 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\106.0.5249.61\chromedriver.exe
-INFO  | 2022-10-27 14:20:28 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - open browser successfullyCHROME
-INFO  | 2022-10-27 14:20:28 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - go to url: https://dev1.glamira.com/glgb/customer/account/login/
-INFO  | 2022-10-27 14:20:28 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:52) - url: [Ljava.lang.String;@18324f97
-INFO  | 2022-10-27 14:20:34 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:108) - Maximizing browser window...
-INFO  | 2022-10-27 14:20:35 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:253) - webDriverWaitForElementPresent
-INFO  | 2022-10-27 14:20:37 | [main] core.KeywordWeb (KeywordWeb.java:click:62) - click//button[@class='amgdprcookie-button -allow']
-INFO  | 2022-10-27 14:20:37 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='firstname']
-INFO  | 2022-10-27 14:20:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='lastname']
-INFO  | 2022-10-27 14:20:44 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='mobile_number']
-INFO  | 2022-10-27 14:20:46 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='email_address']
-INFO  | 2022-10-27 14:20:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='emailconfirm']
-INFO  | 2022-10-27 14:20:50 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='password']
-INFO  | 2022-10-27 14:20:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:66) - send keys//input[@id='password-confirmation']
-INFO  | 2022-10-27 14:20:53 | [main] core.KeywordWeb (KeywordWeb.java:recaptchaClick:218) - click recaptcha
-INFO  | 2022-10-27 14:20:55 | [main] core.KeywordWeb (KeywordWeb.java:click:62) - click//button[@class ='action submit primary']
-INFO  | 2022-10-27 14:20:55 | [main] core.KeywordWeb (KeywordWeb.java:closeBrowser:58) - close browser: 
+INFO  | 2022-10-28 15:55:42 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:30) - Open browser
+INFO  | 2022-10-28 15:55:42 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 106.0.5249.61 (resolved driver for Chrome 106)
+INFO  | 2022-10-28 15:55:42 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\106.0.5249.61\chromedriver.exe
+INFO  | 2022-10-28 15:55:43 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:45) - open browser successfullyCHROME
+INFO  | 2022-10-28 15:55:43 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-10-28 15:55:43 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:49) - url: [Ljava.lang.String;@71178a52
+INFO  | 2022-10-28 15:55:44 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:105) - Maximizing browser window...
+INFO  | 2022-10-28 15:55:44 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:142) - login by authen link withtest !test123!
+INFO  | 2022-10-28 15:55:52 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:265) - webDriverWaitForElementPresent
+INFO  | 2022-10-28 15:55:52 | [main] core.KeywordWeb (KeywordWeb.java:click:59) - click//button[@class='amgdprcookie-button -allow']
+INFO  | 2022-10-28 15:55:52 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:214) -  scrolling to position 
+INFO  | 2022-10-28 15:55:52 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:265) - webDriverWaitForElementPresent
+INFO  | 2022-10-28 15:55:59 | [main] core.KeywordWeb (KeywordWeb.java:click:59) - click//a[@class='btn-stay-here geoip-close']
+INFO  | 2022-10-28 15:55:59 | [main] core.KeywordWeb (KeywordWeb.java:click:59) - click//a[@title='Log In/Sign Up']
+INFO  | 2022-10-28 15:55:59 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:265) - webDriverWaitForElementPresent
+INFO  | 2022-10-28 15:56:00 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:63) - send keys//input[@id ='login-email']
+INFO  | 2022-10-28 15:56:02 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:63) - send keys//input[@id ='login-password']
+INFO  | 2022-10-28 15:56:04 | [main] core.KeywordWeb (KeywordWeb.java:click:59) - click//span[text()='Log In']
+INFO  | 2022-10-28 15:56:04 | [main] core.KeywordWeb (KeywordWeb.java:closeBrowser:55) - close browser: 

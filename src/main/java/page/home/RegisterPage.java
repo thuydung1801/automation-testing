@@ -1,4 +1,4 @@
-package page;
+package page.home;
 
 import core.BasePage;
 import core.KeywordWeb;
@@ -6,16 +6,20 @@ import core.LogHelper;
 import core.PropertiesFile;
 import org.slf4j.Logger;
 
-public class Register extends BasePage {
+public class RegisterPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
-    public Register(){ super(); }
-    public Register(KeywordWeb key){
+    public RegisterPage(){ super(); }
+    public RegisterPage(KeywordWeb key){
         super(key);
     }
 
-    public void acceptAllCookie(){
+    public void acceptAllCookies() throws InterruptedException {
+        Thread.sleep(3000);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"),50);
         keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
+        keyword.scrollToPosition();
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LOGIN_BTN_LANGUAGE"),50);
+        keyword.click(PropertiesFile.getPropValue("LOGIN_BTN_LANGUAGE"));
     }
     public void registFail(){
 

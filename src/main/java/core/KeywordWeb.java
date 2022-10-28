@@ -7,10 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import org.slf4j.Logger;
 
 import javax.imageio.ImageIO;
@@ -140,6 +137,13 @@ public class KeywordWeb {
         alert.sendKeys(alertText);
         alert.accept();
     }
+    //send username and password to alert login
+    public void handleLoginPopup(String username, String password, String authenUrl){
+        logger.info("login by authen link with"+username+" "+password);
+        String url = "https://"+username +":"+ password + "@" + authenUrl;
+        driver.navigate().to(url);
+
+    }
     public void switchToFrame(String frame){
         logger.info("Switching to frame...");
         driver.switchTo().frame(frame);
@@ -199,7 +203,8 @@ public class KeywordWeb {
             }
         }
     }
-    public void scrollDown(String xPath){
+    public void scrollDownToElement(String xPath){
+        logger.info("scrollDown to "+xPath);
         WebElement element = driver.findElement(By.xpath(xPath));
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
@@ -208,7 +213,7 @@ public class KeywordWeb {
     public void scrollToPosition(){
         logger.info(" scrolling to position " );
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1000)");
+        js.executeScript("window.scrollBy(0,5000)");
     }
     public void switchToDefaultContent(){
         logger.info("SwitchTODefaultContent");
@@ -220,6 +225,13 @@ public class KeywordWeb {
 
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.recaptcha-checkbox-border"))).click();
     }
+    public void selectDropDownListByIndex(String ddlPath, int index){
+        logger.info("select item by visibe text");
+        Select dropDownList = new Select(driver.findElement(By.xpath(ddlPath)));
+        dropDownList.selectByIndex(index);
+
+    }
+
 
     //verify keyword
     public boolean verifyElementPresent(String element){
