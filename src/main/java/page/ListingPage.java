@@ -32,11 +32,13 @@ public class ListingPage extends BasePage {
         Thread.sleep(2000);
         keyword.scrollDownToElement(PropertiesFile.getPropValue("SELECT_DIAMON_STONES"));
         Thread.sleep(1000);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("SWITCH_BTN"), 1000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("SWITCH_BTN"), 500);
         Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("SWITCH_BTN"));
 //        keyword.click(PropertiesFile.getPropValue("SELECT_DIAMON_STONES"));
-        Thread.sleep(5000);
+        Thread.sleep(2000);
+        keyword.click(PropertiesFile.getPropValue("SELECT_DIAMON_STONES"));
+        Thread.sleep(2000);
     }
 
 }
