@@ -22,11 +22,20 @@ public class ListingPage extends BasePage {
     public void goToAllProduct() throws InterruptedException {
         keyword.navigateToUrl(PropertiesFile.getPropValue("BASE_URL_LISTINGPAGE"));
 //        keyword.clickUseCss(PropertiesFile.getPropValue("ALL_RING_BTN"));
+        Thread.sleep(2000);
+        keyword.scrollToPosition();
+        Thread.sleep(2000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"), 1000);
+        keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
+        Thread.sleep(2000);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("KEY_PAGE_RING_DIAMON"), 10);
         Thread.sleep(2000);
         keyword.scrollDownToElement(PropertiesFile.getPropValue("SELECT_DIAMON_STONES"));
+        Thread.sleep(1000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("SWITCH_BTN"), 1000);
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("SELECT_DIAMON_STONES"));
+        keyword.click(PropertiesFile.getPropValue("SWITCH_BTN"));
+//        keyword.click(PropertiesFile.getPropValue("SELECT_DIAMON_STONES"));
         Thread.sleep(5000);
     }
 

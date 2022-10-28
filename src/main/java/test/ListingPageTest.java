@@ -17,6 +17,5 @@ public class ListingPageTest extends BaseTest {
         testListingPage = new ListingPage((this.keyword));
         testListingPage.acceptAllCookies();
         testListingPage.goToAllProduct();
-
     }
 }

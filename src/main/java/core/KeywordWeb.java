@@ -122,6 +122,10 @@ public class KeywordWeb {
         logger.info("Navigating to URL..."+ url);
         driver.navigate().to(url);
     }
+    public  void getCurrentPageUrl () {
+        logger.info("Navigating to URL...");
+        driver.getCurrentUrl();
+    }
 
     public void acceptAlert(){
         logger.info("Accepting alert...");
@@ -213,7 +217,7 @@ public class KeywordWeb {
     public void scrollToPosition(){
         logger.info(" scrolling to position " );
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1000)");
+        js.executeScript("window.scrollBy(0,5000)");
     }
     public void switchToDefaultContent(){
         logger.info("SwitchTODefaultContent");
@@ -255,6 +259,12 @@ public class KeywordWeb {
     }
 
     public void webDriverWaitForElementPresent(String element, long timeout) {
+        logger.info("webDriverWaitForElementPresent");
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
+    }
+
+    public void webDriverWaitForElementPresentCss(String element, long timeout) {
         logger.info("webDriverWaitForElementPresent");
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
