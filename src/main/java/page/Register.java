@@ -23,7 +23,7 @@ public class Register extends BasePage {
         keyword.click(PropertiesFile.getPropValue("REGIST_BTN_SUBMIT"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LBL_ERROR_MESSAGE"), 10);
     }
-    public void registSuccess() throws InterruptedException {
+    public void  registSuccess() throws InterruptedException {
         keyword.sendKeys(PropertiesFile.getPropValue("REGIST_TXT_FIRSTNAME"),
                 PropertiesFile.getPropValue("REGIST_DATA_FISTNAME"));
         Thread.sleep(2000);

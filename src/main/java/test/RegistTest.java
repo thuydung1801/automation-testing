@@ -2,7 +2,6 @@ package test;
 
 import core.BaseTest;
 import org.testng.annotations.Test;
-import page.HomePage;
 import page.Register;
 
 public class RegistTest extends BaseTest {
