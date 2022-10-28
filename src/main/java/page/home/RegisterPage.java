@@ -47,9 +47,5 @@ public class Register extends BasePage {
         keyword.recaptchaClick();
         Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("REGIST_BTN_SUBMIT"));
-
-
-
-
     }
 }
