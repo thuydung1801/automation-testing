@@ -29,10 +29,13 @@ public class ProductDetailPage extends BasePage {
         for(String option : arr){
             if(option != arr.get(arr.size()-1)){
                 keyword.clickByXpath(option);
+                Thread.sleep(20000);
             }
             else{
                 keyword.clickByXpath(option);
+                Thread.sleep(20000);
                 keyword.clickByCss(PropertiesFile.getPropValue("PRD_TEXT_ENGRAVING"));
+                Thread.sleep(20000);
                 keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_ENGRAVING"), PropertiesFile.getPropValue("PRD_DATA_TEXT_ENGRAVING"));
 
             }
@@ -76,8 +79,8 @@ public class ProductDetailPage extends BasePage {
 
         System.out.printf("-----test 1: Show  detail image" +"\n");
         keyword.clickByXpath(PropertiesFile.getPropValue("PRD_SHOW_IMG"));
-        Thread.sleep(500);
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_CLOSE"));
+        Thread.sleep(20000);
+        keyword.clickByCss(PropertiesFile.getPropValue("PRD_CLOSE"));
         System.out.printf("=> test 1 done"+"\n");
 
         System.out.printf("-----test 2: Default option "+"\n");
@@ -103,12 +106,15 @@ public class ProductDetailPage extends BasePage {
     }
     public void optionFindSize() throws InterruptedException  {
         keyword.navigateToUrl(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
-        Thread.sleep(600);
+        Thread.sleep(20000);
         keyword.submitCookie();
         keyword.scrollToPosition();
+        Thread.sleep(20000);
         keyword.submitAllow();
+        Thread.sleep(20000);
         keyword.clickByXpath(PropertiesFile.getPropValue("PRD_DROPDOWN"));
         keyword.clickByXpath(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
+        Thread.sleep(20000);
         keyword.clickByXpath(PropertiesFile.getPropValue("PRD_FINDSIZE"));
 
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_FIRSTNAME"), PropertiesFile.getPropValue("PRD_DATA_FIRSTNAME"));
@@ -125,14 +131,18 @@ public class ProductDetailPage extends BasePage {
     }
     public void optionDimensionGuide() throws InterruptedException {
         keyword.navigateToUrl(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
-Thread.sleep(20000);
+        Thread.sleep(20000);
         keyword.clickByXpath(PropertiesFile.getPropValue("PRD_DROPDOWN"));
+        Thread.sleep(20000);
         keyword.submitAllow();
         keyword.submitCookie();
+        Thread.sleep(20000);
         keyword.clickByXpath(PropertiesFile.getPropValue("PRD_DROPDOWN"));
         System.out.printf("done" +"\n");
         keyword.clickByXpath(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
+        Thread.sleep(2000);
         keyword.clickByXpath(PropertiesFile.getPropValue("PRD_FINDSIZE"));
+        Thread.sleep(2000);
         keyword.clickByCss(PropertiesFile.getPropValue("PRD_LINK_SIZEGUIDE"));
 
     }

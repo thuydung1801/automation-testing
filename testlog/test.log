@@ -1,9 +1,18 @@
-INFO  | 2022-10-31 17:29:30 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:35) - Open browser
-INFO  | 2022-10-31 17:29:31 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
-INFO  | 2022-10-31 17:29:31 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
-INFO  | 2022-10-31 17:29:32 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:50) - open browser successfullyCHROME
-INFO  | 2022-10-31 17:29:32 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - go to url: https://dev1.glamira.com/glgb/customer/account/login/
-INFO  | 2022-10-31 17:29:32 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - url: [Ljava.lang.String;@fabb651
-INFO  | 2022-10-31 17:29:49 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:162) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
-INFO  | 2022-10-31 17:30:10 | [main] core.KeywordWeb (KeywordWeb.java:clickByXpath:99) - click : //div[@class='dropdown-input sprite-bf']
-INFO  | 2022-10-31 17:30:18 | [main] core.KeywordWeb (KeywordWeb.java:submitAllow:95) - click allow : 
+INFO  | 2022-10-31 18:16:17 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:35) - Open browser
+INFO  | 2022-10-31 18:16:17 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
+INFO  | 2022-10-31 18:16:17 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
+INFO  | 2022-10-31 18:16:18 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:50) - open browser successfullyCHROME
+INFO  | 2022-10-31 18:16:18 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - go to url: https://dev1.glamira.com/glgb/customer/account/login/
+INFO  | 2022-10-31 18:16:18 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - url: [Ljava.lang.String;@11a00961
+INFO  | 2022-10-31 18:16:27 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:162) - Navigating to URL...https://dev3.glamira.com/glde/diamantringe/diamant/
+INFO  | 2022-10-31 18:16:32 | [main] core.KeywordWeb (KeywordWeb.java:submitCookie:85) - click accept cookie : 
+INFO  | 2022-10-31 18:16:32 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:310) - webDriverWaitForElementPresent
+INFO  | 2022-10-31 18:17:19 | [main] core.KeywordWeb (KeywordWeb.java:clickByXpath:99) - click : (//div[@class='product-item-info'])[1]
+INFO  | 2022-10-31 18:17:26 | [main] core.KeywordWeb (KeywordWeb.java:clickByXpath:99) - click : //div[@id='product-media-container']//span[1]//img[1]
+INFO  | 2022-10-31 18:17:47 | [main] core.KeywordWeb (KeywordWeb.java:clickByCss:103) - click : button.mz-button.mz-button-close
+INFO  | 2022-10-31 18:17:47 | [main] core.KeywordWeb (KeywordWeb.java:submitAllow:95) - click allow : 
+INFO  | 2022-10-31 18:17:47 | [main] core.KeywordWeb (KeywordWeb.java:clickByXpath:99) - click : (//div[@class='option_label inactive'])[1]
+INFO  | 2022-10-31 18:18:07 | [main] core.KeywordWeb (KeywordWeb.java:clickByXpath:99) - click : //div[@id='alloy_colour']//div[@class='option_label inactive']
+INFO  | 2022-10-31 18:18:27 | [main] core.KeywordWeb (KeywordWeb.java:clickByXpath:99) - click : //div[@id='engraving']//div[@class='option_label inactive']
+INFO  | 2022-10-31 18:18:47 | [main] core.KeywordWeb (KeywordWeb.java:clickByCss:103) - click : div[placeholder='Bitte geben Sie Ihren Text hier ein']
+INFO  | 2022-10-31 18:19:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:111) - send keys : div[placeholder='Bitte geben Sie Ihren Text hier ein']
