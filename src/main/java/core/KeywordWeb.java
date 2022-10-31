@@ -60,6 +60,10 @@ public class KeywordWeb {
         logger.info("click" + element);
         driver.findElement(By.xpath(element)).click();
     }
+    public void clickByCss(String element){
+        logger.info("click" + element);
+        driver.findElement(By.cssSelector(element)).click();
+    }
     public String getText(String element){
         logger.info("get Text of"+ element);
         String text = driver.findElement(By.xpath(element)).getText();
@@ -70,6 +74,7 @@ public class KeywordWeb {
         driver.findElement(By.xpath(element)).sendKeys(content);
 
     }
+
 
     public void doubleClick(String element){
         logger.info("double click" + element);
@@ -237,11 +242,11 @@ public class KeywordWeb {
 
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.recaptcha-checkbox-border"))).click();
     }
-    public void selectDropDownListByIndex(String ddlPath, int index){
+    public void selectDropDownListByIndex(String ddlPath, String itemName){
         logger.info("select item by visibe text");
         Select dropDownList = new Select(driver.findElement(By.xpath(ddlPath)));
         logger.info("1");
-        dropDownList.selectByIndex(index);
+        dropDownList.selectByVisibleText(itemName);
 
     }
 
@@ -249,7 +254,7 @@ public class KeywordWeb {
     //verify keyword
     public boolean verifyElementPresent(String element){
         try{
-            driver.findElement(By.xpath(element));
+            driver.findElement(By.xpath(element)).isDisplayed();
             return true;
         } catch(NoSuchElementException e){
             e.printStackTrace();
