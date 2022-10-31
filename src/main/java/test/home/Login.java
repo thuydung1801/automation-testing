@@ -18,6 +18,7 @@ public class Login extends BaseTest {
         objRegist = new RegisterPage(this.keyword);
         objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
+        objRegist.chooseLanguages();
         objLogin.loginOnWebsite();
     }
 }

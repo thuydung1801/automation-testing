@@ -22,6 +22,7 @@ import java.util.concurrent.TimeUnit;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
+import org.testng.Assert;
 public class KeywordWeb {
     private static Logger logger = LogHelper.getLogger();
     private static WebDriver driver;
@@ -58,6 +59,11 @@ public class KeywordWeb {
     public void click(String element){
         logger.info("click" + element);
         driver.findElement(By.xpath(element)).click();
+    }
+    public String getText(String element){
+        logger.info("get Text of"+ element);
+        String text = driver.findElement(By.xpath(element)).getText();
+        return text;
     }
     public void sendKeys(String element, String content){
         logger.info("send keys" + element);
@@ -190,6 +196,11 @@ public class KeywordWeb {
         driver.close();
     }
 
+    public void assertEquals(String expected, String actual){
+        logger.info("compare from "+ expected+ " with "+ actual);
+        Assert.assertEquals(expected,actual);
+
+    }
     public void closeTab(int tabNum){
         switchToTab(tabNum);
         driver.close();
@@ -210,6 +221,7 @@ public class KeywordWeb {
         actions.moveToElement(element);
         actions.perform();
     }
+
     public void scrollToPosition(){
         logger.info(" scrolling to position " );
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -228,6 +240,7 @@ public class KeywordWeb {
     public void selectDropDownListByIndex(String ddlPath, int index){
         logger.info("select item by visibe text");
         Select dropDownList = new Select(driver.findElement(By.xpath(ddlPath)));
+        logger.info("1");
         dropDownList.selectByIndex(index);
 
     }

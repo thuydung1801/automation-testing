@@ -20,8 +20,10 @@ public class LoginPage extends BasePage {
                 PropertiesFile.getPropValue("LOGIN_AUTHEN_URL"));
     }
     public void loginOnWebsite() throws InterruptedException {
+        Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LOGIN_BTN_LOGIN"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LOGIN_LBL_LOGIN"),20);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LOGIN_LBL_LOGIN"),30);
+        Thread.sleep(2000);
         keyword.sendKeys(PropertiesFile.getPropValue("LOGIN_TXT_EMAIL"),
                 PropertiesFile.getPropValue("LOGIN_DATA_EMAIL"));
         Thread.sleep(2000);

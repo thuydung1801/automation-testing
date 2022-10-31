@@ -14,12 +14,21 @@ public class RegisterPage extends BasePage {
     }
 
     public void acceptAllCookies() throws InterruptedException {
+
         Thread.sleep(3000);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"),50);
         keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
+
+        //keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LOGIN_BTN_LANGUAGE"),50);
+
+    }
+    public void chooseLanguages() throws InterruptedException {
+        Thread.sleep(2000);
         keyword.scrollToPosition();
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LOGIN_BTN_LANGUAGE"),50);
-        keyword.click(PropertiesFile.getPropValue("LOGIN_BTN_LANGUAGE"));
+        Thread.sleep(3000);
+        if(keyword.verifyElementPresent(PropertiesFile.getPropValue("LOGIN_BTN_LANGUAGE"))){
+            keyword.click(PropertiesFile.getPropValue("LOGIN_BTN_LANGUAGE"));
+        }
     }
     public void registFail(){
 
