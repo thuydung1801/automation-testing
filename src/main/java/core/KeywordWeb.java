@@ -59,8 +59,8 @@ public class KeywordWeb {
         driver.quit();
     }
     public void click(String element){
-        logger.info("click" + element);
         driver.findElement(By.xpath(element)).click();
+        logger.info("click" + element);
     }
     public void clickUseCss(String element){
         logger.info("click" + element);
@@ -210,6 +210,12 @@ public class KeywordWeb {
     }
     public void scrollDownToElement (String xPath){
         WebElement element = driver.findElement(By.xpath(xPath));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element);
+        actions.perform();
+    }
+    public void scrollDownToElementByCss (String css){
+        WebElement element = driver.findElement(By.cssSelector(css));
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
         actions.perform();

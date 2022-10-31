@@ -25,10 +25,10 @@ public class BaseTest {
         keyword.maximizeWindow();
     }
 
-    @AfterTest
-    public void afterTest() throws Exception {
+//    @AfterTest
+//    public void afterTest() throws Exception {
 //        Thread.sleep(20000);
-        keyword.closeBrowser();
-    }
+//        keyword.closeBrowser();
+//    }
 
 }
