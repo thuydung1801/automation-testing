@@ -20,11 +20,13 @@ public class BaseTest {
     @BeforeTest
     public void beforeTest() throws Exception {
         keyword.openBrowser(PropertiesFile.getPropValue("BROWSER_NAME"),PropertiesFile.getPropValue("BASE_URL"));
-        keyword.maximizeWindow();
+//        keyword.openBrowser1(PropertiesFile.getPropValue("BROWSER_NAME"));
+
+//        keyword.maximizeWindow();
     }
     @AfterTest
     public void afterTest() throws Exception {
-        keyword.closeBrowser();
+//        keyword.closeBrowser();
     }
 
 }

@@ -1,12 +1,14 @@
 package core;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import okhttp3.Cache;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -54,16 +56,59 @@ public class KeywordWeb {
         }
     }
 
+    public void openBrowser1(String browser) {
+        logger.info("Open browser");
+        switch (browser.toUpperCase()) {
+            case "CHROME":
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+                break;
+            case "FIREFOX":
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+                break;
+            case "EGDE":
+                WebDriverManager.edgedriver().setup();
+                driver = new EdgeDriver();
+                break;
+        }
+        logger.info("open browser successfully " + browser);
+
+    }
+
     public void closeBrowser(){
         logger.info("close browser: ");
         driver.quit();
     }
-    public void click(String element){
-        logger.info("click" + element);
+
+    public void submitCookie(){
+       logger.info("click accept cookie : " );
+       webDriverWaitForElementPresent(PropertiesFile.getPropValue("PRD_BTN_ACCEPT_COOKIE"), 70);
+       driver.findElement(By.xpath(PropertiesFile.getPropValue("PRD_BTN_ACCEPT_COOKIE"))).click();
+    }
+    public void submitCookie1(){
+        logger.info("click accept cookie : " );
+//        webDriverWaitForElementPresent(PropertiesFile.getPropValue("PRD_BTN_ACCEPT_COOKIE"), 70);
+        driver.findElement(By.xpath(PropertiesFile.getPropValue("PRD_BTN_ACCEPT_COOKIE"))).click();
+    }
+    public void submitAllow(){
+        logger.info("click allow : " );
+        driver.findElement(By.xpath(PropertiesFile.getPropValue("BTN_ALLOW"))).click();
+    }
+    public void clickByXpath(String element){
+        logger.info("click : " + element);
         driver.findElement(By.xpath(element)).click();
     }
+    public void clickByCss(String element){
+        logger.info("click : " + element);
+        driver.findElement(By.cssSelector(element)).click();
+    }
+    public void clickByLinkText(String element){
+        logger.info("click : " + element);
+        driver.findElement(By.linkText(element)).click();
+    }
     public void sendKeys(String element, String content){
-        logger.info("send keys" + element);
+        logger.info("send keys : " + element);
         driver.findElement(By.xpath(element)).sendKeys(content);
 
     }
@@ -117,6 +162,12 @@ public class KeywordWeb {
         logger.info("Navigating to URL..."+ url);
         driver.navigate().to(url);
     }
+    public void openNewTab(String url){
+
+        driver.switchTo().window(String.valueOf(SafariDriver.WindowType.TAB));
+        navigateToUrl(url);
+
+    }
 
     public void acceptAlert(){
         logger.info("Accepting alert...");
@@ -128,6 +179,12 @@ public class KeywordWeb {
         logger.info("Getting alert text...");
         Alert alert = driver.switchTo().alert();
         return alert.getText();
+    }
+
+    public void getText(String element){
+        logger.info("get text : " );
+        String text = driver.findElement(By.xpath(element)).getText();
+        System.out.printf(String.valueOf(text.equalsIgnoreCase(PropertiesFile.getPropValue("PRD_DATA_TEXT_ENGRAVING"))));
     }
     public void dismissAlert(){
         logger.info("Dismissing alert...");
@@ -199,7 +256,7 @@ public class KeywordWeb {
             }
         }
     }
-    public void scrollDown(String xPath){
+    public void scrollDownToElement(String xPath){
         WebElement element = driver.findElement(By.xpath(xPath));
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
@@ -208,7 +265,7 @@ public class KeywordWeb {
     public void scrollToPosition(){
         logger.info(" scrolling to position " );
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1000)");
+        js.executeScript("window.scrollBy(0,5000)");
     }
     public void switchToDefaultContent(){
         logger.info("SwitchTODefaultContent");
@@ -263,6 +320,7 @@ public class KeywordWeb {
                 .ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
     }
+
 
 
 }
