@@ -28,7 +28,7 @@ public class ShoppingBagTest extends BaseTest {
         objLogin.loginOnWebsite();
     }
 
-    @Test (priority = 3)
+    @Test (priority = 4)
     public void testCase_SP_01() throws InterruptedException {
         logger.info("testCase_SP_01");
         //commonShopping();
@@ -60,14 +60,48 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.confirmMessage("CHECKOUT_MESSAGES_GIFT");
 
     }
-    @Test (priority = 4)
+    @Test (priority = 5)
     public void testCase_SP_04() throws InterruptedException{
         logger.info("testCase_SP_04");
 
         //objShoppingBagPage.addProduct("https://dev3.glamira.com/glgb/mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
         objShoppingBagPage.clickShoppingBagPage();
-        objShoppingBagPage.changeQty();
+        objShoppingBagPage.changeQty("CHECKOUT_DATA_QTY_2");
 
     }
+
+    @Test (priority = 6)
+    public void testCase_SP_05() throws InterruptedException{
+        logger.info("testCase_SP_05");
+//        commonShopping();
+//        objShoppingBagPage.clickShoppingBagPage();
+
+        objShoppingBagPage.changeQty("CHECKOUT_DATA_QTY_MAX");
+        objShoppingBagPage.confirmMessage("CHECKOUT_MESSAGES_GIFT_UPDATE");
+        objShoppingBagPage.addProduct("https://dev3.glamira.com/glgb/mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
+        objShoppingBagPage.confirmMessage("CHECKOUT_MESSAGES_ERROR");
+
+    }
+    @Test (priority = 3)
+    public void testCase_SP_15() throws InterruptedException {
+        logger.info("testCase_SP_15");
+        commonShopping();
+        objShoppingBagPage.addProduct("https://dev3.glamira.com/glgb/glamira-ring-zanessa.html?alloy=white-585&stone1=diamond-sapphire&stone2=diamond-sapphire");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_GLAMIRARING");
+        objShoppingBagPage.inputEngravingwithSingleRing();
+
+    }
+    @Test
+    public void testCase_SP_16() throws InterruptedException {
+        logger.info("testCase_SP_16");
+        commonShopping();
+        objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/charming-view.html?alloy=white-585&womenstone=diamond-zirconia");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
+        objShoppingBagPage.inputEngravingwithCoupleRing();
+
+    }
+
 
 }

@@ -1,78 +1,36 @@
-INFO  | 2022-10-31 17:02:34 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:31) - Open browser
-INFO  | 2022-10-31 17:02:34 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 106.0.5249.61 (resolved driver for Chrome 106)
-INFO  | 2022-10-31 17:02:34 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\106.0.5249.61\chromedriver.exe
-INFO  | 2022-10-31 17:02:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:46) - open browser successfullyCHROME
-INFO  | 2022-10-31 17:02:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:49) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-10-31 17:02:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:50) - url: [Ljava.lang.String;@2d6aca33
-INFO  | 2022-10-31 17:02:36 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:116) - Maximizing browser window...
-INFO  | 2022-10-31 17:02:36 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_SP_02:44) - testCase_SP_02
-INFO  | 2022-10-31 17:02:36 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:153) - login by authen link withtest !test123!
-INFO  | 2022-10-31 17:02:43 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@class='amgdprcookie-button -allow']
-INFO  | 2022-10-31 17:02:45 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:231) -  scrolling to position 
-INFO  | 2022-10-31 17:02:51 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='btn-stay-here geoip-close']
-INFO  | 2022-10-31 17:02:52 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@title='Log In/Sign Up']
-INFO  | 2022-10-31 17:02:52 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:283) - webDriverWaitForElementPresent
-INFO  | 2022-10-31 17:02:55 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:73) - send keys//input[@id ='login-email']
-INFO  | 2022-10-31 17:02:57 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:73) - send keys//input[@id ='login-password']
-INFO  | 2022-10-31 17:02:59 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//span[text()='Log In']
-INFO  | 2022-10-31 17:03:04 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:125) - Navigating to URL...https://dev3.glamira.com/glgb/mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation
-INFO  | 2022-10-31 17:03:09 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:223) - scrollDown to //button[@title='Add to shopping bag']
-INFO  | 2022-10-31 17:03:11 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@title='Add to shopping bag']
-INFO  | 2022-10-31 17:03:14 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//*[@id="ring-size-modal-content"]/div[1]/div/div[2]/div[1]/div[1]
-INFO  | 2022-10-31 17:03:16 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//div[@class='modals-overlay']
-INFO  | 2022-10-31 17:03:16 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@title='Add to shopping bag']
-INFO  | 2022-10-31 17:03:20 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='action showcart']
-INFO  | 2022-10-31 17:03:20 | [main] core.KeywordWeb (KeywordWeb.java:imWait:278) - implicitlyWait
-INFO  | 2022-10-31 17:03:20 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='action primary viewcart']
-INFO  | 2022-10-31 17:03:27 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@title="Men's ring Smart Queen" and @class='action action-view-detail']//preceding-sibling::a[@title='Remove']
-INFO  | 2022-10-31 17:03:27 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:283) - webDriverWaitForElementPresent
-INFO  | 2022-10-31 17:03:27 | [main] core.KeywordWeb (KeywordWeb.java:imWait:278) - implicitlyWait
-INFO  | 2022-10-31 17:03:27 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@class='action primary delete-cart-item']/span
-INFO  | 2022-10-31 17:03:42 | [main] page.checkout.ShoppingBagPage (ShoppingBagPage.java:removeProduct:75) - Passed
-INFO  | 2022-10-31 17:03:42 | [main] core.KeywordWeb (KeywordWeb.java:imWait:278) - implicitlyWait
-INFO  | 2022-10-31 17:03:53 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_SP_03:54) - testCase_SP_03
-INFO  | 2022-10-31 17:03:58 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:125) - Navigating to URL...https://dev3.glamira.com/glgb/smart-ornament-skub7047.html?alloy=white-platin
-INFO  | 2022-10-31 17:04:05 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:223) - scrollDown to //button[@title='Add to shopping bag']
-INFO  | 2022-10-31 17:04:07 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@title='Add to shopping bag']
-INFO  | 2022-10-31 17:04:09 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//*[@id="ring-size-modal-content"]/div[1]/div[1]/div[2]/div[1]/div[1]
-INFO  | 2022-10-31 17:04:11 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//*[@id="ring-size-modal-content"]/div[1]/div[2]/div[2]/div[1]/div[1]
-INFO  | 2022-10-31 17:04:14 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//div[@class='modals-overlay']
-INFO  | 2022-10-31 17:04:14 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@title='Add to shopping bag']
-INFO  | 2022-10-31 17:04:18 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='action showcart']
-INFO  | 2022-10-31 17:04:18 | [main] core.KeywordWeb (KeywordWeb.java:imWait:278) - implicitlyWait
-INFO  | 2022-10-31 17:04:18 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='action primary viewcart']
-INFO  | 2022-10-31 17:04:26 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@title="Smart Ornament" and @class='action action-view-detail']//preceding-sibling::a[@title='Remove']
-INFO  | 2022-10-31 17:04:26 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:283) - webDriverWaitForElementPresent
-INFO  | 2022-10-31 17:04:26 | [main] core.KeywordWeb (KeywordWeb.java:imWait:278) - implicitlyWait
-INFO  | 2022-10-31 17:04:26 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@class='action primary delete-cart-item']/span
-INFO  | 2022-10-31 17:04:42 | [main] page.checkout.ShoppingBagPage (ShoppingBagPage.java:removeProduct:75) - Passed
-INFO  | 2022-10-31 17:04:42 | [main] core.KeywordWeb (KeywordWeb.java:imWait:278) - implicitlyWait
-INFO  | 2022-10-31 17:04:52 | [main] core.KeywordWeb (KeywordWeb.java:imWait:278) - implicitlyWait
-INFO  | 2022-10-31 17:05:02 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_SP_01:33) - testCase_SP_01
-INFO  | 2022-10-31 17:05:07 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:125) - Navigating to URL...https://dev3.glamira.com/glgb/womens-ring-smart-ornament-skub7047.html?alloy=white-silber
-INFO  | 2022-10-31 17:05:11 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:223) - scrollDown to //button[@title='Add to shopping bag']
-INFO  | 2022-10-31 17:05:14 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@title='Add to shopping bag']
-INFO  | 2022-10-31 17:05:16 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//*[@id="ring-size-modal-content"]/div[1]/div/div[2]/div[1]/div[1]
-INFO  | 2022-10-31 17:05:18 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//div[@class='modals-overlay']
-INFO  | 2022-10-31 17:05:18 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@title='Add to shopping bag']
-INFO  | 2022-10-31 17:05:25 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:125) - Navigating to URL...https://dev3.glamira.com/glgb/mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation
-INFO  | 2022-10-31 17:05:29 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:223) - scrollDown to //button[@title='Add to shopping bag']
-INFO  | 2022-10-31 17:05:31 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@title='Add to shopping bag']
-INFO  | 2022-10-31 17:05:33 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//*[@id="ring-size-modal-content"]/div[1]/div/div[2]/div[1]/div[1]
-INFO  | 2022-10-31 17:05:36 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//div[@class='modals-overlay']
-INFO  | 2022-10-31 17:05:36 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@title='Add to shopping bag']
-INFO  | 2022-10-31 17:05:40 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='action showcart']
-INFO  | 2022-10-31 17:05:40 | [main] core.KeywordWeb (KeywordWeb.java:imWait:278) - implicitlyWait
-INFO  | 2022-10-31 17:05:40 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='action primary viewcart']
-INFO  | 2022-10-31 17:05:45 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@title="Women's ring Smart Ornament" and @class='action action-view-detail']//preceding-sibling::a[@title='Remove']
-INFO  | 2022-10-31 17:05:45 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:283) - webDriverWaitForElementPresent
-INFO  | 2022-10-31 17:05:45 | [main] core.KeywordWeb (KeywordWeb.java:imWait:278) - implicitlyWait
-INFO  | 2022-10-31 17:05:45 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@class='action primary delete-cart-item']/span
-INFO  | 2022-10-31 17:06:01 | [main] page.checkout.ShoppingBagPage (ShoppingBagPage.java:removeProduct:75) - Passed
-INFO  | 2022-10-31 17:06:01 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_SP_04:65) - testCase_SP_04
-INFO  | 2022-10-31 17:06:03 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='action showcart']
-INFO  | 2022-10-31 17:06:03 | [main] core.KeywordWeb (KeywordWeb.java:imWait:278) - implicitlyWait
-INFO  | 2022-10-31 17:06:03 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='action primary viewcart']
-INFO  | 2022-10-31 17:06:08 | [main] core.KeywordWeb (KeywordWeb.java:imWait:278) - implicitlyWait
-INFO  | 2022-10-31 17:06:08 | [main] core.KeywordWeb (KeywordWeb.java:selectDropDownListByIndex:246) - select item by visibe text
-INFO  | 2022-10-31 17:06:08 | [main] core.KeywordWeb (KeywordWeb.java:selectDropDownListByIndex:248) - 1
+INFO  | 2022-11-01 17:19:54 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:31) - Open browser
+INFO  | 2022-11-01 17:19:54 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 106.0.5249.61 (resolved driver for Chrome 106)
+INFO  | 2022-11-01 17:19:54 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\106.0.5249.61\chromedriver.exe
+INFO  | 2022-11-01 17:19:55 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:46) - open browser successfullyCHROME
+INFO  | 2022-11-01 17:19:55 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:49) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-01 17:19:55 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:50) - url: [Ljava.lang.String;@245a060f
+INFO  | 2022-11-01 17:19:56 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:116) - Maximizing browser window...
+INFO  | 2022-11-01 17:19:56 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_SP_15:87) - testCase_SP_15
+INFO  | 2022-11-01 17:19:56 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:153) - login by authen link withtest !test123!
+INFO  | 2022-11-01 17:20:06 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@class='amgdprcookie-button -allow']
+INFO  | 2022-11-01 17:20:08 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:232) -  scrolling to position 
+INFO  | 2022-11-01 17:20:22 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='btn-stay-here geoip-close']
+INFO  | 2022-11-01 17:20:23 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@title='Log In/Sign Up']
+INFO  | 2022-11-01 17:20:23 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:284) - webDriverWaitForElementPresent
+INFO  | 2022-11-01 17:20:26 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:73) - send keys//input[@id ='login-email']
+INFO  | 2022-11-01 17:20:29 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:73) - send keys//input[@id ='login-password']
+INFO  | 2022-11-01 17:20:31 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//span[text()='Log In']
+INFO  | 2022-11-01 17:20:36 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:125) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-ring-zanessa.html?alloy=white-585&stone1=diamond-sapphire&stone2=diamond-sapphire
+INFO  | 2022-11-01 17:20:48 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:224) - scrollDown to //button[@title='Add to shopping bag']
+INFO  | 2022-11-01 17:20:51 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@title='Add to shopping bag']
+INFO  | 2022-11-01 17:20:53 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//*[@id="ring-size-modal-content"]/div[1]/div/div[2]/div[1]/div[1]
+INFO  | 2022-11-01 17:20:55 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//div[@class='modals-overlay']
+INFO  | 2022-11-01 17:20:55 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//button[@title='Add to shopping bag']
+INFO  | 2022-11-01 17:20:59 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='action showcart']
+INFO  | 2022-11-01 17:20:59 | [main] core.KeywordWeb (KeywordWeb.java:imWait:279) - implicitlyWait
+INFO  | 2022-11-01 17:20:59 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='action primary viewcart']
+INFO  | 2022-11-01 17:21:11 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//a[@class='action action-view-detail' and @title = 'GLAMIRA Ring Zanessa']
+INFO  | 2022-11-01 17:21:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:284) - webDriverWaitForElementPresent
+INFO  | 2022-11-01 17:21:11 | [main] core.KeywordWeb (KeywordWeb.java:imWait:279) - implicitlyWait
+INFO  | 2022-11-01 17:21:11 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//div[@id='modal-content-7']//span[contains(text(),'Add')]
+INFO  | 2022-11-01 17:21:11 | [main] core.KeywordWeb (KeywordWeb.java:imWait:279) - implicitlyWait
+INFO  | 2022-11-01 17:21:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:284) - webDriverWaitForElementPresent
+INFO  | 2022-11-01 17:21:11 | [main] core.KeywordWeb (KeywordWeb.java:imWait:279) - implicitlyWait
+INFO  | 2022-11-01 17:21:11 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:73) - send keys//div[@class='modal-inner-wrap']//div[@class ='input-field-editable  ']
+INFO  | 2022-11-01 17:21:13 | [main] core.KeywordWeb (KeywordWeb.java:click:60) - click//div[@class='modal-inner-wrap']//button/span[text()='Save']
+INFO  | 2022-11-01 17:21:15 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:205) - compare from linh with //*[@id="shopping-cart-table"]/tbody/tr/td/div[1]/div[2]/div/div[7]/div[2]/span

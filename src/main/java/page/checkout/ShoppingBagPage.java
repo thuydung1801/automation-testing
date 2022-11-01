@@ -79,8 +79,48 @@ public class ShoppingBagPage extends BasePage {
         keyword.imWait(10);
         keyword.verifyElementVisible(PropertiesFile.getPropValue(messages));
     }
-    public void changeQty(){
+    public void changeQty(String qty){
         keyword.imWait(5);
-        keyword.selectDropDownListByIndex(PropertiesFile.getPropValue("CHECKOUT_DDL_QTY"), "2");
+        keyword.selectDropDownListByIndex(PropertiesFile.getPropValue("CHECKOUT_DDL_QTY"),
+                PropertiesFile.getPropValue(qty));
+    }
+
+    public void viewDetail(String typeOfProduct) throws InterruptedException {
+        keyword.click(PropertiesFile.getPropValue(typeOfProduct));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_VIEWDETAIL"),5);
+
+
+    }
+    public void inputEngravingwithSingleRing() throws InterruptedException {
+        keyword.imWait(5);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_HYPERLINK_ADD"));
+        keyword.imWait(10);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TITLE_ENGRAVING"),5);
+        keyword.imWait(20);
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_ENGRAVING"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING"));
+        Thread.sleep(2000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_VIEWDETAIL_BTN_SAVE"));
+        Thread.sleep(2000);
+        keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING"),
+                PropertiesFile.getPropValue("CHECKOUT_LBL_ENGRAVING"));
+    }
+    public void inputEngravingwithCoupleRing() throws InterruptedException {
+        keyword.imWait(10);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_HYPERLINK_ADD"));
+        keyword.imWait(5);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TITLE_ENGRAVING"),5);
+        keyword.imWait(20);
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_WOMEN_ENGRAVING"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING"));
+        Thread.sleep(2000);
+        keyword.imWait(20);
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_MEN_ENGRAVING"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING"));
+        Thread.sleep(2000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_VIEWDETAIL_BTN_SAVE"));
+        Thread.sleep(2000);
+        keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING")
+        , PropertiesFile.getPropValue("CHECKOUT_LBL_ENGRAVING"));
     }
 }

@@ -203,7 +203,8 @@ public class KeywordWeb {
 
     public void assertEquals(String expected, String actual){
         logger.info("compare from "+ expected+ " with "+ actual);
-        Assert.assertEquals(expected,actual);
+        String actualText = driver.findElement(By.xpath(actual)).getText();
+        Assert.assertEquals(actualText,expected);
 
     }
     public void closeTab(int tabNum){

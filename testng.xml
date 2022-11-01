@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-<!--  ex1-->
-<!--  <test name="Test1" enabled="true">-->
-<!--    <classes>-->
-<!--      <class name="com.test.ex1" />-->
-<!--    </classes>-->
-<!--  </test>-->
-<!--    ex2-->
-<!--  <test name="Test2" enabled="true">-->
-<!--    <parameter name="mark" value="50"/>-->
-<!--    <classes>-->
-<!--      <class name="com.test.ass1.ex2"/>-->
-<!--    </classes>-->
-<!--  </test>-->
-<!--    ex3-->
-<!--  <test name="Suite" enabled="true">-->
-<!--    <classes>-->
-<!--      <class name="com.test.ass1.ex3"/>-->
-<!--    </classes>-->
-<!--  </test>-->
-<!--  <test name="ex4" enabled="true">-->
-<!--    <groups>-->
-<!--      <run>-->
-<!--        <include name="Smoke"/>-->
-<!--        <include name="Medium"/>-->
-<!--      </run>-->
-<!--    </groups>-->
-<!--    <classes>-->
-<!--      <class name="com.test.ass1.ex4"/>-->
-<!--    </classes>-->
-<!--  </test>-->
 <test name="Suite" enabled="true">
     <classes>
         <class name="com.test.ass2.ex1"/>
