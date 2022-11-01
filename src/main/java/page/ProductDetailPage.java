@@ -28,11 +28,11 @@ public class ProductDetailPage extends BasePage {
 
         for(String option : arr){
             if(option != arr.get(arr.size()-1)){
-                keyword.clickByXpath(option);
+                keyword.click(option);
                 Thread.sleep(20000);
             }
             else{
-                keyword.clickByXpath(option);
+                keyword.click(option);
                 Thread.sleep(20000);
                 keyword.clickByCss(PropertiesFile.getPropValue("PRD_TEXT_ENGRAVING"));
                 Thread.sleep(20000);
@@ -44,18 +44,18 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void clickDropdown() throws InterruptedException {
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_DROPDOWN"));
+        keyword.click(PropertiesFile.getPropValue("PRD_DROPDOWN"));
         Thread.sleep(1000);
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_CLICK_OPTIONE_SiZE"));
+        keyword.click(PropertiesFile.getPropValue("PRD_CLICK_OPTIONE_SiZE"));
     }
     public void clickAddCart() throws InterruptedException {
         Thread.sleep(500);
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_BTN_ADDCART"));
+        keyword.click(PropertiesFile.getPropValue("PRD_BTN_ADDCART"));
         Thread.sleep(100);
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_CART"));
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_BTN_VIEWCART"));
+        keyword.click(PropertiesFile.getPropValue("PRD_CART"));
+        keyword.click(PropertiesFile.getPropValue("PRD_BTN_VIEWCART"));
         Thread.sleep(100);
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_BTN_VIEWDETAIL"));
+        keyword.click(PropertiesFile.getPropValue("PRD_BTN_VIEWDETAIL"));
 
         System.out.printf("check engravingText : " );
         keyword.getText(PropertiesFile.getPropValue("PRD_GET_TEXT_ENGRAVING"));
@@ -65,7 +65,7 @@ public class ProductDetailPage extends BasePage {
     public void submitCookie(){
         logger.info("click accept cookie : " );
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("PRD_BTN_ACCEPT_COOKIE"), 50);
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_BTN_ACCEPT_COOKIE"));
+        keyword.click(PropertiesFile.getPropValue("PRD_BTN_ACCEPT_COOKIE"));
        // driver.findElement(By.cssSelector(PropertiesFile.getPropValue("PRD_BTN_ACCEPT_COOKIE"))).click();
     }
     public void productInfo() throws InterruptedException {
@@ -75,10 +75,10 @@ public class ProductDetailPage extends BasePage {
         Thread.sleep(5000);
         keyword.submitCookie();
 
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_CLICK_PRODUCT"));
+        keyword.click(PropertiesFile.getPropValue("PRD_CLICK_PRODUCT"));
 
         System.out.printf("-----test 1: Show  detail image" +"\n");
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_SHOW_IMG"));
+        keyword.click(PropertiesFile.getPropValue("PRD_SHOW_IMG"));
         Thread.sleep(20000);
         keyword.clickByCss(PropertiesFile.getPropValue("PRD_CLOSE"));
         System.out.printf("=> test 1 done"+"\n");
@@ -112,10 +112,10 @@ public class ProductDetailPage extends BasePage {
         Thread.sleep(20000);
         keyword.submitAllow();
         Thread.sleep(20000);
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_DROPDOWN"));
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
+        keyword.click(PropertiesFile.getPropValue("PRD_DROPDOWN"));
+        keyword.click(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
         Thread.sleep(20000);
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_FINDSIZE"));
+        keyword.click(PropertiesFile.getPropValue("PRD_FINDSIZE"));
 
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_FIRSTNAME"), PropertiesFile.getPropValue("PRD_DATA_FIRSTNAME"));
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_LASTNAME"), PropertiesFile.getPropValue("PRD_DATA_LASTNAME"));
@@ -125,31 +125,31 @@ public class ProductDetailPage extends BasePage {
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_CITY"), PropertiesFile.getPropValue("PRD_DATA_CITY"));
         Thread.sleep(200);
 
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_CHECK"));
+        keyword.click(PropertiesFile.getPropValue("PRD_CHECK"));
 //        keyword.clickByCss(PropertiesFile.getPropValue("PRD_BTN_SUBMIT"));
 
     }
     public void optionDimensionGuide() throws InterruptedException {
         keyword.navigateToUrl(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
         Thread.sleep(20000);
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_DROPDOWN"));
+        keyword.click(PropertiesFile.getPropValue("PRD_DROPDOWN"));
         Thread.sleep(20000);
         keyword.submitAllow();
         keyword.submitCookie();
         Thread.sleep(20000);
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_DROPDOWN"));
+        keyword.click(PropertiesFile.getPropValue("PRD_DROPDOWN"));
         System.out.printf("done" +"\n");
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
+        keyword.click(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
         Thread.sleep(2000);
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_FINDSIZE"));
+        keyword.click(PropertiesFile.getPropValue("PRD_FINDSIZE"));
         Thread.sleep(2000);
         keyword.clickByCss(PropertiesFile.getPropValue("PRD_LINK_SIZEGUIDE"));
 
     }
     public void optionFreeSize(){
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_DROPDOWN"));
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
-        keyword.clickByXpath(PropertiesFile.getPropValue("PRD_FREESIZE"));
+        keyword.click(PropertiesFile.getPropValue("PRD_DROPDOWN"));
+        keyword.click(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
+        keyword.click(PropertiesFile.getPropValue("PRD_FREESIZE"));
 
     }
 

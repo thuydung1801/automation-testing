@@ -95,7 +95,7 @@ public class KeywordWeb {
         logger.info("click allow : " );
         driver.findElement(By.xpath(PropertiesFile.getPropValue("BTN_ALLOW"))).click();
     }
-    public void clickByXpath(String element){
+    public void click(String element){
         logger.info("click : " + element);
         driver.findElement(By.xpath(element)).click();
     }

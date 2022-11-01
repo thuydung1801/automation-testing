@@ -15,12 +15,12 @@ public class Register extends BasePage {
 
     public void acceptAllCookie(){
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"),50);
-        keyword.clickByXpath(PropertiesFile.getPropValue("BTN_COOKIES"));
+        keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
     }
     public void registFail(){
 
         keyword.navigateToUrl(PropertiesFile.getPropValue("BASE_URL"));
-        keyword.clickByXpath(PropertiesFile.getPropValue("REGIST_BTN_SUBMIT"));
+        keyword.click(PropertiesFile.getPropValue("REGIST_BTN_SUBMIT"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LBL_ERROR_MESSAGE"), 10);
     }
     public void  registSuccess() throws InterruptedException {
@@ -46,7 +46,7 @@ public class Register extends BasePage {
                 PropertiesFile.getPropValue("REGIST_DATA_PASSWORD"));
         keyword.recaptchaClick();
         Thread.sleep(2000);
-        keyword.clickByXpath(PropertiesFile.getPropValue("REGIST_BTN_SUBMIT"));
+        keyword.click(PropertiesFile.getPropValue("REGIST_BTN_SUBMIT"));
 
 
 
