@@ -3,10 +3,7 @@
 <suite name="Suite">
 <test name="Suite" enabled="true">
     <classes>
-        <class name="com.test.ass2.ex1"/>
-    </classes>
-    <classes>
-        <class name="com.test.ass1.ex1"/>
+        <class name="test.checkout.ShoppingBagTest"/>
     </classes>
   </test>
 </suite>

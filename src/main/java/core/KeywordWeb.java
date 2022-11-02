@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.*;
 import org.slf4j.Logger;
 
@@ -23,9 +24,11 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import org.testng.Assert;
+import org.testng.ITestResult;
+
 public class KeywordWeb {
     private static Logger logger = LogHelper.getLogger();
-    private static WebDriver driver;
+    public static WebDriver driver;
     public KeywordWeb() {}
     public void openBrowser(String browser, String... url) {
         logger.info("Open browser");
@@ -56,6 +59,7 @@ public class KeywordWeb {
         logger.info("close browser: ");
         driver.quit();
     }
+
     public void click(String element){
         logger.info("click" + element);
         driver.findElement(By.xpath(element)).click();
