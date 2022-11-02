@@ -1,18 +1,18 @@
-package test;
+package test.home;
 
 import core.BaseTest;
 import org.testng.annotations.Test;
-import page.Register;
+import page.home.RegisterPage;
 
 public class RegistTest extends BaseTest {
-    private Register objRegist;
+    private RegisterPage objRegist;
     public RegistTest() {
         super();
     }
     @Test
     public void testcase001() throws InterruptedException {
-        objRegist = new Register(this.keyword);
-        objRegist.acceptAllCookie();
+        objRegist = new RegisterPage(this.keyword);
+        objRegist.acceptAllCookies();
         objRegist.registFail();
         objRegist.registSuccess();
     }

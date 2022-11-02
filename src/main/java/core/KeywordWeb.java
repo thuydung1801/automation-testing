@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
+import org.testng.Assert;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -94,6 +95,13 @@ public class KeywordWeb {
         WebElement editMenuItem = driver.findElement(By.xpath(menuItem));
         builder.contextClick(clickMe).moveToElement(editMenuItem).click().perform();
     }
+    public void hoverAndClick(String element){
+        logger.info("Move To Element" + element);
+        Actions action = new Actions(driver);
+        WebElement elementRep = driver.findElement(By.xpath(element));
+        action.moveToElement(elementRep).perform();
+    }
+
 
 
     public void executeJavaScript(String command){
@@ -137,6 +145,7 @@ public class KeywordWeb {
         logger.info("Getting alert text...");
         Alert alert = driver.switchTo().alert();
         return alert.getText();
+
     }
     public void dismissAlert(){
         logger.info("Dismissing alert...");
@@ -225,6 +234,7 @@ public class KeywordWeb {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,5000)");
     }
+
     public void switchToDefaultContent(){
         logger.info("SwitchTODefaultContent");
         driver.switchTo().defaultContent();
@@ -283,6 +293,22 @@ public class KeywordWeb {
                 .pollingEvery(polling)
                 .ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
+    }
+    public void handleLoginPopup(String username, String password, String authenUrl){
+        logger.info("login by authen link with"+username+" "+password);
+        String url = "https://"+username +":"+ password + "@" + authenUrl;
+        driver.navigate().to(url);
+
+    }
+    public String getText(String element){
+        logger.info("get Text of"+ element);
+        String text = driver.findElement(By.xpath(element)).getText();
+        return text;
+    }
+    public void assertEquals(String expected, String actual){
+        logger.info("compare from "+ expected+ " with "+ actual);
+        Assert.assertEquals(expected,actual);
+
     }
 
 

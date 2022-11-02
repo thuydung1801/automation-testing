@@ -1,33 +1,42 @@
-INFO  | 2022-10-31 17:17:45 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:33) - Open browser
-INFO  | 2022-10-31 17:17:48 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 106.0.5249.61 (resolved driver for Chrome 106)
-INFO  | 2022-10-31 17:17:48 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\106.0.5249.61\chromedriver.exe
-INFO  | 2022-10-31 17:17:50 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - open browser successfullyCHROME
-INFO  | 2022-10-31 17:17:50 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - go to url: https://dev1.glamira.com/glgb/customer/account/login/
-INFO  | 2022-10-31 17:17:50 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:52) - url: [Ljava.lang.String;@523d6bdb
-INFO  | 2022-10-31 17:17:56 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:113) - Maximizing browser window...
-INFO  | 2022-10-31 17:17:57 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:268) - webDriverWaitForElementPresent
-INFO  | 2022-10-31 17:17:59 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//button[@class='amgdprcookie-button -allow']
-INFO  | 2022-10-31 17:17:59 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:122) - Navigating to URL...https://dev3.glamira.com/glgb/diamond-rings/
-INFO  | 2022-10-31 17:18:00 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:224) -  scrolling to position 
-INFO  | 2022-10-31 17:18:02 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:268) - webDriverWaitForElementPresent
-INFO  | 2022-10-31 17:18:21 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//button[@class='amgdprcookie-button -allow']
-INFO  | 2022-10-31 17:18:23 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:268) - webDriverWaitForElementPresent
-INFO  | 2022-10-31 17:18:31 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:268) - webDriverWaitForElementPresent
-INFO  | 2022-10-31 17:18:41 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//a[@class='btn-stay-here geoip-close']
-INFO  | 2022-10-31 17:18:43 | [main] core.KeywordWeb (KeywordWeb.java:getCurrentPageUrl:126) - Navigating to URL...
-INFO  | 2022-10-31 17:18:44 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//div[contains(@class,'columns')]//li[1]//dl[1]//dd[1]//div[1]//ol[1]//li[4]//span[1]
-INFO  | 2022-10-31 17:18:49 | [main] core.KeywordWeb (KeywordWeb.java:getCurrentPageUrl:126) - Navigating to URL...
-INFO  | 2022-10-31 17:19:00 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//div[contains(@class,'columns')]//div[contains(@class,'item label filter-carat')]//li[1]
-INFO  | 2022-10-31 17:19:05 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:268) - webDriverWaitForElementPresent
-INFO  | 2022-10-31 17:19:15 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//div[contains(@class,'columns')]//div[contains(@class,'item label filter-shape_diamonds')]//li[1]
-INFO  | 2022-10-31 17:19:26 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//div[contains(@class,'columns')]//div[contains(@class,'item label filter-colour')]//li[1]
-INFO  | 2022-10-31 17:19:36 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//div[contains(@class,'sidebar-left-fitler')]//div[contains(@class,'sidebar-left-fitler-content')]//span[contains(@title,'950 Palladium')]
-INFO  | 2022-10-31 17:19:47 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//div[contains(@class,'sidebar-left-fitler')]//div[contains(@class,'sidebar-left-fitler-content')]//button[contains(@title,'Find')] 
-INFO  | 2022-10-31 17:19:52 | [main] core.KeywordWeb (KeywordWeb.java:getCurrentPageUrl:126) - Navigating to URL...
-INFO  | 2022-10-31 17:19:52 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//div[@class='sidebar-left-fitler']//li[@class='item carat'] 
-INFO  | 2022-10-31 17:19:57 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//div[contains(@class,'columns')]//div[contains(@class,'item label filter-shape_diamonds')]//li[2]
-INFO  | 2022-10-31 17:20:02 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//div[@class='sidebar-left-fitler']//a[@class='rmvAll'] 
-INFO  | 2022-10-31 17:20:02 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:268) - webDriverWaitForElementPresent
-INFO  | 2022-10-31 17:20:07 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//div[@class='sort-product-content']
-INFO  | 2022-10-31 17:20:08 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:268) - webDriverWaitForElementPresent
-INFO  | 2022-10-31 17:20:09 | [main] core.KeywordWeb (KeywordWeb.java:click:63) - click//a[@id='created_at']
+INFO  | 2022-11-01 17:10:30 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:34) - Open browser
+INFO  | 2022-11-01 17:10:31 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 106.0.5249.61 (resolved driver for Chrome 106)
+INFO  | 2022-11-01 17:10:31 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\106.0.5249.61\chromedriver.exe
+INFO  | 2022-11-01 17:10:34 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:49) - open browser successfullyCHROME
+INFO  | 2022-11-01 17:10:34 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:52) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-01 17:10:34 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - url: [Ljava.lang.String;@49cf9028
+INFO  | 2022-11-01 17:10:35 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:121) - Maximizing browser window...
+INFO  | 2022-11-01 17:10:35 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:297) - login by authen link withtest !test123!
+INFO  | 2022-11-01 17:10:52 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:277) - webDriverWaitForElementPresent
+INFO  | 2022-11-01 17:10:52 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//button[@class='amgdprcookie-button -allow']
+INFO  | 2022-11-01 17:10:52 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:130) - Navigating to URL...https://dev3.glamira.com/glgb/ 
+INFO  | 2022-11-01 17:11:03 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:277) - webDriverWaitForElementPresent
+INFO  | 2022-11-01 17:11:04 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//button[@class='amgdprcookie-button -allow']
+INFO  | 2022-11-01 17:11:05 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:277) - webDriverWaitForElementPresent
+INFO  | 2022-11-01 17:11:15 | [main] core.KeywordWeb (KeywordWeb.java:hoverAndClick:99) - Move To Element//body/div[2]/div[3]/div[1]/div[1]/div[1]/nav[1]/ul[3]/li[1] 
+INFO  | 2022-11-01 17:11:28 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//*[@id="ui-id-553"]/span[2]/span
+INFO  | 2022-11-01 17:11:31 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:232) -  scrolling to position 
+INFO  | 2022-11-01 17:11:32 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:277) - webDriverWaitForElementPresent
+INFO  | 2022-11-01 17:11:35 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//a[@class='btn-stay-here geoip-close']
+INFO  | 2022-11-01 17:12:03 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//body[1]/div[2]/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]
+INFO  | 2022-11-01 17:12:04 | [main] core.KeywordWeb (KeywordWeb.java:getCurrentPageUrl:134) - Navigating to URL...
+INFO  | 2022-11-01 17:12:05 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//div[contains(@class,'columns')]//li[1]//dl[1]//dd[1]//div[1]//ol[1]//li[4]//span[1]
+INFO  | 2022-11-01 17:12:10 | [main] core.KeywordWeb (KeywordWeb.java:getCurrentPageUrl:134) - Navigating to URL...
+INFO  | 2022-11-01 17:12:21 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//div[contains(@class,'columns')]//div[contains(@class,'item label filter-carat')]//li[1]
+INFO  | 2022-11-01 17:12:26 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:277) - webDriverWaitForElementPresent
+INFO  | 2022-11-01 17:12:36 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//div[contains(@class,'columns')]//div[contains(@class,'item label filter-shape_diamonds')]//li[1]
+INFO  | 2022-11-01 17:12:47 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//div[contains(@class,'columns')]//div[contains(@class,'item label filter-colour')]//li[1]
+INFO  | 2022-11-01 17:12:57 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//div[contains(@class,'sidebar-left-fitler')]//div[contains(@class,'sidebar-left-fitler-content')]//span[contains(@title,'950 Palladium')]
+INFO  | 2022-11-01 17:13:08 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//div[contains(@class,'sidebar-left-fitler')]//div[contains(@class,'sidebar-left-fitler-content')]//button[contains(@title,'Find')] 
+INFO  | 2022-11-01 17:13:13 | [main] core.KeywordWeb (KeywordWeb.java:getCurrentPageUrl:134) - Navigating to URL...
+INFO  | 2022-11-01 17:13:13 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//div[@class='sidebar-left-fitler']//li[@class='item carat'] 
+INFO  | 2022-11-01 17:13:18 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//div[contains(@class,'columns')]//div[contains(@class,'item label filter-shape_diamonds')]//li[2]
+INFO  | 2022-11-01 17:13:23 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//div[@class='sidebar-left-fitler']//a[@class='rmvAll'] 
+INFO  | 2022-11-01 17:13:23 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:277) - webDriverWaitForElementPresent
+INFO  | 2022-11-01 17:13:28 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//div[@class='sort-product-content']
+INFO  | 2022-11-01 17:13:29 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:277) - webDriverWaitForElementPresent
+INFO  | 2022-11-01 17:13:30 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//a[@id='created_at'] 
+INFO  | 2022-11-01 17:13:46 | [main] core.KeywordWeb (KeywordWeb.java:clickUseCss:67) - clickli.ring_view_select2 
+INFO  | 2022-11-01 17:13:51 | [main] core.KeywordWeb (KeywordWeb.java:clickUseCss:67) - clickli.ring_view_select3  
+INFO  | 2022-11-01 17:13:53 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//a[normalize-space()='[i]'] 
+INFO  | 2022-11-01 17:13:53 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:277) - webDriverWaitForElementPresent
+INFO  | 2022-11-01 17:13:59 | [main] core.KeywordWeb (KeywordWeb.java:click:64) - click//a[@class='popover-close']
