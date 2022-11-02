@@ -48,4 +48,9 @@ public class ListingPageTest extends BaseTest {
         Thread.sleep(1000);
         testListingPage.popupMessage();
     }
+    @Test(priority = 7)
+    public void testcase07_CheckLikeProduct() throws InterruptedException {
+        Thread.sleep(1000);
+        testListingPage.LikeProduct();
+    }
 }

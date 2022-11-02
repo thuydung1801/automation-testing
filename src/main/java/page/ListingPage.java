@@ -93,7 +93,7 @@ public class ListingPage extends BasePage {
     }
 
     public void viewBTN() throws InterruptedException {
-        Thread.sleep(10000);
+        Thread.sleep(1000);
         keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_TOOLlBAR"));
         Thread.sleep(5000);
         keyword.clickUseCss(PropertiesFile.getPropValue("LTP_BTN_VIEW2"));
@@ -108,6 +108,32 @@ public class ListingPage extends BasePage {
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_POPUP_DETAIL"),50);
         Thread.sleep(5000);
         keyword.click(PropertiesFile.getPropValue("LTP_ICON_CLOSE_PP"));
+    }
+
+    public  void LikeProduct() throws InterruptedException {
+        Thread.sleep(5000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BOOKLIKE"),50);
+        Thread.sleep(1000);
+        keyword.click(PropertiesFile.getPropValue("LTP_BTN_LIKE"));
+//        Thread.sleep(1000);
+//        keyword.webDriverWaitForElementPresentCss(PropertiesFile.getPropValue("LTP_TXT_BOOK_SHOWLIKE"),10);
+        Thread.sleep(1000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BTN_VIEW_DETAIL_BOOKLIKE"),10);
+        keyword.click(PropertiesFile.getPropValue("LTP_BTN_VIEW_DETAIL_BOOKLIKE"));
+        Thread.sleep(1000);
+        keyword.back();
+        Thread.sleep(2000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BTN_SAVED_ITEM"),30);
+        Thread.sleep(1000);
+        keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_BTN_SAVED_ITEM"));
+        Thread.sleep(7000);
+        keyword.click(PropertiesFile.getPropValue("LTP_BTN_SAVED_ITEM"));
+        Thread.sleep(2000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BTN_CLOSE"),5);
+        Thread.sleep(1000);
+//        keyword.clickUseCss(PropertiesFile.getPropValue("LTP_MODAL_OVERLAY"));
+//        Thread.sleep(2000);
+//        keyword.click(PropertiesFile.getPropValue("LTP_BTN_CLOSE"));
     }
 
 }
