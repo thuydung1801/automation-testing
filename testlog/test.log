@@ -1,23 +1,16 @@
-INFO  | 2022-11-02 10:25:08 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:36) - Open browser
-INFO  | 2022-11-02 10:25:09 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
-INFO  | 2022-11-02 10:25:09 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
-INFO  | 2022-11-02 10:25:10 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - open browser successfullyCHROME
-INFO  | 2022-11-02 10:25:10 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-02 10:25:10 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:55) - url: [Ljava.lang.String;@7cb2651f
-INFO  | 2022-11-02 10:25:10 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:130) - Maximizing browser window...
-INFO  | 2022-11-02 10:25:11 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:291) - login by authen link withtest !test123!
-INFO  | 2022-11-02 10:25:29 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:276) - webDriverWaitForElementPresent
-INFO  | 2022-11-02 10:25:40 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//button[@class='amgdprcookie-button -allow']
-INFO  | 2022-11-02 10:25:43 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:232) -  scrolling to position 
-INFO  | 2022-11-02 10:26:13 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//a[@class='btn-stay-here geoip-close']
-INFO  | 2022-11-02 10:26:13 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:139) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
-INFO  | 2022-11-02 10:27:09 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//div[@class='dropdown-input sprite-bf']
-INFO  | 2022-11-02 10:27:11 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//span[contains(text(),'Discover size options')]
-INFO  | 2022-11-02 10:27:14 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click(//div[@id='ringsize-link-form'])[2]
-INFO  | 2022-11-02 10:27:16 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='firstname']
-INFO  | 2022-11-02 10:27:16 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='lastname']
-INFO  | 2022-11-02 10:27:16 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='email_address']
-INFO  | 2022-11-02 10:27:16 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='street_1']
-INFO  | 2022-11-02 10:27:16 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='zip']
-INFO  | 2022-11-02 10:27:16 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='city']
-INFO  | 2022-11-02 10:27:17 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click(//input[@id='agreement-36'])[1]
+INFO  | 2022-11-02 10:42:57 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:36) - Open browser
+INFO  | 2022-11-02 10:42:58 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
+INFO  | 2022-11-02 10:42:58 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
+INFO  | 2022-11-02 10:42:58 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - open browser successfullyCHROME
+INFO  | 2022-11-02 10:42:58 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-02 10:42:58 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:55) - url: [Ljava.lang.String;@16073fa8
+INFO  | 2022-11-02 10:42:59 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:130) - Maximizing browser window...
+INFO  | 2022-11-02 10:42:59 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:291) - login by authen link withtest !test123!
+INFO  | 2022-11-02 10:43:13 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:276) - webDriverWaitForElementPresent
+INFO  | 2022-11-02 10:43:15 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//button[@class='amgdprcookie-button -allow']
+INFO  | 2022-11-02 10:43:17 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:232) -  scrolling to position 
+INFO  | 2022-11-02 10:43:27 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//a[@class='btn-stay-here geoip-close']
+INFO  | 2022-11-02 10:43:27 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:139) - Navigating to URL...https://dev3.glamira.com/glde/gift-card/
+INFO  | 2022-11-02 10:43:51 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:276) - webDriverWaitForElementPresent
+INFO  | 2022-11-02 10:43:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@placeholder='Ann Walker']
+INFO  | 2022-11-02 10:43:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//div[@class ='amcard-form-container']/div[2]/input[1]
