@@ -6,6 +6,8 @@ import core.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
+import page.home.LoginPage;
+import page.home.RegisterPage;
 
 import java.util.ArrayList;
 import java.util.WeakHashMap;
@@ -13,11 +15,20 @@ import java.util.WeakHashMap;
 
 public class ProductDetailPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
+    private LoginPage objLogin;
+    private RegisterPage objRegister ;
     public ProductDetailPage() {
         super();
     }
     public ProductDetailPage(KeywordWeb key){
         super(key);
+        objLogin = new LoginPage();
+        objRegister = new RegisterPage();
+    }
+    public void setUp() throws InterruptedException {
+        objLogin.loginOnAlert();
+        objRegister.acceptAllCookies();
+        objRegister.chooseLanguages();
     }
     public void selectOption() throws InterruptedException {
         Thread.sleep(100);
@@ -28,13 +39,14 @@ public class ProductDetailPage extends BasePage {
 
         for(String option : arr){
             if(option != arr.get(arr.size()-1)){
+                Thread.sleep(2000);
                 keyword.click(option);
-                Thread.sleep(20000);
+
             }
             else{
                 keyword.click(option);
-                Thread.sleep(20000);
-                keyword.clickByCss(PropertiesFile.getPropValue("PRD_TEXT_ENGRAVING"));
+                Thread.sleep(2000);
+                keyword.click(PropertiesFile.getPropValue("PRD_TEXT_ENGRAVING"));
                 Thread.sleep(20000);
                 keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_ENGRAVING"), PropertiesFile.getPropValue("PRD_DATA_TEXT_ENGRAVING"));
 
@@ -62,29 +74,22 @@ public class ProductDetailPage extends BasePage {
 
 
     }
-    public void submitCookie(){
-        logger.info("click accept cookie : " );
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("PRD_BTN_ACCEPT_COOKIE"), 50);
-        keyword.click(PropertiesFile.getPropValue("PRD_BTN_ACCEPT_COOKIE"));
-       // driver.findElement(By.cssSelector(PropertiesFile.getPropValue("PRD_BTN_ACCEPT_COOKIE"))).click();
-    }
+
     public void productInfo() throws InterruptedException {
 
-
+        setUp();
         keyword.navigateToUrl(PropertiesFile.getPropValue("URL_PRODUCT_INFO"));
         Thread.sleep(5000);
-        keyword.submitCookie();
 
         keyword.click(PropertiesFile.getPropValue("PRD_CLICK_PRODUCT"));
 
         System.out.printf("-----test 1: Show  detail image" +"\n");
         keyword.click(PropertiesFile.getPropValue("PRD_SHOW_IMG"));
-        Thread.sleep(20000);
+        Thread.sleep(2000);
         keyword.clickByCss(PropertiesFile.getPropValue("PRD_CLOSE"));
         System.out.printf("=> test 1 done"+"\n");
 
         System.out.printf("-----test 2: Default option "+"\n");
-        keyword.submitAllow();
         selectOption();
         System.out.printf("=> test 2 done"+"\n");
 
@@ -105,18 +110,21 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void optionFindSize() throws InterruptedException  {
+        setUp();
         keyword.navigateToUrl(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
-        Thread.sleep(20000);
-        keyword.submitCookie();
-        keyword.scrollToPosition();
-        Thread.sleep(20000);
-        keyword.submitAllow();
-        Thread.sleep(20000);
+//        Thread.sleep(20000);
+//        keyword.submitCookie();
+//        keyword.scrollToPosition();
+//        Thread.sleep(20000);
+//        keyword.submitAllow();
+        Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("PRD_DROPDOWN"));
+        Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
-        Thread.sleep(20000);
+        Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("PRD_FINDSIZE"));
 
+        Thread.sleep(2000);
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_FIRSTNAME"), PropertiesFile.getPropValue("PRD_DATA_FIRSTNAME"));
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_LASTNAME"), PropertiesFile.getPropValue("PRD_DATA_LASTNAME"));
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_EMAIL"), PropertiesFile.getPropValue("PRD_DATA_EMAIL"));
@@ -130,14 +138,11 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void optionDimensionGuide() throws InterruptedException {
+        setUp();
         keyword.navigateToUrl(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
-        Thread.sleep(20000);
+        Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("PRD_DROPDOWN"));
-        Thread.sleep(20000);
-        keyword.submitAllow();
-        keyword.submitCookie();
-        Thread.sleep(20000);
-        keyword.click(PropertiesFile.getPropValue("PRD_DROPDOWN"));
+        Thread.sleep(2000);
         System.out.printf("done" +"\n");
         keyword.click(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
         Thread.sleep(2000);

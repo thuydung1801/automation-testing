@@ -56,6 +56,11 @@ public class KeywordWeb {
             driver.get(rawUrl);
         }
     }
+    public void openNewTab(String url){
+        driver.switchTo().window(String.valueOf(SafariDriver.WindowType.TAB));
+        navigateToUrl(url);
+
+    }
 
     public void closeBrowser(){
         logger.info("close browser: ");
@@ -65,6 +70,7 @@ public class KeywordWeb {
         logger.info("click" + element);
         driver.findElement(By.xpath(element)).click();
     }
+
     public String getText(String element){
         logger.info("get Text of"+ element);
         String text = driver.findElement(By.xpath(element)).getText();
@@ -280,6 +286,19 @@ public class KeywordWeb {
                 .ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
     }
+
+    public void handleLoginPopup(String username, String password, String authenUrl){
+        logger.info("login by authen link with"+username+" "+password);
+        String url = "https://"+username +":"+ password + "@" + authenUrl;
+        driver.navigate().to(url);
+
+    }
+    public void assertEquals(String expected, String actual){
+        logger.info("compare from "+ expected+ " with "+ actual);
+        Assert.assertEquals(expected,actual);
+
+    }
+
 
 
 }
