@@ -125,12 +125,12 @@ public class ListingPage extends BasePage {
         Thread.sleep(2000);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BTN_SAVED_ITEM"),30);
         Thread.sleep(1000);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_BTN_SAVED_ITEM"));
-        Thread.sleep(7000);
-        keyword.click(PropertiesFile.getPropValue("LTP_BTN_SAVED_ITEM"));
-        Thread.sleep(2000);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BTN_CLOSE"),5);
-        Thread.sleep(1000);
+//        keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_BTN_SAVED_ITEM"));
+//        Thread.sleep(7000);
+//        keyword.click(PropertiesFile.getPropValue("LTP_BTN_SAVED_ITEM"));
+//        Thread.sleep(2000);
+//        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BTN_CLOSE"),5);
+//        Thread.sleep(1000);
 //        keyword.clickUseCss(PropertiesFile.getPropValue("LTP_MODAL_OVERLAY"));
 //        Thread.sleep(2000);
 //        keyword.click(PropertiesFile.getPropValue("LTP_BTN_CLOSE"));
