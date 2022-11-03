@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.*;
 import org.slf4j.Logger;
 
@@ -23,9 +24,11 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import org.testng.Assert;
+import org.testng.ITestResult;
+
 public class KeywordWeb {
     private static Logger logger = LogHelper.getLogger();
-    private static WebDriver driver;
+    public static WebDriver driver;
     public KeywordWeb() {}
     public void openBrowser(String browser, String... url) {
         logger.info("Open browser");
@@ -56,9 +59,17 @@ public class KeywordWeb {
         logger.info("close browser: ");
         driver.quit();
     }
+    public void clearText(String element){
+        logger.info("clearText");
+        driver.findElement(By.xpath(element)).clear();
+    }
     public void click(String element){
         logger.info("click" + element);
         driver.findElement(By.xpath(element)).click();
+    }
+    public void clickByCss(String element){
+        logger.info("click" + element);
+        driver.findElement(By.cssSelector(element)).click();
     }
     public String getText(String element){
         logger.info("get Text of"+ element);
@@ -70,6 +81,7 @@ public class KeywordWeb {
         driver.findElement(By.xpath(element)).sendKeys(content);
 
     }
+
 
     public void doubleClick(String element){
         logger.info("double click" + element);
@@ -198,7 +210,8 @@ public class KeywordWeb {
 
     public void assertEquals(String expected, String actual){
         logger.info("compare from "+ expected+ " with "+ actual);
-        Assert.assertEquals(expected,actual);
+        String actualText = driver.findElement(By.xpath(actual)).getText();
+        Assert.assertEquals(actualText,expected);
 
     }
     public void closeTab(int tabNum){
@@ -237,11 +250,11 @@ public class KeywordWeb {
 
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.recaptcha-checkbox-border"))).click();
     }
-    public void selectDropDownListByIndex(String ddlPath, int index){
+    public void selectDropDownListByIndex(String ddlPath, String itemName){
         logger.info("select item by visibe text");
         Select dropDownList = new Select(driver.findElement(By.xpath(ddlPath)));
         logger.info("1");
-        dropDownList.selectByIndex(index);
+        dropDownList.selectByVisibleText(itemName);
 
     }
 
@@ -249,7 +262,7 @@ public class KeywordWeb {
     //verify keyword
     public boolean verifyElementPresent(String element){
         try{
-            driver.findElement(By.xpath(element));
+            driver.findElement(By.xpath(element)).isDisplayed();
             return true;
         } catch(NoSuchElementException e){
             e.printStackTrace();
