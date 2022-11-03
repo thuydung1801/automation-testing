@@ -59,7 +59,10 @@ public class KeywordWeb {
         logger.info("close browser: ");
         driver.quit();
     }
-
+    public void clearText(String element){
+        logger.info("clearText");
+        driver.findElement(By.xpath(element)).clear();
+    }
     public void click(String element){
         logger.info("click" + element);
         driver.findElement(By.xpath(element)).click();

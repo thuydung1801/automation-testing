@@ -3,7 +3,11 @@
 <suite name="Suite">
 <test name="Suite" enabled="true">
     <classes>
-        <class name="test.checkout.ShoppingBagTest"/>
+        <class name="test.checkout.ShoppingBagTest">
+            <methods>
+                <include name="testCase_SP_02"/>
+            </methods>
+        </class>
     </classes>
   </test>
 </suite>

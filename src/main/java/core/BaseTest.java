@@ -18,9 +18,12 @@ import static core.KeywordWeb.driver;
 public class BaseTest {
     private static Logger logger = LogHelper.getLogger();
     protected KeywordWeb keyword;
-    //public static WebDriver driver;
+//    public static WebDriver driver;
     public BaseTest(){
         keyword = new KeywordWeb();
+    }
+    public static WebDriver getDriver() {
+        return driver;
     }
     @BeforeSuite
     public void beforeSuite() throws Exception {
@@ -32,7 +35,7 @@ public class BaseTest {
         keyword.openBrowser(PropertiesFile.getPropValue("BROWSER_NAME"),PropertiesFile.getPropValue("BASE_URL"));
         keyword.maximizeWindow();
     }
-    @AfterMethod
+    //@AfterMethod
     public void takeScreenshot(ITestResult result) {
         if (ITestResult.FAILURE == result.getStatus()) {
             try {
@@ -53,7 +56,6 @@ public class BaseTest {
 
     @AfterTest
     public void afterTest() throws Exception {
-        Thread.sleep(2000);
         keyword.closeBrowser();
     }
 

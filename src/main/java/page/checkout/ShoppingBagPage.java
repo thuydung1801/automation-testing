@@ -107,16 +107,18 @@ public class ShoppingBagPage extends BasePage {
 
     public void viewDetail(String typeOfProduct) throws InterruptedException {
         keyword.click(PropertiesFile.getPropValue(typeOfProduct));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_VIEWDETAIL"),5);
-
 
     }
     public void inputEngravingwithSingleRing(String data, String btnAdd, String engraving) throws InterruptedException {
-        keyword.imWait(30);
+//        keyword.imWait(30);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_VIEWDETAIL"),5);
+        Thread.sleep(5000);
         keyword.click(PropertiesFile.getPropValue(btnAdd));
         keyword.imWait(30);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TITLE_ENGRAVING"),5);
-        keyword.imWait(20);
+        keyword.imWait(30);
+        keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_TXT_ENGRAVING"));
+        Thread.sleep(5000);
         keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_ENGRAVING"),
                 PropertiesFile.getPropValue(data));
         Thread.sleep(2000);
