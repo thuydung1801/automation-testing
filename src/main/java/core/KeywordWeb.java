@@ -7,10 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import org.slf4j.Logger;
 import org.testng.Assert;
 
@@ -26,11 +23,12 @@ import java.util.concurrent.TimeUnit;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
+import org.testng.Assert;
+import org.testng.ITestResult;
 
 public class KeywordWeb {
     private static Logger logger = LogHelper.getLogger();
-    private static WebDriver driver;
-
+    public static WebDriver driver;
     public KeywordWeb() {
     }
 
@@ -58,10 +56,13 @@ public class KeywordWeb {
             driver.get(rawUrl);
         }
     }
-
     public void closeBrowser() {
         logger.info("close browser: ");
         driver.quit();
+    }
+    public void clearText(String element){
+        logger.info("clearText");
+        driver.findElement(By.xpath(element)).clear();
     }
 
     public void click(String element) {
@@ -227,6 +228,12 @@ public class KeywordWeb {
         switchToTab(tabNum);
         driver.close();
     }
+//    public void assertEquals(String expected, String actual){
+//        logger.info("compare from "+ expected+ " with "+ actual);
+//        String actualText = driver.findElement(By.xpath(actual)).getText();
+//        Assert.assertEquals(actualText,expected);
+//
+//    }
 
     public void closeWindowTitle(String title) {
         for (String windowid : driver.getWindowHandles()) {
@@ -279,6 +286,13 @@ public class KeywordWeb {
             e.printStackTrace();
             return false;
         }
+    }
+    public void selectDropDownListByIndex(String ddlPath, String itemName){
+        logger.info("select item by visibe text");
+        Select dropDownList = new Select(driver.findElement(By.xpath(ddlPath)));
+        logger.info("1");
+        dropDownList.selectByVisibleText(itemName);
+
     }
 
     public boolean verifyElementVisible(String element) {
@@ -337,6 +351,16 @@ public class KeywordWeb {
         logger.info("compare from " + expected + " with " + actual);
         Assert.assertEquals(expected, actual);
 
+    }
+
+    public void CheckIsDisplayElement( String element){
+        logger.info("Check Is Display: " + element);
+        Boolean status = driver.findElement(By.xpath(element)).isDisplayed();
+        if (!status){
+            logger.info("Element Is Visible");
+        }else {
+            logger.info("Element Is Display");
+        }
     }
 
 

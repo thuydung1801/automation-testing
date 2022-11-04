@@ -13,7 +13,7 @@ public class ListingPageTest extends BaseTest {
         super();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1, description = "STEEP 1: GO TO LISTINGPAGE")
     public void testcase01_goToPageLT() throws InterruptedException {
         testListingPage = new ListingPage((this.keyword));
         objLogin = new LoginPage(this.keyword);
@@ -23,32 +23,31 @@ public class ListingPageTest extends BaseTest {
         Thread.sleep(1000);
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, description = "--- CHECK FILTER")
     public void testcase02_selectFilters() throws InterruptedException {
         testListingPage.filTerStone();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, description = "---DELETE FILTER")
     public void testcase03_deleteFilters() throws InterruptedException {
         testListingPage.deleteFilters();
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4, description = "---CHECK  VIEW SORT")
     public void testcase04_view() throws InterruptedException {
         testListingPage.sort_prd();
     }
 
-    @Test(priority = 5)
+    @Test(priority = 5, description = "--- CHECK SELECT STATUS VIEW")
     public void testcase05_selectView() throws InterruptedException {
         testListingPage.viewBTN();
     }
-
-    @Test(priority = 6)
+    @Test(priority = 6, description = "---CHECK MESSAGE POPUP")
     public void testcase06_checkMessage_Popup() throws InterruptedException {
         Thread.sleep(1000);
         testListingPage.popupMessage();
     }
-    @Test(priority = 7)
+    @Test(priority = 7, description = "---CHECK LIKE PRODUCT")
     public void testcase07_CheckLikeProduct() throws InterruptedException {
         Thread.sleep(1000);
         testListingPage.LikeProduct();
