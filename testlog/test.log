@@ -1,19 +1,22 @@
-INFO  | 2022-11-04 17:20:22 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:36) - Open browser
-INFO  | 2022-11-04 17:20:26 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 106.0.5249.61 (resolved driver for Chrome 106)
-INFO  | 2022-11-04 17:20:26 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\106.0.5249.61\chromedriver.exe
-INFO  | 2022-11-04 17:20:31 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - open browser successfullyCHROME
-INFO  | 2022-11-04 17:20:31 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-04 17:20:31 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:55) - url: [Ljava.lang.String;@4cf230bf
-INFO  | 2022-11-04 17:20:32 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:129) - Maximizing browser window...
-INFO  | 2022-11-04 17:20:33 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:338) - login by authen link withtest !test123!
-INFO  | 2022-11-04 17:20:48 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//button[@class='amgdprcookie-button -allow']
-INFO  | 2022-11-04 17:20:50 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:263) -  scrolling to position 
-INFO  | 2022-11-04 17:21:03 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//a[@class='btn-stay-here geoip-close']
-INFO  | 2022-11-04 17:21:03 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:139) - Navigating to URL...https://dev3.glamira.com/glde/diamantringe/  
-INFO  | 2022-11-04 17:21:34 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//*[@id="maincontent"]/div[2]/div[1]/div[5]/ol/li[1]
-INFO  | 2022-11-04 17:21:40 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//div[@class='dropdown-input sprite-bf']
-INFO  | 2022-11-04 17:21:42 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:317) - webDriverWaitForElementPresent
-INFO  | 2022-11-04 17:21:44 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//*[@id="ring_size"]/div[2]/div[2]/div[2]/ul/li[16]
-INFO  | 2022-11-04 17:21:47 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//button[@id='product-addtocart-button']  
-INFO  | 2022-11-04 17:21:48 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:317) - webDriverWaitForElementPresent
-INFO  | 2022-11-04 17:21:50 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:317) - webDriverWaitForElementPresent
+INFO  | 2022-11-05 11:58:29 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:36) - Open browser
+INFO  | 2022-11-05 11:58:31 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO  | 2022-11-05 11:58:31 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO  | 2022-11-05 11:58:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - open browser successfullyCHROME
+INFO  | 2022-11-05 11:58:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-05 11:58:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:55) - url: [Ljava.lang.String;@430d3021
+INFO  | 2022-11-05 11:58:37 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:129) - Maximizing browser window...
+INFO  | 2022-11-05 11:58:37 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:338) - login by authen link withtest !test123!
+INFO  | 2022-11-05 11:58:54 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//button[@class='amgdprcookie-button -allow']
+INFO  | 2022-11-05 11:58:56 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:263) -  scrolling to position 
+INFO  | 2022-11-05 11:59:07 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//a[@class='btn-stay-here geoip-close']
+INFO  | 2022-11-05 11:59:07 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:139) - Navigating to URL...https://dev3.glamira.com/glgb/diamond-rings/ 
+INFO  | 2022-11-05 11:59:30 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//*[@id="maincontent"]/div[2]/div[1]/div[5]/ol/li[1]
+INFO  | 2022-11-05 11:59:42 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//div[@class='dropdown-input sprite-bf']
+INFO  | 2022-11-05 11:59:44 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:317) - webDriverWaitForElementPresent
+INFO  | 2022-11-05 11:59:47 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//*[@id="ring_size"]/div[2]/div[2]/div[2]/ul/li[16]
+INFO  | 2022-11-05 11:59:50 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//button[@id='product-addtocart-button']  
+INFO  | 2022-11-05 12:00:07 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//div[contains(@class,'actions popup-footer')]//a[contains(@class,'action primary')]
+INFO  | 2022-11-05 12:00:23 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//*[@id="maincontent"]/div[2]/div/div[4]/div/ul[1]/li
+INFO  | 2022-11-05 12:00:24 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:317) - webDriverWaitForElementPresent
+INFO  | 2022-11-05 12:00:24 | [main] core.KeywordWeb (KeywordWeb.java:click:70) - click//button[@class='action primary show-address-form'] 
+INFO  | 2022-11-05 12:00:28 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:317) - webDriverWaitForElementPresent

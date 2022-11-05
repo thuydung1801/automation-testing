@@ -38,19 +38,15 @@ public class LoginAndAddressPage extends BasePage {
     public void  clickPtnAddProduct () throws InterruptedException {
         Thread.sleep(3000);
         keyword.click(PropertiesFile.getPropValue("CHECK_OUT_BTN_ADD_PRODUCT"));
-        Thread.sleep(1000);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_POPUP_MINICART_CONTENT"),20);
+        Thread.sleep(7000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_VIEW_DETAIL"));
         Thread.sleep(2000);
     }
     public void btnSubmitCheckOut() throws InterruptedException {
+        Thread.sleep(5000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_PROCEED_CHECKOUT"));
         Thread.sleep(1000);
-    }
-    public void GuestNewCustomer() throws InterruptedException {
-        Thread.sleep(1000);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_BOOX_CHECKOUT_GUEST"), 20);
-        Thread.sleep(2000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_BOOX_CHECKOUT_GUEST"), 30);
         keyword.click(PropertiesFile.getPropValue("CECKOUT_BTN_CONTINUE"));
         Thread.sleep(1000);
     }

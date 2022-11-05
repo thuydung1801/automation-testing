@@ -33,7 +33,8 @@ public class LoginAndAddressTest extends BaseTest {
         objLoginAdrPage.goToPageProduct();
         objLoginAdrPage.clickPtnAddProduct();
         objLoginAdrPage.btnSubmitCheckOut();
-        objLoginAdrPage.GuestNewCustomer();
+        Thread.sleep(2000);
+//        objLoginAdrPage.GuestNewCustomer();
 
     }
 
