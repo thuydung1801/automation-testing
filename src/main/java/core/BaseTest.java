@@ -56,7 +56,7 @@ public class BaseTest {
 
     @AfterTest
     public void afterTest() throws Exception {
-        keyword.closeBrowser();
+//        keyword.closeBrowser();
     }
 
 }
