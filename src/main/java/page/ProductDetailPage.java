@@ -58,15 +58,17 @@ public class ProductDetailPage extends BasePage {
     public void clickDropdown() throws InterruptedException {
         keyword.click(PropertiesFile.getPropValue("PRD_DROPDOWN"));
         Thread.sleep(1000);
-        keyword.click(PropertiesFile.getPropValue("PRD_CLICK_OPTIONE_SiZE"));
+//        keyword.click(PropertiesFile.getPropValue("PRD_CLICK_OPTIONE_SiZE"));
+        keyword.randomElement(PropertiesFile.getPropValue("PRD_CLICK_OPTIONE_SiZE"));
     }
     public void clickAddCart() throws InterruptedException {
-        Thread.sleep(500);
+        Thread.sleep(3000);
         keyword.click(PropertiesFile.getPropValue("PRD_BTN_ADDCART"));
-        Thread.sleep(100);
+//        Thread.sleep(10000);
+        keyword.imWait(10);
         keyword.click(PropertiesFile.getPropValue("PRD_CART"));
         keyword.click(PropertiesFile.getPropValue("PRD_BTN_VIEWCART"));
-        Thread.sleep(100);
+        keyword.imWait(1);
         keyword.click(PropertiesFile.getPropValue("PRD_BTN_VIEWDETAIL"));
 
         System.out.printf("check engravingText : " );
@@ -78,6 +80,7 @@ public class ProductDetailPage extends BasePage {
     public void productInfo() throws InterruptedException {
 
         setUp();
+        Thread.sleep(2000);
         keyword.navigateToUrl(PropertiesFile.getPropValue("URL_PRODUCT_INFO"));
         Thread.sleep(5000);
 
@@ -86,6 +89,7 @@ public class ProductDetailPage extends BasePage {
         System.out.printf("-----test 1: Show  detail image" +"\n");
         keyword.click(PropertiesFile.getPropValue("PRD_SHOW_IMG"));
         Thread.sleep(2000);
+//        keyword.imWait(2);
         keyword.clickByCss(PropertiesFile.getPropValue("PRD_CLOSE"));
         System.out.printf("=> test 1 done"+"\n");
 
@@ -94,7 +98,7 @@ public class ProductDetailPage extends BasePage {
         System.out.printf("=> test 2 done"+"\n");
 
         System.out.printf("------test 2.1: Dropdown"+"\n");
-        Thread.sleep(1000);
+        keyword.imWait(1);
         clickDropdown();
         System.out.printf("=> test 2.1 done"+"\n");
 
@@ -102,7 +106,7 @@ public class ProductDetailPage extends BasePage {
         clickAddCart();
         System.out.printf("=>test 2.2 done"+"\n");
 
-        System.out.printf("---------test 3: Quantity option for earring men" +"\n");
+        System.out.printf("---------test 3:check optionFreeSize " +"\n");
         keyword.openNewTab(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
         optionFreeSize();
         System.out.printf("=> test 3 done");
@@ -111,43 +115,41 @@ public class ProductDetailPage extends BasePage {
     }
     public void optionFindSize() throws InterruptedException  {
         setUp();
+        Thread.sleep(2000);
         keyword.navigateToUrl(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
-//        Thread.sleep(20000);
-//        keyword.submitCookie();
-//        keyword.scrollToPosition();
-//        Thread.sleep(20000);
-//        keyword.submitAllow();
-        Thread.sleep(2000);
+        keyword.imWait(2);
         keyword.click(PropertiesFile.getPropValue("PRD_DROPDOWN"));
-        Thread.sleep(2000);
+        keyword.imWait(2);
         keyword.click(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
-        Thread.sleep(2000);
+        keyword.imWait(2);
         keyword.click(PropertiesFile.getPropValue("PRD_FINDSIZE"));
 
-        Thread.sleep(2000);
+        keyword.imWait(2);
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_FIRSTNAME"), PropertiesFile.getPropValue("PRD_DATA_FIRSTNAME"));
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_LASTNAME"), PropertiesFile.getPropValue("PRD_DATA_LASTNAME"));
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_EMAIL"), PropertiesFile.getPropValue("PRD_DATA_EMAIL"));
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_STREET"), PropertiesFile.getPropValue("PRD_DATA_STREET"));
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_CODE"), PropertiesFile.getPropValue("PRD_DATA_CODE"));
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_CITY"), PropertiesFile.getPropValue("PRD_DATA_CITY"));
-        Thread.sleep(200);
 
+//        keyword.recaptchaClick();
+        Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("PRD_CHECK"));
-//        keyword.clickByCss(PropertiesFile.getPropValue("PRD_BTN_SUBMIT"));
+//        keyword.click(PropertiesFile.getPropValue("PRD_BTN_SUBMIT"));
 
     }
     public void optionDimensionGuide() throws InterruptedException {
         setUp();
+        Thread.sleep(3000);
         keyword.navigateToUrl(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
-        Thread.sleep(2000);
+        keyword.imWait(2);
         keyword.click(PropertiesFile.getPropValue("PRD_DROPDOWN"));
-        Thread.sleep(2000);
+        keyword.imWait(2);
         System.out.printf("done" +"\n");
         keyword.click(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
-        Thread.sleep(2000);
+        keyword.imWait(2);
         keyword.click(PropertiesFile.getPropValue("PRD_FINDSIZE"));
-        Thread.sleep(2000);
+        keyword.imWait(2);
         keyword.clickByCss(PropertiesFile.getPropValue("PRD_LINK_SIZEGUIDE"));
 
     }

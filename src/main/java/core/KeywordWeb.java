@@ -17,6 +17,8 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 import java.awt.Rectangle;
@@ -75,6 +77,14 @@ public class KeywordWeb {
     public void clickByCss(String element){
         logger.info("click" + element);
         driver.findElement(By.cssSelector(element)).click();
+    }
+    public void randomElement(String element){
+        List <WebElement> weblist = driver.findElements(By.xpath(element));
+        int size = weblist.size();
+        int randnMumber = ThreadLocalRandom.current().nextInt(0, size);
+        weblist.get(randnMumber).click();
+
+
     }
     public String getText(String element){
         logger.info("get Text of"+ element);
