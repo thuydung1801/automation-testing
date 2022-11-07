@@ -25,7 +25,7 @@ import java.awt.Toolkit;
 import org.testng.Assert;
 public class KeywordWeb {
     private static Logger logger = LogHelper.getLogger();
-    private static WebDriver driver;
+    public static WebDriver driver;
     public KeywordWeb() {}
     public void openBrowser(String browser, String... url) {
         logger.info("Open browser");
@@ -51,14 +51,30 @@ public class KeywordWeb {
             driver.get(rawUrl);
         }
     }
+    public void openNewTab(String url){
+        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
+        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(0));
+       // driver.navigate().to(url);
+        navigateToUrl(url);
+
+    }
 
     public void closeBrowser(){
         logger.info("close browser: ");
         driver.quit();
     }
+    public void clearText(String element){
+        logger.info("clearText");
+        driver.findElement(By.xpath(element)).clear();
+    }
     public void click(String element){
         logger.info("click" + element);
         driver.findElement(By.xpath(element)).click();
+    }
+    public void clickByCss(String element){
+        logger.info("click" + element);
+        driver.findElement(By.cssSelector(element)).click();
     }
     public String getText(String element){
         logger.info("get Text of"+ element);
