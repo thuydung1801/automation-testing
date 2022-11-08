@@ -4,6 +4,7 @@ import core.BasePage;
 import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
+import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import page.home.RegisterPage;
 
@@ -28,14 +29,20 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H"));
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_CLOSE"));
+        //keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_CLOSE"));
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
         Thread.sleep(2000);
-//        String expected = keyword.getText(PropertiesFile.getPropValue("CHECKOUT_LBL_MESSAGE"));
-//        String actual = "Women's ring Smart Ornament was added to your shopping cart.";
-//        logger.info(expected);
-//        logger.info(actual);
-//        keyword.assertEquals(expected,actual);
+
+    }
+    public void addBraceletProduct(String url) throws InterruptedException {
+        objRegist = new RegisterPage(this.keyword);
+
+        Thread.sleep(5000);
+        keyword.navigateToUrl(url);
+        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        Thread.sleep(2000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        Thread.sleep(2000);
 
     }
 
@@ -54,7 +61,29 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H"));
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_CLOSE"));
+        //keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_CLOSE"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        Thread.sleep(2000);
+    }
+    public void addProductWithDoubleEngraving(String url) throws InterruptedException {
+        Thread.sleep(5000);
+        keyword.navigateToUrl(url);
+        Thread.sleep(2000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_LBL_ENGRAVING"));
+        keyword.imWait(10);
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_TXT_ENGRAVING_18_WOMEN"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING"));
+        keyword.imWait(3);
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_TXT_ENGRAVING_18_MEN"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING"));
+        keyword.imWait(3);
+        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        Thread.sleep(2000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        Thread.sleep(2000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H"));
+        Thread.sleep(2000);
+        //keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_CLOSE"));
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
         Thread.sleep(2000);
     }
@@ -65,7 +94,7 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
         keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
         Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_CHECKBOX_WOMENRING_GIFT"));
@@ -79,10 +108,11 @@ public class ShoppingBagPage extends BasePage {
     }
 
     public void clickShoppingBagPage() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(10000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_MINICART"));
-        keyword.imWait(10);
+        Thread.sleep(10000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_MINICART_VIEWALL"));
+        keyword.imWait(10);
 
     }
 
@@ -109,10 +139,47 @@ public class ShoppingBagPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue(typeOfProduct));
 
     }
+    public void clickEdit(String btnEdit) throws InterruptedException {
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_HEADER"),10);
+        keyword.click(PropertiesFile.getPropValue(btnEdit));
+        Thread.sleep(5000);
+    }
+    public void editOptions() throws InterruptedException {
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_BLACKDIAMOND"));
+        Thread.sleep(1000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_LBL_METAL"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_METAL"),10);
+        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_METAL"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_MESSAGES_UPDATE_21"),10);
+    }
+    public void editEaringOptions(){
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_PAIR"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_PAIR"));
+        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
+    }
+    public void editCoupleRings(){
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_LBL_STONE"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_DIAMOND"),10);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_DIAMOND"));
+        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_LBL_PROFILE"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_LBL_PROFILE"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_PROFILE_B"),10);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_PROFILE_B"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_DDL_SIZE"),5);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_DDL_SIZE"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_SIZE_L"));
+        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_MESSAGES_UPDATE_23"),10);
+    }
     public void inputEngravingwithSingleRing(String data, String btnAdd, String engraving) throws InterruptedException {
 //        keyword.imWait(30);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_VIEWDETAIL"),5);
         Thread.sleep(5000);
+        keyword.verifyElementPresent(PropertiesFile.getPropValue(btnAdd));
         keyword.click(PropertiesFile.getPropValue(btnAdd));
         keyword.imWait(30);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TITLE_ENGRAVING"),5);
@@ -123,26 +190,55 @@ public class ShoppingBagPage extends BasePage {
                 PropertiesFile.getPropValue(data));
         Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_VIEWDETAIL_BTN_SAVE"));
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         keyword.assertEquals(PropertiesFile.getPropValue(data),
                 PropertiesFile.getPropValue(engraving));
     }
-    public void inputEngravingwithCoupleRing() throws InterruptedException {
-        keyword.imWait(15);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_HYPERLINK_ADD"));
+    public void inputEngravingwithCoupleRing(String data, String btnAdd, String txtWomen,
+                                             String txtMen ) throws InterruptedException {
+//        keyword.imWait(15);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_VIEWDETAIL"),5);
+        Thread.sleep(5000);
+        keyword.click(PropertiesFile.getPropValue(btnAdd));
         keyword.imWait(10);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TITLE_ENGRAVING"),5);
         keyword.imWait(10);
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_WOMEN_ENGRAVING"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING"));
-        Thread.sleep(2000);
+        keyword.clearText(PropertiesFile.getPropValue(txtWomen));
+        keyword.imWait(3);
+        keyword.sendKeys(PropertiesFile.getPropValue(txtWomen),
+                PropertiesFile.getPropValue(data));
         keyword.imWait(20);
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_MEN_ENGRAVING"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING"));
+        keyword.clearText(PropertiesFile.getPropValue(txtMen));
+        keyword.sendKeys(PropertiesFile.getPropValue(txtMen),
+                PropertiesFile.getPropValue(data));
         Thread.sleep(2000);
+
+    }
+    public void inputCorrectly(String data, String engraving) throws InterruptedException {
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_VIEWDETAIL_BTN_SAVE"));
         Thread.sleep(10000);
-        keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING")+ " - "+ PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING")
-        , PropertiesFile.getPropValue("CHECKOUT_LBL_ENGRAVING"));
+        keyword.assertEquals(PropertiesFile.getPropValue(data)+ " - "+ PropertiesFile.getPropValue(data)
+                , PropertiesFile.getPropValue(engraving));
+    }
+    public void inputError(String lblErrorMessage1, String lblErrorMessage2, String dataExpected, String engraving, boolean flag) throws InterruptedException {
+        keyword.verifyElementPresent(PropertiesFile.getPropValue(lblErrorMessage1));
+        keyword.verifyElementPresent(PropertiesFile.getPropValue(lblErrorMessage2));
+        if(flag == true) {
+            keyword.click(PropertiesFile.getPropValue("CHECKOUT_VIEWDETAIL_BTN_SAVE"));
+            Thread.sleep(10000);
+            keyword.assertEquals(PropertiesFile.getPropValue(dataExpected) + " - "
+                            + PropertiesFile.getPropValue(dataExpected)
+                    , PropertiesFile.getPropValue(engraving));
+        }
+    }
+    public void compareData(String expect, String actual){
+        keyword.assertEquals(PropertiesFile.getPropValue(expect),
+                PropertiesFile.getPropValue(actual));
+    }
+
+    public void missingFillSize(){
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_DDL_SIZE"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_SIZE_CUSTOM"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
     }
 }

@@ -253,7 +253,6 @@ public class KeywordWeb {
     public void selectDropDownListByIndex(String ddlPath, String itemName){
         logger.info("select item by visibe text");
         Select dropDownList = new Select(driver.findElement(By.xpath(ddlPath)));
-        logger.info("1");
         dropDownList.selectByVisibleText(itemName);
 
     }
@@ -261,6 +260,7 @@ public class KeywordWeb {
 
     //verify keyword
     public boolean verifyElementPresent(String element){
+        logger.info("verifyElementPresent");
         try{
             driver.findElement(By.xpath(element)).isDisplayed();
             return true;

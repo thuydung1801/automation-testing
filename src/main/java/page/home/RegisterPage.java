@@ -15,7 +15,7 @@ public class RegisterPage extends BasePage {
 
     public void acceptAllCookies() throws InterruptedException {
 
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         if(keyword.verifyElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"))){
             keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
         }
