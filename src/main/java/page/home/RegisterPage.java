@@ -20,7 +20,6 @@ public class RegisterPage extends BasePage {
             keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
         }
 
-
     }
     public void chooseLanguages() throws InterruptedException {
         Thread.sleep(2000);

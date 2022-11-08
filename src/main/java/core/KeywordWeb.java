@@ -74,6 +74,10 @@ public class KeywordWeb {
         logger.info("click" + element);
         driver.findElement(By.cssSelector(element)).click();
     }
+    public void clickByCss(String element){
+        logger.info("click" + element);
+        driver.findElement(By.cssSelector(element)).click();
+    }
 
     public void sendKeys(String element, String content) {
         logger.info("send keys" + element);

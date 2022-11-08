@@ -3,6 +3,7 @@ package test.checkout;
 import core.AllureTestListener;
 import core.BaseTest;
 import core.LogHelper;
+import org.apache.log4j.Priority;
 import org.slf4j.Logger;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -21,7 +22,6 @@ public class LoginAndAddressTest extends BaseTest {
     public LoginAndAddressTest() {
         super();
     }
-
     @Test(priority = 1)
     public void testcase_01_checkOutOneProduct() throws InterruptedException {
         objLoginAdrPage = new LoginAndAddressPage(this.keyword);
@@ -34,13 +34,29 @@ public class LoginAndAddressTest extends BaseTest {
         objLoginAdrPage.clickPtnAddProduct();
         objLoginAdrPage.btnSubmitCheckOut();
         Thread.sleep(2000);
-//        objLoginAdrPage.GuestNewCustomer();
-
     }
 
     @Test(priority = 2)
-    public void testcase_02_enterDataAddresse() throws InterruptedException {
+    public void testcase_LA_05() throws InterruptedException {
+        objLoginAdrPage.clickBtnSubmit();
+    }
+
+    @Test(priority = 3)
+    public void testcase_LA06() throws InterruptedException {
         Thread.sleep(1000);
-        objLoginAdrPage.enterDataAddresse();
+        objLoginAdrPage.enterDataUserName();
+        objLoginAdrPage.enterDataEmial();
+        objLoginAdrPage.enterDataPhone();
+        objLoginAdrPage.enterDataCompany();
+        objLoginAdrPage.enterDataStreet();
+        objLoginAdrPage.enterDataZipCode();
+        objLoginAdrPage.enterDataCity();
+        objLoginAdrPage.clickBtnSubmit();
+    }
+
+    @Test(priority = 4)
+    public void testcase_LA07() throws InterruptedException {
+        objLoginAdrPage.enterDataEmailFail();
+        objLoginAdrPage.clickBtnSubmit();
     }
 }
