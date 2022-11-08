@@ -19,28 +19,36 @@ public class ProductDetailTest extends BaseTest {
         testProductDetail.productInfo();
     }
     @Test(priority = 2)
-    public void RunCase_PRD_1() throws InterruptedException {
+    public void testCase_DP_01() throws InterruptedException {
         testProductDetail.testCase_PRD_Info1();
 
     }
     @Test(priority = 3)
-    public void RunCase_PRD_2() throws InterruptedException {
+    public void testCase_DP_02() throws InterruptedException {
         testProductDetail.testCase_PRD_Info2();
 
     }
     @Test(priority = 4)
-    public void RunCase_PRD_3() throws InterruptedException {
+    public void testCase_DG_02() throws InterruptedException {
         testProductDetail.testCase_PRD_Info3();
 
     }
     @Test(priority = 5)
-    public void RunDimensionGuide() throws InterruptedException {
+    public void testCase_DG_01() throws InterruptedException {
         testProductDetail.optionDimensionGuide();
     }
 
     @Test (priority = 6)
-    public void RunFindSize() throws InterruptedException {
-        testProductDetail.optionFindSize();
+    public void testCase_RS_form_02() throws InterruptedException {
+        testProductDetail.optionFindSize2();
+    }
+    @Test (priority = 7)
+    public void testCase_RS_form_03() throws InterruptedException {
+        testProductDetail.optionFindSize3();
+    }
+    @Test (priority = 8)
+    public void testCase_RS_form_01() throws InterruptedException {
+        testProductDetail.optionFindSize1();
     }
 
 }

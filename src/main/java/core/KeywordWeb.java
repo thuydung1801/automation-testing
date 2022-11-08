@@ -78,12 +78,11 @@ public class KeywordWeb {
         logger.info("click" + element);
         driver.findElement(By.cssSelector(element)).click();
     }
-    public void randomElement(String element){
-        List <WebElement> weblist = driver.findElements(By.xpath(element));
-        int size = weblist.size();
-        int randnMumber = ThreadLocalRandom.current().nextInt(0, size);
-        weblist.get(randnMumber).click();
-
+    public void randomElement(String element) {
+            List <WebElement> weblist = driver.findElements(By.xpath(element));
+            int size = weblist.size();
+            int randnMumber = ThreadLocalRandom.current().nextInt(0, size);
+            weblist.get(randnMumber).click();
 
     }
     public String getText(String element){
@@ -316,5 +315,9 @@ public class KeywordWeb {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
     }
 
+    public void deleteInput(){
+        ((JavascriptExecutor) driver).executeScript("document.getElementByClass('input-box').reset()");
+        System.out.printf("clear.....");
+    }
 
 }

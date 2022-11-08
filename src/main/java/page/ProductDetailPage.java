@@ -4,6 +4,7 @@ import core.*;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import page.home.LoginPage;
@@ -77,11 +78,12 @@ public class ProductDetailPage extends BasePage {
 
 
     }
-    public void optionSize(){
+    public void optionSize() throws InterruptedException {
         keyword.click(PropertiesFile.getPropValue("PRD_DROPDOWN"));
         keyword.imWait(2);
         keyword.click(PropertiesFile.getPropValue("PRD_OPTION_SIZE"));
-        keyword.imWait(2);
+//        keyword.imWait(3);
+//        Thread.sleep(3000);
 
     }
 
@@ -105,7 +107,7 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void testCase_PRD_Info2() throws InterruptedException {
-//        productInfo();
+        productInfo();
         System.out.printf("-----test 2: Default option "+"\n");
         selectOption();
         System.out.printf("=> test 2 done"+"\n");
@@ -119,41 +121,43 @@ public class ProductDetailPage extends BasePage {
         clickAddCart();
         System.out.printf("=>test 2.2 done"+"\n");
     }
-    public void testCase_PRD_Info3(){
+    public void testCase_PRD_Info3() throws InterruptedException {
         System.out.printf("---------test 3:check optionFreeSize " +"\n");
         keyword.openNewTab(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
         optionFreeSize();
         System.out.printf("=> test 3 done");
     }
 
-
-    public void optionFindSize() throws InterruptedException  {
+    public void commonFindSize() throws InterruptedException {
         setUp();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         keyword.navigateToUrl(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
         keyword.imWait(2);
         optionSize();
+        Thread.sleep(3000);
         keyword.click(PropertiesFile.getPropValue("PRD_FINDSIZE"));
-        //---------------
-        ipFindSize(PropertiesFile.getPropValue("PRD_DATA_FIRSTNAME"),
-                PropertiesFile.getPropValue("PRD_DATA_LASTNAME"),
-                PropertiesFile.getPropValue("PRD_DATA_EMAIL"),
-                PropertiesFile.getPropValue("PRD_DATA_STREET"),
-                Integer.parseInt(PropertiesFile.getPropValue("PRD_DATA_CODE")),
-                PropertiesFile.getPropValue("PRD_DATA_CITY"));
 
-        //----------
-//        ipFindSize(PropertiesFile.getPropValue("PRD_DATA_FIRSTNAME"),
-//                PropertiesFile.getPropValue("PRD_DATA_LASTNAME"),
-//                PropertiesFile.getPropValue("PRD_DATA_ERROR"),
-//                PropertiesFile.getPropValue("PRD_DATA_STREET"),
-//                Integer.parseInt(PropertiesFile.getPropValue("PRD_DATA_CODE")),
-//                PropertiesFile.getPropValue("PRD_DATA_CITY"));
+    }
+    public void optionFindSize1() throws InterruptedException {
 
-        //------------
+        ipFindSize("PRD_DATA_FIRSTNAME", "PRD_DATA_LASTNAME", "PRD_DATA_EMAIL",
+                "PRD_DATA_STREET", Integer.parseInt(PropertiesFile.getPropValue("PRD_DATA_CODE")),
+                "PRD_DATA_CITY");
+
+    }
 
 
-
+    public void optionFindSize2() throws InterruptedException{
+        commonFindSize();
+        ipFindSize("","","",
+                "", Integer.parseInt((PropertiesFile.getPropValue(""))),
+                "");
+    }
+    public void optionFindSize3() throws InterruptedException{
+        commonFindSize();
+        ipFindSize("","","PRD_DATA_ERROR",
+                "PRD_DATA_STREET", Integer.parseInt(PropertiesFile.getPropValue("PRD_DATA_CODE")),
+                "PRD_DATA_CITY");
     }
     public void optionDimensionGuide() throws InterruptedException {
 //        setUp();
@@ -166,32 +170,37 @@ public class ProductDetailPage extends BasePage {
         keyword.clickByCss(PropertiesFile.getPropValue("PRD_LINK_SIZEGUIDE"));
 
     }
-    public void optionFreeSize(){
+    public void optionFreeSize() throws InterruptedException {
         optionSize();
         keyword.click(PropertiesFile.getPropValue("PRD_FREESIZE"));
 
     }
-    public void ipFindSize(String firstName, String lastName, String email, String street, int code, String city) throws InterruptedException {
+    public void ipFindSize(String firstName, String lastName, String email, String street,int code, String city) throws InterruptedException {
         keyword.imWait(2);
-        keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_FIRSTNAME"),firstName);
-        keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_LASTNAME"),lastName);
-        keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_EMAIL"),email);
-        keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_STREET"), street);
-        keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_CODE"), String.valueOf(code));
-        keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_CITY"),city);
+        keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_FIRSTNAME"),PropertiesFile.getPropValue(firstName));
+        keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_LASTNAME"),PropertiesFile.getPropValue(lastName));
+        keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_EMAIL"),PropertiesFile.getPropValue(email));
+        keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_STREET"), PropertiesFile.getPropValue(street));
+        keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_CODE"),String.valueOf(code) );
+        keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_CITY"),PropertiesFile.getPropValue(city));
 
 //        keyword.recaptchaClick();
         Thread.sleep(10000);
-        keyword.click(PropertiesFile.getPropValue("PRD_CHECK"));
-        keyword.click(PropertiesFile.getPropValue("PRD_BTN_SUBMIT"));
+        if(keyword.verifyElementVisible(PropertiesFile.getPropValue("PRD_CHECK_VERYFI"))== false){
+            keyword.click(PropertiesFile.getPropValue("PRD_CHECK"));
+            keyword.click(PropertiesFile.getPropValue("PRD_BTN_SUBMIT"));
 
-        if(PropertiesFile.getPropValue("PRD_TEXT_ERROR").isEmpty()){
-            System.out.printf("Continue...." + "\n");
-        }
-        else{
-            System.out.printf("Error..." + "\n");
+            if(keyword.verifyElementVisible(PropertiesFile.getPropValue("PRD_TEXT_ERROR"))){
+                System.out.printf("Error...." + "\n");
+            }
+            else{
+                System.out.printf("Continue..." + "\n");
 
+            }
+            keyword.deleteInput();
+            Thread.sleep(5000);
         }
+
 
 
     }
