@@ -51,21 +51,22 @@ public class ListingPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("LTP_SELECT_CARAT"));
         Thread.sleep(2000);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BOOK_CARAT"), 20);
+        keyword.imWait(3);
         keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_SELECT_STONE_SHAPE"));
         keyword.click(PropertiesFile.getPropValue("LTP_SELECT_STONE_SHAPE"));
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_SELECT_COLOR"));
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LTP_SELECT_COLOR"));
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_SELECT_METAL"));
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LTP_SELECT_METAL"));
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_BTN_ACCEPT_PRICE"));
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LTP_BTN_ACCEPT_PRICE"));
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     public void deleteFilters() throws InterruptedException {
@@ -79,18 +80,18 @@ public class ListingPage extends BasePage {
 
     public void sort_prd() throws InterruptedException {
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_SHORT"), 20);
+        Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LTP_SHORT"));
         Thread.sleep(1000);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BOOK_SHORT"), 10);
         keyword.click(PropertiesFile.getPropValue("LTP_RELAVANCE"));
-
     }
 
     public void viewBTN() throws InterruptedException {
-        Thread.sleep(1000);
         keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_TOOLlBAR"));
+        Thread.sleep(1000);
         keyword.clickUseCss(PropertiesFile.getPropValue("LTP_BTN_VIEW2"));
-        keyword.imWait(5);
+        Thread.sleep(1000);
         keyword.clickUseCss(PropertiesFile.getPropValue("LTP_BTN_VIEW3"));
 
     }
@@ -99,15 +100,17 @@ public class ListingPage extends BasePage {
         keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_SCR_TOP"));
         keyword.click(PropertiesFile.getPropValue("LTP_BTN_ONFO_MESSAGE"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_POPUP_DETAIL"), 50);
+        Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("LTP_ICON_CLOSE_PP"));
     }
 
     public void LikeProduct() throws InterruptedException {
-        Thread.sleep(5000);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BOOKLIKE"), 50);
+        Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LTP_BTN_LIKE"));
         Thread.sleep(1000);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BTN_VIEW_DETAIL_BOOKLIKE"), 10);
+        Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LTP_BTN_VIEW_DETAIL_BOOKLIKE"));
         Thread.sleep(1000);
         keyword.back();
@@ -115,7 +118,7 @@ public class ListingPage extends BasePage {
         keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_BTN_SAVED_ITEM"));
         Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("LTP_BTN_SAVED_ITEM"));
-       keyword.imWait(3);
+        Thread.sleep(1000);
         keyword.clickUseCss(PropertiesFile.getPropValue("LTP_MODAL_OVERLAY"));
     }
 }

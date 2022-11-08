@@ -38,9 +38,13 @@ public class LoginAndAddressPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_SELECT_ONE_SIZE"));
     }
 
+    public void clickBtnSubmit() throws InterruptedException {
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_PROCEED"));
+    }
+
     public void clickPtnAddProduct() throws InterruptedException {
         keyword.imWait(5);
-        keyword.click(PropertiesFile.getPropValue("CHECK_OUT_BTN_ADD_PRODUCT"));
+        keyword.doubleClick(PropertiesFile.getPropValue("CHECK_OUT_BTN_ADD_PRODUCT"));
         keyword.imWait(5);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_VIEW_DETAIL"));
     }
@@ -69,19 +73,43 @@ public class LoginAndAddressPage extends BasePage {
                 PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL_ENTER"));
     }
 
-    public void enterDataEmailFail() throws InterruptedException {
-        keyword.imWait(1);
+    //----exception Email.
+    public void enterDataEmailFail1() throws InterruptedException {
+        Thread.sleep(2000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_MESSAGE_FAILE_EMAIL02"), 20);
         keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"));
-        keyword.imWait(2);
+        Thread.sleep(1000);
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_FAILD_2"));
+    }
+
+    public void enterDataEmailFail2(String messageFail) throws InterruptedException {
+        Thread.sleep(2000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(messageFail), 20);
+        keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"));
+        Thread.sleep(2000);
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_FAILD_1"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(messageFail), 20);
+        keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"));
+        Thread.sleep(2000);
         keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"),
                 PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_ENTER"));
     }
 
+    //-------------------------
     public void enterDataPhone() throws InterruptedException {
         keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_PHONE"),
                 PropertiesFile.getPropValue("CHECKOUT_DATA_PHONE_ENTER"));
     }
 
+    public void enterDataPhoneFail1(String inputPhone, String dataPhone) throws InterruptedException {
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_DATA_MESSAGE_PHONE"), 20);
+        keyword.clearText(PropertiesFile.getPropValue(inputPhone));
+        Thread.sleep(1000);
+        keyword.sendKeys((PropertiesFile.getPropValue(inputPhone)), PropertiesFile.getPropValue(dataPhone));
+    }
+    //---------------------------
     public void enterDataCompany() throws InterruptedException {
         keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_COMPANY"),
                 PropertiesFile.getPropValue("CHECKOUT_DATA_COMPANY_ENTER"));
@@ -102,8 +130,5 @@ public class LoginAndAddressPage extends BasePage {
                 PropertiesFile.getPropValue("CHECKOUT_DATA_CITY_ENTER"));
     }
 
-    public void clickBtnSubmit() throws InterruptedException {
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_PROCEED"));
-    }
 
 }
