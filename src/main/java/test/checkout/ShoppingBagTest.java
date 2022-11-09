@@ -131,7 +131,7 @@ public class ShoppingBagTest extends BaseTest {
     public void testCase_SP_18() throws InterruptedException {
         logger.info("testCase_SP_18");
 
-        commonShopping();
+        //commonShopping();
 
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
@@ -144,7 +144,7 @@ public class ShoppingBagTest extends BaseTest {
     public void testCase_SP_19() throws InterruptedException {
         logger.info("testCase_SP_19");
 
-        commonShopping();
+        //commonShopping();
 
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
@@ -157,7 +157,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test(priority = 11, description = "Add engraving with some special character don't allow input")
     public void testCase_SP_20() throws InterruptedException {
         logger.info("testCase_SP_20");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_20","CHECKOUT_ICON_ADD",
@@ -169,7 +169,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test (priority = 12, description = "Edit product successfully with normal product")
         public void testCase_SP_21() throws InterruptedException {
         logger.info("testCase_SP_21");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.addBraceletProduct("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_BRACELET");
@@ -177,7 +177,7 @@ public class ShoppingBagTest extends BaseTest {
     }
 
     //pending do bug
-    @Test(priority = 12, description = "Edit product successfully with pair earning product")
+    //@Test(priority = 12, description = "Edit product successfully with pair earning product")
         public void testCase_SP_22() throws InterruptedException {
         logger.info("testCase_SP_22");
         commonShopping();
@@ -189,7 +189,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test(priority = 13, description ="Edit product with bridal set product")
     public void testCase_SP_24() throws InterruptedException {
         logger.info("testCase_SP_24");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_UNIVERSE");
@@ -208,6 +208,15 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.missingFillSize();
         objShoppingBagPage.compareData("CHECKOUT_MESSAGES_UPDATE_24","CHECKOUT_LBL_MESSAGES_UPDATE_24");
     }
-
+    @Test(priority = 15, description = "Checkout successfully")
+    public void testCase_SP_26_RV_02() throws InterruptedException {
+        logger.info("testCase_SP_26");
+        commonShopping();
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.clickGiftWrapping();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithVisa();
+    }
 
 }

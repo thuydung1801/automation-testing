@@ -235,10 +235,46 @@ public class ShoppingBagPage extends BasePage {
         keyword.assertEquals(PropertiesFile.getPropValue(expect),
                 PropertiesFile.getPropValue(actual));
     }
-
+    @Step("missing fill product's size")
     public void missingFillSize(){
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_DDL_SIZE"));
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_SIZE_CUSTOM"));
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
     }
+    @Step("click to choose free gift wrapping")
+    public void clickGiftWrapping(){
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_WRAP_UNIVERSE"));
+    }
+
+    @Step("click to choose free gift wrapping")
+    public void moveToPagecheckOut() throws InterruptedException {
+        Thread.sleep(10000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_CHECKOUT"),10);
+    }
+    public void checkOut() throws InterruptedException {
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT_ADDRESS"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT_SHIPMENT"),5);
+        Thread.sleep(5000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT_SHIPMENT"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_CHECKOUT_PAYMENT"),10);
+    }
+    public void checkOutWithVisa(){
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_VISA"),10);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_VISA"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_VISA"),10);
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_VISA"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_VISA"));
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_EXPIRYDATE"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_EXPIRYDATE"));
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_CVC"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_CVC"));
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_NAME"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_NAME"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"),10);
+        keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
+
+    }
+
 }
