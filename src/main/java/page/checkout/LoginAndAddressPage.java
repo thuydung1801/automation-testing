@@ -84,32 +84,57 @@ public class LoginAndAddressPage extends BasePage {
     }
 
     public void enterDataEmailFail2(String messageFail) throws InterruptedException {
-        Thread.sleep(2000);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(messageFail), 20);
         keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"));
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"),
                 PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_FAILD_1"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(messageFail), 20);
+        Thread.sleep(1000);
         keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"));
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"),
                 PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_ENTER"));
     }
 
-    //-------------------------
+    //-------------------------PHONE ST
     public void enterDataPhone() throws InterruptedException {
         keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_PHONE"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_PHONE_ENTER"));
+                PropertiesFile.getPropValue("CHECKOUT_DATA_PHONE_ENTER_FAIL"));
     }
 
-    public void enterDataPhoneFail1(String inputPhone, String dataPhone) throws InterruptedException {
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_DATA_MESSAGE_PHONE"), 20);
+    public void enterDataPhoneFail1(String dataCheck, String inputPhone, String dataPhone1, String dataPass) throws InterruptedException {
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(dataCheck), 20);
+        keyword.clearText(PropertiesFile.getPropValue(inputPhone));
+        Thread.sleep(2000);
+        keyword.sendKeys((PropertiesFile.getPropValue(inputPhone)), PropertiesFile.getPropValue(dataPhone1));
+        keyword.imWait(2);
+        keyword.webDriverWaitForElementPresent((PropertiesFile.getPropValue(dataCheck)), 20);
         keyword.clearText(PropertiesFile.getPropValue(inputPhone));
         Thread.sleep(1000);
-        keyword.sendKeys((PropertiesFile.getPropValue(inputPhone)), PropertiesFile.getPropValue(dataPhone));
+        keyword.sendKeys(PropertiesFile.getPropValue(inputPhone), PropertiesFile.getPropValue(dataPass));
     }
-    //---------------------------
+
+    //---------------------------END
+    //----------------- Address Validation
+    public void AddressValidation(String booxMessage, String btn) throws InterruptedException {
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(booxMessage), 20);
+        Thread.sleep(1000);
+        keyword.click(PropertiesFile.getPropValue(btn));
+    }
+
+    public void delete_reEnterTheAddress(String Street, String zipCode, String city) throws InterruptedException {
+        keyword.clearText(PropertiesFile.getPropValue(Street));
+        keyword.sendKeys(PropertiesFile.getPropValue(Street), PropertiesFile.getPropValue("CHECKOUT_DATA_STREET_ENTER01"));
+        Thread.sleep(1000);
+        keyword.clearText(PropertiesFile.getPropValue(zipCode));
+        keyword.sendKeys(PropertiesFile.getPropValue(zipCode), PropertiesFile.getPropValue("CHECKOUT_DATA_ZIPCODE_ENTER01"));
+        Thread.sleep(1000);
+        keyword.clearText(PropertiesFile.getPropValue(city));
+        keyword.sendKeys(PropertiesFile.getPropValue(city), PropertiesFile.getPropValue("CHECKOUT_DATA_CITY_ENTER01"));
+        Thread.sleep(1000);
+    }
+
     public void enterDataCompany() throws InterruptedException {
         keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_COMPANY"),
                 PropertiesFile.getPropValue("CHECKOUT_DATA_COMPANY_ENTER"));
@@ -131,4 +156,28 @@ public class LoginAndAddressPage extends BasePage {
     }
 
 
+    public void updateEditTextName(String inputTextName, String editName) throws InterruptedException {
+        Thread.sleep(3000);
+//        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue
+//                ("CHECKOUT_BOOX_VERIFY_BOOX_INFO_ADDRESS"), 20);
+        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_BOOX_LOGINADDRESS_SUCCESS"));
+        keyword.doubleClick(PropertiesFile.getPropValue("CHECKOUT_BTN_EDIT"));
+//        Thread.sleep(2000);
+//        keyword.clearText(PropertiesFile.getPropValue(inputTextName));
+//        keyword.imWait(2);
+//        keyword.sendKeys(PropertiesFile.getPropValue(inputTextName), PropertiesFile.getPropValue(editName));
+    }
+    public void customerLogin(String url) throws InterruptedException {
+        keyword.navigateToUrl(url);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_LOGIN_RGT_CUSTOMER"));
+    }
+    public void verifyEmialPassW() throws InterruptedException {
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_MESSAGE_EMAIL_ERROR"), 10);
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_ADDRESS"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_ENTER"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_MESSAGE_PASSW_ERROR"), 10);
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_PASSWORD"),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_PASSWORD_ENTER"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_LOGIN"));
+    }
 }

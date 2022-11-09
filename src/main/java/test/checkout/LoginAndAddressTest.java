@@ -68,11 +68,45 @@ public class LoginAndAddressTest extends BaseTest {
 
     @Test(priority = 6, description = "Enter Phone Fail (wrong format) ")
     public void testcase_LA09() throws InterruptedException {
-        objLoginAdrPage.enterDataPhoneFail1("CHECKOUT_DATA_PHONE",
-                "CHECKOUT_DATA_PHONE_ENTER_SUCCESS");
+        objLoginAdrPage.enterDataPhoneFail1
+                (
+                        "CHECKOUT_DATA_MESSAGE_PHONE",
+                        "CHECKOUT_DATA_PHONE",
+                        "CHECKOUT_DATA_PHONE_ENTER_FAIL01",
+                        "CHECKOUT_DATA_PHONE_ENTER_SUCCESS01"
+                );
+        objLoginAdrPage.clickBtnSubmit();
+        objLoginAdrPage.AddressValidation
+                (
+                        "CHECKOUT_BOOX_MESSAGE_FAIL",
+                        "CHECKOUT_BTN_CANCEL");
+        objLoginAdrPage.delete_reEnterTheAddress
+                (
+                        "CHECKOUT_DATA_STREET",
+                        "CHECKOUT_DATA_ZIPCODE",
+                        "CHECKOUT_DATA_CITY"
+                );
         objLoginAdrPage.clickBtnSubmit();
     }
+
     @Test(priority = 7, description = "")
     public void testcase_LA10() throws InterruptedException {
+//        keyword.imWait(3);
+        objLoginAdrPage.updateEditTextName(
+                "CHECKOUT_DATA_LASTNAME",
+                "CHECKOUT_DATA_EDIT_NAME");
+//        objLoginAdrPage.clickBtnSubmit();
+    }
+
+    @Test(priority = 8, description = "Customer login\n")
+    public void testcase_LA18() throws InterruptedException {
+    }
+
+    @Test(priority = 9, description = "Customer Login")
+    public void testcase_LA19() throws InterruptedException {
+        Thread.sleep(2000);
+        objLoginAdrPage.customerLogin("https://dev3.glamira.com/glgb/checkout/#login-address");
+        objLoginAdrPage.verifyEmialPassW();
+
     }
 }
