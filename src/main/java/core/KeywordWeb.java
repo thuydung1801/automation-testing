@@ -23,12 +23,14 @@ import java.util.concurrent.TimeUnit;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
+
 import org.testng.Assert;
 import org.testng.ITestResult;
 
 public class KeywordWeb {
     private static Logger logger = LogHelper.getLogger();
     public static WebDriver driver;
+
     public KeywordWeb() {
     }
 
@@ -56,11 +58,13 @@ public class KeywordWeb {
             driver.get(rawUrl);
         }
     }
+
     public void closeBrowser() {
         logger.info("close browser: ");
         driver.quit();
     }
-    public void clearText(String element){
+
+    public void clearText(String element) {
         logger.info("clearText");
         driver.findElement(By.xpath(element)).clear();
     }
@@ -74,7 +78,8 @@ public class KeywordWeb {
         logger.info("click" + element);
         driver.findElement(By.cssSelector(element)).click();
     }
-    public void clickByCss(String element){
+
+    public void clickByCss(String element) {
         logger.info("click" + element);
         driver.findElement(By.cssSelector(element)).click();
     }
@@ -137,6 +142,11 @@ public class KeywordWeb {
     public void back() {
         logger.info("Back window...");
         driver.navigate().back();
+    }
+
+    public void reLoadPage() {
+        logger.info("ReLoad Page...");
+        driver.navigate().refresh();
     }
 
     public void navigateToUrl(String url) {
@@ -268,6 +278,7 @@ public class KeywordWeb {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,5000)");
     }
+
     public void scrollToReversePosition() {
         logger.info(" scrolling to position ");
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -296,7 +307,8 @@ public class KeywordWeb {
             return false;
         }
     }
-    public void selectDropDownListByIndex(String ddlPath, String itemName){
+
+    public void selectDropDownListByIndex(String ddlPath, String itemName) {
         logger.info("select item by visibe text");
         Select dropDownList = new Select(driver.findElement(By.xpath(ddlPath)));
         logger.info("1");
@@ -362,12 +374,12 @@ public class KeywordWeb {
 
     }
 
-    public void CheckIsDisplayElement( String element){
+    public void CheckIsDisplayElement(String element) {
         logger.info("Check Is Display: " + element);
         Boolean status = driver.findElement(By.xpath(element)).isDisplayed();
-        if (!status){
+        if (!status) {
             logger.info("Element Is Visible");
-        }else {
+        } else {
             logger.info("Element Is Display");
         }
     }

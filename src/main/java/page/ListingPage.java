@@ -19,53 +19,46 @@ public class ListingPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
     }
 
-    public void goToAllProduct() throws InterruptedException {
+    public void goToAllProduct(String allbtn, String btnSwitch) throws InterruptedException {
         keyword.navigateToUrl(PropertiesFile.getPropValue("BASE_URL_LISTINGPAGE"));
         Thread.sleep(2000);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"), 1000);
         keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
         Thread.sleep(1000);
+        keyword.scrollToPosition();
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(btnSwitch), 500);
+        keyword.click(PropertiesFile.getPropValue(btnSwitch));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_TEXT_PAGE"), 50);
         keyword.hoverAndClick(PropertiesFile.getPropValue("LTP_TEXT_MOVE"));
         Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LTP_CLICK_PRODUCT"));
         Thread.sleep(3000);
-        keyword.scrollToPosition();
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("SWITCH_BTN"), 500);
-        keyword.click(PropertiesFile.getPropValue("SWITCH_BTN"));
-        Thread.sleep(2000);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("ALL_RING_BTN"));
-        Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("ALL_RING_BTN"));
+        keyword.scrollDownToElement(PropertiesFile.getPropValue(allbtn));
+        keyword.click(PropertiesFile.getPropValue(allbtn));
     }
-
-    public void filTerStone() throws InterruptedException {
+    public void filTerStone(String selectCarat, String selectStoneShape, String selectColor) throws InterruptedException {
         keyword.getCurrentPageUrl();
-        Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("SELECT_DIAMON_STONES"));
         Thread.sleep(2000);
         keyword.getCurrentPageUrl();
-        Thread.sleep(2000);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_SELECT_CARAT"));
-        Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("LTP_SELECT_CARAT"));
-        Thread.sleep(2000);
+        keyword.scrollDownToElement(PropertiesFile.getPropValue(selectCarat));
+        keyword.click(PropertiesFile.getPropValue(selectCarat));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BOOK_CARAT"), 20);
+        keyword.scrollDownToElement(PropertiesFile.getPropValue(selectStoneShape));
+        keyword.click(PropertiesFile.getPropValue(selectStoneShape));
+        Thread.sleep(1000);
+        keyword.scrollDownToElement(PropertiesFile.getPropValue(selectColor));
+        keyword.click(PropertiesFile.getPropValue(selectColor));
+
+    }
+
+    public void subfilTerStone(String selectMetal, String acceptPrice) throws InterruptedException {
+        Thread.sleep(1000);
+        keyword.scrollDownToElement(PropertiesFile.getPropValue(selectMetal));
+        keyword.click(PropertiesFile.getPropValue(selectMetal));
         keyword.imWait(3);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_SELECT_STONE_SHAPE"));
-        keyword.click(PropertiesFile.getPropValue("LTP_SELECT_STONE_SHAPE"));
-        Thread.sleep(1000);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_SELECT_COLOR"));
-        Thread.sleep(1000);
-        keyword.click(PropertiesFile.getPropValue("LTP_SELECT_COLOR"));
-        Thread.sleep(1000);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_SELECT_METAL"));
-        Thread.sleep(1000);
-        keyword.click(PropertiesFile.getPropValue("LTP_SELECT_METAL"));
-        Thread.sleep(1000);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_BTN_ACCEPT_PRICE"));
-        Thread.sleep(1000);
-        keyword.click(PropertiesFile.getPropValue("LTP_BTN_ACCEPT_PRICE"));
+        keyword.scrollDownToElement(PropertiesFile.getPropValue(acceptPrice));
+        keyword.click(PropertiesFile.getPropValue(acceptPrice));
         Thread.sleep(1000);
     }
 
@@ -97,28 +90,31 @@ public class ListingPage extends BasePage {
     }
 
     public void popupMessage() throws InterruptedException {
+        keyword.imWait(3);
         keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_SCR_TOP"));
-        keyword.click(PropertiesFile.getPropValue("LTP_BTN_ONFO_MESSAGE"));
+        keyword.click(PropertiesFile.getPropValue("LTP_BTN_INFO_MESSAGE"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_POPUP_DETAIL"), 50);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LTP_ICON_CLOSE_PP"));
     }
 
-    public void LikeProduct() throws InterruptedException {
+    public void LikeProduct(String btnViewDetail) throws InterruptedException {
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BOOKLIKE"), 50);
         Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LTP_BTN_LIKE"));
         Thread.sleep(1000);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BTN_VIEW_DETAIL_BOOKLIKE"), 10);
-        Thread.sleep(1000);
-        keyword.click(PropertiesFile.getPropValue("LTP_BTN_VIEW_DETAIL_BOOKLIKE"));
-        Thread.sleep(1000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(btnViewDetail), 10);
+        keyword.click(PropertiesFile.getPropValue(btnViewDetail));
         keyword.back();
-        Thread.sleep(2000);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_BTN_SAVED_ITEM"));
-        Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("LTP_BTN_SAVED_ITEM"));
-        Thread.sleep(1000);
+
+    }
+
+    public void subLikeProduct(String saveItem) throws InterruptedException {
+        keyword.imWait(2);
+        keyword.scrollDownToElement(PropertiesFile.getPropValue(saveItem));
+        keyword.imWait(2);
+        keyword.click(PropertiesFile.getPropValue(saveItem));
+        keyword.imWait(2);
         keyword.clickUseCss(PropertiesFile.getPropValue("LTP_MODAL_OVERLAY"));
     }
 }

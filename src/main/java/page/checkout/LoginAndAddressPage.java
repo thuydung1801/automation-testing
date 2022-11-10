@@ -113,6 +113,8 @@ public class LoginAndAddressPage extends BasePage {
         keyword.clearText(PropertiesFile.getPropValue(inputPhone));
         Thread.sleep(1000);
         keyword.sendKeys(PropertiesFile.getPropValue(inputPhone), PropertiesFile.getPropValue(dataPass));
+        keyword.reLoadPage();
+        Thread.sleep(1000);
     }
 
     //---------------------------END
@@ -155,29 +157,42 @@ public class LoginAndAddressPage extends BasePage {
                 PropertiesFile.getPropValue("CHECKOUT_DATA_CITY_ENTER"));
     }
 
-
     public void updateEditTextName(String inputTextName, String editName) throws InterruptedException {
         Thread.sleep(3000);
-//        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue
-//                ("CHECKOUT_BOOX_VERIFY_BOOX_INFO_ADDRESS"), 20);
         keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_BOOX_LOGINADDRESS_SUCCESS"));
         keyword.doubleClick(PropertiesFile.getPropValue("CHECKOUT_BTN_EDIT"));
-//        Thread.sleep(2000);
-//        keyword.clearText(PropertiesFile.getPropValue(inputTextName));
-//        keyword.imWait(2);
-//        keyword.sendKeys(PropertiesFile.getPropValue(inputTextName), PropertiesFile.getPropValue(editName));
+//
     }
-    public void customerLogin(String url) throws InterruptedException {
-        keyword.navigateToUrl(url);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_LOGIN_RGT_CUSTOMER"));
+
+    public void goBack() throws InterruptedException {
+        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_BTN_BACK"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_BACK"));
     }
-    public void verifyEmialPassW() throws InterruptedException {
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_MESSAGE_EMAIL_ERROR"), 10);
+
+    public void customerLogin() throws InterruptedException {
+        keyword.doubleClick(PropertiesFile.getPropValue("CHECKOUT_BTN_LOGIN_RGT_CUSTOMER"));
+    }
+
+    public void LoginAngVerifyCustomerRegisWitInvalidhEmail(String verifyEmail, String verifyPass) throws InterruptedException {
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(verifyEmail), 10);
         keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_ADDRESS"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_ENTER"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_MESSAGE_PASSW_ERROR"), 10);
+                PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_NOT_EXIST"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(verifyPass), 10);
         keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_PASSWORD"),
                 PropertiesFile.getPropValue("CHECKOUT_DATA_PASSWORD_ENTER"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_LOGIN"));
+
     }
+
+    public void InvalidEmail(String message, String inputEmail, String inpputPass) throws InterruptedException {
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(message), 5);
+        keyword.clearText(PropertiesFile.getPropValue(inputEmail));
+        keyword.sendKeys(PropertiesFile.getPropValue(inputEmail),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_ENTER"));
+        keyword.clearText(PropertiesFile.getPropValue(inpputPass));
+        keyword.sendKeys(PropertiesFile.getPropValue(inpputPass),
+                PropertiesFile.getPropValue("CHECKOUT_DATA_PASSWORD_ENTER"));
+        keyword.doubleClick(PropertiesFile.getPropValue("CHECKOUT_BTN_LOGIN_RGT_CUSTOMER"));
+    }
+
+
 }

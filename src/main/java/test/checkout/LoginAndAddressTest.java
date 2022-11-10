@@ -91,22 +91,40 @@ public class LoginAndAddressTest extends BaseTest {
 
     @Test(priority = 7, description = "")
     public void testcase_LA10() throws InterruptedException {
-//        keyword.imWait(3);
         objLoginAdrPage.updateEditTextName(
                 "CHECKOUT_DATA_LASTNAME",
                 "CHECKOUT_DATA_EDIT_NAME");
-//        objLoginAdrPage.clickBtnSubmit();
+
     }
 
     @Test(priority = 8, description = "Customer login\n")
     public void testcase_LA18() throws InterruptedException {
+        objLoginAdrPage.goBack();
     }
 
-    @Test(priority = 9, description = "Customer Login")
-    public void testcase_LA19() throws InterruptedException {
-        Thread.sleep(2000);
-        objLoginAdrPage.customerLogin("https://dev3.glamira.com/glgb/checkout/#login-address");
-        objLoginAdrPage.verifyEmialPassW();
-
+    @Test(priority = 9, description = "")
+    public void testcase_LA01() throws InterruptedException {
+        objLoginAdrPage.customerLogin();
     }
+
+    @Test(priority = 10, description = "Customer Login")
+    public void testcase_LA2() throws InterruptedException {
+        objLoginAdrPage.LoginAngVerifyCustomerRegisWitInvalidhEmail(
+                "CHECKOUT_MESSAGE_EMAIL_ERROR",
+                "CHECKOUT_MESSAGE_PASSW_ERROR");
+        objLoginAdrPage.customerLogin();
+    }
+
+    @Test(priority = 11, description = "")
+    public void testcase_LA3() throws InterruptedException {
+        objLoginAdrPage.InvalidEmail
+                (
+                        "CHECKOUT_MESSAGE_INVALID_LOGIN_OR_PASSW",
+                        "CHECKOUT_DATA_EMAIL_ADDRESS" ,
+                        "CHECKOUT_DATA_PASSWORD"
+                );
+
+        objLoginAdrPage.customerLogin();
+    }
+
 }
