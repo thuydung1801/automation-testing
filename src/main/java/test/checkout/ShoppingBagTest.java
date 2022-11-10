@@ -209,14 +209,78 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.compareData("CHECKOUT_MESSAGES_UPDATE_24","CHECKOUT_LBL_MESSAGES_UPDATE_24");
     }
     @Test(priority = 15, description = "Checkout successfully")
-    public void testCase_SP_26_RV_02() throws InterruptedException {
+    public void testCase_SP_26_RV_02_04() throws InterruptedException {
         logger.info("testCase_SP_26");
         commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickGiftWrapping();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        objShoppingBagPage.checkOutWithVisa();
+        objShoppingBagPage.checkOutWithVisa("success");
     }
+
+    @Test(priority = 16, description = "Place order with Credit card but missing information card")
+    public void testCase_RV_05() throws InterruptedException {
+        logger.info("testCase_RV_05");
+        commonShopping();
+        objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithVisa("failByMissing");
+    }
+
+    @Test (priority = 17, description = "Place order with Card issue")
+    public void testCase_RV_06() throws InterruptedException {
+        logger.info("testCase_RV_06");
+        commonShopping();
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithVisa("failByCard");
+    }
+
+    @Test (priority = 19, description = "Place order with Paypal express /Affirm/... successfully")
+    public void testCase_RV_07() throws InterruptedException {
+        logger.info("testCase_RV_07");
+        commonShopping();
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithPayPal();
+    }
+    @Test(priority = 18, description = "Place order and don't choose any payment method")
+    public void testCase_RV_10() throws InterruptedException {
+        logger.info("testCase_RV_10");
+        commonShopping();
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.submit();
+    }
+
+    @Test(priority = 20, description = "Place order with Bank Transfer method successfully")
+    public void testCase_RV_09() throws InterruptedException {
+        logger.info("testCase_RV_09");
+        commonShopping();
+        objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithBankTransfer();
+    }
+
+    @Test (priority = 21, description = "Place order with Klanar method successfully")
+    public void testCase_RV_08() throws InterruptedException {
+        logger.info("testCase_RV_08");
+        commonShopping();
+        objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithKlarnaLater();
+    }
+
+
 
 }

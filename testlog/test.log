@@ -1,30 +1,12 @@
-INFO  | 2022-11-09 12:01:57 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:34) - Open browser
-INFO  | 2022-11-09 12:01:58 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
-INFO  | 2022-11-09 12:01:58 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
-INFO  | 2022-11-09 12:02:00 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:49) - open browser successfullyCHROME
-INFO  | 2022-11-09 12:02:00 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:52) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-09 12:02:00 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - url: [Ljava.lang.String;@31e7afde
-INFO  | 2022-11-09 12:02:01 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:123) - Maximizing browser window...
-INFO  | 2022-11-09 12:02:01 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_SP_26_RV_02:213) - testCase_SP_26
-INFO  | 2022-11-09 12:02:01 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:160) - login by authen link withtest !test123!
-INFO  | 2022-11-09 12:02:24 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:263) - verifyElementPresent
-INFO  | 2022-11-09 12:02:24 | [main] core.KeywordWeb (KeywordWeb.java:click:67) - click//button[@class='amgdprcookie-button -allow']
-INFO  | 2022-11-09 12:02:26 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:239) -  scrolling to position 
-INFO  | 2022-11-09 12:02:46 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:263) - verifyElementPresent
-INFO  | 2022-11-09 12:02:46 | [main] core.KeywordWeb (KeywordWeb.java:click:67) - click//a[@class='btn-stay-here geoip-close']
-INFO  | 2022-11-09 12:02:50 | [main] core.KeywordWeb (KeywordWeb.java:click:67) - click//a[@title='Log In/Sign Up']
-INFO  | 2022-11-09 12:02:50 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:291) - webDriverWaitForElementPresent
-INFO  | 2022-11-09 12:02:54 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:80) - send keys//input[@id ='login-email']
-INFO  | 2022-11-09 12:02:56 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:80) - send keys//input[@id ='login-password']
-INFO  | 2022-11-09 12:02:58 | [main] core.KeywordWeb (KeywordWeb.java:click:67) - click//span[text()='Log In']
-INFO  | 2022-11-09 12:03:08 | [main] core.KeywordWeb (KeywordWeb.java:click:67) - click//a[@class='action showcart']
-INFO  | 2022-11-09 12:03:18 | [main] core.KeywordWeb (KeywordWeb.java:click:67) - click//a[@class='action primary viewcart']
-INFO  | 2022-11-09 12:03:30 | [main] core.KeywordWeb (KeywordWeb.java:imWait:286) - implicitlyWait
-INFO  | 2022-11-09 12:03:30 | [main] core.KeywordWeb (KeywordWeb.java:click:67) - click//span[contains(text(),'#GWD-N1108-5')]//following::span[text()='Add free gift wrapping']
-INFO  | 2022-11-09 12:03:40 | [main] core.KeywordWeb (KeywordWeb.java:click:67) - click//div[contains(@class,'cart-summary')]//button[@class='action primary checkout']
-INFO  | 2022-11-09 12:03:54 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:291) - webDriverWaitForElementPresent
-INFO  | 2022-11-09 12:03:54 | [main] core.KeywordWeb (KeywordWeb.java:click:67) - click//li[@id='login-address']//button[@class='button action continue primary']
-INFO  | 2022-11-09 12:03:54 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:291) - webDriverWaitForElementPresent
-INFO  | 2022-11-09 12:03:59 | [main] core.KeywordWeb (KeywordWeb.java:click:67) - click//li[@id='shipping']//button[@class='button action continue primary']
-INFO  | 2022-11-09 12:03:59 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:291) - webDriverWaitForElementPresent
-INFO  | 2022-11-09 12:03:59 | [main] core.KeywordWeb (KeywordWeb.java:click:67) - click//p[text()=' Visa, Mastercard, Maestro, American Express, JCB, Diners Club']
+INFO  | 2022-11-10 18:02:21 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:34) - Open browser
+INFO  | 2022-11-10 18:02:22 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO  | 2022-11-10 18:02:22 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO  | 2022-11-10 18:02:24 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:49) - open browser successfullyCHROME
+INFO  | 2022-11-10 18:02:24 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:52) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-10 18:02:24 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - url: [Ljava.lang.String;@71b3ba5a
+INFO  | 2022-11-10 18:02:24 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:123) - Maximizing browser window...
+INFO  | 2022-11-10 18:02:25 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_RV_08:275) - testCase_RV_08
+INFO  | 2022-11-10 18:02:25 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:160) - login by authen link withtest !test123!
+INFO  | 2022-11-10 18:02:42 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:274) - verifyElementPresent
+INFO  | 2022-11-10 18:02:42 | [main] core.KeywordWeb (KeywordWeb.java:click:67) - click//button[@class='amgdprcookie-button -allow']
+INFO  | 2022-11-10 18:02:44 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:250) -  scrolling to position 

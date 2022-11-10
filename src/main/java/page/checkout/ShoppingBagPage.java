@@ -253,28 +253,111 @@ public class ShoppingBagPage extends BasePage {
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_CHECKOUT"),10);
     }
     public void checkOut() throws InterruptedException {
+        Thread.sleep(3000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT_ADDRESS"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT_SHIPMENT"),5);
-        Thread.sleep(5000);
+        Thread.sleep(6000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT_SHIPMENT"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_CHECKOUT_PAYMENT"),10);
     }
-    public void checkOutWithVisa(){
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_VISA"),10);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_VISA"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_VISA"),10);
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_VISA"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_VISA"));
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_EXPIRYDATE"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_EXPIRYDATE"));
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_CVC"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_CVC"));
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_NAME"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_NAME"));
+
+    public void submit(){
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"),10);
+        String messages = keyword.getAlertText();
+        keyword.acceptAlert();
+        keyword.simpleAssertEquals(messages,PropertiesFile.getPropValue("CHECKOUT_MESSAGES_PAYMENT"));
+    }
+    public void checkOutWithVisa(String flag) throws InterruptedException {
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_VISA"),10);
+        Thread.sleep(10000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_VISA"));
+        Thread.sleep(3000);
+        if(flag == "success") {
+            keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_VISA"));
+            keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_VISA"),
+                    PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_VISA"));
+            keyword.switchToDefaultContent();
+            keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_EXPIRYDATE"));
+            keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_EXPIRYDATE"),
+                    PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_EXPIRYDATE"));
+            keyword.switchToDefaultContent();
+            keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_CVC"));
+            keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_CVC"),
+                    PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_CVC"));
+            keyword.switchToDefaultContent();
+            keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_NAME"),
+                    PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_NAME"));
+            keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
+            keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"), 10);
+            keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
+        } else if (flag == "failByMissing") {
+            keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
+            keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_DATA_MESSAGES_VISA"),
+                    PropertiesFile.getPropValue("CHECKOUT_MESSAGES_VISA"));
+            keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_DATA_MESSAGES_VISA"),
+                    PropertiesFile.getPropValue("CHECKOUT_MESSAGES_EXPIRYDATE"));
+            keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_DATA_MESSAGES_VISA"),
+                    PropertiesFile.getPropValue("CHECKOUT_MESSAGES_CVC"));
+        } else if (flag == "failByCard") {
+            keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_VISA"));
+            keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_VISA"),
+                    PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_VISA_2"));
+            keyword.switchToDefaultContent();
+            keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_EXPIRYDATE"));
+            keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_EXPIRYDATE"),
+                    PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_EXPIRYDATE_2"));
+            keyword.switchToDefaultContent();
+            keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_CVC"));
+            keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_CVC"),
+                    PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_CVC_2"));
+            keyword.switchToDefaultContent();
+            keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_NAME"),
+                    PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_NAME"));
+            keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
+            Thread.sleep(5000);
+            keyword.verifyElementVisible(PropertiesFile.getPropValue("CHECKOUT_MESSAGES_VISA_2"));
+        }
+    }
+    public void checkOutWithPayPal() throws InterruptedException {
+        Thread.sleep(5000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_PAYPAL"));
+        Thread.sleep(2000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
+        keyword.clearText(PropertiesFile.getPropValue("PAYPAL_EMAIL"));
+        keyword.sendKeys(PropertiesFile.getPropValue("PAYPAL_EMAIL"),
+                PropertiesFile.getPropValue("PAYPAL_DATA_EMAIL"));
+        keyword.sendKeys(PropertiesFile.getPropValue("PAYPAL_PASSWORD"),
+                PropertiesFile.getPropValue("PAYPAL_DATA_PASSWORD"));
+        keyword.click(PropertiesFile.getPropValue("PAYPAL_BTN_LOGIN"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("PAYPAL_BTN_COMPLETE"),10);
+        keyword.click(PropertiesFile.getPropValue("PAYPAL_BTN_COMPLETE"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"), 20);
+        keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
+    }
+
+    public void checkOutWithKlarnaLater() throws InterruptedException {
+        Thread.sleep(10000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER"),10);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER"));
+        Thread.sleep(2000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("KLARNA_BTN_CONTINUE"),10);
+        keyword.click(PropertiesFile.getPropValue("KLARNA_BTN_CONTINUE"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("KLARNA_TBX_OTP"),10);
+        keyword.sendKeys(PropertiesFile.getPropValue("KLARNA_TBX_OTP"),
+                PropertiesFile.getPropValue("KLARNA_DATA_OTP"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("KLARNA_BTN_CONFIRM"),10);
+        keyword.click(PropertiesFile.getPropValue("KLARNA_BTN_CONFIRM"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"), 20);
         keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
 
+    }
+    public void checkOutWithBankTransfer(){
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_BANK"),10);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_BANK"));
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"), 20);
+        keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
     }
 
 }

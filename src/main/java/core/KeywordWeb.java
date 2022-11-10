@@ -176,6 +176,11 @@ public class KeywordWeb {
         driver.switchTo().frame(iframe);
     }
 
+    public void switchToIFrameByXpath(String element){
+        logger.info("Switching to Iframe");
+        WebElement iframe = driver.findElement(By.xpath(element));
+        driver.switchTo().frame(iframe);
+    }
     public void listWindowID(){
         for(String windowid : driver.getWindowHandles()){
             logger.info("Listing window ID..." + windowid);
@@ -212,6 +217,12 @@ public class KeywordWeb {
         logger.info("compare from "+ expected+ " with "+ actual);
         String actualText = driver.findElement(By.xpath(actual)).getText();
         Assert.assertEquals(actualText,expected);
+
+    }
+    public void simpleAssertEquals(String expected, String actual){
+        logger.info("compare from "+ expected+ " with "+ actual);
+
+        Assert.assertEquals(actual,expected);
 
     }
     public void closeTab(int tabNum){
