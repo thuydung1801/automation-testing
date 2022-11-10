@@ -18,25 +18,23 @@ public class ListingPage extends BasePage {
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"), 50);
         keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
     }
-
-    public void goToAllProduct(String allbtn, String btnSwitch) throws InterruptedException {
+    public void goToAllProduct(String allBtn, String btnSwitch) throws InterruptedException {
         keyword.navigateToUrl(PropertiesFile.getPropValue("BASE_URL_LISTINGPAGE"));
-        Thread.sleep(2000);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"), 1000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"), 20);
         keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
         Thread.sleep(1000);
         keyword.scrollToPosition();
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(btnSwitch), 500);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(btnSwitch), 50);
         keyword.click(PropertiesFile.getPropValue(btnSwitch));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_TEXT_PAGE"), 50);
         keyword.hoverAndClick(PropertiesFile.getPropValue("LTP_TEXT_MOVE"));
         Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LTP_CLICK_PRODUCT"));
         Thread.sleep(3000);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue(allbtn));
-        keyword.click(PropertiesFile.getPropValue(allbtn));
+        keyword.scrollDownToElement(PropertiesFile.getPropValue(allBtn));
+        keyword.click(PropertiesFile.getPropValue(allBtn));
     }
-    public void filTerStone(String selectCarat, String selectStoneShape, String selectColor) throws InterruptedException {
+    public void filterStone(String selectCarat, String selectStoneShape, String selectColor) throws InterruptedException {
         keyword.getCurrentPageUrl();
         keyword.click(PropertiesFile.getPropValue("SELECT_DIAMON_STONES"));
         Thread.sleep(2000);
@@ -52,7 +50,7 @@ public class ListingPage extends BasePage {
 
     }
 
-    public void subfilTerStone(String selectMetal, String acceptPrice) throws InterruptedException {
+    public void subfilterStone(String selectMetal, String acceptPrice) throws InterruptedException {
         Thread.sleep(1000);
         keyword.scrollDownToElement(PropertiesFile.getPropValue(selectMetal));
         keyword.click(PropertiesFile.getPropValue(selectMetal));
@@ -108,7 +106,6 @@ public class ListingPage extends BasePage {
         keyword.back();
 
     }
-
     public void subLikeProduct(String saveItem) throws InterruptedException {
         keyword.imWait(2);
         keyword.scrollDownToElement(PropertiesFile.getPropValue(saveItem));

@@ -58,12 +58,24 @@ public class LoginAndAddressTest extends BaseTest {
     @Test(priority = 4, description = "Enter Email Fail (wrong format)")
     public void testcase_LA07() throws InterruptedException {
         objLoginAdrPage.enterDataEmailFail1();
+        objLoginAdrPage.clearTextAndSendKey(
+                "CHECKOUT_DATA_CONFIRMEMAIL",
+                "CHECKOUT_DATA_CONFIRMEMAIL",
+                "CHECKOUT_DATA_EMAIL_FAILD_2");
         objLoginAdrPage.clickBtnSubmit();
     }
 
     @Test(priority = 5, description = "")
     public void tescase_LA08() throws InterruptedException {
         objLoginAdrPage.enterDataEmailFail2("CHECKOUT_MESSAGE_FAILE_EMAIL03");
+        objLoginAdrPage.clearTextAndSendKey(
+                "CHECKOUT_DATA_CONFIRMEMAIL",
+                "CHECKOUT_DATA_CONFIRMEMAIL",
+                "CHECKOUT_DATA_EMAIL_FAILD_1");
+        objLoginAdrPage.clearTextAndSendKey("CHECKOUT_DATA_CONFIRMEMAIL",
+                "CHECKOUT_DATA_CONFIRMEMAIL",
+                "CHECKOUT_DATA_EMAIL_ENTER"
+        );
     }
 
     @Test(priority = 6, description = "Enter Phone Fail (wrong format) ")
@@ -120,7 +132,7 @@ public class LoginAndAddressTest extends BaseTest {
         objLoginAdrPage.InvalidEmail
                 (
                         "CHECKOUT_MESSAGE_INVALID_LOGIN_OR_PASSW",
-                        "CHECKOUT_DATA_EMAIL_ADDRESS" ,
+                        "CHECKOUT_DATA_EMAIL_ADDRESS",
                         "CHECKOUT_DATA_PASSWORD"
                 );
 

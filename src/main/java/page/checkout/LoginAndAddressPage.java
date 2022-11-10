@@ -42,12 +42,20 @@ public class LoginAndAddressPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_PROCEED"));
     }
 
+    public void clearTextAndSendKey(String clearText, String inputSendKey, String senKey) throws InterruptedException {
+        keyword.clearText(PropertiesFile.getPropValue(clearText));
+        Thread.sleep(1000);
+        keyword.sendKeys(PropertiesFile.getPropValue(inputSendKey),
+                PropertiesFile.getPropValue(senKey));
+    }
+
     public void clickPtnAddProduct() throws InterruptedException {
         keyword.imWait(5);
         keyword.doubleClick(PropertiesFile.getPropValue("CHECK_OUT_BTN_ADD_PRODUCT"));
         keyword.imWait(5);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_VIEW_DETAIL"));
     }
+
 
     public void btnSubmitCheckOut() throws InterruptedException {
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_PROCEED_CHECKOUT"));
@@ -77,24 +85,24 @@ public class LoginAndAddressPage extends BasePage {
     public void enterDataEmailFail1() throws InterruptedException {
         Thread.sleep(2000);
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_MESSAGE_FAILE_EMAIL02"), 20);
-        keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"));
-        Thread.sleep(1000);
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_FAILD_2"));
+//        keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"));
+//        Thread.sleep(1000);
+//        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"),
+//                PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_FAILD_2"));
     }
 
     public void enterDataEmailFail2(String messageFail) throws InterruptedException {
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(messageFail), 20);
-        keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"));
-        Thread.sleep(1000);
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_FAILD_1"));
+//        keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"));
+//        Thread.sleep(1000);
+//        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"),
+//                PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_FAILD_1"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(messageFail), 20);
         Thread.sleep(1000);
-        keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"));
-        Thread.sleep(1000);
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_ENTER"));
+//        keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"));
+//        Thread.sleep(1000);
+//        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_DATA_CONFIRMEMAIL"),
+//                PropertiesFile.getPropValue("CHECKOUT_DATA_EMAIL_ENTER"));
     }
 
     //-------------------------PHONE ST
@@ -193,6 +201,4 @@ public class LoginAndAddressPage extends BasePage {
                 PropertiesFile.getPropValue("CHECKOUT_DATA_PASSWORD_ENTER"));
         keyword.doubleClick(PropertiesFile.getPropValue("CHECKOUT_BTN_LOGIN_RGT_CUSTOMER"));
     }
-
-
 }

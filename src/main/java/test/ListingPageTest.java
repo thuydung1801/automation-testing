@@ -27,13 +27,13 @@ public class ListingPageTest extends BaseTest {
 
     @Test(priority = 2, description = "--- CHECK FILTER")
     public void testcase_LTP01() throws InterruptedException {
-        testListingPage.filTerStone
+        testListingPage.filterStone
                 (
                         "LTP_SELECT_CARAT",
                         "LTP_SELECT_STONE_SHAPE",
                         "LTP_SELECT_COLOR"
                 );
-        testListingPage.subfilTerStone(
+        testListingPage.subfilterStone(
                 "LTP_SELECT_METAL",
                 "LTP_BTN_ACCEPT_PRICE"
         );
