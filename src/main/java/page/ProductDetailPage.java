@@ -107,7 +107,7 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void testCase_PRD_Info2() throws InterruptedException {
-        productInfo();
+//        productInfo();
         System.out.printf("-----test 2: Default option "+"\n");
         selectOption();
         System.out.printf("=> test 2 done"+"\n");
@@ -129,9 +129,9 @@ public class ProductDetailPage extends BasePage {
     }
 
     public void commonFindSize() throws InterruptedException {
-        setUp();
+//        setUp();
         Thread.sleep(5000);
-        keyword.navigateToUrl(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
+        keyword.openNewTab(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
         keyword.imWait(2);
         optionSize();
         Thread.sleep(3000);
@@ -139,7 +139,7 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void optionFindSize1() throws InterruptedException {
-
+        commonFindSize();
         ipFindSize("PRD_DATA_FIRSTNAME", "PRD_DATA_LASTNAME", "PRD_DATA_EMAIL",
                 "PRD_DATA_STREET", Integer.parseInt(PropertiesFile.getPropValue("PRD_DATA_CODE")),
                 "PRD_DATA_CITY");
@@ -149,13 +149,14 @@ public class ProductDetailPage extends BasePage {
 
     public void optionFindSize2() throws InterruptedException{
         commonFindSize();
-        ipFindSize("","","",
-                "", Integer.parseInt((PropertiesFile.getPropValue(""))),
-                "");
+//        keyword.openNewTab(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
+        ipFindSize("DATA_NULL","DATA_NULL","DATA_NULL",
+                "DATA_NULL", Integer.parseInt((PropertiesFile.getPropValue("PRD_DATA_CODE"))),
+                "DATA_NULL");
     }
     public void optionFindSize3() throws InterruptedException{
         commonFindSize();
-        ipFindSize("","","PRD_DATA_ERROR",
+        ipFindSize("DATA_NULL","DATA_NULL","DATA_ERROR",
                 "PRD_DATA_STREET", Integer.parseInt(PropertiesFile.getPropValue("PRD_DATA_CODE")),
                 "PRD_DATA_CITY");
     }
@@ -176,7 +177,7 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void ipFindSize(String firstName, String lastName, String email, String street,int code, String city) throws InterruptedException {
-        keyword.imWait(2);
+        keyword.imWait(5);
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_FIRSTNAME"),PropertiesFile.getPropValue(firstName));
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_LASTNAME"),PropertiesFile.getPropValue(lastName));
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_EMAIL"),PropertiesFile.getPropValue(email));
@@ -185,21 +186,24 @@ public class ProductDetailPage extends BasePage {
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_CITY"),PropertiesFile.getPropValue(city));
 
 //        keyword.recaptchaClick();
-        Thread.sleep(10000);
-        if(keyword.verifyElementVisible(PropertiesFile.getPropValue("PRD_CHECK_VERYFI"))== false){
+        Thread.sleep(20000);
+//        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("PRD_CHECK_VERYFI"), 10);
+//        if(keyword.verifyElementVisible(PropertiesFile.getPropValue("PRD_CHECK_VERYFI"))){
+
             keyword.click(PropertiesFile.getPropValue("PRD_CHECK"));
             keyword.click(PropertiesFile.getPropValue("PRD_BTN_SUBMIT"));
 
-            if(keyword.verifyElementVisible(PropertiesFile.getPropValue("PRD_TEXT_ERROR"))){
-                System.out.printf("Error...." + "\n");
-            }
-            else{
-                System.out.printf("Continue..." + "\n");
+            if(keyword.verifyElementVisible(PropertiesFile.getPropValue("TEXT_ERROR"))){
 
+                System.out.printf("Error...." + "\n");
+            }else{
+                System.out.printf("Continue..." + "\n");
             }
+
+
             keyword.deleteInput();
             Thread.sleep(5000);
-        }
+//        }
 
 
 
