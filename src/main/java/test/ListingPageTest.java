@@ -27,46 +27,46 @@ public class ListingPageTest extends BaseTest {
 
     @Test(priority = 2, description = "--- CHECK FILTER")
     public void testcase_LTP01() throws InterruptedException {
-        testListingPage.filterStone
-                (
-                        "LTP_SELECT_CARAT",
-                        "LTP_SELECT_STONE_SHAPE",
-                        "LTP_SELECT_COLOR"
-                );
-        testListingPage.subfilterStone(
-                "LTP_SELECT_METAL",
-                "LTP_BTN_ACCEPT_PRICE"
-        );
+        testListingPage.checkFilterStonesAndVerify(
+                "SELECT_DIAMON_STONES",
+                "LTP_VERIFY_SELECT_DIAMOND_STONES_01",
+                "LTP_VERIFY_DISPLAY_DIAMOND_STONES_01",
+                "LTP_CHECK_STT_ELEMENT_01");
+        testListingPage.checkFilterStonesAndVerify(
+                "LTP_SELECT_PRECIOUS_STONE",
+                "LTP_VERIFY_SELECT_PRECIOUS_STONES_01",
+                "LTP_VERIFY_DISPLAY_PRECIOUS_STONES",
+                "LTP_CHECK_STT_ELEMENT_PRECIOUS");
     }
 
-    @Test(priority = 3, description = "---DELETE FILTER")
-    public void testcase_LTP02() throws InterruptedException {
-        testListingPage.deleteFilters();
-    }
-
-    @Test(priority = 4, description = "---CHECK  VIEW SORT")
-    public void testcase_LTP03() throws InterruptedException {
-        testListingPage.sort_prd();
-    }
-
-    @Test(priority = 5, description = "--- CHECK SELECT STATUS VIEW")
-    public void testcase_LTP04() throws InterruptedException {
-        testListingPage.viewBTN();
-    }
-
-    @Test(priority = 6, description = "---CHECK MESSAGE POPUP")
-    public void testcase_LTP05() throws InterruptedException {
-        Thread.sleep(1000);
-        testListingPage.popupMessage();
-    }
-
-    @Test(priority = 7, description = "---CHECK LIKE PRODUCT")
-    public void testcase_LTP06() throws InterruptedException {
-        Thread.sleep(1000);
-        testListingPage.LikeProduct
-                (
-                        "LTP_BTN_VIEW_DETAIL_BOOKLIKE"
-                );
-        testListingPage.subLikeProduct("LTP_BTN_SAVED_ITEM");
-    }
+//    @Test(priority = 3, description = "---DELETE FILTER")
+//    public void testcase_LTP02() throws InterruptedException {
+//        testListingPage.deleteFilters();
+//    }
+//
+//    @Test(priority = 4, description = "---CHECK  VIEW SORT")
+//    public void testcase_LTP03() throws InterruptedException {
+//        testListingPage.sort_prd();
+//    }
+//
+//    @Test(priority = 5, description = "--- CHECK SELECT STATUS VIEW")
+//    public void testcase_LTP04() throws InterruptedException {
+//        testListingPage.viewBTN();
+//    }
+//
+//    @Test(priority = 6, description = "---CHECK MESSAGE POPUP")
+//    public void testcase_LTP05() throws InterruptedException {
+//        Thread.sleep(1000);
+//        testListingPage.popupMessage();
+//    }
+//
+//    @Test(priority = 7, description = "---CHECK LIKE PRODUCT")
+//    public void testcase_LTP06() throws InterruptedException {
+//        Thread.sleep(1000);
+//        testListingPage.LikeProduct
+//                (
+//                        "LTP_BTN_VIEW_DETAIL_BOOKLIKE"
+//                );
+//        testListingPage.subLikeProduct("LTP_BTN_SAVED_ITEM");
+//    }
 }

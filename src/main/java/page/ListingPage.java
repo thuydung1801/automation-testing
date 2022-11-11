@@ -18,6 +18,12 @@ public class ListingPage extends BasePage {
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"), 50);
         keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
     }
+
+    public void scrollToElementAndClick(String veriFyDisplay, String scrollToElement, String clickElement) throws InterruptedException {
+
+    }
+
+
     public void goToAllProduct(String allBtn, String btnSwitch) throws InterruptedException {
         keyword.navigateToUrl(PropertiesFile.getPropValue("BASE_URL_LISTINGPAGE"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"), 20);
@@ -28,36 +34,22 @@ public class ListingPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue(btnSwitch));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_TEXT_PAGE"), 50);
         keyword.hoverAndClick(PropertiesFile.getPropValue("LTP_TEXT_MOVE"));
-        Thread.sleep(1000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_CLICK_PRODUCT"), 10);
+        keyword.imWait(7);
         keyword.click(PropertiesFile.getPropValue("LTP_CLICK_PRODUCT"));
-        Thread.sleep(3000);
+        keyword.imWait(7);
         keyword.scrollDownToElement(PropertiesFile.getPropValue(allBtn));
         keyword.click(PropertiesFile.getPropValue(allBtn));
     }
-    public void filterStone(String selectCarat, String selectStoneShape, String selectColor) throws InterruptedException {
-        keyword.getCurrentPageUrl();
-        keyword.click(PropertiesFile.getPropValue("SELECT_DIAMON_STONES"));
+
+    public void checkFilterStonesAndVerify(String selectElement, String clickElementVerify, String verifyDisplay, String statusElement) throws InterruptedException {
+        keyword.scrollDownToElement(PropertiesFile.getPropValue(selectElement));
+        keyword.click(PropertiesFile.getPropValue(selectElement));
         Thread.sleep(2000);
-        keyword.getCurrentPageUrl();
-        keyword.scrollDownToElement(PropertiesFile.getPropValue(selectCarat));
-        keyword.click(PropertiesFile.getPropValue(selectCarat));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BOOK_CARAT"), 20);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue(selectStoneShape));
-        keyword.click(PropertiesFile.getPropValue(selectStoneShape));
-        Thread.sleep(1000);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue(selectColor));
-        keyword.click(PropertiesFile.getPropValue(selectColor));
-
-    }
-
-    public void subfilterStone(String selectMetal, String acceptPrice) throws InterruptedException {
-        Thread.sleep(1000);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue(selectMetal));
-        keyword.click(PropertiesFile.getPropValue(selectMetal));
-        keyword.imWait(3);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue(acceptPrice));
-        keyword.click(PropertiesFile.getPropValue(acceptPrice));
-        Thread.sleep(1000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(clickElementVerify), 30);
+        keyword.click(PropertiesFile.getPropValue(clickElementVerify));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(verifyDisplay), 30);
+        keyword.CheckIsDisplayElement(PropertiesFile.getPropValue(statusElement));
     }
 
     public void deleteFilters() throws InterruptedException {
@@ -106,6 +98,7 @@ public class ListingPage extends BasePage {
         keyword.back();
 
     }
+
     public void subLikeProduct(String saveItem) throws InterruptedException {
         keyword.imWait(2);
         keyword.scrollDownToElement(PropertiesFile.getPropValue(saveItem));

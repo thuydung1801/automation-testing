@@ -327,6 +327,18 @@ public class KeywordWeb {
         return blnVerify;
     }
 
+    public boolean CheckIsDisplayElement(String element) {
+        logger.info("Check status element btn radio");
+        boolean str = driver.findElement(By.xpath(element)).isDisplayed();
+        if (!str) {
+            System.out.println("Not selected");
+        } else {
+            driver.navigate().back();
+            System.out.println("Checkbox selected");
+        }
+        return str;
+    }
+
     // wait keywords
 
     public void imWait(long timeout) {
@@ -372,16 +384,6 @@ public class KeywordWeb {
         logger.info("compare from " + expected + " with " + actual);
         Assert.assertEquals(expected, actual);
 
-    }
-
-    public void CheckIsDisplayElement(String element) {
-        logger.info("Check Is Display: " + element);
-        Boolean status = driver.findElement(By.xpath(element)).isDisplayed();
-        if (!status) {
-            logger.info("Element Is Visible");
-        } else {
-            logger.info("Element Is Display");
-        }
     }
 
 
