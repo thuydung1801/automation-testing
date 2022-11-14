@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
@@ -84,6 +85,13 @@ public class KeywordWeb {
             int randnMumber = ThreadLocalRandom.current().nextInt(0, size);
             weblist.get(randnMumber).click();
 
+    }
+    public void randomConcatElement(String element, int num) throws InterruptedException {
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        int randomNumber = random.nextInt(1,num);
+        String ele = element + "[" + randomNumber + "]";
+        Thread.sleep(1000);
+        driver.findElement(By.xpath(ele)).click();
     }
     public String getText(String element){
         logger.info("get Text of"+ element);
