@@ -1,7 +1,6 @@
 package core;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -24,8 +23,6 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 
-import org.testng.Assert;
-import org.testng.ITestResult;
 
 public class KeywordWeb {
     private static Logger logger = LogHelper.getLogger();
@@ -84,10 +81,20 @@ public class KeywordWeb {
         driver.findElement(By.cssSelector(element)).click();
     }
 
-    public void sendKeys(String element, String content) {
+    public void sendKeys(String element, String content){
         logger.info("send keys" + element);
         driver.findElement(By.xpath(element)).sendKeys(content);
-
+    }
+    public String getTextWithOutCharacters(String element, String oldChar){
+        logger.info("getText of "+ element+" without "+ oldChar);
+        return driver.findElement(By.xpath(element)).getText().replace(oldChar,"");
+    }
+    public void sendKeys1(String element, String content){
+        logger.info("send keys" + element);
+        driver.findElement(By.xpath(PropertiesFile.getPropValue(element))).sendKeys(PropertiesFile.getPropValue(content));
+    }
+    public String removeLastChar(String str) {
+        return str.isEmpty()? "": str.substring(0, str.length() - Character.charCount(str.codePointBefore(str.length())));
     }
 
     public void doubleClick(String element) {
@@ -96,7 +103,6 @@ public class KeywordWeb {
         WebElement elementRep = driver.findElement(By.xpath(element));
         builder.doubleClick(elementRep).perform();
     }
-
     public void dragAndDropToObj(String startElement, String endElement) {
         logger.info("drag from" + startElement + " to" + endElement);
         Actions builder = new Actions(driver);
@@ -143,7 +149,6 @@ public class KeywordWeb {
         logger.info("Back window...");
         driver.navigate().back();
     }
-
     public void reLoadPage() {
         logger.info("ReLoad Page...");
         driver.navigate().refresh();
@@ -206,6 +211,11 @@ public class KeywordWeb {
             logger.info("Listing window ID..." + windowid);
         }
     }
+    public void switchToIFrameByXpath(String element){
+        logger.info("Switching to Iframe");
+        WebElement iframe = driver.findElement(By.xpath(element));
+        driver.switchTo().frame(iframe);
+    }
 
     public void switchToWindow(String window) {
         logger.info("Switching to Window");
@@ -221,10 +231,16 @@ public class KeywordWeb {
         logger.info("switchToWindowByIndex");
         driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(index)).getTitle();
     }
-
     public void switchToParentWindow() {
+        logger.info("switchToParentWindow");
         String parentWindowId = driver.getWindowHandle();
         driver.switchTo().window(parentWindowId);
+    }
+    public void simpleAssertEquals(String expected, String actual){
+        logger.info("compare from "+ expected+ " with "+ actual);
+
+        Assert.assertEquals(actual,expected);
+
     }
 
     public void switchToTab(int tabNum) {
@@ -311,21 +327,22 @@ public class KeywordWeb {
     public void selectDropDownListByIndex(String ddlPath, String itemName) {
         logger.info("select item by visibe text");
         Select dropDownList = new Select(driver.findElement(By.xpath(ddlPath)));
-        logger.info("1");
         dropDownList.selectByVisibleText(itemName);
 
     }
 
     public boolean verifyElementVisible(String element) {
-        boolean blnVerify = false;
-        try {
-            blnVerify = driver.findElement(By.xpath(element)).isDisplayed();
+        //verify keyword
 
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
+            logger.info("verifyElementPresent");
+            try{
+                driver.findElement(By.xpath(element)).isDisplayed();
+                return true;
+            } catch(NoSuchElementException e){
+                e.printStackTrace();
+                return false;
+            }
         }
-        return blnVerify;
-    }
 
     public boolean CheckIsDisplayElement(String element) {
         logger.info("Check status element btn radio");
@@ -384,8 +401,5 @@ public class KeywordWeb {
         logger.info("compare from " + expected + " with " + actual);
         Assert.assertEquals(expected, actual);
 
-    }
-    public String removeLastChar(String str) {
-        return str.isEmpty() ? "" : str.substring(0, str.length() - Character.charCount(str.codePointBefore(str.length())));
     }
 }
