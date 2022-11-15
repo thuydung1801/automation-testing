@@ -1,72 +1,87 @@
-INFO  | 2022-11-15 14:58:31 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:38) - Open browser
-INFO  | 2022-11-15 14:58:33 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
-INFO  | 2022-11-15 14:58:33 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
-INFO  | 2022-11-15 14:58:36 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - open browser successfullyCHROME
-INFO  | 2022-11-15 14:58:36 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-15 14:58:36 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - url: [Ljava.lang.String;@2976ef56
-INFO  | 2022-11-15 14:58:37 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:138) - Maximizing browser window...
-INFO  | 2022-11-15 14:58:37 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:371) - login by authen link withtest !test123!
-INFO  | 2022-11-15 14:58:52 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//button[@class='amgdprcookie-button -allow']
-INFO  | 2022-11-15 14:58:54 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:277) -  scrolling to position 
-INFO  | 2022-11-15 14:59:05 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//a[@class='btn-stay-here geoip-close']
-INFO  | 2022-11-15 14:59:05 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
-INFO  | 2022-11-15 14:59:06 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:153) - Navigating to URL...https://dev3.glamira.com/glgb/diamond-rings/ 
-INFO  | 2022-11-15 14:59:13 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
-INFO  | 2022-11-15 14:59:13 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
-INFO  | 2022-11-15 14:59:22 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//*[@id="maincontent"]/div[2]/div[1]/div[5]/ol/li[1]
-INFO  | 2022-11-15 14:59:24 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
-INFO  | 2022-11-15 14:59:25 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//div[@class='dropdown-input sprite-bf']
-INFO  | 2022-11-15 14:59:25 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
-INFO  | 2022-11-15 14:59:30 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//*[@id="ring_size"]/div[2]/div[2]/div[2]/ul/li[16]
-INFO  | 2022-11-15 14:59:30 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
-INFO  | 2022-11-15 14:59:30 | [main] core.KeywordWeb (KeywordWeb.java:doubleClick:94) - double click//button[@id='product-addtocart-button']  
-INFO  | 2022-11-15 14:59:31 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
-INFO  | 2022-11-15 14:59:44 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//div[contains(@class,'actions popup-footer')]//a[contains(@class,'action primary')]
-INFO  | 2022-11-15 14:59:44 | [main] core.KeywordWeb (KeywordWeb.java:doubleClick:94) - double click//*[@id="maincontent"]/div[2]/div/div[4]/div/ul[1]/li
-INFO  | 2022-11-15 14:59:53 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
-INFO  | 2022-11-15 14:59:54 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//button[@class='action primary show-address-form'] 
-INFO  | 2022-11-15 14:59:57 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
-INFO  | 2022-11-15 14:59:58 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
-INFO  | 2022-11-15 15:00:00 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[1]/div/input
-INFO  | 2022-11-15 15:00:00 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[2]/div/input
-INFO  | 2022-11-15 15:00:01 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
-INFO  | 2022-11-15 15:00:01 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[3]/div/input
-INFO  | 2022-11-15 15:00:01 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[4]/div/input
-INFO  | 2022-11-15 15:00:01 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[5]/div/input
-INFO  | 2022-11-15 15:00:01 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[6]/div/input
-INFO  | 2022-11-15 15:00:01 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/fieldset/div/div/div/input
-INFO  | 2022-11-15 15:00:01 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[7]/div/input
-INFO  | 2022-11-15 15:00:01 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[8]/div/input
-INFO  | 2022-11-15 15:00:02 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
-INFO  | 2022-11-15 15:00:04 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
-INFO  | 2022-11-15 15:00:04 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
-INFO  | 2022-11-15 15:00:05 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[4]/div/input
-INFO  | 2022-11-15 15:00:05 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
-INFO  | 2022-11-15 15:00:05 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
-INFO  | 2022-11-15 15:00:05 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
-INFO  | 2022-11-15 15:00:06 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
-INFO  | 2022-11-15 15:00:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[4]/div/input
-INFO  | 2022-11-15 15:00:08 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
-INFO  | 2022-11-15 15:00:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[4]/div/input
-INFO  | 2022-11-15 15:00:09 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
-INFO  | 2022-11-15 15:00:09 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
-INFO  | 2022-11-15 15:00:11 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[5]/div/input
-INFO  | 2022-11-15 15:00:11 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
-INFO  | 2022-11-15 15:00:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
-INFO  | 2022-11-15 15:00:11 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
-INFO  | 2022-11-15 15:00:13 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[5]/div/input
-INFO  | 2022-11-15 15:00:14 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
-INFO  | 2022-11-15 15:00:14 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
-INFO  | 2022-11-15 15:00:35 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//header[@class='page-header']//a[@class='actions action-back-to-cart']
-INFO  | 2022-11-15 15:00:35 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//div[@class='checkout-login']//div[@class='actions-toolbar']//button[@class='action login primary'] 
-INFO  | 2022-11-15 15:00:35 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
-INFO  | 2022-11-15 15:00:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='checkout-login-email']
-INFO  | 2022-11-15 15:00:35 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
-INFO  | 2022-11-15 15:00:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='checkout-login-password']
-INFO  | 2022-11-15 15:00:36 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//div[@class='checkout-login']//div[@class='actions-toolbar']//button[@class='action login primary'] 
-INFO  | 2022-11-15 15:00:36 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
-INFO  | 2022-11-15 15:00:37 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
-INFO  | 2022-11-15 15:00:37 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='checkout-login-email']
-INFO  | 2022-11-15 15:00:37 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
-INFO  | 2022-11-15 15:00:37 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='checkout-login-password']
-INFO  | 2022-11-15 15:00:37 | [main] core.KeywordWeb (KeywordWeb.java:doubleClick:94) - double click//div[@class='checkout-login']//div[@class='actions-toolbar']//button[@class='action login primary'] 
+INFO  | 2022-11-15 16:22:29 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:38) - Open browser
+INFO  | 2022-11-15 16:22:31 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO  | 2022-11-15 16:22:31 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO  | 2022-11-15 16:22:34 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - open browser successfullyCHROME
+INFO  | 2022-11-15 16:22:34 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-15 16:22:34 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - url: [Ljava.lang.String;@8debe42
+INFO  | 2022-11-15 16:22:35 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:138) - Maximizing browser window...
+INFO  | 2022-11-15 16:22:35 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:371) - login by authen link withtest !test123!
+INFO  | 2022-11-15 16:22:49 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//button[@class='amgdprcookie-button -allow']
+INFO  | 2022-11-15 16:22:51 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:277) -  scrolling to position 
+INFO  | 2022-11-15 16:23:02 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//a[@class='btn-stay-here geoip-close']
+INFO  | 2022-11-15 16:23:02 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:02 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:153) - Navigating to URL...https://dev3.glamira.com/glgb/diamond-rings/ 
+INFO  | 2022-11-15 16:23:10 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:10 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:20 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//*[@id="maincontent"]/div[2]/div[1]/div[5]/ol/li[1]
+INFO  | 2022-11-15 16:23:22 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:23 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//div[@class='dropdown-input sprite-bf']
+INFO  | 2022-11-15 16:23:23 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 16:23:23 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//*[@id="ring_size"]/div[2]/div[2]/div[2]/ul/li[16]
+INFO  | 2022-11-15 16:23:23 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:23 | [main] core.KeywordWeb (KeywordWeb.java:doubleClick:94) - double click//button[@id='product-addtocart-button']  
+INFO  | 2022-11-15 16:23:25 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:37 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//div[contains(@class,'actions popup-footer')]//a[contains(@class,'action primary')]
+INFO  | 2022-11-15 16:23:37 | [main] core.KeywordWeb (KeywordWeb.java:doubleClick:94) - double click//*[@id="maincontent"]/div[2]/div/div[4]/div/ul[1]/li
+INFO  | 2022-11-15 16:23:46 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 16:23:46 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//button[@class='action primary show-address-form'] 
+INFO  | 2022-11-15 16:23:49 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
+INFO  | 2022-11-15 16:23:51 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 16:23:51 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[1]/div/input
+INFO  | 2022-11-15 16:23:51 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[2]/div/input
+INFO  | 2022-11-15 16:23:51 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[3]/div/input
+INFO  | 2022-11-15 16:23:51 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[4]/div/input
+INFO  | 2022-11-15 16:23:51 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[5]/div/input
+INFO  | 2022-11-15 16:23:52 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[6]/div/input
+INFO  | 2022-11-15 16:23:52 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/fieldset/div/div/div/input
+INFO  | 2022-11-15 16:23:52 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[7]/div/input
+INFO  | 2022-11-15 16:23:52 | [main] core.KeywordWeb (KeywordWeb.java:imWait:345) - implicitlyWait
+INFO  | 2022-11-15 16:23:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[8]/div/input
+INFO  | 2022-11-15 16:23:52 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
+INFO  | 2022-11-15 16:23:52 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 16:23:52 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
+INFO  | 2022-11-15 16:23:54 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[4]/div/input
+INFO  | 2022-11-15 16:23:54 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
+INFO  | 2022-11-15 16:23:54 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 16:23:54 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
+INFO  | 2022-11-15 16:23:55 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[4]/div/input
+INFO  | 2022-11-15 16:23:55 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 16:23:55 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
+INFO  | 2022-11-15 16:23:56 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[4]/div/input
+INFO  | 2022-11-15 16:23:56 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 16:23:56 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
+INFO  | 2022-11-15 16:23:58 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[5]/div/input
+INFO  | 2022-11-15 16:23:58 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 16:23:58 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
+INFO  | 2022-11-15 16:23:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[5]/div/input
+INFO  | 2022-11-15 16:23:59 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
+INFO  | 2022-11-15 16:23:59 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 16:24:00 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//aside[@class='modal-custom modal-sm address-validation-wrap modal-address-validation modal-confirm modal-sm-fullscreen melissa-validation modal-slide _inner-scroll _show']//footer[@class='modal-footer']//button[@class='action secondary action-hide-popup'] 
+INFO  | 2022-11-15 16:24:00 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
+INFO  | 2022-11-15 16:24:01 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/fieldset/div/div/div/input
+INFO  | 2022-11-15 16:24:02 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
+INFO  | 2022-11-15 16:24:03 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[7]/div/input
+INFO  | 2022-11-15 16:24:03 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
+INFO  | 2022-11-15 16:24:04 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys/html/body/div[2]/main/div/div/div[4]/div[3]/ol/li[1]/div[3]/div[1]/div/div[2]/form/div/div/div[8]/div/input
+INFO  | 2022-11-15 16:24:04 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
+INFO  | 2022-11-15 16:24:12 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//header[@class='page-header']//a[@class='actions action-back-to-cart']
+INFO  | 2022-11-15 16:24:12 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//div[@class='checkout-login']//div[@class='actions-toolbar']//button[@class='action login primary'] 
+INFO  | 2022-11-15 16:24:12 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 16:24:12 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='checkout-login-email']
+INFO  | 2022-11-15 16:24:12 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 16:24:12 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='checkout-login-password']
+INFO  | 2022-11-15 16:24:13 | [main] core.KeywordWeb (KeywordWeb.java:click:74) - click//div[@class='checkout-login']//div[@class='actions-toolbar']//button[@class='action login primary'] 
+INFO  | 2022-11-15 16:24:13 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:350) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 16:24:13 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
+INFO  | 2022-11-15 16:24:13 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='checkout-login-email']
+INFO  | 2022-11-15 16:24:14 | [main] core.KeywordWeb (KeywordWeb.java:clearText:68) - clearText
+INFO  | 2022-11-15 16:24:14 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:88) - send keys//input[@id='checkout-login-password']
+INFO  | 2022-11-15 16:24:14 | [main] core.KeywordWeb (KeywordWeb.java:doubleClick:94) - double click//div[@class='checkout-login']//div[@class='actions-toolbar']//button[@class='action login primary'] 
