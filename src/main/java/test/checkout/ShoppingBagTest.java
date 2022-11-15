@@ -62,7 +62,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test (priority = 2, description="Remove item from cart successfully with the shopping bag having 1 normal item and 1 free gift")
     public void testCase_SP_03() throws InterruptedException{
         logger.info("testCase_SP_03");
-
+        //commonShopping();
         objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/smart-ornament-skub7047.html?alloy=white-platin");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.removeProduct("CHECKOUT_ICON_REMOVE_COUPLERING");
@@ -202,7 +202,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test(priority = 14, description = "Edit product but missing fill required field")
     public void testCase_SP_25() throws InterruptedException {
         logger.info("testCase_SP_25");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_UNIVERSE");
         objShoppingBagPage.missingFillSize();
@@ -211,7 +211,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test(priority = 15, description = "Checkout successfully")
     public void testCase_SP_26_RV_02_04() throws InterruptedException {
         logger.info("testCase_SP_26");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickGiftWrapping();
         objShoppingBagPage.moveToPagecheckOut();
@@ -222,7 +222,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test(priority = 16, description = "Place order with Credit card but missing information card")
     public void testCase_RV_05() throws InterruptedException {
         logger.info("testCase_RV_05");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
@@ -233,7 +233,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test (priority = 17, description = "Place order with Card issue")
     public void testCase_RV_06() throws InterruptedException {
         logger.info("testCase_RV_06");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
@@ -243,7 +243,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test (priority = 19, description = "Place order with Paypal express /Affirm/... successfully")
     public void testCase_RV_07() throws InterruptedException {
         logger.info("testCase_RV_07");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
@@ -252,7 +252,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test(priority = 18, description = "Place order and don't choose any payment method")
     public void testCase_RV_10() throws InterruptedException {
         logger.info("testCase_RV_10");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
@@ -262,7 +262,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test(priority = 20, description = "Place order with Bank Transfer method successfully")
     public void testCase_RV_09() throws InterruptedException {
         logger.info("testCase_RV_09");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
@@ -273,14 +273,49 @@ public class ShoppingBagTest extends BaseTest {
     @Test (priority = 21, description = "Place order with Klanar method successfully")
     public void testCase_RV_08() throws InterruptedException {
         logger.info("testCase_RV_08");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
         objShoppingBagPage.checkOutWithKlarnaLater();
+        objShoppingBagPage.clickPrint();
     }
 
+    @Test (priority = 22, description = "Place order and apply full amount store credit successfully")
+    public void testCase_RV_11() throws InterruptedException {
+        logger.info("testCase_RV_11");
+        commonShopping();
+        objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithStoreCredit("equals");
+
+    }
+
+    @Test (priority = 23, description = "Place order and apply full amount store credit successfully")
+    public void testCase_RV_12() throws InterruptedException {
+        logger.info("testCase_RV_12");
+        commonShopping();
+        //objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithStoreCredit("less");
+
+    }
+    @Test (priority = 24, description = "Place order and apply full amount store credit successfully")
+    public void testCase_RV_13() throws InterruptedException {
+        logger.info("testCase_RV_13");
+        commonShopping();
+        objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithStoreCredit("wrong");
+
+    }
 
 
 }

@@ -76,12 +76,20 @@ public class KeywordWeb {
         String text = driver.findElement(By.xpath(element)).getText();
         return text;
     }
+    public String getTextWithOutCharacters(String element, String oldChar){
+        logger.info("getText of "+ element+" without "+ oldChar);
+        return driver.findElement(By.xpath(element)).getText().replace(oldChar,"");
+    }
+
     public void sendKeys(String element, String content){
         logger.info("send keys" + element);
         driver.findElement(By.xpath(element)).sendKeys(content);
 
     }
-
+    public void reLoadPage() {
+        logger.info("ReLoad Page...");
+        driver.navigate().refresh();
+    }
 
     public void doubleClick(String element){
         logger.info("double click" + element);
@@ -199,6 +207,7 @@ public class KeywordWeb {
         driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(index)).getTitle();
     }
     public void switchToParentWindow(){
+        logger.info("switchToParentWindow");
         String parentWindowId = driver.getWindowHandle();
         driver.switchTo().window(parentWindowId);
     }
