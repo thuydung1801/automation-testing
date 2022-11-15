@@ -214,12 +214,14 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(2000);
 
     }
+    @Step("Input valid data")
     public void inputCorrectly(String data, String engraving) throws InterruptedException {
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_VIEWDETAIL_BTN_SAVE"));
         Thread.sleep(10000);
         keyword.assertEquals(PropertiesFile.getPropValue(data)+ " - "+ PropertiesFile.getPropValue(data)
                 , PropertiesFile.getPropValue(engraving));
     }
+    @Step("Input invalid data")
     public void inputError(String lblErrorMessage1, String lblErrorMessage2, String dataExpected, String engraving, boolean flag) throws InterruptedException {
         keyword.verifyElementPresent(PropertiesFile.getPropValue(lblErrorMessage1));
         keyword.verifyElementPresent(PropertiesFile.getPropValue(lblErrorMessage2));
@@ -252,6 +254,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_CHECKOUT"),10);
     }
+    @Step("common checkout")
     public void checkOut() throws InterruptedException {
         Thread.sleep(3000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT_ADDRESS"));
@@ -260,19 +263,21 @@ public class ShoppingBagPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT_SHIPMENT"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_CHECKOUT_PAYMENT"),10);
     }
-
+    @Step("submit order")
     public void submit(){
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
         String messages = keyword.getAlertText();
         keyword.acceptAlert();
         keyword.simpleAssertEquals(messages,PropertiesFile.getPropValue("CHECKOUT_MESSAGES_PAYMENT"));
     }
+    @Step("check out with payment method: visa")
     public void checkOutWithVisa(String flag) throws InterruptedException {
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_VISA"),10);
         Thread.sleep(10000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_VISA"));
         Thread.sleep(3000);
         switch (flag) {
+            //input valid information
             case "success":
                 keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_VISA"));
                 keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_VISA"),
@@ -292,6 +297,7 @@ public class ShoppingBagPage extends BasePage {
                 keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"), 10);
                 keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
                 break;
+            //missing input all of fields
             case "failByMissing":
                 keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
                 keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_DATA_MESSAGES_VISA"),
@@ -301,6 +307,7 @@ public class ShoppingBagPage extends BasePage {
                 keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_DATA_MESSAGES_VISA"),
                         PropertiesFile.getPropValue("CHECKOUT_MESSAGES_CVC"));
                 break;
+            //input defuse card
             case "failByCard":
                 keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_VISA"));
                 keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_VISA"),
@@ -371,38 +378,63 @@ public class ShoppingBagPage extends BasePage {
         keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
     }
 
-    public void clickPrint(){
+    public void clickPrint() throws InterruptedException {
         keyword.click(PropertiesFile.getPropValue("SUCCESS_BTN_PRINT"));
+        Thread.sleep(3000);
+        keyword.switchToTab(1);
+        keyword.executeJavaScript("window.print=function(){};");
     }
-    public String removeLastChar(String str) {
-        return str.isEmpty()? "": str.substring(0, str.length() - Character.charCount(str.codePointBefore(str.length())));
+    public void clickUseCredit(String money){
+//        if(keyword.verifyElementVisible(PropertiesFile.getPropValue("CHECKOUT_BTN_CANCEL_CREDIT"))) {
+//            keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CANCEL_CREDIT"));
+//        }
+        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),money);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_USE_CREDIT"));
+    }
+    public void useCredit() throws InterruptedException {
+        logger.info("useCredit");
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_USE_CREDIT"),10);
+        //Thread.sleep(5000);
+        keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_MESSAGE_USE_CREDIT"),
+                PropertiesFile.getPropValue("CHECKOUT_LBL_USE_CREDIT"));
+        Thread.sleep(20000);
+        String actualPrice = keyword.getTextWithOutCharacters(PropertiesFile.getPropValue("CHECKOUT_LBL_TOTAL_PRICE"),"£");
+        logger.info(actualPrice);
+        String lastPrice = keyword.removeLastChar(actualPrice);
+        keyword.simpleAssertEquals("0.0", lastPrice);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"), 20);
+        keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
     }
     public void checkOutWithStoreCredit(String flag) throws InterruptedException {
         Thread.sleep(10000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_STORE_CREDIT"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),10);
+        //keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),10);
+        Float credit = Float.valueOf(1);
 
         switch (flag){
             case "equals":
                 String price = keyword.getTextWithOutCharacters(PropertiesFile.getPropValue("CHECKOUT_LBL_TOTAL_PRICE"),"£");
-                keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),price);
-                keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_USE_CREDIT"));
-                keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_USE_CREDIT"),10);
-                keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_MESSAGE_USE_CREDIT"),
-                        PropertiesFile.getPropValue("CHECKOUT_LBL_USE_CREDIT"));
+                clickUseCredit(price);
+                useCredit();
                 break;
             case "less":
-                Float credit = Float.valueOf(1);
-                keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),String.valueOf(credit));
-                keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_USE_CREDIT"));
+                clickUseCredit(String.valueOf(credit));
                 Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters(PropertiesFile.getPropValue("CHECKOUT_LBL_TOTAL_PRICE"),"£"));
                 logger.info(String.valueOf(rawPrice));
                 String totalPrice = String.valueOf(calculateMoney(rawPrice, credit));
                 Thread.sleep(20000);
                 String actualPrice = keyword.getTextWithOutCharacters(PropertiesFile.getPropValue("CHECKOUT_LBL_TOTAL_PRICE"),"£");
                 logger.info(actualPrice);
-                String lastPrice = removeLastChar(actualPrice);
+                String lastPrice = keyword.removeLastChar(actualPrice);
                 keyword.simpleAssertEquals(totalPrice, lastPrice);
+                checkOutWithBankTransfer();
+                break;
+            case "more":
+                Float rawPrice1 = Float.valueOf(keyword.getTextWithOutCharacters(PropertiesFile.getPropValue("CHECKOUT_LBL_TOTAL_PRICE"),"£"));
+                String totalPrice1 = String.valueOf(moreMoney(rawPrice1, credit));
+                clickUseCredit(totalPrice1);
+                useCredit();
                 break;
             case "wrong":
                 keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),"-100");
@@ -410,12 +442,17 @@ public class ShoppingBagPage extends BasePage {
                 keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_USE_CREDIT"),10);
 //                keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_MESSAGE_USE_CREDIT"),
 //                        PropertiesFile.getPropValue("CHECKOUT_LBL_USE_CREDIT"));
+                break;
         }
-
-        checkOutWithBankTransfer();
     }
+
+    @Step("calculate the actual money")
     public Float calculateMoney(float total, float storeCredit){
         return total - storeCredit;
+    }
+    @Step("calculate the actual money > total money")
+    public Float moreMoney(float total, float storeCredit){
+        return total + storeCredit;
     }
 
 }

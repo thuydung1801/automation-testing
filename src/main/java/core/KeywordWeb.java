@@ -84,8 +84,15 @@ public class KeywordWeb {
     public void sendKeys(String element, String content){
         logger.info("send keys" + element);
         driver.findElement(By.xpath(element)).sendKeys(content);
-
     }
+    public void sendKeys1(String element, String content){
+        logger.info("send keys" + element);
+        driver.findElement(By.xpath(PropertiesFile.getPropValue(element))).sendKeys(PropertiesFile.getPropValue(content));
+    }
+    public String removeLastChar(String str) {
+        return str.isEmpty()? "": str.substring(0, str.length() - Character.charCount(str.codePointBefore(str.length())));
+    }
+
     public void reLoadPage() {
         logger.info("ReLoad Page...");
         driver.navigate().refresh();
