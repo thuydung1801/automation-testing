@@ -97,7 +97,7 @@ public class ProductDetailPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("PRD_CLICK_PRODUCT"));
 
     }
-    public void testCase_PRD_Info1() throws InterruptedException {
+    public void showImgProduct() throws InterruptedException {
 //        productInfo();
         System.out.printf("-----test 1: Show  detail image" +"\n");
         keyword.click(PropertiesFile.getPropValue("PRD_SHOW_IMG"));
@@ -106,7 +106,7 @@ public class ProductDetailPage extends BasePage {
         System.out.printf("=> test 1 done"+"\n");
 
     }
-    public void testCase_PRD_Info2() throws InterruptedException {
+    public void chooseDefaultOption() throws InterruptedException {
 //        productInfo();
         System.out.printf("-----test 2: Default option "+"\n");
         selectOption();
@@ -121,7 +121,7 @@ public class ProductDetailPage extends BasePage {
         clickAddCart();
         System.out.printf("=>test 2.2 done"+"\n");
     }
-    public void testCase_PRD_Info3() throws InterruptedException {
+    public void chooseOptionFreeSize() throws InterruptedException {
         System.out.printf("---------test 3:check optionFreeSize " +"\n");
         keyword.openNewTab(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
         optionFreeSize();
@@ -138,27 +138,27 @@ public class ProductDetailPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("PRD_FINDSIZE"));
 
     }
-    public void optionFindSize1() throws InterruptedException {
+    public void optionFindSizeWithInpSuccess() throws InterruptedException {
         commonFindSize();
         ipFindSize("PRD_DATA_FIRSTNAME", "PRD_DATA_LASTNAME", "PRD_DATA_EMAIL",
                 "PRD_DATA_STREET", Integer.parseInt(PropertiesFile.getPropValue("PRD_DATA_CODE")),
                 "PRD_DATA_CITY");
 
     }
-
-
-    public void optionFindSize2() throws InterruptedException{
+    public void optionFindSizeWithInpNull() throws InterruptedException{
         commonFindSize();
 //        keyword.openNewTab(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
         ipFindSize("DATA_NULL","DATA_NULL","DATA_NULL",
                 "DATA_NULL", Integer.parseInt((PropertiesFile.getPropValue("PRD_DATA_CODE"))),
                 "DATA_NULL");
+        checkVerifyInputNull();
     }
-    public void optionFindSize3() throws InterruptedException{
+    public void optionFindSizeWithInpEmailError() throws InterruptedException{
         commonFindSize();
         ipFindSize("DATA_NULL","DATA_NULL","DATA_ERROR",
                 "PRD_DATA_STREET", Integer.parseInt(PropertiesFile.getPropValue("PRD_DATA_CODE")),
                 "PRD_DATA_CITY");
+        checkVerifyInputWithEmailError();
     }
     public void optionDimensionGuide() throws InterruptedException {
 //        setUp();
@@ -176,6 +176,14 @@ public class ProductDetailPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("PRD_FREESIZE"));
 
     }
+    public void checkVerifyInputNull(){
+        keyword.assertEquals(PropertiesFile.getPropValue("DATA_MESSAGES_NULL"),
+                PropertiesFile.getPropValue("TEXT_ERROR"));
+    }
+    public void checkVerifyInputWithEmailError(){
+        keyword.assertEquals(PropertiesFile.getPropValue("DATA_MESSAGES_EMAIL"),
+                PropertiesFile.getPropValue("TEXT_ERROR_EMAIL"));
+    }
     public void ipFindSize(String firstName, String lastName, String email, String street,int code, String city) throws InterruptedException {
         keyword.imWait(5);
         keyword.sendKeys(PropertiesFile.getPropValue("PRD_TEXT_FIRSTNAME"),PropertiesFile.getPropValue(firstName));
@@ -192,20 +200,6 @@ public class ProductDetailPage extends BasePage {
 
             keyword.click(PropertiesFile.getPropValue("PRD_CHECK"));
             keyword.click(PropertiesFile.getPropValue("PRD_BTN_SUBMIT"));
-
-            if(keyword.verifyElementVisible(PropertiesFile.getPropValue("TEXT_ERROR"))){
-
-                System.out.printf("Error...." + "\n");
-            }else{
-                System.out.printf("Continue..." + "\n");
-            }
-
-
-            keyword.deleteInput();
-            Thread.sleep(5000);
-//        }
-
-
 
     }
 

@@ -1,21 +1,44 @@
-INFO  | 2022-11-14 17:27:37 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:34) - Open browser
-INFO  | 2022-11-14 17:27:39 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
-INFO  | 2022-11-14 17:27:39 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
-INFO  | 2022-11-14 17:27:40 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:49) - open browser successfullyCHROME
-INFO  | 2022-11-14 17:27:40 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:52) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-14 17:27:40 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - url: [Ljava.lang.String;@e993715
-INFO  | 2022-11-14 17:27:41 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:144) - Maximizing browser window...
-INFO  | 2022-11-14 17:27:41 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:181) - login by authen link withtest !test123!
-INFO  | 2022-11-14 17:28:06 | [main] core.KeywordWeb (KeywordWeb.java:click:75) - click//button[@class='amgdprcookie-button -allow']
-INFO  | 2022-11-14 17:28:08 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:260) -  scrolling to position 
-INFO  | 2022-11-14 17:28:32 | [main] core.KeywordWeb (KeywordWeb.java:click:75) - click//a[@class='btn-stay-here geoip-close']
-INFO  | 2022-11-14 17:28:37 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:153) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
-INFO  | 2022-11-14 17:29:16 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:252) - scrollDown to //*[@id="customer-reviews"]/div[1]/div[1]/div[2]/a[1]
-INFO  | 2022-11-14 17:29:16 | [main] core.KeywordWeb (KeywordWeb.java:imWait:307) - implicitlyWait
-INFO  | 2022-11-14 17:29:16 | [main] core.KeywordWeb (KeywordWeb.java:click:75) - click//*[@id="customer-reviews"]/div[1]/div[1]/div[2]/a[1]
-INFO  | 2022-11-14 17:29:26 | [main] core.KeywordWeb (KeywordWeb.java:click:75) - click//*[@id="customer-reviews"]/div[1]/div[1]/div[2]/a[5]
-INFO  | 2022-11-14 17:29:26 | [main] core.KeywordWeb (KeywordWeb.java:imWait:307) - implicitlyWait
-INFO  | 2022-11-14 17:29:27 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:153) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
-INFO  | 2022-11-14 17:30:11 | [main] core.KeywordWeb (KeywordWeb.java:imWait:307) - implicitlyWait
-INFO  | 2022-11-14 17:30:11 | [main] core.KeywordWeb (KeywordWeb.java:click:75) - click//div[@class='select-styled']
-INFO  | 2022-11-14 17:30:11 | [main] core.KeywordWeb (KeywordWeb.java:imWait:307) - implicitlyWait
+INFO  | 2022-11-15 17:38:53 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:34) - Open browser
+INFO  | 2022-11-15 17:38:54 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
+INFO  | 2022-11-15 17:38:54 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
+INFO  | 2022-11-15 17:38:56 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:49) - open browser successfullyCHROME
+INFO  | 2022-11-15 17:38:56 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:52) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-15 17:38:56 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - url: [Ljava.lang.String;@6cee903a
+INFO  | 2022-11-15 17:38:57 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:144) - Maximizing browser window...
+INFO  | 2022-11-15 17:38:57 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:181) - login by authen link withtest !test123!
+INFO  | 2022-11-15 17:39:13 | [main] core.KeywordWeb (KeywordWeb.java:click:75) - click//button[@class='amgdprcookie-button -allow']
+INFO  | 2022-11-15 17:39:15 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:260) -  scrolling to position 
+INFO  | 2022-11-15 17:39:28 | [main] core.KeywordWeb (KeywordWeb.java:click:75) - click//a[@class='btn-stay-here geoip-close']
+INFO  | 2022-11-15 17:39:33 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:153) - Navigating to URL...https://dev3.glamira.com/glde/gift-card/
+INFO  | 2022-11-15 17:40:03 | [main] core.KeywordWeb (KeywordWeb.java:imWait:307) - implicitlyWait
+INFO  | 2022-11-15 17:40:03 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:312) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 17:40:03 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//input[@placeholder='Ann Walker']
+INFO  | 2022-11-15 17:40:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//div[@class ='amcard-form-container']/div[2]/input[1]
+INFO  | 2022-11-15 17:40:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//textarea[@name='am_giftcard_message']
+INFO  | 2022-11-15 17:40:27 | [main] core.KeywordWeb (KeywordWeb.java:click:75) - click//*[@id="product-addtocart-button"]
+INFO  | 2022-11-15 17:40:29 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:153) - Navigating to URL...https://dev3.glamira.com/glde/gift-card/
+INFO  | 2022-11-15 17:40:31 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//*[@id="cardInfo"]/div[1]/div[1]/div/div/div/div/input[1]
+INFO  | 2022-11-15 17:40:34 | [main] core.KeywordWeb (KeywordWeb.java:imWait:307) - implicitlyWait
+INFO  | 2022-11-15 17:40:34 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:312) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 17:40:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//input[@placeholder='Ann Walker']
+INFO  | 2022-11-15 17:40:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//div[@class ='amcard-form-container']/div[2]/input[1]
+INFO  | 2022-11-15 17:40:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//textarea[@name='am_giftcard_message']
+INFO  | 2022-11-15 17:40:55 | [main] core.KeywordWeb (KeywordWeb.java:click:75) - click//*[@id="product-addtocart-button"]
+INFO  | 2022-11-15 17:40:55 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:233) - compare from Please, enter valid value with //span[@class='amcard-warning mage-error']
+INFO  | 2022-11-15 17:40:55 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:233) - compare from Bitte geben Sie eine gültige E-Mail Adresse ein. Zum Beispiel max@muster.de with //div[@id='am_giftcard_recipient_email-error']
+INFO  | 2022-11-15 17:40:55 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:153) - Navigating to URL...https://dev3.glamira.com/glde/gift-card/
+INFO  | 2022-11-15 17:41:13 | [main] core.KeywordWeb (KeywordWeb.java:click:75) - click//label[@class='amcard-label-block -price -active']
+INFO  | 2022-11-15 17:41:13 | [main] core.KeywordWeb (KeywordWeb.java:imWait:307) - implicitlyWait
+INFO  | 2022-11-15 17:41:13 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:312) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 17:41:13 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//input[@placeholder='Ann Walker']
+INFO  | 2022-11-15 17:41:13 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//div[@class ='amcard-form-container']/div[2]/input[1]
+INFO  | 2022-11-15 17:41:13 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//textarea[@name='am_giftcard_message']
+INFO  | 2022-11-15 17:41:33 | [main] core.KeywordWeb (KeywordWeb.java:click:75) - click//*[@id="product-addtocart-button"]
+INFO  | 2022-11-15 17:41:35 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:153) - Navigating to URL...https://dev3.glamira.com/glde/gift-card/
+INFO  | 2022-11-15 17:41:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//*[@id="cardInfo"]/div[1]/div[1]/div/div/div/div/input[1]
+INFO  | 2022-11-15 17:41:39 | [main] core.KeywordWeb (KeywordWeb.java:imWait:307) - implicitlyWait
+INFO  | 2022-11-15 17:41:39 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:312) - webDriverWaitForElementPresent
+INFO  | 2022-11-15 17:41:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//input[@placeholder='Ann Walker']
+INFO  | 2022-11-15 17:41:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//div[@class ='amcard-form-container']/div[2]/input[1]
+INFO  | 2022-11-15 17:41:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:102) - send keys//textarea[@name='am_giftcard_message']
+INFO  | 2022-11-15 17:41:59 | [main] core.KeywordWeb (KeywordWeb.java:click:75) - click//*[@id="product-addtocart-button"]

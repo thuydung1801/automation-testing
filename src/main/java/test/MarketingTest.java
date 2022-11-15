@@ -13,18 +13,18 @@ public class MarketingTest extends BaseTest {
     }
     @Test(priority = 1)
     public void testCase_GC_03() throws InterruptedException {
-        testMarketing.case_GC03();
+        testMarketing.giftCardInpWithNull();
     }
     @Test(priority = 2)
     public void testCase_GC_04() throws InterruptedException {
-        testMarketing.case_GC04();
+        testMarketing.giftCardInpWithEmailAndAmountError();
     }
     @Test(priority = 3)
     public void testCase_GC_01() throws InterruptedException {
-        testMarketing.case_GC01();
+        testMarketing.giftCardWithAmount();
     }
     @Test(priority = 4)
     public void testCase_GC_02() throws InterruptedException {
-        testMarketing.case_GC02();
+        testMarketing.giftCardWithOtherAmount();
     }
 }

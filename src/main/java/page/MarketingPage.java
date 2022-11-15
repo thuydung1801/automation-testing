@@ -33,40 +33,47 @@ public class MarketingPage extends BasePage {
         keyword.sendKeys(PropertiesFile.getPropValue("MRT_INP_MESSAGE"),PropertiesFile.getPropValue(mess));
         Thread.sleep(20000);
         keyword.click(PropertiesFile.getPropValue(submit));
-        if(keyword.verifyElementVisible(PropertiesFile.getPropValue("TEXT_ERROR")) ||
-                keyword.verifyElementVisible(PropertiesFile.getPropValue("MRT_TEXT_ERROR"))){
 
-            System.out.printf("Error...." + "\n");
-        }else{
-            System.out.printf("Continue..." + "\n");
-        }
-        keyword.openNewTab(PropertiesFile.getPropValue("MRT_URL"));
-        Thread.sleep(2000);
+    }
+    public void checkVerifyInputNull(){
+        keyword.assertEquals(PropertiesFile.getPropValue("DATA_MESSAGES_NULL"),
+                PropertiesFile.getPropValue("TEXT_ERROR"));
+    }
+    public void checkVerifyInputWithEmailAndAmountError(){
+        keyword.assertEquals(PropertiesFile.getPropValue("DATA_MESSAGES_NUMBER"),
+                PropertiesFile.getPropValue("TEXT_ERROR_NUMBER"));
+
+        keyword.assertEquals(PropertiesFile.getPropValue("DATA_MESSAGES_EMAIL"),
+                PropertiesFile.getPropValue("MRT_TEXT_ERROR_EMAIL"));
 
     }
 
-    public void case_GC03() throws InterruptedException {
+    public void giftCardInpWithNull() throws InterruptedException {
         setUp();
         Thread.sleep(5000);
         keyword.navigateToUrl(PropertiesFile.getPropValue("MRT_URL"));
         ipData("DATA_NULL","DATA_NULL","DATA_NULL","MRT_SUBMIT");
+        checkVerifyInputNull();
 
     }
-    public void case_GC04() throws InterruptedException {
+    public void giftCardInpWithEmailAndAmountError() throws InterruptedException {
 //        setUp();
+        keyword.openNewTab(PropertiesFile.getPropValue("MRT_URL"));
         keyword.sendKeys(PropertiesFile.getPropValue("MRT_INP_AMOUNT"), PropertiesFile.getPropValue("MRT_INP_DATA_AMOUNT_ERROR"));
         ipData("MRT_INP_DATA_NAME","DATA_ERROR","MRT_INP_DATA_MESSAGE","MRT_SUBMIT");
-
+        checkVerifyInputWithEmailAndAmountError();
 
     }
-    public void case_GC01() throws InterruptedException {
+    public void giftCardWithAmount() throws InterruptedException {
 //        setUp();
+        keyword.openNewTab(PropertiesFile.getPropValue("MRT_URL"));
         keyword.click( PropertiesFile.getPropValue("MRT_AMOUNT"));
         ipData("MRT_INP_DATA_NAME","MRT_INP_DATA_EMAIL","MRT_INP_DATA_MESSAGE","MRT_SUBMIT");
 
     }
-    public void case_GC02() throws InterruptedException {
+    public void giftCardWithOtherAmount() throws InterruptedException {
 //        setUp();
+        keyword.openNewTab(PropertiesFile.getPropValue("MRT_URL"));
         keyword.sendKeys(PropertiesFile.getPropValue("MRT_INP_AMOUNT"), PropertiesFile.getPropValue("MRT_INP_DATA_AMOUNT"));
         ipData("MRT_INP_DATA_NAME","MRT_INP_DATA_EMAIL","MRT_INP_DATA_MESSAGE","MRT_SUBMIT");
 

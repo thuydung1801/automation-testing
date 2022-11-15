@@ -15,17 +15,17 @@ public class CustomerServiceTest extends BaseTest {
     }
     @Test(priority = 1, description = "My product detail/ Filter _ Filter reviews with ratting option")
     public void filter_ratting_01() throws InterruptedException {
-        testCustomerService.Filter_01_02();
+        testCustomerService.filterWithRatting();
 
     }
     @Test(priority = 2,description = "Filter review with checkbox")
     public void filter_checkBox() throws InterruptedException {
-        testCustomerService.Filter_checkBox();
+        testCustomerService.filterWithCheckBox();
 
     }
     @Test(priority = 3,description = "Filter review with checksort")
     public void filter_checkSort() throws InterruptedException {
-        testCustomerService.Filter_checkSort();
+        testCustomerService.FilterWithCheckSort();
 
     }
     @Test(priority = 4,description = "Filter review with checkbox and ratting")
@@ -35,12 +35,12 @@ public class CustomerServiceTest extends BaseTest {
     }
     @Test(priority = 5,description = "Filter review with checksort and ratting")
     public void filter_checkSort_and_ratting () throws InterruptedException {
-        testCustomerService.Filter_checkSort_and_ratting();
+        testCustomerService.filtercWithCheckSortAndRatting();
 
     }
     @Test(priority = 6,description = "Filter review with checksort and checkbox")
     public void filter_checkSort_and_checkSort () throws InterruptedException {
-        testCustomerService.Filter_checkBox_and_checkSort();
+        testCustomerService.FilterCheckBoxAndCheckSort();
 
     }
 

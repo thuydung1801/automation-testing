@@ -40,7 +40,7 @@ public class CustomerServicePage extends BasePage {
         keyword.randomElement(PropertiesFile.getPropValue("CUS_PRD_FILTER_CHECKSORT"));
     }
 
-    public void Filter_01_02() throws InterruptedException {
+    public void filterWithRatting() throws InterruptedException {
         setUp();
         keyword.scrollDownToElement(PropertiesFile.getPropValue("CUS_PRD_FILTER_RATTING_1"));
         keyword.imWait(2);
@@ -53,10 +53,10 @@ public class CustomerServicePage extends BasePage {
 
 
     }
-    public void Filter_checkBox() throws InterruptedException {
+    public void filterWithCheckBox() throws InterruptedException {
         keyword.randomConcatElement(PropertiesFile.getPropValue("CUS_PRD_FILTER_CHECKBOX_ELE"),5);
     }
-    public void Filter_checkSort() throws InterruptedException {
+    public void FilterWithCheckSort() throws InterruptedException {
         commonLoad();
         keyword.imWait(2);
         clickDropdown();
@@ -65,20 +65,20 @@ public class CustomerServicePage extends BasePage {
     }
     public void Filter_checkBox_and_ratting() throws InterruptedException {
         keyword.click(PropertiesFile.getPropValue("CUS_PRD_FILTER_RATTING_1"));
-        Filter_checkBox();
+        filterWithCheckBox();
         System.out.printf("done checkbox-ratting" + "\n");
         commonLoad();
     }
-    public void Filter_checkSort_and_ratting() throws InterruptedException {
+    public void filtercWithCheckSortAndRatting() throws InterruptedException {
         keyword.click(PropertiesFile.getPropValue("CUS_PRD_FILTER_RATTING_1"));
         keyword.imWait(2);
         clickDropdown();
         System.out.printf("done checksort-ratting"+"\n");
 
     }
-    public void Filter_checkBox_and_checkSort() throws InterruptedException {
+    public void FilterCheckBoxAndCheckSort() throws InterruptedException {
 
-        Filter_checkBox();
+        filterWithCheckBox();
         keyword.imWait(2);
         clickDropdown();
         System.out.printf("done checksort-checkbox"+"\n");
