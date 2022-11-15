@@ -56,14 +56,14 @@ public class CustomerServicePage extends BasePage {
     public void filterWithCheckBox() throws InterruptedException {
         keyword.randomConcatElement(PropertiesFile.getPropValue("CUS_PRD_FILTER_CHECKBOX_ELE"),5);
     }
-    public void FilterWithCheckSort() throws InterruptedException {
+    public void filterWithCheckSort() throws InterruptedException {
         commonLoad();
         keyword.imWait(2);
         clickDropdown();
         commonLoad();
 
     }
-    public void Filter_checkBox_and_ratting() throws InterruptedException {
+    public void filterCheckBoxAndRatting() throws InterruptedException {
         keyword.click(PropertiesFile.getPropValue("CUS_PRD_FILTER_RATTING_1"));
         filterWithCheckBox();
         System.out.printf("done checkbox-ratting" + "\n");
@@ -76,7 +76,7 @@ public class CustomerServicePage extends BasePage {
         System.out.printf("done checksort-ratting"+"\n");
 
     }
-    public void FilterCheckBoxAndCheckSort() throws InterruptedException {
+    public void filterCheckBoxAndCheckSort() throws InterruptedException {
 
         filterWithCheckBox();
         keyword.imWait(2);

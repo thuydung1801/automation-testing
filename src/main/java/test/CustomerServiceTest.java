@@ -25,12 +25,12 @@ public class CustomerServiceTest extends BaseTest {
     }
     @Test(priority = 3,description = "Filter review with checksort")
     public void filter_checkSort() throws InterruptedException {
-        testCustomerService.FilterWithCheckSort();
+        testCustomerService.filterWithCheckSort();
 
     }
     @Test(priority = 4,description = "Filter review with checkbox and ratting")
     public void filter_checkBox_and_ratting() throws InterruptedException {
-        testCustomerService.Filter_checkBox_and_ratting();
+        testCustomerService.filterCheckBoxAndRatting();
 
     }
     @Test(priority = 5,description = "Filter review with checksort and ratting")
@@ -40,7 +40,7 @@ public class CustomerServiceTest extends BaseTest {
     }
     @Test(priority = 6,description = "Filter review with checksort and checkbox")
     public void filter_checkSort_and_checkSort () throws InterruptedException {
-        testCustomerService.FilterCheckBoxAndCheckSort();
+        testCustomerService.filterCheckBoxAndCheckSort();
 
     }
 
