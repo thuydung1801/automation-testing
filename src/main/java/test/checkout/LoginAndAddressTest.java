@@ -2,9 +2,6 @@ package test.checkout;
 
 import core.AllureTestListener;
 import core.BaseTest;
-import core.LogHelper;
-import org.apache.log4j.Priority;
-import org.slf4j.Logger;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import page.checkout.LoginAndAddressPage;
@@ -14,7 +11,6 @@ import page.home.RegisterPage;
 
 @Listeners({AllureTestListener.class})
 public class LoginAndAddressTest extends BaseTest {
-    private static Logger logger = LogHelper.getLogger();
     private LoginAndAddressPage objLoginAdrPage;
     private LoginPage objLogin;
     private RegisterPage objRegis;
@@ -23,8 +19,8 @@ public class LoginAndAddressTest extends BaseTest {
         super();
     }
 
-    @Test(priority = 1)
-    public void testcase_01_checkOutOneProduct() throws InterruptedException {
+    @Test(priority = 1, description = "Choose any product to pay")
+    public void testCase_01_checkOutOneProduct() throws InterruptedException {
         objLoginAdrPage = new LoginAndAddressPage(this.keyword);
         objLogin = new LoginPage(this.keyword);
         objRegis = new RegisterPage(this.keyword);
@@ -32,31 +28,46 @@ public class LoginAndAddressTest extends BaseTest {
         objRegis.acceptAllCookies();
         objRegis.chooseLanguages();
         objLoginAdrPage.goToPageProduct();
-        objLoginAdrPage.clickPtnAddProduct();
+        objLoginAdrPage.clickButtonAddProduct();
         objLoginAdrPage.btnSubmitCheckOut();
         Thread.sleep(2000);
     }
 
-    @Test(priority = 2)
-    public void testcase_LA_05() throws InterruptedException {
+    @Test(priority = 2, description = "manipulate the address input form confirm the fields")
+    public void testCase_LA_05() throws InterruptedException {
         objLoginAdrPage.clickBtnSubmit();
     }
 
-    @Test(priority = 3)
-    public void testcase_LA06() throws InterruptedException {
+    @Test(priority = 3, description = "enter exceptions")
+    public void testCase_LA06() throws InterruptedException {
         Thread.sleep(1000);
         objLoginAdrPage.enterDataUserName();
-        objLoginAdrPage.enterDataEmial();
-        objLoginAdrPage.enterDataPhone();
-        objLoginAdrPage.enterDataCompany();
-        objLoginAdrPage.enterDataStreet();
-        objLoginAdrPage.enterDataZipCode();
-        objLoginAdrPage.enterDataCity();
+        objLoginAdrPage.enterDataEmail();
+        objLoginAdrPage.senKey(
+                "CHECKOUT_DATA_PHONE",
+                "CHECKOUT_DATA_PHONE_ENTER_FAIL"
+        );
+        objLoginAdrPage.senKey(
+                "CHECKOUT_DATA_COMPANY",
+                "CHECKOUT_DATA_COMPANY_ENTER"
+        );
+        objLoginAdrPage.senKey(
+                "CHECKOUT_DATA_STREET",
+                "CHECKOUT_DATA_STREET_ENTER"
+        );
+        objLoginAdrPage.senKey(
+                "CHECKOUT_DATA_ZIPCODE",
+                "CHECKOUT_DATA_ZIPCODE_ENTER"
+        );
+        objLoginAdrPage.senKey(
+                "CHECKOUT_DATA_CITY",
+                "CHECKOUT_DATA_CITY_ENTER"
+        );
         objLoginAdrPage.clickBtnSubmit();
     }
 
     @Test(priority = 4, description = "Enter Email Fail (wrong format)")
-    public void testcase_LA07() throws InterruptedException {
+    public void testCase_LA07() throws InterruptedException {
         objLoginAdrPage.enterDataEmailFail1();
         objLoginAdrPage.clearTextAndSendKey(
                 "CHECKOUT_DATA_CONFIRMEMAIL",
@@ -66,7 +77,7 @@ public class LoginAndAddressTest extends BaseTest {
     }
 
     @Test(priority = 5, description = "")
-    public void tescase_LA08() throws InterruptedException {
+    public void testCase_LA08() throws InterruptedException {
         objLoginAdrPage.enterDataEmailFail2("CHECKOUT_MESSAGE_FAILE_EMAIL03");
         objLoginAdrPage.clearTextAndSendKey(
                 "CHECKOUT_DATA_CONFIRMEMAIL",
@@ -79,7 +90,7 @@ public class LoginAndAddressTest extends BaseTest {
     }
 
     @Test(priority = 6, description = "Enter Phone Fail (wrong format) ")
-    public void testcase_LA09() throws InterruptedException {
+    public void testCase_LA09() throws InterruptedException {
         objLoginAdrPage.enterDataPhoneFail1
                 (
                         "CHECKOUT_DATA_MESSAGE_PHONE",
@@ -92,51 +103,57 @@ public class LoginAndAddressTest extends BaseTest {
                 (
                         "CHECKOUT_BOOX_MESSAGE_FAIL",
                         "CHECKOUT_BTN_CANCEL");
-        objLoginAdrPage.delete_reEnterTheAddress
-                (
-                        "CHECKOUT_DATA_STREET",
-                        "CHECKOUT_DATA_ZIPCODE",
-                        "CHECKOUT_DATA_CITY"
-                );
+
+        objLoginAdrPage.clearTextAndSendKey(
+                "CHECKOUT_DATA_STREET",
+                "CHECKOUT_DATA_STREET",
+                "CHECKOUT_DATA_STREET_ENTER01"
+        );
+        objLoginAdrPage.clearTextAndSendKey(
+                "CHECKOUT_DATA_ZIPCODE",
+                "CHECKOUT_DATA_ZIPCODE",
+                "CHECKOUT_DATA_ZIPCODE_ENTER01"
+        );
+        objLoginAdrPage.clearTextAndSendKey(
+                "CHECKOUT_DATA_CITY",
+                "CHECKOUT_DATA_CITY",
+                "CHECKOUT_DATA_CITY_ENTER01"
+        );
         objLoginAdrPage.clickBtnSubmit();
-    }
-
-    @Test(priority = 7, description = "")
-    public void testcase_LA10() throws InterruptedException {
-        objLoginAdrPage.updateEditTextName(
-                "CHECKOUT_DATA_LASTNAME",
-                "CHECKOUT_DATA_EDIT_NAME");
-
+        Thread.sleep(7000);
     }
 
     @Test(priority = 8, description = "Customer login\n")
-    public void testcase_LA18() throws InterruptedException {
+    public void testCase_LA18()  {
         objLoginAdrPage.goBack();
     }
 
-    @Test(priority = 9, description = "")
-    public void testcase_LA01() throws InterruptedException {
+    @Test(priority = 9, description = "manipulate the login form without entering information")
+    public void testCase_LA01()  {
         objLoginAdrPage.customerLogin();
     }
 
-    @Test(priority = 10, description = "Customer Login")
-    public void testcase_LA2() throws InterruptedException {
+    @Test(priority = 10, description = "Customer Login - Enter Data Email Error")
+    public void testCase_LA2() throws InterruptedException {
         objLoginAdrPage.LoginAngVerifyCustomerRegisWitInvalidhEmail(
                 "CHECKOUT_MESSAGE_EMAIL_ERROR",
                 "CHECKOUT_MESSAGE_PASSW_ERROR");
         objLoginAdrPage.customerLogin();
     }
 
-    @Test(priority = 11, description = "")
-    public void testcase_LA3() throws InterruptedException {
+    @Test(priority = 11, description = "re-enter email and password until correct")
+    public void testCase_LA3() throws InterruptedException {
         objLoginAdrPage.InvalidEmail
                 (
                         "CHECKOUT_MESSAGE_INVALID_LOGIN_OR_PASSW",
                         "CHECKOUT_DATA_EMAIL_ADDRESS",
                         "CHECKOUT_DATA_PASSWORD"
                 );
-
         objLoginAdrPage.customerLogin();
     }
 
+    @Test(priority = 12, description = "aa")
+    public void testCase_LA04()  {
+
+    }
 }

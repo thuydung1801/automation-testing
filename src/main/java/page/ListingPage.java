@@ -1,15 +1,8 @@
 package page;
 
 import core.*;
-import org.slf4j.Logger;
 
 public class ListingPage extends BasePage {
-    private static Logger logger = LogHelper.getLogger();
-
-    public ListingPage() {
-        super();
-    }
-
     public ListingPage(KeywordWeb key) {
         super(key);
     }
@@ -19,6 +12,7 @@ public class ListingPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
     }
 
+    // check filter section with selected information (shared operation group)
     public void checkFilterStonesAndVerify(String selectElement, String clickElementVerify, String verifyDisplay, String statusElement) throws InterruptedException {
         keyword.scrollDownToElement(PropertiesFile.getPropValue(selectElement));
         keyword.click(PropertiesFile.getPropValue(selectElement));
@@ -29,13 +23,7 @@ public class ListingPage extends BasePage {
         keyword.CheckIsDisplayElement(PropertiesFile.getPropValue(statusElement));
     }
 
-    public void scrollAndActive() throws InterruptedException {
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_SELECT_CARAT"));
-        keyword.click("LTP_SELECT_CARAT");
-        Thread.sleep(2000);
-//        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_VERIFY_DISPLAY_CARAT"), 10);
-    }
-
+    //go to AllProduct of listingPage section
     public void goToAllProduct(String allBtn, String btnSwitch) throws InterruptedException {
         keyword.navigateToUrl(PropertiesFile.getPropValue("BASE_URL_LISTINGPAGE"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"), 30);
@@ -54,12 +42,13 @@ public class ListingPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue(allBtn));
     }
 
-
-    public void deleteFilters() throws InterruptedException {
+    // delete function filter
+    public void deleteFilters()   {
         keyword.click(PropertiesFile.getPropValue("LTP_BTN_DELETEALL"));
     }
 
-    public void sort_prd() throws InterruptedException {
+    //Check sort button
+    public void sort_product() throws InterruptedException {
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_SHORT"), 30);
         Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LTP_SHORT"));
@@ -68,6 +57,7 @@ public class ListingPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("LTP_RELAVANCE"));
     }
 
+    //Check view button (status display state of product )
     public void viewBTN() throws InterruptedException {
         keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_TOOLlBAR"));
         Thread.sleep(1000);
@@ -77,6 +67,7 @@ public class ListingPage extends BasePage {
 
     }
 
+    //Check click popup message when clicking on the caption
     public void popupMessage() throws InterruptedException {
         keyword.imWait(3);
         keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_SCR_TOP"));
@@ -86,6 +77,7 @@ public class ListingPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("LTP_ICON_CLOSE_PP"));
     }
 
+    //Check save product
     public void LikeProduct(String btnViewDetail) throws InterruptedException {
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BOOKLIKE"), 50);
         Thread.sleep(1000);
@@ -97,7 +89,7 @@ public class ListingPage extends BasePage {
 
     }
 
-    public void subLikeProduct(String saveItem) throws InterruptedException {
+    public void subLikeProduct(String saveItem)  {
         keyword.imWait(2);
         keyword.scrollDownToElement(PropertiesFile.getPropValue(saveItem));
         keyword.imWait(2);

@@ -333,8 +333,8 @@ public class KeywordWeb {
         if (!stt) {
             System.out.println("Not selected");
         } else {
-           driver.navigate().back();
-            System.out.println("Checkbox selected" );
+            driver.navigate().back();
+            System.out.println("Checkbox selected");
         }
         return stt;
     }
@@ -385,6 +385,7 @@ public class KeywordWeb {
         Assert.assertEquals(expected, actual);
 
     }
-
-
+    public String removeLastChar(String str) {
+        return str.isEmpty() ? "" : str.substring(0, str.length() - Character.charCount(str.codePointBefore(str.length())));
+    }
 }
