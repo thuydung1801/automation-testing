@@ -36,37 +36,68 @@ public class ListingPageTest extends BaseTest {
                 "LTP_SELECT_PRECIOUS_STONE",
                 "LTP_VERIFY_SELECT_PRECIOUS_STONES_01",
                 "LTP_VERIFY_DISPLAY_PRECIOUS_STONES",
-                "LTP_CHECK_STT_ELEMENT_PRECIOUS");
+                "LTP_CHECK_STT_ELEMENT_PRECIOUS_01");
+        testListingPage.checkFilterStonesAndVerify(
+                "LTP_SELECT_SEMI_PRECIOUS_STONE",
+                "LTP_VERIFY_SELECT_SEMI_PRECIOUS_STONE_01",
+                "LTP_VERIFY_DISPLAY_SEMI_PRECIOUS_STONES",
+                "LTP_CHECK_STT_ELEMENT_SEMI_PRECIOUS_01"
+        );
+        testListingPage.checkFilterStonesAndVerify(
+                "LPT_SELECT_NATURAL_ZIRCON",
+                "LTP_VERIFY_SELECT_NATURAL_ZIRCON",
+                "LTP_VERIFY_DISPLAY_NATURAL_ZIRCON",
+                "LTP_CHECK_STT_ELEMENT_NATURAL_ZIRCON"
+        );
+        testListingPage.checkFilterStonesAndVerify(
+                "LTP_SELECT_COATED_TOPAZ",
+                "LTP_VERIFY_SELECT_COATED_TOPAZ",
+                "LTP_VERIFY_DISPLAY_COATED_TOPAZ",
+                "LTP_CHECK_STT_ELEMENT_COATED_TOPAZ"
+        );
+        testListingPage.checkFilterStonesAndVerify(
+                "LTP_SELECT_COLOR",
+                "LTP_CLICK_SELECT_COLOR",
+                "LTP_VERIFY_DISPLAY_COLOR",
+                "LTP_CHECK_STT_ELEMENT_COLOR"
+        );
+//        testListingPage.scrollAndActive();
+        testListingPage.checkFilterStonesAndVerify(
+                "LTP_SELECT_METAL",
+                "LTP_CLICK_SELECT_METAL",
+                "LTP_VERIFY_DISPLAY_METAL",
+                "LTP_CHECK_STT_ELEMENT_METAL"
+        );
     }
 
-//    @Test(priority = 3, description = "---DELETE FILTER")
-//    public void testcase_LTP02() throws InterruptedException {
-//        testListingPage.deleteFilters();
-//    }
+    @Test(priority = 3, description = "---DELETE FILTER")
+    public void testcase_LTP02() throws InterruptedException {
+        testListingPage.deleteFilters();
+    }
+
+    @Test(priority = 4, description = "---CHECK  VIEW SORT")
+    public void testcase_LTP03() throws InterruptedException {
+        testListingPage.sort_prd();
+    }
 //
-//    @Test(priority = 4, description = "---CHECK  VIEW SORT")
-//    public void testcase_LTP03() throws InterruptedException {
-//        testListingPage.sort_prd();
-//    }
+    @Test(priority = 5, description = "--- CHECK SELECT STATUS VIEW")
+    public void testcase_LTP04() throws InterruptedException {
+        testListingPage.viewBTN();
+    }
 //
-//    @Test(priority = 5, description = "--- CHECK SELECT STATUS VIEW")
-//    public void testcase_LTP04() throws InterruptedException {
-//        testListingPage.viewBTN();
-//    }
+    @Test(priority = 6, description = "---CHECK MESSAGE POPUP")
+    public void testcase_LTP05() throws InterruptedException {
+        Thread.sleep(1000);
+        testListingPage.popupMessage();
+    }
 //
-//    @Test(priority = 6, description = "---CHECK MESSAGE POPUP")
-//    public void testcase_LTP05() throws InterruptedException {
-//        Thread.sleep(1000);
-//        testListingPage.popupMessage();
-//    }
-//
-//    @Test(priority = 7, description = "---CHECK LIKE PRODUCT")
-//    public void testcase_LTP06() throws InterruptedException {
-//        Thread.sleep(1000);
-//        testListingPage.LikeProduct
-//                (
-//                        "LTP_BTN_VIEW_DETAIL_BOOKLIKE"
-//                );
-//        testListingPage.subLikeProduct("LTP_BTN_SAVED_ITEM");
-//    }
+    @Test(priority = 7, description = "---CHECK LIKE PRODUCT")
+    public void testcase_LTP06() throws InterruptedException {
+        Thread.sleep(1000);
+        testListingPage.LikeProduct
+                (
+                        "LTP_BTN_VIEW_DETAIL_BOOKLIKE"
+                );
+        testListingPage.subLikeProduct("LTP_BTN_SAVED_ITEM");
+    }
 }

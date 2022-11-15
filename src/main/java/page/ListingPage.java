@@ -19,14 +19,26 @@ public class ListingPage extends BasePage {
         keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
     }
 
-    public void scrollToElementAndClick(String veriFyDisplay, String scrollToElement, String clickElement) throws InterruptedException {
-
+    public void checkFilterStonesAndVerify(String selectElement, String clickElementVerify, String verifyDisplay, String statusElement) throws InterruptedException {
+        keyword.scrollDownToElement(PropertiesFile.getPropValue(selectElement));
+        keyword.click(PropertiesFile.getPropValue(selectElement));
+        Thread.sleep(2000);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(clickElementVerify), 20);
+        keyword.click(PropertiesFile.getPropValue(clickElementVerify));
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(verifyDisplay), 20);
+        keyword.CheckIsDisplayElement(PropertiesFile.getPropValue(statusElement));
     }
 
+    public void scrollAndActive() throws InterruptedException {
+        keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_SELECT_CARAT"));
+        keyword.click("LTP_SELECT_CARAT");
+        Thread.sleep(2000);
+//        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_VERIFY_DISPLAY_CARAT"), 10);
+    }
 
     public void goToAllProduct(String allBtn, String btnSwitch) throws InterruptedException {
         keyword.navigateToUrl(PropertiesFile.getPropValue("BASE_URL_LISTINGPAGE"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"), 20);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"), 30);
         keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
         Thread.sleep(1000);
         keyword.scrollToPosition();
@@ -35,38 +47,24 @@ public class ListingPage extends BasePage {
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_TEXT_PAGE"), 50);
         keyword.hoverAndClick(PropertiesFile.getPropValue("LTP_TEXT_MOVE"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_CLICK_PRODUCT"), 10);
-        keyword.imWait(7);
+        keyword.imWait(3);
         keyword.click(PropertiesFile.getPropValue("LTP_CLICK_PRODUCT"));
-        keyword.imWait(7);
+        keyword.imWait(3);
         keyword.scrollDownToElement(PropertiesFile.getPropValue(allBtn));
         keyword.click(PropertiesFile.getPropValue(allBtn));
     }
 
-    public void checkFilterStonesAndVerify(String selectElement, String clickElementVerify, String verifyDisplay, String statusElement) throws InterruptedException {
-        keyword.scrollDownToElement(PropertiesFile.getPropValue(selectElement));
-        keyword.click(PropertiesFile.getPropValue(selectElement));
-        Thread.sleep(2000);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(clickElementVerify), 30);
-        keyword.click(PropertiesFile.getPropValue(clickElementVerify));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue(verifyDisplay), 30);
-        keyword.CheckIsDisplayElement(PropertiesFile.getPropValue(statusElement));
-    }
 
     public void deleteFilters() throws InterruptedException {
-        keyword.getCurrentPageUrl();
-        keyword.click(PropertiesFile.getPropValue("LTP_BTN_DELETE_FILTER"));
-        Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("LTP_BTN_DELETE_FILTER(1)"));
-        Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("LTP_BTN_DELETEALL"));
     }
 
     public void sort_prd() throws InterruptedException {
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_SHORT"), 20);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_SHORT"), 30);
         Thread.sleep(1000);
         keyword.click(PropertiesFile.getPropValue("LTP_SHORT"));
         Thread.sleep(1000);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BOOK_SHORT"), 10);
+        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LTP_BOOK_SHORT"), 30);
         keyword.click(PropertiesFile.getPropValue("LTP_RELAVANCE"));
     }
 

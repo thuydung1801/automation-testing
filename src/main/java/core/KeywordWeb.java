@@ -329,14 +329,14 @@ public class KeywordWeb {
 
     public boolean CheckIsDisplayElement(String element) {
         logger.info("Check status element btn radio");
-        boolean str = driver.findElement(By.xpath(element)).isDisplayed();
-        if (!str) {
+        boolean stt = driver.findElement(By.xpath(element)).isDisplayed();
+        if (!stt) {
             System.out.println("Not selected");
         } else {
-            driver.navigate().back();
-            System.out.println("Checkbox selected");
+           driver.navigate().back();
+            System.out.println("Checkbox selected" );
         }
-        return str;
+        return stt;
     }
 
     // wait keywords
