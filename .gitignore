@@ -1,2 +1,4 @@
 # Default ignored files
-/target
+/target/allure-results
+/screenshots
+/testlog

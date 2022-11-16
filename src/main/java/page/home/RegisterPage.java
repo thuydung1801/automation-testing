@@ -17,7 +17,7 @@ public class RegisterPage extends BasePage {
 
         Thread.sleep(7000);
         if(keyword.verifyElementPresent(PropertiesFile.getPropValue("BTN_COOKIES"))){
-            keyword.click(PropertiesFile.getPropValue("BTN_COOKIES"));
+            keyword.click("BTN_COOKIES");
         }
 
     }
@@ -26,7 +26,7 @@ public class RegisterPage extends BasePage {
         keyword.scrollToPosition();
         Thread.sleep(5000);
         if(keyword.verifyElementPresent(PropertiesFile.getPropValue("LOGIN_BTN_LANGUAGE"))){
-            keyword.click(PropertiesFile.getPropValue("LOGIN_BTN_LANGUAGE"));
+            keyword.click("LOGIN_BTN_LANGUAGE");
         }
     }
     public void registFail(){
