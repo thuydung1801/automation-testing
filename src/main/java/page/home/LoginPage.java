@@ -31,8 +31,6 @@ public class LoginPage extends BasePage {
                 PropertiesFile.getPropValue("LOGIN_DATA_PASSWORD"));
         Thread.sleep(2000);
         keyword.click(PropertiesFile.getPropValue("LOGIN_BTN_SUBMITLOGIN"));
-        //keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LOGIN_LBL_MESSAGE"),10);
-
 
     }
 }

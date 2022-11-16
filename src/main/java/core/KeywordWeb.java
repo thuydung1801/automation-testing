@@ -1,15 +1,14 @@
 package core;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.*;
 import org.slf4j.Logger;
+import org.testng.Assert;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -23,13 +22,15 @@ import java.util.concurrent.TimeUnit;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
-import org.testng.Assert;
-import org.testng.ITestResult;
+
 
 public class KeywordWeb {
     private static Logger logger = LogHelper.getLogger();
     public static WebDriver driver;
-    public KeywordWeb() {}
+
+    public KeywordWeb() {
+    }
+
     public void openBrowser(String browser, String... url) {
         logger.info("Open browser");
         switch (browser.toUpperCase()) {
@@ -48,42 +49,45 @@ public class KeywordWeb {
         }
         logger.info("open browser successfully" + browser);
         String rawUrl = url.length > 0 ? url[0] : "";
-        if (rawUrl!= null && !rawUrl.isEmpty()){
+        if (rawUrl != null && !rawUrl.isEmpty()) {
             logger.info("go to url: " + rawUrl);
             logger.info("url: " + url);
             driver.get(rawUrl);
         }
     }
 
-    public void closeBrowser(){
+    public void closeBrowser() {
         logger.info("close browser: ");
         driver.quit();
     }
-    public void clearText(String element){
+
+    public void clearText(String element) {
         logger.info("clearText");
         driver.findElement(By.xpath(element)).clear();
     }
-    public void click(String element){
-        logger.info("click" + element);
+
+    public void click(String element) {
         driver.findElement(By.xpath(element)).click();
+        logger.info("click" + element);
     }
-    public void clickByCss(String element){
+
+    public void clickUseCss(String element) {
         logger.info("click" + element);
         driver.findElement(By.cssSelector(element)).click();
     }
-    public String getText(String element){
-        logger.info("get Text of"+ element);
-        String text = driver.findElement(By.xpath(element)).getText();
-        return text;
-    }
-    public String getTextWithOutCharacters(String element, String oldChar){
-        logger.info("getText of "+ element+" without "+ oldChar);
-        return driver.findElement(By.xpath(element)).getText().replace(oldChar,"");
+
+    public void clickByCss(String element) {
+        logger.info("click" + element);
+        driver.findElement(By.cssSelector(element)).click();
     }
 
     public void sendKeys(String element, String content){
         logger.info("send keys" + element);
         driver.findElement(By.xpath(element)).sendKeys(content);
+    }
+    public String getTextWithOutCharacters(String element, String oldChar){
+        logger.info("getText of "+ element+" without "+ oldChar);
+        return driver.findElement(By.xpath(element)).getText().replace(oldChar,"");
     }
     public void sendKeys1(String element, String content){
         logger.info("send keys" + element);
@@ -93,20 +97,14 @@ public class KeywordWeb {
         return str.isEmpty()? "": str.substring(0, str.length() - Character.charCount(str.codePointBefore(str.length())));
     }
 
-    public void reLoadPage() {
-        logger.info("ReLoad Page...");
-        driver.navigate().refresh();
-    }
-
-    public void doubleClick(String element){
+    public void doubleClick(String element) {
         logger.info("double click" + element);
         Actions builder = new Actions(driver);
         WebElement elementRep = driver.findElement(By.xpath(element));
         builder.doubleClick(elementRep).perform();
     }
-
-    public void dragAndDropToObj(String startElement, String endElement){
-        logger.info("drag from" + startElement + " to" + endElement );
+    public void dragAndDropToObj(String startElement, String endElement) {
+        logger.info("drag from" + startElement + " to" + endElement);
         Actions builder = new Actions(driver);
         WebElement source = driver.findElement(By.xpath(startElement));
         WebElement target = driver.findElement(By.xpath(endElement));
@@ -121,7 +119,15 @@ public class KeywordWeb {
         builder.contextClick(clickMe).moveToElement(editMenuItem).click().perform();
     }
 
-    public void executeJavaScript(String command){
+    public void hoverAndClick(String element) {
+        logger.info("Move To Element" + element);
+        Actions action = new Actions(driver);
+        WebElement elementRep = driver.findElement(By.xpath(element));
+        action.moveToElement(elementRep).perform();
+    }
+
+
+    public void executeJavaScript(String command) {
         logger.info("Executing JavaScript");
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript(command);
@@ -134,106 +140,101 @@ public class KeywordWeb {
         ImageIO.write(image, imgformat, new File(srcpath));
     }
 
-    public void maximizeWindow(){
+    public void maximizeWindow() {
         logger.info("Maximizing browser window...");
         driver.manage().window().maximize();
     }
 
-    public void back(){
+    public void back() {
         logger.info("Back window...");
         driver.navigate().back();
     }
-    public void navigateToUrl(String url){
-        logger.info("Navigating to URL..."+ url);
+    public void reLoadPage() {
+        logger.info("ReLoad Page...");
+        driver.navigate().refresh();
+    }
+
+    public void navigateToUrl(String url) {
+        logger.info("Navigating to URL..." + url);
         driver.navigate().to(url);
     }
 
-    public void acceptAlert(){
+    public void getCurrentPageUrl() {
+        logger.info("Navigating to URL...");
+        driver.getCurrentUrl();
+    }
+
+    public void acceptAlert() {
         logger.info("Accepting alert...");
         Alert alert = driver.switchTo().alert();
         alert.accept();
     }
 
-    public String  getAlertText(){
+    public String getAlertText() {
         logger.info("Getting alert text...");
         Alert alert = driver.switchTo().alert();
         return alert.getText();
+
     }
-    public void dismissAlert(){
+
+    public void dismissAlert() {
         logger.info("Dismissing alert...");
         Alert alert = driver.switchTo().alert();
         alert.dismiss();
     }
-    public void setAlertText(String alertText){
+
+    public void setAlertText(String alertText) {
         logger.info("Setting alert text...");
         Alert alert = driver.switchTo().alert();
         alert.sendKeys(alertText);
         alert.accept();
     }
-    //send username and password to alert login
-    public void handleLoginPopup(String username, String password, String authenUrl){
-        logger.info("login by authen link with"+username+" "+password);
-        String url = "https://"+username +":"+ password + "@" + authenUrl;
-        driver.navigate().to(url);
 
-    }
-    public void switchToFrame(String frame){
+    public void switchToFrame(String frame) {
         logger.info("Switching to frame...");
         driver.switchTo().frame(frame);
     }
-    public void switchToFrameByIndex(int index){
+
+    public void switchToFrameByIndex(int index) {
         logger.info("Switching to frame by index...");
         driver.switchTo().frame(index);
     }
-    public void switchToIFrame(){
+
+    public void switchToIFrame() {
         logger.info("Switching to Iframe");
         WebElement iframe = driver.findElement(By.tagName("iframe"));
         driver.switchTo().frame(iframe);
     }
 
+    public void listWindowID() {
+        for (String windowid : driver.getWindowHandles()) {
+            logger.info("Listing window ID..." + windowid);
+        }
+    }
     public void switchToIFrameByXpath(String element){
         logger.info("Switching to Iframe");
         WebElement iframe = driver.findElement(By.xpath(element));
         driver.switchTo().frame(iframe);
     }
-    public void listWindowID(){
-        for(String windowid : driver.getWindowHandles()){
-            logger.info("Listing window ID..." + windowid);
-        }
-    }
-    public void switchToWindow(String window){
+
+    public void switchToWindow(String window) {
         logger.info("Switching to Window");
         driver.switchTo().window(window);
     }
+
     public void switchToWindowByIndex(int index) {
         logger.info("switchToWindowByIndex");
         driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(index));
     }
+
     public void getTitleWindowByIndex(int index) {
         logger.info("switchToWindowByIndex");
         driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(index)).getTitle();
     }
-    public void switchToParentWindow(){
+    public void switchToParentWindow() {
         logger.info("switchToParentWindow");
         String parentWindowId = driver.getWindowHandle();
         driver.switchTo().window(parentWindowId);
-    }
-    public void switchToTab(int tabNum){
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(tabNum));
-    }
-
-    public void closeWindowByIndex(int index){
-        logger.info("closeWindowByIndex");
-        switchToWindowByIndex(index);
-        driver.close();
-    }
-
-    public void assertEquals(String expected, String actual){
-        logger.info("compare from "+ expected+ " with "+ actual);
-        String actualText = driver.findElement(By.xpath(actual)).getText();
-        Assert.assertEquals(actualText,expected);
-
     }
     public void simpleAssertEquals(String expected, String actual){
         logger.info("compare from "+ expected+ " with "+ actual);
@@ -241,70 +242,118 @@ public class KeywordWeb {
         Assert.assertEquals(actual,expected);
 
     }
-    public void closeTab(int tabNum){
+
+    public void switchToTab(int tabNum) {
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(tabNum));
+    }
+
+    public void closeWindowByIndex(int index) {
+        logger.info("closeWindowByIndex");
+        switchToWindowByIndex(index);
+        driver.close();
+    }
+
+    public void closeTab(int tabNum) {
         switchToTab(tabNum);
         driver.close();
     }
-    public void closeWindowTitle(String title){
-        for (String windowid : driver.getWindowHandles()){
+//    public void assertEquals(String expected, String actual){
+//        logger.info("compare from "+ expected+ " with "+ actual);
+//        String actualText = driver.findElement(By.xpath(actual)).getText();
+//        Assert.assertEquals(actualText,expected);
+//
+//    }
+
+    public void closeWindowTitle(String title) {
+        for (String windowid : driver.getWindowHandles()) {
             String windowTitle = driver.switchTo().window(windowid).getTitle();
-            if (windowTitle.equals(title)){
+            if (windowTitle.equals(title)) {
                 driver.close();
                 break;
             }
         }
     }
-    public void scrollDownToElement(String xPath){
-        logger.info("scrollDown to "+xPath);
+
+    public void scrollDownToElement(String xPath) {
         WebElement element = driver.findElement(By.xpath(xPath));
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
         actions.perform();
     }
 
-    public void scrollToPosition(){
-        logger.info(" scrolling to position " );
+    public void scrollDownToElementByCss(String css) {
+        WebElement element = driver.findElement(By.cssSelector(css));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element);
+        actions.perform();
+    }
+
+    public void scrollToPosition() {
+        logger.info(" scrolling to position ");
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,5000)");
     }
-    public void switchToDefaultContent(){
+
+    public void scrollToReversePosition() {
+        logger.info(" scrolling to position ");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,-5000)");
+    }
+
+    public void switchToDefaultContent() {
         logger.info("SwitchTODefaultContent");
         driver.switchTo().defaultContent();
     }
-    public void recaptchaClick(){
+
+    public void recaptchaClick() {
         logger.info("click recaptcha");
         new WebDriverWait(driver, 10).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[starts-with(@name, 'a-') and starts-with(@src, 'https://www.google.com/recaptcha/api2/anchor?ar=1')]")));
 
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.recaptcha-checkbox-border"))).click();
     }
-    public void selectDropDownListByIndex(String ddlPath, String itemName){
+
+    //verify keyword
+    public boolean verifyElementPresent(String element) {
+        try {
+            driver.findElement(By.xpath(element));
+            return true;
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public void selectDropDownListByIndex(String ddlPath, String itemName) {
         logger.info("select item by visibe text");
         Select dropDownList = new Select(driver.findElement(By.xpath(ddlPath)));
         dropDownList.selectByVisibleText(itemName);
 
     }
 
+    public boolean verifyElementVisible(String element) {
+        //verify keyword
 
-    //verify keyword
-    public boolean verifyElementPresent(String element){
-        logger.info("verifyElementPresent");
-        try{
-            driver.findElement(By.xpath(element)).isDisplayed();
-            return true;
-        } catch(NoSuchElementException e){
-            e.printStackTrace();
-            return false;
+            logger.info("verifyElementPresent");
+            try{
+                driver.findElement(By.xpath(element)).isDisplayed();
+                return true;
+            } catch(NoSuchElementException e){
+                e.printStackTrace();
+                return false;
+            }
         }
-    }
-    public boolean verifyElementVisible(String element){
-        boolean blnVerify = false;
-        try{
-            blnVerify = driver.findElement(By.xpath(element)).isDisplayed();
 
-        } catch(NoSuchElementException e){
-            e.printStackTrace();
+    public boolean CheckIsDisplayElement(String element) {
+        logger.info("Check status element btn radio");
+        boolean stt = driver.findElement(By.xpath(element)).isDisplayed();
+        if (!stt) {
+            System.out.println("Not selected");
+        } else {
+            driver.navigate().back();
+            System.out.println("Checkbox selected");
         }
-        return blnVerify;
+        return stt;
     }
 
     // wait keywords
@@ -320,7 +369,13 @@ public class KeywordWeb {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
     }
 
-    public void fluentWaitForElementPresent(String element, Duration polling , Duration timeout){
+    public void webDriverWaitForElementPresentCss(String element, long timeout) {
+        logger.info("webDriverWaitForElementPresent");
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
+    }
+
+    public void fluentWaitForElementPresent(String element, Duration polling, Duration timeout) {
         logger.info("fluentWaitForElementPresent");
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(timeout)
@@ -329,5 +384,22 @@ public class KeywordWeb {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
     }
 
+    public void handleLoginPopup(String username, String password, String authenUrl) {
+        logger.info("login by authen link with" + username + " " + password);
+        String url = "https://" + username + ":" + password + "@" + authenUrl;
+        driver.navigate().to(url);
 
+    }
+
+    public String getText(String element) {
+        logger.info("get Text of" + element);
+        String text = driver.findElement(By.xpath(element)).getText();
+        return text;
+    }
+
+    public void assertEquals(String expected, String actual) {
+        logger.info("compare from " + expected + " with " + actual);
+        Assert.assertEquals(expected, actual);
+
+    }
 }
