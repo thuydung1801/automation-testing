@@ -61,9 +61,9 @@ public class ListingPage extends BasePage {
     public void viewBTN() throws InterruptedException {
         keyword.scrollDownToElement(PropertiesFile.getPropValue("LTP_TOOLlBAR"));
         Thread.sleep(1000);
-        keyword.clickUseCss(PropertiesFile.getPropValue("LTP_BTN_VIEW2"));
+        keyword.clickByCss(PropertiesFile.getPropValue("LTP_BTN_VIEW2"));
         Thread.sleep(1000);
-        keyword.clickUseCss(PropertiesFile.getPropValue("LTP_BTN_VIEW3"));
+        keyword.clickByCss(PropertiesFile.getPropValue("LTP_BTN_VIEW3"));
 
     }
 
@@ -95,6 +95,6 @@ public class ListingPage extends BasePage {
         keyword.imWait(2);
         keyword.click(PropertiesFile.getPropValue(saveItem));
         keyword.imWait(2);
-        keyword.clickUseCss(PropertiesFile.getPropValue("LTP_MODAL_OVERLAY"));
+        keyword.clickByCss(PropertiesFile.getPropValue("LTP_MODAL_OVERLAY"));
     }
 }

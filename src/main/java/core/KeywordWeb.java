@@ -148,7 +148,7 @@ public class KeywordWeb {
             xPathElement2 = content;
 
         }
-        driver.findElement(By.xpath(element)).sendKeys(content);
+        driver.findElement(By.xpath(xPathElement1)).sendKeys(xPathElement2);
     }
 
     public String getTextWithOutCharacters(String element, String oldChar) {
@@ -162,7 +162,7 @@ public class KeywordWeb {
             xPathElement2 = oldChar;
 
         }
-        return driver.findElement(By.xpath(element)).getText().replace(oldChar, "");
+        return driver.findElement(By.xpath(xPathElement1)).getText().replace(xPathElement2, "");
     }
 
 

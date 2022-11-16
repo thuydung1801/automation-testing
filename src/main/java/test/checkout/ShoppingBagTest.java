@@ -321,12 +321,11 @@ public class ShoppingBagTest extends BaseTest {
     public void testCase_RV_14() throws InterruptedException {
         logger.info("testCase_RV_14");
         commonShopping();
-//        objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
-//        objShoppingBagPage.clickShoppingBagPage();
-//        objShoppingBagPage.moveToPagecheckOut();
-//        objShoppingBagPage.checkOut();
-//        objShoppingBagPage.checkOutWithStoreCredit("more");
-
+        objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithStoreCredit("more");
     }
 
 
