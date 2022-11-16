@@ -17,6 +17,9 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 import java.awt.Rectangle;
@@ -55,6 +58,14 @@ public class KeywordWeb {
             driver.get(rawUrl);
         }
     }
+    public void openNewTab(String url){
+        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
+        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(0));
+       // driver.navigate().to(url);
+        navigateToUrl(url);
+
+    }
 
     public void closeBrowser() {
         logger.info("close browser: ");
@@ -80,6 +91,24 @@ public class KeywordWeb {
         logger.info("click" + element);
         driver.findElement(By.cssSelector(element)).click();
     }
+    public void randomElement(String element) {
+            List <WebElement> weblist = driver.findElements(By.xpath(element));
+            int size = weblist.size();
+            int randnMumber = ThreadLocalRandom.current().nextInt(0, size);
+            weblist.get(randnMumber).click();
+
+    }
+    public void randomConcatElement(String element, int num) throws InterruptedException {
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        int randomNumber = random.nextInt(1,num);
+        String ele = element + "[" + randomNumber + "]";
+        Thread.sleep(1000);
+        driver.findElement(By.xpath(ele)).click();
+    }
+    public String getText(String element){
+        logger.info("get Text of"+ element);
+        String text = driver.findElement(By.xpath(element)).getText();
+        return text;
 
     public void sendKeys(String element, String content){
         logger.info("send keys" + element);
@@ -189,6 +218,11 @@ public class KeywordWeb {
         alert.sendKeys(alertText);
         alert.accept();
     }
+    //send username and password to alert login
+    public void handleLoginPopup(String username, String password, String authenUrl){
+        logger.info("login by authen link with"+username+" "+password);
+        String url = "https://"+username +":"+ password + "@" + authenUrl;
+        driver.navigate().to(url);
 
     public void switchToFrame(String frame) {
         logger.info("Switching to frame...");
@@ -327,6 +361,7 @@ public class KeywordWeb {
     public void selectDropDownListByIndex(String ddlPath, String itemName) {
         logger.info("select item by visibe text");
         Select dropDownList = new Select(driver.findElement(By.xpath(ddlPath)));
+        logger.info("1");
         dropDownList.selectByVisibleText(itemName);
 
     }
@@ -384,6 +419,10 @@ public class KeywordWeb {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
     }
 
+    public void deleteInput(){
+        ((JavascriptExecutor) driver).executeScript("document.getElementByClass('input-box').reset()");
+        System.out.printf("clear.....");
+    }
     public void handleLoginPopup(String username, String password, String authenUrl) {
         logger.info("login by authen link with" + username + " " + password);
         String url = "https://" + username + ":" + password + "@" + authenUrl;
