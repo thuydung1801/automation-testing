@@ -58,12 +58,17 @@ public class KeywordWeb {
             driver.get(rawUrl);
         }
     }
+
     public void openNewTab(String url){
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
         ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
         driver.switchTo().window(tabs.get(0));
-       // driver.navigate().to(url);
-        navigateToUrl(url);
+        // driver.navigate().to(url);
+        String URL = PropertiesFile.getPropValue(url);
+        if(URL == null ){
+            URL = url;
+        }
+        navigateToUrl(URL);
 
     }
 
@@ -74,84 +79,148 @@ public class KeywordWeb {
 
     public void clearText(String element) {
         logger.info("clearText");
-        driver.findElement(By.xpath(element)).clear();
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if(xPathElement == null){
+            xPathElement = element;
+        }
+        driver.findElement(By.xpath(xPathElement)).clear();
     }
 
     public void click(String element) {
-        driver.findElement(By.xpath(element)).click();
         logger.info("click" + element);
-    }
-
-    public void clickUseCss(String element) {
-        logger.info("click" + element);
-        driver.findElement(By.cssSelector(element)).click();
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if(xPathElement == null){
+            xPathElement = element;
+        }
+        driver.findElement(By.xpath(xPathElement)).click();
     }
 
     public void clickByCss(String element) {
         logger.info("click" + element);
-        driver.findElement(By.cssSelector(element)).click();
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if(xPathElement == null){
+            xPathElement = element;
+        }
+        driver.findElement(By.cssSelector(xPathElement)).click();
     }
+
     public void randomElement(String element) {
-            List <WebElement> weblist = driver.findElements(By.xpath(element));
-            int size = weblist.size();
-            int randnMumber = ThreadLocalRandom.current().nextInt(0, size);
-            weblist.get(randnMumber).click();
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if(xPathElement == null) {
+            xPathElement =element;
+        }
+        List <WebElement> weblist = driver.findElements(By.xpath(xPathElement));
+        int size = weblist.size();
+        int randnMumber = ThreadLocalRandom.current().nextInt(0, size);
+        weblist.get(randnMumber).click();
 
     }
+
     public void randomConcatElement(String element, int num) throws InterruptedException {
         ThreadLocalRandom random = ThreadLocalRandom.current();
         int randomNumber = random.nextInt(1,num);
-        String ele = element + "[" + randomNumber + "]";
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if(xPathElement == null) {
+            xPathElement =element;
+        }
+        String ele = xPathElement + "[" + randomNumber + "]";
         Thread.sleep(1000);
         driver.findElement(By.xpath(ele)).click();
     }
-    public String getText(String element){
-        logger.info("get Text of"+ element);
-        String text = driver.findElement(By.xpath(element)).getText();
-        return text;
 
-    public void sendKeys(String element, String content){
-        logger.info("send keys" + element);
+    public String getText(String element) {
+        logger.info("get Text of" + element);
+        String text = PropertiesFile.getPropValue(element);
+        if(text == null){
+            text = element;
+        }
+        return driver.findElement(By.xpath(text)).getText();
+    }
+
+    public void sendKeys(String element, String content) {
+        logger.info("send keys" + element + "with "+ content);
+        String xPathElement1 = PropertiesFile.getPropValue(element);
+        String xPathElement2 = PropertiesFile.getPropValue(content);
+        if(xPathElement1 == null){
+            xPathElement1 = element;
+        }
+        if(xPathElement2 == null){
+            xPathElement2 = content;
+
+        }
         driver.findElement(By.xpath(element)).sendKeys(content);
     }
-    public String getTextWithOutCharacters(String element, String oldChar){
-        logger.info("getText of "+ element+" without "+ oldChar);
-        return driver.findElement(By.xpath(element)).getText().replace(oldChar,"");
+
+    public String getTextWithOutCharacters(String element, String oldChar) {
+        logger.info("getText of " + element + " without " + oldChar);
+        String xPathElement1 = PropertiesFile.getPropValue(element);
+        String xPathElement2 = PropertiesFile.getPropValue(oldChar);
+        if(xPathElement1 == null){
+            xPathElement1 = element;
+        }
+        if(xPathElement2 == null){
+            xPathElement2 = oldChar;
+
+        }
+        return driver.findElement(By.xpath(element)).getText().replace(oldChar, "");
     }
-    public void sendKeys1(String element, String content){
-        logger.info("send keys" + element);
-        driver.findElement(By.xpath(PropertiesFile.getPropValue(element))).sendKeys(PropertiesFile.getPropValue(content));
-    }
+
+
     public String removeLastChar(String str) {
-        return str.isEmpty()? "": str.substring(0, str.length() - Character.charCount(str.codePointBefore(str.length())));
+        return str.isEmpty() ? "" : str.substring(0, str.length() - Character.charCount(str.codePointBefore(str.length())));
     }
 
     public void doubleClick(String element) {
         logger.info("double click" + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if(xPathElement == null){
+            xPathElement = element;
+        }
         Actions builder = new Actions(driver);
-        WebElement elementRep = driver.findElement(By.xpath(element));
+        WebElement elementRep = driver.findElement(By.xpath(xPathElement));
         builder.doubleClick(elementRep).perform();
     }
+
     public void dragAndDropToObj(String startElement, String endElement) {
         logger.info("drag from" + startElement + " to" + endElement);
+        String xPathElement1 = PropertiesFile.getPropValue(startElement);
+        if(xPathElement1 == null){
+            xPathElement1 = startElement;
+        }
+        String xPathElement2 = PropertiesFile.getPropValue(endElement);
+        if(xPathElement2 == null){
+            xPathElement2 = endElement;
+        }
         Actions builder = new Actions(driver);
-        WebElement source = driver.findElement(By.xpath(startElement));
-        WebElement target = driver.findElement(By.xpath(endElement));
+        WebElement source = driver.findElement(By.xpath(xPathElement1));
+        WebElement target = driver.findElement(By.xpath(xPathElement2));
         builder.dragAndDrop(source, target).perform();
     }
 
     public void rightClick(String element, String menuItem) {
         logger.info("rightClick" + element);
+        String xPathElement1 = PropertiesFile.getPropValue(element);
+        if(xPathElement1 == null){
+            xPathElement1 = element;
+        }
+        String xPathElement2 = PropertiesFile.getPropValue(menuItem);
+        if(xPathElement2 == null){
+            xPathElement2 = menuItem;
+        }
         Actions builder = new Actions(driver);
-        WebElement clickMe = driver.findElement(By.xpath(element));
-        WebElement editMenuItem = driver.findElement(By.xpath(menuItem));
+        WebElement clickMe = driver.findElement(By.xpath(xPathElement1));
+        WebElement editMenuItem = driver.findElement(By.xpath(xPathElement2));
         builder.contextClick(clickMe).moveToElement(editMenuItem).click().perform();
     }
 
     public void hoverAndClick(String element) {
         logger.info("Move To Element" + element);
+        String xPathElement =PropertiesFile.getPropValue(element);
+        if(xPathElement == null) {
+            xPathElement = element;
+        }
         Actions action = new Actions(driver);
-        WebElement elementRep = driver.findElement(By.xpath(element));
+        WebElement elementRep = driver.findElement(By.xpath(xPathElement));
         action.moveToElement(elementRep).perform();
     }
 
@@ -163,7 +232,8 @@ public class KeywordWeb {
     }
 
 
-    public void takeScreenshot(String imgformat, String srcpath) throws IOException, InterruptedException, AWTException {
+    public void takeScreenshot(String imgformat, String srcpath) throws
+            IOException, InterruptedException, AWTException {
         logger.info("Taking screenshot save to:" + srcpath);
         BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
         ImageIO.write(image, imgformat, new File(srcpath));
@@ -178,6 +248,7 @@ public class KeywordWeb {
         logger.info("Back window...");
         driver.navigate().back();
     }
+
     public void reLoadPage() {
         logger.info("ReLoad Page...");
         driver.navigate().refresh();
@@ -185,7 +256,11 @@ public class KeywordWeb {
 
     public void navigateToUrl(String url) {
         logger.info("Navigating to URL..." + url);
-        driver.navigate().to(url);
+        String xPathElement = PropertiesFile.getPropValue(url);
+        if(xPathElement == null){
+            xPathElement = url;
+        }
+        driver.navigate().to(xPathElement);
     }
 
     public void getCurrentPageUrl() {
@@ -218,11 +293,25 @@ public class KeywordWeb {
         alert.sendKeys(alertText);
         alert.accept();
     }
+
     //send username and password to alert login
-    public void handleLoginPopup(String username, String password, String authenUrl){
-        logger.info("login by authen link with"+username+" "+password);
-        String url = "https://"+username +":"+ password + "@" + authenUrl;
+    public void handleLoginPopup(String username, String password, String authenUrl) {
+        logger.info("login by authen link with" + username + " " + password);
+        String xPathElement1 = PropertiesFile.getPropValue(username);
+        if(xPathElement1 == null){
+            xPathElement1 = username;
+        }
+        String xPathElement2 = PropertiesFile.getPropValue(password);
+        if(xPathElement2 == null){
+            xPathElement2 = password;
+        }
+        String xPathElement3 = PropertiesFile.getPropValue(authenUrl);
+        if(xPathElement3 == null){
+            xPathElement3 = authenUrl;
+        }
+        String url = "https://" + xPathElement1 + ":" + xPathElement2 + "@" + xPathElement3;
         driver.navigate().to(url);
+    }
 
     public void switchToFrame(String frame) {
         logger.info("Switching to frame...");
@@ -245,9 +334,14 @@ public class KeywordWeb {
             logger.info("Listing window ID..." + windowid);
         }
     }
-    public void switchToIFrameByXpath(String element){
+
+    public void switchToIFrameByXpath(String element) {
         logger.info("Switching to Iframe");
-        WebElement iframe = driver.findElement(By.xpath(element));
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if(xPathElement == null){
+            xPathElement = element;
+        }
+        WebElement iframe = driver.findElement(By.xpath(xPathElement));
         driver.switchTo().frame(iframe);
     }
 
@@ -265,15 +359,24 @@ public class KeywordWeb {
         logger.info("switchToWindowByIndex");
         driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(index)).getTitle();
     }
+
     public void switchToParentWindow() {
         logger.info("switchToParentWindow");
         String parentWindowId = driver.getWindowHandle();
         driver.switchTo().window(parentWindowId);
     }
-    public void simpleAssertEquals(String expected, String actual){
-        logger.info("compare from "+ expected+ " with "+ actual);
 
-        Assert.assertEquals(actual,expected);
+    public void simpleAssertEquals(String expected, String actual) {
+        logger.info("compare from " + expected + " with " + actual);
+        String xPathElement1 = PropertiesFile.getPropValue(expected);
+        if(xPathElement1 == null){
+            xPathElement1 = expected;
+        }
+        String xPathElement2 = PropertiesFile.getPropValue(actual);
+        if(xPathElement2 == null){
+            xPathElement2 = actual;
+        }
+        Assert.assertEquals(actual, expected);
 
     }
 
@@ -292,12 +395,6 @@ public class KeywordWeb {
         switchToTab(tabNum);
         driver.close();
     }
-//    public void assertEquals(String expected, String actual){
-//        logger.info("compare from "+ expected+ " with "+ actual);
-//        String actualText = driver.findElement(By.xpath(actual)).getText();
-//        Assert.assertEquals(actualText,expected);
-//
-//    }
 
     public void closeWindowTitle(String title) {
         for (String windowid : driver.getWindowHandles()) {
@@ -310,16 +407,26 @@ public class KeywordWeb {
     }
 
     public void scrollDownToElement(String xPath) {
-        WebElement element = driver.findElement(By.xpath(xPath));
+        logger.info("scrollDownToElement"+ xPath);
+        String xPathElement = PropertiesFile.getPropValue(xPath);
+        if(xPathElement == null){
+            xPathElement = xPath;
+        }
+        WebElement element = driver.findElement(By.xpath(xPathElement));
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
         actions.perform();
     }
 
-    public void scrollDownToElementByCss(String css) {
-        WebElement element = driver.findElement(By.cssSelector(css));
+    public void scrollDownToElementByCss(String element) {
+        logger.info("scroll to element");
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        WebElement elements = driver.findElement(By.cssSelector(xPathElement));
         Actions actions = new Actions(driver);
-        actions.moveToElement(element);
+        actions.moveToElement(elements);
         actions.perform();
     }
 
@@ -349,8 +456,12 @@ public class KeywordWeb {
 
     //verify keyword
     public boolean verifyElementPresent(String element) {
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if(xPathElement == null){
+            xPathElement = element;
+        }
         try {
-            driver.findElement(By.xpath(element));
+            driver.findElement(By.xpath(xPathElement));
             return true;
         } catch (NoSuchElementException e) {
             e.printStackTrace();
@@ -360,28 +471,41 @@ public class KeywordWeb {
 
     public void selectDropDownListByIndex(String ddlPath, String itemName) {
         logger.info("select item by visibe text");
-        Select dropDownList = new Select(driver.findElement(By.xpath(ddlPath)));
-        logger.info("1");
-        dropDownList.selectByVisibleText(itemName);
+        String xPathElement1 = PropertiesFile.getPropValue(ddlPath);
+        if(xPathElement1 == null){
+            xPathElement1 = ddlPath;
+        }
+        String xPathElement2 = PropertiesFile.getPropValue(itemName);
+        if(xPathElement2 == null){
+            xPathElement2 = itemName;
+        }
+        Select dropDownList = new Select(driver.findElement(By.xpath(xPathElement1)));
+        dropDownList.selectByVisibleText(xPathElement2);
 
     }
 
     public boolean verifyElementVisible(String element) {
-        //verify keyword
-
-            logger.info("verifyElementPresent");
-            try{
-                driver.findElement(By.xpath(element)).isDisplayed();
-                return true;
-            } catch(NoSuchElementException e){
-                e.printStackTrace();
-                return false;
-            }
+        logger.info("verifyElementVisible"+ element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if(xPathElement == null){
+            xPathElement = element;
         }
+        try {
+            driver.findElement(By.xpath(xPathElement)).isDisplayed();
+            return true;
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     public boolean CheckIsDisplayElement(String element) {
         logger.info("Check status element btn radio");
-        boolean stt = driver.findElement(By.xpath(element)).isDisplayed();
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        boolean stt = driver.findElement(By.xpath(xPathElement)).isDisplayed();
         if (!stt) {
             System.out.println("Not selected");
         } else {
@@ -390,8 +514,7 @@ public class KeywordWeb {
         }
         return stt;
     }
-
-    // wait keywords
+        // wait keywords
 
     public void imWait(long timeout) {
         logger.info("implicitlyWait");
@@ -400,14 +523,22 @@ public class KeywordWeb {
 
     public void webDriverWaitForElementPresent(String element, long timeout) {
         logger.info("webDriverWaitForElementPresent");
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if(xPathElement == null){
+            xPathElement = element;
+        }
         WebDriverWait wait = new WebDriverWait(driver, timeout);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xPathElement)));
     }
 
-    public void webDriverWaitForElementPresentCss(String element, long timeout) {
-        logger.info("webDriverWaitForElementPresent");
+    public void webDriverWaitForElementPresentByCss(String element, long timeout) {
+        logger.info("webDriverWaitForElementPresentByCss");
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
         WebDriverWait wait = new WebDriverWait(driver, timeout);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(xPathElement)));
     }
 
     public void fluentWaitForElementPresent(String element, Duration polling, Duration timeout) {
@@ -419,26 +550,23 @@ public class KeywordWeb {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
     }
 
-    public void deleteInput(){
+    public void deleteInput() {
         ((JavascriptExecutor) driver).executeScript("document.getElementByClass('input-box').reset()");
         System.out.printf("clear.....");
     }
-    public void handleLoginPopup(String username, String password, String authenUrl) {
-        logger.info("login by authen link with" + username + " " + password);
-        String url = "https://" + username + ":" + password + "@" + authenUrl;
-        driver.navigate().to(url);
 
-    }
-
-    public String getText(String element) {
-        logger.info("get Text of" + element);
-        String text = driver.findElement(By.xpath(element)).getText();
-        return text;
-    }
-
-    public void assertEquals(String expected, String actual) {
-        logger.info("compare from " + expected + " with " + actual);
-        Assert.assertEquals(expected, actual);
+    public void assertEquals(String expected, String actual){
+        logger.info("compare from "+ expected+ " with "+ actual);
+        String xPathElement1 = PropertiesFile.getPropValue(expected);
+        String xPathElement2 = PropertiesFile.getPropValue(actual);
+        if(xPathElement1 == null){
+            xPathElement1 = expected;
+        }
+        if(xPathElement2 == null){
+            xPathElement2 = actual;
+        }
+        String actualText = driver.findElement(By.xpath(xPathElement2)).getText();
+        Assert.assertEquals(actualText,xPathElement1);
 
     }
 }

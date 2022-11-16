@@ -21,7 +21,7 @@ public class LoginPage extends BasePage {
     }
     public void loginOnWebsite() throws InterruptedException {
         Thread.sleep(3000);
-        keyword.click(PropertiesFile.getPropValue("LOGIN_BTN_LOGIN"));
+        keyword.click("LOGIN_BTN_LOGIN");
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LOGIN_LBL_LOGIN"),30);
         Thread.sleep(2000);
         keyword.sendKeys(PropertiesFile.getPropValue("LOGIN_TXT_EMAIL"),
@@ -30,7 +30,7 @@ public class LoginPage extends BasePage {
         keyword.sendKeys(PropertiesFile.getPropValue("LOGIN_TXT_PASSWORD"),
                 PropertiesFile.getPropValue("LOGIN_DATA_PASSWORD"));
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("LOGIN_BTN_SUBMITLOGIN"));
+        keyword.click("LOGIN_BTN_SUBMITLOGIN");
 
     }
 }
