@@ -3,7 +3,6 @@ package core;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.slf4j.Logger;
 import org.testng.ITestResult;
@@ -18,13 +17,14 @@ import static core.KeywordWeb.driver;
 public class BaseTest {
     private static Logger logger = LogHelper.getLogger();
     protected KeywordWeb keyword;
-//    public static WebDriver driver;
-    public BaseTest(){
+
+    public BaseTest() {
         keyword = new KeywordWeb();
     }
     public static WebDriver getDriver() {
         return driver;
     }
+
     @BeforeSuite
     public void beforeSuite() throws Exception {
         PropertiesFile.setPropertiesFile();
@@ -32,10 +32,9 @@ public class BaseTest {
 
     @BeforeTest
     public void beforeTest() throws Exception {
-        keyword.openBrowser(PropertiesFile.getPropValue("BROWSER_NAME"),PropertiesFile.getPropValue("BASE_URL"));
+        keyword.openBrowser(PropertiesFile.getPropValue("BROWSER_NAME"), PropertiesFile.getPropValue("BASE_URL"));
         keyword.maximizeWindow();
     }
-    //@AfterMethod
     public void takeScreenshot(ITestResult result) {
         if (ITestResult.FAILURE == result.getStatus()) {
             try {
@@ -53,10 +52,8 @@ public class BaseTest {
             }
         }
     }
-
     @AfterTest
     public void afterTest() throws Exception {
-        keyword.closeBrowser();
+//        keyword.closeBrowser();
     }
-
 }
