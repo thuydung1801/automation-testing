@@ -148,14 +148,14 @@ public class ProductDetailPage extends BasePage {
     public void optionFindSizeWithInpNull() throws InterruptedException{
         commonFindSize();
 //        keyword.openNewTab(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
-        ipFindSize("DATA_NULL","DATA_NULL","DATA_NULL",
-                "DATA_NULL", Integer.parseInt((PropertiesFile.getPropValue("PRD_DATA_CODE"))),
-                "DATA_NULL");
+        ipFindSize("COM_DATA_NULL","COM_DATA_NULL","COM_DATA_NULL",
+                "COM_DATA_NULL", Integer.parseInt((PropertiesFile.getPropValue("PRD_DATA_CODE"))),
+                "COM_DATA_NULL");
         checkVerifyInputNull();
     }
     public void optionFindSizeWithInpEmailError() throws InterruptedException{
         commonFindSize();
-        ipFindSize("DATA_NULL","DATA_NULL","DATA_ERROR",
+        ipFindSize("COM_DATA_NULL","COM_DATA_NULL","COM_DATA_ERROR",
                 "PRD_DATA_STREET", Integer.parseInt(PropertiesFile.getPropValue("PRD_DATA_CODE")),
                 "PRD_DATA_CITY");
         checkVerifyInputWithEmailError();
@@ -177,12 +177,12 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void checkVerifyInputNull(){
-        keyword.assertEquals("DATA_MESSAGES_NULL",
-                "TEXT_ERROR");
+        keyword.assertEquals("COM_DATA_MESSAGES_NULL",
+                "COM_TEXT_ERROR");
     }
     public void checkVerifyInputWithEmailError(){
-        keyword.assertEquals("DATA_MESSAGES_EMAIL",
-                "TEXT_ERROR_EMAIL");
+        keyword.assertEquals("COM_DATA_MESSAGES_EMAIL",
+                "COM_TEXT_ERROR_EMAIL");
     }
     public void ipFindSize(String firstName, String lastName, String email, String street,int code, String city) throws InterruptedException {
         keyword.imWait(5);

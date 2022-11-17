@@ -29,13 +29,13 @@ public class ShoppingBagTest extends BaseTest {
         objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
         objRegist.chooseLanguages();
-        objLogin.loginOnWebsite();
+        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
     }
     public void commonShoppingWithOutCookies() throws InterruptedException {
         objShoppingBagPage = new ShoppingBagPage(this.keyword);
         objLogin = new LoginPage(this.keyword);
 
-        objLogin.loginOnWebsite();
+        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
     }
 
     @Test (priority = 4, description = "Remove item from cart succcessfully with the shopping bag having mutiple items")

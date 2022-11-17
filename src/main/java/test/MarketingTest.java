@@ -11,7 +11,7 @@ public class MarketingTest extends BaseTest {
         super();
         testMarketing = new MarketingPage(this.keyword);
     }
-    @Test(priority = 1)
+    @Test(priority = 1, description = "Add to cart a new Gift card ")
     public void testCase_GC_03() throws InterruptedException {
         testMarketing.giftCardInpWithNull();
     }
@@ -26,5 +26,13 @@ public class MarketingTest extends BaseTest {
     @Test(priority = 4)
     public void testCase_GC_02() throws InterruptedException {
         testMarketing.giftCardWithOtherAmount();
+    }
+    @Test(priority = 5, description = "Create New Grift Cetificate")
+    public void testCase_GCE_01() throws InterruptedException {
+        testMarketing.createNewGriftCetificateFormMyOrder();
+    }
+    @Test(priority = 6)
+    public void testCase_GCE_04() throws InterruptedException {
+        testMarketing.createNewGriftCetificateWithDataNull();
     }
 }
