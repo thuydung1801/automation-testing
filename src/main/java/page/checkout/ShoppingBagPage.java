@@ -364,25 +364,35 @@ public class ShoppingBagPage extends BasePage {
         keyword.executeJavaScript("window.print=function(){window.close();};");
     }
     public void clickUseCredit(String money){
-//        if(keyword.verifyElementVisible(PropertiesFile.getPropValue("CHECKOUT_BTN_CANCEL_CREDIT"))) {
-//            keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CANCEL_CREDIT"));
-//        }
         keyword.sendKeys("CHECKOUT_TXT_STORE_CREDIT",money);
         keyword.click("CHECKOUT_BTN_USE_CREDIT");
     }
-    public void useCredit() throws InterruptedException {
+    public void cancelUseCredit() throws InterruptedException {
+        Thread.sleep(5000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_STORE_CREDIT"));
+        clickUseCredit("1");
+        Thread.sleep(10000);
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CANCEL_CREDIT"));
+        keyword.assertEquals("CHECKOUT_MESSAGE_USE_CREDIT_ERROR","CHECKOUT_LBL_USE_CREDIT");
+    }
+    public void useCredit(boolean flag) throws InterruptedException {
         logger.info("useCredit");
-        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_USE_CREDIT",10);
-        //Thread.sleep(5000);
-        keyword.assertEquals("CHECKOUT_MESSAGE_USE_CREDIT", "CHECKOUT_LBL_USE_CREDIT");
-        Thread.sleep(20000);
-        String actualPrice = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
-        logger.info(actualPrice);
-        String lastPrice = keyword.removeLastChar(actualPrice);
-        keyword.simpleAssertEquals("0.0", lastPrice);
-        keyword.click("CHECKOUT_BTN_ORDER");
-        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 20);
-        keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
+        if(flag) {
+            keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_USE_CREDIT", 10);
+            keyword.assertEquals("CHECKOUT_MESSAGE_USE_CREDIT", "CHECKOUT_LBL_USE_CREDIT");
+            Thread.sleep(20000);
+            String actualPrice = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE", "£");
+            logger.info(actualPrice);
+            String lastPrice = keyword.removeLastChar(actualPrice);
+            keyword.simpleAssertEquals("0.0", lastPrice);
+            keyword.click("CHECKOUT_BTN_ORDER");
+            keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 20);
+            keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
+        }else {
+            keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CREDIT_ERROR",10);
+            keyword.assertEquals("CHECKOUT_MESSAGES_CREDIT_ERROR","CHECKOUT_LBL_CREDIT_ERROR");
+        }
+
     }
     public void checkOutWithStoreCredit(String flag) throws InterruptedException {
         Thread.sleep(10000);
@@ -393,7 +403,7 @@ public class ShoppingBagPage extends BasePage {
             case "equals":
                 String price = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
                 clickUseCredit(price);
-                useCredit();
+                useCredit(true);
                 break;
             case "less":
                 clickUseCredit(String.valueOf(credit));
@@ -411,15 +421,15 @@ public class ShoppingBagPage extends BasePage {
                 Float rawPrice1 = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
                 String totalPrice1 = String.valueOf(moreMoney(rawPrice1, credit));
                 clickUseCredit(totalPrice1);
-                useCredit();
+                useCredit(true);
                 break;
             case "wrong":
-                keyword.sendKeys("CHECKOUT_TXT_STORE_CREDIT","-100");
-                keyword.click("CHECKOUT_BTN_USE_CREDIT");
-                keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_USE_CREDIT",10);
-//                keyword.assertEquals("CHECKOUT_MESSAGE_USE_CREDIT",
-//                        "CHECKOUT_LBL_USE_CREDIT");
+               clickUseCredit("-100");
+               useCredit(false);
                 break;
+            case "max":
+                clickUseCredit("10000000000000");
+                keyword.verifyElementPresent("CHECKOUT_LBL_USE_CREDIT_ERROR");
         }
     }
 

@@ -314,10 +314,10 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        //objShoppingBagPage.checkOutWithStoreCredit("wrong");
+        objShoppingBagPage.checkOutWithStoreCredit("wrong");
 
     }
-    @Test (priority = 25, description = "Place order and apply full amount store credit successfully")
+    @Test (priority = 27, description = "Place order and apply full amount store credit successfully")
     public void testCase_RV_14() throws InterruptedException {
         logger.info("testCase_RV_14");
         commonShopping();
@@ -328,6 +328,29 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.checkOutWithStoreCredit("more");
     }
 
+    @Test (priority = 25, description = "Place order and apply full amount store credit successfully")
+    public void testCase_RV_15() throws InterruptedException {
+        logger.info("testCase_RV_15");
+        commonShopping();
+        //objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithStoreCredit("max");
+
+    }
+
+    @Test (priority = 26, description = "Place order and apply full amount store credit successfully")
+    public void testCase_RV_16() throws InterruptedException {
+        logger.info("testCase_RV_16");
+        commonShopping();
+        //objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.cancelUseCredit();
+
+    }
 
 
 }
