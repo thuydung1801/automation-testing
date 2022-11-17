@@ -327,6 +327,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.checkOut();
         objShoppingBagPage.checkOutWithStoreCredit("more");
     }
+<<<<<<< HEAD
 
     @Test (priority = 25, description = "Place order and apply full amount store credit successfully")
     public void testCase_RV_15() throws InterruptedException {
@@ -353,4 +354,6 @@ public class ShoppingBagTest extends BaseTest {
     }
 
 
+=======
+>>>>>>> master
 }

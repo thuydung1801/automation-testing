@@ -74,7 +74,7 @@ public class ListingPageTest extends BaseTest {
     }
     @Test(priority = 4, description = "---Check View Sort")
     public void testCase_LTP03() throws InterruptedException {
-        testListingPage.sort_product();
+        testListingPage.sortProduct();
     }
 
     @Test(priority = 5, description = "--- Check Select Status View")
@@ -91,7 +91,7 @@ public class ListingPageTest extends BaseTest {
     @Test(priority = 7, description = "---Check Like Product")
     public void testCase_LTP06() throws InterruptedException {
         Thread.sleep(1000);
-        testListingPage.LikeProduct
+        testListingPage.likeProduct
                 (
                         "LTP_BTN_VIEW_DETAIL_BOOKLIKE"
                 );
