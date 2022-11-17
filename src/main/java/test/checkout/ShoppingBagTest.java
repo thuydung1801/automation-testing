@@ -327,7 +327,4 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.checkOut();
         objShoppingBagPage.checkOutWithStoreCredit("more");
     }
-
-
-
 }
