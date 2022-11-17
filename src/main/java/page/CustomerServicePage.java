@@ -25,36 +25,36 @@ public class CustomerServicePage extends BasePage {
         objRegister.acceptAllCookies();
         objRegister.chooseLanguages();
         Thread.sleep(5000);
-        keyword.openNewTab(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
+        keyword.openNewTab("URL_PRODUCT_DETAIL");
         Thread.sleep(2000);
     }
 
     public void commonLoad() throws InterruptedException {
         keyword.imWait(5);
-        keyword.openNewTab(PropertiesFile.getPropValue("URL_PRODUCT_DETAIL"));
+        keyword.openNewTab("URL_PRODUCT_DETAIL");
 
     }
     public void clickDropdown(){
-        keyword.click(PropertiesFile.getPropValue("CUS_PRD_FILTER_SELECT"));
+        keyword.click("CUS_PRD_FILTER_SELECT");
         keyword.imWait(2);
-        keyword.randomElement(PropertiesFile.getPropValue("CUS_PRD_FILTER_CHECKSORT"));
+        keyword.randomElement("CUS_PRD_FILTER_CHECKSORT");
     }
 
     public void filterWithRatting() throws InterruptedException {
         setUp();
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("CUS_PRD_FILTER_RATTING_1"));
+        keyword.scrollDownToElement("CUS_PRD_FILTER_RATTING_1");
         keyword.imWait(2);
-        keyword.click(PropertiesFile.getPropValue("CUS_PRD_FILTER_RATTING_1"));
+        keyword.click("CUS_PRD_FILTER_RATTING_1");
 
         Thread.sleep(10000);
         System.out.printf("When the ratting has no reviews" + "\n");
-        keyword.click(PropertiesFile.getPropValue("CUS_PRD_FILTER_RATTING_2"));
+        keyword.click("CUS_PRD_FILTER_RATTING_2");
         commonLoad();
 
 
     }
     public void filterWithCheckBox() throws InterruptedException {
-        keyword.randomConcatElement(PropertiesFile.getPropValue("CUS_PRD_FILTER_CHECKBOX_ELE"),5);
+        keyword.randomConcatElement("CUS_PRD_FILTER_CHECKBOX_ELE",5);
     }
     public void filterWithCheckSort() throws InterruptedException {
         commonLoad();
@@ -64,13 +64,13 @@ public class CustomerServicePage extends BasePage {
 
     }
     public void filterCheckBoxAndRatting() throws InterruptedException {
-        keyword.click(PropertiesFile.getPropValue("CUS_PRD_FILTER_RATTING_1"));
+        keyword.click("CUS_PRD_FILTER_RATTING_1");
         filterWithCheckBox();
         System.out.printf("done checkbox-ratting" + "\n");
         commonLoad();
     }
     public void filtercWithCheckSortAndRatting() throws InterruptedException {
-        keyword.click(PropertiesFile.getPropValue("CUS_PRD_FILTER_RATTING_1"));
+        keyword.click("CUS_PRD_FILTER_RATTING_1");
         keyword.imWait(2);
         clickDropdown();
         System.out.printf("done checksort-ratting"+"\n");
