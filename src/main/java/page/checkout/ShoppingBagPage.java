@@ -23,14 +23,14 @@ public class ShoppingBagPage extends BasePage {
 
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H"));
+        keyword.click("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H");
         Thread.sleep(2000);
-        //keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_CLOSE"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        //keyword.click("CHECKOUT_ADDPRODUCT_BTN_CLOSE");
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
 
     }
@@ -39,9 +39,9 @@ public class ShoppingBagPage extends BasePage {
 
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
 
     }
@@ -50,41 +50,41 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_LBL_ENGRAVING"));
+        keyword.click("CHECKOUT_ADDPRODUCT_LBL_ENGRAVING");
         keyword.imWait(10);
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_TXT_ENGRAVING"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING"));
+        keyword.sendKeys("CHECKOUT_ADDPRODUCT_TXT_ENGRAVING",
+                "CHECKOUT_DATA_ENGRAVING");
         Thread.sleep(2000);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H"));
+        keyword.click("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H");
         Thread.sleep(2000);
         //keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_CLOSE"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
     }
     public void addProductWithDoubleEngraving(String url) throws InterruptedException {
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_LBL_ENGRAVING"));
+        keyword.click("CHECKOUT_ADDPRODUCT_LBL_ENGRAVING");
         keyword.imWait(10);
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_TXT_ENGRAVING_18_WOMEN"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING"));
+        keyword.sendKeys("CHECKOUT_ADDPRODUCT_TXT_ENGRAVING_18_WOMEN",
+                "CHECKOUT_DATA_ENGRAVING");
         keyword.imWait(3);
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_TXT_ENGRAVING_18_MEN"),
-                PropertiesFile.getPropValue("CHECKOUT_DATA_ENGRAVING"));
+        keyword.sendKeys("CHECKOUT_ADDPRODUCT_TXT_ENGRAVING_18_MEN",
+                "CHECKOUT_DATA_ENGRAVING");
         keyword.imWait(3);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H"));
+        keyword.click("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H");
         Thread.sleep(2000);
         //keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_CLOSE"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
     }
 
@@ -93,293 +93,272 @@ public class ShoppingBagPage extends BasePage {
 
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(5000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CHECKBOX_WOMENRING_GIFT"));
+        keyword.click("CHECKOUT_CHECKBOX_WOMENRING_GIFT");
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CHECKBOX_MENRING_GIFT"));
+        keyword.click("CHECKOUT_CHECKBOX_MENRING_GIFT");
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_CLOSE"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_ADD"));
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_CLOSE");
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
 
     }
 
     public void clickShoppingBagPage() throws InterruptedException {
         Thread.sleep(10000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_MINICART"));
+        keyword.click("CHECKOUT_BTN_MINICART");
         Thread.sleep(10000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_MINICART_VIEWALL"));
+        keyword.click("CHECKOUT_MINICART_VIEWALL");
         keyword.imWait(10);
 
     }
 
     public void removeProduct(String typeOfProduct) throws InterruptedException {
-        keyword.click(PropertiesFile.getPropValue(typeOfProduct));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_REMOVE"),10);
+        keyword.click(typeOfProduct);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_REMOVE",10);
         keyword.imWait(10);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CONFIRM_REMOVE"));
-        if(!keyword.verifyElementPresent(PropertiesFile.getPropValue(typeOfProduct))){
+        keyword.click("CHECKOUT_BTN_CONFIRM_REMOVE");
+        if(!keyword.verifyElementPresent(typeOfProduct)){
             logger.info("Passed");
         }
     }
     public void confirmMessage(String messages){
         keyword.imWait(10);
-        keyword.verifyElementVisible(PropertiesFile.getPropValue(messages));
+        keyword.verifyElementVisible(messages);
     }
     public void changeQty(String qty){
         keyword.imWait(5);
-        keyword.selectDropDownListByIndex(PropertiesFile.getPropValue("CHECKOUT_DDL_QTY"),
-                PropertiesFile.getPropValue(qty));
+        keyword.selectDropDownListByIndex("CHECKOUT_DDL_QTY",
+                qty);
     }
 
     public void viewDetail(String typeOfProduct) throws InterruptedException {
-        keyword.click(PropertiesFile.getPropValue(typeOfProduct));
+        keyword.click(typeOfProduct);
 
     }
     public void clickEdit(String btnEdit) throws InterruptedException {
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_HEADER"),10);
-        keyword.click(PropertiesFile.getPropValue(btnEdit));
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_HEADER",10);
+        keyword.click(btnEdit);
         Thread.sleep(5000);
     }
     public void editOptions() throws InterruptedException {
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_BLACKDIAMOND"));
+        keyword.click("CHECKOUT_CBX_BLACKDIAMOND");
         Thread.sleep(1000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_LBL_METAL"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_METAL"),10);
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_METAL"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_MESSAGES_UPDATE_21"),10);
+        keyword.click("CHECKOUT_LBL_METAL");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_METAL",10);
+        keyword.scrollDownToElement("CHECKOUT_BTN_UPDATE");
+        keyword.click("CHECKOUT_CBX_METAL");
+        keyword.click("CHECKOUT_BTN_UPDATE");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",10);
     }
     public void editEaringOptions(){
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_PAIR"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_PAIR"));
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
+        keyword.click("CHECKOUT_BTN_PAIR");
+        keyword.click("CHECKOUT_BTN_PAIR");
+        keyword.scrollDownToElement("CHECKOUT_BTN_UPDATE");
+        keyword.click("CHECKOUT_BTN_UPDATE");
     }
     public void editCoupleRings(){
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_LBL_STONE"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_DIAMOND"),10);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_DIAMOND"));
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_LBL_PROFILE"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_LBL_PROFILE"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_PROFILE_B"),10);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_PROFILE_B"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_DDL_SIZE"),5);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_DDL_SIZE"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_SIZE_L"));
-        keyword.scrollDownToElement(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_MESSAGES_UPDATE_23"),10);
+        keyword.click("CHECKOUT_LBL_STONE");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_DIAMOND",10);
+        keyword.click("CHECKOUT_CBX_DIAMOND");
+        keyword.scrollDownToElement("CHECKOUT_LBL_PROFILE");
+        keyword.click("CHECKOUT_LBL_PROFILE");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_PROFILE_B",10);
+        keyword.click("CHECKOUT_CBX_PROFILE_B");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_DDL_SIZE",5);
+        keyword.click("CHECKOUT_DDL_SIZE");
+        keyword.click("CHECKOUT_CBX_SIZE_L");
+        keyword.scrollDownToElement("CHECKOUT_BTN_UPDATE");
+        keyword.click("CHECKOUT_BTN_UPDATE");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_23",10);
     }
     public void inputEngravingwithSingleRing(String data, String btnAdd, String engraving) throws InterruptedException {
 //        keyword.imWait(30);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_VIEWDETAIL"),5);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_VIEWDETAIL",5);
         Thread.sleep(5000);
-        keyword.verifyElementPresent(PropertiesFile.getPropValue(btnAdd));
-        keyword.click(PropertiesFile.getPropValue(btnAdd));
+        keyword.verifyElementPresent(btnAdd);
+        keyword.click(btnAdd);
         keyword.imWait(30);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TITLE_ENGRAVING"),5);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_TITLE_ENGRAVING",5);
         keyword.imWait(30);
-        keyword.clearText(PropertiesFile.getPropValue("CHECKOUT_TXT_ENGRAVING"));
+        keyword.clearText("CHECKOUT_TXT_ENGRAVING");
         Thread.sleep(5000);
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_ENGRAVING"),
-                PropertiesFile.getPropValue(data));
+        keyword.sendKeys("CHECKOUT_TXT_ENGRAVING", data);
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_VIEWDETAIL_BTN_SAVE"));
+        keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
         Thread.sleep(5000);
-        keyword.assertEquals(PropertiesFile.getPropValue(data),
-                PropertiesFile.getPropValue(engraving));
+        keyword.assertEquals(data, engraving);
     }
     public void inputEngravingwithCoupleRing(String data, String btnAdd, String txtWomen,
                                              String txtMen ) throws InterruptedException {
 //        keyword.imWait(15);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_VIEWDETAIL"),5);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_VIEWDETAIL",5);
         Thread.sleep(5000);
-        keyword.click(PropertiesFile.getPropValue(btnAdd));
+        keyword.click(btnAdd);
         keyword.imWait(10);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TITLE_ENGRAVING"),5);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_TITLE_ENGRAVING",5);
         keyword.imWait(10);
-        keyword.clearText(PropertiesFile.getPropValue(txtWomen));
+        keyword.clearText(txtWomen);
         keyword.imWait(3);
-        keyword.sendKeys(PropertiesFile.getPropValue(txtWomen),
-                PropertiesFile.getPropValue(data));
+        keyword.sendKeys(txtWomen, data);
         keyword.imWait(20);
-        keyword.clearText(PropertiesFile.getPropValue(txtMen));
-        keyword.sendKeys(PropertiesFile.getPropValue(txtMen),
-                PropertiesFile.getPropValue(data));
+        keyword.clearText(txtMen);
+        keyword.sendKeys(txtMen, data);
         Thread.sleep(2000);
 
     }
     @Step("Input valid data")
     public void inputCorrectly(String data, String engraving) throws InterruptedException {
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_VIEWDETAIL_BTN_SAVE"));
+        keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
         Thread.sleep(10000);
-        keyword.assertEquals(PropertiesFile.getPropValue(data)+ " - "+ PropertiesFile.getPropValue(data)
+        keyword.assertEquals(data+ " - "+ data
                 , PropertiesFile.getPropValue(engraving));
     }
     @Step("Input invalid data")
     public void inputError(String lblErrorMessage1, String lblErrorMessage2, String dataExpected, String engraving, boolean flag) throws InterruptedException {
-        keyword.verifyElementPresent(PropertiesFile.getPropValue(lblErrorMessage1));
-        keyword.verifyElementPresent(PropertiesFile.getPropValue(lblErrorMessage2));
+        keyword.verifyElementPresent(lblErrorMessage1);
+        keyword.verifyElementPresent(lblErrorMessage2);
         if(flag == true) {
-            keyword.click(PropertiesFile.getPropValue("CHECKOUT_VIEWDETAIL_BTN_SAVE"));
+            keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
             Thread.sleep(10000);
-            keyword.assertEquals(PropertiesFile.getPropValue(dataExpected) + " - "
-                            + PropertiesFile.getPropValue(dataExpected)
-                    , PropertiesFile.getPropValue(engraving));
+            keyword.assertEquals(dataExpected + " - " + dataExpected, engraving);
         }
     }
     public void compareData(String expect, String actual){
-        keyword.assertEquals(PropertiesFile.getPropValue(expect),
-                PropertiesFile.getPropValue(actual));
+        keyword.assertEquals(expect, actual);
     }
     @Step("missing fill product's size")
     public void missingFillSize(){
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_DDL_SIZE"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_SIZE_CUSTOM"));
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_UPDATE"));
+        keyword.click("CHECKOUT_DDL_SIZE");
+        keyword.click("CHECKOUT_CBX_SIZE_CUSTOM");
+        keyword.click("CHECKOUT_BTN_UPDATE");
     }
     @Step("click to choose free gift wrapping")
     public void clickGiftWrapping(){
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_WRAP_UNIVERSE"));
+        keyword.click("CHECKOUT_CBX_WRAP_UNIVERSE");
     }
 
     @Step("click to choose free gift wrapping")
     public void moveToPagecheckOut() throws InterruptedException {
         Thread.sleep(10000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_CHECKOUT"),10);
+        keyword.click("CHECKOUT_BTN_CHECKOUT");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",10);
     }
     @Step("common checkout")
     public void checkOut() throws InterruptedException {
         Thread.sleep(3000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT_ADDRESS"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT_SHIPMENT"),5);
+        keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_CHECKOUT_SHIPMENT",5);
         Thread.sleep(10000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CHECKOUT_SHIPMENT"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_CHECKOUT_PAYMENT"),10);
+        keyword.click("CHECKOUT_BTN_CHECKOUT_SHIPMENT");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT_PAYMENT",10);
     }
     @Step("submit order")
     public void submit(){
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
+        keyword.click("CHECKOUT_BTN_ORDER");
         String messages = keyword.getAlertText();
         keyword.acceptAlert();
-        keyword.simpleAssertEquals(messages,PropertiesFile.getPropValue("CHECKOUT_MESSAGES_PAYMENT"));
+        keyword.simpleAssertEquals(messages,"CHECKOUT_MESSAGES_PAYMENT");
     }
     @Step("check out with payment method: visa")
     public void checkOutWithVisa(String flag) throws InterruptedException {
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_VISA"),10);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_VISA",10);
         Thread.sleep(10000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_VISA"));
+        keyword.click("CHECKOUT_CBX_CHECKOUT_VISA");
         Thread.sleep(3000);
         switch (flag) {
             //input valid information
             case "success":
-                keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_VISA"));
-                keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_VISA"),
-                        PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_VISA"));
+                keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_VISA");
+                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_VISA", "CHECKOUT_DATA_CHECKOUT_VISA");
                 keyword.switchToDefaultContent();
-                keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_EXPIRYDATE"));
-                keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_EXPIRYDATE"),
-                        PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_EXPIRYDATE"));
+                keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_EXPIRYDATE");
+                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_EXPIRYDATE", "CHECKOUT_DATA_CHECKOUT_EXPIRYDATE");
                 keyword.switchToDefaultContent();
-                keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_CVC"));
-                keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_CVC"),
-                        PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_CVC"));
+                keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_CVC");
+                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_CVC", "CHECKOUT_DATA_CHECKOUT_CVC");
                 keyword.switchToDefaultContent();
-                keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_NAME"),
-                        PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_NAME"));
-                keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
-                keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"), 10);
-                keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
+                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_NAME", "CHECKOUT_DATA_CHECKOUT_NAME");
+                keyword.click("CHECKOUT_BTN_ORDER");
+                keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 10);
+                keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
                 break;
             //missing input all of fields
             case "failByMissing":
-                keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
-                keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_DATA_MESSAGES_VISA"),
-                        PropertiesFile.getPropValue("CHECKOUT_MESSAGES_VISA"));
-                keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_DATA_MESSAGES_VISA"),
-                        PropertiesFile.getPropValue("CHECKOUT_MESSAGES_EXPIRYDATE"));
-                keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_DATA_MESSAGES_VISA"),
-                        PropertiesFile.getPropValue("CHECKOUT_MESSAGES_CVC"));
+                keyword.click("CHECKOUT_BTN_ORDER");
+                keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA", "CHECKOUT_MESSAGES_VISA");
+                keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA", "CHECKOUT_MESSAGES_EXPIRYDATE");
+                keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA", "CHECKOUT_MESSAGES_CVC");
                 break;
             //input defuse card
             case "failByCard":
-                keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_VISA"));
-                keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_VISA"),
-                        PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_VISA_2"));
+                keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_VISA");
+                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_VISA", "CHECKOUT_DATA_CHECKOUT_VISA_2");
                 keyword.switchToDefaultContent();
-                keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_EXPIRYDATE"));
-                keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_EXPIRYDATE"),
-                        PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_EXPIRYDATE_2"));
+                keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_EXPIRYDATE");
+                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_EXPIRYDATE", "CHECKOUT_DATA_CHECKOUT_EXPIRYDATE_2");
                 keyword.switchToDefaultContent();
-                keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("CHECKOUT_IFRAME_CHECKOUT_CVC"));
-                keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_CVC"),
-                        PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_CVC_2"));
+                keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_CVC");
+                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_CVC", "CHECKOUT_DATA_CHECKOUT_CVC_2");
                 keyword.switchToDefaultContent();
-                keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TBX_CHECKOUT_NAME"),
-                        PropertiesFile.getPropValue("CHECKOUT_DATA_CHECKOUT_NAME"));
-                keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
+                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_NAME", "CHECKOUT_DATA_CHECKOUT_NAME");
+                keyword.click("CHECKOUT_BTN_ORDER");
                 Thread.sleep(5000);
-                keyword.verifyElementVisible(PropertiesFile.getPropValue("CHECKOUT_MESSAGES_VISA_2"));
+                keyword.verifyElementVisible("CHECKOUT_MESSAGES_VISA_2");
                 break;
         }
     }
     public void checkOutWithPayPal() throws InterruptedException {
         Thread.sleep(5000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_PAYPAL"));
+        keyword.click("CHECKOUT_CBX_CHECKOUT_PAYPAL");
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
-        keyword.clearText(PropertiesFile.getPropValue("PAYPAL_EMAIL"));
-        keyword.sendKeys(PropertiesFile.getPropValue("PAYPAL_EMAIL"),
-                PropertiesFile.getPropValue("PAYPAL_DATA_EMAIL"));
-        keyword.sendKeys(PropertiesFile.getPropValue("PAYPAL_PASSWORD"),
-                PropertiesFile.getPropValue("PAYPAL_DATA_PASSWORD"));
-        keyword.click(PropertiesFile.getPropValue("PAYPAL_BTN_LOGIN"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("PAYPAL_BTN_COMPLETE"),10);
-        keyword.click(PropertiesFile.getPropValue("PAYPAL_BTN_COMPLETE"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"), 20);
-        keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
+        keyword.click("CHECKOUT_BTN_ORDER");
+        keyword.clearText("PAYPAL_EMAIL");
+        keyword.sendKeys("PAYPAL_EMAIL", "PAYPAL_DATA_EMAIL");
+        keyword.sendKeys("PAYPAL_PASSWORD", "PAYPAL_DATA_PASSWORD");
+        keyword.click("PAYPAL_BTN_LOGIN");
+        keyword.webDriverWaitForElementPresent("PAYPAL_BTN_COMPLETE",10);
+        keyword.click("PAYPAL_BTN_COMPLETE");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 20);
+        keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
     }
 
     public void checkOutWithKlarnaLater() throws InterruptedException {
         Thread.sleep(10000);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER"),10);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER"));
+        keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER",10);
+        keyword.click("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER");
         Thread.sleep(2000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
+        keyword.click("CHECKOUT_BTN_ORDER");
         Thread.sleep(10000);
-        keyword.switchToIFrameByXpath(PropertiesFile.getPropValue("KLARNA_IFRAME"));
+        keyword.switchToIFrameByXpath("KLARNA_IFRAME");
         Thread.sleep(10000);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("KLARNA_BTN_CONTINUE"),30);
-        keyword.click(PropertiesFile.getPropValue("KLARNA_BTN_CONTINUE"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("KLARNA_TBX_OTP"),10);
-        keyword.sendKeys(PropertiesFile.getPropValue("KLARNA_TBX_OTP"),
-                PropertiesFile.getPropValue("KLARNA_DATA_OTP"));
+        keyword.webDriverWaitForElementPresent("KLARNA_BTN_CONTINUE",30);
+        keyword.click("KLARNA_BTN_CONTINUE");
+        keyword.webDriverWaitForElementPresent("KLARNA_TBX_OTP",10);
+        keyword.sendKeys("KLARNA_TBX_OTP", "KLARNA_DATA_OTP");
         Thread.sleep(10000);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("KLARNA_BTN_CONFIRM"),10);
-        keyword.click(PropertiesFile.getPropValue("KLARNA_BTN_CONFIRM"));
-        keyword.click(PropertiesFile.getPropValue("KLARNA_BTN_FAVOURITE"));
+        keyword.webDriverWaitForElementPresent("KLARNA_BTN_CONFIRM",10);
+        keyword.click("KLARNA_BTN_CONFIRM");
+        keyword.click("KLARNA_BTN_FAVOURITE");
         keyword.imWait(20);
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"), 10);
-        keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
+        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 10);
+        keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
 
     }
     public void checkOutWithBankTransfer() throws InterruptedException {
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_BANK"),10);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_CBX_CHECKOUT_BANK"));
+        keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_BANK",10);
+        keyword.click("CHECKOUT_CBX_CHECKOUT_BANK");
         Thread.sleep(6000);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"), 20);
-        keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
+        keyword.click("CHECKOUT_BTN_ORDER");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 20);
+        keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
     }
 
     public void clickPrint() throws InterruptedException {
-        keyword.click(PropertiesFile.getPropValue("SUCCESS_BTN_PRINT"));
+        keyword.click("SUCCESS_BTN_PRINT");
         Thread.sleep(3000);
         keyword.switchToTab(1);
         keyword.executeJavaScript("window.print=function(){};");
@@ -388,60 +367,58 @@ public class ShoppingBagPage extends BasePage {
 //        if(keyword.verifyElementVisible(PropertiesFile.getPropValue("CHECKOUT_BTN_CANCEL_CREDIT"))) {
 //            keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CANCEL_CREDIT"));
 //        }
-        keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),money);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_USE_CREDIT"));
+        keyword.sendKeys("CHECKOUT_TXT_STORE_CREDIT",money);
+        keyword.click("CHECKOUT_BTN_USE_CREDIT");
     }
     public void useCredit() throws InterruptedException {
         logger.info("useCredit");
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_USE_CREDIT"),10);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_USE_CREDIT",10);
         //Thread.sleep(5000);
-        keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_MESSAGE_USE_CREDIT"),
-                PropertiesFile.getPropValue("CHECKOUT_LBL_USE_CREDIT"));
+        keyword.assertEquals("CHECKOUT_MESSAGE_USE_CREDIT", "CHECKOUT_LBL_USE_CREDIT");
         Thread.sleep(20000);
-        String actualPrice = keyword.getTextWithOutCharacters(PropertiesFile.getPropValue("CHECKOUT_LBL_TOTAL_PRICE"),"£");
+        String actualPrice = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
         logger.info(actualPrice);
         String lastPrice = keyword.removeLastChar(actualPrice);
         keyword.simpleAssertEquals("0.0", lastPrice);
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_ORDER"));
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"), 20);
-        keyword.verifyElementPresent(PropertiesFile.getPropValue("CHECKOUT_SUCCESSPAGE"));
+        keyword.click("CHECKOUT_BTN_ORDER");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 20);
+        keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
     }
     public void checkOutWithStoreCredit(String flag) throws InterruptedException {
         Thread.sleep(10000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_STORE_CREDIT"));
         //keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),10);
         Float credit = Float.valueOf(1);
-
         switch (flag){
             case "equals":
-                String price = keyword.getTextWithOutCharacters(PropertiesFile.getPropValue("CHECKOUT_LBL_TOTAL_PRICE"),"£");
+                String price = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
                 clickUseCredit(price);
                 useCredit();
                 break;
             case "less":
                 clickUseCredit(String.valueOf(credit));
-                Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters(PropertiesFile.getPropValue("CHECKOUT_LBL_TOTAL_PRICE"),"£"));
+                Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
                 logger.info(String.valueOf(rawPrice));
                 String totalPrice = String.valueOf(calculateMoney(rawPrice, credit));
                 Thread.sleep(20000);
-                String actualPrice = keyword.getTextWithOutCharacters(PropertiesFile.getPropValue("CHECKOUT_LBL_TOTAL_PRICE"),"£");
+                String actualPrice = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
                 logger.info(actualPrice);
                 String lastPrice = keyword.removeLastChar(actualPrice);
                 keyword.simpleAssertEquals(totalPrice, lastPrice);
                 checkOutWithBankTransfer();
                 break;
             case "more":
-                Float rawPrice1 = Float.valueOf(keyword.getTextWithOutCharacters(PropertiesFile.getPropValue("CHECKOUT_LBL_TOTAL_PRICE"),"£"));
+                Float rawPrice1 = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
                 String totalPrice1 = String.valueOf(moreMoney(rawPrice1, credit));
                 clickUseCredit(totalPrice1);
                 useCredit();
                 break;
             case "wrong":
-                keyword.sendKeys(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),"-100");
-                keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_USE_CREDIT"));
-                keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_LBL_USE_CREDIT"),10);
-//                keyword.assertEquals(PropertiesFile.getPropValue("CHECKOUT_MESSAGE_USE_CREDIT"),
-//                        PropertiesFile.getPropValue("CHECKOUT_LBL_USE_CREDIT"));
+                keyword.sendKeys("CHECKOUT_TXT_STORE_CREDIT","-100");
+                keyword.click("CHECKOUT_BTN_USE_CREDIT");
+                keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_USE_CREDIT",10);
+//                keyword.assertEquals("CHECKOUT_MESSAGE_USE_CREDIT",
+//                        "CHECKOUT_LBL_USE_CREDIT");
                 break;
         }
     }
