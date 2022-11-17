@@ -19,16 +19,14 @@ public class LoginPage extends BasePage {
                 PropertiesFile.getPropValue("LOGIN_DATA_ALERT_PASSWORD"),
                 PropertiesFile.getPropValue("LOGIN_AUTHEN_URL"));
     }
-    public void loginOnWebsite() throws InterruptedException {
+    public void loginOnWebsite(String email, String password) throws InterruptedException {
         Thread.sleep(3000);
         keyword.click("LOGIN_BTN_LOGIN");
-        keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LOGIN_LBL_LOGIN"),30);
+        keyword.webDriverWaitForElementPresent("LOGIN_LBL_LOGIN",30);
         Thread.sleep(2000);
-        keyword.sendKeys(PropertiesFile.getPropValue("LOGIN_TXT_EMAIL"),
-                PropertiesFile.getPropValue("LOGIN_DATA_EMAIL"));
+        keyword.sendKeys("LOGIN_TXT_EMAIL", email);
         Thread.sleep(2000);
-        keyword.sendKeys(PropertiesFile.getPropValue("LOGIN_TXT_PASSWORD"),
-                PropertiesFile.getPropValue("LOGIN_DATA_PASSWORD"));
+        keyword.sendKeys("LOGIN_TXT_PASSWORD", password);
         Thread.sleep(2000);
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
 
