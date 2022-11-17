@@ -361,7 +361,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("SUCCESS_BTN_PRINT");
         Thread.sleep(3000);
         keyword.switchToTab(1);
-        keyword.executeJavaScript("window.print=function(){};");
+        keyword.executeJavaScript("window.print=function(){window.close();};");
     }
     public void clickUseCredit(String money){
 //        if(keyword.verifyElementVisible(PropertiesFile.getPropValue("CHECKOUT_BTN_CANCEL_CREDIT"))) {

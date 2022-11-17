@@ -314,7 +314,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        objShoppingBagPage.checkOutWithStoreCredit("wrong");
+        //objShoppingBagPage.checkOutWithStoreCredit("wrong");
 
     }
     @Test (priority = 25, description = "Place order and apply full amount store credit successfully")
