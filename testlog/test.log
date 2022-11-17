@@ -1,183 +1,36 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-INFO  | 2022-11-16 17:00:49 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:38) - Open browser
-INFO  | 2022-11-16 17:00:52 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
-INFO  | 2022-11-16 17:00:52 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
-INFO  | 2022-11-16 17:00:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - open browser successfullyCHROME
-INFO  | 2022-11-16 17:00:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-16 17:00:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - url: [Ljava.lang.String;@2965dd88
-INFO  | 2022-11-16 17:01:00 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:242) - Maximizing browser window...
-INFO  | 2022-11-16 17:01:01 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:298) - login by authen link withtest !test123!
-INFO  | 2022-11-16 17:01:24 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickBTN_COOKIES
-INFO  | 2022-11-16 17:01:26 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:433) -  scrolling to position 
-INFO  | 2022-11-16 17:01:50 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2022-11-16 17:01:50 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:01:50 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:257) - Navigating to URL...URL_NOTLOGIN
-INFO  | 2022-11-16 17:02:09 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:02:10 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:409) - scrollDownToElementCHECKOUT_SELECT_PRODUCT
-INFO  | 2022-11-16 17:02:10 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:02:10 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_SELECT_PRODUCT
-INFO  | 2022-11-16 17:02:29 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:409) - scrollDownToElementCHECKOUT_SELECT_RING_SIZE
-INFO  | 2022-11-16 17:02:29 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:02:29 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_SELECT_RING_SIZE
-INFO  | 2022-11-16 17:02:30 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:02:30 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:409) - scrollDownToElementCHECKOUT_SELECT_ONE_SIZE
-INFO  | 2022-11-16 17:02:31 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_SELECT_ONE_SIZE
-INFO  | 2022-11-16 17:02:33 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:02:33 | [main] core.KeywordWeb (KeywordWeb.java:doubleClick:173) - double clickCHECK_OUT_BTN_ADD_PRODUCT
-INFO  | 2022-11-16 17:02:33 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:02:33 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_VIEW_DETAIL
-INFO  | 2022-11-16 17:02:49 | [main] core.KeywordWeb (KeywordWeb.java:doubleClick:173) - double clickCHECKOUT_BTN_PROCEED_CHECKOUT
-INFO  | 2022-11-16 17:03:00 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:03:00 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCECKOUT_BTN_CONTINUE
-INFO  | 2022-11-16 17:03:03 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
-INFO  | 2022-11-16 17:03:05 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:03:05 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:03:05 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_FIRSTNAMEwith CHECKOUT_DATA_FIRSNAME_ENTER
-INFO  | 2022-11-16 17:03:06 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:03:06 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_LASTNAMEwith CHECKOUT_DATA_LASTNAME_ENTER
-INFO  | 2022-11-16 17:03:06 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:03:06 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_EMAILwith CHECKOUT_DATA_EMAIL_ENTER
-INFO  | 2022-11-16 17:03:07 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:03:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_CONFIRMEMAILwith CHECKOUT_DATA_CONFIRMEMAIL_ENTER
-INFO  | 2022-11-16 17:03:07 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:03:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_PHONEwith CHECKOUT_DATA_PHONE_ENTER_FAIL
-INFO  | 2022-11-16 17:03:08 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:03:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_COMPANYwith CHECKOUT_DATA_COMPANY_ENTER
-INFO  | 2022-11-16 17:03:08 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:03:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_STREETwith CHECKOUT_DATA_STREET_ENTER
-INFO  | 2022-11-16 17:03:08 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:03:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_ZIPCODEwith CHECKOUT_DATA_ZIPCODE_ENTER
-INFO  | 2022-11-16 17:03:09 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-16 17:03:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_CITYwith CHECKOUT_DATA_CITY_ENTER
-INFO  | 2022-11-16 17:03:09 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
-INFO  | 2022-11-16 17:03:09 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:03:09 | [main] core.KeywordWeb (KeywordWeb.java:clearText:80) - clearText
-INFO  | 2022-11-16 17:03:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_CONFIRMEMAILwith CHECKOUT_DATA_EMAIL_FAILD_2
-INFO  | 2022-11-16 17:03:11 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
-INFO  | 2022-11-16 17:03:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:03:11 | [main] core.KeywordWeb (KeywordWeb.java:clearText:80) - clearText
-INFO  | 2022-11-16 17:03:12 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_CONFIRMEMAILwith CHECKOUT_DATA_EMAIL_FAILD_1
-INFO  | 2022-11-16 17:03:12 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:03:12 | [main] core.KeywordWeb (KeywordWeb.java:clearText:80) - clearText
-INFO  | 2022-11-16 17:03:13 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_CONFIRMEMAILwith CHECKOUT_DATA_EMAIL_ENTER
-INFO  | 2022-11-16 17:03:14 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:03:14 | [main] core.KeywordWeb (KeywordWeb.java:clearText:80) - clearText
-INFO  | 2022-11-16 17:03:15 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_PHONEwith CHECKOUT_DATA_PHONE_ENTER_FAIL01
-INFO  | 2022-11-16 17:03:15 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:03:15 | [main] core.KeywordWeb (KeywordWeb.java:clearText:80) - clearText
-INFO  | 2022-11-16 17:03:16 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_PHONEwith CHECKOUT_DATA_PHONE_ENTER_SUCCESS01
-INFO  | 2022-11-16 17:03:17 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
-INFO  | 2022-11-16 17:03:17 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:03:19 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - click//aside[@class='modal-custom modal-sm address-validation-wrap modal-address-validation modal-confirm modal-sm-fullscreen melissa-validation modal-slide _inner-scroll _show']//footer[@class='modal-footer']//button[@class='action secondary action-hide-popup'] 
-INFO  | 2022-11-16 17:03:19 | [main] core.KeywordWeb (KeywordWeb.java:clearText:80) - clearText
-INFO  | 2022-11-16 17:03:20 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_STREETwith CHECKOUT_DATA_STREET_ENTER01
-INFO  | 2022-11-16 17:03:21 | [main] core.KeywordWeb (KeywordWeb.java:clearText:80) - clearText
-INFO  | 2022-11-16 17:03:22 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_ZIPCODEwith CHECKOUT_DATA_ZIPCODE_ENTER01
-INFO  | 2022-11-16 17:03:22 | [main] core.KeywordWeb (KeywordWeb.java:clearText:80) - clearText
-INFO  | 2022-11-16 17:03:23 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_CITYwith CHECKOUT_DATA_CITY_ENTER01
-INFO  | 2022-11-16 17:03:23 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - click//form[@data-bind='submit: setBillingInformation']//button[@type='submit']
-INFO  | 2022-11-16 17:03:30 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:409) - scrollDownToElementCHECKOUT_BTN_BACK
-INFO  | 2022-11-16 17:03:31 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_BACK
-INFO  | 2022-11-16 17:03:31 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_FORGOT_PASSWORD
-INFO  | 2022-11-16 17:03:31 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:03:34 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_BACK_FOR_GOT_PASSWORD
-INFO  | 2022-11-16 17:03:34 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - click//div[@class='checkout-login']//div[@class='actions-toolbar']//button[@class='action login primary'] 
-INFO  | 2022-11-16 17:03:34 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:03:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_EMAIL_ADDRESSwith CHECKOUT_DATA_EMAIL_NOT_EXIST
-INFO  | 2022-11-16 17:03:35 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:03:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_PASSWORDwith CHECKOUT_DATA_PASSWORD_ENTER
-INFO  | 2022-11-16 17:03:35 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - click//div[@class='checkout-login']//div[@class='actions-toolbar']//button[@class='action login primary'] 
-INFO  | 2022-11-16 17:03:35 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:03:36 | [main] core.KeywordWeb (KeywordWeb.java:clearText:80) - clearText
-INFO  | 2022-11-16 17:03:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_EMAIL_ADDRESSwith CHECKOUT_DATA_EMAIL_ENTER
-INFO  | 2022-11-16 17:03:36 | [main] core.KeywordWeb (KeywordWeb.java:clearText:80) - clearText
-INFO  | 2022-11-16 17:03:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_DATA_PASSWORDwith CHECKOUT_DATA_PASSWORD_ENTER
-INFO  | 2022-11-16 17:03:36 | [main] core.KeywordWeb (KeywordWeb.java:doubleClick:173) - double clickCHECKOUT_BTN_LOGIN_RGT_CUSTOMER
-INFO  | 2022-11-16 17:03:37 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - click//div[@class='checkout-login']//div[@class='actions-toolbar']//button[@class='action login primary'] 
-=======
-INFO  | 2022-11-16 17:12:18 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:38) - Open browser
-INFO  | 2022-11-16 17:12:19 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
-INFO  | 2022-11-16 17:12:19 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
-INFO  | 2022-11-16 17:12:21 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - open browser successfullyCHROME
-INFO  | 2022-11-16 17:12:21 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-16 17:12:21 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - url: [Ljava.lang.String;@38cf3ae1
-INFO  | 2022-11-16 17:12:22 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:243) - Maximizing browser window...
-INFO  | 2022-11-16 17:12:22 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_RV_14:322) - testCase_RV_14
-INFO  | 2022-11-16 17:12:22 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:299) - login by authen link withtest !test123!
-INFO  | 2022-11-16 17:12:47 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickBTN_COOKIES
-INFO  | 2022-11-16 17:12:49 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:434) -  scrolling to position 
-INFO  | 2022-11-16 17:13:02 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2022-11-16 17:13:05 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_LOGIN
-INFO  | 2022-11-16 17:13:05 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:13:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keys//input[@id ='login-email']with linh@onlinebizsoft.com
-INFO  | 2022-11-16 17:13:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keys//input[@id ='login-password']with Linh@123
-INFO  | 2022-11-16 17:13:12 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2022-11-16 17:13:18 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia
-INFO  | 2022-11-16 17:13:48 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:410) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
-INFO  | 2022-11-16 17:13:53 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
-INFO  | 2022-11-16 17:13:55 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_CHECKBOX_WOMENRING_GIFT
-INFO  | 2022-11-16 17:13:58 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_CHECKBOX_MENRING_GIFT
-INFO  | 2022-11-16 17:14:00 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_ADDPRODUCT_BTN_CLOSE
-INFO  | 2022-11-16 17:14:00 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
-INFO  | 2022-11-16 17:14:12 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_BTN_MINICART
-INFO  | 2022-11-16 17:14:22 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_MINICART_VIEWALL
-INFO  | 2022-11-16 17:14:34 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-16 17:14:44 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_BTN_CHECKOUT
-INFO  | 2022-11-16 17:14:56 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:15:00 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
-INFO  | 2022-11-16 17:15:00 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:15:10 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_BTN_CHECKOUT_SHIPMENT
-INFO  | 2022-11-16 17:15:10 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:15:20 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - click//span[@id='block-discount-heading']/span[text()='Use Store Credit']
-INFO  | 2022-11-16 17:15:20 | [main] core.KeywordWeb (KeywordWeb.java:getTextWithOutCharacters:155) - getText of CHECKOUT_LBL_TOTAL_PRICE without £
-INFO  | 2022-11-16 17:15:20 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysCHECKOUT_TXT_STORE_CREDITwith 611.8
-INFO  | 2022-11-16 17:15:20 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_BTN_USE_CREDIT
-INFO  | 2022-11-16 17:15:20 | [main] page.checkout.ShoppingBagPage (ShoppingBagPage.java:useCredit:374) - useCredit
-INFO  | 2022-11-16 17:15:20 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
-INFO  | 2022-11-16 17:15:22 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:559) - compare from CHECKOUT_MESSAGE_USE_CREDIT with CHECKOUT_LBL_USE_CREDIT
-INFO  | 2022-11-16 17:15:42 | [main] core.KeywordWeb (KeywordWeb.java:getTextWithOutCharacters:155) - getText of CHECKOUT_LBL_TOTAL_PRICE without £
-INFO  | 2022-11-16 17:15:42 | [main] page.checkout.ShoppingBagPage (ShoppingBagPage.java:useCredit:380) - 0.00
-INFO  | 2022-11-16 17:15:42 | [main] core.KeywordWeb (KeywordWeb.java:simpleAssertEquals:370) - compare from 0.0 with 0.0
-INFO  | 2022-11-16 17:15:42 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_BTN_ORDER
-INFO  | 2022-11-16 17:15:42 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
->>>>>>> master
-=======
-INFO  | 2022-11-17 08:55:02 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:38) - Open browser
-INFO  | 2022-11-17 08:55:03 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
-INFO  | 2022-11-17 08:55:03 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
-INFO  | 2022-11-17 08:55:05 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - open browser successfullyCHROME
-INFO  | 2022-11-17 08:55:05 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-17 08:55:05 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - url: [Ljava.lang.String;@79c1ccf7
-INFO  | 2022-11-17 08:55:06 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:243) - Maximizing browser window...
-INFO  | 2022-11-17 08:55:06 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:299) - login by authen link withtest !test123!
-INFO  | 2022-11-17 08:55:48 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:434) -  scrolling to position 
-INFO  | 2022-11-17 08:55:58 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...MRT_URL
-INFO  | 2022-11-17 08:56:45 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-17 08:56:45 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
-INFO  | 2022-11-17 08:56:46 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_NAMEwith DATA_NULL
-INFO  | 2022-11-17 08:56:51 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...https://dev3.glamira.com/glde/gift-card/
-INFO  | 2022-11-17 08:57:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_AMOUNTwith MRT_INP_DATA_AMOUNT_ERROR
-INFO  | 2022-11-17 08:57:08 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-17 08:57:08 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
-INFO  | 2022-11-17 08:57:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_NAMEwith MRT_INP_DATA_NAME
-INFO  | 2022-11-17 08:57:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_EMAILwith DATA_ERROR
-INFO  | 2022-11-17 08:57:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_MESSAGEwith MRT_INP_DATA_MESSAGE
-INFO  | 2022-11-17 08:57:29 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickMRT_SUBMIT
-INFO  | 2022-11-17 08:57:30 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...https://dev3.glamira.com/glde/gift-card/
-INFO  | 2022-11-17 08:57:33 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickMRT_AMOUNT
-INFO  | 2022-11-17 08:57:36 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-17 08:57:36 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
-INFO  | 2022-11-17 08:57:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_NAMEwith MRT_INP_DATA_NAME
-INFO  | 2022-11-17 08:57:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_EMAILwith MRT_INP_DATA_EMAIL
-INFO  | 2022-11-17 08:57:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_MESSAGEwith MRT_INP_DATA_MESSAGE
-INFO  | 2022-11-17 08:57:56 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickMRT_SUBMIT
-INFO  | 2022-11-17 08:58:24 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...https://dev3.glamira.com/glde/gift-card/
-INFO  | 2022-11-17 08:58:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_AMOUNTwith MRT_INP_DATA_AMOUNT
-INFO  | 2022-11-17 08:59:00 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-17 08:59:00 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
-INFO  | 2022-11-17 08:59:00 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_NAMEwith MRT_INP_DATA_NAME
-INFO  | 2022-11-17 08:59:00 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_EMAILwith MRT_INP_DATA_EMAIL
-INFO  | 2022-11-17 08:59:00 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_MESSAGEwith MRT_INP_DATA_MESSAGE
-INFO  | 2022-11-17 08:59:20 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickMRT_SUBMIT
->>>>>>> master
+INFO  | 2022-11-17 17:35:08 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:38) - Open browser
+INFO  | 2022-11-17 17:35:10 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO  | 2022-11-17 17:35:10 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO  | 2022-11-17 17:35:14 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - open browser successfullyCHROME
+INFO  | 2022-11-17 17:35:14 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-17 17:35:14 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - url: [Ljava.lang.String;@2df71be0
+INFO  | 2022-11-17 17:35:16 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:242) - Maximizing browser window...
+INFO  | 2022-11-17 17:35:16 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:298) - login by authen link withtest !test123!
+INFO  | 2022-11-17 17:35:28 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:257) - Navigating to URL...BASE_URL
+INFO  | 2022-11-17 17:35:35 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:35:43 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickBTN_COOKIES
+INFO  | 2022-11-17 17:35:45 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:433) -  scrolling to position 
+INFO  | 2022-11-17 17:35:56 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2022-11-17 17:35:56 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_LOGIN
+INFO  | 2022-11-17 17:35:56 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:35:59 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_FORGOT_PASSWORD
+INFO  | 2022-11-17 17:35:59 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:35:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_INPUT_FORGOT_PASSWORDwith LOGIN_DATA_EMAIL_FORGOT_PASSWORD
+INFO  | 2022-11-17 17:35:59 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
+INFO  | 2022-11-17 17:35:59 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:36:00 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:257) - Navigating to URL...https://dev3.glamira.com/secured2021/admin/ 
+INFO  | 2022-11-17 17:36:04 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:36:04 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME
+INFO  | 2022-11-17 17:36:04 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD
+INFO  | 2022-11-17 17:36:04 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2022-11-17 17:36:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:36:11 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:409) - scrollDownToElementLOGIN_BTN_CUSTOMER
+INFO  | 2022-11-17 17:36:11 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_CUSTOMER
+INFO  | 2022-11-17 17:36:12 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:36:12 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_EMAIL_LOG
+INFO  | 2022-11-17 17:36:14 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:36:14 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
+INFO  | 2022-11-17 17:36:14 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_CHECK_EMAIL_LOG_ACTION_SELECT
+INFO  | 2022-11-17 17:36:18 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:36:18 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_SELECT_VIEW_CHECK_EMAIL_LOG
+INFO  | 2022-11-17 17:36:19 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent

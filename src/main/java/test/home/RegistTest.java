@@ -16,5 +16,4 @@ public class RegistTest extends BaseTest {
         objRegist.registFail();
         objRegist.registSuccess();
     }
-
 }
