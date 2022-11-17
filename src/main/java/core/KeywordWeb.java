@@ -58,7 +58,6 @@ public class KeywordWeb {
             driver.get(rawUrl);
         }
     }
-
     public void openNewTab(String url){
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
         ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
@@ -514,7 +513,7 @@ public class KeywordWeb {
         }
         return stt;
     }
-        // wait keywords
+    // wait keywords
 
     public void imWait(long timeout) {
         logger.info("implicitlyWait");
