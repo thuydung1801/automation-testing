@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INFO  | 2022-11-17 09:15:19 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:38) - Open browser
 INFO  | 2022-11-17 09:15:21 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
 INFO  | 2022-11-17 09:15:21 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
@@ -31,3 +32,42 @@ INFO  | 2022-11-17 09:18:49 | [main] core.KeywordWeb (KeywordWeb.java:click:90) 
 INFO  | 2022-11-17 09:18:49 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
 INFO  | 2022-11-17 09:18:59 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_BTN_CHECKOUT_SHIPMENT
 INFO  | 2022-11-17 09:18:59 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
+=======
+INFO  | 2022-11-17 08:55:02 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:38) - Open browser
+INFO  | 2022-11-17 08:55:03 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
+INFO  | 2022-11-17 08:55:03 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
+INFO  | 2022-11-17 08:55:05 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - open browser successfullyCHROME
+INFO  | 2022-11-17 08:55:05 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-17 08:55:05 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - url: [Ljava.lang.String;@79c1ccf7
+INFO  | 2022-11-17 08:55:06 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:243) - Maximizing browser window...
+INFO  | 2022-11-17 08:55:06 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:299) - login by authen link withtest !test123!
+INFO  | 2022-11-17 08:55:48 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:434) -  scrolling to position 
+INFO  | 2022-11-17 08:55:58 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...MRT_URL
+INFO  | 2022-11-17 08:56:45 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
+INFO  | 2022-11-17 08:56:45 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 08:56:46 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_NAMEwith DATA_NULL
+INFO  | 2022-11-17 08:56:51 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...https://dev3.glamira.com/glde/gift-card/
+INFO  | 2022-11-17 08:57:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_AMOUNTwith MRT_INP_DATA_AMOUNT_ERROR
+INFO  | 2022-11-17 08:57:08 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
+INFO  | 2022-11-17 08:57:08 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 08:57:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_NAMEwith MRT_INP_DATA_NAME
+INFO  | 2022-11-17 08:57:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_EMAILwith DATA_ERROR
+INFO  | 2022-11-17 08:57:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_MESSAGEwith MRT_INP_DATA_MESSAGE
+INFO  | 2022-11-17 08:57:29 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickMRT_SUBMIT
+INFO  | 2022-11-17 08:57:30 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...https://dev3.glamira.com/glde/gift-card/
+INFO  | 2022-11-17 08:57:33 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickMRT_AMOUNT
+INFO  | 2022-11-17 08:57:36 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
+INFO  | 2022-11-17 08:57:36 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 08:57:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_NAMEwith MRT_INP_DATA_NAME
+INFO  | 2022-11-17 08:57:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_EMAILwith MRT_INP_DATA_EMAIL
+INFO  | 2022-11-17 08:57:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_MESSAGEwith MRT_INP_DATA_MESSAGE
+INFO  | 2022-11-17 08:57:56 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickMRT_SUBMIT
+INFO  | 2022-11-17 08:58:24 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...https://dev3.glamira.com/glde/gift-card/
+INFO  | 2022-11-17 08:58:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_AMOUNTwith MRT_INP_DATA_AMOUNT
+INFO  | 2022-11-17 08:59:00 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
+INFO  | 2022-11-17 08:59:00 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 08:59:00 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_NAMEwith MRT_INP_DATA_NAME
+INFO  | 2022-11-17 08:59:00 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_EMAILwith MRT_INP_DATA_EMAIL
+INFO  | 2022-11-17 08:59:00 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysMRT_INP_MESSAGEwith MRT_INP_DATA_MESSAGE
+INFO  | 2022-11-17 08:59:20 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickMRT_SUBMIT
+>>>>>>> master
