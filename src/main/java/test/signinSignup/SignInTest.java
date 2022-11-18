@@ -36,20 +36,30 @@ public class SignInTest extends BaseTest {
 
     @Test(priority = 2, description = "Open new browser get code")
     public void testCase_LI03() throws InterruptedException {
-        objSigin.openBrowser();
+        objSigin.openNewTabs();
         objSigin.senkeyLogin("LOGIN_FORM_USER_NAME_BACKEND", "LOGIN_DATA_USER_NAME");
         objSigin.senkeyLogin("LOGIN_FORM_PASSWORD_BACKEND", "LOGIN_DATA_PASS_WORD");
         objSigin.clickAndVerifySignIn("LOGIN_FORM_BTN_SUBMIT_BACKEND", "LOGIN_BTN_CUSTOMER");
         objSigin.scrollToElementCheck("LOGIN_BTN_CUSTOMER");
         objSigin.clickAndVerifySignIn("LOGIN_BTN_CUSTOMER", "LOGIN_FORM_CSTOMER");
+        Thread.sleep(2000);
         objSigin.clickAndVerifySignIn("LOGIN_BTN_EMAIL_LOG", "LOGIN_HEADER_EMAIL_LOG");
     }
 
-    @Test(priority = 3, description = "check customer with email log ")
+    @Test(priority = 3, description = "Check customer with email log ")
     public void testCase_LI04() throws InterruptedException {
-        keyword.imWait(10);
+        keyword.imWait(30);
         objSigin.clickAndVerifySignIn("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT", "LOGIN_SELECT_ACTIVE");
         objSigin.clickAndVerifySignIn("LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG", "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
     }
 
+    @Test(priority = 4, description = "Get code verify")
+    public void testCase_LI05() throws Exception {
+        objSigin.iFrame();
+        objSigin.getTextOfElement();
+        Thread.sleep(1000);
+        objSigin.backToPreviousTab();
+        keyword.imWait(5);
+        objSigin.enterTextInField();
+    }
 }

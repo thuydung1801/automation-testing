@@ -31,6 +31,7 @@ public class KeywordWeb {
     private static Logger logger = LogHelper.getLogger();
     public static WebDriver driver;
 
+
     public KeywordWeb() {
     }
 
@@ -58,17 +59,30 @@ public class KeywordWeb {
             driver.get(rawUrl);
         }
     }
-    public void openNewTab(String url){
-        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
-        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+
+    public void openNewTab(String url) {
+        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(0));
         // driver.navigate().to(url);
         String URL = PropertiesFile.getPropValue(url);
-        if(URL == null ){
+        if (URL == null) {
             URL = url;
         }
         navigateToUrl(URL);
+    }
 
+    public void openNewTabFromTabBase(String url) {
+        driver.get(url);
+        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(0));
+        // driver.navigate().to(url);
+        String URL = PropertiesFile.getPropValue(url);
+        if (URL == null) {
+            URL = url;
+        }
+        navigateToUrl(URL);
     }
 
     public void closeBrowser() {
@@ -79,7 +93,7 @@ public class KeywordWeb {
     public void clearText(String element) {
         logger.info("clearText");
         String xPathElement = PropertiesFile.getPropValue(element);
-        if(xPathElement == null){
+        if (xPathElement == null) {
             xPathElement = element;
         }
         driver.findElement(By.xpath(xPathElement)).clear();
@@ -88,7 +102,7 @@ public class KeywordWeb {
     public void click(String element) {
         logger.info("click" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
-        if(xPathElement == null){
+        if (xPathElement == null) {
             xPathElement = element;
         }
         driver.findElement(By.xpath(xPathElement)).click();
@@ -97,7 +111,7 @@ public class KeywordWeb {
     public void clickByCss(String element) {
         logger.info("click" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
-        if(xPathElement == null){
+        if (xPathElement == null) {
             xPathElement = element;
         }
         driver.findElement(By.cssSelector(xPathElement)).click();
@@ -105,10 +119,10 @@ public class KeywordWeb {
 
     public void randomElement(String element) {
         String xPathElement = PropertiesFile.getPropValue(element);
-        if(xPathElement == null) {
-            xPathElement =element;
+        if (xPathElement == null) {
+            xPathElement = element;
         }
-        List <WebElement> weblist = driver.findElements(By.xpath(xPathElement));
+        List<WebElement> weblist = driver.findElements(By.xpath(xPathElement));
         int size = weblist.size();
         int randnMumber = ThreadLocalRandom.current().nextInt(0, size);
         weblist.get(randnMumber).click();
@@ -117,33 +131,32 @@ public class KeywordWeb {
 
     public void randomConcatElement(String element, int num) throws InterruptedException {
         ThreadLocalRandom random = ThreadLocalRandom.current();
-        int randomNumber = random.nextInt(1,num);
+        int randomNumber = random.nextInt(1, num);
         String xPathElement = PropertiesFile.getPropValue(element);
-        if(xPathElement == null) {
-            xPathElement =element;
+        if (xPathElement == null) {
+            xPathElement = element;
         }
         String ele = xPathElement + "[" + randomNumber + "]";
         Thread.sleep(1000);
         driver.findElement(By.xpath(ele)).click();
     }
-
     public String getText(String element) {
         logger.info("get Text of" + element);
         String text = PropertiesFile.getPropValue(element);
-        if(text == null){
+        if (text == null) {
             text = element;
         }
         return driver.findElement(By.xpath(text)).getText();
     }
 
     public void sendKeys(String element, String content) {
-        logger.info("send keys" + element + "with "+ content);
+        logger.info("send keys" + element + "with " + content);
         String xPathElement1 = PropertiesFile.getPropValue(element);
         String xPathElement2 = PropertiesFile.getPropValue(content);
-        if(xPathElement1 == null){
+        if (xPathElement1 == null) {
             xPathElement1 = element;
         }
-        if(xPathElement2 == null){
+        if (xPathElement2 == null) {
             xPathElement2 = content;
 
         }
@@ -154,10 +167,10 @@ public class KeywordWeb {
         logger.info("getText of " + element + " without " + oldChar);
         String xPathElement1 = PropertiesFile.getPropValue(element);
         String xPathElement2 = PropertiesFile.getPropValue(oldChar);
-        if(xPathElement1 == null){
+        if (xPathElement1 == null) {
             xPathElement1 = element;
         }
-        if(xPathElement2 == null){
+        if (xPathElement2 == null) {
             xPathElement2 = oldChar;
 
         }
@@ -172,7 +185,7 @@ public class KeywordWeb {
     public void doubleClick(String element) {
         logger.info("double click" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
-        if(xPathElement == null){
+        if (xPathElement == null) {
             xPathElement = element;
         }
         Actions builder = new Actions(driver);
@@ -183,11 +196,11 @@ public class KeywordWeb {
     public void dragAndDropToObj(String startElement, String endElement) {
         logger.info("drag from" + startElement + " to" + endElement);
         String xPathElement1 = PropertiesFile.getPropValue(startElement);
-        if(xPathElement1 == null){
+        if (xPathElement1 == null) {
             xPathElement1 = startElement;
         }
         String xPathElement2 = PropertiesFile.getPropValue(endElement);
-        if(xPathElement2 == null){
+        if (xPathElement2 == null) {
             xPathElement2 = endElement;
         }
         Actions builder = new Actions(driver);
@@ -199,11 +212,11 @@ public class KeywordWeb {
     public void rightClick(String element, String menuItem) {
         logger.info("rightClick" + element);
         String xPathElement1 = PropertiesFile.getPropValue(element);
-        if(xPathElement1 == null){
+        if (xPathElement1 == null) {
             xPathElement1 = element;
         }
         String xPathElement2 = PropertiesFile.getPropValue(menuItem);
-        if(xPathElement2 == null){
+        if (xPathElement2 == null) {
             xPathElement2 = menuItem;
         }
         Actions builder = new Actions(driver);
@@ -214,8 +227,8 @@ public class KeywordWeb {
 
     public void hoverAndClick(String element) {
         logger.info("Move To Element" + element);
-        String xPathElement =PropertiesFile.getPropValue(element);
-        if(xPathElement == null) {
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
             xPathElement = element;
         }
         Actions action = new Actions(driver);
@@ -256,7 +269,7 @@ public class KeywordWeb {
     public void navigateToUrl(String url) {
         logger.info("Navigating to URL..." + url);
         String xPathElement = PropertiesFile.getPropValue(url);
-        if(xPathElement == null){
+        if (xPathElement == null) {
             xPathElement = url;
         }
         driver.navigate().to(xPathElement);
@@ -297,15 +310,15 @@ public class KeywordWeb {
     public void handleLoginPopup(String username, String password, String authenUrl) {
         logger.info("login by authen link with" + username + " " + password);
         String xPathElement1 = PropertiesFile.getPropValue(username);
-        if(xPathElement1 == null){
+        if (xPathElement1 == null) {
             xPathElement1 = username;
         }
         String xPathElement2 = PropertiesFile.getPropValue(password);
-        if(xPathElement2 == null){
+        if (xPathElement2 == null) {
             xPathElement2 = password;
         }
         String xPathElement3 = PropertiesFile.getPropValue(authenUrl);
-        if(xPathElement3 == null){
+        if (xPathElement3 == null) {
             xPathElement3 = authenUrl;
         }
         String url = "https://" + xPathElement1 + ":" + xPathElement2 + "@" + xPathElement3;
@@ -333,11 +346,10 @@ public class KeywordWeb {
             logger.info("Listing window ID..." + windowid);
         }
     }
-
     public void switchToIFrameByXpath(String element) {
         logger.info("Switching to Iframe");
         String xPathElement = PropertiesFile.getPropValue(element);
-        if(xPathElement == null){
+        if (xPathElement == null) {
             xPathElement = element;
         }
         WebElement iframe = driver.findElement(By.xpath(xPathElement));
@@ -368,11 +380,11 @@ public class KeywordWeb {
     public void simpleAssertEquals(String expected, String actual) {
         logger.info("compare from " + expected + " with " + actual);
         String xPathElement1 = PropertiesFile.getPropValue(expected);
-        if(xPathElement1 == null){
+        if (xPathElement1 == null) {
             xPathElement1 = expected;
         }
         String xPathElement2 = PropertiesFile.getPropValue(actual);
-        if(xPathElement2 == null){
+        if (xPathElement2 == null) {
             xPathElement2 = actual;
         }
         Assert.assertEquals(actual, expected);
@@ -383,6 +395,7 @@ public class KeywordWeb {
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tabNum));
     }
+
 
     public void closeWindowByIndex(int index) {
         logger.info("closeWindowByIndex");
@@ -406,9 +419,9 @@ public class KeywordWeb {
     }
 
     public void scrollDownToElement(String xPath) {
-        logger.info("scrollDownToElement"+ xPath);
+        logger.info("scrollDownToElement" + xPath);
         String xPathElement = PropertiesFile.getPropValue(xPath);
-        if(xPathElement == null){
+        if (xPathElement == null) {
             xPathElement = xPath;
         }
         WebElement element = driver.findElement(By.xpath(xPathElement));
@@ -456,7 +469,7 @@ public class KeywordWeb {
     //verify keyword
     public boolean verifyElementPresent(String element) {
         String xPathElement = PropertiesFile.getPropValue(element);
-        if(xPathElement == null){
+        if (xPathElement == null) {
             xPathElement = element;
         }
         try {
@@ -471,11 +484,11 @@ public class KeywordWeb {
     public void selectDropDownListByIndex(String ddlPath, String itemName) {
         logger.info("select item by visibe text");
         String xPathElement1 = PropertiesFile.getPropValue(ddlPath);
-        if(xPathElement1 == null){
+        if (xPathElement1 == null) {
             xPathElement1 = ddlPath;
         }
         String xPathElement2 = PropertiesFile.getPropValue(itemName);
-        if(xPathElement2 == null){
+        if (xPathElement2 == null) {
             xPathElement2 = itemName;
         }
         Select dropDownList = new Select(driver.findElement(By.xpath(xPathElement1)));
@@ -484,9 +497,9 @@ public class KeywordWeb {
     }
 
     public boolean verifyElementVisible(String element) {
-        logger.info("verifyElementVisible"+ element);
+        logger.info("verifyElementVisible" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
-        if(xPathElement == null){
+        if (xPathElement == null) {
             xPathElement = element;
         }
         try {
@@ -523,7 +536,7 @@ public class KeywordWeb {
     public void webDriverWaitForElementPresent(String element, long timeout) {
         logger.info("webDriverWaitForElementPresent");
         String xPathElement = PropertiesFile.getPropValue(element);
-        if(xPathElement == null){
+        if (xPathElement == null) {
             xPathElement = element;
         }
         WebDriverWait wait = new WebDriverWait(driver, timeout);
@@ -554,18 +567,32 @@ public class KeywordWeb {
         System.out.printf("clear.....");
     }
 
-    public void assertEquals(String expected, String actual){
-        logger.info("compare from "+ expected+ " with "+ actual);
+    public void assertEquals(String expected, String actual) {
+        logger.info("compare from " + expected + " with " + actual);
         String xPathElement1 = PropertiesFile.getPropValue(expected);
         String xPathElement2 = PropertiesFile.getPropValue(actual);
-        if(xPathElement1 == null){
+        if (xPathElement1 == null) {
             xPathElement1 = expected;
         }
-        if(xPathElement2 == null){
+        if (xPathElement2 == null) {
             xPathElement2 = actual;
         }
         String actualText = driver.findElement(By.xpath(xPathElement2)).getText();
-        Assert.assertEquals(actualText,xPathElement1);
+        Assert.assertEquals(actualText, xPathElement1);
 
     }
+//    public String getTextOfElement(String element) throws Exception {
+//        logger.info("");
+//        String xPathElement = PropertiesFile.getPropValue(element);
+//        if (xPathElement == null) {
+//            xPathElement = element;
+//        }
+//        WebDriverWait wait = new WebDriverWait(driver, 30);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(xPathElement));
+//        String text = driver.findElement(xPathElement).getText();
+//        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+//        System.out.println(");
+//        // return elementText;
+//        return text;
+//    }
 }
