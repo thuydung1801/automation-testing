@@ -381,5 +381,18 @@ public class ShoppingBagTest extends BaseTest {
 
     }
 
+    @Test (priority = 31, description = "Apply a gift card having status Expired or Used")
+    public void testCase_RV_21() throws InterruptedException {
+        logger.info("testCase_RV_21");
+        commonShopping();
+        //objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.applyCouponAnUseStoreCredit("TNZ_489_HJ96");
+
+    }
+
+
 
 }

@@ -18,6 +18,7 @@ public class ShoppingBagPage extends BasePage {
 
     public RegisterPage objRegist;
 
+    //add any product with only a size field
     public void addProduct(String url) throws InterruptedException {
         objRegist = new RegisterPage(this.keyword);
 
@@ -34,6 +35,8 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(2000);
 
     }
+
+    //add product: bracelet
     public void addBraceletProduct(String url) throws InterruptedException {
         objRegist = new RegisterPage(this.keyword);
 
@@ -46,6 +49,7 @@ public class ShoppingBagPage extends BasePage {
 
     }
 
+    //add any product with an engraving
     public void addProductWithEngraving(String url) throws InterruptedException {
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
@@ -65,6 +69,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         Thread.sleep(2000);
     }
+    //add any product with double engraving
     public void addProductWithDoubleEngraving(String url) throws InterruptedException {
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
@@ -88,6 +93,7 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(2000);
     }
 
+    //add any product with attached gift
     public void addProductWithGift(String url) throws InterruptedException {
         objRegist = new RegisterPage(this.keyword);
 
@@ -106,7 +112,7 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(2000);
 
     }
-
+    //click to view all product in shopping bag
     public void clickShoppingBagPage() throws InterruptedException {
         Thread.sleep(10000);
         keyword.click("CHECKOUT_BTN_MINICART");
@@ -115,7 +121,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.imWait(10);
 
     }
-
+    //remove any product depends on the type of product
     public void removeProduct(String typeOfProduct) throws InterruptedException {
         keyword.click(typeOfProduct);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_REMOVE",10);
@@ -125,25 +131,32 @@ public class ShoppingBagPage extends BasePage {
             logger.info("Passed");
         }
     }
+    // confirm message displayed or not
     public void confirmMessage(String messages){
         keyword.imWait(10);
         keyword.verifyElementVisible(messages);
     }
+    //change quantity of product in cart
     public void changeQty(String qty){
         keyword.imWait(5);
         keyword.selectDropDownListByIndex("CHECKOUT_DDL_QTY",
                 qty);
     }
 
+    //click button view detail depends on the type of product
     public void viewDetail(String typeOfProduct) throws InterruptedException {
         keyword.click(typeOfProduct);
 
     }
+
+    //click button Edit depends on the type of product
     public void clickEdit(String btnEdit) throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_HEADER",10);
         keyword.click(btnEdit);
         Thread.sleep(5000);
     }
+
+    //edit option of ring to check update case
     public void editOptions() throws InterruptedException {
         keyword.click("CHECKOUT_CBX_BLACKDIAMOND");
         Thread.sleep(1000);
@@ -154,12 +167,15 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_BTN_UPDATE");
         keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",10);
     }
+
+    //edit earing is already in the cart
     public void editEaringOptions(){
         keyword.click("CHECKOUT_BTN_PAIR");
         keyword.click("CHECKOUT_BTN_PAIR");
         keyword.scrollDownToElement("CHECKOUT_BTN_UPDATE");
         keyword.click("CHECKOUT_BTN_UPDATE");
     }
+    //edit couple ring is already in the cart
     public void editCoupleRings(){
         keyword.click("CHECKOUT_LBL_STONE");
         keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_DIAMOND",10);
@@ -175,8 +191,8 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_BTN_UPDATE");
         keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_23",10);
     }
+    //input engraving of single ring
     public void inputEngravingwithSingleRing(String data, String btnAdd, String engraving) throws InterruptedException {
-//        keyword.imWait(30);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_VIEWDETAIL",5);
         Thread.sleep(5000);
         keyword.verifyElementPresent(btnAdd);
@@ -192,9 +208,9 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(5000);
         keyword.assertEquals(data, engraving);
     }
+    //input engraving of couple rings
     public void inputEngravingwithCoupleRing(String data, String btnAdd, String txtWomen,
                                              String txtMen ) throws InterruptedException {
-//        keyword.imWait(15);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_VIEWDETAIL",5);
         Thread.sleep(5000);
         keyword.click(btnAdd);
@@ -227,6 +243,7 @@ public class ShoppingBagPage extends BasePage {
             keyword.assertEquals(dataExpected + " - " + dataExpected, engraving);
         }
     }
+    //compareData
     public void compareData(String expect, String actual){
         keyword.assertEquals(expect, actual);
     }
@@ -311,6 +328,7 @@ public class ShoppingBagPage extends BasePage {
                 break;
         }
     }
+    //check out with paypal payment method
     public void checkOutWithPayPal() throws InterruptedException {
         Thread.sleep(5000);
         keyword.click("CHECKOUT_CBX_CHECKOUT_PAYPAL");
@@ -325,7 +343,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 20);
         keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
     }
-
+    //check out with klarna payment method
     public void checkOutWithKlarnaLater() throws InterruptedException {
         Thread.sleep(10000);
         keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER",10);
@@ -348,6 +366,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
 
     }
+    //check out with bank transfer payment method
     public void checkOutWithBankTransfer() throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_BANK",10);
         keyword.click("CHECKOUT_CBX_CHECKOUT_BANK");
@@ -356,25 +375,28 @@ public class ShoppingBagPage extends BasePage {
         keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 20);
         keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
     }
-
+    //click to print the receipt
     public void clickPrint() throws InterruptedException {
         keyword.click("SUCCESS_BTN_PRINT");
         Thread.sleep(3000);
         keyword.switchToTab(1);
         keyword.executeJavaScript("window.print=function(){window.close();};");
     }
+    //input data of field: Use Store Credit
     public void clickUseCredit(String money){
         keyword.sendKeys("CHECKOUT_TXT_STORE_CREDIT",money);
         keyword.click("CHECKOUT_BTN_USE_CREDIT");
     }
+    //cancel action use credit
     public void cancelUseCredit() throws InterruptedException {
         Thread.sleep(5000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_STORE_CREDIT"));
         clickUseCredit("1");
-        Thread.sleep(10000);
+        Thread.sleep(20000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CANCEL_CREDIT"));
         keyword.assertEquals("CHECKOUT_MESSAGE_USE_CREDIT_ERROR","CHECKOUT_LBL_USE_CREDIT");
     }
+    //calculate the discount
     public void discount(boolean flag) throws InterruptedException {
         if (flag){
             Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
@@ -392,6 +414,7 @@ public class ShoppingBagPage extends BasePage {
             keyword.simpleAssertEquals("0.0", lastPrice);
         }
     }
+    //use credit
     public void useCredit(boolean flag) throws InterruptedException {
         logger.info("useCredit");
         if(flag) {
@@ -411,17 +434,20 @@ public class ShoppingBagPage extends BasePage {
         }
 
     }
+    //checkout with store credit in cases where the balance is greater than, equal to or less than the amount payable
     public void checkOutWithStoreCredit(String flag) throws InterruptedException {
         Thread.sleep(10000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_STORE_CREDIT"));
         //keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),10);
         Float credit = Float.valueOf(1);
         switch (flag){
+            //The balance is equal to the amount payable
             case "equals":
                 String price = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
                 clickUseCredit(price);
                 useCredit(true);
                 break;
+            //The balance is less than the amount payable
             case "less":
                 clickUseCredit(String.valueOf(credit));
                 Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
@@ -430,21 +456,25 @@ public class ShoppingBagPage extends BasePage {
                 discount(true);
                 checkOutWithBankTransfer();
                 break;
+            //The balance is more than the amount payable
             case "more":
                 Float rawPrice1 = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
                 String totalPrice1 = String.valueOf(moreMoney(rawPrice1, credit));
                 clickUseCredit(totalPrice1);
                 useCredit(true);
                 break;
+            //Input invalid data on field Use Store Credit
             case "wrong":
                clickUseCredit("-100");
                useCredit(false);
                 break;
+            //Input data > the balance on field Use Store Credit
             case "max":
                 clickUseCredit("10000000000000");
                 keyword.verifyElementPresent("CHECKOUT_LBL_USE_CREDIT_ERROR");
         }
     }
+    //apply active coupon with 2 situations: > total and < total money
     public void applyCoupon(String couponCode, boolean flag) throws InterruptedException {
         Thread.sleep(5000);
         keyword.click("CHECKOUT_LBL_COUPON");
@@ -461,12 +491,23 @@ public class ShoppingBagPage extends BasePage {
 
 
     }
+    @Step("apply the coupon is used")
     public void applyUsedCoupon(String couponCode) throws InterruptedException {
         Thread.sleep(5000);
         keyword.click("CHECKOUT_LBL_COUPON");
         keyword.sendKeys("CHECKOUT_TBX_COUPON",couponCode);
         keyword.click("CHECKOUT_BTN_COUPON");
         keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_COUPON_ERROR",10);
+    }
+
+    public void applyCouponAnUseStoreCredit(String couponCode) throws InterruptedException {
+        Thread.sleep(5000);
+        keyword.click("CHECKOUT_LBL_COUPON");
+        keyword.sendKeys("CHECKOUT_TBX_COUPON",couponCode);
+        keyword.click("CHECKOUT_BTN_COUPON");
+        clickUseCredit("610");
+        discount(false);
+
     }
 
     @Step("calculate the actual money")
