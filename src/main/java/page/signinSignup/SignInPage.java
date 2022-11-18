@@ -11,61 +11,55 @@ import java.security.PublicKey;
 
 public class SignInPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
-
     public SignInPage(KeywordWeb key) {
         super(key);
     }
-
-    public SignInPage() {
-        super();
+    // Go to the login form and use the forgot password function
+    public void goToFormLoginAndEnterDataForGotPassWord() throws InterruptedException {
+        keyword.click("LOGIN_BTN_LOGIN");
+        keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 20);
+        Thread.sleep(2000);
+        keyword.click("LOGIN_BTN_FORGOT_PASSWORD");
+        keyword.webDriverWaitForElementPresent("LOGIN_BOX_FORGOT_PASSWORD", 20);
+        keyword.sendKeys("LOGIN_INPUT_FORGOT_PASSWORD", "LOGIN_DATA_EMAIL_FORGOT_PASSWORD");
+        keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
+        keyword.webDriverWaitForElementPresent("LOGIN_BOX_ENTER_CODE_FORGOT_PASSWORD", 20);
     }
-
-    // click Share
-    public void clickAndVerifySignIn(String clickElement, String veriFyElement) throws InterruptedException {
-        keyword.click(clickElement);
-        keyword.webDriverWaitForElementPresent(veriFyElement, 10);
-    }
-
-    public void scrollToElementCheck(String elementScroll) throws InterruptedException {
-        keyword.scrollDownToElement(elementScroll);
-    }
-
-    // sendKey share
-    public void senkeyLogin(String getInputText, String senKey) throws InterruptedException {
-        keyword.sendKeys(getInputText, senKey);
-    }
-
-    public void login() throws InterruptedException {
-        keyword.navigateToUrl("BASE_URL");
-        keyword.webDriverWaitForElementPresent("LOGIN_HEADER_NAVIGATE", 20);
-    }
-
-    // openBrowser
+    // open new right tabs
     public void openNewTabs() throws InterruptedException {
         keyword.executeJavaScript("window.open()");
         keyword.switchToTab(1);
         keyword.navigateToUrl("LOGIN_URL_BACKEND");
         keyword.webDriverWaitForElementPresent("LOGIN_FORM_LOGIN_BACKEND", 20);
     }
-
-    // Switch To IFrame of element reset code
-    public void iFrame() throws InterruptedException {
+    //login admin BackEnd (shared functions)
+    public void loginAdmin(String userName, String passWord) throws InterruptedException {
+        keyword.sendKeys("LOGIN_FORM_USER_NAME_BACKEND", userName);
+        keyword.sendKeys("LOGIN_FORM_PASSWORD_BACKEND", passWord);
+        keyword.click("LOGIN_FORM_BTN_SUBMIT_BACKEND");
+        keyword.webDriverWaitForElementPresent("LOGIN_BTN_CUSTOMER", 20);
+        keyword.scrollDownToElement("LOGIN_BTN_CUSTOMER");
+        keyword.click("LOGIN_BTN_CUSTOMER");
+        keyword.webDriverWaitForElementPresent("LOGIN_FORM_CSTOMER", 20);
+        Thread.sleep(2000);
+        keyword.click("LOGIN_BTN_EMAIL_LOG");
+        keyword.webDriverWaitForElementPresent("LOGIN_HEADER_EMAIL_LOG", 20);
+    }
+    // Select Action Email Log
+    public void selectActionEmailLog(String selectAction, String verifySelectForm, String selectView, String verifyForm) throws InterruptedException {
+        keyword.imWait(30);
+        keyword.click(selectAction);
+        keyword.webDriverWaitForElementPresent(verifySelectForm, 20);
+        keyword.click(selectView);
+        keyword.webDriverWaitForElementPresent(verifyForm, 20);
+    }
+    // Get text and Enter the copy data -> switch to first tabs
+    public void enterTextInField() throws Exception {
         keyword.imWait(10);
         keyword.switchToIFrameByXpath("LOGIN_IFRAME");
-    }
-
-    // Get Text of Element to store in variable call "text"
-    public String getTextOfElement() throws Exception {
-        return keyword.getText("LOGIN_INPUT_VERIFY_CODE");
-    }
-
-    //Enter the copy data
-    public void enterTextInField() throws Exception {
-        keyword.sendKeys("LOGIN_INPUT_ENTER_DATA", getTextOfElement());
+        String text = keyword.getText("LOGIN_INPUT_VERIFY_CODE");
+        keyword.sendKeys("LOGIN_INPUT_ENTER_DATA", text);
         System.out.println("value copied");
-    }
-
-    public void backToPreviousTab() throws InterruptedException {
         keyword.switchToTab(0);
     }
 }

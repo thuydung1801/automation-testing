@@ -24,42 +24,35 @@ public class SignInTest extends BaseTest {
         objRegist = new RegisterPage(this.keyword);
         objSigin = new SignInPage(this.keyword);
         objLogin.loginOnAlert();
-        objSigin.login();
         objRegist.acceptAllCookies();
         objRegist.chooseLanguages();
-        objSigin.clickAndVerifySignIn("LOGIN_BTN_LOGIN", "LOGIN_BTN_FORGOT_PASSWORD");
         Thread.sleep(2000);
-        objSigin.clickAndVerifySignIn("LOGIN_BTN_FORGOT_PASSWORD", "LOGIN_BOX_FORGOT_PASSWORD");
-        objSigin.senkeyLogin("LOGIN_INPUT_FORGOT_PASSWORD", "LOGIN_DATA_EMAIL_FORGOT_PASSWORD");
-        objSigin.clickAndVerifySignIn("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD", "LOGIN_BOX_ENTER_CODE_FORGOT_PASSWORD");
+        objSigin.goToFormLoginAndEnterDataForGotPassWord();
     }
 
     @Test(priority = 2, description = "Open new browser get code")
     public void testCase_LI03() throws InterruptedException {
         objSigin.openNewTabs();
-        objSigin.senkeyLogin("LOGIN_FORM_USER_NAME_BACKEND", "LOGIN_DATA_USER_NAME");
-        objSigin.senkeyLogin("LOGIN_FORM_PASSWORD_BACKEND", "LOGIN_DATA_PASS_WORD");
-        objSigin.clickAndVerifySignIn("LOGIN_FORM_BTN_SUBMIT_BACKEND", "LOGIN_BTN_CUSTOMER");
-        objSigin.scrollToElementCheck("LOGIN_BTN_CUSTOMER");
-        objSigin.clickAndVerifySignIn("LOGIN_BTN_CUSTOMER", "LOGIN_FORM_CSTOMER");
-        Thread.sleep(2000);
-        objSigin.clickAndVerifySignIn("LOGIN_BTN_EMAIL_LOG", "LOGIN_HEADER_EMAIL_LOG");
+        objSigin.loginAdmin(
+                "LOGIN_DATA_USER_NAME",
+                "LOGIN_DATA_PASS_WORD"
+        );
     }
 
     @Test(priority = 3, description = "Check customer with email log ")
     public void testCase_LI04() throws InterruptedException {
-        keyword.imWait(30);
-        objSigin.clickAndVerifySignIn("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT", "LOGIN_SELECT_ACTIVE");
-        objSigin.clickAndVerifySignIn("LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG", "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
+        objSigin.selectActionEmailLog(
+                "LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT",
+                "LOGIN_SELECT_ACTIVE",
+                "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
+                "LOGIN_POPUP_MESSAGE_PASSWORD_RESET"
+        );
     }
 
     @Test(priority = 4, description = "Get code verify")
     public void testCase_LI05() throws Exception {
-        objSigin.iFrame();
-        objSigin.getTextOfElement();
-        Thread.sleep(1000);
-        objSigin.backToPreviousTab();
-        keyword.imWait(5);
         objSigin.enterTextInField();
+        Thread.sleep(1000);
+        keyword.imWait(5);
     }
 }
