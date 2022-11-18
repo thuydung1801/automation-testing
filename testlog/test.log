@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INFO  | 2022-11-18 15:48:58 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:39) - Open browser
 INFO  | 2022-11-18 15:49:00 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
 INFO  | 2022-11-18 15:49:00 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
@@ -40,3 +41,35 @@ INFO  | 2022-11-18 15:50:08 | [main] core.KeywordWeb (KeywordWeb.java:switchToIF
 INFO  | 2022-11-18 15:50:08 | [main] core.KeywordWeb (KeywordWeb.java:getText:144) - get Text ofLOGIN_INPUT_VERIFY_CODE
 INFO  | 2022-11-18 15:50:09 | [main] core.KeywordWeb (KeywordWeb.java:imWait:532) - implicitlyWait
 INFO  | 2022-11-18 15:50:09 | [main] core.KeywordWeb (KeywordWeb.java:getText:144) - get Text ofLOGIN_INPUT_VERIFY_CODE
+=======
+INFO  | 2022-11-17 17:29:50 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:38) - Open browser
+INFO  | 2022-11-17 17:29:51 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO  | 2022-11-17 17:29:51 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO  | 2022-11-17 17:29:52 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - open browser successfullyCHROME
+INFO  | 2022-11-17 17:29:52 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-17 17:29:52 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - url: [Ljava.lang.String;@123ca460
+INFO  | 2022-11-17 17:29:53 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:242) - Maximizing browser window...
+INFO  | 2022-11-17 17:29:54 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_RV_21:374) - testCase_RV_21
+INFO  | 2022-11-17 17:29:54 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:298) - login by authen link withtest !test123!
+INFO  | 2022-11-17 17:30:19 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickBTN_COOKIES
+INFO  | 2022-11-17 17:30:21 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:433) -  scrolling to position 
+INFO  | 2022-11-17 17:30:38 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2022-11-17 17:30:41 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_LOGIN
+INFO  | 2022-11-17 17:30:41 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:30:44 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_TXT_EMAILwith LOGIN_DATA_EMAIL
+INFO  | 2022-11-17 17:30:46 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_TXT_PASSWORDwith LOGIN_DATA_PASSWORD
+INFO  | 2022-11-17 17:30:48 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2022-11-17 17:30:58 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_MINICART
+INFO  | 2022-11-17 17:31:13 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_MINICART_VIEWALL
+INFO  | 2022-11-17 17:31:25 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
+INFO  | 2022-11-17 17:31:35 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_CHECKOUT
+INFO  | 2022-11-17 17:31:48 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:31:51 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
+INFO  | 2022-11-17 17:31:51 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:32:01 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_CHECKOUT_SHIPMENT
+INFO  | 2022-11-17 17:32:01 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-17 17:32:06 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_LBL_COUPON
+INFO  | 2022-11-17 17:32:06 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_TBX_COUPONwith TNZ_489_HJ96
+INFO  | 2022-11-17 17:32:06 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_COUPON
+INFO  | 2022-11-17 17:32:06 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+>>>>>>> master
