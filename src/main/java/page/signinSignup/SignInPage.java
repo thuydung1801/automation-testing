@@ -5,9 +5,6 @@ import core.KeywordWeb;
 import core.LogHelper;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
-import page.home.LoginPage;
-
-import java.security.PublicKey;
 
 public class SignInPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
@@ -32,6 +29,7 @@ public class SignInPage extends BasePage {
         keyword.navigateToUrl("LOGIN_URL_BACKEND");
         keyword.webDriverWaitForElementPresent("LOGIN_FORM_LOGIN_BACKEND", 20);
     }
+
     //login admin BackEnd (shared functions)
     public void loginAdmin(String userName, String passWord) throws InterruptedException {
         keyword.sendKeys("LOGIN_FORM_USER_NAME_BACKEND", userName);
@@ -58,8 +56,13 @@ public class SignInPage extends BasePage {
         keyword.imWait(10);
         keyword.switchToIFrameByXpath("LOGIN_IFRAME");
         String text = keyword.getText("LOGIN_INPUT_VERIFY_CODE");
+        keyword.switchToTab(0);
         keyword.sendKeys("LOGIN_INPUT_ENTER_DATA", text);
         System.out.println("value copied");
-        keyword.switchToTab(0);
+        keyword.click("LOGIN_BTN_SUBMIT_CODE");
+    }
+    // Create new password for entering and to use your account
+    public  void createNewPassWord() throws InterruptedException {
+
     }
 }

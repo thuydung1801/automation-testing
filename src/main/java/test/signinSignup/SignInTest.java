@@ -55,4 +55,10 @@ public class SignInTest extends BaseTest {
         Thread.sleep(1000);
         keyword.imWait(5);
     }
+    @Test(priority = 4, description = "Get code verify")
+    public void testCase_LI06() throws Exception {
+//        objSigin.enterTextInField();
+//        Thread.sleep(1000);
+//        keyword.imWait(5);
+    }
 }
