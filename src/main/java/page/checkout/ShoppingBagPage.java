@@ -113,7 +113,6 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(10000);
         keyword.click("CHECKOUT_MINICART_VIEWALL");
         keyword.imWait(10);
-
     }
 
     public void removeProduct(String typeOfProduct) throws InterruptedException {
