@@ -72,19 +72,6 @@ public class KeywordWeb {
         navigateToUrl(URL);
     }
 
-    public void openNewTabFromTabBase(String url) {
-        driver.get(url);
-        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(0));
-        // driver.navigate().to(url);
-        String URL = PropertiesFile.getPropValue(url);
-        if (URL == null) {
-            URL = url;
-        }
-        navigateToUrl(URL);
-    }
-
     public void closeBrowser() {
         logger.info("close browser: ");
         driver.quit();
@@ -581,18 +568,5 @@ public class KeywordWeb {
         Assert.assertEquals(actualText, xPathElement1);
 
     }
-//    public String getTextOfElement(String element) throws Exception {
-//        logger.info("");
-//        String xPathElement = PropertiesFile.getPropValue(element);
-//        if (xPathElement == null) {
-//            xPathElement = element;
-//        }
-//        WebDriverWait wait = new WebDriverWait(driver, 30);
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(xPathElement));
-//        String text = driver.findElement(xPathElement).getText();
-//        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-//        System.out.println(");
-//        // return elementText;
-//        return text;
-//    }
+
 }

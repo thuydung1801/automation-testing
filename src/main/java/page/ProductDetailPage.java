@@ -37,12 +37,25 @@ public class ProductDetailPage extends BasePage {
         arr.add(PropertiesFile.getPropValue("PRD_STONE2"));
         arr.add(PropertiesFile.getPropValue("PRD_METAL_ALLOY"));
         arr.add(PropertiesFile.getPropValue("PRD_ENGRAVING"));
+        System.out.printf("=======" + arr.get(1));
 
         for(String option : arr){
-            if(option != arr.get(arr.size()-1)){
+            if(option != arr.get(arr.size()-1) && option != arr.get(1)){
                 Thread.sleep(2000);
                 keyword.click(option);
 
+            }
+            else if(option == arr.get(1)){
+                Thread.sleep(2000);
+                keyword.click(option);
+                System.out.printf("click metal...");
+                Thread.sleep(2000);
+                keyword.click("PRD_METAL_COLOR");
+                Thread.sleep(2000);
+                keyword.click("PRD_METAL_COLOR_OPTION");
+                Thread.sleep(2000);
+                keyword.verifyElementVisible("PRD_VERIFY_IMG");
+//                Thread.sleep(2000);
             }
             else{
                 keyword.click(option);
@@ -107,7 +120,7 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void chooseDefaultOption() throws InterruptedException {
-//        productInfo();
+        productInfo();
         System.out.printf("-----test 2: Default option "+"\n");
         selectOption();
         System.out.printf("=> test 2 done"+"\n");
