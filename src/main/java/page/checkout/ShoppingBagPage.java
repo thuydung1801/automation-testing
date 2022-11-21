@@ -392,7 +392,7 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(5000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_STORE_CREDIT"));
         clickUseCredit("1");
-        Thread.sleep(20000);
+        Thread.sleep(4000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CANCEL_CREDIT"));
         keyword.assertEquals("CHECKOUT_MESSAGE_USE_CREDIT_ERROR","CHECKOUT_LBL_USE_CREDIT");
     }
