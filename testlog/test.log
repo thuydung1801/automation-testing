@@ -1,31 +1,18 @@
-INFO  | 2022-11-18 18:17:23 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:38) - Open browser
-INFO  | 2022-11-18 18:17:24 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
-INFO  | 2022-11-18 18:17:24 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
-INFO  | 2022-11-18 18:17:25 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - open browser successfullyCHROME
-INFO  | 2022-11-18 18:17:25 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-18 18:17:25 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - url: [Ljava.lang.String;@1242d96b
-INFO  | 2022-11-18 18:17:26 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:242) - Maximizing browser window...
-INFO  | 2022-11-18 18:17:26 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_RV_16:339) - testCase_RV_16
-INFO  | 2022-11-18 18:17:26 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:298) - login by authen link withtest !test123!
-INFO  | 2022-11-18 18:17:46 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickBTN_COOKIES
-INFO  | 2022-11-18 18:17:48 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:433) -  scrolling to position 
-INFO  | 2022-11-18 18:18:02 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2022-11-18 18:18:05 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_LOGIN
-INFO  | 2022-11-18 18:18:05 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-18 18:18:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_TXT_EMAILwith LOGIN_DATA_EMAIL
-INFO  | 2022-11-18 18:18:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_TXT_PASSWORDwith LOGIN_DATA_PASSWORD
-INFO  | 2022-11-18 18:18:12 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2022-11-18 18:18:22 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_MINICART
-INFO  | 2022-11-18 18:18:33 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_MINICART_VIEWALL
-INFO  | 2022-11-18 18:18:44 | [main] core.KeywordWeb (KeywordWeb.java:imWait:519) - implicitlyWait
-INFO  | 2022-11-18 18:18:54 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_CHECKOUT
-INFO  | 2022-11-18 18:19:03 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-18 18:19:06 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
-INFO  | 2022-11-18 18:19:06 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-18 18:19:16 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_CHECKOUT_SHIPMENT
-INFO  | 2022-11-18 18:19:16 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-18 18:19:21 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - click//span[@id='block-discount-heading']/span[text()='Use Store Credit']
-INFO  | 2022-11-18 18:19:22 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_TXT_STORE_CREDITwith 1
-INFO  | 2022-11-18 18:19:22 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickCHECKOUT_BTN_USE_CREDIT
-INFO  | 2022-11-18 18:19:26 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - click//button[@id='cancel-credit']
-INFO  | 2022-11-18 18:19:26 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:558) - compare from CHECKOUT_MESSAGE_USE_CREDIT_ERROR with CHECKOUT_LBL_USE_CREDIT
+INFO  | 2022-11-21 17:09:42 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:39) - Open browser
+INFO  | 2022-11-21 17:09:43 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO  | 2022-11-21 17:09:43 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO  | 2022-11-21 17:09:45 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - open browser successfullyCHROME
+INFO  | 2022-11-21 17:09:45 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-21 17:09:45 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:58) - url: [Ljava.lang.String;@11228bee
+INFO  | 2022-11-21 17:09:45 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:242) - Maximizing browser window...
+INFO  | 2022-11-21 17:09:46 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_RV_18:371) - testCase_RV_18
+INFO  | 2022-11-21 17:09:46 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:298) - login by authen link withtest !test123!
+INFO  | 2022-11-21 17:10:10 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickBTN_COOKIES
+INFO  | 2022-11-21 17:10:12 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:433) -  scrolling to position 
+INFO  | 2022-11-21 17:10:42 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2022-11-21 17:10:45 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_LOGIN
+INFO  | 2022-11-21 17:10:45 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
+INFO  | 2022-11-21 17:10:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_TBX_PHONEwith LOGIN_DATA_PHONE_LINH
+INFO  | 2022-11-21 17:10:50 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_TXT_PASSWORDwith LOGIN_DATA_PHONE_PASS
+INFO  | 2022-11-21 17:10:52 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2022-11-21 17:11:02 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_BTN_MINICART

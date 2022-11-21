@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import page.checkout.ShoppingBagPage;
 import page.home.LoginPage;
 import page.home.RegisterPage;
+import page.signinSignup.SignInPage;
 
 import static org.testng.TestRunner.PriorityWeight.priority;
 
@@ -18,6 +19,8 @@ public class ShoppingBagTest extends BaseTest {
     private ShoppingBagPage objShoppingBagPage;
 
     private LoginPage objLogin;
+
+    public SignInPage objSignIn;
     private RegisterPage objRegist;
 
     public ShoppingBagTest(){ super();}
@@ -26,10 +29,12 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage = new ShoppingBagPage(this.keyword);
         objLogin = new LoginPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
+        objSignIn = new SignInPage(this.keyword);
         objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
         objRegist.chooseLanguages();
-        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
+        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
+                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
     }
 
     @Test (priority = 4, description = "Remove item from cart succcessfully with the shopping bag having mutiple items")
@@ -354,6 +359,10 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
         objShoppingBagPage.applyCoupon("TNZ_489_NC87",false);
+        objShoppingBagPage.getOrderNumber();
+        objShoppingBagPage.openNewTab();
+        objShoppingBagPage.verifyOrderStatus("ORDER_STATUS_PROCESS");
+        objShoppingBagPage.checkInvoices();
 
     }
 
@@ -361,11 +370,15 @@ public class ShoppingBagTest extends BaseTest {
     public void testCase_RV_18() throws InterruptedException {
         logger.info("testCase_RV_18");
         commonShopping();
-        objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        //objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
         objShoppingBagPage.applyCoupon("TNZ_489_HJ96",true);
+        objShoppingBagPage.getOrderNumber();
+        objShoppingBagPage.openNewTab();
+        objShoppingBagPage.verifyOrderStatus("ORDER_STATUS_PROCESS");
+        objShoppingBagPage.checkInvoices();
 
     }
 

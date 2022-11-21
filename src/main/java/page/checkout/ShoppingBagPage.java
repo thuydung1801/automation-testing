@@ -7,6 +7,7 @@ import core.PropertiesFile;
 import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import page.home.RegisterPage;
+import page.signinSignup.SignInPage;
 
 public class ShoppingBagPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
@@ -17,6 +18,8 @@ public class ShoppingBagPage extends BasePage {
     public ShoppingBagPage(){ super(); }
 
     public RegisterPage objRegist;
+
+    public SignInPage objSignIn;
 
     //add any product with only a size field
     public void addProduct(String url) throws InterruptedException {
@@ -119,7 +122,6 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(10000);
         keyword.click("CHECKOUT_MINICART_VIEWALL");
         keyword.imWait(10);
-
     }
     //remove any product depends on the type of product
     public void removeProduct(String typeOfProduct) throws InterruptedException {
@@ -392,7 +394,7 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(5000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_STORE_CREDIT"));
         clickUseCredit("1");
-        Thread.sleep(4000);
+        Thread.sleep(12000);
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CANCEL_CREDIT"));
         keyword.assertEquals("CHECKOUT_MESSAGE_USE_CREDIT_ERROR","CHECKOUT_LBL_USE_CREDIT");
     }
@@ -406,11 +408,14 @@ public class ShoppingBagPage extends BasePage {
             String actualPrice = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
             logger.info(actualPrice);
             String lastPrice = keyword.removeLastChar(actualPrice);
+            PropertiesFile.serPropValue("CHECKOUT_TOTAL_AMOUNT",actualPrice);
             keyword.simpleAssertEquals(totalPrice, lastPrice);
         }else {
             Thread.sleep(7000);
             String actualPrice = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE", "£");
             String lastPrice = keyword.removeLastChar(actualPrice);
+            PropertiesFile.serPropValue("CHECKOUT_TOTAL_AMOUNT",actualPrice);
+            Thread.sleep(10000);
             keyword.simpleAssertEquals("0.0", lastPrice);
         }
     }
@@ -508,6 +513,37 @@ public class ShoppingBagPage extends BasePage {
         clickUseCredit("610");
         discount(false);
 
+    }
+
+    public void getOrderNumber(){
+        String text = keyword.getTextWithOutCharacters("CHECKOUT_ORDER_NUMBER","Your Order Number Is ");
+        PropertiesFile.serPropValue("CHECKOUT_DATA_ORDER_NUMBER",text);
+    }
+
+    public void openNewTab() throws InterruptedException {
+        objSignIn = new SignInPage(this.keyword);
+        keyword.openNewTabFromTabBase(1,"BE_URL");
+        objSignIn.loginAdmin("BE_ADMIN_USERNAME","BE_ADMIN_PASSWORD");
+    }
+
+    public void verifyOrderStatus(String status) throws InterruptedException {
+        keyword.navigateToUrl("https://dev3.glamira.com/secured2021/sales/order/");
+        keyword.webDriverWaitForElementPresent("BE_ORDER_TBX_SEARCH",10);
+        keyword.sendKeys("BE_ORDER_TBX_SEARCH","CHECKOUT_DATA_ORDER_NUMBER");
+        Thread.sleep(10000);
+        keyword.click("BE_ORDER_BTN_SEARCH");
+        keyword.webDriverWaitForElementPresent("BE_ORDER_GRV",10);
+        keyword.assertEquals(status,"BE_ORDER_GRV_STATUS");
+    }
+
+    public void checkInvoices() throws InterruptedException {
+        Thread.sleep(5000);
+        keyword.click("BE_ORDER_GRV_STATUS");
+        Thread.sleep(5000);
+        keyword.webDriverWaitForElementPresent("BE_ORDER_BTN_INVOICE",10);
+        keyword.click("BE_ORDER_BTN_INVOICE");
+        String amount = keyword.getTextWithOutCharacters("BE_ORDER_STATUS_AMOUNT","£");
+        keyword.simpleAssertEquals("CHECKOUT_TOTAL_AMOUNT",amount);
     }
 
     @Step("calculate the actual money")
