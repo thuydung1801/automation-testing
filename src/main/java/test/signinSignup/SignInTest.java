@@ -37,6 +37,7 @@ public class SignInTest extends BaseTest {
                 "LOGIN_DATA_USER_NAME",
                 "LOGIN_DATA_PASS_WORD"
         );
+        objSigin.chooseItemCustomer();
     }
 
     @Test(priority = 3, description = "Check customer with email log ")
@@ -55,10 +56,9 @@ public class SignInTest extends BaseTest {
         Thread.sleep(1000);
         keyword.imWait(5);
     }
-    @Test(priority = 4, description = "Get code verify")
+
+    @Test(priority = 4, description = "Create new password for entering and to use your a")
     public void testCase_LI06() throws Exception {
-//        objSigin.enterTextInField();
-//        Thread.sleep(1000);
-//        keyword.imWait(5);
+        objSigin.createNewPassWord();
     }
 }

@@ -72,19 +72,6 @@ public class KeywordWeb {
         navigateToUrl(URL);
     }
 
-    public void openNewTabFromTabBase(String url) {
-        driver.get(url);
-        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(0));
-        // driver.navigate().to(url);
-        String URL = PropertiesFile.getPropValue(url);
-        if (URL == null) {
-            URL = url;
-        }
-        navigateToUrl(URL);
-    }
-
     public void closeBrowser() {
         logger.info("close browser: ");
         driver.quit();
@@ -140,6 +127,7 @@ public class KeywordWeb {
         Thread.sleep(1000);
         driver.findElement(By.xpath(ele)).click();
     }
+
     public String getText(String element) {
         logger.info("get Text of" + element);
         String text = PropertiesFile.getPropValue(element);
@@ -346,6 +334,7 @@ public class KeywordWeb {
             logger.info("Listing window ID..." + windowid);
         }
     }
+
     public void switchToIFrameByXpath(String element) {
         logger.info("Switching to Iframe");
         String xPathElement = PropertiesFile.getPropValue(element);
@@ -526,6 +515,19 @@ public class KeywordWeb {
         }
         return stt;
     }
+
+    public boolean checkStatusIsDisplay(String element) {
+        logger.info("Check status ");
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        boolean status = driver.findElement(By.xpath(xPathElement)).isDisplayed();
+        if (status) {
+            System.out.println("Is Display" + "\t" + element);
+        }
+        return status;
+    }
     // wait keywords
 
     public void imWait(long timeout) {
@@ -581,18 +583,4 @@ public class KeywordWeb {
         Assert.assertEquals(actualText, xPathElement1);
 
     }
-//    public String getTextOfElement(String element) throws Exception {
-//        logger.info("");
-//        String xPathElement = PropertiesFile.getPropValue(element);
-//        if (xPathElement == null) {
-//            xPathElement = element;
-//        }
-//        WebDriverWait wait = new WebDriverWait(driver, 30);
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(xPathElement));
-//        String text = driver.findElement(xPathElement).getText();
-//        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-//        System.out.println(");
-//        // return elementText;
-//        return text;
-//    }
 }
