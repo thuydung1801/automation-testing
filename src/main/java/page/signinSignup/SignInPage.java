@@ -3,7 +3,6 @@ package page.signinSignup;
 import core.BasePage;
 import core.KeywordWeb;
 import core.LogHelper;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 
 public class SignInPage extends BasePage {
@@ -11,6 +10,9 @@ public class SignInPage extends BasePage {
 
     public SignInPage(KeywordWeb key) {
         super(key);
+    }
+    public SignInPage() {
+        super();
     }
 
     // Go to the login form and use the forgot password function (with Email)

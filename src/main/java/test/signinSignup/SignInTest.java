@@ -19,7 +19,7 @@ public class SignInTest extends BaseTest {
     }
 
     @Test(priority = 1, description = "Login form with for got password")
-    public void testCase_LI02() throws InterruptedException {
+    public void testCase_SI02() throws InterruptedException {
         objLogin = new LoginPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
         objSigin = new SignInPage(this.keyword);
@@ -31,7 +31,7 @@ public class SignInTest extends BaseTest {
     }
 
     @Test(priority = 2, description = "Open new browser get code")
-    public void testCase_LI03() throws InterruptedException {
+    public void testCase_SI03() throws InterruptedException {
         objSigin.openNewTabs();
         objSigin.loginAdmin(
                 "LOGIN_DATA_USER_NAME",
@@ -41,7 +41,7 @@ public class SignInTest extends BaseTest {
     }
 
     @Test(priority = 3, description = "Check customer with email log ")
-    public void testCase_LI04() throws InterruptedException {
+    public void testCase_SI04() throws InterruptedException {
         objSigin.selectActionEmailLog(
                 "LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT",
                 "LOGIN_SELECT_ACTIVE",
@@ -51,14 +51,14 @@ public class SignInTest extends BaseTest {
     }
 
     @Test(priority = 4, description = "Get code verify")
-    public void testCase_LI05() throws Exception {
+    public void testCase_SI05() throws Exception {
         objSigin.enterTextInField();
         Thread.sleep(1000);
         keyword.imWait(5);
     }
 
     @Test(priority = 4, description = "Create new password for entering and to use your a")
-    public void testCase_LI06() throws Exception {
+    public void testCase_SI06() throws Exception {
         objSigin.createNewPassWord();
     }
 }

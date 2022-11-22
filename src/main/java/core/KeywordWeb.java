@@ -525,6 +525,9 @@ public class KeywordWeb {
         boolean status = driver.findElement(By.xpath(xPathElement)).isDisplayed();
         if (status) {
             System.out.println("Is Display" + "\t" + element);
+        } else {
+            System.out.println("Is not Display" + "\t" + element);
+            closeBrowser();
         }
         return status;
     }
