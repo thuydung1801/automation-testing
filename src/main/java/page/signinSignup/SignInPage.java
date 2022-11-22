@@ -14,6 +14,9 @@ public class SignInPage extends BasePage {
     public SignInPage(KeywordWeb key) {
         super(key);
     }
+    public SignInPage() {
+        super();
+    }
     // Go to the login form and use the forgot password function
     public void goToFormLoginAndEnterDataForGotPassWord() throws InterruptedException {
         keyword.click("LOGIN_BTN_LOGIN");
@@ -37,13 +40,7 @@ public class SignInPage extends BasePage {
         keyword.sendKeys("LOGIN_FORM_USER_NAME_BACKEND", userName);
         keyword.sendKeys("LOGIN_FORM_PASSWORD_BACKEND", passWord);
         keyword.click("LOGIN_FORM_BTN_SUBMIT_BACKEND");
-        keyword.webDriverWaitForElementPresent("LOGIN_BTN_CUSTOMER", 20);
-        keyword.scrollDownToElement("LOGIN_BTN_CUSTOMER");
-        keyword.click("LOGIN_BTN_CUSTOMER");
-        keyword.webDriverWaitForElementPresent("LOGIN_FORM_CSTOMER", 20);
-        Thread.sleep(2000);
-        keyword.click("LOGIN_BTN_EMAIL_LOG");
-        keyword.webDriverWaitForElementPresent("LOGIN_HEADER_EMAIL_LOG", 20);
+
     }
     // Select Action Email Log
     public void selectActionEmailLog(String selectAction, String verifySelectForm, String selectView, String verifyForm) throws InterruptedException {
@@ -61,5 +58,14 @@ public class SignInPage extends BasePage {
         keyword.sendKeys("LOGIN_INPUT_ENTER_DATA", text);
         System.out.println("value copied");
         keyword.switchToTab(0);
+    }
+    public void chooseMenuCustomer() throws InterruptedException {
+        keyword.imWait(3);
+        keyword.scrollDownToElement("LOGIN_BTN_CUSTOMER");
+        keyword.click("LOGIN_BTN_CUSTOMER");
+//        keyword.webDriverWaitForElementPresent("LOGIN_FORM_CUSTOMER", 10);
+//        Thread.sleep(2000);
+        keyword.click("LOGIN_BTN_EMAIL_LOG");
+        keyword.webDriverWaitForElementPresent("LOGIN_HEADER_EMAIL_LOG", 20);
     }
 }

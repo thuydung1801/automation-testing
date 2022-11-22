@@ -35,9 +35,10 @@ public class CustomerServiceTest extends BaseTest {
     }
     @Test(priority = 5,description = "Filter review with checksort and ratting")
     public void filter_checkSort_and_ratting () throws InterruptedException {
-        testCustomerService.filtercWithCheckSortAndRatting();
+        testCustomerService.filterWithCheckSortAndRatting();
 
     }
+
     @Test(priority = 6,description = "Filter review with checksort and checkbox")
     public void filter_checkSort_and_checkSort () throws InterruptedException {
         testCustomerService.filterCheckBoxAndCheckSort();

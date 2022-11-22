@@ -69,7 +69,7 @@ public class CustomerServicePage extends BasePage {
         System.out.printf("done checkbox-ratting" + "\n");
         commonLoad();
     }
-    public void filtercWithCheckSortAndRatting() throws InterruptedException {
+    public void filterWithCheckSortAndRatting() throws InterruptedException {
         keyword.click("CUS_PRD_FILTER_RATTING_1");
         keyword.imWait(2);
         clickDropdown();
