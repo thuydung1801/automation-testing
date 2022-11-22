@@ -1,18 +1,9 @@
-INFO  | 2022-11-21 17:09:42 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:39) - Open browser
-INFO  | 2022-11-21 17:09:43 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
-INFO  | 2022-11-21 17:09:43 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
-INFO  | 2022-11-21 17:09:45 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - open browser successfullyCHROME
-INFO  | 2022-11-21 17:09:45 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-21 17:09:45 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:58) - url: [Ljava.lang.String;@11228bee
-INFO  | 2022-11-21 17:09:45 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:242) - Maximizing browser window...
-INFO  | 2022-11-21 17:09:46 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_RV_18:371) - testCase_RV_18
-INFO  | 2022-11-21 17:09:46 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:298) - login by authen link withtest !test123!
-INFO  | 2022-11-21 17:10:10 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickBTN_COOKIES
-INFO  | 2022-11-21 17:10:12 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:433) -  scrolling to position 
-INFO  | 2022-11-21 17:10:42 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2022-11-21 17:10:45 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_LOGIN
-INFO  | 2022-11-21 17:10:45 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:524) - webDriverWaitForElementPresent
-INFO  | 2022-11-21 17:10:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_TBX_PHONEwith LOGIN_DATA_PHONE_LINH
-INFO  | 2022-11-21 17:10:50 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_TXT_PASSWORDwith LOGIN_DATA_PHONE_PASS
-INFO  | 2022-11-21 17:10:52 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2022-11-21 17:11:02 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_BTN_MINICART
+INFO  | 2022-11-22 18:06:25 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:39) - Open browser
+INFO  | 2022-11-22 18:06:27 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO  | 2022-11-22 18:06:27 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO  | 2022-11-22 18:06:29 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - open browser successfullyCHROME
+INFO  | 2022-11-22 18:06:29 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-22 18:06:29 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:58) - url: [Ljava.lang.String;@603d25db
+INFO  | 2022-11-22 18:06:31 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:242) - Maximizing browser window...
+INFO  | 2022-11-22 18:06:31 | [main] test.checkout.CheckOutInUSStoreTest (CheckOutInUSStoreTest.java:testCase_MS_15:53) - testCase_MS_15
+INFO  | 2022-11-22 18:06:31 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:298) - login by authen link withtest !test123!

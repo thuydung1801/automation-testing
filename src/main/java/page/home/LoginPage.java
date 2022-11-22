@@ -25,19 +25,9 @@ public class LoginPage extends BasePage {
         keyword.click("LOGIN_BTN_LOGIN");
         keyword.webDriverWaitForElementPresent("LOGIN_LBL_LOGIN",30);
         Thread.sleep(2000);
-        if(keyword.verifyElementPresent("LOGIN_TXT_EMAIL")){
-            keyword.sendKeys("LOGIN_TXT_EMAIL", email);
-            Thread.sleep(2000);
-            keyword.sendKeys("LOGIN_TXT_PASSWORD", password);
-            Thread.sleep(2000);
-        }
-        if(keyword.verifyElementPresent("LOGIN_TBX_PHONE")){
-            keyword.sendKeys("LOGIN_TBX_PHONE", phone);
-            Thread.sleep(2000);
-            keyword.sendKeys("LOGIN_TXT_PASSWORD", phonePassword);
-            Thread.sleep(2000);
-        }
+        boolean flag = true;
         if(keyword.verifyElementPresent("LOGIN_TXT_EMAIL_2")) {
+            flag = false;
             if (byEmail) {
                 keyword.sendKeys("LOGIN_TXT_EMAIL_2", email);
                 Thread.sleep(2000);
@@ -50,6 +40,19 @@ public class LoginPage extends BasePage {
                 Thread.sleep(2000);
             }
         }
+        if(keyword.verifyElementPresent("LOGIN_TXT_EMAIL")){
+            keyword.sendKeys("LOGIN_TXT_EMAIL", email);
+            Thread.sleep(2000);
+            keyword.sendKeys("LOGIN_TXT_PASSWORD", password);
+            Thread.sleep(2000);
+        }
+        if(keyword.verifyElementPresent("LOGIN_TBX_PHONE") && flag){
+            keyword.sendKeys("LOGIN_TBX_PHONE", phone);
+            Thread.sleep(2000);
+            keyword.sendKeys("LOGIN_TXT_PASSWORD", phonePassword);
+            Thread.sleep(2000);
+        }
+
 
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
 

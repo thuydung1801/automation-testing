@@ -24,7 +24,7 @@ public class RegisterPage extends BasePage {
     public void chooseLanguages() throws InterruptedException {
         Thread.sleep(2000);
         keyword.scrollToPosition();
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         if(keyword.verifyElementPresent("LOGIN_BTN_LANGUAGE")){
             keyword.click("LOGIN_BTN_LANGUAGE");
         }

@@ -39,8 +39,8 @@ public class ShoppingBagPage extends BasePage {
 
     }
 
-    //add product: bracelet
-    public void addBraceletProduct(String url) throws InterruptedException {
+    //add product without any option
+    public void addProductWithOutOptions(String url) throws InterruptedException {
         objRegist = new RegisterPage(this.keyword);
 
         Thread.sleep(5000);
@@ -514,21 +514,26 @@ public class ShoppingBagPage extends BasePage {
         discount(false);
 
     }
-
+    //get order number when the order is completed
     public void getOrderNumber(){
         String text = keyword.getTextWithOutCharacters("CHECKOUT_ORDER_NUMBER","Your Order Number Is ");
         PropertiesFile.serPropValue("CHECKOUT_DATA_ORDER_NUMBER",text);
     }
 
+    //open a new tab to login on admin site
     public void openNewTab() throws InterruptedException {
         objSignIn = new SignInPage(this.keyword);
         keyword.openNewTabFromTabBase(1,"BE_URL");
         objSignIn.loginAdmin("BE_ADMIN_USERNAME","BE_ADMIN_PASSWORD");
     }
 
+    //go to BE and verify order's status
     public void verifyOrderStatus(String status) throws InterruptedException {
+        //go to BE
         keyword.navigateToUrl("https://dev3.glamira.com/secured2021/sales/order/");
+        //verify status
         keyword.webDriverWaitForElementPresent("BE_ORDER_TBX_SEARCH",10);
+        keyword.clearText("BE_ORDER_TBX_SEARCH");
         keyword.sendKeys("BE_ORDER_TBX_SEARCH","CHECKOUT_DATA_ORDER_NUMBER");
         Thread.sleep(10000);
         keyword.click("BE_ORDER_BTN_SEARCH");
@@ -536,6 +541,23 @@ public class ShoppingBagPage extends BasePage {
         keyword.assertEquals(status,"BE_ORDER_GRV_STATUS");
     }
 
+    //check giftcard's status of an giftcode, that this giftcode's status is used
+    public void checkGiftCardStatus(String code) throws InterruptedException {
+        //go to giftcard screen
+        keyword.navigateToUrl("https://dev3.glamira.com/secured2021/amgcard/account/");
+        //check status by searching code
+        keyword.webDriverWaitForElementPresent("GIFTCARD_HEADER",10);
+        Thread.sleep(5000);
+        keyword.click("GIFTCARD_BTN_FILTER");
+        keyword.webDriverWaitForElementPresent("GIFTCARD_TBX_CODE",10);
+        keyword.clearText("GIFTCARD_TBX_CODE");
+        keyword.sendKeys("GIFTCARD_TBX_CODE",code);
+        keyword.click("GIFTCARD_BTN_APPLY");
+        Thread.sleep(3000);
+        keyword.assertEquals("Used", "GIFTCARD_LBL_STATUS");
+    }
+
+    //check invoices of an order
     public void checkInvoices() throws InterruptedException {
         Thread.sleep(5000);
         keyword.click("BE_ORDER_GRV_STATUS");
@@ -546,6 +568,50 @@ public class ShoppingBagPage extends BasePage {
         keyword.simpleAssertEquals("CHECKOUT_TOTAL_AMOUNT",amount);
     }
 
+    //check out with payment method: affirm (only US store)
+    public void checkOutWithAffirm() throws InterruptedException {
+        //choose affirm payment method on glamira website
+        Thread.sleep(10000);
+        keyword.click("CHECKOUT_CBX_CHECKOUT_AFFIRM");
+        Thread.sleep(5000);
+        keyword.click("CHECKOUT_BTN_ORDER");
+        //paying by Affirm and finish order then go back success page on glamira site
+        keyword.webDriverWaitForElementPresent("AFFIRM_TBX_PHONE", 300);
+        keyword.sendKeys("AFFIRM_TBX_PHONE", "AFFIRM_DATA_PHONE");
+        keyword.click("AFFIRM_BTN_CONTINUE");
+        keyword.sendKeys("AFFIRM_TBX_CODE","1234");
+        keyword.webDriverWaitForElementPresent("AFFIRM_LBL_APROVED",300);
+        keyword.click("AFFIRM_BTN_3MONTHS");
+        keyword.webDriverWaitForElementPresent("AFFIRM_CBX_ARGEE",10);
+        keyword.click("AFFIRM_CBX_ARGEE");
+        keyword.click("AFFIRM_BTN_CONTINUE");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 20);
+        keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
+
+    }
+
+    public void addExtendedPlan(String protectedOption) throws InterruptedException {
+        keyword.click("CHECKOUT_BTN_PROTECTION");
+        keyword.webDriverWaitForElementPresent(protectedOption,20);
+        keyword.click(protectedOption);
+        keyword.click("CHECKOUT_BTN_PROTECTION_APPLY");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_PRICE",30);
+        Thread.sleep(3000);
+    }
+
+    public void verifyExtendedProtectionPlan(int percent){
+        Integer total = Integer.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_PRICE","$"));
+        String expected = String.valueOf(calculateExtended(total,percent));
+        Integer actual = Integer.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_EXTENDED","$"));
+        keyword.simpleAssertEquals(expected, String.valueOf(actual));
+    }
+
+
+
+    public Integer calculateExtended(int total, int percent){
+        Integer extendedAmount = (total * percent)/100;
+        return extendedAmount;
+    }
     @Step("calculate the actual money")
     public Float calculateMoney(float total, float storeCredit){
         return total - storeCredit;

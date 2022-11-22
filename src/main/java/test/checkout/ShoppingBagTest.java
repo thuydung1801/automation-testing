@@ -11,8 +11,6 @@ import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 
-import static org.testng.TestRunner.PriorityWeight.priority;
-
 @Listeners({ AllureTestListener.class })
 public class ShoppingBagTest extends BaseTest {
     private static Logger logger = LogHelper.getLogger();
@@ -169,7 +167,7 @@ public class ShoppingBagTest extends BaseTest {
         public void testCase_SP_21() throws InterruptedException {
         logger.info("testCase_SP_21");
         //commonShopping();
-        objShoppingBagPage.addBraceletProduct("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_BRACELET");
         objShoppingBagPage.editOptions();
@@ -180,7 +178,7 @@ public class ShoppingBagTest extends BaseTest {
         public void testCase_SP_22() throws InterruptedException {
         logger.info("testCase_SP_22");
         commonShopping();
-        objShoppingBagPage.addBraceletProduct("https://dev3.glamira.com/glgb/glamira-men-earring-torreon.html?alloy=white-375&stone1=diamond-Brillant");
+        objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-men-earring-torreon.html?alloy=white-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_EARING");
         objShoppingBagPage.editEaringOptions();
@@ -370,15 +368,15 @@ public class ShoppingBagTest extends BaseTest {
     public void testCase_RV_18() throws InterruptedException {
         logger.info("testCase_RV_18");
         commonShopping();
-        //objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
         objShoppingBagPage.applyCoupon("TNZ_489_HJ96",true);
         objShoppingBagPage.getOrderNumber();
         objShoppingBagPage.openNewTab();
-        objShoppingBagPage.verifyOrderStatus("ORDER_STATUS_PROCESS");
-        objShoppingBagPage.checkInvoices();
+        objShoppingBagPage.verifyOrderStatus("ORDER_STATUS_PENDING");
+        objShoppingBagPage.checkGiftCardStatus("TNZ_489_HJ96");
 
     }
 
@@ -386,7 +384,7 @@ public class ShoppingBagTest extends BaseTest {
     public void testCase_RV_20() throws InterruptedException {
         logger.info("testCase_RV_20");
         commonShopping();
-        //objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
@@ -398,13 +396,15 @@ public class ShoppingBagTest extends BaseTest {
     public void testCase_RV_21() throws InterruptedException {
         logger.info("testCase_RV_21");
         commonShopping();
-        //objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
         objShoppingBagPage.applyCouponAnUseStoreCredit("TNZ_489_HJ96");
 
     }
+
+
 
 
 
