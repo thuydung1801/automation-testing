@@ -4,8 +4,10 @@ import core.BasePage;
 import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
+import io.cucumber.java.eo.Do;
 import io.qameta.allure.Step;
 import org.slf4j.Logger;
+import org.testng.Assert;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 
@@ -141,7 +143,7 @@ public class ShoppingBagPage extends BasePage {
     //change quantity of product in cart
     public void changeQty(String qty){
         keyword.imWait(5);
-        keyword.selectDropDownListByIndex("CHECKOUT_DDL_QTY",
+        keyword.selectDropDownListByName("CHECKOUT_DDL_QTY",
                 qty);
     }
 
@@ -541,7 +543,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.assertEquals(status,"BE_ORDER_GRV_STATUS");
     }
 
-    //check giftcard's status of an giftcode, that this giftcode's status is used
+    //check giftcard's status of a giftcode, that this giftcode's status is used
     public void checkGiftCardStatus(String code) throws InterruptedException {
         //go to giftcard screen
         keyword.navigateToUrl("https://dev3.glamira.com/secured2021/amgcard/account/");
@@ -557,7 +559,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.assertEquals("Used", "GIFTCARD_LBL_STATUS");
     }
 
-    //check invoices of an order
+    //check invoices for an order
     public void checkInvoices() throws InterruptedException {
         Thread.sleep(5000);
         keyword.click("BE_ORDER_GRV_STATUS");
@@ -595,18 +597,72 @@ public class ShoppingBagPage extends BasePage {
         keyword.webDriverWaitForElementPresent(protectedOption,20);
         keyword.click(protectedOption);
         keyword.click("CHECKOUT_BTN_PROTECTION_APPLY");
-        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_PRICE",30);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_PRICE",300);
         Thread.sleep(3000);
     }
 
     public void verifyExtendedProtectionPlan(int percent){
-        Integer total = Integer.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_PRICE","$"));
-        String expected = String.valueOf(calculateExtended(total,percent));
-        Integer actual = Integer.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_EXTENDED","$"));
-        keyword.simpleAssertEquals(expected, String.valueOf(actual));
+        String total = keyword.getTextWithOutCharacters("CHECKOUT_LBL_PRICE","$");
+        Integer total1 = Integer.valueOf(total.replace(".00",""));
+        String expected = String.valueOf(calculateExtended(total1,percent));
+        String actual = keyword.getTextWithOutCharacters("CHECKOUT_LBL_EXTENDED","$")
+                .replace(".00","");
+        keyword.simpleAssertEquals(expected, actual);
+    }
+
+    public void verifyExtendedProtectionPlanWithAmountMin(String priceMin){
+        String actual = keyword.getTextWithOutCharacters("CHECKOUT_LBL_EXTENDED","$")
+                .replace(".00","");
+        keyword.simpleAssertEquals(priceMin, actual);
+    }
+
+    public void extendedIsNotApplied(){
+        keyword.checkElementIsNotDisplayed("CHECKOUT_LBL_EXTENDED");
+    }
+
+    public void editMetalOptions() throws InterruptedException {
+        clickEdit("CHECKOUT_BTN_EDIT_NOSE");
+        keyword.click("CHECKOUT_LBL_METAL_2");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_CHECKBOX_METAL_750",20);
+        keyword.click("CHECKOUT_CHECKBOX_METAL_750");
+        keyword.click("CHECKOUT_BTN_UPDATE");
+    }
+
+    public void clickEstimate() throws InterruptedException {
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LINK_ESTIMATE",20);
+        Thread.sleep(10000);
+        keyword.click("CHECKOUT_LINK_ESTIMATE");
     }
 
 
+    public void editTaxInformation(String postalCode){
+        String total = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","$");
+        PropertiesFile.serPropValue("CHECKOUT_DATA_TOTAL_PRICE",total);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_DDL_ESTIMATE_STATE",10);
+        keyword.selectDropDownListByName("CHECKOUT_DDL_ESTIMATE_STATE","New York");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_EDIT_ESTIMATE",10);
+        keyword.click("CHECKOUT_BTN_EDIT_ESTIMATE");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_TBX_POSTAL_CODE",10);
+        keyword.clearText("CHECKOUT_TBX_POSTAL_CODE");
+        keyword.sendKeys("CHECKOUT_TBX_POSTAL_CODE",postalCode);
+    }
+
+    public void checkEstimateTax(String taxPercentData) throws InterruptedException {
+        Thread.sleep(5000);
+        String tax = keyword.getTextWithOutCharacters("CHECKOUT_LBL_ESTIMATE_TAX","$");
+        logger.info(tax);
+        Double total = Double.valueOf(PropertiesFile.getPropValue("CHECKOUT_DATA_TOTAL_PRICE"));
+        Double taxPercent = Double.valueOf(PropertiesFile.getPropValue(taxPercentData));
+        Double tax1 = calculateTax(taxPercent,total);
+        String finalTax = String.valueOf(Math.ceil(tax1*100)/100);
+        keyword.simpleAssertEquals(finalTax,tax);
+
+    }
+
+    public Double calculateTax(double taxPercent, double total){
+        Double estimateTax = (taxPercent * total)/100;
+        return estimateTax;
+    }
 
     public Integer calculateExtended(int total, int percent){
         Integer extendedAmount = (total * percent)/100;

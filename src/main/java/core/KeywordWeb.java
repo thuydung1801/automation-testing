@@ -468,7 +468,7 @@ public class KeywordWeb {
         }
     }
 
-    public void selectDropDownListByIndex(String ddlPath, String itemName) {
+    public void selectDropDownListByName(String ddlPath, String itemName) {
         logger.info("select item by visibe text");
         String xPathElement1 = PropertiesFile.getPropValue(ddlPath);
         if (xPathElement1 == null) {
@@ -495,6 +495,42 @@ public class KeywordWeb {
         } catch (NoSuchElementException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+
+    //if element is not displayed, testcase will keep running, otherwise it will stop
+    public void checkElementIsNotDisplayed(String element){
+        logger.info("checkElementVisibleOrNot"+ element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        try {
+            driver.findElement(By.xpath(xPathElement));
+            //I want to fail the test here if above element is found
+            Assert.assertTrue(false);
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            //pass the test if element is not found in try statement
+            Assert.assertTrue(true);
+        }
+    }
+
+    //if element is displayed, testcase will keep running, otherwise it will stop
+    public void checkElementIsDisplayed(String element){
+        logger.info("checkElementVisibleOrNot"+ element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        try {
+            driver.findElement(By.xpath(xPathElement));
+            //I want to pass the test here if above element is found
+            Assert.assertTrue(true);
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            //fail the test if element is not found in try statement
+            Assert.assertTrue(false);
         }
     }
 
