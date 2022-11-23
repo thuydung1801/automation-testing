@@ -64,14 +64,14 @@ public class SignInPage extends BasePage {
     }
 
     // Get text and Enter the copy data -> switch to first tabs
-    public void enterTextInField() throws Exception {
+    public void enterTextInField(String iframe, String getTextInPutVerify, String data, String btnSubmit) throws Exception {
         keyword.imWait(10);
-        keyword.switchToIFrameByXpath("LOGIN_IFRAME");
-        String text = keyword.getText("LOGIN_INPUT_VERIFY_CODE");
+        keyword.switchToIFrameByXpath(iframe);
+        String text = keyword.getText(getTextInPutVerify);
         keyword.switchToTab(0);
-        keyword.sendKeys("LOGIN_INPUT_ENTER_DATA", text);
+        keyword.sendKeys(data, text);
         System.out.println("value copied");
-        keyword.click("LOGIN_BTN_SUBMIT_CODE");
+        keyword.click(btnSubmit);
     }
 
     // Create new password for entering and to use your account

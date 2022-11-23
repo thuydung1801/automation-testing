@@ -1,42 +1,73 @@
-INFO  | 2022-11-22 17:32:34 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:39) - Open browser
-INFO  | 2022-11-22 17:32:36 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
-INFO  | 2022-11-22 17:32:36 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
-INFO  | 2022-11-22 17:32:39 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - open browser successfullyCHROME
-INFO  | 2022-11-22 17:32:39 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-22 17:32:39 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:58) - url: [Ljava.lang.String;@3a8fb023
-INFO  | 2022-11-22 17:32:40 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:243) - Maximizing browser window...
-INFO  | 2022-11-22 17:32:41 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:299) - login by authen link withtest !test123!
-INFO  | 2022-11-22 17:33:04 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickBTN_COOKIES
-INFO  | 2022-11-22 17:33:06 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:435) -  scrolling to position 
-INFO  | 2022-11-22 17:33:17 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2022-11-22 17:33:19 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_LOGIN
-INFO  | 2022-11-22 17:33:20 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:542) - webDriverWaitForElementPresent
-INFO  | 2022-11-22 17:33:22 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_CREATE_MY_ACCOUNT
-INFO  | 2022-11-22 17:33:32 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:542) - webDriverWaitForElementPresent
-INFO  | 2022-11-22 17:33:32 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_NEXT_STEEP
-INFO  | 2022-11-22 17:33:32 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:520) - Check status 
-INFO  | 2022-11-22 17:33:32 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:520) - Check status 
-INFO  | 2022-11-22 17:33:33 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:520) - Check status 
-INFO  | 2022-11-22 17:33:33 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:520) - Check status 
-INFO  | 2022-11-22 17:33:33 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
-INFO  | 2022-11-22 17:33:33 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
-INFO  | 2022-11-22 17:33:33 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_EMAIL_INFORMATION
-INFO  | 2022-11-22 17:33:33 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_EMAIL_CONFIRM_INFORMATION
-INFO  | 2022-11-22 17:33:33 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_NEXT_STEEP
-INFO  | 2022-11-22 17:33:33 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD
-INFO  | 2022-11-22 17:33:34 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_SELECT_TITLE
-INFO  | 2022-11-22 17:33:34 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:520) - Check status 
-INFO  | 2022-11-22 17:33:34 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_SELECT_OPTION_TITLE
-INFO  | 2022-11-22 17:33:34 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_CREATE_ACCOUNT
-INFO  | 2022-11-22 17:33:34 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:520) - Check status 
-INFO  | 2022-11-22 17:33:34 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_CHECKBOX_AGREE
-INFO  | 2022-11-22 17:33:34 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_CREATE_ACCOUNT
-INFO  | 2022-11-22 17:33:46 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:576) - compare from SIGNUP_MESSAGE_DUPLICATE with SIGNUP_MESSAGE_EQUAL
-INFO  | 2022-11-22 17:33:46 | [main] core.KeywordWeb (KeywordWeb.java:clearText:81) - clearText
-INFO  | 2022-11-22 17:33:46 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_EMAIL_NEW_INFORMATION
-INFO  | 2022-11-22 17:33:46 | [main] core.KeywordWeb (KeywordWeb.java:clearText:81) - clearText
-INFO  | 2022-11-22 17:33:46 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_NEW_EMAIL_CONFIRM_INFORMATION
-INFO  | 2022-11-22 17:33:46 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_NEXT_STEEP
-INFO  | 2022-11-22 17:33:46 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD
-INFO  | 2022-11-22 17:33:47 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_CHECKBOX_AGREE
-INFO  | 2022-11-22 17:33:47 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2022-11-23 17:20:53 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:39) - Open browser
+INFO  | 2022-11-23 17:20:56 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO  | 2022-11-23 17:20:56 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO  | 2022-11-23 17:20:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - open browser successfullyCHROME
+INFO  | 2022-11-23 17:20:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-23 17:20:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:58) - url: [Ljava.lang.String;@4768b95c
+INFO  | 2022-11-23 17:21:00 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:243) - Maximizing browser window...
+INFO  | 2022-11-23 17:21:01 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:299) - login by authen link withtest !test123!
+INFO  | 2022-11-23 17:21:13 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:542) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:21:13 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickBTN_COOKIES
+INFO  | 2022-11-23 17:21:16 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:435) -  scrolling to position 
+INFO  | 2022-11-23 17:21:27 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_LOGIN
+INFO  | 2022-11-23 17:21:27 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:542) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:21:30 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2022-11-23 17:21:38 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:542) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:21:38 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2022-11-23 17:21:38 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:520) - Check status 
+INFO  | 2022-11-23 17:21:38 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:520) - Check status 
+INFO  | 2022-11-23 17:21:38 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:520) - Check status 
+INFO  | 2022-11-23 17:21:38 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:520) - Check status 
+INFO  | 2022-11-23 17:21:38 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
+INFO  | 2022-11-23 17:21:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2022-11-23 17:21:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2022-11-23 17:21:39 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_CLICK_FOCUS
+INFO  | 2022-11-23 17:21:39 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:576) - compare from SIGNUP_EMAIL_SHOW_MESSAGE with TEXT_ERROR_EMAIL
+INFO  | 2022-11-23 17:21:39 | [main] core.KeywordWeb (KeywordWeb.java:clearText:81) - clearText
+INFO  | 2022-11-23 17:21:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_EMAIL_INFORMATION
+INFO  | 2022-11-23 17:21:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_NEW_EMAIL_CONFIRM_INFORMATION
+INFO  | 2022-11-23 17:21:40 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_CLICK_FOCUS
+INFO  | 2022-11-23 17:21:40 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:576) - compare from SIGNUP_EMAIL_CONFIRM_SHOW_MESSAGE with SIGNUP_ADDRESS_EMAIL_ERROR
+INFO  | 2022-11-23 17:21:40 | [main] core.KeywordWeb (KeywordWeb.java:clearText:81) - clearText
+INFO  | 2022-11-23 17:21:40 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_EMAIL_INFORMATION
+INFO  | 2022-11-23 17:21:40 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2022-11-23 17:21:40 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD
+INFO  | 2022-11-23 17:21:40 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_SELECT_TITLE
+INFO  | 2022-11-23 17:21:41 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:520) - Check status 
+INFO  | 2022-11-23 17:21:41 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_SELECT_OPTION_TITLE
+INFO  | 2022-11-23 17:21:41 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_CREATE_ACCOUNT
+INFO  | 2022-11-23 17:21:41 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:520) - Check status 
+INFO  | 2022-11-23 17:21:41 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_CHECKBOX_AGREE
+INFO  | 2022-11-23 17:21:41 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_CREATE_ACCOUNT
+INFO  | 2022-11-23 17:21:50 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:576) - compare from SIGNUP_MESSAGE_DUPLICATE with SIGNUP_MESSAGE_EQUAL
+INFO  | 2022-11-23 17:21:50 | [main] core.KeywordWeb (KeywordWeb.java:clearText:81) - clearText
+INFO  | 2022-11-23 17:21:50 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_EMAIL_NEW_INFORMATION
+INFO  | 2022-11-23 17:21:50 | [main] core.KeywordWeb (KeywordWeb.java:clearText:81) - clearText
+INFO  | 2022-11-23 17:21:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_NEW_EMAIL_CONFIRM_INFORMATION
+INFO  | 2022-11-23 17:21:51 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2022-11-23 17:21:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD
+INFO  | 2022-11-23 17:21:51 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_CHECKBOX_AGREE
+INFO  | 2022-11-23 17:21:51 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_CREATE_ACCOUNT
+INFO  | 2022-11-23 17:22:00 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:229) - Executing JavaScript
+INFO  | 2022-11-23 17:22:00 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...LOGIN_URL_BACKEND
+INFO  | 2022-11-23 17:22:05 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:542) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:22:05 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME
+INFO  | 2022-11-23 17:22:05 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD
+INFO  | 2022-11-23 17:22:05 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2022-11-23 17:22:13 | [main] core.KeywordWeb (KeywordWeb.java:imWait:537) - implicitlyWait
+INFO  | 2022-11-23 17:22:13 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:411) - scrollDownToElementLOGIN_BTN_CUSTOMER
+INFO  | 2022-11-23 17:22:13 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_CUSTOMER
+INFO  | 2022-11-23 17:22:13 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:542) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:22:15 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_EMAIL_LOG
+INFO  | 2022-11-23 17:22:18 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:542) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:22:18 | [main] core.KeywordWeb (KeywordWeb.java:imWait:537) - implicitlyWait
+INFO  | 2022-11-23 17:22:18 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_CHECK_EMAIL_LOG_ACTION_SELECT
+INFO  | 2022-11-23 17:22:23 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:542) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:22:23 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_SELECT_VIEW_CHECK_EMAIL_LOG
+INFO  | 2022-11-23 17:22:23 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:542) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:22:23 | [main] core.KeywordWeb (KeywordWeb.java:imWait:537) - implicitlyWait
+INFO  | 2022-11-23 17:22:23 | [main] core.KeywordWeb (KeywordWeb.java:switchToIFrameByXpath:339) - Switching to Iframe
+INFO  | 2022-11-23 17:22:23 | [main] core.KeywordWeb (KeywordWeb.java:getText:132) - get Text ofLOGIN_INPUT_VERIFY_CODE
+INFO  | 2022-11-23 17:22:24 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysSIGNUP_INPUT_VERIFY_CODEwith 468274
+INFO  | 2022-11-23 17:22:24 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickSIGNUP_BTN_SUBMIT_ACCOUNT
+INFO  | 2022-11-23 17:22:29 | [main] core.KeywordWeb (KeywordWeb.java:clearText:81) - clearText

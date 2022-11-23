@@ -52,7 +52,11 @@ public class SignInTest extends BaseTest {
 
     @Test(priority = 4, description = "Get code verify")
     public void testCase_SI05() throws Exception {
-        objSigin.enterTextInField();
+        objSigin.enterTextInField("LOGIN_IFRAME",
+                "LOGIN_INPUT_VERIFY_CODE",
+                "LOGIN_INPUT_ENTER_DATA",
+                "LOGIN_BTN_SUBMIT_CODE"
+        );
         Thread.sleep(1000);
         keyword.imWait(5);
     }
