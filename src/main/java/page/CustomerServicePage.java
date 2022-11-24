@@ -7,11 +7,14 @@ import core.PropertiesFile;
 import org.slf4j.Logger;
 import page.home.LoginPage;
 import page.home.RegisterPage;
+import page.signinSignup.SignInPage;
 
 public class CustomerServicePage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private LoginPage objLogin;
     private RegisterPage objRegister ;
+
+    private SignInPage signInPage;
     public CustomerServicePage() {
         super();
     }
@@ -19,9 +22,11 @@ public class CustomerServicePage extends BasePage {
         super(key);
         objLogin = new LoginPage();
         objRegister = new RegisterPage();
+        signInPage = new SignInPage();
     }
     public void setUp() throws InterruptedException {
         objLogin.loginOnAlert();
+        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
         objRegister.acceptAllCookies();
         objRegister.chooseLanguages();
         Thread.sleep(5000);
@@ -83,6 +88,57 @@ public class CustomerServicePage extends BasePage {
         clickDropdown();
         System.out.printf("done checksort-checkbox"+"\n");
     }
+    public void commonNewsLetterWithAccount(){
+        keyword.imWait(3);
+        keyword.click("CUS_NEWSLETTER");
+        keyword.imWait(3);
+        keyword.click("CUS_NEWSLETTER_CHECKBOX");
+        keyword.click("CUS_NEWSLETTER_SUBMIT_ACCOUNT");
+    }
+    public void checkVerifyInputNull(){
+        keyword.assertEquals("COM_DATA_MESSAGES_NULL",
+                "COM_TEXT_ERROR");
+    }
+    public void myAccountSubscribeGlamiraNewsletter() throws InterruptedException {
+        keyword.openNewTab("https://dev3.glamira.com/glus/");
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS");
+        Thread.sleep(5000);
+        keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/index/");
+        commonNewsLetterWithAccount();
+
+    }
+    public void myAccountUnSubscribeGlamiraNewsletter() throws InterruptedException {
+        commonNewsLetterWithAccount();
+    }
+    public void footerSubscribeGlamiraNewsletter() throws InterruptedException {
+//        keyword.reLoadPage();
+        keyword.sendKeys("CUS_NEWSLETTER_INP_EMAIL","COM_INP_DATA_EMAIL");
+        Thread.sleep(1000);
+        keyword.click("CUS_NEWSLETTER_SUBMIT_FOOTER");
+        Thread.sleep(5000);
+        keyword.recaptchaClickSubmit();
+//        keyword.click("CUS_NEWSLETTER_CHECKBOX_CAPTCHA");
+//        Thread.sleep(3000);
+//        keyword.click("CUS_NEWSLETTER_SUBMIT_CAPTCHA");
+    }
+    public void footerSubscribeGlamiraNewsletterWithEmailNull() throws InterruptedException {
+        keyword.clearText("CUS_NEWSLETTER_INP_EMAIL");
+        keyword.imWait(3);
+        keyword.sendKeys("CUS_NEWSLETTER_INP_EMAIL","COM_DATA_NULL");
+        keyword.click("CUS_NEWSLETTER_SUBMIT_FOOTER");
+        checkVerifyInputNull();
+
+    }
+    public void footerSubscribeGlamiraNewsletterWithNoCaptcha() throws InterruptedException {
+        keyword.sendKeys("CUS_NEWSLETTER_INP_EMAIL","COM_INP_DATA_EMAIL");
+        Thread.sleep(1000);
+        keyword.click("CUS_NEWSLETTER_SUBMIT_FOOTER");
+        Thread.sleep(1000);
+        keyword.click("CUS_NEWSLETTER_SUBMIT_CAPTCHA");
+        checkVerifyInputNull();
+
+    }
+
 
 
 }

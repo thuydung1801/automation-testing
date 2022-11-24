@@ -44,6 +44,26 @@ public class CustomerServiceTest extends BaseTest {
         testCustomerService.filterCheckBoxAndCheckSort();
 
     }
+    @Test(priority = 7,description = "Test case Newsletter")
+    public void testCase_NL_01() throws InterruptedException {
+        testCustomerService.myAccountSubscribeGlamiraNewsletter();
+    }
+    @Test(priority = 8,description = "Test case Newsletter")
+    public void testCase_NL_02() throws InterruptedException {
+        testCustomerService.myAccountUnSubscribeGlamiraNewsletter();
+    }
+    @Test(priority = 9,description = "Test case Newsletter")
+    public void testCase_NL_03() throws InterruptedException {
+        testCustomerService.footerSubscribeGlamiraNewsletter();
+    }
+    @Test(priority = 10,description = "Test case Newsletter")
+    public void testCase_NL_04() throws InterruptedException {
+        testCustomerService.footerSubscribeGlamiraNewsletterWithEmailNull();
+    }
+    @Test(priority = 11,description = "Test case Newsletter")
+    public void testCase_NL_05() throws InterruptedException {
+        testCustomerService.footerSubscribeGlamiraNewsletterWithNoCaptcha();
+    }
 
 
 }

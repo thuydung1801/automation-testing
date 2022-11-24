@@ -568,5 +568,28 @@ public class KeywordWeb {
         Assert.assertEquals(actualText, xPathElement1);
 
     }
+    public boolean checkStatusIsDisplay(String element) {
+        logger.info("Check status ");
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        boolean status = driver.findElement(By.xpath(xPathElement)).isDisplayed();
+        if (status) {
+            System.out.println("Is Display" + "\t" + element);
+        } else {
+            System.out.println("Is not Display" + "\t" + element);
+            closeBrowser();
+        }
+        return status;
+    }
+    public void recaptchaClickSubmit() {
+        logger.info("click recaptcha");
+        new WebDriverWait(driver, 10).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[starts-with(@name, 'a-') and starts-with(@src, 'https://www.google.com/recaptcha/api2/anchor?ar=1')]")));
+
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.recaptcha-checkbox-border"))).click();
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("#footer_newsletter_recaptcha > div.box-recatpcha-actions > button"))).click();
+
+    }
 
 }

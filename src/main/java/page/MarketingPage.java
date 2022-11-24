@@ -119,14 +119,29 @@ public class MarketingPage extends BasePage {
         keyword.reLoadPage();
         ipDataGirftCetificate("COM_INP_DATA_NAME","COM_INP_DATA_EMAIL","COM_DATA_TITLE","COM_INP_DATA_MESSAGE",null,"GCE_BTN_DOWNLOAD");
     }
+
     public void adminChooseEmailLog(String text) throws InterruptedException {
-        keyword.imWait(2);
+
+//        keyword.checkStatusIsDisplay("ADMIN_CUS_EMAILLOG_BTN_FILTER");
+//        System.out.printf("===========");
+        Thread.sleep(3000);
         keyword.click("ADMIN_CUS_EMAILLOG_BTN_FILTER");
+
+//        keyword.checkStatusIsDisplay("ADMIN_CUS_EMAILLOG_FILTER_INP_SUBJECT");
+//        System.out.printf("===========");
+        Thread.sleep(3000);
+        keyword.clearText("ADMIN_CUS_EMAILLOG_FILTER_INP_SUBJECT");
         keyword.sendKeys("ADMIN_CUS_EMAILLOG_FILTER_INP_SUBJECT",text);
+
+        Thread.sleep(3000);
         keyword.click("ADMIN_CUS_EMAILLOG_ENTER_FILTER");
         Thread.sleep(2000);
         keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT");
         keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT_VIEW");
+
+        Thread.sleep(2000);
+        keyword.checkStatusIsDisplay("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
+        System.out.printf("===========");
         Thread.sleep(3000);
         keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
         Thread.sleep(2000);
@@ -134,15 +149,15 @@ public class MarketingPage extends BasePage {
     }
 
     public void createNewGriftCetificateFormEmailWithLogin() throws InterruptedException {
-//        setUp();
-//        loginPage.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS");
-//        Thread.sleep(5000);
-//        keyword.click("GCE_BTN_ACCOUNT");
-//        keyword.imWait(3);
+        setUp();
+        loginPage.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS");
+        Thread.sleep(5000);
+        keyword.click("GCE_BTN_ACCOUNT");
+        keyword.imWait(5);
 
         keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/index/");
         String getIdOrder = keyword.getText("GCE_TEXT_ORDER");
-        String text = getIdOrder.substring(1,getIdOrder.length()-1);
+        String text = getIdOrder.substring(1,getIdOrder.length());
         signInPage.openNewTabs();
         signInPage.loginAdmin("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD");
         Thread.sleep(5000);
