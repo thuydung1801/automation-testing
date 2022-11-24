@@ -21,7 +21,7 @@ public class SignInPage extends BasePage {
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 20);
         Thread.sleep(2000);
         keyword.click("LOGIN_BTN_FORGOT_PASSWORD");
-        if (keyword.checkStatusIsDisplay("LOGIN_BOX_FORGOT_PASSWORD")) {
+        if (keyword.verifyElementPresent("LOGIN_BOX_FORGOT_PASSWORD")) {
             keyword.webDriverWaitForElementPresent("LOGIN_BOX_FORGOT_PASSWORD", 20);
             keyword.sendKeys("LOGIN_INPUT_FORGOT_PASSWORD", "LOGIN_DATA_EMAIL_FORGOT_PASSWORD");
             keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");

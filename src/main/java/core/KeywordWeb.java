@@ -539,7 +539,7 @@ public class KeywordWeb {
     }
 
     public void webDriverWaitForElementPresent(String element, long timeout) {
-        logger.info("webDriverWaitForElementPresent");
+        logger.info("webDriverWaitForElementPresent" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
         if (xPathElement == null) {
             xPathElement = element;
@@ -586,4 +586,6 @@ public class KeywordWeb {
         Assert.assertEquals(actualText, xPathElement1);
 
     }
+
+
 }

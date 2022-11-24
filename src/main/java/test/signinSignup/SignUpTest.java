@@ -48,17 +48,17 @@ public class SignUpTest extends BaseTest {
 
     @Test(priority = 5, description = "Create New Account- Sign up with a duplicate email address")
     public void testCase_SU05() throws InterruptedException {
-//        objSigUp.sendKeyFullDataFormInformationAndSubmit(
-//                "SIGNUP_DATA_FIRST_NAME_INFORMATION",
-//                "SIGNUP_DATA_LAST_NAME_INFORMATION",
-//                "SIGNUP_DATA_EMAIL_INFORMATION",
-//                "SIGNUP_DATA_EMAIL_CONFIRM_INFORMATION"
-//        );
-        objSigUp.nextButton();
-        objSigUp.sendKeyFullDataFormPasswordInformation(
-                "SIGNUP_CREATE_PASSWORD",
-                "SIGNUP_SELECT_OPTION_TITLE"
-        );
+        if (keyword.verifyElementPresent("SIGNUP_WITH_PHONE") && keyword.checkStatusIsDisplay("SIGNUP_TITLE_INPUT_MOBILE")) {
+            System.out.println("next to steep");
+        } else {
+            objSigUp.nextButton();
+            objSigUp.sendKeyFullDataFormPasswordInformation(
+                    "SIGNUP_SELECT_TITLE",
+                    "SIGNUP_PASSWORD_INFORMATION",
+                    "SIGNUP_CREATE_PASSWORD",
+                    "SIGNUP_SELECT_OPTION_TITLE"
+            );
+        }
     }
 
     //
@@ -70,19 +70,16 @@ public class SignUpTest extends BaseTest {
                 "LOGIN_DATA_USER_NAME",
                 "LOGIN_DATA_PASS_WORD");
         Thread.sleep(1000);
-        objSignIn.chooseItemCustomer();
-        objSignIn.selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT",
-                "LOGIN_SELECT_ACTIVE",
-                "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
-                "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
-        objSignIn.enterTextInField("LOGIN_IFRAME",
-                "LOGIN_INPUT_VERIFY_CODE",
-                "SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
-        objSigUp.clearTextAndSendKey(
-                "SIGNUP_DATA_EMAIL_INVALID",
-                "SIGNUP_DATA_EMAIL_INVALID",
-                "SIGNUP_DATA_EMAIL_CONFIRM_INFORMATION"
-        );
+           objSignIn.chooseItemCustomer();
+           objSignIn.selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT",
+                   "LOGIN_SELECT_ACTIVE",
+                   "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
+                   "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
+           objSignIn.enterTextInField("LOGIN_IFRAME",
+                   "LOGIN_INPUT_VERIFY_CODE",
+                   "SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
+           objSigUp.verifySignUpSuccess();
+
     }
 
     @Test(priority = 7, description = "Create New Account- Enter wrong format  email address")
