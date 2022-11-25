@@ -223,7 +223,16 @@ public class KeywordWeb {
         WebElement elementRep = driver.findElement(By.xpath(xPathElement));
         action.moveToElement(elementRep).perform();
     }
-
+    public void hoverAndClicks(String element) {
+        logger.info("Move To Element" + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        Actions action = new Actions(driver);
+        WebElement elementRep = driver.findElement(By.xpath(xPathElement));
+        action.moveToElement(elementRep).clickAndHold();
+    }
 
     public void executeJavaScript(String command) {
         logger.info("Executing JavaScript");
@@ -527,7 +536,6 @@ public class KeywordWeb {
             System.out.println("Is Display" + "\t" + element);
         } else {
             System.out.println("Is not Display" + "\t" + element);
-            closeBrowser();
         }
         return status;
     }
@@ -537,7 +545,6 @@ public class KeywordWeb {
         logger.info("implicitlyWait");
         driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
     }
-
     public void webDriverWaitForElementPresent(String element, long timeout) {
         logger.info("webDriverWaitForElementPresent" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
@@ -586,6 +593,5 @@ public class KeywordWeb {
         Assert.assertEquals(actualText, xPathElement1);
 
     }
-
 
 }
