@@ -37,7 +37,7 @@ public class CheckOutInUSStoreTest extends BaseTest {
 
     }
 
-    @Test(priority = 1, description="Check out with payment method Affirm")
+    //@Test(priority = 1, description="Check out with payment method Affirm")
     public void testCase_Affirm() throws InterruptedException {
         logger.info("testCase_Affirm");
         commonShopping();
@@ -51,7 +51,7 @@ public class CheckOutInUSStoreTest extends BaseTest {
     @Test(priority = 2, description= "Add Extended plan successfully")
     public void testCase_MS_15() throws InterruptedException {
         logger.info("testCase_MS_15");
-        //commonShopping();
+        commonShopping();
         objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glus/glamira-men-pendant-weisded.html?alloy=yellow-585&stone1=diamond-Swarovsky");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.addExtendedPlan("CHECKOUT_BTN_EXTENDED");
@@ -62,10 +62,7 @@ public class CheckOutInUSStoreTest extends BaseTest {
     public void testCase_MS_16() throws InterruptedException {
         logger.info("testCase_MS_16");
         //commonShopping();
-        objShoppingBagPage.clickShoppingBagPage();
-        objShoppingBagPage.removeProduct("CHECKOUT_ICON_REMOVE_PENDANT");
-        objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glus/glamira-men-pendant-weisded.html?alloy=yellow-585&stone1=diamond-Swarovsky");
-        objShoppingBagPage.clickShoppingBagPage();
+        //objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.addExtendedPlan("CHECKOUT_BTN_EXTENDED_PLUS");
         objShoppingBagPage.verifyExtendedProtectionPlan(60);
         objShoppingBagPage.removeProduct("CHECKOUT_ICON_REMOVE_PENDANT");
@@ -120,7 +117,7 @@ public class CheckOutInUSStoreTest extends BaseTest {
     @Test(priority = 7, description= "Add Extended plan with item having 35% amount < amount min")
     public void testCase_MS_10() throws InterruptedException {
         logger.info("testCase_MS_10");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickEstimate();
         objShoppingBagPage.editTaxInformation("CHECKOUT_DATA_POSTAL_CODE_2");
@@ -130,8 +127,8 @@ public class CheckOutInUSStoreTest extends BaseTest {
 
     @Test(priority = 8, description= "Add Extended plan with item having 35% amount < amount min")
     public void testCase_MS_11() throws InterruptedException {
-        logger.info("testCase_MS_10");
-        commonShopping();
+        logger.info("testCase_MS_11");
+        //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickEstimate();
         objShoppingBagPage.editTaxInformation("CHECKOUT_DATA_POSTAL_CODE_1");

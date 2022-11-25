@@ -36,7 +36,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H");
         Thread.sleep(2000);
         //keyword.click("CHECKOUT_ADDPRODUCT_BTN_CLOSE");
-        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD_SIZE");
         Thread.sleep(2000);
 
     }
@@ -71,7 +71,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H");
         Thread.sleep(2000);
         //keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_CLOSE"));
-        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD_SIZE");
         Thread.sleep(2000);
     }
     //add any product with double engraving
@@ -94,7 +94,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H");
         Thread.sleep(2000);
         //keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_CLOSE"));
-        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD_SIZE");
         Thread.sleep(2000);
     }
 
@@ -234,14 +234,16 @@ public class ShoppingBagPage extends BasePage {
     public void inputCorrectly(String data, String engraving) throws InterruptedException {
         keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
         Thread.sleep(10000);
-        keyword.assertEquals(data+ " - "+ data
-                , PropertiesFile.getPropValue(engraving));
+        String actual = keyword.getText(engraving);
+        String expect = PropertiesFile.getPropValue(data);
+        keyword.simpleAssertEquals(expect+ " - "+ expect
+                , actual);
     }
     @Step("Input invalid data")
     public void inputError(String lblErrorMessage1, String lblErrorMessage2, String dataExpected, String engraving, boolean flag) throws InterruptedException {
         keyword.verifyElementPresent(lblErrorMessage1);
         keyword.verifyElementPresent(lblErrorMessage2);
-        if(flag == true) {
+        if(flag) {
             keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
             Thread.sleep(10000);
             keyword.assertEquals(dataExpected + " - " + dataExpected, engraving);
@@ -594,7 +596,7 @@ public class ShoppingBagPage extends BasePage {
 
     public void addExtendedPlan(String protectedOption) throws InterruptedException {
         keyword.click("CHECKOUT_BTN_PROTECTION");
-        keyword.webDriverWaitForElementPresent(protectedOption,20);
+        keyword.webDriverWaitForElementPresent(protectedOption,300);
         keyword.click(protectedOption);
         keyword.click("CHECKOUT_BTN_PROTECTION_APPLY");
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_PRICE",300);
@@ -635,20 +637,26 @@ public class ShoppingBagPage extends BasePage {
     }
 
 
-    public void editTaxInformation(String postalCode){
+    public void editTaxInformation(String postalCode) throws InterruptedException {
         String total = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","$");
         PropertiesFile.serPropValue("CHECKOUT_DATA_TOTAL_PRICE",total);
+        //select address
         keyword.webDriverWaitForElementPresent("CHECKOUT_DDL_ESTIMATE_STATE",10);
         keyword.selectDropDownListByName("CHECKOUT_DDL_ESTIMATE_STATE","New York");
+        keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_EDIT_ESTIMATE",10);
         keyword.click("CHECKOUT_BTN_EDIT_ESTIMATE");
+        //input postalCode
         keyword.webDriverWaitForElementPresent("CHECKOUT_TBX_POSTAL_CODE",10);
         keyword.clearText("CHECKOUT_TBX_POSTAL_CODE");
         keyword.sendKeys("CHECKOUT_TBX_POSTAL_CODE",postalCode);
     }
 
     public void checkEstimateTax(String taxPercentData) throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(1000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        //get tax on screen
         String tax = keyword.getTextWithOutCharacters("CHECKOUT_LBL_ESTIMATE_TAX","$");
         logger.info(tax);
         Double total = Double.valueOf(PropertiesFile.getPropValue("CHECKOUT_DATA_TOTAL_PRICE"));

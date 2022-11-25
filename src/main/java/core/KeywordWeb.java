@@ -25,6 +25,7 @@ import java.util.concurrent.TimeUnit;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
+import java.util.function.Function;
 
 
 public class KeywordWeb {
@@ -566,6 +567,45 @@ public class KeywordWeb {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xPathElement)));
     }
 
+    public void waitForAjaxToFinish() throws InterruptedException {
+        logger.info("waitForAjaxToFinish");
+
+        WebDriverWait wait = new WebDriverWait(driver, 3000);
+
+         wait.until((ExpectedCondition<Boolean>) wdriver -> ((JavascriptExecutor) driver).executeScript(
+                "return !!window.jQuery && !!window.jQuery.active == 0;").equals(true));
+         Thread.sleep(150);
+    }
+    private static void until(Function<WebDriver, Boolean> waitCondition, Long timeoutInSeconds){
+        WebDriverWait webDriverWait = new WebDriverWait(driver, timeoutInSeconds);
+        webDriverWait.withTimeout(timeoutInSeconds, TimeUnit.SECONDS);
+        try{
+            webDriverWait.until(waitCondition);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    public void untilJqueryIsDone( Long timeoutInSeconds){
+        until((d) ->
+        {
+            Boolean isJqueryCallDone = (Boolean)((JavascriptExecutor) driver).executeScript("return jQuery.active==0");
+            if (!isJqueryCallDone) System.out.println("JQuery call is in Progress");
+            return isJqueryCallDone;
+        }, timeoutInSeconds);
+    }
+    public String waitForElementNotVisible(int timeOutInSeconds, String elementXPath) {
+        if ((driver == null) || (elementXPath == null) || elementXPath.isEmpty()) {
+
+            return "Wrong usage of WaitforElementNotVisible()";
+        }
+        try {
+            (new WebDriverWait(driver, timeOutInSeconds)).until(ExpectedConditions.invisibilityOfElementLocated(By
+                    .xpath(elementXPath)));
+            return null;
+        } catch (TimeoutException e) {
+            return "Build your own errormessage...";
+        }
+    }
     public void webDriverWaitForElementPresentByCss(String element, long timeout) {
         logger.info("webDriverWaitForElementPresentByCss");
         String xPathElement = PropertiesFile.getPropValue(element);

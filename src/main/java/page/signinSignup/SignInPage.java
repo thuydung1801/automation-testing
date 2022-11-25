@@ -42,8 +42,8 @@ public class SignInPage extends BasePage {
         keyword.click("LOGIN_BTN_CUSTOMER");
         keyword.webDriverWaitForElementPresent("LOGIN_FORM_CSTOMER", 20);
         Thread.sleep(2000);
-//        keyword.click("LOGIN_BTN_EMAIL_LOG");
-//        keyword.webDriverWaitForElementPresent("LOGIN_HEADER_EMAIL_LOG", 20);
+        keyword.click("LOGIN_BTN_EMAIL_LOG");
+        keyword.webDriverWaitForElementPresent("LOGIN_HEADER_EMAIL_LOG", 20);
     }
     // Select Action Email Log
     public void selectActionEmailLog(String selectAction, String verifySelectForm, String selectView, String verifyForm) throws InterruptedException {
