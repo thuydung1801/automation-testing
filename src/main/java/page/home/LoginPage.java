@@ -21,7 +21,8 @@ public class LoginPage extends BasePage {
     }
     public void loginOnWebsite(String email, String password, String phone,
                                String phonePassword, boolean byEmail) throws InterruptedException {
-        Thread.sleep(3000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("LOGIN_BTN_LOGIN");
         keyword.webDriverWaitForElementPresent("LOGIN_LBL_LOGIN",30);
         Thread.sleep(2000);

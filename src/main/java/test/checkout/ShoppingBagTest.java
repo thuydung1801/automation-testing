@@ -392,7 +392,7 @@ public class ShoppingBagTest extends BaseTest {
 
     }
 
-    @Test (priority = 31, description = "Apply a gift card having status Expired or Used")
+    @Test (priority = 31, description = "Place order and apply (store credit + giftcard)")
     public void testCase_RV_21() throws InterruptedException {
         logger.info("testCase_RV_21");
         //commonShopping();
@@ -401,6 +401,27 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
         objShoppingBagPage.applyCouponAnUseStoreCredit("TNZ_489_HJ96");
+
+    }
+
+    @Test (priority = 32, description = "Place order with shipping label successfully")
+    public void testCase_RV_31() throws InterruptedException {
+        logger.info("testCase_RV_31");
+        //commonShopping();
+        objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.addShippingLabel();
+
+    }
+
+    @Test (priority = 33, description = "Place order and unchecked I have read and accepted the Terms & Conditions")
+    public void testCase_RV_32() throws InterruptedException {
+        logger.info("testCase_RV_32");
+        commonShopping();
+        objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.notAccpectConditions();
 
     }
 

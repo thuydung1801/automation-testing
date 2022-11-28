@@ -136,7 +136,8 @@ public class ShoppingBagPage extends BasePage {
         }
     }
     // confirm message displayed or not
-    public void confirmMessage(String messages){
+    public void confirmMessage(String messages) throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
         keyword.imWait(10);
         keyword.verifyElementVisible(messages);
     }
@@ -151,6 +152,15 @@ public class ShoppingBagPage extends BasePage {
     public void viewDetail(String typeOfProduct) throws InterruptedException {
         keyword.click(typeOfProduct);
 
+    }
+
+    public void addShippingLabel() throws InterruptedException {
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/catalog/product/view/id/103896");
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
+        clickShoppingBagPage();
+        moveToPagecheckOut();
+        checkOut();
+        checkOutWithBankTransfer();
     }
 
     //click button Edit depends on the type of product
@@ -266,16 +276,18 @@ public class ShoppingBagPage extends BasePage {
 
     @Step("click to choose free gift wrapping")
     public void moveToPagecheckOut() throws InterruptedException {
-        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(30L);
         keyword.click("CHECKOUT_BTN_CHECKOUT");
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",10);
     }
     @Step("common checkout")
     public void checkOut() throws InterruptedException {
-        Thread.sleep(3000);
+        keyword.untilJqueryIsDone(50L);
         keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_CHECKOUT_SHIPMENT",5);
-        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(50L);
         keyword.click("CHECKOUT_BTN_CHECKOUT_SHIPMENT");
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT_PAYMENT",10);
     }
@@ -289,7 +301,8 @@ public class ShoppingBagPage extends BasePage {
     @Step("check out with payment method: visa")
     public void checkOutWithVisa(String flag) throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_VISA",10);
-        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_CBX_CHECKOUT_VISA");
         Thread.sleep(3000);
         switch (flag) {
@@ -306,7 +319,7 @@ public class ShoppingBagPage extends BasePage {
                 keyword.switchToDefaultContent();
                 keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_NAME", "CHECKOUT_DATA_CHECKOUT_NAME");
                 keyword.click("CHECKOUT_BTN_ORDER");
-                keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 10);
+                keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 30);
                 keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
                 break;
             //missing input all of fields
@@ -354,9 +367,11 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(10000);
         keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER",10);
         keyword.click("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_ORDER");
-        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.switchToIFrameByXpath("KLARNA_IFRAME");
         Thread.sleep(10000);
         keyword.webDriverWaitForElementPresent("KLARNA_BTN_CONTINUE",30);
@@ -374,9 +389,10 @@ public class ShoppingBagPage extends BasePage {
     }
     //check out with bank transfer payment method
     public void checkOutWithBankTransfer() throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_BANK",10);
         keyword.click("CHECKOUT_CBX_CHECKOUT_BANK");
-        Thread.sleep(6000);
+        keyword.untilJqueryIsDone(30L);
         keyword.click("CHECKOUT_BTN_ORDER");
         keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 20);
         keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
@@ -384,7 +400,8 @@ public class ShoppingBagPage extends BasePage {
     //click to print the receipt
     public void clickPrint() throws InterruptedException {
         keyword.click("SUCCESS_BTN_PRINT");
-        Thread.sleep(3000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.switchToTab(1);
         keyword.executeJavaScript("window.print=function(){window.close();};");
     }
@@ -395,10 +412,12 @@ public class ShoppingBagPage extends BasePage {
     }
     //cancel action use credit
     public void cancelUseCredit() throws InterruptedException {
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_STORE_CREDIT"));
         clickUseCredit("1");
-        Thread.sleep(12000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_CANCEL_CREDIT"));
         keyword.assertEquals("CHECKOUT_MESSAGE_USE_CREDIT_ERROR","CHECKOUT_LBL_USE_CREDIT");
     }
@@ -408,18 +427,21 @@ public class ShoppingBagPage extends BasePage {
             Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
             logger.info(String.valueOf(rawPrice));
             String totalPrice = String.valueOf(calculateMoney(rawPrice, 1));
-            Thread.sleep(20000);
+            keyword.untilJqueryIsDone(50L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             String actualPrice = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
             logger.info(actualPrice);
             String lastPrice = keyword.removeLastChar(actualPrice);
             PropertiesFile.serPropValue("CHECKOUT_TOTAL_AMOUNT",actualPrice);
             keyword.simpleAssertEquals(totalPrice, lastPrice);
         }else {
-            Thread.sleep(7000);
+            keyword.untilJqueryIsDone(50L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             String actualPrice = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE", "£");
             String lastPrice = keyword.removeLastChar(actualPrice);
             PropertiesFile.serPropValue("CHECKOUT_TOTAL_AMOUNT",actualPrice);
-            Thread.sleep(10000);
+            keyword.untilJqueryIsDone(50L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             keyword.simpleAssertEquals("0.0", lastPrice);
         }
     }
@@ -429,7 +451,8 @@ public class ShoppingBagPage extends BasePage {
         if(flag) {
             keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_USE_CREDIT", 10);
             keyword.assertEquals("CHECKOUT_MESSAGE_USE_CREDIT", "CHECKOUT_LBL_USE_CREDIT");
-            Thread.sleep(20000);
+            keyword.untilJqueryIsDone(50L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             String actualPrice = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE", "£");
             logger.info(actualPrice);
             String lastPrice = keyword.removeLastChar(actualPrice);
@@ -445,7 +468,8 @@ public class ShoppingBagPage extends BasePage {
     }
     //checkout with store credit in cases where the balance is greater than, equal to or less than the amount payable
     public void checkOutWithStoreCredit(String flag) throws InterruptedException {
-        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_STORE_CREDIT"));
         //keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),10);
         Float credit = Float.valueOf(1);
@@ -485,7 +509,8 @@ public class ShoppingBagPage extends BasePage {
     }
     //apply active coupon with 2 situations: > total and < total money
     public void applyCoupon(String couponCode, boolean flag) throws InterruptedException {
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_LBL_COUPON");
         keyword.sendKeys("CHECKOUT_TBX_COUPON",couponCode);
         keyword.click("CHECKOUT_BTN_COUPON");
@@ -502,7 +527,8 @@ public class ShoppingBagPage extends BasePage {
     }
     @Step("apply the coupon is used")
     public void applyUsedCoupon(String couponCode) throws InterruptedException {
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_LBL_COUPON");
         keyword.sendKeys("CHECKOUT_TBX_COUPON",couponCode);
         keyword.click("CHECKOUT_BTN_COUPON");
@@ -510,7 +536,8 @@ public class ShoppingBagPage extends BasePage {
     }
 
     public void applyCouponAnUseStoreCredit(String couponCode) throws InterruptedException {
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_LBL_COUPON");
         keyword.sendKeys("CHECKOUT_TBX_COUPON",couponCode);
         keyword.click("CHECKOUT_BTN_COUPON");
@@ -539,7 +566,8 @@ public class ShoppingBagPage extends BasePage {
         keyword.webDriverWaitForElementPresent("BE_ORDER_TBX_SEARCH",10);
         keyword.clearText("BE_ORDER_TBX_SEARCH");
         keyword.sendKeys("BE_ORDER_TBX_SEARCH","CHECKOUT_DATA_ORDER_NUMBER");
-        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("BE_ORDER_BTN_SEARCH");
         keyword.webDriverWaitForElementPresent("BE_ORDER_GRV",10);
         keyword.assertEquals(status,"BE_ORDER_GRV_STATUS");
@@ -551,21 +579,25 @@ public class ShoppingBagPage extends BasePage {
         keyword.navigateToUrl("https://dev3.glamira.com/secured2021/amgcard/account/");
         //check status by searching code
         keyword.webDriverWaitForElementPresent("GIFTCARD_HEADER",10);
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("GIFTCARD_BTN_FILTER");
         keyword.webDriverWaitForElementPresent("GIFTCARD_TBX_CODE",10);
         keyword.clearText("GIFTCARD_TBX_CODE");
         keyword.sendKeys("GIFTCARD_TBX_CODE",code);
         keyword.click("GIFTCARD_BTN_APPLY");
-        Thread.sleep(3000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.assertEquals("Used", "GIFTCARD_LBL_STATUS");
     }
 
     //check invoices for an order
     public void checkInvoices() throws InterruptedException {
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("BE_ORDER_GRV_STATUS");
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.webDriverWaitForElementPresent("BE_ORDER_BTN_INVOICE",10);
         keyword.click("BE_ORDER_BTN_INVOICE");
         String amount = keyword.getTextWithOutCharacters("BE_ORDER_STATUS_AMOUNT","£");
@@ -575,9 +607,11 @@ public class ShoppingBagPage extends BasePage {
     //check out with payment method: affirm (only US store)
     public void checkOutWithAffirm() throws InterruptedException {
         //choose affirm payment method on glamira website
-        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_CBX_CHECKOUT_AFFIRM");
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_ORDER");
         //paying by Affirm and finish order then go back success page on glamira site
         keyword.webDriverWaitForElementPresent("AFFIRM_TBX_PHONE", 300);
@@ -595,18 +629,21 @@ public class ShoppingBagPage extends BasePage {
     }
 
     public void addExtendedPlan(String protectedOption) throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
         keyword.click("CHECKOUT_BTN_PROTECTION");
         keyword.webDriverWaitForElementPresent(protectedOption,300);
         keyword.click(protectedOption);
         keyword.click("CHECKOUT_BTN_PROTECTION_APPLY");
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_PRICE",300);
-        Thread.sleep(3000);
+        keyword.untilJqueryIsDone(30L);
     }
 
     public void verifyExtendedProtectionPlan(int percent){
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         String total = keyword.getTextWithOutCharacters("CHECKOUT_LBL_PRICE","$");
         Integer total1 = Integer.valueOf(total.replace(".00",""));
         String expected = String.valueOf(calculateExtended(total1,percent));
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         String actual = keyword.getTextWithOutCharacters("CHECKOUT_LBL_EXTENDED","$")
                 .replace(".00","");
         keyword.simpleAssertEquals(expected, actual);
@@ -632,7 +669,7 @@ public class ShoppingBagPage extends BasePage {
 
     public void clickEstimate() throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_LINK_ESTIMATE",20);
-        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(50L);
         keyword.click("CHECKOUT_LINK_ESTIMATE");
     }
 
@@ -644,16 +681,16 @@ public class ShoppingBagPage extends BasePage {
         keyword.webDriverWaitForElementPresent("CHECKOUT_DDL_ESTIMATE_STATE",10);
         keyword.selectDropDownListByName("CHECKOUT_DDL_ESTIMATE_STATE","New York");
         keyword.untilJqueryIsDone(30L);
-        keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_EDIT_ESTIMATE",10);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LINK_ESTIMATE",10);
         keyword.click("CHECKOUT_BTN_EDIT_ESTIMATE");
+        keyword.untilJqueryIsDone(30L);
         //input postalCode
         keyword.webDriverWaitForElementPresent("CHECKOUT_TBX_POSTAL_CODE",10);
         keyword.clearText("CHECKOUT_TBX_POSTAL_CODE");
         keyword.sendKeys("CHECKOUT_TBX_POSTAL_CODE",postalCode);
     }
-
+    //get actual tax and compare with tax that already calculate by method calculateTax
     public void checkEstimateTax(String taxPercentData) throws InterruptedException {
-        Thread.sleep(1000);
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         //get tax on screen
@@ -667,6 +704,18 @@ public class ShoppingBagPage extends BasePage {
 
     }
 
+    public void notAccpectConditions() throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
+        keyword.click("CHECKOUT_BTN_ACCEPT_CONDITIONS");
+        keyword.untilJqueryIsDone(30L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_BANK",10);
+        keyword.click("CHECKOUT_CBX_CHECKOUT_BANK");
+        keyword.untilJqueryIsDone(30L);
+        keyword.click("CHECKOUT_BTN_ORDER");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_ACCEPT_CONDITIONS", 20);
+    }
+
+    //calculate tax by tax percent
     public Double calculateTax(double taxPercent, double total){
         Double estimateTax = (taxPercent * total)/100;
         return estimateTax;

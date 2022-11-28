@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.*;
 import org.slf4j.Logger;
 import org.testng.Assert;
@@ -585,13 +586,14 @@ public class KeywordWeb {
             System.out.println(e.getMessage());
         }
     }
-    public void untilJqueryIsDone( Long timeoutInSeconds){
+    public void untilJqueryIsDone( Long timeoutInSeconds) throws InterruptedException {
         until((d) ->
         {
             Boolean isJqueryCallDone = (Boolean)((JavascriptExecutor) driver).executeScript("return jQuery.active==0");
             if (!isJqueryCallDone) System.out.println("JQuery call is in Progress");
             return isJqueryCallDone;
         }, timeoutInSeconds);
+        Thread.sleep(1000);
     }
     public String waitForElementNotVisible(int timeOutInSeconds, String elementXPath) {
         if ((driver == null) || (elementXPath == null) || elementXPath.isEmpty()) {

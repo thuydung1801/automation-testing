@@ -117,7 +117,7 @@ public class CheckOutInUSStoreTest extends BaseTest {
     @Test(priority = 7, description= "Add Extended plan with item having 35% amount < amount min")
     public void testCase_MS_10() throws InterruptedException {
         logger.info("testCase_MS_10");
-        //commonShopping();
+        commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickEstimate();
         objShoppingBagPage.editTaxInformation("CHECKOUT_DATA_POSTAL_CODE_2");
