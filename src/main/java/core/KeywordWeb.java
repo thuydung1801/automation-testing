@@ -30,11 +30,8 @@ import java.awt.Toolkit;
 public class KeywordWeb {
     private static Logger logger = LogHelper.getLogger();
     public static WebDriver driver;
-
-
     public KeywordWeb() {
     }
-
     public void openBrowser(String browser, String... url) {
         logger.info("Open browser");
         switch (browser.toUpperCase()) {

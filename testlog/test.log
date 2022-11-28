@@ -1,46 +1,22 @@
-INFO  | 2022-11-25 17:41:38 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:39) - Open browser
-INFO  | 2022-11-25 17:41:40 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
-INFO  | 2022-11-25 17:41:40 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
-INFO  | 2022-11-25 17:41:43 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - open browser successfullyCHROME
-INFO  | 2022-11-25 17:41:43 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-25 17:41:43 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:58) - url: [Ljava.lang.String;@1f3c5308
-INFO  | 2022-11-25 17:41:44 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:252) - Maximizing browser window...
-INFO  | 2022-11-25 17:41:45 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:308) - login by authen link withtest !test123!
-INFO  | 2022-11-25 17:41:58 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:549) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2022-11-25 17:42:03 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickBTN_COOKIES
-INFO  | 2022-11-25 17:42:06 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:444) -  scrolling to position 
-INFO  | 2022-11-25 17:42:17 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_LOGIN
-INFO  | 2022-11-25 17:42:17 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:549) - webDriverWaitForElementPresentLOGIN_BTN_FORGOT_PASSWORD
-INFO  | 2022-11-25 17:42:21 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_FORGOT_PASSWORD
-INFO  | 2022-11-25 17:42:21 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:549) - webDriverWaitForElementPresentLOGIN_BOX_FORGOT_PASSWORD
-INFO  | 2022-11-25 17:42:21 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysLOGIN_INPUT_FORGOT_PASSWORDwith LOGIN_DATA_EMAIL_FORGOT_PASSWORD
-INFO  | 2022-11-25 17:42:21 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
-INFO  | 2022-11-25 17:42:21 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:549) - webDriverWaitForElementPresentLOGIN_BOX_ENTER_CODE_FORGOT_PASSWORD
-INFO  | 2022-11-25 17:42:21 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:238) - Executing JavaScript
-INFO  | 2022-11-25 17:42:22 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:267) - Navigating to URL...LOGIN_URL_BACKEND
-INFO  | 2022-11-25 17:42:29 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:549) - webDriverWaitForElementPresentLOGIN_FORM_LOGIN_BACKEND
-INFO  | 2022-11-25 17:42:29 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME
-INFO  | 2022-11-25 17:42:30 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD
-INFO  | 2022-11-25 17:42:30 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
-INFO  | 2022-11-25 17:42:37 | [main] core.KeywordWeb (KeywordWeb.java:imWait:545) - implicitlyWait
-INFO  | 2022-11-25 17:42:37 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:444) -  scrolling to position 
-INFO  | 2022-11-25 17:42:38 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:420) - scrollDownToElementLOGIN_BTN_CUSTOMER
-INFO  | 2022-11-25 17:42:38 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_CUSTOMER
-INFO  | 2022-11-25 17:42:38 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:549) - webDriverWaitForElementPresentLOGIN_FORM_CUSTOMER
-INFO  | 2022-11-25 17:42:40 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_EMAIL_LOG
-INFO  | 2022-11-25 17:42:43 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:549) - webDriverWaitForElementPresentLOGIN_HEADER_EMAIL_LOG
-INFO  | 2022-11-25 17:42:43 | [main] core.KeywordWeb (KeywordWeb.java:imWait:545) - implicitlyWait
-INFO  | 2022-11-25 17:42:43 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_CHECK_EMAIL_LOG_ACTION_SELECT
-INFO  | 2022-11-25 17:42:47 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:549) - webDriverWaitForElementPresentLOGIN_SELECT_ACTIVE
-INFO  | 2022-11-25 17:42:47 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_SELECT_VIEW_CHECK_EMAIL_LOG
-INFO  | 2022-11-25 17:42:47 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:549) - webDriverWaitForElementPresentLOGIN_POPUP_MESSAGE_PASSWORD_RESET
-INFO  | 2022-11-25 17:42:47 | [main] core.KeywordWeb (KeywordWeb.java:imWait:545) - implicitlyWait
-INFO  | 2022-11-25 17:42:47 | [main] core.KeywordWeb (KeywordWeb.java:switchToIFrameByXpath:348) - Switching to Iframe
-INFO  | 2022-11-25 17:42:47 | [main] core.KeywordWeb (KeywordWeb.java:getText:132) - get Text ofLOGIN_INPUT_VERIFY_CODE
-INFO  | 2022-11-25 17:42:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysLOGIN_INPUT_ENTER_DATAwith 784309
-INFO  | 2022-11-25 17:42:48 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_SUBMIT_CODE
-INFO  | 2022-11-25 17:42:49 | [main] core.KeywordWeb (KeywordWeb.java:imWait:545) - implicitlyWait
-INFO  | 2022-11-25 17:42:49 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:549) - webDriverWaitForElementPresentLOGIN_FORM_NEW_PASS_WORD
-INFO  | 2022-11-25 17:42:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysLOGIN_INPUT_NEW_PASSWORDwith LOGIN_NEW_PASSWORD
-INFO  | 2022-11-25 17:42:49 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_SUBMIT_RESET_PASSWORD
-INFO  | 2022-11-25 17:42:50 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:549) - webDriverWaitForElementPresentLOGIN_MESSAGE_RESET_PASSWORD_SUCCESS
+INFO  | 2022-11-28 16:47:21 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:36) - Open browser
+INFO  | 2022-11-28 16:47:24 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO  | 2022-11-28 16:47:24 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO  | 2022-11-28 16:47:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - open browser successfullyCHROME
+INFO  | 2022-11-28 16:47:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-28 16:47:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:55) - url: [Ljava.lang.String;@1308ef19
+INFO  | 2022-11-28 16:47:29 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:249) - Maximizing browser window...
+INFO  | 2022-11-28 16:47:29 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU05:28) - testCase_SU05
+INFO  | 2022-11-28 16:47:29 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:305) - login by authen link withtest !test123!
+INFO  | 2022-11-28 16:47:45 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:546) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2022-11-28 16:47:45 | [main] core.KeywordWeb (KeywordWeb.java:click:87) - clickBTN_COOKIES
+INFO  | 2022-11-28 16:47:47 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:441) -  scrolling to position 
+INFO  | 2022-11-28 16:48:00 | [main] core.KeywordWeb (KeywordWeb.java:click:87) - clickLOGIN_BTN_LOGIN
+INFO  | 2022-11-28 16:48:00 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:546) - webDriverWaitForElementPresentLOGIN_BTN_FORGOT_PASSWORD
+INFO  | 2022-11-28 16:48:03 | [main] core.KeywordWeb (KeywordWeb.java:click:87) - clickSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2022-11-28 16:48:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:546) - webDriverWaitForElementPresentSIGNUP_WITH_PHONE
+INFO  | 2022-11-28 16:48:11 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU05:42) - next steep test
+INFO  | 2022-11-28 16:48:12 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU012:110) - testCase_SU012
+INFO  | 2022-11-28 16:48:12 | [main] core.KeywordWeb (KeywordWeb.java:click:87) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2022-11-28 16:48:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:580) - compare from SIGNUP_DATA_VERIFY_MESSAGE with SIGNUP_FIRSTNAME_ERROR
+INFO  | 2022-11-28 16:48:13 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:580) - compare from SIGNUP_DATA_VERIFY_MESSAGE with SIGNUP_LASTNAME_ERROR
+INFO  | 2022-11-28 16:48:15 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:580) - compare from SIGNUP_DATA_VERIFY_MESSAGE with SIGNUP_PHONE_ERROR
