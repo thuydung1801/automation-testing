@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.*;
 import org.slf4j.Logger;
 import org.testng.Assert;
@@ -591,5 +592,31 @@ public class KeywordWeb {
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("#footer_newsletter_recaptcha > div.box-recatpcha-actions > button"))).click();
 
     }
+    public void copyPaste(String element1,String element2, String content){
+        String xPathElement1 = PropertiesFile.getPropValue(element1);
+        String xPathElement2 = PropertiesFile.getPropValue(element2);
+        String xPathContent = PropertiesFile.getPropValue(content);
+        if (xPathElement1 == null) {
+            xPathElement1 = element1;
+        }if (xPathElement2 == null) {
+            xPathElement2 = element2;
+        }if (xPathContent == null) {
+            xPathContent = content;
+        }
+        Actions act = new Actions(driver);
+        WebElement ele1 = driver.findElement(By.xpath(xPathElement1));
+        WebElement ele2 = driver.findElement(By.xpath(xPathElement2));
+
+        act.moveToElement(ele1).click().sendKeys(xPathContent);
+        act.keyDown(Keys.CONTROL).sendKeys("a");
+        act.sendKeys("c");
+        ele2.clear();
+        act.moveToElement(ele2).click().keyDown(Keys.CONTROL).sendKeys("v");
+        act.keyUp(Keys.CONTROL).build().perform();
+    }
+//    public void openNewWindown(){
+//        String main = driver.getWindowHandle();
+//        driver.switchTo().newWindow(SafariDriver.WindowType.WINDOW);
+//    }
 
 }

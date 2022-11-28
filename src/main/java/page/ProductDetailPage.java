@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
+import org.testng.Assert;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 
@@ -36,8 +37,7 @@ public class ProductDetailPage extends BasePage {
         ArrayList<String> arr = new ArrayList<>();
         arr.add(PropertiesFile.getPropValue("PRD_STONE2"));
         arr.add(PropertiesFile.getPropValue("PRD_METAL_ALLOY"));
-        arr.add(PropertiesFile.getPropValue("PRD_ENGRAVING"));
-        System.out.printf("=======" + arr.get(1));
+//        arr.add(PropertiesFile.getPropValue("PRD_ENGRAVING"));
 
         for(String option : arr){
             if(option != arr.get(arr.size()-1) && option != arr.get(1)){
@@ -57,15 +57,15 @@ public class ProductDetailPage extends BasePage {
                 keyword.verifyElementVisible("PRD_VERIFY_IMG");
 //                Thread.sleep(2000);
             }
-            else{
-                keyword.click(option);
-                Thread.sleep(2000);
-                keyword.click("PRD_TEXT_ENGRAVING");
-                Thread.sleep(20000);
-                keyword.sendKeys("PRD_TEXT_ENGRAVING",
-                        "PRD_DATA_TEXT_ENGRAVING");
-
-            }
+//            else{
+//                keyword.click(option);
+//                Thread.sleep(2000);
+//                keyword.click("PRD_TEXT_ENGRAVING");
+//                Thread.sleep(20000);
+//                keyword.sendKeys("PRD_TEXT_ENGRAVING",
+//                        "PRD_DATA_TEXT_ENGRAVING");
+//
+//            }
 
         }
 
@@ -73,7 +73,6 @@ public class ProductDetailPage extends BasePage {
     public void clickDropdown() throws InterruptedException {
         keyword.click("PRD_DROPDOWN");
         Thread.sleep(1000);
-//        keyword.click(PropertiesFile.getPropValue("PRD_CLICK_OPTIONE_SiZE"));
         keyword.randomElement("PRD_CLICK_OPTIONE_SiZE");
     }
     public void clickAddCart() throws InterruptedException {
@@ -85,9 +84,10 @@ public class ProductDetailPage extends BasePage {
         keyword.click("PRD_BTN_VIEWCART");
         keyword.imWait(1);
         keyword.click("PRD_BTN_VIEWDETAIL");
-
-        System.out.printf("check engravingText : " );
-        keyword.getText("PRD_GET_TEXT_ENGRAVING");
+//
+//        System.out.printf("check engravingText : " );
+////        keyword.assertEquals("");
+//        keyword.getText("PRD_GET_TEXT_ENGRAVING");
 
 
     }
@@ -95,9 +95,6 @@ public class ProductDetailPage extends BasePage {
         keyword.click("PRD_DROPDOWN");
         keyword.imWait(2);
         keyword.click("PRD_OPTION_SIZE");
-//        keyword.imWait(3);
-//        Thread.sleep(3000);
-
     }
 
     public void productInfo() throws InterruptedException {
@@ -111,16 +108,16 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void showImgProduct() throws InterruptedException {
-//        productInfo();
+        productInfo();
         System.out.printf("-----test 1: Show  detail image" +"\n");
         keyword.click("PRD_SHOW_IMG");
         Thread.sleep(2000);
         keyword.clickByCss("PRD_CLOSE");
-        System.out.printf("=> test 1 done"+"\n");
+        keyword.verifyElementVisible("PRD_VERIFY_DEFAULT_IMG");
 
     }
-    public void chooseDefaultOption() throws InterruptedException {
-        productInfo();
+    public void chooseDefaultOptionWithRing() throws InterruptedException {
+     //   productInfo();
         System.out.printf("-----test 2: Default option "+"\n");
         selectOption();
         System.out.printf("=> test 2 done"+"\n");
@@ -130,9 +127,84 @@ public class ProductDetailPage extends BasePage {
         clickDropdown();
         System.out.printf("=> test 2.1 done"+"\n");
 
-        System.out.printf("------test 2.2: Add to cart"+"\n");
+    }
+    public void chooseDefaultOptionWithNecklace1() throws InterruptedException {
+        keyword.openNewTab("https://dev3.glamira.com/glde/diamant-halsketten/");
+        keyword.click("URL_PRODUCT_NECKLACE");
+        Thread.sleep(2000);
+        keyword.verifyElementVisible("PRD_VERIFY_DEFAULT_NECKLACE");
+
+
+    }
+    public void chooseDefaultOptionWithNecklace2() throws InterruptedException {
+        keyword.reLoadPage();
+        Thread.sleep(2000);
+        keyword.click("PRD_METAL_ALLOY");
+        Thread.sleep(1000);
+        keyword.click("PRD_METAL_COLOR");
+        Thread.sleep(2000);
+        keyword.click("PRD_METAL_COLOR_OPTION");
+        Thread.sleep(2000);
+        keyword.click("PRD_CLICK_CHAIN");
+        keyword.imWait(2);
+        keyword.click("PRD_CLICK_CHAIN_COLOR");
+        Thread.sleep(1000);
+        keyword.click("PRD_CLICK_CHAIN_LENGTH");
+        keyword.verifyElementVisible("PRD_VERIFY_NECKLACE");
+
+    }
+    public void commonOptionEngravingWithSendKey(String data)throws InterruptedException{
+        keyword.openNewTab("URL_PRODUCT_DETAIL");
+        Thread.sleep(2000);
+        keyword.click("PRD_ENGRAVING");
+        Thread.sleep(2000);
+        keyword.click("PRD_TEXT_ENGRAVING");
+        Thread.sleep(10000);
+        keyword.sendKeys("PRD_TEXT_ENGRAVING", data);
+        Thread.sleep(2000);
+        clickDropdown();
         clickAddCart();
-        System.out.printf("=>test 2.2 done"+"\n");
+    }
+    public void commonOptionEngravingWithCopyPaste(String element1, String element2,String content)throws InterruptedException{
+        keyword.openNewTab("URL_PRODUCT_DETAIL");
+        Thread.sleep(2000);
+        keyword.click("PRD_ENGRAVING");
+        Thread.sleep(2000);
+        keyword.copyPaste(element1,element2,content);
+        clickDropdown();
+        clickAddCart();
+    }
+    public void removeItemProduct() throws InterruptedException {
+        Thread.sleep(1000);
+        keyword.click("PRD_BTN_CLOSE_VIEWDETAIL");
+        Thread.sleep(1000);
+        keyword.click("PRD_BTN_REMOVE_ITEM");
+        Thread.sleep(1000);
+        keyword.click("PED_BTN_REMOVE_OK");
+    }
+
+    public void productOptionEngraving1() throws InterruptedException {
+        commonOptionEngravingWithSendKey("PRD_DATA_TEXT_ENGRAVING1");
+        Thread.sleep(2000);
+        keyword.assertEquals("PRD_DATA_TEXT_ENGRAVING1","PRD_GET_TEXT_ENGRAVING");
+        removeItemProduct();
+    }
+    public void productOptionEngraving2() throws InterruptedException{
+        commonOptionEngravingWithCopyPaste("PRD_TEXT_ENGRAVING","PRD_TEXT_ENGRAVING","PRD_DATA_TEXT_ENGRAVING1");
+        keyword.assertEquals("PRD_DATA_TEXT_ENGRAVING1","PRD_GET_TEXT_ENGRAVING");
+        removeItemProduct();
+    }
+    public void productOptionEngraving3() throws InterruptedException {
+        commonOptionEngravingWithSendKey("PRD_DATA_TEXT_ENGRAVING3");
+        Thread.sleep(2000);
+        keyword.assertEquals("PRD_DATA_TEXT_ENGRAVING3","PRD_GET_TEXT_ENGRAVING");
+        removeItemProduct();
+    }
+    public void productOptionEngraving4() throws InterruptedException {
+        commonOptionEngravingWithCopyPaste("PRD_TEXT_ENGRAVING","PRD_TEXT_ENGRAVING","PRD_DATA_TEXT_ENGRAVING3");
+        keyword.assertEquals("PRD_DATA_TEXT_ENGRAVING3","PRD_GET_TEXT_ENGRAVING");
+        removeItemProduct();
+
     }
     public void chooseOptionFreeSize() throws InterruptedException {
         System.out.printf("---------test 3:check optionFreeSize " +"\n");
@@ -149,6 +221,39 @@ public class ProductDetailPage extends BasePage {
         optionSize();
         Thread.sleep(3000);
         keyword.click("PRD_FINDSIZE");
+
+    }
+    public void checkVerifySizeRing() throws InterruptedException {
+        String exp = keyword.getText("PRD_DROPDOWN");
+        String expected = exp.substring(0,2);
+        String act = keyword.getText("PRD_CHECK_SIZE");
+        String actual = act.substring(0,2);
+        Assert.assertEquals(expected, actual);
+        Thread.sleep(1000);
+    }
+    public void ringSize1() throws InterruptedException {
+        keyword.reLoadPage();
+        clickDropdown();
+        Thread.sleep(1000);
+        checkVerifySizeRing();
+        keyword.click("PRD_BTN_ADDCART");
+
+    }
+    public void ringSize2() throws InterruptedException {
+        keyword.reLoadPage();
+        Thread.sleep(2000);
+        keyword.click("PRD_BTN_ADDCART");
+        keyword.click("PRD_BTN_CLOSE_POPUP_SIZE");
+        checkVerifyInputNull();
+    }
+    public void ringSize3() throws InterruptedException {
+        keyword.click("PRD_DROPDOWN");
+        Thread.sleep(1000);
+        keyword.click("PRD_OPTION_SIZE_AVERAGE");
+        checkVerifySizeRing();
+        keyword.click("PRD_BTN_ADDCART");
+    }
+    public void ringSize4(){
 
     }
     public void optionFindSizeWithInpSuccess() throws InterruptedException {
@@ -174,7 +279,7 @@ public class ProductDetailPage extends BasePage {
         checkVerifyInputWithEmailError();
     }
     public void optionDimensionGuide() throws InterruptedException {
-//        setUp();
+        setUp();
         Thread.sleep(3000);
         keyword.navigateToUrl("URL_PRODUCT_DETAIL");
         keyword.imWait(2);
@@ -182,7 +287,9 @@ public class ProductDetailPage extends BasePage {
         keyword.click("PRD_FINDSIZE");
         keyword.imWait(2);
         keyword.clickByCss("PRD_LINK_SIZEGUIDE");
-
+        Thread.sleep(2000);
+        keyword.verifyElementVisible("PRD_VERIFY_LINK");
+        Thread.sleep(3000);
     }
     public void optionFreeSize() throws InterruptedException {
         optionSize();
@@ -215,7 +322,6 @@ public class ProductDetailPage extends BasePage {
             keyword.click("PRD_BTN_SUBMIT");
 
     }
-
 
 
 }
