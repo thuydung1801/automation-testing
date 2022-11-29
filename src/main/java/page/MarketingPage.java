@@ -15,7 +15,8 @@ public class MarketingPage extends BasePage {
     private LoginPage objLogin;
     private RegisterPage objRegister ;
     private LoginPage loginPage;
-    private SignInPage signInPage;
+    public SignInPage signInPage;
+//    private SignInPage objsignInPage;
     public MarketingPage() {
         super();
     }
@@ -25,6 +26,7 @@ public class MarketingPage extends BasePage {
         objRegister = new RegisterPage();
         loginPage = new LoginPage();
         signInPage = new SignInPage();
+//        signInPage = new SignInPage(this.keyword);
     }
     public void setUp() throws InterruptedException {
         objLogin.loginOnAlert();
@@ -56,7 +58,7 @@ public class MarketingPage extends BasePage {
 
     public void giftCardInpWithNull() throws InterruptedException {
         setUp();
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(30L);
         keyword.navigateToUrl("MRT_URL");
         ipDataGiftCard("COM_DATA_NULL","COM_DATA_NULL","COM_DATA_NULL","MRT_SUBMIT");
         checkVerifyInputNull();
@@ -105,8 +107,10 @@ public class MarketingPage extends BasePage {
     }
     public void createNewGriftCetificateFormMyOrder() throws InterruptedException {
         setUp();
-        loginPage.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS");
-        Thread.sleep(5000);
+        loginPage.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.webDriverWaitForElementPresent("GCE_BTN_ACCOUNT",10);
         keyword.click("GCE_BTN_ACCOUNT");
         keyword.imWait(3);
         commonGirftCetificate();
@@ -122,36 +126,42 @@ public class MarketingPage extends BasePage {
 
     public void adminChooseEmailLog(String text) throws InterruptedException {
 
-//        keyword.checkStatusIsDisplay("ADMIN_CUS_EMAILLOG_BTN_FILTER");
-//        System.out.printf("===========");
-        Thread.sleep(3000);
+//        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(30L);
+        keyword.webDriverWaitForElementPresent("ADMIN_CUS_EMAILLOG_BTN_FILTER",20);
+        Thread.sleep(2000);
         keyword.click("ADMIN_CUS_EMAILLOG_BTN_FILTER");
 
-//        keyword.checkStatusIsDisplay("ADMIN_CUS_EMAILLOG_FILTER_INP_SUBJECT");
-//        System.out.printf("===========");
-        Thread.sleep(3000);
+        keyword.untilJqueryIsDone(30L);
+
         keyword.clearText("ADMIN_CUS_EMAILLOG_FILTER_INP_SUBJECT");
         keyword.sendKeys("ADMIN_CUS_EMAILLOG_FILTER_INP_SUBJECT",text);
 
-        Thread.sleep(3000);
+        keyword.untilJqueryIsDone(30L);
         keyword.click("ADMIN_CUS_EMAILLOG_ENTER_FILTER");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(30L);
         keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT");
         keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT_VIEW");
 
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.scrollDownToElement("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
+//        keyword.webDriverWaitForElementPresent("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE",20);
         keyword.checkStatusIsDisplay("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
         System.out.printf("===========");
-        Thread.sleep(3000);
+//        keyword.scrollDownToElement("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
         keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(30L);
 
     }
 
     public void createNewGriftCetificateFormEmailWithLogin() throws InterruptedException {
         setUp();
-        loginPage.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS");
-        Thread.sleep(5000);
+        loginPage.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("GCE_BTN_ACCOUNT");
         keyword.imWait(5);
 
@@ -160,11 +170,13 @@ public class MarketingPage extends BasePage {
         String text = getIdOrder.substring(1,getIdOrder.length());
         signInPage.openNewTabs();
         signInPage.loginAdmin("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD");
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         signInPage.chooseMenuCustomer();
         adminChooseEmailLog(text);
         ipDataGirftCetificate("COM_INP_DATA_NAME","COM_INP_DATA_EMAIL","COM_DATA_TITLE","COM_INP_DATA_MESSAGE",null,"GCE_BTN_SUBMIT");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(30L);
     }
     public void createNewGriftCetificateFormEmailWithNotLogin(){
         keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/index/");

@@ -11,12 +11,13 @@ import java.security.PublicKey;
 
 public class SignInPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
-    public SignInPage(KeywordWeb key) {
-        super(key);
-    }
     public SignInPage() {
         super();
     }
+    public SignInPage(KeywordWeb key) {
+        super(key);
+    }
+
     // Go to the login form and use the forgot password function
     public void goToFormLoginAndEnterDataForGotPassWord() throws InterruptedException {
         keyword.click("LOGIN_BTN_LOGIN");
@@ -65,6 +66,7 @@ public class SignInPage extends BasePage {
         keyword.click("LOGIN_BTN_CUSTOMER");
 //        keyword.webDriverWaitForElementPresent("LOGIN_FORM_CUSTOMER", 10);
 //        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(30L);
         keyword.click("LOGIN_BTN_EMAIL_LOG");
         keyword.webDriverWaitForElementPresent("LOGIN_HEADER_EMAIL_LOG", 20);
     }

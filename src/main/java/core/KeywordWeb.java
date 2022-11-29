@@ -694,7 +694,7 @@ public class KeywordWeb {
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("#footer_newsletter_recaptcha > div.box-recatpcha-actions > button"))).click();
 
     }
-    public void copyPaste(String element1,String element2, String content){
+    public void copyPaste(String element1,String element2, String content) throws InterruptedException {
         String xPathElement1 = PropertiesFile.getPropValue(element1);
         String xPathElement2 = PropertiesFile.getPropValue(element2);
         String xPathContent = PropertiesFile.getPropValue(content);
@@ -713,6 +713,7 @@ public class KeywordWeb {
         act.keyDown(Keys.CONTROL).sendKeys("a");
         act.sendKeys("c");
         ele2.clear();
+        untilJqueryIsDone(30L);
         act.moveToElement(ele2).click().keyDown(Keys.CONTROL).sendKeys("v");
         act.keyUp(Keys.CONTROL).build().perform();
     }

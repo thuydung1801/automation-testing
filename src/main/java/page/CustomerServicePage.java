@@ -24,14 +24,18 @@ public class CustomerServicePage extends BasePage {
         objRegister = new RegisterPage();
         signInPage = new SignInPage();
     }
+
     public void setUp() throws InterruptedException {
+
         objLogin.loginOnAlert();
         keyword.navigateToUrl("https://dev3.glamira.com/glus/");
         objRegister.acceptAllCookies();
         objRegister.chooseLanguages();
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(30L);
+
         keyword.openNewTab("URL_PRODUCT_DETAIL");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(30L);
+
     }
 
     public void commonLoad() throws InterruptedException {
@@ -101,8 +105,9 @@ public class CustomerServicePage extends BasePage {
     }
     public void myAccountSubscribeGlamiraNewsletter() throws InterruptedException {
         keyword.openNewTab("https://dev3.glamira.com/glus/");
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS");
-        Thread.sleep(5000);
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+        keyword.untilJqueryIsDone(30L);
+
         keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/index/");
         commonNewsLetterWithAccount();
 
@@ -113,9 +118,12 @@ public class CustomerServicePage extends BasePage {
     public void footerSubscribeGlamiraNewsletter() throws InterruptedException {
 //        keyword.reLoadPage();
         keyword.sendKeys("CUS_NEWSLETTER_INP_EMAIL","COM_INP_DATA_EMAIL");
-        Thread.sleep(1000);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("CUS_NEWSLETTER_SUBMIT_FOOTER");
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(30L);
+
         keyword.recaptchaClickSubmit();
 //        keyword.click("CUS_NEWSLETTER_CHECKBOX_CAPTCHA");
 //        Thread.sleep(3000);
@@ -131,9 +139,12 @@ public class CustomerServicePage extends BasePage {
     }
     public void footerSubscribeGlamiraNewsletterWithNoCaptcha() throws InterruptedException {
         keyword.sendKeys("CUS_NEWSLETTER_INP_EMAIL","COM_INP_DATA_EMAIL");
-        Thread.sleep(1000);
+        keyword.untilJqueryIsDone(30L);
+
         keyword.click("CUS_NEWSLETTER_SUBMIT_FOOTER");
-        Thread.sleep(1000);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("CUS_NEWSLETTER_SUBMIT_CAPTCHA");
         checkVerifyInputNull();
 
