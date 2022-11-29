@@ -1,89 +1,34 @@
-INFO  | 2022-11-28 17:30:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:40) - Open browser
-INFO  | 2022-11-28 17:30:28 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
-INFO  | 2022-11-28 17:30:28 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
-INFO  | 2022-11-28 17:30:31 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:55) - open browser successfullyCHROME
-INFO  | 2022-11-28 17:30:31 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:58) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-28 17:30:31 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:59) - url: [Ljava.lang.String;@7d126083
-INFO  | 2022-11-28 17:30:31 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:243) - Maximizing browser window...
-INFO  | 2022-11-28 17:30:32 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:299) - login by authen link withtest !test123!
-INFO  | 2022-11-28 17:31:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:525) - webDriverWaitForElementPresent
-INFO  | 2022-11-28 17:31:11 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickBTN_COOKIES
-INFO  | 2022-11-28 17:31:13 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:434) -  scrolling to position 
-INFO  | 2022-11-28 17:31:27 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...URL_PRODUCT_DETAIL
-INFO  | 2022-11-28 17:31:43 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:31:43 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_DROPDOWN
-INFO  | 2022-11-28 17:31:44 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:31:44 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_OPTION_SIZE
-INFO  | 2022-11-28 17:31:44 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_FINDSIZE
-INFO  | 2022-11-28 17:31:44 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:31:44 | [main] core.KeywordWeb (KeywordWeb.java:clickByCss:100) - clickPRD_LINK_SIZEGUIDE
-INFO  | 2022-11-28 17:31:46 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:488) - verifyElementVisiblePRD_VERIFY_LINK
-INFO  | 2022-11-28 17:31:57 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
-INFO  | 2022-11-28 17:32:14 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:32:14 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_DROPDOWN
-INFO  | 2022-11-28 17:32:14 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:32:14 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_OPTION_SIZE
-INFO  | 2022-11-28 17:32:17 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_FINDSIZE
-INFO  | 2022-11-28 17:32:17 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:32:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_FIRSTNAMEwith PRD_DATA_FIRSTNAME
-INFO  | 2022-11-28 17:32:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_LASTNAMEwith PRD_DATA_LASTNAME
-INFO  | 2022-11-28 17:32:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_EMAILwith PRD_DATA_EMAIL
-INFO  | 2022-11-28 17:32:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_STREETwith PRD_DATA_STREET
-INFO  | 2022-11-28 17:32:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_CODEwith 1234
-INFO  | 2022-11-28 17:32:18 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_CITYwith PRD_DATA_CITY
-INFO  | 2022-11-28 17:32:38 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_CHECK
-INFO  | 2022-11-28 17:32:38 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_BTN_SUBMIT
-INFO  | 2022-11-28 17:32:38 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:253) - ReLoad Page...
-INFO  | 2022-11-28 17:33:04 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_DROPDOWN
-INFO  | 2022-11-28 17:33:06 | [main] core.KeywordWeb (KeywordWeb.java:getText:132) - get Text ofPRD_DROPDOWN
-INFO  | 2022-11-28 17:33:06 | [main] core.KeywordWeb (KeywordWeb.java:getText:132) - get Text ofPRD_CHECK_SIZE
-INFO  | 2022-11-28 17:33:07 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_BTN_ADDCART
-INFO  | 2022-11-28 17:33:07 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_DROPDOWN
-INFO  | 2022-11-28 17:33:08 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_OPTION_SIZE_AVERAGE
-INFO  | 2022-11-28 17:33:18 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
-INFO  | 2022-11-28 17:33:48 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:33:48 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_DROPDOWN
-INFO  | 2022-11-28 17:33:48 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:33:48 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_OPTION_SIZE
-INFO  | 2022-11-28 17:33:51 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_FINDSIZE
-INFO  | 2022-11-28 17:33:51 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:33:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_FIRSTNAMEwith COM_DATA_NULL
-INFO  | 2022-11-28 17:33:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_LASTNAMEwith COM_DATA_NULL
-INFO  | 2022-11-28 17:33:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_EMAILwith COM_DATA_NULL
-INFO  | 2022-11-28 17:33:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_STREETwith COM_DATA_NULL
-INFO  | 2022-11-28 17:33:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_CODEwith 1234
-INFO  | 2022-11-28 17:33:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_CITYwith COM_DATA_NULL
-INFO  | 2022-11-28 17:34:12 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_CHECK
-INFO  | 2022-11-28 17:34:12 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_BTN_SUBMIT
-INFO  | 2022-11-28 17:34:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:559) - compare from COM_DATA_MESSAGES_NULL with COM_TEXT_ERROR
-INFO  | 2022-11-28 17:34:17 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
-INFO  | 2022-11-28 17:34:55 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:34:55 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_DROPDOWN
-INFO  | 2022-11-28 17:34:55 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:34:55 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_OPTION_SIZE
-INFO  | 2022-11-28 17:34:59 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_FINDSIZE
-INFO  | 2022-11-28 17:34:59 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:34:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_FIRSTNAMEwith COM_DATA_NULL
-INFO  | 2022-11-28 17:34:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_LASTNAMEwith COM_DATA_NULL
-INFO  | 2022-11-28 17:34:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_EMAILwith COM_DATA_ERROR
-INFO  | 2022-11-28 17:34:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_STREETwith PRD_DATA_STREET
-INFO  | 2022-11-28 17:34:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_CODEwith 1234
-INFO  | 2022-11-28 17:34:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_CITYwith PRD_DATA_CITY
-INFO  | 2022-11-28 17:35:19 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_CHECK
-INFO  | 2022-11-28 17:35:19 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_BTN_SUBMIT
-INFO  | 2022-11-28 17:35:20 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:559) - compare from COM_DATA_MESSAGES_EMAIL with COM_TEXT_ERROR_EMAIL
-INFO  | 2022-11-28 17:35:25 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:258) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
-INFO  | 2022-11-28 17:35:38 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:35:38 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_DROPDOWN
-INFO  | 2022-11-28 17:35:39 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:35:39 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_OPTION_SIZE
-INFO  | 2022-11-28 17:35:42 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_FINDSIZE
-INFO  | 2022-11-28 17:35:42 | [main] core.KeywordWeb (KeywordWeb.java:imWait:520) - implicitlyWait
-INFO  | 2022-11-28 17:35:42 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_FIRSTNAMEwith PRD_DATA_FIRSTNAME
-INFO  | 2022-11-28 17:35:42 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_LASTNAMEwith PRD_DATA_LASTNAME
-INFO  | 2022-11-28 17:35:42 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_EMAILwith PRD_DATA_EMAIL
-INFO  | 2022-11-28 17:35:42 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_STREETwith PRD_DATA_STREET
-INFO  | 2022-11-28 17:35:42 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_CODEwith 1234
-INFO  | 2022-11-28 17:35:43 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:141) - send keysPRD_TEXT_CITYwith PRD_DATA_CITY
-INFO  | 2022-11-28 17:36:03 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_CHECK
-INFO  | 2022-11-28 17:36:03 | [main] core.KeywordWeb (KeywordWeb.java:click:91) - clickPRD_BTN_SUBMIT
+INFO  | 2022-11-23 17:03:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:39) - Open browser
+INFO  | 2022-11-23 17:03:28 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO  | 2022-11-23 17:03:28 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO  | 2022-11-23 17:03:30 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:54) - open browser successfullyCHROME
+INFO  | 2022-11-23 17:03:30 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-11-23 17:03:30 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:58) - url: [Ljava.lang.String;@419f0ea
+INFO  | 2022-11-23 17:03:30 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:242) - Maximizing browser window...
+INFO  | 2022-11-23 17:03:31 | [main] test.checkout.CheckOutInUSStoreTest (CheckOutInUSStoreTest.java:testCase_MS_11:133) - testCase_MS_10
+INFO  | 2022-11-23 17:03:31 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:298) - login by authen link withtest !test123!
+INFO  | 2022-11-23 17:03:39 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:257) - Navigating to URL...https://dev3.glamira.com/glus/
+INFO  | 2022-11-23 17:03:47 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:560) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:03:47 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickBTN_COOKIES
+INFO  | 2022-11-23 17:03:49 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:433) -  scrolling to position 
+INFO  | 2022-11-23 17:04:04 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_LOGIN
+INFO  | 2022-11-23 17:04:04 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:560) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:04:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_TXT_EMAILwith LOGIN_DATA_EMAIL
+INFO  | 2022-11-23 17:04:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysLOGIN_TXT_PASSWORDwith LOGIN_DATA_PASSWORD
+INFO  | 2022-11-23 17:04:11 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2022-11-23 17:04:21 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_BTN_MINICART
+INFO  | 2022-11-23 17:04:31 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_MINICART_VIEWALL
+INFO  | 2022-11-23 17:04:40 | [main] core.KeywordWeb (KeywordWeb.java:imWait:555) - implicitlyWait
+INFO  | 2022-11-23 17:04:40 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:560) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:04:50 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_LINK_ESTIMATE
+INFO  | 2022-11-23 17:04:50 | [main] core.KeywordWeb (KeywordWeb.java:getTextWithOutCharacters:154) - getText of CHECKOUT_LBL_TOTAL_PRICE without $
+INFO  | 2022-11-23 17:04:50 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:560) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:04:50 | [main] core.KeywordWeb (KeywordWeb.java:selectDropDownListByName:472) - select item by visibe text
+INFO  | 2022-11-23 17:04:50 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:560) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:04:53 | [main] core.KeywordWeb (KeywordWeb.java:click:90) - clickCHECKOUT_BTN_EDIT_ESTIMATE
+INFO  | 2022-11-23 17:04:54 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:560) - webDriverWaitForElementPresent
+INFO  | 2022-11-23 17:04:54 | [main] core.KeywordWeb (KeywordWeb.java:clearText:81) - clearText
+INFO  | 2022-11-23 17:04:54 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:140) - send keysCHECKOUT_TBX_POSTAL_CODEwith CHECKOUT_DATA_POSTAL_CODE_1
+INFO  | 2022-11-23 17:04:59 | [main] core.KeywordWeb (KeywordWeb.java:getTextWithOutCharacters:154) - getText of CHECKOUT_LBL_ESTIMATE_TAX without $
+INFO  | 2022-11-23 17:04:59 | [main] page.checkout.ShoppingBagPage (ShoppingBagPage.java:checkEstimateTax:658) - 15.82
+INFO  | 2022-11-23 17:04:59 | [main] core.KeywordWeb (KeywordWeb.java:simpleAssertEquals:368) - compare from 15.82 with 15.82

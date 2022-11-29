@@ -19,6 +19,7 @@ public class Login extends BaseTest {
         objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
         objRegist.chooseLanguages();
-        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
+        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
+                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
     }
 }
