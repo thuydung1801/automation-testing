@@ -38,8 +38,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test (priority = 4, description = "Remove item from cart succcessfully with the shopping bag having mutiple items")
     public void testCase_SP_01() throws InterruptedException {
         logger.info("testCase_SP_01");
-        //commonShoppingWithOutCookies();
-
+        //commonShopping();
         objShoppingBagPage.addProduct("https://dev3.glamira.com/glgb/womens-ring-smart-ornament-skub7047.html?alloy=white-silber");
         objShoppingBagPage.addProduct("https://dev3.glamira.com/glgb/mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
         objShoppingBagPage.clickShoppingBagPage();
@@ -104,7 +103,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test(priority = 8, description = "Add engraving for couple ring")
     public void testCase_SP_17() throws InterruptedException {
         logger.info("testCase_SP_17");
-        commonShopping();
+        //commonShopping();
         objShoppingBagPage.addProductWithGift("https://dev3.glamira.com/glgb/charming-view.html?alloy=white-585&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
@@ -127,9 +126,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test (priority = 9, description = "Edit engraving for the bridal set item")
     public void testCase_SP_18() throws InterruptedException {
         logger.info("testCase_SP_18");
-
-        commonShopping();
-
+        //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_ICON_ADD",
@@ -151,7 +148,7 @@ public class ShoppingBagTest extends BaseTest {
                 "CHECKOUT_DATA_19_OUTPUT","CHECKOUT_LBL_ENGRAVING", true);
 
     }
-    @Test(priority = 11, description = "Add engraving with some special character don't allow input")
+    //@Test(priority = 11, description = "Add engraving with some special character don't allow input")
     public void testCase_SP_20() throws InterruptedException {
         logger.info("testCase_SP_20");
         //commonShopping();
@@ -166,7 +163,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test (priority = 12, description = "Edit product successfully with normal product")
         public void testCase_SP_21() throws InterruptedException {
         logger.info("testCase_SP_21");
-        //commonShopping();
+        commonShopping();
         objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_BRACELET");
@@ -231,9 +228,9 @@ public class ShoppingBagTest extends BaseTest {
     public void testCase_RV_06() throws InterruptedException {
         logger.info("testCase_RV_06");
         //commonShopping();
-        objShoppingBagPage.clickShoppingBagPage();
-        objShoppingBagPage.moveToPagecheckOut();
-        objShoppingBagPage.checkOut();
+//        objShoppingBagPage.clickShoppingBagPage();
+//        objShoppingBagPage.moveToPagecheckOut();
+//        objShoppingBagPage.checkOut();
         objShoppingBagPage.checkOutWithVisa("failByCard");
     }
 

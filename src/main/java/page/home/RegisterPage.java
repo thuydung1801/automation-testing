@@ -14,7 +14,7 @@ public class RegisterPage extends BasePage {
     }
 
     public void acceptAllCookies() throws InterruptedException {
-
+        keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("BTN_COOKIES",50);
         if(keyword.verifyElementPresent("BTN_COOKIES")){
             keyword.click("BTN_COOKIES");
