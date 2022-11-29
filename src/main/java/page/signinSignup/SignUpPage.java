@@ -17,6 +17,10 @@ public class SignUpPage extends BasePage {
         super(key);
     }
 
+    public void nextUrl() throws InterruptedException {
+        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
+    }
+
     public void goToFormCreateMyAccount() throws InterruptedException {
         keyword.click("LOGIN_BTN_LOGIN");
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 20);
@@ -28,7 +32,14 @@ public class SignUpPage extends BasePage {
             keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 20);
         }
     }
-
+//    Create new customer and input email exist on database OR Create new customer and leave with blank form for required form with email
+public void createCustomerWithEmail ()throws InterruptedException {
+    sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION"
+            , "SIGNUP_EMAIL_EXIST", "SIGNUP_EMAIL_EXIST");
+    keyword.click("SIGNUP_BTN_NEXT_STEEP");
+    sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD",
+            "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+}
     // sendKey full data form information
     public void sendKeyFullDataFormInformation(String firstName, String lastName, String email, String emailConfirm) throws InterruptedException {
         keyword.sendKeys("SIGNUP_FIRST_NAME_INFORMATION", firstName);
@@ -41,11 +52,12 @@ public class SignUpPage extends BasePage {
         keyword.clearText(clearText);
         keyword.sendKeys(inputSendKey, dataSendKey);
     }
-//
+
+    //
     public void clearAndSendKeyEmail() throws InterruptedException {
         clearTextAndSendKey("SIGNUP_EMAIL_INFORMATION", "SIGNUP_EMAIL_INFORMATION", "SIGNUP_DATA_EMAIL_VALID");
         clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_DATA_EMAIL_VALID");
-       nextButton();
+        keyword.click("SIGNUP_BTN_NEXT_STEEP");
     }
 
     // sendKey full data form information (not click check box agree) ( form 2/3- pasWord)
@@ -57,16 +69,19 @@ public class SignUpPage extends BasePage {
         keyword.click("SIGNUP_CHECKBOX_AGREE");
     }
 
-    public void sendData(String inputData1, String data1, String inputData2, String data2) {
-        keyword.sendKeys(inputData1, data1);
-        keyword.sendKeys(inputData2, data2);
-    }
-
     //assert Equals Message
-    public void verifyMessageFail(String expected01, String actual01, String expected02, String actual02) throws InterruptedException {
+    public void verifyMessageFail(String expected01, String actual01, String expected02, String actual02, String expected03, String actual03, String expected04, String actual04, String expected05, String actual05, String expected06, String actual06) throws InterruptedException {
         keyword.assertEquals(expected01, actual01);
         Thread.sleep(1000);
         keyword.assertEquals(expected02, actual02);
+        Thread.sleep(1000);
+        keyword.assertEquals(expected03, actual03);
+        Thread.sleep(1000);
+        keyword.assertEquals(expected04, actual04);
+        Thread.sleep(1000);
+        keyword.assertEquals(expected05, actual05);
+        Thread.sleep(1000);
+        keyword.assertEquals(expected06, actual06);
     }
 
     //    Create new customer and leave with email form for required form
@@ -100,12 +115,18 @@ public class SignUpPage extends BasePage {
     public void inputValidPassWordAndCheckBoxSubscribe() throws InterruptedException {
         sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL", "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-        verifyMessageFail("SIGNUP_MESSAGE_PASSWORD_FAIL01", "SIGNUP_ACTUAL_MESSAGE01", "SIGNUP_EXPECTED_MESSAGE_PASSWORD_01", "SIGNUP_ACTUAL_MESSAGE02");
+//        verifyMessageFail("SIGNUP_MESSAGE_PASSWORD_FAIL01", "SIGNUP_ACTUAL_MESSAGE01", "SIGNUP_EXPECTED_MESSAGE_PASSWORD_01", "SIGNUP_ACTUAL_MESSAGE02");
+    }
+
+    //    @Test(priority = 6, description = "Create a new user with password >= 8 characters and < 3 character types")
+    public void CreateUserWithPassword() throws InterruptedException {
+        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_01");
+        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
     }
 
     //   verify message  with password <8 characters and < 3 character types
     public void verifyMessageWithPasswordNotIllegal() throws InterruptedException {
-        verifyMessageFail("SIGNUP_MESSAGE_PASSWORD_FAIL01", "SIGNUP_ACTUAL_MESSAGE01", "SIGNUP_MESSAGE_PASSWORD_FAIL02", "SIGNUP_ACTUAL_MESSAGE03");
+//        verifyMessageFail("SIGNUP_MESSAGE_PASSWORD_FAIL01", "SIGNUP_ACTUAL_MESSAGE01", "SIGNUP_MESSAGE_PASSWORD_FAIL02", "SIGNUP_ACTUAL_MESSAGE03");
         Thread.sleep(1000);
         keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_01", "SIGNUP_ACTUAL_MESSAGE02");
     }
@@ -144,15 +165,15 @@ public class SignUpPage extends BasePage {
         objSignIn.getCodeEnterTextInField("LOGIN_IFRAME",
                 "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
-        verifySignUpSuccess();
+        keyword.verifyElementPresent("SIGNUP_VERIFY_SIGNUP");
 
     }
 //---------------------------------SIGN UP WITH OBILLE
 
     //    verify a required field.
     public void verifyRequiredFieldWithMobile() throws InterruptedException {
-        nextButton();
-        verifyMessageFail("SIGNUP_DATA_VERIFY_MESSAGE", "SIGNUP_FIRSTNAME_ERROR", "SIGNUP_DATA_VERIFY_MESSAGE", "SIGNUP_LASTNAME_ERROR");
+        keyword.click("SIGNUP_BTN_NEXT_STEEP");
+//        verifyMessageFail("SIGNUP_DATA_VERIFY_MESSAGE", "SIGNUP_FIRSTNAME_ERROR", "SIGNUP_DATA_VERIFY_MESSAGE", "SIGNUP_LASTNAME_ERROR");
         Thread.sleep(1000);
         keyword.assertEquals("SIGNUP_DATA_VERIFY_MESSAGE", "SIGNUP_PHONE_ERROR");
     }
@@ -160,118 +181,57 @@ public class SignUpPage extends BasePage {
     //Create new customer and leave with blank form for required form
     public void enterDataSignUpWithMobile() throws InterruptedException {
         sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION", "SIGNUP_EMAIL_EXIST", "SIGNUP_EMAIL_EXIST");
-        keyword.sendKeys("SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE");
-        nextButton();
+        keyword.sendKeys("SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE001");
+        keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.assertEquals("SIGNUP_VALID_NUMBER_FIELD", "SIGNUP_PHONE_ERROR");
     }
 
     public void reSendPassWord() throws InterruptedException {
         clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_01");
-        ClickButtonCreateAccount();
+        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
     }
 
     // delete old data Register an account with the phone number already in the system
-    public void enterPhoneNumberAlreadyInSystem()throws InterruptedException {
-      sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION", "SIGNUP_EMAIL_EXIST", "SIGNUP_EMAIL_EXIST");
-        nextButton();
-    }
-    public void verifyMessagePhoneAlready() throws InterruptedException{
-
-    }
-
-    //    Enter data input email exist on database
-    public void dataInputExistOnData() throws InterruptedException {
-        sendKeyFullDataFormInformation(
-                "SIGNUP_DATA_FIRST_NAME_INFORMATION",
-                "SIGNUP_DATA_LAST_NAME_INFORMATION",
-                "SIGNUP_EMAIL_EXIST",
-                "SIGNUP_EMAIL_EXIST"
-        );
-    }
-
-    public void submitNotClickAgree(String password) {
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-        keyword.checkStatusIsDisplay("SIGNUP_AGREEMENT_AGREE_ERROR");
-        keyword.click("SIGNUP_CHECKBOX_AGREE");
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-        keyword.assertEquals("SIGNUP_MESSAGE_DUPLICATE", "SIGNUP_MESSAGE_EQUAL");
-        keyword.clearText("SIGNUP_EMAIL_INFORMATION");
-        keyword.sendKeys("SIGNUP_EMAIL_INFORMATION", "SIGNUP_DATA_EMAIL_NEW_INFORMATION");
-        keyword.clearText("SIGNUP_EMAIL_CONFIRMATION_INFORMATION");
-        keyword.sendKeys("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_DATA_EMAIL_NEW_INFORMATION");
+    public void enterPhoneNumberAlreadyInSystem() throws InterruptedException {
+        clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE");
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
-        keyword.sendKeys("SIGNUP_PASSWORD_INFORMATION", password);
-        keyword.click("SIGNUP_CHECKBOX_AGREE");
+        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD", "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
+        keyword.untilJqueryIsDone(10L);
+        keyword.assertEquals("SIGNUP_MESSAGE_PHONE_ALREADY", "SIGNUP_MESSAGE_ACTUAL");
     }
 
-
-    //  submit form , not enter valid values
-    public void enterNotValueInformation() throws InterruptedException {
-        if (checkElement("SIGNUP_WITH_PHONE")) {
-            nextButton();
-            keyword.checkStatusIsDisplay("SIGNUP_FIRSTNAME_ERROR");
-            keyword.checkStatusIsDisplay("SIGNUP_LASTNAME_ERROR");
-            keyword.checkStatusIsDisplay("SIGNUP_PHONE_ERROR");
-        } else {
-            keyword.click("SIGNUP_BTN_NEXT_STEEP");
-            keyword.checkStatusIsDisplay("SIGNUP_FIRSTNAME_ERROR");
-            keyword.checkStatusIsDisplay("SIGNUP_LASTNAME_ERROR");
-            keyword.checkStatusIsDisplay("SIGNUP_EMAIL_ERROR");
-            keyword.checkStatusIsDisplay("SIGNUP_EMAIL_CONFIRM_ERROR");
-        }
-    }
-
-    //    Create new customer and input invalid data for email form
-    public void sendDataFormInformationWithEmailInvalid() throws InterruptedException {
-        if (checkElement("SIGNUP_WITH_PHONE")) {
-            // Enter account registration information with phcheckElement("SIGNUP_WITH_PHONE")one number
-            sendKeyFullDataFormInformation(
-                    "SIGNUP_DATA_FIRST_NAME_INFORMATION",
-                    "SIGNUP_DATA_LAST_NAME_INFORMATION",
-                    "SIGNUP_RESET_EMAIL_INVALID",
-                    "SIGNUP_RESET_EMAIL_INVALID"
-            );
-            keyword.sendKeys("SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE001");
-            keyword.click("SIGNUP_BTN_NEXT_STEEP");
-            //   Enter the password and select the full information
-            sendKeyFullDataFormPasswordInformation(
-                    "SIGNUP_SELECT_TITLE",
-                    "SIGNUP_PASSWORD_INFORMATION",
-                    "SIGNUP_CREATE_PASSWORD_PHONE",
-                    "SIGNUP_SELECT_OPTION_TITLE"
-
-            );
-//            keyword.click("SIGNUP_CHECKBOX_AGREE");
-            keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-
-        } else {
-            keyword.sendKeys("SIGNUP_FIRST_NAME_INFORMATION", "SIGNUP_DATA_FIRST_NAME_INFORMATION");
-            keyword.sendKeys("SIGNUP_LAST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION");
-            keyword.sendKeys("SIGNUP_EMAIL_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION");
-            keyword.click("SIGNUP_CLICK_FOCUS");
-            keyword.assertEquals("SIGNUP_EMAIL_SHOW_MESSAGE", "TEXT_ERROR_EMAIL");
-            clearTextAndSendKey("SIGNUP_EMAIL_INFORMATION", "SIGNUP_EMAIL_INFORMATION", "SIGNUP_DATA_EMAIL_INFORMATION");
-            keyword.sendKeys("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_DATA_NEW_EMAIL_CONFIRM_INFORMATION");
-        }
-    }
-
-    //Create new customer and enter invalid data for email confirmation form (with Confirmation email entered incorrectly before)
-    public void sendDataFormInformationWithConfirmEmailInvalid() throws InterruptedException {
-        if (checkElement("SIGNUP_SWITCH_TO_TAB_CHECK")) {
-            System.out.println("next to steep");
-        } else {
-            keyword.click("SIGNUP_CLICK_FOCUS");
-            keyword.assertEquals("SIGNUP_EMAIL_CONFIRM_SHOW_MESSAGE", "SIGNUP_ADDRESS_EMAIL_ERROR");
-            clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_DATA_EMAIL_INFORMATION");
-        }
-    }
-
-    //    verify success signup
-    public void verifySignUpSuccess() throws InterruptedException {
-        if (keyword.verifyElementPresent("SIGNUP_VERIFY_SIGNUP")) {
-            logger.info("SignUp success,Welcome-msg");
-        }
+    //    Create new customer successfully with store enable phone number confirm
+    public void signUpWithPhoneButEmailInSystem() throws InterruptedException {
+        objSignIn = new SignInPage(this.keyword);
+        clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE_ALREADY");
+        keyword.click("SIGNUP_BTN_NEXT_STEEP");
+        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD",
+                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
+        keyword.assertEquals("SIGNUP_MESSAGE_DUPLICATE", "SIGNUP_MESSAGE_ACTUAL");
+        clearTextAndSendKey("SIGNUP_EMAIL_INFORMATION", "SIGNUP_EMAIL_INFORMATION",
+                "SIGNUP_DATA_EMAIL_TEST_WITH_PHONE");
+        clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_DATA_EMAIL_TEST_WITH_PHONE");
+        keyword.click("SIGNUP_BTN_NEXT_STEEP");
+        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD",
+                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
+        objSignIn.openNewTabs();
+        objSignIn.loginAdmin(
+                "LOGIN_DATA_USER_NAME",
+                "LOGIN_DATA_PASS_WORD");
+        objSignIn.chooseItemCustomer(
+                "SIGNUP_STORES_ITEM", "SIGNUP_STORES_ITEM",
+                "LOGIN_FORM_CUSTOMER", "SIGNUP_ELEMENT_SMS_LOG", "SIGNUP_VERIFY_SMS"
+        );
+        filterSort(
+                "SIGNUP_BTN_FILTER", "SIGNUP_VERIFY_ELEMENT_FILTER",
+                "SIGNUP_PHONE_REGIS", "SIGNUP_BUTTON_APPLY_FILTERS"
+        );
+        keyword.untilJqueryIsDone(30L);
+        getCodeAndSendKey("SIGNUP_GET_CODE_SMS", "SIGNUP_SWITCH_TO_TAB_CHECK", "SIGNUP_BTN_SUBMIT"
+        );
     }
 
     //    Filters function
@@ -286,23 +246,11 @@ public class SignUpPage extends BasePage {
 
     //    Get code and send key
     public void getCodeAndSendKey(String getCode, String dataInput, String btnSubmit) throws InterruptedException {
-        String text = keyword.getText(getCode).substring(36, 41);
+        String text = keyword.getText(getCode).substring(35, 41);
         keyword.switchToTab(0);
         keyword.sendKeys(dataInput, text);
         System.out.println("value copied");
         keyword.click(btnSubmit);
-    }
-
-    public void switchToTabCheck(int index) {
-        keyword.switchToTab(index);
-    }
-
-    public void nextButton() {
-        keyword.click("SIGNUP_BTN_NEXT_STEEP");
-    }
-
-    public void ClickButtonCreateAccount() throws InterruptedException {
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
     }
 
     public boolean checkElement(String checkElement) {
@@ -310,3 +258,4 @@ public class SignUpPage extends BasePage {
     }
 
 }
+

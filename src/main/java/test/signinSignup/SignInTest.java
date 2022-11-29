@@ -1,12 +1,9 @@
 package test.signinSignup;
-
 import core.BaseTest;
-import io.cucumber.java.sl.In;
 import org.testng.annotations.Test;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
-import page.signinSignup.SignUpPage;
 public class SignInTest extends BaseTest {
     private LoginPage objLogin;
     private RegisterPage objRegist;

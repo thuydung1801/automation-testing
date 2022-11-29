@@ -7,12 +7,7 @@ import org.slf4j.Logger;
 
 public class SignInPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
-    public SignInPage(KeywordWeb key) {
-        super(key);
-    }
-    public SignInPage() {
-        super();
-    }
+    public SignInPage(KeywordWeb key) {super(key);}
     // Go to the login form and use the forgot password function (with Email)
     public void goToFormLoginAndEnterDataForGotPassWord() throws InterruptedException {
         keyword.click("LOGIN_BTN_LOGIN");
