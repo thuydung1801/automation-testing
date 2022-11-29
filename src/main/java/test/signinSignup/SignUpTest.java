@@ -83,8 +83,7 @@ public class SignUpTest extends BaseTest {
     //    @Test(priority = 7, description = "Create a new user with password <8 characters and < 3 character types")
     public void testCase_SU08() throws InterruptedException {
         logger.info("testCase_SU08");
-        objSigUp.clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_01");
-        objSigUp.ClickButtonCreateAccount();
+        objSigUp.reSendPassWord();
         objSigUp.verifyMessageWithPasswordNotIllegal();
     }
 
@@ -92,9 +91,9 @@ public class SignUpTest extends BaseTest {
     public void testCase_SU09() throws InterruptedException {
         logger.info("testCase_SU09");
         objSigUp.clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD");
-        objSigUp.ClickButtonCreateAccount();
         objSigUp.ConfirmAndProcessGetCodeWrong();
     }
+
     //    @Test(priority = 9, description = "Resend the code to email")
     public void testCase_SU010() throws Exception {
         logger.info("testCase_SU010");
@@ -105,7 +104,6 @@ public class SignUpTest extends BaseTest {
     @Test(priority = 10, description = "Create new customer and leave with blank form for required form")
     public void testCase_SU012() throws Exception {
         logger.info("testCase_SU012");
-        objSigUp.nextButton();
         objSigUp.verifyRequiredFieldWithMobile();
     }
 

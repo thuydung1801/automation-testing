@@ -112,6 +112,7 @@ public class SignUpPage extends BasePage {
 
     //    get code BE and Enter the wrong code sent to the email
     public void ConfirmAndProcessGetCodeWrong() throws InterruptedException {
+        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
         keyword.webDriverWaitForElementPresent("SIGNUP_INPUT_VERIFY_CODE", 20);
         keyword.sendKeys("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_CODE_DATA");
         keyword.click("SIGNUP_BTN_SUBMIT_ACCOUNT");
@@ -150,6 +151,7 @@ public class SignUpPage extends BasePage {
 
     //    verify a required field.
     public void verifyRequiredFieldWithMobile() throws InterruptedException {
+        nextButton();
         verifyMessageFail("SIGNUP_DATA_VERIFY_MESSAGE", "SIGNUP_FIRSTNAME_ERROR", "SIGNUP_DATA_VERIFY_MESSAGE", "SIGNUP_LASTNAME_ERROR");
         Thread.sleep(1000);
         keyword.assertEquals("SIGNUP_DATA_VERIFY_MESSAGE", "SIGNUP_PHONE_ERROR");
@@ -161,6 +163,11 @@ public class SignUpPage extends BasePage {
         keyword.sendKeys("SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE");
         nextButton();
         keyword.assertEquals("SIGNUP_VALID_NUMBER_FIELD", "SIGNUP_PHONE_ERROR");
+    }
+
+    public void reSendPassWord() throws InterruptedException {
+        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_01");
+        ClickButtonCreateAccount();
     }
 
     // delete old data Register an account with the phone number already in the system
