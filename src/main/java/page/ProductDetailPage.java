@@ -169,7 +169,8 @@ public class ProductDetailPage extends BasePage {
         keyword.click("PRD_TEXT_ENGRAVING");
 //        Thread.sleep(10000);
         keyword.sendKeys("PRD_TEXT_ENGRAVING", data);
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         clickDropdown();
         clickAddCart();
     }
