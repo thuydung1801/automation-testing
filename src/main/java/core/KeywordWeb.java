@@ -314,6 +314,7 @@ public class KeywordWeb {
         driver.navigate().to(url);
     }
 
+
     public void switchToFrame(String frame) {
         logger.info("Switching to frame...");
         driver.switchTo().frame(frame);
@@ -550,6 +551,11 @@ public class KeywordWeb {
             System.out.println("Checkbox selected");
         }
         return stt;
+    }
+
+    public void deleteAllCookies(){
+        logger.info("deleteAllCookies");
+        driver.manage().deleteAllCookies();
     }
     // wait keywords
 

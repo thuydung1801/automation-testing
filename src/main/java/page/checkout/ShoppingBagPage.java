@@ -114,16 +114,21 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
         keyword.click("CHECKOUT_CHECKBOX_WOMENRING_GIFT");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
         keyword.click("CHECKOUT_CHECKBOX_MENRING_GIFT");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_CLOSE");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
 
     }
     //click to view all product in shopping bag
@@ -178,7 +183,8 @@ public class ShoppingBagPage extends BasePage {
     public void clickEdit(String btnEdit) throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_HEADER",10);
         keyword.click(btnEdit);
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
     }
 
     //edit option of ring to check update case
@@ -239,7 +245,8 @@ public class ShoppingBagPage extends BasePage {
     public void inputEngravingwithCoupleRing(String data, String btnAdd, String txtWomen,
                                              String txtMen ) throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_VIEWDETAIL",5);
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click(btnAdd);
         keyword.imWait(10);
         keyword.webDriverWaitForElementPresent("CHECKOUT_TITLE_ENGRAVING",5);
@@ -292,6 +299,7 @@ public class ShoppingBagPage extends BasePage {
     public void moveToPagecheckOut() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
         keyword.click("CHECKOUT_BTN_CHECKOUT");
+        keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",10);
     }
     @Step("common checkout")
@@ -378,7 +386,7 @@ public class ShoppingBagPage extends BasePage {
     }
     //check out with klarna payment method
     public void checkOutWithKlarnaLater() throws InterruptedException {
-        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(50L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER",10);
         keyword.click("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER");
         keyword.untilJqueryIsDone(50L);
@@ -387,12 +395,10 @@ public class ShoppingBagPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.switchToIFrameByXpath("KLARNA_IFRAME");
-        Thread.sleep(10000);
         keyword.webDriverWaitForElementPresent("KLARNA_BTN_CONTINUE",30);
         keyword.click("KLARNA_BTN_CONTINUE");
         keyword.webDriverWaitForElementPresent("KLARNA_TBX_OTP",10);
         keyword.sendKeys("KLARNA_TBX_OTP", "KLARNA_DATA_OTP");
-        Thread.sleep(10000);
         keyword.webDriverWaitForElementPresent("KLARNA_BTN_CONFIRM",10);
         keyword.click("KLARNA_BTN_CONFIRM");
         keyword.click("KLARNA_BTN_FAVOURITE");
