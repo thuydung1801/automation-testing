@@ -10,7 +10,6 @@ import java.security.PublicKey;
 
 public class SignUpPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
-    private SignUpPage objSignUp;
     private SignInPage objSignIn;
 
     public SignUpPage(KeywordWeb key) {
@@ -32,14 +31,16 @@ public class SignUpPage extends BasePage {
             keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 20);
         }
     }
-//    Create new customer and input email exist on database OR Create new customer and leave with blank form for required form with email
-public void createCustomerWithEmail ()throws InterruptedException {
-    sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION"
-            , "SIGNUP_EMAIL_EXIST", "SIGNUP_EMAIL_EXIST");
-    keyword.click("SIGNUP_BTN_NEXT_STEEP");
-    sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD",
-            "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
-}
+
+    //    Create new customer and input email exist on database OR Create new customer and leave with blank form for required form with email
+    public void createCustomerWithEmail() throws InterruptedException {
+        sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION"
+                , "SIGNUP_EMAIL_EXIST", "SIGNUP_EMAIL_EXIST");
+        keyword.click("SIGNUP_BTN_NEXT_STEEP");
+        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD",
+                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+    }
+
     // sendKey full data form information
     public void sendKeyFullDataFormInformation(String firstName, String lastName, String email, String emailConfirm) throws InterruptedException {
         keyword.sendKeys("SIGNUP_FIRST_NAME_INFORMATION", firstName);
@@ -69,19 +70,34 @@ public void createCustomerWithEmail ()throws InterruptedException {
         keyword.click("SIGNUP_CHECKBOX_AGREE");
     }
 
-    //assert Equals Message
-    public void verifyMessageFail(String expected01, String actual01, String expected02, String actual02, String expected03, String actual03, String expected04, String actual04, String expected05, String actual05, String expected06, String actual06) throws InterruptedException {
-        keyword.assertEquals(expected01, actual01);
-        Thread.sleep(1000);
-        keyword.assertEquals(expected02, actual02);
-        Thread.sleep(1000);
-        keyword.assertEquals(expected03, actual03);
-        Thread.sleep(1000);
-        keyword.assertEquals(expected04, actual04);
-        Thread.sleep(1000);
-        keyword.assertEquals(expected05, actual05);
-        Thread.sleep(1000);
-        keyword.assertEquals(expected06, actual06);
+    //    Filters function
+    public void filterSort(String elementFilter, String inputFilter, String sendKeyFilter, String buttonApplyFilter) throws InterruptedException {
+        keyword.webDriverWaitForElementPresent(elementFilter, 20);
+        Thread.sleep(12000);
+        keyword.click(elementFilter);
+        keyword.verifyElementPresent(inputFilter);
+        keyword.sendKeys(inputFilter, sendKeyFilter);
+        keyword.click(buttonApplyFilter);
+    }
+
+    //    Get code and send key
+    public void getCodeAndSendKey(String getCode, String dataInput, String btnSubmit) throws InterruptedException {
+        String text = keyword.getText(getCode).substring(35, 41);
+        keyword.switchToTab(0);
+        keyword.sendKeys(dataInput, text);
+        System.out.println("value copied");
+        keyword.click(btnSubmit);
+    }
+
+    //    confirm password entry condition
+    public void confirmPasswordEntryCondition(String titleError, String Message, String characters, String number, String lowerLetter, String upperLetter, String charactersLike, String checkElement) throws InterruptedException {
+        keyword.assertEquals(titleError, Message);
+        keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_01", characters);
+        keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_05", number);
+        keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_02", lowerLetter);
+        keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_03", upperLetter);
+        keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_04", charactersLike);
+        keyword.webDriverWaitForElementPresent(checkElement, 10);
     }
 
     //    Create new customer and leave with email form for required form
@@ -91,6 +107,8 @@ public void createCustomerWithEmail ()throws InterruptedException {
         keyword.sendKeys("SIGNUP_EMAIL_INFORMATION", "SIGNUP_DATA_EMAIL_INVALID");
         keyword.sendKeys("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_DATA_EMAIL_CONFIRM_INVALID");
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
+        keyword.assertEquals("SIGNUP_DATA_VERIFY_MESSAGE", "SIGNUP_FIRSTNAME_ERROR");
+        keyword.assertEquals("SIGNUP_DATA_VERIFY_MESSAGE", "SIGNUP_LASTNAME_ERROR");
     }
 
     //    Create new customer and input invalid data for email form
@@ -115,13 +133,63 @@ public void createCustomerWithEmail ()throws InterruptedException {
     public void inputValidPassWordAndCheckBoxSubscribe() throws InterruptedException {
         sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL", "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-//        verifyMessageFail("SIGNUP_MESSAGE_PASSWORD_FAIL01", "SIGNUP_ACTUAL_MESSAGE01", "SIGNUP_EXPECTED_MESSAGE_PASSWORD_01", "SIGNUP_ACTUAL_MESSAGE02");
     }
 
     //    @Test(priority = 6, description = "Create a new user with password >= 8 characters and < 3 character types")
     public void CreateUserWithPassword() throws InterruptedException {
-        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_01");
+        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION",
+                "SIGNUP_CREATE_PASSWORD_FAIL_03");
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
+    }
+
+    //"Create a new account with password # email register and Character:
+    public void confirmPasswordEntryConditionCharacters() throws InterruptedException {
+        confirmPasswordEntryCondition("SIGNUP_MESSAGE_PASSWORD_FAIL01",
+                "SIGNUP_ACTUAL_MESSAGE01", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
+                "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
+                "SIGNUP_ACTUAL_MESSAGE04"
+
+        );
+    }
+
+    //"Create a new account with password # email register and Number:
+    public void confirmPasswordEntryConditionNumber() throws InterruptedException {
+        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_02");
+        confirmPasswordEntryCondition("SIGNUP_MESSAGE_PASSWORD_FAIL01",
+                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_MESSAGE_ERROR_NUMBER",
+                "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
+                "SIGNUP_MESSAGE_ERROR_NUMBER"
+        );
+    }
+
+    //    "Create a new account with password # email register and Lower Letter:
+    public void confirmPasswordEntryConditionLowerLetter() throws InterruptedException {
+        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_04");
+        confirmPasswordEntryCondition("SIGNUP_MESSAGE_PASSWORD_FAIL01",
+                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
+                "SIGNUP_MESSAGE_ERROR_LOWER_LETTER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
+                "SIGNUP_MESSAGE_ERROR_LOWER_LETTER"
+        );
+    }
+
+    //"Create a new account with password # email register and upper letter:
+    public void confirmPasswordEntryConditionLowerUpper() throws InterruptedException {
+        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_05");
+        confirmPasswordEntryCondition("SIGNUP_MESSAGE_PASSWORD_FAIL01",
+                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
+                "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_MESSAGE_ERROR_UPPER_LETTER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
+                "SIGNUP_MESSAGE_ERROR_UPPER_LETTER"
+        );
+    }
+
+    //"Create a new account with password # email register and Character Like:
+    public void confirmPasswordEntryConditionCharactersLike() throws InterruptedException {
+        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_06");
+        confirmPasswordEntryCondition("SIGNUP_MESSAGE_PASSWORD_FAIL01",
+                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
+                "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE",
+                "SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE"
+        );
     }
 
     //   verify message  with password <8 characters and < 3 character types
@@ -137,7 +205,8 @@ public void createCustomerWithEmail ()throws InterruptedException {
         keyword.webDriverWaitForElementPresent("SIGNUP_INPUT_VERIFY_CODE", 20);
         keyword.sendKeys("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_CODE_DATA");
         keyword.click("SIGNUP_BTN_SUBMIT_ACCOUNT");
-//        keyword.assertEquals("AAAA", "bbbb");
+        keyword.untilJqueryIsDone(20L);
+        keyword.assertEquals("SIGNUP_MESSAGE_CODE_ERROR", "SIGNUP_MESSAGE_ACTUAL");
     }
 
     // resend and get the code back
@@ -146,6 +215,7 @@ public void createCustomerWithEmail ()throws InterruptedException {
         keyword.clearText("SIGNUP_INPUT_VERIFY_CODE");
         Thread.sleep(59000);
         keyword.click("SIGNUP_BTN_RESEND_CODE");
+        keyword.assertEquals("SIGNUP_CODE_SENT", "SIGNUP_CODE_RESEND");
 //        keyword.assertEquals("SIGNUP_CODE_SENT","");
         objSignIn.openNewTabs();
         objSignIn.loginAdmin(
@@ -165,11 +235,10 @@ public void createCustomerWithEmail ()throws InterruptedException {
         objSignIn.getCodeEnterTextInField("LOGIN_IFRAME",
                 "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
-        keyword.verifyElementPresent("SIGNUP_VERIFY_SIGNUP");
-
+        keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS", "SIGNUP_MESSAGE_REGIS_SUCCESS");
     }
-//---------------------------------SIGN UP WITH OBILLE
 
+    //---------------------------------SIGN UP WITH MOBILE
     //    verify a required field.
     public void verifyRequiredFieldWithMobile() throws InterruptedException {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
@@ -234,28 +303,8 @@ public void createCustomerWithEmail ()throws InterruptedException {
         );
     }
 
-    //    Filters function
-    public void filterSort(String elementFilter, String inputFilter, String sendKeyFilter, String buttonApplyFilter) throws InterruptedException {
-        keyword.webDriverWaitForElementPresent(elementFilter, 20);
-        Thread.sleep(12000);
-        keyword.click(elementFilter);
-        keyword.verifyElementPresent(inputFilter);
-        keyword.sendKeys(inputFilter, sendKeyFilter);
-        keyword.click(buttonApplyFilter);
-    }
-
-    //    Get code and send key
-    public void getCodeAndSendKey(String getCode, String dataInput, String btnSubmit) throws InterruptedException {
-        String text = keyword.getText(getCode).substring(35, 41);
-        keyword.switchToTab(0);
-        keyword.sendKeys(dataInput, text);
-        System.out.println("value copied");
-        keyword.click(btnSubmit);
-    }
-
     public boolean checkElement(String checkElement) {
         return keyword.verifyElementPresent(checkElement);
     }
-
 }
 
