@@ -3,6 +3,7 @@ package core;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -53,6 +54,7 @@ public class KeywordWeb {
                 driver = new EdgeDriver();
                 break;
         }
+        //handleChromeNotifications();
         logger.info("open browser successfully" + browser);
         String rawUrl = url.length > 0 ? url[0] : "";
         if (rawUrl != null && !rawUrl.isEmpty()) {
@@ -385,7 +387,14 @@ public class KeywordWeb {
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tabNum));
     }
-
+    public void handleChromeNotifications(){
+        ChromeOptions ops = new ChromeOptions();
+        ops.addArguments("--disable-notifications");
+        ops.addArguments("--disable-extensions");
+        ops.addArguments("disable-infobars");
+        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
+        driver = new ChromeDriver(ops);
+    }
 
     public void closeWindowByIndex(int index) {
         logger.info("closeWindowByIndex");

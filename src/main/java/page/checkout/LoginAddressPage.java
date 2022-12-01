@@ -24,6 +24,7 @@ public class LoginAddressPage extends BasePage {
         keyword.click("CHECKOUT_BTN_CONTINUE_GUEST");
     }
 
+
     public void fillContactInformation(boolean isSuggestion, String street,
                                        String code, String city) throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_LA_TBX_FIRST",20);
@@ -35,6 +36,7 @@ public class LoginAddressPage extends BasePage {
         keyword.sendKeys("CHECKOUT_LA_TBX_PHONE","AFFIRM_DATA_PHONE");
         if (isSuggestion){
             keyword.sendKeys("CHECKOUT_LA_TBX_STREET","CHECKOUT_LA_DATA_STREET_2");
+            keyword.webDriverWaitForElementPresent("CHECKOUT_LA_SUGGESTLIST",10);
             keyword.click("CHECKOUT_LA_SUGGESTLIST");
         }else {
             keyword.sendKeys("CHECKOUT_LA_TBX_STREET",street);
@@ -45,19 +47,48 @@ public class LoginAddressPage extends BasePage {
 
     }
 
-    public void chooseAddressOnValidation(){
-        keyword.click("CHECKOUT_LA_CBX_YOURINPUT");
-        keyword.click("CHECKOUT_LA_BTN_APPLY_ADDRESS");
+    public void chooseAddressOnValidation(boolean isSuggest, String btnAdd) throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        if (!isSuggest){
+            keyword.click("CHECKOUT_LA_CBX_YOURINPUT");
+        }
+        keyword.untilJqueryIsDone(50L);
+        keyword.click(btnAdd);
     }
 
-
+    public void addNewAddress(boolean isSuggestion, String street,
+                              String code, String city) throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("CHECKOUT_HPL_NEW_ADDRESS");
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LA_TBX_FIRST",20);
+        keyword.sendKeys("CHECKOUT_LA_TBX_FIRST_2","LOGIN_DATA_ALERT_USERNAME");
+        keyword.sendKeys("CHECKOUT_LA_TBX_LAST_2","LOGIN_DATA_ALERT_USERNAME");
+        keyword.sendKeys("CHECKOUT_LA_TBX_PHONE_2","AFFIRM_DATA_PHONE");
+        if (isSuggestion){
+            keyword.sendKeys("CHECKOUT_LA_TBX_STREET_2","CHECKOUT_LA_DATA_STREET_2");
+            keyword.webDriverWaitForElementPresent("CHECKOUT_LA_SUGGESTLIST_2",10);
+            keyword.click("CHECKOUT_LA_SUGGESTLIST_2");
+        }else {
+            keyword.sendKeys("CHECKOUT_LA_TBX_STREET_2",street);
+            keyword.sendKeys("CHECKOUT_LA_TBX_ZIP_2",code);
+            keyword.sendKeys("CHECKOUT_LA_TBX_CITY_2",city);
+        }
+        keyword.click("CHECKOUT_LA_BTN_SAVE_ADDRESS");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LA_MELISSA_ENABLE_2",10);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LA_MELISSA_ENABLE_3",10);
+    }
 
     public void verifyMelissa() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LA_SHIPMENT_SELECTED",20);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LA_MELISSA_ENABLE",20);
-        String text = keyword.getText("//span[@class='address-info']");
-        logger.info(text);
+    }
+
+    public void compareAddress(String data){
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_ADDRESS_INFO",10);
+        keyword.assertEquals(data,"CHECKOUT_LBL_ADDRESS_INFO");
     }
     public void resetForNewCase() throws InterruptedException {
         objRegist = new RegisterPage(this.keyword);
@@ -65,6 +96,13 @@ public class LoginAddressPage extends BasePage {
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
         objRegist.acceptAllCookies();
+    }
+
+    public void editAddress(){
+        keyword.click("CHECKOUT_BTN_EDIT_ADDRESS");
+        keyword.clearText("CHECKOUT_LA_TBX_ZIP_2");
+        keyword.sendKeys("CHECKOUT_LA_TBX_ZIP_2","BT62 4HX");
+        keyword.click("CHECKOUT_LA_BTN_SAVE_ADDRESS");
     }
 
 }

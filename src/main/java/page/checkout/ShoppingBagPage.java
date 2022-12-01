@@ -52,9 +52,11 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
 
@@ -138,7 +140,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_MINICART_VIEWALL");
-        keyword.imWait(10);
+        keyword.untilJqueryIsDone(50L);
     }
     //remove any product depends on the type of product
     public void removeProduct(String typeOfProduct) throws InterruptedException {
@@ -298,6 +300,8 @@ public class ShoppingBagPage extends BasePage {
     @Step("click to choose free gift wrapping")
     public void moveToPagecheckOut() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_CHECKOUT");
         keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",10);
