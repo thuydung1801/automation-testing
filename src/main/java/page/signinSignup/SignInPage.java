@@ -8,19 +8,19 @@ import org.slf4j.Logger;
 public class SignInPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private SignUpPage objSignUp;
-
     public SignInPage(KeywordWeb key) {
         super(key);
     }
 
-    //
-    public void loginLeaverEmailAndPassWord() throws InterruptedException {
+    public void checkGoToFormLoginMobileOrPhoneAndLogin() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
         keyword.click("LOGIN_BTN_LOGIN");
-        keyword.untilJqueryIsDone(20L);
-        keyword.click("LOGIN_BTN_SUBMITLOGIN");
-        keyword.assertEquals("SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_XPATH_EMAIL_REQUIRED_FIELD");
-        Thread.sleep(1000);
-        keyword.assertEquals("SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_XPATH_PASSWORD_REQUIRED_FIELD");
+        keyword.untilJqueryIsDone(50L);
+        if (!checkElement("SIGNIN_INPUT_PHONE_NUMBER")) {
+            loginLeaverInvalidAndVeriFy("SIGNIN_XPATH_EMAIL_REQUIRED_FIELD");
+        } else {
+            loginLeaverInvalidAndVeriFy("SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
+        }
     }
 
     // Login with email and leave the password field blank
@@ -32,10 +32,9 @@ public class SignInPage extends BasePage {
 
     // Login with password and leave the email field blank
     public void enterPasswordLeaveEmailFiendBlank() throws InterruptedException {
-        keyword.clearText("SIGNIN_EMAIL_LOG");
-        keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD01");
-        keyword.click("LOGIN_BTN_SUBMITLOGIN");
-        keyword.assertEquals("SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_XPATH_EMAIL_REQUIRED_FIELD");
+        clearTextSendKeyAndVerify("SIGNIN_EMAIL_LOG", "SIGNIN_PASSWORD_INPUT",
+                "SIGNIN_DATA_PASSWORD01", "LOGIN_BTN_SUBMITLOGIN",
+                "SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_XPATH_EMAIL_REQUIRED_FIELD");
     }
 
     //    Login wrong email - password
@@ -88,20 +87,13 @@ public class SignInPage extends BasePage {
         keyword.clearText("SIGNIN_INPUT_ENTER_CODE");
         openNewTabs();
         loginAdmin("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD");
-        chooseItemCustomer(
-                "LOGIN_BTN_CUSTOMER",
-                "LOGIN_BTN_CUSTOMER",
-                "SIGNUP_VERIFY_CUSTOMER",
-                "LOGIN_BTN_EMAIL_LOG",
-                "SIGNUP_VERIFY_EMAIL_LOG"
+        chooseItemCustomer("LOGIN_BTN_CUSTOMER", "LOGIN_BTN_CUSTOMER", "SIGNUP_VERIFY_CUSTOMER",
+                "LOGIN_BTN_EMAIL_LOG", "SIGNUP_VERIFY_EMAIL_LOG"
         );
-        selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT",
-                "LOGIN_SELECT_ACTIVE",
-                "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
-                "LOGIN_POPUP_MESSAGE_PASSWORD_RESET"
+        selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT", "LOGIN_SELECT_ACTIVE",
+                "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG", "LOGIN_POPUP_MESSAGE_PASSWORD_RESET"
         );
-        getCodeEnterTextInField("LOGIN_IFRAME",
-                "LOGIN_INPUT_VERIFY_CODE",
+        getCodeEnterTextInField("LOGIN_IFRAME", "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNIN_INPUT_ENTER_CODE", "SIGNIN_BTN_SUBMIT_SEND_CODE");
     }
 
@@ -116,7 +108,8 @@ public class SignInPage extends BasePage {
                 "SIGNUP_ACTUAL_MESSAGE04"
 
         );
-//        keyword.click("");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("SIGNI_BTN_SUBMIT_RESET_PASSWORD");
     }
 
     //    create valid new password
@@ -124,31 +117,62 @@ public class SignInPage extends BasePage {
         objSignUp = new SignUpPage(this.keyword);
         objSignUp.clearTextAndSendKey("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_RESET_PASSWORD");
 //        keyword.assertEquals("AAAA", "bbbbb");
-
+        keyword.click("SIGNI_BTN_SUBMIT_RESET_PASSWORD");
     }
 
-    //Forgot password
-    public void forgotPassword() throws InterruptedException {
+
+    //Login wrong phone number
+    public void enterInvalidPhone() throws InterruptedException {
+        clearTextSendKeyAndVerify("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_INPUT_PHONE_NUMBER",
+                "SIGNIN_PASSWORD_WRONG", "SIGNIN_BTN_SUBMIT_FORM_PHONE",
+                "SIGNIN_MESSAGE_PASSWORD_ACTUAL", "SIGNIN_MESSAGE_INVALID");
+    }
+
+    //    Login wrong password
+    public void enterPasswordWrong() throws InterruptedException {
+        objSignUp = new SignUpPage(this.keyword);
+        objSignUp.clearTextAndSendKey("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_INPUT_PHONE_NUMBER", "SIGNUP_DATA_PHONE");
+        clearTextSendKeyAndVerify("SIGNIN_PASSWORD_INPUT", "SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_WRONG_PHONE",
+                "SIGNIN_BTN_SUBMIT_FORM_PHONE", "SIGNIN_MESSAGE_PASSWORD_ACTUAL", "SIGNIN_MESSAGE_INVALID");
+    }
+
+    //Enter a phone number that is not in the system
+    public void forgotPassEnterPhoneIsNotTheSystem() throws InterruptedException {
         keyword.click("LOGIN_BTN_FORGOT_PASSWORD");
+        keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_DATA_PHONE_NOT_IS_SYSTEM");
+        keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
+        keyword.untilJqueryIsDone(50L);
+        keyword.assertEquals("SIGNIN_MESSAGE_PHONE_INCORRECT", "SIGNIN_INPUT_MESSAGE_PHONE_INCORRECT");
     }
 
+    //    create valid new password Success
+    public void createNewPassWordWithPhoneSuccess() throws InterruptedException {
+        objSignUp = new SignUpPage(this.keyword);
 
-    //Entered the wrong code sent to the email
-    public void enterWrongCodeToSentToTheEmail() throws InterruptedException {
-        keyword.sendKeys("SIGNIN_INPUT_ENTER_CODE", "SIGNIN_DATA_CODE_SEND_KEY");
-        keyword.click("SIGNIN_BTN_SUBMIT_SEND_CODE");
-        keyword.untilJqueryIsDone(20L);
-        keyword.assertEquals("SIGNIN_MESSAGE_UNABLE_CODE", "SIGNIN_XPATH_UNABLE_CODE");
-//        openNewTabs();
-//        loginAdmin("LOGIN_DATA_USER_NAME",
-//                "LOGIN_DATA_PASS_WORD");
-//        chooseItemCustomer(
-//                "LOGIN_BTN_CUSTOMER", "LOGIN_BTN_CUSTOMER", "SIGNUP_VERIFY_CUSTOMER",
-//                "LOGIN_BTN_EMAIL_LOG", "SIGNUP_VERIFY_EMAIL_LOG"
-//        );
-//        selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT",
-//                "LOGIN_SELECT_ACTIVE", "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG", "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
-//        keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS", "SIGNUP_MESSAGE_REGIS_SUCCESS");
+        objSignUp.clearTextAndSendKey("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_DAYA_PHONE_RESET_PASSWORD");
+        keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
+        openNewTabs();
+        loginAdmin(
+                "LOGIN_DATA_USER_NAME",
+                "LOGIN_DATA_PASS_WORD");
+        chooseItemCustomer(
+                "SIGNUP_STORES_ITEM", "SIGNUP_STORES_ITEM",
+                "LOGIN_FORM_CUSTOMER", "SIGNUP_ELEMENT_SMS_LOG", "SIGNUP_VERIFY_SMS"
+        );
+        objSignUp.filterSort(
+                "SIGNUP_BTN_FILTER", "SIGNUP_VERIFY_ELEMENT_FILTER",
+                "SIGNUP_PHONE_REGIS", "SIGNUP_BUTTON_APPLY_FILTERS"
+        );
+        keyword.untilJqueryIsDone(30L);
+        objSignUp.getCodeAndSendKey("SIGNUP_GET_CODE_SMS", "SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_BTN_SUBMIT_SEND_CODE"
+        );
+    }
+    public void enterInvalidPhoneNumber() throws InterruptedException {
+        keyword.sendKeys("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_DATA_PHONE_NUMBER");
+        keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_PHONE");
+        keyword.click("SIGNIN_BTN_SUBMIT_FORM_PHONE");
+        keyword.assertEquals("SIGNIN_MESSAGE_PHONE_FAIL", "SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
+
     }
 
 
@@ -190,14 +214,32 @@ public class SignInPage extends BasePage {
 
     // Get text and Enter the copy data -> switch to first tabs
     public void getCodeEnterTextInField(String iframe, String getTextInPutVerify, String dataInput, String btnSubmit) throws Exception {
-        keyword.imWait(10);
+        keyword.untilJqueryIsDone(20L);
         keyword.switchToIFrameByXpath(iframe);
         String text = keyword.getText(getTextInPutVerify);
         keyword.switchToTab(0);
         keyword.sendKeys(dataInput, text);
         System.out.println("value copied");
+        keyword.untilJqueryIsDone(20L);
         keyword.click(btnSubmit);
     }
+
+    public void clearTextSendKeyAndVerify(String elementClear, String sendKeyInput, String dataSendKey, String btnSubmit, String expected, String actual) throws InterruptedException {
+        keyword.clearText(elementClear);
+        keyword.sendKeys(sendKeyInput, dataSendKey);
+        keyword.click(btnSubmit);
+        keyword.untilJqueryIsDone(50L);
+        keyword.assertEquals(expected, actual);
+    }
+
+    //
+    public void loginLeaverInvalidAndVeriFy(String actual1) throws InterruptedException {
+        keyword.untilJqueryIsDone(20L);
+        keyword.click("LOGIN_BTN_SUBMITLOGIN");
+        keyword.assertEquals("SIGNIN_MESSAGE_REQUIRED_FIELD", actual1);
+        keyword.assertEquals("SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_XPATH_PASSWORD_REQUIRED_FIELD");
+    }
+
 
     // Create new password for entering and to use your account
     public void createNewPassWord() {
@@ -206,8 +248,5 @@ public class SignInPage extends BasePage {
         keyword.click("LOGIN_BTN_SUBMIT_RESET_PASSWORD");
         keyword.webDriverWaitForElementPresent("LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS", 10);
     }
-
-    public boolean checkStore(String checkElement) {
-        return keyword.verifyElementPresent(checkElement);
-    }
+    public boolean checkElement(String checkElement) {return keyword.verifyElementPresent(checkElement);}
 }

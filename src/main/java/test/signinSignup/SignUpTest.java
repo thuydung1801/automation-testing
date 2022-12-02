@@ -1,9 +1,6 @@
 package test.signinSignup;
-
 import core.BaseTest;
 import core.LogHelper;
-import io.cucumber.java.sl.In;
-import org.testng.SkipException;
 import org.testng.annotations.Test;
 import page.home.LoginPage;
 import page.home.RegisterPage;
