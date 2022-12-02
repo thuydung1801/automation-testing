@@ -2,13 +2,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 <test name="Suite" enabled="true">
+<!--    <classes>-->
+<!--        <class name="test.checkout.ShoppingBagTest">-->
+<!--            <methods>-->
+<!--                <include name="testCase_SP_02"/>-->
+<!--                <include name="testCase_SP_03"/>-->
+<!--                <include name="testCase_SP_24"/>-->
+<!--                <include name="testCase_SP_26_RV_02_04"/>-->
+<!--            </methods>-->
+<!--        </class>-->
+<!--    </classes>-->
     <classes>
-        <class name="test.checkout.ShoppingBagTest">
+        <class name="test.checkout.LoginAddressTest">
             <methods>
-                <include name="testCase_SP_02"/>
-                <include name="testCase_SP_03"/>
-                <include name="testCase_SP_24"/>
-                <include name="testCase_SP_26_RV_02_04"/>
+                <include name="NLA_10"/>
+                <include name="NLA_11"/>
+                <include name="NLA_12_17"/>
             </methods>
         </class>
     </classes>
