@@ -58,13 +58,13 @@ public class SignInTest extends BaseTest {
     }
 
     @Test(priority = 8, description = "Entered the wrong code sent to the email")
-    public void testCase_SI0914() throws Exception {
+    public void testCase_SI014() throws Exception {
         objSigin.enterWrongCodeSentToEmail();
 
     }
 
     @Test(priority = 8, description = "Resend the code to email")
-    public void testCase_SI0915() throws Exception {
+    public void testCase_SI015() throws Exception {
         objSigin.resentTheCodeToEmail();
     }
 
@@ -73,33 +73,33 @@ public class SignInTest extends BaseTest {
         objSigin.createNewPassword();
     }
 
-    @Test(priority = 10, description = "create valid new password Success")
-    public void testCase_SI013() throws InterruptedException {
-        objSigin.resetNewPassword();
-    }
+//    @Test(priority = 10, description = "create valid new password Success")
+//    public void testCase_SI013() throws InterruptedException {
+//        objSigin.resetNewPassword();
+//    }
 
     //----PHONE
-    @Test(priority = 12, description = "Invalid phone number entered")
+//    @Test(priority = 12, description = "Invalid phone number entered")
     public void testCase_SI09() throws InterruptedException {
         objSigin.enterInvalidPhoneNumber();
     }
 
-    @Test(priority = 13, description = "Login wrong phone number ")
+//    @Test(priority = 13, description = "Login wrong phone number ")
     public void testCase_SI010() throws InterruptedException {
         objSigin.enterInvalidPhone();
     }
 
-    @Test(priority = 14, description = "Login wrong password ")
+//    @Test(priority = 14, description = "Login wrong password ")
     public void testCase_SI011() throws InterruptedException {
         objSigin.enterPasswordWrong();
     }
 
-    @Test(priority = 15, description = "Enter a phone number that is not in the system")
+//    @Test(priority = 15, description = "Enter a phone number that is not in the system")
     public void testCase_SI017() throws InterruptedException {
         objSigin.forgotPassEnterPhoneIsNotTheSystem();
     }
 
-    @Test(priority = 16, description = "Enter the wrong email format")
+//    @Test(priority = 16, description = "Enter the wrong email format")
     public void testCase_SI018() throws InterruptedException {
         objSigin.createNewPassWordWithPhoneSuccess();
     }

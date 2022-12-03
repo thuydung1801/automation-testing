@@ -39,6 +39,9 @@ public class SignUpPage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD",
                 "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
+        keyword.assertEquals("SIGNUP_MESSAGE_DUPLICATE", "SIGNIN_MESSAGE_DATA_EXIST");
     }
 
     // sendKey full data form information
@@ -100,8 +103,8 @@ public class SignUpPage extends BasePage {
         keyword.webDriverWaitForElementPresent(checkElement, 10);
     }
 
-    //    Create new customer and leave with email form for required form
-    public void sendDataEmailAndConfirmEmail() throws InterruptedException {
+    //Create new customer and leave with blank form for required form
+    public void leaveWithBlankFormRequired() throws InterruptedException {
         keyword.reLoadPage();
         keyword.imWait(10);
         keyword.sendKeys("SIGNUP_EMAIL_INFORMATION", "SIGNUP_DATA_EMAIL_INVALID");
@@ -121,29 +124,40 @@ public class SignUpPage extends BasePage {
         keyword.assertEquals("SIGNUP_EMAIL_SHOW_MESSAGE", "TEXT_ERROR_EMAIL");
     }
 
-    //    Enter full data and confirm email does not match
-    public void confirmEmailNotMatch() throws InterruptedException {
+    //  Create new customer and input confirm email not same email form
+    public void confirmEmailNotSameEmailForm() throws InterruptedException {
         clearTextAndSendKey("SIGNUP_EMAIL_INFORMATION", "SIGNUP_EMAIL_INFORMATION", "SIGNUP_DATA_EMAIL_NEW_INFORMATION");
         clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_DATA_EMAIL_CONFIRM_FAIL");
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.assertEquals("SIGNUP_EMAIL_NOT_SAME", "SIGNUP_ADDRESS_EMAIL_ERROR");
     }
 
-    //    Create new customer create password  There are 3  types of characters and < 8 characters
-    public void inputValidPassWordAndCheckBoxSubscribe() throws InterruptedException {
-        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL", "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+    //Create an account with the same password as the register email
+    public void enterTheSamePasswordAsEmail() throws InterruptedException {
+        keyword.sendKeys("SIGNUP_FIRST_NAME_INFORMATION", "SIGNUP_DATA_FIRST_NAME_INFORMATION");
+        keyword.sendKeys("SIGNUP_LAST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION");
+        keyword.click("SIGNUP_BTN_NEXT_STEEP");
+        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION",
+                "SIGNIN_PASSWORD_SAME_EMAIL", "SIGNUP_SELECT_TITLE",
+                "SIGNUP_SELECT_OPTION_TITLE");
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
+        keyword.assertEquals("SIGNUP_MESSAGE_PASSWORD_NOT_SAME_MAIL", "SIGNIN_MESSAGE_DATA_EXIST");
     }
 
-    //    @Test(priority = 6, description = "Create a new user with password >= 8 characters and < 3 character types")
-    public void CreateUserWithPassword() throws InterruptedException {
-        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION",
-                "SIGNUP_CREATE_PASSWORD_FAIL_03");
+    //    Create new customer create password  There are 3  types of characters and < 8 characters
+    public void inputValidPassWordAndCheckBoxSubscribe() throws InterruptedException {
+        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL",
+                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
     }
 
     //"Create a new account with password # email register and Character:
     public void confirmPasswordEntryConditionCharacters() throws InterruptedException {
+        clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_DATA_NEW_EMAIL_CONFIRM_INFORMATION");
+        keyword.click("SIGNUP_BTN_NEXT_STEEP");
+        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_03",
+                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
         confirmPasswordEntryCondition("SIGNUP_MESSAGE_PASSWORD_FAIL01",
                 "SIGNUP_ACTUAL_MESSAGE01", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
                 "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
@@ -205,7 +219,7 @@ public class SignUpPage extends BasePage {
         keyword.webDriverWaitForElementPresent("SIGNUP_INPUT_VERIFY_CODE", 20);
         keyword.sendKeys("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_CODE_DATA");
         keyword.click("SIGNUP_BTN_SUBMIT_ACCOUNT");
-        keyword.untilJqueryIsDone(20L);
+        keyword.untilJqueryIsDone(50L);
         keyword.assertEquals("SIGNUP_MESSAGE_CODE_ERROR", "SIGNUP_MESSAGE_ACTUAL");
     }
 
@@ -279,6 +293,7 @@ public class SignUpPage extends BasePage {
                 "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
         keyword.assertEquals("SIGNUP_MESSAGE_DUPLICATE", "SIGNUP_MESSAGE_ACTUAL");
+//        Case14
         clearTextAndSendKey("SIGNUP_EMAIL_INFORMATION", "SIGNUP_EMAIL_INFORMATION",
                 "SIGNUP_DATA_EMAIL_TEST_WITH_PHONE");
         clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_DATA_EMAIL_TEST_WITH_PHONE");
@@ -301,6 +316,7 @@ public class SignUpPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         getCodeAndSendKey("SIGNUP_GET_CODE_SMS", "SIGNUP_SWITCH_TO_TAB_CHECK", "SIGNUP_BTN_SUBMIT"
         );
+        keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS", "SIGNUP_MESSAGE_REGIS_SUCCESS");
     }
 
     public boolean checkElement(String checkElement) {

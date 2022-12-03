@@ -17,7 +17,7 @@ public class SignUpTest extends BaseTest {
     public SignUpTest() {
         super();
     }
-    @Test(priority = 1, description = "Create new customer and input email exist on database OR Create new customer and leave with blank form for required form")
+    @Test(priority = 1, description = "Create new customer and input email exist on database")
     public void testCase_SU05() throws InterruptedException {
         logger.info("testCase_SU05");
         objLogin = new LoginPage(this.keyword);
@@ -36,35 +36,39 @@ public class SignUpTest extends BaseTest {
         }
     }
 
-    @Test(priority = 2, description = "Create new customer and leave with email form for required form")
+    @Test(priority = 2, description = "Create new customer and leave with blank form for required form")
     public void testCase_SU02() throws InterruptedException {
         logger.info("testCase_SU02");
-        objSigUp.sendDataEmailAndConfirmEmail();
+        objSigUp.leaveWithBlankFormRequired();
     }
 
-    @Test(priority = 3, description = "Create new customer and input invalid data for email form")
+    @Test(priority = 4, description = "Create new customer and input invalid data for email form")
     public void testCase_SU03() throws InterruptedException {
         logger.info("testCase_SU03");
         objSigUp.invalidDataForEmailForm();
     }
-
-    @Test(priority = 4, description = "Enter full data and confirm email does not match")
+//
+    @Test(priority = 5, description = "Create new customer and input confirm email not same email form")
     public void testCase_SU04() throws InterruptedException {
         logger.info("testCase_SU04");
-        objSigUp.confirmEmailNotMatch();
+        objSigUp.confirmEmailNotSameEmailForm();
     }
-
-    @Test(priority = 5, description = "Create new customer create password  There are 3  types of characters and < 8 characters")
+    @Test(priority = 3, description = "Create an account with the same password as the register email")
     public void testCase_SU06() throws InterruptedException {
-        logger.info("testCase_SU06");
-        objSigUp.clearAndSendKeyEmail();
-        objSigUp.inputValidPassWordAndCheckBoxSubscribe();
+        logger.info("testCase_SU02");
+        objSigUp.enterTheSamePasswordAsEmail();
     }
-
+//
+//    @Test(priority = 5, description = "Create new customer create password  There are 3  types of characters and < 8 characters")
+//    public void testCase_SU06() throws InterruptedException {
+//        logger.info("testCase_SU06");
+//        objSigUp.clearAndSendKeyEmail();
+//        objSigUp.inputValidPassWordAndCheckBoxSubscribe();
+//    }
+//
     @Test(priority = 6, description = "\"Create a new account with password # email register and has:\n" + "+ At least < 8 characters\n" + "+ At least 1 number\n" + "+ At least 1 lower case letter\n" + "+ At least 1 upper case letter\n" + "+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~\"")
     public void testCase_SU07() throws InterruptedException {
         logger.info("testCase_SU07");
-        objSigUp.CreateUserWithPassword();
         objSigUp.confirmPasswordEntryConditionCharacters();
     }
 
@@ -99,9 +103,9 @@ public class SignUpTest extends BaseTest {
         objSigUp.ConfirmAndProcessGetCodeWrong();
     }
 
-        @Test(priority = 12, description = "Resend the code to email")
-    public void testCase_SU013() throws Exception {
-        logger.info("testCase_SU013");
+        @Test(priority = 12, description = "Resend the code to email and Signup Success")
+    public void testCase_SU013_and_testCase_01() throws Exception {
+        logger.info("testCase_SU013_and_testCase_01");
         objSigUp.resendAndGetCodeBack();
     }
 //    SIGNUP WITH MOBILE
@@ -121,9 +125,9 @@ public class SignUpTest extends BaseTest {
         objSigUp.enterPhoneNumberAlreadyInSystem();
     }
 
-    //    @Test(priority = 13, description = "Register an account with the email already in the system")
+    //    @Test(priority = 13, description = "Register an account with the email already in the system and Create new customer successfully with store enable phone number confirm")
     public void testCase_SU018() throws Exception {
-        logger.info("testCase_SU018");
+        logger.info("testCase_SU018_and_testCase_14");
         objSigUp.signUpWithPhoneButEmailInSystem();
 
     }

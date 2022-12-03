@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 public class SignInPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private SignUpPage objSignUp;
+
     public SignInPage(KeywordWeb key) {
         super(key);
     }
@@ -45,22 +46,20 @@ public class SignInPage extends BasePage {
         objSignUp.clearTextAndSendKey("SIGNIN_PASSWORD_INPUT", "SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD01");
         keyword.click("SIGNIN_FORM_LOGIN");
         keyword.click("SIGNIN_BTN_SUBMIT");
-        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(70L);
         keyword.assertEquals("SIGNIN_MESSAGE_PASSWORD_ACTUAL", "SIGNIN_MESSAGE_INVALID");
     }
 
     //   Login with wrong password
     public void sigInWithWrongPassword() throws InterruptedException {
-        objSignUp = new SignUpPage(this.keyword);
         objSignUp.clearTextAndSendKey("SIGNIN_EMAIL_LOG", "SIGNIN_EMAIL_LOG", "SIGNUP_DATA_EMAIL_INVALID");
         keyword.click("SIGNIN_BTN_SUBMIT");
-        keyword.untilJqueryIsDone(20L);
+        keyword.untilJqueryIsDone(50L);
         keyword.assertEquals("SIGNIN_MESSAGE_PASSWORD_ACTUAL", "SIGNIN_MESSAGE_INVALID");
     }
 
     //    Enter the wrong email format
     public void enterWrongEmailFormat() throws InterruptedException {
-        objSignUp = new SignUpPage(this.keyword);
         Thread.sleep(2000);
         objSignUp.clearTextAndSendKey("SIGNIN_EMAIL_LOG", "SIGNIN_EMAIL_LOG", "SIGNIN_DATA_EMAIL_WRONG_FORMAT");
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
@@ -95,26 +94,29 @@ public class SignInPage extends BasePage {
         );
         getCodeEnterTextInField("LOGIN_IFRAME", "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNIN_INPUT_ENTER_CODE", "SIGNIN_BTN_SUBMIT_SEND_CODE");
-    }
-
-    //Create invalid new password
-    public void createNewPassword() throws InterruptedException {
-        objSignUp = new SignUpPage(this.keyword);
         keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_SEND_KEY");
         keyword.untilJqueryIsDone(50L);
         objSignUp.confirmPasswordEntryCondition("SIGNUP_MESSAGE_PASSWORD_FAIL01",
                 "SIGNIN_MESSAGE_CREATE_NEW_PW", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
                 "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE",
                 "SIGNUP_ACTUAL_MESSAGE04"
-
         );
-        keyword.untilJqueryIsDone(50L);
+//        keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD","SIGNIN_DATA_PASSWORD_NEW");
+//        keyword.click("SIGNI_BTN_SUBMIT_RESET_PASSWORD");
+//        keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
+
+    }
+
+    //Create invalid new password
+    public void createNewPassword() throws InterruptedException {
+        objSignUp.clearTextAndSendKey("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_PASSWORD_NEW");
         keyword.click("SIGNI_BTN_SUBMIT_RESET_PASSWORD");
+        keyword.untilJqueryIsDone(50L);
+        keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
     }
 
     //    create valid new password
     public void resetNewPassword() throws InterruptedException {
-        objSignUp = new SignUpPage(this.keyword);
         objSignUp.clearTextAndSendKey("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_RESET_PASSWORD");
 //        keyword.assertEquals("AAAA", "bbbbb");
         keyword.click("SIGNI_BTN_SUBMIT_RESET_PASSWORD");
@@ -130,7 +132,6 @@ public class SignInPage extends BasePage {
 
     //    Login wrong password
     public void enterPasswordWrong() throws InterruptedException {
-        objSignUp = new SignUpPage(this.keyword);
         objSignUp.clearTextAndSendKey("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_INPUT_PHONE_NUMBER", "SIGNUP_DATA_PHONE");
         clearTextSendKeyAndVerify("SIGNIN_PASSWORD_INPUT", "SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_WRONG_PHONE",
                 "SIGNIN_BTN_SUBMIT_FORM_PHONE", "SIGNIN_MESSAGE_PASSWORD_ACTUAL", "SIGNIN_MESSAGE_INVALID");
@@ -166,13 +167,15 @@ public class SignInPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         objSignUp.getCodeAndSendKey("SIGNUP_GET_CODE_SMS", "SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_BTN_SUBMIT_SEND_CODE"
         );
+        keyword.untilJqueryIsDone(50L);
+        keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
     }
+
     public void enterInvalidPhoneNumber() throws InterruptedException {
         keyword.sendKeys("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_DATA_PHONE_NUMBER");
         keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_PHONE");
         keyword.click("SIGNIN_BTN_SUBMIT_FORM_PHONE");
         keyword.assertEquals("SIGNIN_MESSAGE_PHONE_FAIL", "SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
-
     }
 
 
@@ -208,6 +211,7 @@ public class SignInPage extends BasePage {
         keyword.imWait(30);
         keyword.click(selectAction);
         keyword.webDriverWaitForElementPresent(verifySelectForm, 20);
+        keyword.untilJqueryIsDone(30L);
         keyword.click(selectView);
         keyword.webDriverWaitForElementPresent(verifyForm, 20);
     }
@@ -248,5 +252,8 @@ public class SignInPage extends BasePage {
         keyword.click("LOGIN_BTN_SUBMIT_RESET_PASSWORD");
         keyword.webDriverWaitForElementPresent("LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS", 10);
     }
-    public boolean checkElement(String checkElement) {return keyword.verifyElementPresent(checkElement);}
+
+    public boolean checkElement(String checkElement) {
+        return keyword.verifyElementPresent(checkElement);
+    }
 }
