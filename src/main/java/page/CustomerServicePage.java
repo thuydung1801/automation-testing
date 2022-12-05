@@ -172,21 +172,66 @@ public class CustomerServicePage extends BasePage {
     public void filterWithCheckSort5() throws InterruptedException {
         commonLoad();
         clickDropdown("CUS_PRD_FILTER_CHECKSORT_5",null);
-
-    }
-    public void commonCheckBoxAndRating(String rating, String checkBox) throws InterruptedException {
         commonLoad();
+    }
+    public void commonCheckBoxAndRating(String rating, String checkBox,String verifyChechBox) throws InterruptedException {
+
         keyword.click(rating);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click(checkBox);
+        keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.reLoadPage();
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        boolean check ;
+        if(keyword.verifyElementVisible("CUS_VERIFY_PRD_FILTER_NO_REVIEW")){
+
+            keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
+            check = true;
+        }
+        else if(keyword.verifyElementVisible("CUS_VERIFY_STAR_PRD_FILTER_RATTING_1") &&
+                keyword.verifyElementVisible(verifyChechBox)){
+            check = true;
+
+        }
+        else{
+            check=false;
+
+        }
+        logger.info("compare from with " + true);
+        Assert.assertEquals(check,true);
+
 
     }
     public void filterWithCheckBox1AndRating1() throws InterruptedException {
-        commonCheckBoxAndRating("CUS_PRD_FILTER_RATTING_1","CUS_PRD_FILTER_CHECKBOX_1");
+        commonLoad();
+        commonCheckBoxAndRating("CUS_PRD_FILTER_RATTING_1","CUS_PRD_FILTER_CHECKBOX_1",null);
+
+    }
+    public void filterWithCheckBox2AndRating1() throws InterruptedException {
+        commonLoad();
+        commonCheckBoxAndRating("CUS_PRD_FILTER_RATTING_1","CUS_PRD_FILTER_CHECKBOX_2","CUS_VERIFY_PRD_FILTER_CHECKBOX_2");
+
+    }
+    public void filterWithCheckBox3AndRating1() throws InterruptedException {
+        commonLoad();
+        commonCheckBoxAndRating("CUS_PRD_FILTER_RATTING_1","CUS_PRD_FILTER_CHECKBOX_3",null);
+
+    }
+    public void filterWithCheckBox4AndRating1() throws InterruptedException {
+        commonLoad();
+        commonCheckBoxAndRating("CUS_PRD_FILTER_RATTING_1","CUS_PRD_FILTER_CHECKBOX_4","CUS_VERIFY_PRD_FILTER_CHECKBOX_4");
+
+    }
+    public void filterWithCheckBoxAndRatingNoReview() throws InterruptedException {
+        commonLoad();
+        keyword.click("CUS_PRD_FILTER_RATTING_2");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.randomConcatElement("CUS_PRD_FILTER_CHECKBOX_ELE",5);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
 
     }
     public void filterCheckBoxAndRatting() throws InterruptedException {

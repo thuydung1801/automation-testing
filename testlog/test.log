@@ -1,79 +1,67 @@
-INFO  | 2022-11-30 16:48:32 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2022-11-30 16:48:33 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
-INFO  | 2022-11-30 16:48:34 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
-INFO  | 2022-11-30 16:48:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - open browser successfullyCHROME
-INFO  | 2022-11-30 16:48:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:59) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-11-30 16:48:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - url: [Ljava.lang.String;@7573c7b5
-INFO  | 2022-11-30 16:48:37 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:257) - Maximizing browser window...
-INFO  | 2022-11-30 16:48:37 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:313) - login by authen link withtest !test123!
-INFO  | 2022-11-30 16:49:40 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:272) - Navigating to URL...https://dev3.glamira.com/glus/
-INFO  | 2022-11-30 16:49:59 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:575) - webDriverWaitForElementPresent
-INFO  | 2022-11-30 16:50:01 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickBTN_COOKIES
-INFO  | 2022-11-30 16:50:03 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:448) -  scrolling to position 
-INFO  | 2022-11-30 16:50:33 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:272) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
-INFO  | 2022-11-30 16:51:15 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:424) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
-INFO  | 2022-11-30 16:51:15 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:51:15 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_RATTING_1
-INFO  | 2022-11-30 16:51:18 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_RATTING_1
-INFO  | 2022-11-30 16:51:18 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_STAR_PRD_FILTER_RATTING_1
-INFO  | 2022-11-30 16:51:18 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_RATTING_2
-INFO  | 2022-11-30 16:51:21 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:649) - compare from CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW with CUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-11-30 16:51:21 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:51:21 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
-INFO  | 2022-11-30 16:51:44 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:424) - scrollDownToElementCUS_PRD_FILTER_CHECKBOX_1
-INFO  | 2022-11-30 16:51:45 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKBOX_1
-INFO  | 2022-11-30 16:51:47 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:649) - compare from CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW with CUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-11-30 16:51:47 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
-INFO  | 2022-11-30 16:52:00 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:424) - scrollDownToElementCUS_PRD_FILTER_CHECKBOX_2
-INFO  | 2022-11-30 16:52:00 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKBOX_2
-INFO  | 2022-11-30 16:52:03 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_CHECKBOX_2
-INFO  | 2022-11-30 16:52:03 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
-INFO  | 2022-11-30 16:52:32 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:424) - scrollDownToElementCUS_PRD_FILTER_CHECKBOX_3
-INFO  | 2022-11-30 16:52:32 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKBOX_3
-INFO  | 2022-11-30 16:52:35 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:649) - compare from CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW with CUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-11-30 16:52:35 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
-INFO  | 2022-11-30 16:52:58 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:424) - scrollDownToElementCUS_PRD_FILTER_CHECKBOX_4
-INFO  | 2022-11-30 16:52:58 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKBOX_4
-INFO  | 2022-11-30 16:53:01 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_CHECKBOX_4
-INFO  | 2022-11-30 16:53:01 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
-INFO  | 2022-11-30 16:53:30 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKBOX_1
-INFO  | 2022-11-30 16:53:32 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKBOX_2
-INFO  | 2022-11-30 16:53:35 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKBOX_3
-INFO  | 2022-11-30 16:53:37 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKBOX_4
-INFO  | 2022-11-30 16:53:40 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:649) - compare from CUS_VERIFY_PRD_FILTER_NO_REVIEW with CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-11-30 16:53:40 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:53:40 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
-INFO  | 2022-11-30 16:53:57 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:53:57 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_SELECT
-INFO  | 2022-11-30 16:53:57 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:53:57 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKSORT_1
-INFO  | 2022-11-30 16:54:01 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_SELECT
-INFO  | 2022-11-30 16:54:01 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:54:01 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKSORT_2
-INFO  | 2022-11-30 16:54:05 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_SELECT
-INFO  | 2022-11-30 16:54:05 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:54:05 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKSORT_3
-INFO  | 2022-11-30 16:54:10 | [main] core.KeywordWeb (KeywordWeb.java:getText:146) - get Text ofCUS_VERIFY_DATE1_PRD_FILTER_CHECKSORT_3
-INFO  | 2022-11-30 16:54:10 | [main] core.KeywordWeb (KeywordWeb.java:getText:146) - get Text ofCUS_VERIFY_DATE2_PRD_FILTER_CHECKSORT_3
-INFO  | 2022-11-30 16:54:10 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
-INFO  | 2022-11-30 16:54:29 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_SELECT
-INFO  | 2022-11-30 16:54:29 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:54:29 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKSORT_4
-INFO  | 2022-11-30 16:54:32 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_SELECT
-INFO  | 2022-11-30 16:54:32 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:54:32 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKSORT_5
-INFO  | 2022-11-30 16:54:35 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_RATTING_1
-INFO  | 2022-11-30 16:54:36 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:54:36 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
-INFO  | 2022-11-30 16:55:04 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_RATTING_1
-INFO  | 2022-11-30 16:55:04 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:55:04 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:55:05 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:272) - Navigating to URL...https://dev3.glamira.com/glus/
-INFO  | 2022-11-30 16:55:12 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickLOGIN_BTN_LOGIN
-INFO  | 2022-11-30 16:55:13 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:575) - webDriverWaitForElementPresent
-INFO  | 2022-11-30 16:55:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:155) - send keysLOGIN_TBX_PHONEwith null
-INFO  | 2022-11-30 16:55:19 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
-INFO  | 2022-11-30 16:55:19 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_NEWSLETTER
-INFO  | 2022-11-30 16:55:23 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:155) - send keysCUS_NEWSLETTER_INP_EMAILwith COM_INP_DATA_EMAIL
-INFO  | 2022-11-30 16:55:26 | [main] core.KeywordWeb (KeywordWeb.java:clearText:96) - clearText
-INFO  | 2022-11-30 16:55:29 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:155) - send keysCUS_NEWSLETTER_INP_EMAILwith COM_INP_DATA_EMAIL
+INFO  | 2022-12-01 11:52:17 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2022-12-01 11:52:19 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
+INFO  | 2022-12-01 11:52:19 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
+INFO  | 2022-12-01 11:52:21 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - open browser successfullyCHROME
+INFO  | 2022-12-01 11:52:21 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:59) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-12-01 11:52:21 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - url: [Ljava.lang.String;@66b31d46
+INFO  | 2022-12-01 11:52:22 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:257) - Maximizing browser window...
+INFO  | 2022-12-01 11:52:22 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:313) - login by authen link withtest !test123!
+INFO  | 2022-12-01 11:53:32 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:272) - Navigating to URL...https://dev3.glamira.com/glus/
+INFO  | 2022-12-01 11:53:47 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:575) - webDriverWaitForElementPresent
+INFO  | 2022-12-01 11:53:47 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickBTN_COOKIES
+INFO  | 2022-12-01 11:53:49 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:448) -  scrolling to position 
+INFO  | 2022-12-01 11:54:02 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:272) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
+INFO  | 2022-12-01 11:55:03 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:424) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-01 11:55:03 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
+INFO  | 2022-12-01 11:55:03 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-01 11:55:07 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_RATTING_1
+INFO  | 2022-12-01 11:55:07 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_STAR_PRD_FILTER_RATTING_1
+INFO  | 2022-12-01 11:55:08 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
+INFO  | 2022-12-01 11:55:08 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
+INFO  | 2022-12-01 11:55:20 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-01 11:55:23 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKBOX_1
+INFO  | 2022-12-01 11:55:26 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
+INFO  | 2022-12-01 11:55:26 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:649) - compare from CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW with CUS_VERIFY_PRD_FILTER_NO_REVIEW
+INFO  | 2022-12-01 11:55:26 | [main] page.CustomerServicePage (CustomerServicePage.java:commonCheckBoxAndRating:201) - compare from with true
+INFO  | 2022-12-01 11:55:26 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
+INFO  | 2022-12-01 11:55:26 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
+INFO  | 2022-12-01 11:55:51 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-01 11:55:55 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKBOX_2
+INFO  | 2022-12-01 11:55:58 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
+INFO  | 2022-12-01 11:56:03 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_STAR_PRD_FILTER_RATTING_1
+INFO  | 2022-12-01 11:56:03 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_CHECKBOX_2
+INFO  | 2022-12-01 11:56:03 | [main] page.CustomerServicePage (CustomerServicePage.java:commonCheckBoxAndRating:201) - compare from with true
+INFO  | 2022-12-01 11:56:03 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
+INFO  | 2022-12-01 11:56:03 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
+INFO  | 2022-12-01 11:56:15 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-01 11:56:18 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKBOX_3
+INFO  | 2022-12-01 11:56:20 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
+INFO  | 2022-12-01 11:56:20 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:649) - compare from CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW with CUS_VERIFY_PRD_FILTER_NO_REVIEW
+INFO  | 2022-12-01 11:56:20 | [main] page.CustomerServicePage (CustomerServicePage.java:commonCheckBoxAndRating:201) - compare from with true
+INFO  | 2022-12-01 11:56:20 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
+INFO  | 2022-12-01 11:56:20 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
+INFO  | 2022-12-01 11:56:54 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-01 11:56:58 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_CHECKBOX_4
+INFO  | 2022-12-01 11:57:01 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
+INFO  | 2022-12-01 11:57:06 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_STAR_PRD_FILTER_RATTING_1
+INFO  | 2022-12-01 11:57:06 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:502) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_CHECKBOX_4
+INFO  | 2022-12-01 11:57:06 | [main] page.CustomerServicePage (CustomerServicePage.java:commonCheckBoxAndRating:201) - compare from with true
+INFO  | 2022-12-01 11:57:06 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
+INFO  | 2022-12-01 11:57:06 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
+INFO  | 2022-12-01 11:57:24 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_RATTING_2
+INFO  | 2022-12-01 11:57:28 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:649) - compare from CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW with CUS_VERIFY_PRD_FILTER_NO_REVIEW
+INFO  | 2022-12-01 11:57:28 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-01 11:57:28 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
+INFO  | 2022-12-01 11:57:28 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:267) - ReLoad Page...
+INFO  | 2022-12-01 11:57:57 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-01 11:57:57 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
+INFO  | 2022-12-01 11:57:57 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
+INFO  | 2022-12-01 11:57:57 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:272) - Navigating to URL...https://dev3.glamira.com/glus/
+INFO  | 2022-12-01 11:58:07 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickLOGIN_BTN_LOGIN
+INFO  | 2022-12-01 11:58:07 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:575) - webDriverWaitForElementPresent
+INFO  | 2022-12-01 11:58:14 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:155) - send keysLOGIN_TBX_PHONEwith null
+INFO  | 2022-12-01 11:58:14 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
+INFO  | 2022-12-01 11:58:14 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickCUS_NEWSLETTER
+INFO  | 2022-12-01 11:58:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:155) - send keysCUS_NEWSLETTER_INP_EMAILwith COM_INP_DATA_EMAIL
+INFO  | 2022-12-01 11:58:20 | [main] core.KeywordWeb (KeywordWeb.java:clearText:96) - clearText
+INFO  | 2022-12-01 11:58:23 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:155) - send keysCUS_NEWSLETTER_INP_EMAILwith COM_INP_DATA_EMAIL
