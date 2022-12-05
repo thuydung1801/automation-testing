@@ -81,13 +81,13 @@ public class ListingPageTest extends BaseTest {
     public void testCase_LTP04() throws InterruptedException {
         testListingPage.viewBTN();
     }
-//
+    //
     @Test(priority = 6, description = "---Check Message Popup")
     public void testCase_LTP05() throws InterruptedException {
         Thread.sleep(1000);
         testListingPage.popupMessage();
     }
-//
+    //
     @Test(priority = 7, description = "---Check Like Product")
     public void testCase_LTP06() throws InterruptedException {
         Thread.sleep(1000);
