@@ -73,10 +73,10 @@ public class SignInTest extends BaseTest {
         objSigin.createNewPassword();
     }
 
-//    @Test(priority = 10, description = "create valid new password Success")
-//    public void testCase_SI013() throws InterruptedException {
-//        objSigin.resetNewPassword();
-//    }
+    @Test(priority = 10, description = "create valid new password Success")
+    public void testCase_SI013() throws InterruptedException {
+        objSigin.resetNewPassword();
+    }
 
     //----PHONE
 //    @Test(priority = 12, description = "Invalid phone number entered")
