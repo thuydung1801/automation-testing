@@ -4,6 +4,7 @@ import core.BasePage;
 import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
+import org.openqa.selenium.JavascriptExecutor;
 import org.slf4j.Logger;
 import org.testng.Assert;
 import page.home.LoginPage;
@@ -13,6 +14,8 @@ import page.signinSignup.SignInPage;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static core.KeywordWeb.driver;
 
 public class CustomerServicePage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
@@ -48,18 +51,9 @@ public class CustomerServicePage extends BasePage {
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
+        keyword.scrollDownToElement("CUS_PRD_FILTER_RATTING_1");
     }
-    public void clickDropdown(String element,String verify) throws InterruptedException {
-        keyword.click("CUS_PRD_FILTER_SELECT");
-        keyword.imWait(2);
-        keyword.click(element);
-        keyword.untilJqueryIsDone(30L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-//        keyword.randomElement("CUS_PRD_FILTER_CHECKSORT");
-//        commonLoad();
 
-    }
 
     public void filterWithRatting1() throws InterruptedException {
         setUp();
@@ -87,7 +81,7 @@ public class CustomerServicePage extends BasePage {
         keyword.click(element);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        if(verify == null){
+        if(verify == null ||keyword.verifyElementVisible("CUS_VERIFY_PRD_FILTER_NO_REVIEW") ){
             keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
         }
         else{
@@ -106,7 +100,7 @@ public class CustomerServicePage extends BasePage {
 
     }
     public void filterWithCheckBox3() throws InterruptedException {
-        checkVerrifyCheckBox("CUS_PRD_FILTER_CHECKBOX_3",null);
+        checkVerrifyCheckBox("CUS_PRD_FILTER_CHECKBOX_3","CUS_VERIFY_IMG_PRD_FILTER_CHECKBOX_3");
 
     }
     public void filterWithCheckBox4() throws InterruptedException {
@@ -131,7 +125,99 @@ public class CustomerServicePage extends BasePage {
         keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
 
     }
-    public void checkVerifyDate() throws ParseException, InterruptedException {
+    public void clickDropdown(String element) throws InterruptedException {
+        keyword.click("CUS_PRD_FILTER_SELECT");
+        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(30L);
+
+//        keyword.imWait(3);
+        keyword.click(element);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
+    public boolean checkHighestRatting(String verify1,String verify2){
+        String vrf1 = keyword.getAttribute(verify1);
+        System.out.printf("vrf1=====" + vrf1 + "\n");
+
+        String verify_1 = vrf1.substring(6,vrf1.length()-1);
+        System.out.printf("vrf1=====" + verify_1 + "\n");
+        String vrf2 = keyword.getAttribute(verify2);
+        String verify_2 = vrf2.substring(6,vrf2.length()-1);
+        System.out.printf("vrf1=====" + verify_1 + "\n");
+        System.out.printf("vrf2=====" + verify_2 + "\n");
+        if(Integer.parseInt(verify_1) >= Integer.parseInt(verify_2) ){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+    public void checkVerifyHighestRatting() throws InterruptedException {
+
+        boolean check;
+        if(checkHighestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2")){
+            check = true;
+        }
+        else{
+            check=false;
+        }
+        logger.info("compare from with " + true);
+        Assert.assertEquals(check, true);
+    }
+    public boolean checkLowestRatting(String verify1,String verify2) throws InterruptedException{
+        String vrf1 = keyword.getAttribute(verify1);
+        String verify_1 = vrf1.substring(6,vrf1.length()-1);
+        String vrf2 = keyword.getAttribute(verify2);
+        String verify_2 = vrf1.substring(6,vrf2.length()-1);
+        System.out.printf("vrf1=====" + verify_1 + "\n");
+        System.out.printf("vrf2=====" + verify_2 + "\n");
+        if(Integer.parseInt(verify_1) <= Integer.parseInt(verify_2) ){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public void checkVerifyLowestRatting() throws InterruptedException {
+
+        boolean check;
+        if(checkLowestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2")){
+            check=true;
+        }
+        else{
+            check=false;
+        }
+        logger.info("compare from with " + true);
+        Assert.assertEquals(check, true);
+    }
+    public boolean checkHelpFulness(String verify1,String verify2){
+        String vrf1 = keyword.getText(verify1);
+        String vrf2 = keyword.getText(verify2);
+        System.out.printf("vrf1=====" + vrf1 + "\n");
+        System.out.printf("vrf2=====" + vrf2 + "\n");
+        if(Integer.parseInt(vrf1) >= Integer.parseInt(vrf2) ){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public void checkVerifyHelpFulness(){
+        boolean check;
+
+        if(checkHelpFulness("CUS_VERIFY1_HELP_PRD_FILTER_CHECKSORT_5","CUS_VERIFY2_HELP_PRD_FILTER_CHECKSORT_5")){
+            check = true;
+        }
+        else{
+            check=false;
+        }
+        logger.info("compare from with " + true);
+        Assert.assertEquals(check, true);
+
+    }
+    public boolean checkDate() throws ParseException, InterruptedException {
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
@@ -143,7 +229,13 @@ public class CustomerServicePage extends BasePage {
 
         Date date_1 = sdf.parse(date1);
         Date date_2 = sdf.parse(date2);
-        boolean check = date_1.after(date_2); //true
+        boolean check = date_1.after(date_2);
+        return check;
+    }
+
+    public void checkVerifyDate() throws ParseException, InterruptedException {
+        boolean check = checkDate(); //true
+        logger.info("compare from with " + true);
         Assert.assertEquals(check, true);
         keyword.reLoadPage();
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -152,26 +244,29 @@ public class CustomerServicePage extends BasePage {
     public void filterWithCheckSort1() throws InterruptedException {
         commonLoad();
         keyword.imWait(2);
-        clickDropdown("CUS_PRD_FILTER_CHECKSORT_1",null);
+        clickDropdown("CUS_PRD_FILTER_CHECKSORT_1");
 
     }
     public void filterWithCheckSort2() throws InterruptedException {
         commonLoad();
-        clickDropdown("CUS_PRD_FILTER_CHECKSORT_2",null);
+        clickDropdown("CUS_PRD_FILTER_CHECKSORT_2");
+        checkVerifyHighestRatting();
     }
     public void filterWithCheckSort3() throws InterruptedException, ParseException {
         commonLoad();
-        clickDropdown("CUS_PRD_FILTER_CHECKSORT_3",null);
+        clickDropdown("CUS_PRD_FILTER_CHECKSORT_3");
         checkVerifyDate();
 
     }
     public void filterWithCheckSort4() throws InterruptedException {
-        clickDropdown("CUS_PRD_FILTER_CHECKSORT_4",null);
-
+        clickDropdown("CUS_PRD_FILTER_CHECKSORT_4");
+        checkVerifyLowestRatting();
     }
     public void filterWithCheckSort5() throws InterruptedException {
         commonLoad();
-        clickDropdown("CUS_PRD_FILTER_CHECKSORT_5",null);
+        clickDropdown("CUS_PRD_FILTER_CHECKSORT_5");
+        checkVerifyHelpFulness();
+
         commonLoad();
     }
     public void commonCheckBoxAndRating(String rating, String checkBox,String verifyChechBox) throws InterruptedException {
@@ -215,7 +310,7 @@ public class CustomerServicePage extends BasePage {
     }
     public void filterWithCheckBox3AndRating1() throws InterruptedException {
         commonLoad();
-        commonCheckBoxAndRating("CUS_PRD_FILTER_RATTING_1","CUS_PRD_FILTER_CHECKBOX_3",null);
+        commonCheckBoxAndRating("CUS_PRD_FILTER_RATTING_1","CUS_PRD_FILTER_CHECKBOX_3","CUS_VERIFY_IMG_PRD_FILTER_CHECKBOX_3");
 
     }
     public void filterWithCheckBox4AndRating1() throws InterruptedException {
@@ -234,26 +329,100 @@ public class CustomerServicePage extends BasePage {
         keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
 
     }
-    public void filterCheckBoxAndRatting() throws InterruptedException {
-        keyword.click("CUS_PRD_FILTER_RATTING_1");
-//        filterWithCheckBox();
-        System.out.printf("done checkbox-ratting" + "\n");
+    public void filterCheckBoxAndCheckSort(String checkBox, String checkSort) throws InterruptedException {
         commonLoad();
-    }
-    public void filterWithCheckSortAndRatting() throws InterruptedException {
-        keyword.click("CUS_PRD_FILTER_RATTING_1");
-        keyword.imWait(2);
-//        clickDropdown();
-        System.out.printf("done checksort-ratting"+"\n");
+        keyword.click(checkBox);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        clickDropdown(checkSort);
+//        keyword.untilJqueryIsDone(30L);
+//        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
-    public void filterCheckBoxAndCheckSort() throws InterruptedException {
+    public void checkVerifyCheckBoxAndCheckSort(String verifyCheckBox, String verifyCheckSort1,String verifyCheckSort2,boolean a) throws InterruptedException {
+        boolean check;
+        if(keyword.verifyElementVisible("CUS_VERIFY_PRD_FILTER_NO_REVIEW")){
+            keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
+            check=true;
+        }else if(keyword.verifyElementVisible(verifyCheckBox) &&
+                checkLowestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2")){
+            check=true;
+        }else{
+            check=false;
+        }
+        logger.info("compare from with " + true);
+        Assert.assertEquals(check,true);
 
-//        filterWithCheckBox();
-        keyword.imWait(2);
-//        clickDropdown();
-        System.out.printf("done checksort-checkbox"+"\n");
+
     }
+    public void filterCheckBox1AndCheckSort1() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_1","CUS_PRD_FILTER_CHECKSORT_1");
+    }
+    public void filterCheckBox1AndCheckSort2() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_1","CUS_PRD_FILTER_CHECKSORT_2");
+        boolean check;
+        if(keyword.verifyElementVisible("CUS_VERIFY_PRD_FILTER_NO_REVIEW")){
+            keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
+            check=true;
+        }else if(checkHighestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2")){
+            check=true;
+        }else{
+            check=false;
+        }
+        logger.info("compare from with " + true);
+        Assert.assertEquals(check,true);
+
+    }
+    public void filterCheckBox1AndCheckSort3() throws InterruptedException, ParseException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_1","CUS_PRD_FILTER_CHECKSORT_3");
+        boolean check;
+        if(keyword.verifyElementVisible("CUS_VERIFY_PRD_FILTER_NO_REVIEW")){
+            keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
+            check=true;
+        }else if(checkDate()){
+            check=true;
+        }else{
+            check=false;
+        }
+        logger.info("compare from with " + true);
+        Assert.assertEquals(check,true);
+
+    }
+    public void filterCheckBox1AndCheckSort4() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_1","CUS_PRD_FILTER_CHECKSORT_4");
+        boolean check;
+        if(keyword.verifyElementVisible("CUS_VERIFY_PRD_FILTER_NO_REVIEW")){
+            keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
+            check=true;
+        }else if(checkLowestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2")){
+            check=true;
+        }else{
+            check=false;
+        }
+        logger.info("compare from with " + true);
+        Assert.assertEquals(check,true);
+
+    }
+    public void filterCheckBox1AndCheckSort5() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_1","CUS_PRD_FILTER_CHECKSORT_5");
+        boolean check;
+        if(keyword.verifyElementVisible("CUS_VERIFY_PRD_FILTER_NO_REVIEW")){
+            keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
+            check=true;
+        }else if(checkHelpFulness("CUS_VERIFY1_HELP_PRD_FILTER_CHECKSORT_5","CUS_VERIFY2_HELP_PRD_FILTER_CHECKSORT_5")) {
+            check=true;
+        }else{
+            check=false;
+        }
+        logger.info("compare from with " + true);
+        Assert.assertEquals(check,true);
+
+    }
+
+
+
+
+
     public void commonNewsLetterWithAccount(){
         keyword.imWait(3);
         keyword.click("CUS_NEWSLETTER");

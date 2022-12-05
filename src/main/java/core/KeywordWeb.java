@@ -717,5 +717,16 @@ public class KeywordWeb {
         act.moveToElement(ele2).click().keyDown(Keys.CONTROL).sendKeys("v");
         act.keyUp(Keys.CONTROL).build().perform();
     }
+    public String getAttribute(String element) {
+        logger.info("get Attribute of" + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        WebElement  b = driver.findElement(By.xpath(xPathElement));
+        String c = b.getAttribute("style");
+        System.out.printf("c==" + c);
+        return c;
+    }
 
 }
