@@ -38,8 +38,8 @@ public class SignInPage extends BasePage {
                 "SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_XPATH_EMAIL_REQUIRED_FIELD");
     }
 
-    //    Login wrong email - password
-    public void signInWrongEmailPassword() throws InterruptedException {
+    //    SignIn wrong email - password
+    public void wrongPasswordAndEmail() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
         keyword.untilJqueryIsDone(10L);
         objSignUp.clearTextAndSendKey("SIGNIN_EMAIL_LOG", "SIGNIN_EMAIL_LOG", "SIGNUP_DATA_EMAIL_INFORMATION");
@@ -95,7 +95,7 @@ public class SignInPage extends BasePage {
         getCodeEnterTextInField("LOGIN_IFRAME", "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNIN_INPUT_ENTER_CODE", "SIGNIN_BTN_SUBMIT_SEND_CODE");
         keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_SEND_KEY");
-        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(70L);
         objSignUp.confirmPasswordEntryCondition("SIGNUP_MESSAGE_PASSWORD_FAIL01",
                 "SIGNIN_MESSAGE_CREATE_NEW_PW", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
                 "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE",
@@ -111,6 +111,8 @@ public class SignInPage extends BasePage {
     public void createNewPassword() throws InterruptedException {
         objSignUp.clearTextAndSendKey("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_PASSWORD_NEW");
         keyword.click("SIGNI_BTN_SUBMIT_RESET_PASSWORD");
+        keyword.untilJqueryIsDone(30L);
+        keyword.verifyElementVisible("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
         keyword.untilJqueryIsDone(50L);
         keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
     }

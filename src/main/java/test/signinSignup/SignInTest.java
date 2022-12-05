@@ -44,7 +44,7 @@ public class SignInTest extends BaseTest {
 
     @Test(priority = 4, description = "Login wrong email - password")
     public void testCase_SI05() throws InterruptedException {
-        objSigin.signInWrongEmailPassword();
+        objSigin.wrongPasswordAndEmail();
     }
 
     @Test(priority = 5, description = "Login with wrong password")

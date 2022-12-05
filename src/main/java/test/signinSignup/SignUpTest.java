@@ -27,7 +27,6 @@ public class SignUpTest extends BaseTest {
 //        objSigUp.nextUrl();
         objRegist.acceptAllCookies();
         objRegist.chooseLanguages();
-        Thread.sleep(2000);
         objSigUp.goToFormCreateMyAccount();
         if (!objSigUp.checkElement("SIGNUP_WITH_PHONE")) {
             objSigUp.createCustomerWithEmail();
