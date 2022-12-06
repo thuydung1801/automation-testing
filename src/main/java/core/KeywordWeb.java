@@ -33,11 +33,8 @@ import java.util.function.Function;
 public class KeywordWeb {
     private static Logger logger = LogHelper.getLogger();
     public static WebDriver driver;
-
-
     public KeywordWeb() {
     }
-
     public void openBrowser(String browser, String... url) {
         logger.info("Open browser");
         switch (browser.toUpperCase()) {
@@ -226,7 +223,16 @@ public class KeywordWeb {
         WebElement elementRep = driver.findElement(By.xpath(xPathElement));
         action.moveToElement(elementRep).perform();
     }
-
+    public void hoverAndClicks(String element) {
+        logger.info("Move To Element" + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        Actions action = new Actions(driver);
+        WebElement elementRep = driver.findElement(By.xpath(xPathElement));
+        action.moveToElement(elementRep).clickAndHold();
+    }
 
     public void executeJavaScript(String command) {
         logger.info("Executing JavaScript");
@@ -562,9 +568,25 @@ public class KeywordWeb {
         return stt;
     }
 
+<<<<<<< HEAD
     public void deleteAllCookies(){
         logger.info("deleteAllCookies");
         driver.manage().deleteAllCookies();
+=======
+    public boolean checkStatusIsDisplay(String element) {
+        logger.info("Check status ");
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        boolean status = driver.findElement(By.xpath(xPathElement)).isDisplayed();
+        if (status) {
+            System.out.println("Is Display" + "\t" + element);
+        } else {
+            System.out.println("Is not Display" + "\t" + element);
+        }
+        return status;
+>>>>>>> master
     }
     // wait keywords
 
@@ -572,9 +594,8 @@ public class KeywordWeb {
         logger.info("implicitlyWait");
         driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
     }
-
     public void webDriverWaitForElementPresent(String element, long timeout) {
-        logger.info("webDriverWaitForElementPresent");
+        logger.info("webDriverWaitForElementPresent" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
         if (xPathElement == null) {
             xPathElement = element;
@@ -662,7 +683,6 @@ public class KeywordWeb {
         Assert.assertEquals(actualText, xPathElement1);
 
     }
-
     public void openNewTabFromTabBase(int tabNum, String url){
         logger.info("open new tab from tab base");
         String xPathElement1 = PropertiesFile.getPropValue(url);
@@ -673,5 +693,4 @@ public class KeywordWeb {
         switchToTab(tabNum);
         navigateToUrl(xPathElement1);
     }
-
 }

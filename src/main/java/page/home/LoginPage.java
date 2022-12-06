@@ -53,8 +53,6 @@ public class LoginPage extends BasePage {
             keyword.sendKeys("LOGIN_TXT_PASSWORD", phonePassword);
             Thread.sleep(2000);
         }
-
-
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
 
     }
