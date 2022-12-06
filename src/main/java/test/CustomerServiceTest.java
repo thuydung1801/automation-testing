@@ -127,21 +127,41 @@ public class CustomerServiceTest extends BaseTest {
     public void filter_ratting_22() throws InterruptedException {
         testCustomerService.filterCheckBox1AndCheckSort5();
     }
+    @Test(priority = 23,description = "Combine filter with sort by: Only reviews from United Kingdom + Relevance")
+    public void filter_ratting_23() throws InterruptedException {
+        testCustomerService.filterCheckBox2AndCheckSort1();
+    }
+    @Test(priority = 24,description = "Combine filter with sort by:Only reviews from United Kingdom + Highest ratting")
+    public void filter_ratting_24() throws InterruptedException {
+        testCustomerService.filterCheckBox2AndCheckSort2();
+    }
+    @Test(priority = 25,description = "Combine filter with sort by: Only reviews from United Kingdom + Date ")
+    public void filter_ratting_25() throws InterruptedException, ParseException {
+        testCustomerService.filterCheckBox2AndCheckSort3();
+    }
+    @Test(priority = 26,description = "Combine filter with sort by: Only reviews from United Kingdom + Lowest ratting")
+    public void filter_ratting_26() throws InterruptedException {
+        testCustomerService.filterCheckBox2AndCheckSort4();
+    }
+    @Test(priority = 27,description = "Combine filter with sort by: Only reviews from United Kingdom + Helpfulness")
+    public void filter_ratting_27() throws InterruptedException {
+        testCustomerService.filterCheckBox2AndCheckSort5();
+    }
 
 
-    @Test(priority = 23,description = "Test case Newsletter")
+    @Test(priority = 28,description = "My Account - Subscribe to the Glamira newsletter.")
     public void testCase_NL_01() throws InterruptedException {
         testCustomerService.myAccountSubscribeGlamiraNewsletter();
     }
-    @Test(priority = 23,description = "Test case Newsletter")
+    @Test(priority = 29,description = "My Account - Un subscribe to the Glamira newsletter.")
     public void testCase_NL_02() throws InterruptedException {
         testCustomerService.myAccountUnSubscribeGlamiraNewsletter();
     }
-    @Test(priority = 25,description = "Test case Newsletter")
+    @Test(priority = 30,description = "Footer - Subscribe to the Glamira newsletter.")
     public void testCase_NL_03() throws InterruptedException {
         testCustomerService.footerSubscribeGlamiraNewsletter();
     }
-    @Test(priority = 26,description = "Test case Newsletter")
+    @Test(priority = 31,description = "Footer - Subscribe to the Glamira newsletter.- forgot enter email adress")
     public void testCase_NL_04() throws InterruptedException {
         testCustomerService.footerSubscribeGlamiraNewsletterWithEmailNull();
     }
