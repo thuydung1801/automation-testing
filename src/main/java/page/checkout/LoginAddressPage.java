@@ -21,6 +21,7 @@ public class LoginAddressPage extends BasePage {
 
     public ShoppingBagPage objShoppingBagPage;
     private RegisterPage objRegist;
+    private LoginAddressPage objLoginAddress;
 
     public void moveToAddressPage(){
         keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_CONTINUE_GUEST",40);
@@ -91,7 +92,7 @@ public class LoginAddressPage extends BasePage {
     }
 
     public void verifyMelissa() throws InterruptedException {
-        keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(70L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LA_SHIPMENT_SELECTED",20);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LA_MELISSA_ENABLE",20);
     }
@@ -101,11 +102,16 @@ public class LoginAddressPage extends BasePage {
         keyword.assertEquals(data,location);
     }
     public void resetForNewCase() throws InterruptedException {
+        deleteAllCookies();
+        objRegist.acceptAllCookies();
+    }
+
+    public void deleteAllCookies() throws InterruptedException {
+        objLoginAddress = new LoginAddressPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
         keyword.deleteAllCookies();
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
-        objRegist.acceptAllCookies();
     }
 
     public void editAddress() throws InterruptedException {
@@ -159,6 +165,58 @@ public class LoginAddressPage extends BasePage {
         keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
         keyword.sendKeys("SUCCESS_TBX_PASSWORD","CHECKOUT_DATA_PASSWORD_CREATE");
         keyword.click("SUCCESS_BTN_CREATE_ACCOUNT");
+    }
+
+    public void loginOnLAPage() throws InterruptedException {
+        keyword.sendKeys("CHECKOUT_LA_TBX_USERNAME","LOGIN_DATA_EMAIL");
+        keyword.sendKeys("CHECKOUT_LA_TBX_PASS","LOGIN_DATA_PASSWORD");
+        keyword.click("CHECKOUT_LA_BTN_LOGIN");
+        keyword.untilJqueryIsDone(30L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",10);
+
+    }
+
+    public void loginFailed(String flag) throws InterruptedException {
+        if (flag.equals("noEmail")){
+            keyword.untilJqueryIsDone(50L);
+            keyword.sendKeys("CHECKOUT_LA_TBX_PASS","LOGIN_DATA_PASSWORD");
+            keyword.click("CHECKOUT_LA_BTN_LOGIN");
+            keyword.untilJqueryIsDone(30L);
+            keyword.assertEquals("CHECKOUT_MESSAGES_UPDATE_24","CHECKOUT_LA_LBL_ERROR_MAIL");
+        }else if(flag.equals("wrongPass")){
+            keyword.sendKeys("CHECKOUT_LA_TBX_USERNAME","LOGIN_DATA_EMAIL");
+            keyword.sendKeys("CHECKOUT_LA_TBX_PASS","CHECKOUT_DATA_PASSWORD_ENTER");
+            keyword.click("CHECKOUT_LA_BTN_LOGIN");
+            keyword.untilJqueryIsDone(30L);
+            keyword.assertEquals("CHECKOUT_LA_DATA_ERROR_PASS","CHECKOUT_LA_LBL_ERROR_PASS");
+        } else if (flag.equals("invalidEmail")) {
+            keyword.sendKeys("CHECKOUT_LA_TBX_USERNAME","LOGIN_DATA_PASSWORD");
+            keyword.sendKeys("CHECKOUT_LA_TBX_PASS","CHECKOUT_DATA_PASSWORD_ENTER");
+            keyword.click("CHECKOUT_LA_BTN_LOGIN");
+            keyword.untilJqueryIsDone(30L);
+            keyword.assertEquals("CHECKOUT_LA_MESSAGE_USERNAME","CHECKOUT_LA_LBL_ERROR_MAIL");
+        }
+    }
+    public void addNewBillingAddress(boolean isSuggestion, String street,
+                              String code, String city) throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("CHECKOUT_HPL_NEW_ADDRESS_LOGIN");
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LA_TBX_FIRST",20);
+        keyword.sendKeys("CHECKOUT_LA_TBX_FIRST_3","LOGIN_DATA_ALERT_USERNAME");
+        keyword.sendKeys("CHECKOUT_LA_TBX_LAST_3","LOGIN_DATA_ALERT_USERNAME");
+        keyword.sendKeys("CHECKOUT_LA_TBX_PHONE_3","AFFIRM_DATA_PHONE");
+        if (isSuggestion){
+            keyword.sendKeys("CHECKOUT_LA_TBX_STREET_4","CHECKOUT_LA_DATA_STREET_2");
+            keyword.webDriverWaitForElementPresent("CHECKOUT_LA_SUGGESTLIST_2",10);
+            keyword.click("CHECKOUT_LA_SUGGESTLIST_2");
+        }else {
+            keyword.sendKeys("CHECKOUT_LA_TBX_STREET_4",street);
+            keyword.sendKeys("CHECKOUT_LA_TBX_ZIP_4",code);
+            keyword.sendKeys("CHECKOUT_LA_TBX_CITY_4",city);
+        }
+        keyword.click("CHECKOUT_LA_BTN_SAVE_ADDRESS_2");
     }
 
 

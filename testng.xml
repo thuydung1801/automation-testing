@@ -15,8 +15,8 @@
     <classes>
         <class name="test.checkout.LoginAddressTest">
             <methods>
-                <include name="NLA_11"/>
-                <include name="NLA_12_17"/>
+                <include name="NLA_19"/>
+                <include name="NLA_35"/>
             </methods>
         </class>
     </classes>

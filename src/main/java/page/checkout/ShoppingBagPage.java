@@ -136,6 +136,7 @@ public class ShoppingBagPage extends BasePage {
     //click to view all product in shopping bag
     public void clickShoppingBagPage() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
+        Thread.sleep(1000);
         keyword.click("CHECKOUT_BTN_MINICART");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");

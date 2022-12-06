@@ -34,6 +34,11 @@ public class LoginAddressTest extends BaseTest {
         objRegist.acceptAllCookies();
         objRegist.chooseLanguages();
     }
+    public void customerLogin() throws InterruptedException {
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
+        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
+                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
+    }
 
     @Test(priority = 1,
             description = "Add new billing address with all valid data and next page successfully")
@@ -152,7 +157,7 @@ public class LoginAddressTest extends BaseTest {
 
     @Test(priority = 9,
             description = "Edit shipping address same as billing")
-    public void NLA_12_17() throws InterruptedException {
+    public void NLA_12_16() throws InterruptedException {
         objLoginAddress.editAddress();
         objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA","CHECKOUT_LBL_ADDRESS_INFO_2");
         objLoginAddress.goBack();
@@ -162,11 +167,52 @@ public class LoginAddressTest extends BaseTest {
     }
 
     @Test(priority = 1, description = "Edit billing address ")
-    public void NLA_13_14() throws InterruptedException {
+    public void NLA_13_14_15() throws InterruptedException {
         objLoginAddress.editBillingAddress();
-
-
     }
 
+    @Test(priority = 10, description = "Login successfully with customer email on checkout page")
+    public void NLA_17() throws InterruptedException {
+        customerNotLogin();
+        //objLoginAddress.resetForNewCase();
+        objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objLoginAddress.loginOnLAPage();
+    }
+
+    @Test(priority = 11, description = "Leave blank Email/Phone or Password")
+    public void NLA_19() throws InterruptedException {
+        customerNotLogin();
+        //objLoginAddress.resetForNewCase();
+        objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objLoginAddress.loginFailed("noEmail");
+    }
+
+    @Test(priority = 12, description = "Continue with Customer login and input email or phone not matching password")
+    public void NLA_20() throws InterruptedException {
+        objLoginAddress.loginFailed("wrongPass");
+    }
+    @Test(priority = 12, description = "Continue with Customer login and input email invalid")
+    public void NLA_21() throws InterruptedException {
+        objLoginAddress.loginFailed("invalidEmail");
+    }
+    @Test(priority = 12, description = "Add new billing address with all valid data and next page successfully")
+    public void NLA_35() throws InterruptedException {
+        customerLogin();
+        objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objLoginAddress.addNewBillingAddress(false, "CHECKOUT_LA_DATA_STREET_1",
+                "CHECKOUT_LA_DATA_CODE_1", "CHECKOUT_LA_DATA_CITY_1");
+        objLoginAddress.verifyMelissa();
+    }
+    @Test(priority = 12, description = "Add new billing address using suggest address with store no state")
+    public void NLA_36() throws InterruptedException {
+        objLoginAddress.addNewBillingAddress(true, "CHECKOUT_LA_DATA_STREET_1",
+                "CHECKOUT_LA_DATA_CODE_1", "CHECKOUT_LA_DATA_CITY_1");
+    }
 
 }
