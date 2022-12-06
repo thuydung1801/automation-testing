@@ -23,28 +23,64 @@ public class ListingPage extends BasePage {
         keyword.CheckIsDisplayElement(statusElement);
     }
 
+    public void choseFilter(String scrollElement, String clickElement, String verifyElement) throws InterruptedException {
+        keyword.untilJqueryIsDone(10L);
+        keyword.scrollDownToElement(scrollElement);
+        keyword.click(clickElement);
+        keyword.untilJqueryIsDone(20L);
+        keyword.checkStatusIsDisplay(verifyElement);
+    }
+
     //go to AllProduct of listingPage section
-    public void goToAllProduct(String allBtn, String btnSwitch) throws InterruptedException {
-        keyword.navigateToUrl("BASE_URL_LISTINGPAGE");
-        keyword.webDriverWaitForElementPresent("BTN_COOKIES", 30);
-        keyword.click("BTN_COOKIES");
-        Thread.sleep(1000);
-        keyword.scrollToPosition();
-        keyword.webDriverWaitForElementPresent(btnSwitch, 50);
-        keyword.click(btnSwitch);
+    public void goToAllProduct() throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("LTP_TEXT_PAGE", 50);
         keyword.hoverAndClick("LTP_TEXT_MOVE");
         keyword.webDriverWaitForElementPresent("LTP_CLICK_PRODUCT", 10);
-        keyword.imWait(3);
+        keyword.untilJqueryIsDone(30L);
         keyword.click("LTP_CLICK_PRODUCT");
-        keyword.imWait(3);
-        keyword.scrollDownToElement(allBtn);
-        keyword.click(allBtn);
+        keyword.untilJqueryIsDone(30L);
+        keyword.scrollDownToElement("ALL_RING_BTN");
+        keyword.click("ALL_RING_BTN");
+        keyword.scrollToPosition();
+        keyword.verifyElementVisible("LTP_LEFT_FILTER");
     }
 
-    // delete function filter
-    public void deleteFilters() {
-        keyword.click("LTP_BTN_DELETEALL");
+    //    Check position of Sticker on left filter when applying filter option + scrolling
+    public void checkPositionOfSticker() throws InterruptedException {
+        choseFilter("LTP_ITEM_CHECK_STICKER_FILTER", "LTP_ITEM_CHECK_STICKER_FILTER", "LTP_POSITION_TICKER");
+    }
+
+    //
+    public void checkPositionOfStickerWhenUpLoadMore() throws InterruptedException {
+        choseFilter("LTP_ITEM_CHECK_STICKER_FILTER_UPLOAD", "LTP_ITEM_CHECK_STICKER_FILTER_UPLOAD", "LTP_CHECK_STICKER_UPLOAD_MORE");
+    }
+
+    // Using ajax instead of reloading page when click on filter left
+    public void usingAjaxPageNotLoadAgain() throws InterruptedException {
+        choseFilter("LTP_CHOSE_STONE_CHECK_AJAX", "LTP_CHOSE_STONE_CHECK_AJAX", "LTP_AJAX_LOADING_ICON");
+    }
+
+    //    Filter price displayed when the option has been applied
+    public void filterPrice() throws InterruptedException {
+        choseFilter("LTP_ITEM_FILTER_CHOSE", "LTP_CLEAR_ALL", "LTP_PRICE_STATUS_DISABLE");
+        keyword.untilJqueryIsDone(20L);
+        choseFilter("LTP_CHOSE_STONE_CHECK_AJAX", "LTP_CHOSE_STONE_CHECK_AJAX", "LTP_PRICE_ACTIVE");
+    }
+    //
+    public void filterItem() throws InterruptedException {
+        keyword.scrollDownToElement("LTP_FILTER_STONES");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("LTP_FILTER_STONES");
+        keyword.untilJqueryIsDone(20L);
+        keyword.assertEqualsAfterCutting("LTP_FILTER_DIAMOND", "LTP_VERIFY_FILTER_STONES");
+    }
+
+    public void removeItemsFilter() throws InterruptedException {
+        keyword.untilJqueryIsDone(20L);
+        keyword.checkStatusIsDisplay("LTP_CLOSE_ITEMS_FILTER");
+        keyword.untilJqueryIsDone(20L);
+        choseFilter("LTP_CLOSE_ITEMS_FILTER", "LTP_CLOSE_ITEMS_FILTER", "LTP_AJAX_LOADING_ICON");
     }
 
     //Check sort button
@@ -100,4 +136,3 @@ public class ListingPage extends BasePage {
         keyword.clickByCss("LTP_MODAL_OVERLAY");
     }
 }
-

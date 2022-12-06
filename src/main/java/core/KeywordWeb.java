@@ -666,6 +666,20 @@ public class KeywordWeb {
         Assert.assertEquals(actualText, xPathElement1);
 
     }
+    public void assertEqualsAfterCutting(String expected, String actual) {
+        logger.info("compare from " + expected + " with " + actual);
+        String xPathElement1 = PropertiesFile.getPropValue(expected);
+        String xPathElement2 = PropertiesFile.getPropValue(actual);
+        if (xPathElement1 == null) {
+            xPathElement1 = expected;
+        }
+        if (xPathElement2 == null) {
+            xPathElement2 = actual;
+        }
+        String actualText = driver.findElement(By.xpath(xPathElement2)).getText().substring(17, 31);
+        Assert.assertEquals(actualText, xPathElement1);
+
+    }
     public void openNewTabFromTabBase(int tabNum, String url){
         logger.info("open new tab from tab base");
         String xPathElement1 = PropertiesFile.getPropValue(url);

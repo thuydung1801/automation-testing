@@ -1,26 +1,47 @@
-INFO  | 2022-12-05 15:48:02 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:38) - Open browser
-INFO  | 2022-12-05 15:48:07 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
-INFO  | 2022-12-05 15:48:07 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
-INFO  | 2022-12-05 15:48:12 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - open browser successfullyCHROME
-INFO  | 2022-12-05 15:48:12 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-12-05 15:48:12 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - url: [Ljava.lang.String;@5158a9f7
-INFO  | 2022-12-05 15:48:34 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:250) - Maximizing browser window...
-INFO  | 2022-12-05 15:48:35 | [main] test.ListingPageTest (ListingPageTest.java:testCase_LP01:23) - testCase_LP01
-INFO  | 2022-12-05 15:48:35 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:306) - login by authen link withtest !test123!
-INFO  | 2022-12-05 15:48:53 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:582) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2022-12-05 15:48:53 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickBTN_COOKIES
-INFO  | 2022-12-05 15:49:06 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:582) - webDriverWaitForElementPresentLTP_TEXT_PAGE
-INFO  | 2022-12-05 15:49:06 | [main] core.KeywordWeb (KeywordWeb.java:hoverAndClick:215) - Move To ElementLTP_TEXT_MOVE
-INFO  | 2022-12-05 15:49:06 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:582) - webDriverWaitForElementPresentLTP_CLICK_PRODUCT
-INFO  | 2022-12-05 15:49:07 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLTP_CLICK_PRODUCT
-INFO  | 2022-12-05 15:49:19 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:417) - scrollDownToElementALL_RING_BTN
-INFO  | 2022-12-05 15:49:19 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickALL_RING_BTN
-INFO  | 2022-12-05 15:49:30 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:441) -  scrolling to position 
-INFO  | 2022-12-05 15:49:30 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:495) - verifyElementVisibleLTP_LEFT_FILTER
-INFO  | 2022-12-05 15:49:34 | [main] test.ListingPageTest (ListingPageTest.java:testCase_LP02:34) - testCase_LP02
-INFO  | 2022-12-05 15:49:37 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:417) - scrollDownToElementLTP_CHOSE_STONE_CHECK_AJAX
-INFO  | 2022-12-05 15:49:56 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLTP_CHOSE_STONE_CHECK_AJAX
-INFO  | 2022-12-05 15:50:00 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:495) - verifyElementVisibleLTP_AJAX_LOADING_ICON
-INFO  | 2022-12-05 15:50:01 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:417) - scrollDownToElementLTP_ITEM_FILTER_CHOSE
-INFO  | 2022-12-05 15:50:02 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLTP_CLOSE_ITEM_FILTER
-INFO  | 2022-12-05 15:50:06 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:495) - verifyElementVisibleLTP_PRICE_STATUS_DISABLE
+INFO  | 2022-12-06 12:14:20 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:38) - Open browser
+INFO  | 2022-12-06 12:14:22 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
+INFO  | 2022-12-06 12:14:22 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
+INFO  | 2022-12-06 12:14:25 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:53) - open browser successfullyCHROME
+INFO  | 2022-12-06 12:14:25 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:56) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-12-06 12:14:25 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - url: [Ljava.lang.String;@1530d0f2
+INFO  | 2022-12-06 12:15:13 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:250) - Maximizing browser window...
+INFO  | 2022-12-06 12:15:14 | [main] test.ListingPageTest (ListingPageTest.java:testCase_LP01:23) - testCase_LP01
+INFO  | 2022-12-06 12:15:14 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:306) - login by authen link withtest !test123!
+INFO  | 2022-12-06 12:15:21 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:582) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2022-12-06 12:15:21 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickBTN_COOKIES
+INFO  | 2022-12-06 12:15:29 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:582) - webDriverWaitForElementPresentLTP_TEXT_PAGE
+INFO  | 2022-12-06 12:15:29 | [main] core.KeywordWeb (KeywordWeb.java:hoverAndClick:215) - Move To ElementLTP_TEXT_MOVE
+INFO  | 2022-12-06 12:15:29 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:582) - webDriverWaitForElementPresentLTP_CLICK_PRODUCT
+INFO  | 2022-12-06 12:15:30 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLTP_CLICK_PRODUCT
+INFO  | 2022-12-06 12:15:43 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:417) - scrollDownToElementALL_RING_BTN
+INFO  | 2022-12-06 12:15:43 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickALL_RING_BTN
+INFO  | 2022-12-06 12:15:52 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:441) -  scrolling to position 
+INFO  | 2022-12-06 12:15:53 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:495) - verifyElementVisibleLTP_LEFT_FILTER
+INFO  | 2022-12-06 12:15:54 | [main] test.ListingPageTest (ListingPageTest.java:testCase_LP02:33) - testCase_LP02
+INFO  | 2022-12-06 12:15:57 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:417) - scrollDownToElementLTP_ITEM_CHECK_STICKER_FILTER
+INFO  | 2022-12-06 12:15:57 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLTP_ITEM_CHECK_STICKER_FILTER
+INFO  | 2022-12-06 12:15:59 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:562) - Check status 
+INFO  | 2022-12-06 12:15:59 | [main] test.ListingPageTest (ListingPageTest.java:testCase_LP03:38) - testCase_LP03
+INFO  | 2022-12-06 12:16:00 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:417) - scrollDownToElementLTP_ITEM_CHECK_STICKER_FILTER_UPLOAD
+INFO  | 2022-12-06 12:16:01 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLTP_ITEM_CHECK_STICKER_FILTER_UPLOAD
+INFO  | 2022-12-06 12:16:03 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:562) - Check status 
+INFO  | 2022-12-06 12:16:03 | [main] test.ListingPageTest (ListingPageTest.java:testCase_LP04:43) - testCase_LP04
+INFO  | 2022-12-06 12:16:04 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:417) - scrollDownToElementLTP_CHOSE_STONE_CHECK_AJAX
+INFO  | 2022-12-06 12:16:05 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLTP_CHOSE_STONE_CHECK_AJAX
+INFO  | 2022-12-06 12:16:07 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:562) - Check status 
+INFO  | 2022-12-06 12:16:07 | [main] test.ListingPageTest (ListingPageTest.java:testCase_LTP05:49) - testCase_LP05
+INFO  | 2022-12-06 12:16:08 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:417) - scrollDownToElementLTP_ITEM_FILTER_CHOSE
+INFO  | 2022-12-06 12:16:08 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLTP_CLEAR_ALL
+INFO  | 2022-12-06 12:16:10 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:562) - Check status 
+INFO  | 2022-12-06 12:16:13 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:417) - scrollDownToElementLTP_CHOSE_STONE_CHECK_AJAX
+INFO  | 2022-12-06 12:16:13 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLTP_CHOSE_STONE_CHECK_AJAX
+INFO  | 2022-12-06 12:16:16 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:562) - Check status 
+INFO  | 2022-12-06 12:16:16 | [main] test.ListingPageTest (ListingPageTest.java:testCase_LTP06:55) - testCase_LP06
+INFO  | 2022-12-06 12:16:17 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:562) - Check status 
+INFO  | 2022-12-06 12:16:19 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:417) - scrollDownToElementLTP_CLOSE_ITEMS_FILTER
+INFO  | 2022-12-06 12:16:19 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLTP_CLOSE_ITEMS_FILTER
+INFO  | 2022-12-06 12:16:21 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:562) - Check status 
+INFO  | 2022-12-06 12:16:21 | [main] test.ListingPageTest (ListingPageTest.java:testCase_LTP07:60) - testCase_LP07
+INFO  | 2022-12-06 12:16:21 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:417) - scrollDownToElementLTP_FILTER_STONES
+INFO  | 2022-12-06 12:16:23 | [main] core.KeywordWeb (KeywordWeb.java:click:89) - clickLTP_FILTER_STONES
+INFO  | 2022-12-06 12:16:25 | [main] core.KeywordWeb (KeywordWeb.java:assertEqualsAfterCutting:670) - compare from LTP_FILTER_DIAMOND with LTP_VERIFY_FILTER_STONES
