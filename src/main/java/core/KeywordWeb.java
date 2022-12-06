@@ -725,7 +725,7 @@ public class KeywordWeb {
         }
         WebElement  b = driver.findElement(By.xpath(xPathElement));
         String c = b.getAttribute("style");
-        System.out.printf("c==" + c);
+        logger.info(c);
         return c;
     }
 

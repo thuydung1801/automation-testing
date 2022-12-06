@@ -36,7 +36,7 @@ public class CustomerServicePage extends BasePage {
     public void setUp() throws InterruptedException {
 
         objLogin.loginOnAlert();
-        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
+//        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
         objRegister.acceptAllCookies();
         objRegister.chooseLanguages();
         keyword.untilJqueryIsDone(30L);
@@ -129,8 +129,6 @@ public class CustomerServicePage extends BasePage {
         keyword.click("CUS_PRD_FILTER_SELECT");
         Thread.sleep(2000);
         keyword.untilJqueryIsDone(30L);
-
-//        keyword.imWait(3);
         keyword.click(element);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -138,14 +136,9 @@ public class CustomerServicePage extends BasePage {
     }
     public boolean checkHighestRatting(String verify1,String verify2){
         String vrf1 = keyword.getAttribute(verify1);
-        System.out.printf("vrf1=====" + vrf1 + "\n");
-
-        String verify_1 = vrf1.substring(6,vrf1.length()-1);
-        System.out.printf("vrf1=====" + verify_1 + "\n");
+        String verify_1 = vrf1.substring(7,vrf1.length()-2);
         String vrf2 = keyword.getAttribute(verify2);
-        String verify_2 = vrf2.substring(6,vrf2.length()-1);
-        System.out.printf("vrf1=====" + verify_1 + "\n");
-        System.out.printf("vrf2=====" + verify_2 + "\n");
+        String verify_2 = vrf2.substring(7,vrf2.length()-2);
         if(Integer.parseInt(verify_1) >= Integer.parseInt(verify_2) ){
             return true;
         }
@@ -168,11 +161,9 @@ public class CustomerServicePage extends BasePage {
     }
     public boolean checkLowestRatting(String verify1,String verify2) throws InterruptedException{
         String vrf1 = keyword.getAttribute(verify1);
-        String verify_1 = vrf1.substring(6,vrf1.length()-1);
+        String verify_1 = vrf1.substring(7,vrf1.length()-2);
         String vrf2 = keyword.getAttribute(verify2);
-        String verify_2 = vrf1.substring(6,vrf2.length()-1);
-        System.out.printf("vrf1=====" + verify_1 + "\n");
-        System.out.printf("vrf2=====" + verify_2 + "\n");
+        String verify_2 = vrf2.substring(7,vrf2.length()-2);
         if(Integer.parseInt(verify_1) <= Integer.parseInt(verify_2) ){
             return true;
         }
@@ -195,8 +186,6 @@ public class CustomerServicePage extends BasePage {
     public boolean checkHelpFulness(String verify1,String verify2){
         String vrf1 = keyword.getText(verify1);
         String vrf2 = keyword.getText(verify2);
-        System.out.printf("vrf1=====" + vrf1 + "\n");
-        System.out.printf("vrf2=====" + vrf2 + "\n");
         if(Integer.parseInt(vrf1) >= Integer.parseInt(vrf2) ){
             return true;
         }
@@ -251,6 +240,7 @@ public class CustomerServicePage extends BasePage {
         commonLoad();
         clickDropdown("CUS_PRD_FILTER_CHECKSORT_2");
         checkVerifyHighestRatting();
+
     }
     public void filterWithCheckSort3() throws InterruptedException, ParseException {
         commonLoad();
@@ -419,46 +409,57 @@ public class CustomerServicePage extends BasePage {
 
     }
 
-
-
-
-
-    public void commonNewsLetterWithAccount(){
+    public void commonNewsLetterWithAccount() throws InterruptedException {
         keyword.imWait(3);
         keyword.click("CUS_NEWSLETTER");
         keyword.imWait(3);
         keyword.click("CUS_NEWSLETTER_CHECKBOX");
         keyword.click("CUS_NEWSLETTER_SUBMIT_ACCOUNT");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
     }
     public void checkVerifyInputNull(){
         keyword.assertEquals("COM_DATA_MESSAGES_NULL",
                 "COM_TEXT_ERROR");
     }
+    public void checkVerifyNewsletter(String element, String message){
+        if(keyword.verifyElementVisible(element)){
+            keyword.assertEquals(message,element);
+        }
+        else{
+            logger.info("Erorr....");
+        }
+    }
     public void myAccountSubscribeGlamiraNewsletter() throws InterruptedException {
-        keyword.openNewTab("https://dev3.glamira.com/glus/");
+//        setUp();
+        keyword.openNewTab("https://dev3.glamira.com/glde/");
         objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
         keyword.untilJqueryIsDone(30L);
 
         keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/index/");
         commonNewsLetterWithAccount();
+        checkVerifyNewsletter("CUS_VERIFY_NEWSLETTER_SUBSCRIBE","CUS_VERIFY_DATA_NEWSLETTER_SUBSCRIBE");
+
 
     }
     public void myAccountUnSubscribeGlamiraNewsletter() throws InterruptedException {
         commonNewsLetterWithAccount();
+        checkVerifyNewsletter("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","CUS_VERIFY_DATA_NEWSLETTER_UNSUBSCRIBE");
+
     }
     public void footerSubscribeGlamiraNewsletter() throws InterruptedException {
 //        keyword.reLoadPage();
         keyword.sendKeys("CUS_NEWSLETTER_INP_EMAIL","COM_INP_DATA_EMAIL");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
         keyword.click("CUS_NEWSLETTER_SUBMIT_FOOTER");
-        keyword.untilJqueryIsDone(30L);
 
-        keyword.recaptchaClickSubmit();
-//        keyword.click("CUS_NEWSLETTER_CHECKBOX_CAPTCHA");
-//        Thread.sleep(3000);
-//        keyword.click("CUS_NEWSLETTER_SUBMIT_CAPTCHA");
+        keyword.untilJqueryIsDone(30L);
+        keyword.click("CUS_NEWSLETTER_SUBMIT_CAPTCHA");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        checkVerifyNewsletter("CUS_VERIFY_NEWSLETTER_SUBSCRIBE","CUS_VERIFY_DATA_NEWSLETTER_FOOTER_SUBSCRIBE");
     }
     public void footerSubscribeGlamiraNewsletterWithEmailNull() throws InterruptedException {
         keyword.clearText("CUS_NEWSLETTER_INP_EMAIL");
@@ -478,9 +479,5 @@ public class CustomerServicePage extends BasePage {
 
         keyword.click("CUS_NEWSLETTER_SUBMIT_CAPTCHA");
         checkVerifyInputNull();
-
     }
-
-
-
 }

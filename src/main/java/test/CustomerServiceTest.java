@@ -15,11 +15,11 @@ public class CustomerServiceTest extends BaseTest {
         testCustomerService = new CustomerServicePage(this.keyword);
 
     }
-    @Test(priority = 1, description = "My product detail/ Filter _ Filter reviews with ratting option")
-    public void filter_ratting_01() throws InterruptedException {
-        testCustomerService.filterWithRatting1();
-
-    }
+//    @Test(priority = 1, description = "My product detail/ Filter _ Filter reviews with ratting option")
+//    public void filter_ratting_01() throws InterruptedException {
+//        testCustomerService.filterWithRatting1();
+//
+//    }
 //    @Test(priority = 2, description = "My product detail/ Filter _ Filter When the ratting has no reviews")
 //    public void filter_ratting_02() throws InterruptedException {
 //        testCustomerService.filterWithRatting2();
@@ -55,77 +55,78 @@ public class CustomerServiceTest extends BaseTest {
 //        testCustomerService.filterWithCheckSort1();
 //
 //    }
-    @Test(priority = 9,description = "Check Sort By: Highest Rating")
-    public void filter_ratting_09() throws InterruptedException {
-        testCustomerService.filterWithCheckSort2();
-
-    }
+//    @Test(priority = 9,description = "Check Sort By: Highest Rating")
+//    public void filter_ratting_09() throws InterruptedException {
+//        testCustomerService.filterWithCheckSort2();
+//
+//
+//    }
 //    @Test(priority = 10,description = "Check Sort By: Date")
 //    public void filter_ratting_10() throws InterruptedException, ParseException {
 //        testCustomerService.filterWithCheckSort3();
 //
 //    }
-    @Test(priority = 11,description = "Check Sort By: Lowest Rating")
-    public void filter_ratting_11() throws InterruptedException {
-        testCustomerService.filterWithCheckSort4();
-
-    }
-    @Test(priority = 12,description = "Check Sort By: Helpfulness")
-    public void filter_ratting_12() throws InterruptedException {
-        testCustomerService.filterWithCheckSort5();
-
-    }
-    @Test(priority = 13,description = "Combined filter Show reviews with my current combination +  ratting option")
-    public void filter_ratting_13() throws InterruptedException {
-        testCustomerService.filterWithCheckBox1AndRating1();
-
-    }
-    @Test(priority = 14,description = "Combined filter Only reviews from United Kingdom +  ratting option")
-    public void filter_ratting_14() throws InterruptedException {
-        testCustomerService.filterWithCheckBox2AndRating1();
-
-    }
-    @Test(priority = 15,description = "Combined filter With images +  ratting option")
-    public void filter_ratting_15() throws InterruptedException {
-        testCustomerService.filterWithCheckBox3AndRating1();
-
-    }
-    @Test(priority = 16,description = "Combined filter Verified Buyers +  ratting option")
-    public void filter_ratting_16() throws InterruptedException {
-        testCustomerService.filterWithCheckBox4AndRating1();
-
-    }
-    @Test(priority = 17,description = "Combine filter with rating without review")
-    public void filter_ratting_17() throws InterruptedException {
-        testCustomerService.filterWithCheckBoxAndRatingNoReview();
-
-    }
-
-
-    @Test(priority = 18,description = "Combine filter with sort by: Show reviews with my current combination + Relevance")
-    public void filter_ratting_18() throws InterruptedException {
-        testCustomerService.filterCheckBox1AndCheckSort1();
-
-    }
-    @Test(priority = 19,description = "Combine filter with sort by: Show reviews with my current combination + Highest ratting")
-    public void filter_ratting_19() throws InterruptedException {
-        testCustomerService.filterCheckBox1AndCheckSort2();
-
-    }
-    @Test(priority = 20,description = "Combine filter with sort by: Show reviews with my current combination + Date ")
-    public void filter_ratting_20() throws InterruptedException, ParseException {
-        testCustomerService.filterCheckBox1AndCheckSort3();
-
-    }
-    @Test(priority = 21,description = "Combine filter with sort by: Show reviews with my current combination + Lowest ratting")
-    public void filter_ratting_21() throws InterruptedException {
-        testCustomerService.filterCheckBox1AndCheckSort4();
-
-    }
-    @Test(priority = 22,description = "Combine filter with sort by: Show reviews with my current combination + Helpfulness")
-    public void filter_ratting_22() throws InterruptedException {
-        testCustomerService.filterCheckBox1AndCheckSort5();
-    }
+//    @Test(priority = 11,description = "Check Sort By: Lowest Rating")
+//    public void filter_ratting_11() throws InterruptedException {
+//        testCustomerService.filterWithCheckSort4();
+//
+//    }
+//    @Test(priority = 12,description = "Check Sort By: Helpfulness")
+//    public void filter_ratting_12() throws InterruptedException {
+//        testCustomerService.filterWithCheckSort5();
+//
+//    }
+//    @Test(priority = 13,description = "Combined filter Show reviews with my current combination +  ratting option")
+//    public void filter_ratting_13() throws InterruptedException {
+//        testCustomerService.filterWithCheckBox1AndRating1();
+//
+//    }
+//    @Test(priority = 14,description = "Combined filter Only reviews from United Kingdom +  ratting option")
+//    public void filter_ratting_14() throws InterruptedException {
+//        testCustomerService.filterWithCheckBox2AndRating1();
+//
+//    }
+//    @Test(priority = 15,description = "Combined filter With images +  ratting option")
+//    public void filter_ratting_15() throws InterruptedException {
+//        testCustomerService.filterWithCheckBox3AndRating1();
+//
+//    }
+//    @Test(priority = 16,description = "Combined filter Verified Buyers +  ratting option")
+//    public void filter_ratting_16() throws InterruptedException {
+//        testCustomerService.filterWithCheckBox4AndRating1();
+//
+//    }
+//    @Test(priority = 17,description = "Combine filter with rating without review")
+//    public void filter_ratting_17() throws InterruptedException {
+//        testCustomerService.filterWithCheckBoxAndRatingNoReview();
+//
+//    }
+//
+//
+//    @Test(priority = 18,description = "Combine filter with sort by: Show reviews with my current combination + Relevance")
+//    public void filter_ratting_18() throws InterruptedException {
+//        testCustomerService.filterCheckBox1AndCheckSort1();
+//
+//    }
+//    @Test(priority = 19,description = "Combine filter with sort by: Show reviews with my current combination + Highest ratting")
+//    public void filter_ratting_19() throws InterruptedException {
+//        testCustomerService.filterCheckBox1AndCheckSort2();
+//
+//    }
+//    @Test(priority = 20,description = "Combine filter with sort by: Show reviews with my current combination + Date ")
+//    public void filter_ratting_20() throws InterruptedException, ParseException {
+//        testCustomerService.filterCheckBox1AndCheckSort3();
+//
+//    }
+//    @Test(priority = 21,description = "Combine filter with sort by: Show reviews with my current combination + Lowest ratting")
+//    public void filter_ratting_21() throws InterruptedException {
+//        testCustomerService.filterCheckBox1AndCheckSort4();
+//
+//    }
+//    @Test(priority = 22,description = "Combine filter with sort by: Show reviews with my current combination + Helpfulness")
+//    public void filter_ratting_22() throws InterruptedException {
+//        testCustomerService.filterCheckBox1AndCheckSort5();
+//    }
 
 
     @Test(priority = 23,description = "Test case Newsletter")
@@ -144,10 +145,10 @@ public class CustomerServiceTest extends BaseTest {
     public void testCase_NL_04() throws InterruptedException {
         testCustomerService.footerSubscribeGlamiraNewsletterWithEmailNull();
     }
-    @Test(priority = 27,description = "Test case Newsletter")
-    public void testCase_NL_05() throws InterruptedException {
-        testCustomerService.footerSubscribeGlamiraNewsletterWithNoCaptcha();
-    }
+//    @Test(priority = 27,description = "Test case Newsletter")
+//    public void testCase_NL_05() throws InterruptedException {
+//        testCustomerService.footerSubscribeGlamiraNewsletterWithNoCaptcha();
+//    }
 
 
 }
