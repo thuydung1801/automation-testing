@@ -583,6 +583,7 @@ public class KeywordWeb {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xPathElement)));
     }
 
+
     public void waitForAjaxToFinish() throws InterruptedException {
         logger.info("waitForAjaxToFinish");
 

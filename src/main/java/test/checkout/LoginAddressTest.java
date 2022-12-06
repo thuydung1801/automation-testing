@@ -94,7 +94,7 @@ public class LoginAddressTest extends BaseTest {
                 "CHECKOUT_LA_DATA_CODE_2", "CHECKOUT_LA_DATA_CITY_2");
         objLoginAddress.chooseAddressOnValidation(true,"CHECKOUT_LA_BTN_APPLY_ADDRESS");
         objLoginAddress.verifyMelissa();
-        objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA_2","CHECKOUT_LBL_ADDRESS_INFO");
+        objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA","CHECKOUT_LBL_ADDRESS_INFO");
     }
 
     @Test(priority = 4,
@@ -116,8 +116,8 @@ public class LoginAddressTest extends BaseTest {
             description = "Add new shipping address with invalid data and using Your input option")
     public void NLA_10() throws InterruptedException {
         logger.info("NLA_10");
-        customerNotLogin();
-        //objLoginAddress.resetForNewCase();
+        //customerNotLogin();
+        objLoginAddress.resetForNewCase();
         objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
@@ -135,8 +135,8 @@ public class LoginAddressTest extends BaseTest {
             description = "Add new shipping address with invalid data and using Your input option")
     public void NLA_11() throws InterruptedException {
         logger.info("NLA_11");
-        //customerNotLogin();
-        objLoginAddress.resetForNewCase();
+        customerNotLogin();
+        //objLoginAddress.resetForNewCase();
         objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
@@ -154,13 +154,19 @@ public class LoginAddressTest extends BaseTest {
             description = "Edit shipping address same as billing")
     public void NLA_12_17() throws InterruptedException {
         objLoginAddress.editAddress();
-        objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA_2","CHECKOUT_LBL_ADDRESS_INFO_2");
+        objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA","CHECKOUT_LBL_ADDRESS_INFO_2");
         objLoginAddress.goBack();
+        objLoginAddress.moveToAddressPage();
+        objLoginAddress.checkOutNotLogin();
+
     }
 
     @Test(priority = 1, description = "Edit billing address ")
-    public void NLA_13() throws InterruptedException {
+    public void NLA_13_14() throws InterruptedException {
         objLoginAddress.editBillingAddress();
+
+
     }
+
 
 }

@@ -3,10 +3,13 @@ package page.checkout;
 import core.BasePage;
 import core.KeywordWeb;
 import core.LogHelper;
+import core.PropertiesFile;
 import org.slf4j.Logger;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
+
+import java.util.Date;
 
 public class LoginAddressPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
@@ -20,7 +23,7 @@ public class LoginAddressPage extends BasePage {
     private RegisterPage objRegist;
 
     public void moveToAddressPage(){
-        keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_CONTINUE_GUEST",30);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_CONTINUE_GUEST",40);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_CONTINUE_GUEST");
     }
@@ -28,12 +31,15 @@ public class LoginAddressPage extends BasePage {
 
     public void fillContactInformation(boolean isSuggestion, String street,
                                        String code, String city) throws InterruptedException {
+        String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         keyword.webDriverWaitForElementPresent("CHECKOUT_LA_TBX_FIRST",20);
         keyword.sendKeys("CHECKOUT_LA_TBX_FIRST","LOGIN_DATA_ALERT_USERNAME");
         keyword.sendKeys("CHECKOUT_LA_TBX_LAST","LOGIN_DATA_ALERT_USERNAME");
-        keyword.sendKeys("CHECKOUT_LA_TBX_EMAIL","LOGIN_DATA_EMAIL");
+        String mail = "linh"+timestamp+"@gmail.com";
+        PropertiesFile.serPropValue("CHECKOUT_LA_DATA_EMAIL",mail);
+        keyword.sendKeys("CHECKOUT_LA_TBX_EMAIL","CHECKOUT_LA_DATA_EMAIL");
         keyword.untilJqueryIsDone(50L);
-        keyword.sendKeys("CHECKOUT_LA_TBX_CFEMAIL","LOGIN_DATA_EMAIL");
+        keyword.sendKeys("CHECKOUT_LA_TBX_CFEMAIL","CHECKOUT_LA_DATA_EMAIL");
         keyword.sendKeys("CHECKOUT_LA_TBX_PHONE","AFFIRM_DATA_PHONE");
         if (isSuggestion){
             keyword.sendKeys("CHECKOUT_LA_TBX_STREET","CHECKOUT_LA_DATA_STREET_2");
@@ -125,6 +131,8 @@ public class LoginAddressPage extends BasePage {
 
     public void goBack() throws InterruptedException {
         keyword.scrollDownToElement("CHECKOUT_LA_BTN_BACK");
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_LA_BTN_BACK");
         keyword.untilJqueryIsDone(50L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_CONTINUE_GUEST",30);
@@ -136,5 +144,22 @@ public class LoginAddressPage extends BasePage {
         verifyMelissa();
         compareAddress("CHECKOUT_DATA_EXPECT_DATA_3","CHECKOUT_LBL_ADDRESS_INFO");
     }
+
+    public void checkOutNotLogin() throws InterruptedException {
+        keyword.click("CHECKOUT_LA_PROCEED");
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("CHECKOUT_CBX_CHECKOUT_BANK");
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("CHECKOUT_BTN_ORDER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 30);
+        keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
+        keyword.sendKeys("SUCCESS_TBX_PASSWORD","CHECKOUT_DATA_PASSWORD_CREATE");
+        keyword.click("SUCCESS_BTN_CREATE_ACCOUNT");
+    }
+
 
 }
