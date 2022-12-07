@@ -1,3 +1,48 @@
+INFO  | 2022-12-06 16:24:15 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2022-12-06 16:24:16 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO  | 2022-12-06 16:24:16 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO  | 2022-12-06 16:24:18 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2022-12-06 16:24:18 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-12-06 16:24:18 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@17d816b3
+INFO  | 2022-12-06 16:24:32 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:256) - Maximizing browser window...
+INFO  | 2022-12-06 16:24:32 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:312) - login by authen link withtest !test123!
+INFO  | 2022-12-06 16:24:43 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:604) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2022-12-06 16:24:43 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickBTN_COOKIES
+INFO  | 2022-12-06 16:24:45 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:457) -  scrolling to position
+INFO  | 2022-12-06 16:25:03 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:271) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant
+INFO  | 2022-12-06 16:26:10 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:433) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2022-12-06 16:26:11 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2022-12-06 16:26:16 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickCHECKOUT_BTN_MINICART
+INFO  | 2022-12-06 16:26:17 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickCHECKOUT_MINICART_VIEWALL
+INFO  | 2022-12-06 16:26:42 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickCHECKOUT_BTN_CHECKOUT
+INFO  | 2022-12-06 16:27:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:604) - webDriverWaitForElementPresentCHECKOUT_LBL_CHECKOUT
+INFO  | 2022-12-06 16:27:12 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:144) - send keysCHECKOUT_LA_TBX_PASSwith LOGIN_DATA_PASSWORD
+INFO  | 2022-12-06 16:27:12 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickCHECKOUT_LA_BTN_LOGIN
+INFO  | 2022-12-06 16:27:13 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:679) - compare from CHECKOUT_MESSAGES_UPDATE_24 with CHECKOUT_LA_LBL_ERROR_MAIL
+INFO  | 2022-12-06 16:27:13 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:271) - Navigating to URL...https://dev3.glamira.com/glgb/
+INFO  | 2022-12-06 16:27:20 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickLOGIN_BTN_LOGIN
+INFO  | 2022-12-06 16:27:20 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:604) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
+INFO  | 2022-12-06 16:27:23 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:144) - send keysLOGIN_TXT_EMAILwith LOGIN_DATA_EMAIL
+INFO  | 2022-12-06 16:27:26 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:144) - send keysLOGIN_TXT_PASSWORDwith LOGIN_DATA_PASSWORD
+INFO  | 2022-12-06 16:27:28 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2022-12-06 16:27:33 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:271) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant
+INFO  | 2022-12-06 16:27:58 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:433) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2022-12-06 16:27:59 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2022-12-06 16:28:31 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickCHECKOUT_BTN_MINICART
+INFO  | 2022-12-06 16:28:32 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickCHECKOUT_MINICART_VIEWALL
+INFO  | 2022-12-06 16:28:46 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickCHECKOUT_BTN_CHECKOUT
+INFO  | 2022-12-06 16:28:57 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:604) - webDriverWaitForElementPresentCHECKOUT_LBL_CHECKOUT
+INFO  | 2022-12-06 16:28:58 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickCHECKOUT_HPL_NEW_ADDRESS_LOGIN
+INFO  | 2022-12-06 16:28:59 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:604) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
+INFO  | 2022-12-06 16:28:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:144) - send keysCHECKOUT_LA_TBX_FIRST_3with LOGIN_DATA_ALERT_USERNAME
+INFO  | 2022-12-06 16:28:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:144) - send keysCHECKOUT_LA_TBX_LAST_3with LOGIN_DATA_ALERT_USERNAME
+INFO  | 2022-12-06 16:28:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:144) - send keysCHECKOUT_LA_TBX_PHONE_3with AFFIRM_DATA_PHONE
+INFO  | 2022-12-06 16:28:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:144) - send keysCHECKOUT_LA_TBX_STREET_4with CHECKOUT_LA_DATA_STREET_1
+INFO  | 2022-12-06 16:28:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:144) - send keysCHECKOUT_LA_TBX_ZIP_4with CHECKOUT_LA_DATA_CODE_1
+INFO  | 2022-12-06 16:28:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:144) - send keysCHECKOUT_LA_TBX_CITY_4with CHECKOUT_LA_DATA_CITY_1
+INFO  | 2022-12-06 16:28:59 | [main] core.KeywordWeb (KeywordWeb.java:click:93) - clickCHECKOUT_LA_BTN_SAVE_ADDRESS_2
+INFO  | 2022-12-06 16:30:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:604) - webDriverWaitForElementPresentCHECKOUT_LA_SHIPMENT_SELECTED
+INFO  | 2022-12-06 16:30:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:604) - webDriverWaitForElementPresentCHECKOUT_LA_MELISSA_ENABLE
 INFO  | 2022-12-06 17:20:38 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
 INFO  | 2022-12-06 17:20:40 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
 INFO  | 2022-12-06 17:20:40 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
@@ -8,7 +53,7 @@ INFO  | 2022-12-06 17:20:58 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWi
 INFO  | 2022-12-06 17:20:58 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:313) - login by authen link withtest !test123!
 INFO  | 2022-12-06 17:21:42 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:575) - webDriverWaitForElementPresent
 INFO  | 2022-12-06 17:21:42 | [main] core.KeywordWeb (KeywordWeb.java:click:105) - clickBTN_COOKIES
-INFO  | 2022-12-06 17:21:44 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:448) -  scrolling to position 
+INFO  | 2022-12-06 17:21:44 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:448) -  scrolling to position
 INFO  | 2022-12-06 17:21:58 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:272) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
 INFO  | 2022-12-06 17:22:51 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:424) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
 INFO  | 2022-12-06 17:22:51 | [main] core.KeywordWeb (KeywordWeb.java:imWait:570) - implicitlyWait
