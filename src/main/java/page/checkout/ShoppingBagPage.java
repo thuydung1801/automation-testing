@@ -140,6 +140,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_BTN_MINICART");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(5000);
         keyword.click("CHECKOUT_MINICART_VIEWALL");
         keyword.untilJqueryIsDone(50L);
     }
@@ -301,7 +302,7 @@ public class ShoppingBagPage extends BasePage {
     @Step("click to choose free gift wrapping")
     public void moveToPagecheckOut() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
-        keyword.untilJqueryIsDone(30L);
+        Thread.sleep(1000);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_CHECKOUT");
         keyword.untilJqueryIsDone(30L);

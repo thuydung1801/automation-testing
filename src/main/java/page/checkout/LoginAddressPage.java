@@ -65,10 +65,10 @@ public class LoginAddressPage extends BasePage {
     }
 
     public void addNewAddress(boolean isSuggestion, String street,
-                              String code, String city) throws InterruptedException {
+                              String code, String city, String btnAdd) throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.click("CHECKOUT_HPL_NEW_ADDRESS");
+        keyword.click(btnAdd);
         keyword.untilJqueryIsDone(50L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LA_TBX_FIRST",20);
         keyword.sendKeys("CHECKOUT_LA_TBX_FIRST_2","LOGIN_DATA_ALERT_USERNAME");
@@ -180,6 +180,7 @@ public class LoginAddressPage extends BasePage {
         if (flag.equals("noEmail")){
             keyword.untilJqueryIsDone(50L);
             keyword.sendKeys("CHECKOUT_LA_TBX_PASS","LOGIN_DATA_PASSWORD");
+            keyword.untilJqueryIsDone(30L);
             keyword.click("CHECKOUT_LA_BTN_LOGIN");
             keyword.untilJqueryIsDone(30L);
             keyword.assertEquals("CHECKOUT_MESSAGES_UPDATE_24","CHECKOUT_LA_LBL_ERROR_MAIL");
@@ -199,7 +200,7 @@ public class LoginAddressPage extends BasePage {
     }
     public void addNewBillingAddress(boolean isSuggestion, String street,
                               String code, String city) throws InterruptedException {
-        keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(70L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_HPL_NEW_ADDRESS_LOGIN");
         keyword.untilJqueryIsDone(50L);
@@ -209,8 +210,8 @@ public class LoginAddressPage extends BasePage {
         keyword.sendKeys("CHECKOUT_LA_TBX_PHONE_3","AFFIRM_DATA_PHONE");
         if (isSuggestion){
             keyword.sendKeys("CHECKOUT_LA_TBX_STREET_4","CHECKOUT_LA_DATA_STREET_2");
-            keyword.webDriverWaitForElementPresent("CHECKOUT_LA_SUGGESTLIST_2",10);
-            keyword.click("CHECKOUT_LA_SUGGESTLIST_2");
+            keyword.webDriverWaitForElementPresent("CHECKOUT_LA_SUGGESTLIST",10);
+            keyword.click("CHECKOUT_LA_SUGGESTLIST");
         }else {
             keyword.sendKeys("CHECKOUT_LA_TBX_STREET_4",street);
             keyword.sendKeys("CHECKOUT_LA_TBX_ZIP_4",code);
@@ -218,6 +219,32 @@ public class LoginAddressPage extends BasePage {
         }
         keyword.click("CHECKOUT_LA_BTN_SAVE_ADDRESS_2");
     }
+
+    public void removeAddress() throws InterruptedException {
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LA_BTN_REMOVE_BILLING_ADDRESS",20);
+        keyword.untilJqueryIsDone(70L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("CHECKOUT_LA_BTN_REMOVE_BILLING_ADDRESS");
+        keyword.untilJqueryIsDone(70L);
+        keyword.click("CHECKOUT_LA_BTN_REMOVE_BILLING_ADDRESS_CF");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(10,"CHECKOUT_LA_BTN_REMOVE_BILLING_ADDRESS");
+    }
+
+    public void checkNumberOfAddress(String expected) throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        String count = String.valueOf(keyword.countNumberOfElement("CHECKOUT_LA_LIST_ADDRESS"));
+        logger.info(count);
+        keyword.simpleAssertEquals(expected,count);
+    }
+
+    public void proceedAddress() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
+        keyword.untilJqueryIsDone(50L);
+    }
+
 
 
 }

@@ -75,6 +75,19 @@ public class KeywordWeb {
         navigateToUrl(URL);
     }
 
+    public void openNewTabFromTabBase(String url) {
+        driver.get(url);
+        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(0));
+        // driver.navigate().to(url);
+        String URL = PropertiesFile.getPropValue(url);
+        if (URL == null) {
+            URL = url;
+        }
+        navigateToUrl(URL);
+    }
+
     public void closeBrowser() {
         logger.info("close browser: ");
         driver.quit();
@@ -594,6 +607,15 @@ public class KeywordWeb {
             return status;
 
         }
+        public Integer countNumberOfElement(String element){
+        logger.info("count the number of element "+ element);
+            String xPathElement = PropertiesFile.getPropValue(element);
+            if (xPathElement == null) {
+                xPathElement = element;
+            }
+            int xpathCount = driver.findElements(By.xpath(xPathElement)).size();
+            return  xpathCount+1;
+        }
         // wait keywords
 
         public void imWait ( long timeout){
@@ -639,6 +661,7 @@ public class KeywordWeb {
             Thread.sleep(1000);
         }
         public String waitForElementNotVisible ( int timeOutInSeconds, String elementXPath){
+        logger.info("elemnt "+ elementXPath+" not visible");
             if ((driver == null) || (elementXPath == null) || elementXPath.isEmpty()) {
 
                 return "Wrong usage of WaitforElementNotVisible()";
@@ -688,15 +711,62 @@ public class KeywordWeb {
             String actualText = driver.findElement(By.xpath(xPathElement2)).getText();
             Assert.assertEquals(actualText, xPathElement1);
 
-        }
-        public void openNewTabFromTabBase ( int tabNum, String url){
-            logger.info("open new tab from tab base");
-            String xPathElement1 = PropertiesFile.getPropValue(url);
-            if (xPathElement1 == null) {
-                xPathElement1 = url;
-            }
-            executeJavaScript("window.open()");
-            switchToTab(tabNum);
-            navigateToUrl(xPathElement1);
-        }
     }
+
+    public void openNewTabFromTabBase(int tabNum, String url){
+        logger.info("open new tab from tab base");
+        String xPathElement1 = PropertiesFile.getPropValue(url);
+        if (xPathElement1 == null) {
+            xPathElement1 = url;
+        }
+        executeJavaScript("window.open()");
+        switchToTab(tabNum);
+        navigateToUrl(xPathElement1);
+    }
+
+    public void recaptchaClickSubmit() {
+        logger.info("click recaptcha");
+        new WebDriverWait(driver, 10).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[starts-with(@name, 'a-') and starts-with(@src, 'https://www.google.com/recaptcha/api2/anchor?ar=1')]")));
+
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.recaptcha-checkbox-border"))).click();
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("#footer_newsletter_recaptcha > div.box-recatpcha-actions > button"))).click();
+
+    }
+    public void copyPaste(String element1,String element2, String content) throws InterruptedException {
+        String xPathElement1 = PropertiesFile.getPropValue(element1);
+        String xPathElement2 = PropertiesFile.getPropValue(element2);
+        String xPathContent = PropertiesFile.getPropValue(content);
+        if (xPathElement1 == null) {
+            xPathElement1 = element1;
+        }if (xPathElement2 == null) {
+            xPathElement2 = element2;
+        }if (xPathContent == null) {
+            xPathContent = content;
+        }
+        Actions act = new Actions(driver);
+        WebElement ele1 = driver.findElement(By.xpath(xPathElement1));
+        WebElement ele2 = driver.findElement(By.xpath(xPathElement2));
+
+        act.moveToElement(ele1).click().sendKeys(xPathContent);
+        act.keyDown(Keys.CONTROL).sendKeys("a");
+        act.sendKeys("c");
+        ele2.clear();
+        untilJqueryIsDone(30L);
+        act.moveToElement(ele2).click().keyDown(Keys.CONTROL).sendKeys("v");
+        act.keyUp(Keys.CONTROL).build().perform();
+    }
+    public String getAttribute(String element) {
+        logger.info("get Attribute of" + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        WebElement  b = driver.findElement(By.xpath(xPathElement));
+        String c = b.getAttribute("style");
+        logger.info(c);
+        return c;
+    }
+
+}
+
+
