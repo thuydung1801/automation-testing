@@ -1,11 +1,18 @@
 package page;
 
 import core.*;
+import page.home.LoginPage;
+import page.home.RegisterPage;
+import page.signinSignup.SignInPage;
+import page.signinSignup.SignUpPage;
 
 public class ListingPage extends BasePage {
     public ListingPage(KeywordWeb key) {
         super(key);
     }
+
+    private SignInPage objSigin;
+    private SignUpPage objSignUp;
 
     public void acceptAllCookies() {
         keyword.webDriverWaitForElementPresent("BTN_COOKIES", 50);
@@ -67,6 +74,7 @@ public class ListingPage extends BasePage {
         keyword.untilJqueryIsDone(20L);
         choseFilter("LTP_CHOSE_STONE_CHECK_AJAX", "LTP_CHOSE_STONE_CHECK_AJAX", "LTP_PRICE_ACTIVE");
     }
+
     //
     public void filterItem() throws InterruptedException {
         keyword.scrollDownToElement("LTP_FILTER_STONES");
@@ -74,6 +82,26 @@ public class ListingPage extends BasePage {
         keyword.click("LTP_FILTER_STONES");
         keyword.untilJqueryIsDone(20L);
         keyword.assertEqualsAfterCutting("LTP_FILTER_DIAMOND", "LTP_VERIFY_FILTER_STONES");
+        keyword.untilJqueryIsDone(20L);
+        keyword.checkStatusIsDisplay("LTP_VERIFY_IMG");
+    }
+
+    //    Input data of Min > Max price
+    public void enterPrice() throws InterruptedException {
+        objSignUp = new SignUpPage(this.keyword);
+        keyword.scrollDownToElement("LTP_PRICE");
+        objSignUp.clearTextAndSendKey("LTP_INPUT_MIN", "LTP_INPUT_MIN", "LTP_DATA_MIN");
+        objSignUp.clearTextAndSendKey("LTP_INPUT_MAX", "LTP_INPUT_MAX", "LTP_MAX");
+        keyword.click("LTP_BTN_SUBMIT_PRICE");
+        keyword.untilJqueryIsDone(50L);
+        keyword.assertEquals("LTP_MESSAGE_NOTIFY", "LTP_ACTUAL");
+    }
+
+    //
+    public void checkUploadPage() throws InterruptedException {
+        keyword.scrollDownToElement("LTP_PRODUCT_VIEW");
+        keyword.untilJqueryIsDone(70L);
+        keyword.checkStatusIsDisplay("LTP_CHECK_VIEW_PERCENT");
     }
 
     public void removeItemsFilter() throws InterruptedException {

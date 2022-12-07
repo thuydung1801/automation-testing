@@ -60,6 +60,16 @@ public class ListingPageTest extends BaseTest {
         logger.info("testCase_LP07");
         testListingPage.filterItem();
     }
+    @Test(priority = 8, description = "Input data of Min > Max price")
+    public void testCase_LTP09() throws InterruptedException {
+        logger.info("testCase_LP09");
+        testListingPage.enterPrice();
+    }
+    @Test(priority = 9, description = "Loading page endless with Upload more button instead of pagination")
+    public void testCase_LTP015() throws InterruptedException {
+        logger.info("testCase_LP015");
+        testListingPage.checkUploadPage();
+    }
 ////
 //    @Test(priority = 6, description = "---Check Message Popup")
 //    public void testCase_LTP05() throws InterruptedException {
