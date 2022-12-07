@@ -70,20 +70,19 @@ public class ListingPageTest extends BaseTest {
         logger.info("testCase_LP015");
         testListingPage.checkUploadPage();
     }
-////
-//    @Test(priority = 6, description = "---Check Message Popup")
-//    public void testCase_LTP05() throws InterruptedException {
-//        Thread.sleep(1000);
-//        testListingPage.popupMessage();
-//    }
-////
-//    @Test(priority = 7, description = "---Check Like Product")
-//    public void testCase_LTP06() throws InterruptedException {
-//        Thread.sleep(1000);
-//        testListingPage.likeProduct
-//                (
-//                        "LTP_BTN_VIEW_DETAIL_BOOKLIKE"
-//                );
-//        testListingPage.subLikeProduct("LTP_BTN_SAVED_ITEM");
-//    }
+    @Test(priority = 10, description = "The number of items in brackets must be the item limit each time the page loads, specifically: Upload More(30)")
+    public void testCase_LTP016() throws InterruptedException {
+        logger.info("testCase_LP016");
+        testListingPage.checkUploadMore30Item();
+    }
+    @Test(priority = 11, description = "TLoading page endless with \"Upload more\" button - do not display this text when not a product load")
+    public void testCase_LTP017() throws InterruptedException {
+        logger.info("testCase_LP017");
+        testListingPage.notShowButtonUploadMore();
+    }
+//    @Test(priority = 12, description = "Check show button : Upload more (Number products of listing page < 30 products)")
+    public void testCase_LTP018() throws InterruptedException {
+        logger.info("testCase_LP018");
+        testListingPage.notShowButtonUploadMoreWhenProductOfPageLessThan30();
+    }
 }

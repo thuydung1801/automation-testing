@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.*;
 import org.slf4j.Logger;
 import org.testng.Assert;
@@ -19,7 +18,6 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
@@ -135,6 +133,15 @@ public class KeywordWeb {
         return driver.findElement(By.xpath(text)).getText();
     }
 
+    public String getTextValue(String element, int indexStart, int indexEnd) {
+        logger.info("get Text of" + element);
+        String text = PropertiesFile.getPropValue(element);
+        if (text == null) {
+            text = element;
+        }
+        return driver.findElement(By.xpath(text)).getText().substring(indexStart,indexEnd);
+    }
+
     public void sendKeys(String element, String content) {
         logger.info("send keys" + element + "with " + content);
         String xPathElement1 = PropertiesFile.getPropValue(element);
@@ -221,17 +228,6 @@ public class KeywordWeb {
         WebElement elementRep = driver.findElement(By.xpath(xPathElement));
         action.moveToElement(elementRep).perform();
     }
-    public void hoverAndClicks(String element) {
-        logger.info("Move To Element" + element);
-        String xPathElement = PropertiesFile.getPropValue(element);
-        if (xPathElement == null) {
-            xPathElement = element;
-        }
-        Actions action = new Actions(driver);
-        WebElement elementRep = driver.findElement(By.xpath(xPathElement));
-        action.moveToElement(elementRep).clickAndHold();
-    }
-
     public void executeJavaScript(String command) {
         logger.info("Executing JavaScript");
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -507,7 +503,7 @@ public class KeywordWeb {
     }
 
     //if element is not displayed, testcase will keep running, otherwise it will stop
-    public void checkElementIsNotDisplayed(String element){
+    public boolean checkElementIsNotDisplayed(String element){
         logger.info("checkElementVisibleOrNot"+ element);
         String xPathElement = PropertiesFile.getPropValue(element);
         if (xPathElement == null) {
@@ -522,6 +518,7 @@ public class KeywordWeb {
             //pass the test if element is not found in try statement
             Assert.assertTrue(true);
         }
+        return false;
     }
 
     //if element is displayed, testcase will keep running, otherwise it will stop
@@ -666,7 +663,7 @@ public class KeywordWeb {
         Assert.assertEquals(actualText, xPathElement1);
 
     }
-    public void assertEqualsAfterCutting(String expected, String actual) {
+    public void assertEqualsAfterCutting(String expected, String actual, int indexStart, int indexEnd) {
         logger.info("compare from " + expected + " with " + actual);
         String xPathElement1 = PropertiesFile.getPropValue(expected);
         String xPathElement2 = PropertiesFile.getPropValue(actual);
@@ -676,7 +673,7 @@ public class KeywordWeb {
         if (xPathElement2 == null) {
             xPathElement2 = actual;
         }
-        String actualText = driver.findElement(By.xpath(xPathElement2)).getText().substring(17, 31);
+        String actualText = driver.findElement(By.xpath(xPathElement2)).getText().substring(indexStart, indexEnd);
         Assert.assertEquals(actualText, xPathElement1);
 
     }

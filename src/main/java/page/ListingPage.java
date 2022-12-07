@@ -1,6 +1,7 @@
 package page;
 
 import core.*;
+import io.cucumber.java.sl.In;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
@@ -81,20 +82,27 @@ public class ListingPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click("LTP_FILTER_STONES");
         keyword.untilJqueryIsDone(20L);
-        keyword.assertEqualsAfterCutting("LTP_FILTER_DIAMOND", "LTP_VERIFY_FILTER_STONES");
+        keyword.assertEqualsAfterCutting("LTP_FILTER_DIAMOND", "LTP_VERIFY_FILTER_STONES", 17, 31);
         keyword.untilJqueryIsDone(20L);
         keyword.checkStatusIsDisplay("LTP_VERIFY_IMG");
     }
 
-    //    Input data of Min > Max price
-    public void enterPrice() throws InterruptedException {
+    //
+    public void enterDataFilter(String dataMin, String dataMax, String expected, String actual) throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
         keyword.scrollDownToElement("LTP_PRICE");
-        objSignUp.clearTextAndSendKey("LTP_INPUT_MIN", "LTP_INPUT_MIN", "LTP_DATA_MIN");
-        objSignUp.clearTextAndSendKey("LTP_INPUT_MAX", "LTP_INPUT_MAX", "LTP_MAX");
+        objSignUp.clearTextAndSendKey("LTP_INPUT_MIN", "LTP_INPUT_MIN", dataMin);
+        objSignUp.clearTextAndSendKey("LTP_INPUT_MAX", "LTP_INPUT_MAX", dataMax);
         keyword.click("LTP_BTN_SUBMIT_PRICE");
         keyword.untilJqueryIsDone(50L);
-        keyword.assertEquals("LTP_MESSAGE_NOTIFY", "LTP_ACTUAL");
+//        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
+        keyword.assertEquals(expected, actual);
+    }
+
+    //    Input data of Min > Max price
+    public void enterPrice() throws InterruptedException {
+        enterDataFilter("LTP_DATA_MIN", "LTP_MAX", "LTP_MESSAGE_NOTIFY", "LTP_ACTUAL");
     }
 
     //
@@ -102,6 +110,42 @@ public class ListingPage extends BasePage {
         keyword.scrollDownToElement("LTP_PRODUCT_VIEW");
         keyword.untilJqueryIsDone(70L);
         keyword.checkStatusIsDisplay("LTP_CHECK_VIEW_PERCENT");
+        keyword.untilJqueryIsDone(50L);
+        keyword.checkStatusIsDisplay("LTP_BTN_LOADING_MORE");
+        keyword.untilJqueryIsDone(50L);
+        keyword.scrollDownToElement("LTP_BTN_LOADING_MORE");
+        keyword.click("LTP_BTN_LOADING_MORE");
+        keyword.checkStatusIsDisplay("LTP_LOADING_MORE_ITEM");
+    }
+
+    //    check add  more 30 item
+    public void checkUploadMore30Item() throws InterruptedException {
+        keyword.click("LTP_BTN_LOADING_MORE");
+        keyword.untilJqueryIsDone(30L);
+        keyword.scrollDownToElement("LTP_SCROLL_TO_FOOTER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.assertEqualsAfterCutting("LTP_DATA_VIEWED_PRODUCT_ITEM", "LYP_VIEW_LABEL_TEXT", 14, 17);
+    }
+
+    //TLoading page endless with "Upload more" button - do not display this text when not a product load
+    public void notShowButtonUploadMore() throws InterruptedException {
+        keyword.scrollDownToElement("LTP_PRICE");
+        objSignUp.clearTextAndSendKey("LTP_INPUT_MIN", "LTP_INPUT_MIN", "LTP_DATA_MIN1");
+        objSignUp.clearTextAndSendKey("LTP_INPUT_MAX", "LTP_INPUT_MAX", "LTP_MAX1");
+        keyword.click("LTP_BTN_SUBMIT_PRICE");
+        keyword.untilJqueryIsDone(50L);
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
+        if (!checkDisplay()) {
+            keyword.assertEquals("LTP_MESSAGE_NOT_FILTER_PRODUCT", "LTP_XPATH_MESSAGE_NOT_FILTER_PRODUCT");
+        } else {
+            System.out.println("NOOOOO");
+        }
+    }
+
+    //    Check show button : Upload more (Number products of listing page < 30 products
+    public void notShowButtonUploadMoreWhenProductOfPageLessThan30() throws InterruptedException {
+        enterDataFilter("LTP_DATA_MIN2", "LTP_DATA_MAX2", "LTP_MESSAGE_EXPECT", "LYP_VIEW_LABEL_TEXT");
     }
 
     public void removeItemsFilter() throws InterruptedException {
@@ -162,5 +206,9 @@ public class ListingPage extends BasePage {
         keyword.imWait(2);
         keyword.clickByCss("LTP_MODAL_OVERLAY");
         keyword.clickByCss("LTP_MODAL_OVERLAY");
+    }
+
+    public boolean checkDisplay() throws InterruptedException {
+        return keyword.verifyElementPresent("LTP_BTN_LOADING_MORE");
     }
 }
