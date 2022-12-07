@@ -17,6 +17,7 @@
             <methods>
                 <include name="NLA_19"/>
                 <include name="NLA_35"/>
+                <include name="NLA_36"/>
             </methods>
         </class>
     </classes>

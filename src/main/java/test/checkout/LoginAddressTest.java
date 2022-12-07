@@ -38,6 +38,7 @@ public class LoginAddressTest extends BaseTest {
         keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
         objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
                 "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
+        keyword.untilJqueryIsDone(50L);
     }
 
     @Test(priority = 1,
