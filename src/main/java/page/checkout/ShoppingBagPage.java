@@ -30,14 +30,18 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         //keyword.click("CHECKOUT_ADDPRODUCT_BTN_CLOSE");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD_SIZE");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
 
@@ -48,9 +52,11 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
 
@@ -78,7 +84,8 @@ public class ShoppingBagPage extends BasePage {
     public void addProductWithDoubleEngraving(String url) throws InterruptedException {
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_ADDPRODUCT_LBL_ENGRAVING");
         keyword.imWait(10);
         keyword.sendKeys("CHECKOUT_ADDPRODUCT_TXT_ENGRAVING_18_WOMEN",
@@ -88,14 +95,18 @@ public class ShoppingBagPage extends BasePage {
                 "CHECKOUT_DATA_ENGRAVING");
         keyword.imWait(3);
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         //keyword.click(PropertiesFile.getPropValue("CHECKOUT_ADDPRODUCT_BTN_CLOSE"));
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD_SIZE");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
     }
 
     //add any product with attached gift
@@ -105,31 +116,39 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(5000);
         keyword.navigateToUrl(url);
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
         keyword.click("CHECKOUT_CHECKBOX_WOMENRING_GIFT");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
         keyword.click("CHECKOUT_CHECKBOX_MENRING_GIFT");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_CLOSE");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
 
     }
     //click to view all product in shopping bag
     public void clickShoppingBagPage() throws InterruptedException {
-        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(1000);
         keyword.click("CHECKOUT_BTN_MINICART");
-        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_MINICART_VIEWALL");
-        keyword.imWait(10);
+        keyword.untilJqueryIsDone(50L);
     }
     //remove any product depends on the type of product
     public void removeProduct(String typeOfProduct) throws InterruptedException {
         keyword.click(typeOfProduct);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_REMOVE",10);
-        keyword.imWait(10);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_CONFIRM_REMOVE");
         if(!keyword.verifyElementPresent(typeOfProduct)){
             logger.info("Passed");
@@ -167,19 +186,21 @@ public class ShoppingBagPage extends BasePage {
     public void clickEdit(String btnEdit) throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_HEADER",10);
         keyword.click(btnEdit);
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
     }
 
     //edit option of ring to check update case
     public void editOptions() throws InterruptedException {
         keyword.click("CHECKOUT_CBX_BLACKDIAMOND");
-        Thread.sleep(1000);
+        keyword.untilJqueryIsDone(30L);
         keyword.click("CHECKOUT_LBL_METAL");
         keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_METAL",10);
         keyword.scrollDownToElement("CHECKOUT_BTN_UPDATE");
         keyword.click("CHECKOUT_CBX_METAL");
         keyword.click("CHECKOUT_BTN_UPDATE");
-        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",10);
+        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_21",30);
     }
 
     //edit earing is already in the cart
@@ -203,30 +224,32 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_CBX_SIZE_L");
         keyword.scrollDownToElement("CHECKOUT_BTN_UPDATE");
         keyword.click("CHECKOUT_BTN_UPDATE");
-        keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_23",10);
+        //keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_23",10);
     }
     //input engraving of single ring
     public void inputEngravingwithSingleRing(String data, String btnAdd, String engraving) throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_VIEWDETAIL",5);
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(30L);
         keyword.verifyElementPresent(btnAdd);
         keyword.click(btnAdd);
         keyword.imWait(30);
         keyword.webDriverWaitForElementPresent("CHECKOUT_TITLE_ENGRAVING",5);
         keyword.imWait(30);
         keyword.clearText("CHECKOUT_TXT_ENGRAVING");
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(30L);
         keyword.sendKeys("CHECKOUT_TXT_ENGRAVING", data);
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(30L);
         keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.assertEquals(data, engraving);
     }
     //input engraving of couple rings
     public void inputEngravingwithCoupleRing(String data, String btnAdd, String txtWomen,
                                              String txtMen ) throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_VIEWDETAIL",5);
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click(btnAdd);
         keyword.imWait(10);
         keyword.webDriverWaitForElementPresent("CHECKOUT_TITLE_ENGRAVING",5);
@@ -256,7 +279,8 @@ public class ShoppingBagPage extends BasePage {
         if(flag) {
             keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
             Thread.sleep(10000);
-            keyword.assertEquals(dataExpected + " - " + dataExpected, engraving);
+            String expect = PropertiesFile.getPropValue(dataExpected);
+            keyword.assertEquals(expect + " - " + expect, engraving);
         }
     }
     //compareData
@@ -277,7 +301,10 @@ public class ShoppingBagPage extends BasePage {
     @Step("click to choose free gift wrapping")
     public void moveToPagecheckOut() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_CHECKOUT");
+        keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",10);
     }
     @Step("common checkout")
@@ -364,7 +391,7 @@ public class ShoppingBagPage extends BasePage {
     }
     //check out with klarna payment method
     public void checkOutWithKlarnaLater() throws InterruptedException {
-        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(50L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER",10);
         keyword.click("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER");
         keyword.untilJqueryIsDone(50L);
@@ -373,12 +400,10 @@ public class ShoppingBagPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.switchToIFrameByXpath("KLARNA_IFRAME");
-        Thread.sleep(10000);
         keyword.webDriverWaitForElementPresent("KLARNA_BTN_CONTINUE",30);
         keyword.click("KLARNA_BTN_CONTINUE");
         keyword.webDriverWaitForElementPresent("KLARNA_TBX_OTP",10);
         keyword.sendKeys("KLARNA_TBX_OTP", "KLARNA_DATA_OTP");
-        Thread.sleep(10000);
         keyword.webDriverWaitForElementPresent("KLARNA_BTN_CONFIRM",10);
         keyword.click("KLARNA_BTN_CONFIRM");
         keyword.click("KLARNA_BTN_FAVOURITE");
