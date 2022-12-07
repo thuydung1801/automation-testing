@@ -477,6 +477,10 @@ public class CustomerServicePage extends BasePage {
         filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_3","CUS_PRD_FILTER_CHECKSORT_5");
         checkVerifyCheckBoxAndCheckSort5("CUS_VERIFY_IMG_PRD_FILTER_CHECKBOX_3");
     }
+    public void filterCheckBox4AndCheckSort1() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKSORT_4","CUS_PRD_FILTER_CHECKSORT_1");
+        checkVerifyCheckBoxAndCheckSort1("CUS_VERIFY_PRD_FILTER_CHECKBOX_4");
+    }
 
     public void commonNewsLetterWithAccount() throws InterruptedException {
         keyword.imWait(3);

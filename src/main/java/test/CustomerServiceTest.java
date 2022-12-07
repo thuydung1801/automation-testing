@@ -167,6 +167,10 @@ public class CustomerServiceTest extends BaseTest {
     public void filter_ratting_32() throws InterruptedException {
         testCustomerService.filterCheckBox3AndCheckSort5();
     }
+    @Test(priority = 33,description = "Combine filter with sort by: Verified Buyers + Relevance")
+    public void filter_ratting_33() throws InterruptedException {
+        testCustomerService.filterCheckBox4AndCheckSort1();
+    }
 
 
 
