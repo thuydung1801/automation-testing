@@ -12,6 +12,9 @@ import java.security.PublicKey;
 public class SignInPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private SignUpPage objSignUp;
+    public SignInPage() {
+        super();
+    }
 
     public SignInPage(KeywordWeb key) {
         super(key);
