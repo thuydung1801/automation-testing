@@ -173,7 +173,9 @@ public class MarketingPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
-        signInPage.chooseMenuCustomer();
+        signInPage.chooseItemCustomer("LOGIN_BTN_CUSTOMER","LOGIN_BTN_CUSTOMER",
+                "SIGNUP_VERIFY_CUSTOMER","LOGIN_BTN_EMAIL_LOG",
+                "SIGNUP_VERIFY_EMAIL_LOG");
         adminChooseEmailLog(text);
         ipDataGirftCetificate("COM_INP_DATA_NAME","COM_INP_DATA_EMAIL","COM_DATA_TITLE","COM_INP_DATA_MESSAGE",null,"GCE_BTN_SUBMIT");
         keyword.untilJqueryIsDone(30L);
