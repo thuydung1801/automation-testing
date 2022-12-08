@@ -30,8 +30,10 @@ import java.util.function.Function;
 public class KeywordWeb {
     private static Logger logger = LogHelper.getLogger();
     public static WebDriver driver;
+
     public KeywordWeb() {
     }
+
     public void openBrowser(String browser, String... url) {
         logger.info("Open browser");
         switch (browser.toUpperCase()) {
@@ -124,6 +126,7 @@ public class KeywordWeb {
         Thread.sleep(1000);
         driver.findElement(By.xpath(ele)).click();
     }
+
     public String getText(String element) {
         logger.info("get Text of" + element);
         String text = PropertiesFile.getPropValue(element);
@@ -139,7 +142,7 @@ public class KeywordWeb {
         if (text == null) {
             text = element;
         }
-        return driver.findElement(By.xpath(text)).getText().substring(indexStart,indexEnd);
+        return driver.findElement(By.xpath(text)).getText().substring(indexStart, indexEnd);
     }
 
     public void sendKeys(String element, String content) {
@@ -228,6 +231,7 @@ public class KeywordWeb {
         WebElement elementRep = driver.findElement(By.xpath(xPathElement));
         action.moveToElement(elementRep).perform();
     }
+
     public void executeJavaScript(String command) {
         logger.info("Executing JavaScript");
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -337,6 +341,7 @@ public class KeywordWeb {
             logger.info("Listing window ID..." + windowid);
         }
     }
+
     public void switchToIFrameByXpath(String element) {
         logger.info("Switching to Iframe");
         String xPathElement = PropertiesFile.getPropValue(element);
@@ -503,8 +508,8 @@ public class KeywordWeb {
     }
 
     //if element is not displayed, testcase will keep running, otherwise it will stop
-    public boolean checkElementIsNotDisplayed(String element){
-        logger.info("checkElementVisibleOrNot"+ element);
+    public boolean checkElementIsNotDisplayed(String element) {
+        logger.info("checkElementVisibleOrNot" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
         if (xPathElement == null) {
             xPathElement = element;
@@ -522,8 +527,25 @@ public class KeywordWeb {
     }
 
     //if element is displayed, testcase will keep running, otherwise it will stop
-    public void checkElementIsDisplayed(String element){
-        logger.info("checkElementVisibleOrNot"+ element);
+    public void checkElementIsDisplayed(String element) {
+        logger.info("checkElementVisibleOrNot" + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        try {
+            driver.findElement(By.xpath(xPathElement));
+            //I want to pass the test here if above element is found
+            Assert.assertTrue(true);
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            //fail the test if element is not found in try statement
+            Assert.assertTrue(false);
+        }
+    }
+
+    public void checkElementNotIsDisplayed(String element) {
+        logger.info("checkElementVisibleOrNot" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
         if (xPathElement == null) {
             xPathElement = element;
@@ -564,8 +586,6 @@ public class KeywordWeb {
         boolean status = driver.findElement(By.xpath(xPathElement)).isDisplayed();
         if (status) {
             System.out.println("Is Display" + "\t" + element);
-        } else {
-            System.out.println("Is not Display" + "\t" + element);
         }
         return status;
     }
@@ -575,6 +595,7 @@ public class KeywordWeb {
         logger.info("implicitlyWait");
         driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
     }
+
     public void webDriverWaitForElementPresent(String element, long timeout) {
         logger.info("webDriverWaitForElementPresent" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
@@ -590,28 +611,31 @@ public class KeywordWeb {
 
         WebDriverWait wait = new WebDriverWait(driver, 3000);
 
-         wait.until((ExpectedCondition<Boolean>) wdriver -> ((JavascriptExecutor) driver).executeScript(
+        wait.until((ExpectedCondition<Boolean>) wdriver -> ((JavascriptExecutor) driver).executeScript(
                 "return !!window.jQuery && !!window.jQuery.active == 0;").equals(true));
-         Thread.sleep(150);
+        Thread.sleep(150);
     }
-    private static void until(Function<WebDriver, Boolean> waitCondition, Long timeoutInSeconds){
+
+    private static void until(Function<WebDriver, Boolean> waitCondition, Long timeoutInSeconds) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, timeoutInSeconds);
         webDriverWait.withTimeout(timeoutInSeconds, TimeUnit.SECONDS);
-        try{
+        try {
             webDriverWait.until(waitCondition);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
-    public void untilJqueryIsDone( Long timeoutInSeconds) throws InterruptedException {
+
+    public void untilJqueryIsDone(Long timeoutInSeconds) throws InterruptedException {
         until((d) ->
         {
-            Boolean isJqueryCallDone = (Boolean)((JavascriptExecutor) driver).executeScript("return jQuery.active==0");
+            Boolean isJqueryCallDone = (Boolean) ((JavascriptExecutor) driver).executeScript("return jQuery.active==0");
             if (!isJqueryCallDone) System.out.println("JQuery call is in Progress");
             return isJqueryCallDone;
         }, timeoutInSeconds);
         Thread.sleep(1000);
     }
+
     public String waitForElementNotVisible(int timeOutInSeconds, String elementXPath) {
         if ((driver == null) || (elementXPath == null) || elementXPath.isEmpty()) {
 
@@ -625,6 +649,7 @@ public class KeywordWeb {
             return "Build your own errormessage...";
         }
     }
+
     public void webDriverWaitForElementPresentByCss(String element, long timeout) {
         logger.info("webDriverWaitForElementPresentByCss");
         String xPathElement = PropertiesFile.getPropValue(element);
@@ -663,6 +688,7 @@ public class KeywordWeb {
         Assert.assertEquals(actualText, xPathElement1);
 
     }
+
     public void assertEqualsAfterCutting(String expected, String actual, int indexStart, int indexEnd) {
         logger.info("compare from " + expected + " with " + actual);
         String xPathElement1 = PropertiesFile.getPropValue(expected);
@@ -677,7 +703,21 @@ public class KeywordWeb {
         Assert.assertEquals(actualText, xPathElement1);
 
     }
-    public void openNewTabFromTabBase(int tabNum, String url){
+    public void compareTheValueOfStrings(String expected, String actual, int indexStart, int indexEnd) {
+        logger.info("compare from " + expected + " with " + actual);
+        String xPathElement1 = PropertiesFile.getPropValue(expected);
+        String xPathElement2 = PropertiesFile.getPropValue(actual);
+        if (xPathElement1 == null) {
+            xPathElement1 = expected;
+        }
+        if (xPathElement2 == null) {
+            xPathElement2 = actual;
+        }
+        String actualText = driver.findElement(By.xpath(xPathElement2)).getAttribute("style").substring(indexStart,indexEnd);
+        Assert.assertEquals(actualText, xPathElement1);
+    }
+
+    public void openNewTabFromTabBase(int tabNum, String url) {
         logger.info("open new tab from tab base");
         String xPathElement1 = PropertiesFile.getPropValue(url);
         if (xPathElement1 == null) {
@@ -686,5 +726,22 @@ public class KeywordWeb {
         executeJavaScript("window.open()");
         switchToTab(tabNum);
         navigateToUrl(xPathElement1);
+    }
+
+    public void scrollToTheBottomPage() {
+        logger.info("scrollDownToElementWithJavaExecutor" );
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+    public String getAttribute(String element) {
+        logger.info("get Attribute of" + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        WebElement  b = driver.findElement(By.xpath(xPathElement));
+        String c = b.getAttribute("style");
+        logger.info(c);
+        return c;
     }
 }
