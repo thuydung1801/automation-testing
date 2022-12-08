@@ -457,8 +457,46 @@ public class CustomerServicePage extends BasePage {
         filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_2","CUS_PRD_FILTER_CHECKSORT_5");
         checkVerifyCheckBoxAndCheckSort5("CUS_VERIFY_PRD_FILTER_CHECKBOX_2");
     }
-
-    
+    public void filterCheckBox3AndCheckSort1() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_3","CUS_PRD_FILTER_CHECKSORT_1");
+        checkVerifyCheckBoxAndCheckSort1("CUS_VERIFY_IMG_PRD_FILTER_CHECKBOX_3");
+    }
+    public void filterCheckBox3AndCheckSort2() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_3","CUS_PRD_FILTER_CHECKSORT_2");
+        checkVerifyCheckBoxAndCheckSort2("CUS_VERIFY_IMG_PRD_FILTER_CHECKBOX_3");
+    }
+    public void filterCheckBox3AndCheckSort3() throws InterruptedException, ParseException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_3","CUS_PRD_FILTER_CHECKSORT_3");
+        checkVerifyCheckBoxAndCheckSort3("CUS_VERIFY_IMG_PRD_FILTER_CHECKBOX_3");
+    }
+    public void filterCheckBox3AndCheckSort4() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_3","CUS_PRD_FILTER_CHECKSORT_4");
+        checkVerifyCheckBoxAndCheckSort4("CUS_VERIFY_IMG_PRD_FILTER_CHECKBOX_3");
+    }
+    public void filterCheckBox3AndCheckSort5() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_3","CUS_PRD_FILTER_CHECKSORT_5");
+        checkVerifyCheckBoxAndCheckSort5("CUS_VERIFY_IMG_PRD_FILTER_CHECKBOX_3");
+    }
+    public void filterCheckBox4AndCheckSort1() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_4","CUS_PRD_FILTER_CHECKSORT_1");
+        checkVerifyCheckBoxAndCheckSort1("CUS_VERIFY_PRD_FILTER_CHECKBOX_4");
+    }
+    public void filterCheckBox4AndCheckSort2() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_4","CUS_PRD_FILTER_CHECKSORT_2");
+        checkVerifyCheckBoxAndCheckSort2("CUS_VERIFY_PRD_FILTER_CHECKBOX_4");
+    }
+    public void filterCheckBox4AndCheckSort3() throws InterruptedException, ParseException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_4","CUS_PRD_FILTER_CHECKSORT_3");
+        checkVerifyCheckBoxAndCheckSort3("CUS_VERIFY_PRD_FILTER_CHECKBOX_4");
+    }
+    public void filterCheckBox4AndCheckSort4() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_4","CUS_PRD_FILTER_CHECKSORT_4");
+        checkVerifyCheckBoxAndCheckSort4("CUS_VERIFY_PRD_FILTER_CHECKBOX_4");
+    }
+    public void filterCheckBox4AndCheckSort5() throws InterruptedException {
+        filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_4","CUS_PRD_FILTER_CHECKSORT_5");
+        checkVerifyCheckBoxAndCheckSort5("CUS_VERIFY_PRD_FILTER_CHECKBOX_4");
+    }
 
 
     public void commonNewsLetterWithAccount() throws InterruptedException {
