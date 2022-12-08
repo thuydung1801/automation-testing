@@ -1,62 +1,74 @@
-INFO  | 2022-12-07 11:00:36 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2022-12-07 11:00:37 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
-INFO  | 2022-12-07 11:00:37 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
-INFO  | 2022-12-07 11:00:39 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2022-12-07 11:00:39 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-12-07 11:00:39 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@4583b617
-INFO  | 2022-12-07 11:03:59 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2022-12-07 11:03:59 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
-INFO  | 2022-12-07 11:04:12 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2022-12-07 11:04:12 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
-INFO  | 2022-12-07 11:04:14 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
-INFO  | 2022-12-07 11:04:25 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
-INFO  | 2022-12-07 11:04:45 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
-INFO  | 2022-12-07 11:04:45 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
-INFO  | 2022-12-07 11:04:45 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_RATTING_1
-INFO  | 2022-12-07 11:04:48 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_RATTING_1
-INFO  | 2022-12-07 11:04:48 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_STAR_PRD_FILTER_RATTING_1
-INFO  | 2022-12-07 11:04:48 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
-INFO  | 2022-12-07 11:04:48 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
-INFO  | 2022-12-07 11:05:13 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
-INFO  | 2022-12-07 11:05:13 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKBOX_3
-INFO  | 2022-12-07 11:05:15 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_SELECT
-INFO  | 2022-12-07 11:05:19 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKSORT_1
-INFO  | 2022-12-07 11:05:21 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-12-07 11:05:21 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW with CUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-12-07 11:05:21 | [main] page.CustomerServicePage (CustomerServicePage.java:checkVerifyCheckBoxAndCheckSort1:344) - compare from with true
-INFO  | 2022-12-07 11:05:21 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
-INFO  | 2022-12-07 11:05:21 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
-INFO  | 2022-12-07 11:06:09 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
-INFO  | 2022-12-07 11:06:09 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKBOX_3
-INFO  | 2022-12-07 11:06:11 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_SELECT
-INFO  | 2022-12-07 11:06:14 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKSORT_2
-INFO  | 2022-12-07 11:06:16 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-12-07 11:06:16 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW with CUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-12-07 11:06:16 | [main] page.CustomerServicePage (CustomerServicePage.java:checkVerifyCheckBoxAndCheckSort2:361) - compare from with true
-INFO  | 2022-12-07 11:06:16 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
-INFO  | 2022-12-07 11:06:16 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
-INFO  | 2022-12-07 11:06:38 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
-INFO  | 2022-12-07 11:06:39 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKBOX_3
-INFO  | 2022-12-07 11:06:41 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_SELECT
-INFO  | 2022-12-07 11:06:44 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKSORT_3
-INFO  | 2022-12-07 11:06:46 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-12-07 11:06:46 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW with CUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-12-07 11:06:46 | [main] page.CustomerServicePage (CustomerServicePage.java:checkVerifyCheckBoxAndCheckSort3:379) - compare from with true
-INFO  | 2022-12-07 11:06:46 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
-INFO  | 2022-12-07 11:06:46 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
-INFO  | 2022-12-07 11:06:55 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
-INFO  | 2022-12-07 11:06:55 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKBOX_3
-INFO  | 2022-12-07 11:06:58 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_SELECT
-INFO  | 2022-12-07 11:07:01 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKSORT_4
-INFO  | 2022-12-07 11:07:03 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-12-07 11:07:03 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW with CUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-12-07 11:07:03 | [main] page.CustomerServicePage (CustomerServicePage.java:checkVerifyCheckBoxAndCheckSort4:396) - compare from with true
-INFO  | 2022-12-07 11:07:03 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
-INFO  | 2022-12-07 11:07:03 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
-INFO  | 2022-12-07 11:07:28 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
-INFO  | 2022-12-07 11:07:28 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKBOX_3
-INFO  | 2022-12-07 11:07:30 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_SELECT
-INFO  | 2022-12-07 11:07:33 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKSORT_5
-INFO  | 2022-12-07 11:07:36 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-12-07 11:07:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW with CUS_VERIFY_PRD_FILTER_NO_REVIEW
-INFO  | 2022-12-07 11:07:36 | [main] page.CustomerServicePage (CustomerServicePage.java:checkVerifyCheckBoxAndCheckSort5:413) - compare from with true
+INFO  | 2022-12-08 09:26:07 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2022-12-08 09:26:08 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
+INFO  | 2022-12-08 09:26:08 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
+INFO  | 2022-12-08 09:26:09 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2022-12-08 09:26:09 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-12-08 09:26:09 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@4489f60f
+INFO  | 2022-12-08 09:26:18 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
+INFO  | 2022-12-08 09:26:19 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
+INFO  | 2022-12-08 09:26:24 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2022-12-08 09:26:24 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
+INFO  | 2022-12-08 09:26:26 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
+INFO  | 2022-12-08 09:26:49 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glde/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
+INFO  | 2022-12-08 09:27:22 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-08 09:27:22 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
+INFO  | 2022-12-08 09:27:22 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-08 09:27:25 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_RATTING_1
+INFO  | 2022-12-08 09:27:25 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_STAR_PRD_FILTER_RATTING_1
+INFO  | 2022-12-08 09:27:25 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
+INFO  | 2022-12-08 09:27:25 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
+INFO  | 2022-12-08 09:27:42 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-08 09:27:42 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKBOX_4
+INFO  | 2022-12-08 09:27:45 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_SELECT
+INFO  | 2022-12-08 09:27:48 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKSORT_1
+INFO  | 2022-12-08 09:27:51 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
+INFO  | 2022-12-08 09:27:57 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_CHECKBOX_4
+INFO  | 2022-12-08 09:27:57 | [main] page.CustomerServicePage (CustomerServicePage.java:checkVerifyCheckBoxAndCheckSort1:344) - compare from with true
+INFO  | 2022-12-08 09:27:57 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
+INFO  | 2022-12-08 09:27:57 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
+INFO  | 2022-12-08 09:28:05 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-08 09:28:05 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKBOX_4
+INFO  | 2022-12-08 09:28:08 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_SELECT
+INFO  | 2022-12-08 09:28:11 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKSORT_2
+INFO  | 2022-12-08 09:28:15 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
+INFO  | 2022-12-08 09:28:20 | [main] core.KeywordWeb (KeywordWeb.java:getAttribute:749) - get Attribute ofCUS_VERIFY1_PRD_FILTER_CHECKSORT_2
+INFO  | 2022-12-08 09:28:20 | [main] core.KeywordWeb (KeywordWeb.java:getAttribute:756) - width: 100%;
+INFO  | 2022-12-08 09:28:20 | [main] core.KeywordWeb (KeywordWeb.java:getAttribute:749) - get Attribute ofCUS_VERIFY2_PRD_FILTER_CHECKSORT_2
+INFO  | 2022-12-08 09:28:20 | [main] core.KeywordWeb (KeywordWeb.java:getAttribute:756) - width: 100%;
+INFO  | 2022-12-08 09:28:20 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_CHECKBOX_4
+INFO  | 2022-12-08 09:28:20 | [main] page.CustomerServicePage (CustomerServicePage.java:checkVerifyCheckBoxAndCheckSort2:361) - compare from with true
+INFO  | 2022-12-08 09:28:20 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
+INFO  | 2022-12-08 09:28:20 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
+INFO  | 2022-12-08 09:28:37 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-08 09:28:37 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKBOX_4
+INFO  | 2022-12-08 09:28:41 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_SELECT
+INFO  | 2022-12-08 09:28:44 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKSORT_3
+INFO  | 2022-12-08 09:28:48 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
+INFO  | 2022-12-08 09:28:54 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofCUS_VERIFY_DATE1_PRD_FILTER_CHECKSORT_3
+INFO  | 2022-12-08 09:28:54 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofCUS_VERIFY_DATE2_PRD_FILTER_CHECKSORT_3
+INFO  | 2022-12-08 09:28:54 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_CHECKBOX_4
+INFO  | 2022-12-08 09:28:54 | [main] page.CustomerServicePage (CustomerServicePage.java:checkVerifyCheckBoxAndCheckSort3:379) - compare from with true
+INFO  | 2022-12-08 09:28:54 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
+INFO  | 2022-12-08 09:28:54 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
+INFO  | 2022-12-08 09:29:03 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-08 09:29:03 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKBOX_4
+INFO  | 2022-12-08 09:29:06 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_SELECT
+INFO  | 2022-12-08 09:29:10 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKSORT_4
+INFO  | 2022-12-08 09:29:13 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
+INFO  | 2022-12-08 09:29:18 | [main] core.KeywordWeb (KeywordWeb.java:getAttribute:749) - get Attribute ofCUS_VERIFY1_PRD_FILTER_CHECKSORT_2
+INFO  | 2022-12-08 09:29:18 | [main] core.KeywordWeb (KeywordWeb.java:getAttribute:756) - width: 87%;
+INFO  | 2022-12-08 09:29:18 | [main] core.KeywordWeb (KeywordWeb.java:getAttribute:749) - get Attribute ofCUS_VERIFY2_PRD_FILTER_CHECKSORT_2
+INFO  | 2022-12-08 09:29:18 | [main] core.KeywordWeb (KeywordWeb.java:getAttribute:756) - width: 100%;
+INFO  | 2022-12-08 09:29:18 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_CHECKBOX_4
+INFO  | 2022-12-08 09:29:18 | [main] page.CustomerServicePage (CustomerServicePage.java:checkVerifyCheckBoxAndCheckSort4:396) - compare from with true
+INFO  | 2022-12-08 09:29:18 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
+INFO  | 2022-12-08 09:29:18 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
+INFO  | 2022-12-08 09:29:33 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementCUS_PRD_FILTER_RATTING_1
+INFO  | 2022-12-08 09:29:34 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKBOX_4
+INFO  | 2022-12-08 09:29:37 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_SELECT
+INFO  | 2022-12-08 09:29:40 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCUS_PRD_FILTER_CHECKSORT_5
+INFO  | 2022-12-08 09:29:43 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_NO_REVIEW
+INFO  | 2022-12-08 09:29:48 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofCUS_VERIFY1_HELP_PRD_FILTER_CHECKSORT_5
+INFO  | 2022-12-08 09:29:48 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofCUS_VERIFY2_HELP_PRD_FILTER_CHECKSORT_5
+INFO  | 2022-12-08 09:29:48 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_PRD_FILTER_CHECKBOX_4
+INFO  | 2022-12-08 09:29:48 | [main] page.CustomerServicePage (CustomerServicePage.java:checkVerifyCheckBoxAndCheckSort5:413) - compare from with true
