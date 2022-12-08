@@ -159,7 +159,7 @@ public class LoginAddressTest extends BaseTest {
     @Test(priority = 9,
             description = "Edit shipping address same as billing")
     public void NLA_12_16() throws InterruptedException {
-        objLoginAddress.editAddress();
+        objLoginAddress.editAddress("CHECKOUT_BTN_EDIT_ADDRESS");
         objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA","CHECKOUT_LBL_ADDRESS_INFO_2");
         objLoginAddress.goBack();
         objLoginAddress.moveToAddressPage();
@@ -184,8 +184,8 @@ public class LoginAddressTest extends BaseTest {
 
     @Test(priority = 11, description = "Leave blank Email/Phone or Password")
     public void NLA_19() throws InterruptedException {
-        //customerNotLogin();
-        objLoginAddress.resetForNewCase();
+        customerNotLogin();
+        //objLoginAddress.resetForNewCase();
         objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
@@ -242,7 +242,6 @@ public class LoginAddressTest extends BaseTest {
     }
     @Test(priority = 17, description = "Add new another shipping and using suggest address")
     public void NLA_43() throws InterruptedException {
-        objLoginAddress.proceedAddress();
         objLoginAddress.addNewAddress(true,"CHECKOUT_LA_DATA_STREET_4",
                 "CHECKOUT_LA_DATA_CODE_2","CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
     }
@@ -260,6 +259,18 @@ public class LoginAddressTest extends BaseTest {
                 "CHECKOUT_LA_DATA_CODE_2", "CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
         objLoginAddress.chooseAddressOnValidation(true,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
         objLoginAddress.checkNumberOfAddress("7");
+    }
+
+    @Test(priority = 20, description = "Edit shipping address same as billing")
+    public void NLA_47_49() throws InterruptedException {
+        objLoginAddress.editAddress("CHECKOUT_BTN_EDIT_SHIP_ADDRESS");
+        objLoginAddress.chooseAddressOnValidation(false,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
+    }
+
+    @Test(priority = 21, description = "Edit shipping address with address not same as billing")
+    public void NLA_50() throws InterruptedException {
+        objLoginAddress.editAddress("CHECKOUT_BTN_EDIT_SHIP_ADDRESS");
+        objLoginAddress.chooseAddressOnValidation(false,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
     }
 
 }

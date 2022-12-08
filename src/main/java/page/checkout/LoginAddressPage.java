@@ -114,9 +114,9 @@ public class LoginAddressPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
     }
 
-    public void editAddress() throws InterruptedException {
+    public void editAddress(String btnEdit) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        keyword.click("CHECKOUT_BTN_EDIT_ADDRESS");
+        keyword.click(btnEdit);
         keyword.untilJqueryIsDone(50L);
         keyword.clearText("CHECKOUT_LA_TBX_ZIP_2");
         keyword.sendKeys("CHECKOUT_LA_TBX_ZIP_2","BT62 4HX");
@@ -244,6 +244,7 @@ public class LoginAddressPage extends BasePage {
         keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
         keyword.untilJqueryIsDone(50L);
     }
+
 
 
 
