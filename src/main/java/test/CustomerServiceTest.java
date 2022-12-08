@@ -147,6 +147,7 @@ public class CustomerServiceTest extends BaseTest {
     public void filter_ratting_27() throws InterruptedException {
         testCustomerService.filterCheckBox2AndCheckSort5();
     }
+    //pending...
     @Test(priority = 28,description = "Combine filter with sort by: With images + Relevance")
     public void filter_ratting_28() throws InterruptedException {
         testCustomerService.filterCheckBox3AndCheckSort1();
@@ -171,19 +172,19 @@ public class CustomerServiceTest extends BaseTest {
     public void filter_ratting_33() throws InterruptedException {
         testCustomerService.filterCheckBox4AndCheckSort1();
     }
-    @Test(priority = 34,description = "Combine filter with sort by: Verified Buyers + Relevance")
+    @Test(priority = 34,description = "Combine filter with sort by: Verified Buyers + Highest ratting")
     public void filter_ratting_34() throws InterruptedException {
         testCustomerService.filterCheckBox4AndCheckSort2();
     }
-    @Test(priority = 35,description = "Combine filter with sort by: Verified Buyers + Relevance")
+    @Test(priority = 35,description = "Combine filter with sort by: Verified Buyers + Date")
     public void filter_ratting_35() throws InterruptedException, ParseException {
         testCustomerService.filterCheckBox4AndCheckSort3();
     }
-    @Test(priority = 36,description = "Combine filter with sort by: Verified Buyers + Relevance")
+    @Test(priority = 36,description = "Combine filter with sort by: Verified Buyers + Lowest ratting")
     public void filter_ratting_36() throws InterruptedException {
         testCustomerService.filterCheckBox4AndCheckSort4();
     }
-    @Test(priority = 37,description = "Combine filter with sort by: Verified Buyers + Relevance")
+    @Test(priority = 37,description = "Combine filter with sort by: Verified Buyers + Helpfulness")
     public void filter_ratting_37() throws InterruptedException {
         testCustomerService.filterCheckBox4AndCheckSort5();
     }
