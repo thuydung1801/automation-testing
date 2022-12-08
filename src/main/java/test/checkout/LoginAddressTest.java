@@ -161,7 +161,7 @@ public class LoginAddressTest extends BaseTest {
     public void NLA_12_16() throws InterruptedException {
         objLoginAddress.editAddress("CHECKOUT_BTN_EDIT_ADDRESS");
         objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA","CHECKOUT_LBL_ADDRESS_INFO_2");
-        objLoginAddress.goBack();
+        objLoginAddress.goBack("CHECKOUT_BTN_CONTINUE_GUEST");
         objLoginAddress.moveToAddressPage();
         //objLoginAddress.checkOutNotLogin();
 
@@ -217,7 +217,7 @@ public class LoginAddressTest extends BaseTest {
     }
     @Test(priority = 14, description = "Remove billing address successfully")
     public void NLA_41() throws InterruptedException {
-        objLoginAddress.removeAddress();
+        objLoginAddress.removeAddress("CHECKOUT_LA_BTN_REMOVE_BILLING_ADDRESS");
     }
 
     @Test(priority = 14, description = "Add new billing address and continue with your input options")
@@ -269,8 +269,17 @@ public class LoginAddressTest extends BaseTest {
 
     @Test(priority = 21, description = "Edit shipping address with address not same as billing")
     public void NLA_50() throws InterruptedException {
-        objLoginAddress.editAddress("CHECKOUT_BTN_EDIT_SHIP_ADDRESS");
-        objLoginAddress.chooseAddressOnValidation(false,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
+        objLoginAddress.editFullShippingAddress();
+    }
+
+    @Test(priority = 22, description = "Remove shipping address successfully")
+    public void NLA_51() throws InterruptedException {
+        objLoginAddress.removeShippingAddress();
+    }
+
+    @Test(priority = 23, description = "Using back button with customer login")
+    public void NLA_52() throws InterruptedException {
+        objLoginAddress.goBack("CHECKOUT_BTN_CHECKOUT");
     }
 
 }

@@ -18,7 +18,9 @@
                 <include name="NLA_19"/>
                 <include name="NLA_35"/>
                 <include name="NLA_42"/>
-                <include name="NLA_47"/>
+                <include name="NLA_50"/>
+                <include name="NLA_51"/>
+                <include name="NLA_52"/>
             </methods>
         </class>
     </classes>
