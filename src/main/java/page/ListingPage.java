@@ -159,7 +159,7 @@ public class ListingPage extends BasePage {
         keyword.verifyElementVisible("LTP_BTN_DISPLAY_NONE");
         keyword.assertEquals("LTP_MESSAGE_SHOW_FULL_PRODUCT", "LYP_VIEW_LABEL_TEXT");
     }
-//Auto loading product with 6 pages
+    //Auto loading product with 6 pages
     public void removeItemsFilter() throws InterruptedException {
         keyword.untilJqueryIsDone(20L);
         keyword.checkStatusIsDisplay("LTP_CLOSE_ITEMS_FILTER");

@@ -8,10 +8,8 @@ import org.slf4j.Logger;
 public class SignInPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private SignUpPage objSignUp;
-
-    public SignInPage(KeywordWeb key) {
-        super(key);
-    }
+    public SignInPage(KeywordWeb key) {super(key);}
+    public SignInPage() {super();}
 
     public void checkGoToFormLoginMobileOrPhoneAndLogin() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
