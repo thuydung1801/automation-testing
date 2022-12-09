@@ -99,10 +99,6 @@ public class SignInPage extends BasePage {
                 "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE",
                 "SIGNUP_ACTUAL_MESSAGE04"
         );
-//        keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD","SIGNIN_DATA_PASSWORD_NEW");
-//        keyword.click("SIGNI_BTN_SUBMIT_RESET_PASSWORD");
-//        keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
-
     }
 
     //Create invalid new password
