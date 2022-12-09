@@ -15,12 +15,11 @@
     <classes>
         <class name="test.checkout.LoginAddressTest">
             <methods>
-                <include name="NLA_19"/>
-                <include name="NLA_35"/>
-                <include name="NLA_42"/>
-                <include name="NLA_50"/>
-                <include name="NLA_51"/>
-                <include name="NLA_52"/>
+                <include name="NLA_53"/>
+                <include name="NLA_54"/>
+                <include name="NLA_26"/>
+                <include name="NLA_31"/>
+                <include name="NLA_32"/>
             </methods>
         </class>
     </classes>

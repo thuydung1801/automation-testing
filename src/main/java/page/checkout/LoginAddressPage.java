@@ -271,4 +271,53 @@ public class LoginAddressPage extends BasePage {
         keyword.simpleAssertEquals(actualCount, String.valueOf(count-1));
     }
 
+    public void wrongFormatCode() throws InterruptedException {
+        fillContactInformation(false, "CHECKOUT_LA_DATA_STREET_3",
+                "CHECKOUT_LA_DATA_CODE_5", "CHECKOUT_LA_DATA_CITY_2");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("CHECKOUT_LA_ADDRESS_POPUP_CANCEL");
+        keyword.assertEquals("CHECKOUT_LA_MESSAGES_CODE","CHECKOUT_LA_LBL_CODE");
+    }
+
+    public void invalidCodeSymbols() throws InterruptedException {
+        keyword.clearText("CHECKOUT_LA_TBX_ZIP");
+        keyword.sendKeys("CHECKOUT_LA_TBX_ZIP","CHECKOUT_LA_DATA_CODE_6");
+        keyword.assertEquals("CHECKOUT_LA_MESSAGES_CODE","CHECKOUT_LA_LBL_CODE");
+        keyword.assertEquals("CHECKOUT_LA_MESSAGE_ERROR_SYMBOLS","CHECKOUT_LA_LBL_ERROR_SYMBOLS");
+    }
+
+    public void forgotPassword(String flag) throws InterruptedException {
+        switch (flag) {
+            case "noEmail":
+                keyword.click("CHECKOUT_LA_HPL_FORGOT_PASS");
+                keyword.webDriverWaitForElementPresent("CHECKOUT_LA_TBX_FORGOT_PASS_EMAIL", 10);
+                keyword.click("CHECKOUT_LA_BTN_FORGOT_PASS_SUBMIT");
+                keyword.assertEquals("CHECKOUT_MESSAGES_UPDATE_24", "CHECKOUT_LA_MESSAGE_FORGOT_PASS");
+                break;
+            case "wrong format":
+                keyword.clearText("CHECKOUT_LA_TBX_FORGOT_PASS_EMAIL");
+                keyword.sendKeys("CHECKOUT_LA_TBX_FORGOT_PASS_EMAIL", "sophie@");
+                keyword.click("CHECKOUT_LA_BTN_FORGOT_PASS_SUBMIT");
+                keyword.assertEquals("CHECKOUT_LA_MESSAGE_USERNAME", "CHECKOUT_LA_MESSAGE_FORGOT_PASS");
+                break;
+            case "invalid code":
+                keyword.clearText("CHECKOUT_LA_TBX_FORGOT_PASS_EMAIL");
+                keyword.sendKeys("CHECKOUT_LA_TBX_FORGOT_PASS_EMAIL", "LOGIN_DATA_EMAIL");
+                keyword.untilJqueryIsDone(50L);
+                keyword.click("CHECKOUT_LA_BTN_FORGOT_PASS_SUBMIT");
+                keyword.untilJqueryIsDone(50L);
+                keyword.sendKeys("CHECKOUT_LA_TBX_FORGOT_PASS_CODE", "12345");
+                keyword.click("CHECKOUT_LA_BTN_SEND_CODE_SUBMIT");
+                keyword.untilJqueryIsDone(50L);
+                keyword.assertEquals("CHECKOUT_LA_MESSAGE_CODE", "CHECKOUT_LA_LBL_MESSAGE_CODE");
+                break;
+            case "blank code":
+                keyword.clearText("CHECKOUT_LA_TBX_FORGOT_PASS_CODE");
+                keyword.click("CHECKOUT_LA_BTN_SEND_CODE_SUBMIT");
+                keyword.untilJqueryIsDone(50L);
+                keyword.assertEquals("CHECKOUT_LA_MESSAGE_CODE_2", "CHECKOUT_LA_LBL_MESSAGE_CODE");
+                break;
+        }
+    }
+
 }

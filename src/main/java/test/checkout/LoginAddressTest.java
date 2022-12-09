@@ -43,7 +43,7 @@ public class LoginAddressTest extends BaseTest {
 
     @Test(priority = 1,
             description = "Add new billing address with all valid data and next page successfully")
-    public void NLA_02() throws InterruptedException {
+    public void NLA_01_02() throws InterruptedException {
         logger.info("NLA_02");
         customerNotLogin();
         objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
@@ -280,6 +280,39 @@ public class LoginAddressTest extends BaseTest {
     @Test(priority = 23, description = "Using back button with customer login")
     public void NLA_52() throws InterruptedException {
         objLoginAddress.goBack("CHECKOUT_BTN_CHECKOUT");
+    }
+    @Test(priority = 24, description = "Add new address and input wrong format postcode on the page, customer not login")
+    public void NLA_53() throws InterruptedException {
+        customerNotLogin();
+        //objLoginAddress.resetForNewCase();
+        objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objLoginAddress.moveToAddressPage();
+        objLoginAddress.wrongFormatCode();
+    }
+    @Test(priority = 25, description = "Add new address and input postcode more than 12 symbols")
+    public void NLA_54() throws InterruptedException {
+        objLoginAddress.invalidCodeSymbols();
+    }
+
+    @Test(priority = 25, description = "Forgot password but didn't input Email / Phone")
+    public void NLA_26() throws InterruptedException {
+        objLoginAddress.goBack("CHECKOUT_BTN_CONTINUE_GUEST");
+        objLoginAddress.forgotPassword("noEmail");
+    }
+    @Test(priority = 26, description = "Forgot password and input Email wrong format")
+    public void NLA_27() throws InterruptedException {
+        objLoginAddress.forgotPassword("wrong format");
+    }
+
+    @Test(priority = 26, description = "Forgot password and input invalid verify code")
+    public void NLA_31() throws InterruptedException {
+        objLoginAddress.forgotPassword("invalid code");
+    }
+    @Test(priority = 27, description = "Forgot password and didn't input verify code")
+    public void NLA_32() throws InterruptedException {
+        objLoginAddress.forgotPassword("blank code");
     }
 
 }
