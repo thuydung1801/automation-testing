@@ -43,7 +43,9 @@ public class MyAccountPage extends BasePage {
         keyword.click("MAC_PERSONAL_INF");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.click(checkBox);
+        if(checkBox!=null){
+            keyword.click(checkBox);
+        }
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
@@ -74,7 +76,7 @@ public class MyAccountPage extends BasePage {
     public void inpChangePassword() throws InterruptedException {
         commonPersonalInf("MAC_CLICK_CHECKBOX_PASS");
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        String pass = "dung"+timestamp;
+        String pass = "Dung*"+timestamp;
         keyword.sendKeys("MAC_INP_PASS_CURENT_2","COM_INP_DATA_PASS");
         PropertiesFile.serPropValue("COM_INP_DATA_PASS",pass);
         keyword.sendKeys("MAC_INP_PASS_NEW","COM_INP_DATA_PASS");
@@ -84,18 +86,42 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
+    public void checkVerifyChangeSuccess(String element, String message){
+        if(keyword.verifyElementVisible(element)){
+            keyword.assertEquals(message,element);
+        }
+        else{
+            logger.info("Erorr....");
+        }
+    }
+
     public void changeFullnameWithData() throws InterruptedException {
         setUp();
         inpFullName("MAC_DATA_FIRST_NAME","MAC_DATA_LAST_NAME");
+        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME");
     }
+    public void checkVerifyInputNull(){
+        if(keyword.verifyElementVisible("COM_TEXT_ERROR")){
+            keyword.assertEquals("COM_DATA_MESSAGES_NULL",
+                    "COM_TEXT_ERROR");
+        }
+
+    }
+
     public void changeFullnameWithDataNUll() throws InterruptedException {
+        commonPersonalInf(null);
         inpFullName("COM_DATA_NULL","COM_DATA_NULL");
+        checkVerifyInputNull();
     }
     public void changeEmail() throws InterruptedException {
         inputChangeMail();
+        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME");
+
     }
     public void changePassword() throws InterruptedException {
         inpChangePassword();
+        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME");
+
     }
 
 

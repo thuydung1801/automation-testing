@@ -19,6 +19,15 @@ public class MyAccountTest extends BaseTest {
     public void testCase_PI_02() throws InterruptedException {
         testMyAccount.changeFullnameWithDataNUll();
     }
+    @Test(priority = 3,description = "Change email ")
+    public void testCase_PI_03() throws InterruptedException {
+        testMyAccount.changeEmail();
+    }
+    @Test(priority = 4,description = "CHANGE PASSWORD")
+    public void testCase_PI_04() throws InterruptedException {
+        testMyAccount.changePassword();
+    }
+
 
 
 
