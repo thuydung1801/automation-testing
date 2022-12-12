@@ -105,7 +105,6 @@ public class MyAccountPage extends BasePage {
             keyword.assertEquals("COM_DATA_MESSAGES_NULL",
                     "COM_TEXT_ERROR");
         }
-
     }
 
     public void changeFullnameWithDataNUll() throws InterruptedException {
@@ -123,6 +122,7 @@ public class MyAccountPage extends BasePage {
         checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME");
 
     }
+
 
 
 
