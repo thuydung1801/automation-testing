@@ -71,25 +71,8 @@ public class ListingPage extends BasePage {
         keyword.verifyElementVisible("LTP_LEFT_FILTER");
     }
 
-    //    Check position of Sticker on left filter when applying filter option + scrolling
-    public void checkPositionOfSticker() throws InterruptedException {
-        choseFilterAndVerify("LTP_ITEM_CHECK_STICKER_FILTER", "LTP_ITEM_CHECK_STICKER_FILTER", "LTP_POSITION_TICKER");
-    }
-
-    //
-    public void checkPositionOfStickerWhenUpLoadMore() throws InterruptedException {
-        choseFilterAndVerify("LTP_ITEM_CHECK_STICKER_FILTER_UPLOAD", "LTP_ITEM_CHECK_STICKER_FILTER_UPLOAD", "LTP_CHECK_STICKER_UPLOAD_MORE");
-    }
-
-    // Using ajax instead of reloading page when click on filter left
-    public void usingAjaxPageNotLoadAgain() throws InterruptedException {
-        choseFilterAndVerify("LTP_CHOSE_STONE_CHECK_AJAX", "LTP_CHOSE_STONE_CHECK_AJAX", "LTP_AJAX_LOADING_ICON");
-    }
-
     //    Filter price displayed when the option has been applied
     public void filterPrice() throws InterruptedException {
-        choseFilterAndVerify("LTP_ITEM_FILTER_CHOSE", "LTP_CLEAR_ALL", "LTP_PRICE_STATUS_DISABLE");
-        keyword.untilJqueryIsDone(20L);
         choseFilterAndVerify("LTP_CHOSE_STONE_CHECK_AJAX", "LTP_CHOSE_STONE_CHECK_AJAX", "LTP_PRICE_ACTIVE");
     }
 
@@ -122,11 +105,20 @@ public class ListingPage extends BasePage {
 
     //    check add  more 30 item
     public void checkUploadMore30Item() throws InterruptedException {
-        keyword.click("LTP_BTN_LOADING_MORE");
-        keyword.untilJqueryIsDone(30L);
-        keyword.scrollDownToElement("LTP_SCROLL_TO_FOOTER");
-        keyword.untilJqueryIsDone(50L);
-        keyword.assertEqualsAfterCutting("LTP_DATA_VIEWED_PRODUCT_ITEM", "LYP_VIEW_LABEL_TEXT", 14, 17);
+        scrollAndClick("LTP_BOX_CARAT", "LTP_SELECT_CARAT");
+        keyword.untilJqueryIsDone(100L);
+        keyword.scrollToPosition();
+        keyword.scrollToTheBottomPage();
+        keyword.scrollToTheBottomPage();
+        keyword.scrollToTheBottomPage();
+        keyword.scrollToTheBottomPage();
+        keyword.scrollDownToElement("LTP_BTN_LOADING_MORE");
+        keyword.assertEqualsAfterCutting("LTP_VIEW_PRODUCT_OF_6PAGE", "LYP_VIEW_LABEL_TEXT", 14, 17);
+//        keyword.click("LTP_BTN_LOADING_MORE");
+//        keyword.untilJqueryIsDone(30L);
+//        keyword.scrollDownToElement("LTP_SCROLL_TO_FOOTER");
+//        keyword.untilJqueryIsDone(50L);
+//        keyword.assertEqualsAfterCutting("LTP_DATA_VIEWED_PRODUCT_ITEM_ADD_30PRODUCT", "LYP_VIEW_LABEL_TEXT", 14, 17);
     }
 
     //TLoading page endless with "Upload more" button - do not display this text when not a product load
@@ -159,6 +151,7 @@ public class ListingPage extends BasePage {
         keyword.verifyElementVisible("LTP_BTN_DISPLAY_NONE");
         keyword.assertEquals("LTP_MESSAGE_SHOW_FULL_PRODUCT", "LYP_VIEW_LABEL_TEXT");
     }
+
     //Auto loading product with 6 pages
     public void removeItemsFilter() throws InterruptedException {
         keyword.untilJqueryIsDone(20L);
