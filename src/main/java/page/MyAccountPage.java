@@ -4,6 +4,8 @@ import core.BasePage;
 import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
 import page.home.LoginPage;
 import page.home.RegisterPage;
@@ -56,8 +58,8 @@ public class MyAccountPage extends BasePage {
         keyword.clearText("MAC_INP_LAST_NAME");
         keyword.sendKeys("MAC_INP_LAST_NAME",lastName);
         keyword.click("MAC_BTN_SAVE_1");
-        keyword.untilJqueryIsDone(30L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+//        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
 
     }
@@ -69,7 +71,7 @@ public class MyAccountPage extends BasePage {
         keyword.sendKeys("MAC_INP_EMAIL_NEW","COM_INP_DATA_EMAIL");
         keyword.sendKeys("MAC_INP_PASS_CURENT_1","COM_INP_DATA_PASS");
         keyword.click("MAC_BTN_SAVE_2");
-        keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
@@ -82,7 +84,7 @@ public class MyAccountPage extends BasePage {
         keyword.sendKeys("MAC_INP_PASS_NEW","COM_INP_DATA_PASS");
         keyword.sendKeys("MAC_INP_PASS_CONFIRM","COM_INP_DATA_PASS");
         keyword.click("MAC_BTN_SAVE_3");
-        keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
@@ -122,6 +124,75 @@ public class MyAccountPage extends BasePage {
         checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME");
 
     }
+    public void commonMyAddress(String element,String elementEdit) throws InterruptedException {
+        keyword.click(element);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(elementEdit!=null){
+            keyword.click(elementEdit);
+            keyword.untilJqueryIsDone(30L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        }
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
+    public void inpEditAddress(String element,String btnEdit,String textStreet) throws InterruptedException {
+        commonMyAddress(element,btnEdit);
+        keyword.clearText("MAC_INP_FIRST_NAME");
+        keyword.sendKeys("MAC_INP_FIRST_NAME","MAC_DATA_FIRST_NAME");
+        keyword.clearText("MAC_INP_LAST_NAME");
+        keyword.sendKeys("MAC_INP_LAST_NAME","MAC_DATA_LAST_NAME");
+        keyword.clearText("MAC_INP_COMPANY");
+        keyword.sendKeys("MAC_INP_COMPANY","COM_DATA_TITLE");
+        keyword.clearText("MAC_INP_PHONE_NUM");
+        keyword.sendKeys("MAC_INP_PHONE_NUM","MAC_DATA_PHONE_NUM");
+        keyword.clearText("MAC_INP_STREET");
+        keyword.sendKeys("MAC_INP_STREET",textStreet);
+        Thread.sleep(1000);
+        keyword.keysBoard("MAC_INP_STREET");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(1000);
+        keyword.click("MAC_BTN_SAVE_ADDRESS");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")){
+            keyword.assertEquals("MAC_VERIFY_DATA_ADDRESS","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
+        }
+
+    }
+    public void editBillingAddress() throws InterruptedException {
+        inpEditAddress("MAC_MYHOME","MAC_BTN_EDIT_BILLING_ADDRESS","MAC_DATA_STREET1");
+    }
+    public void editShippingAddress() throws InterruptedException {
+        inpEditAddress("MAC_MYHOME","MAC_BTN_EDIT_SHIPPING_ADDRESS","MAC_DATA_STREET2");
+    }
+    public void addNewAddress() throws InterruptedException {
+        setUp();
+        inpEditAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_ADD_NEW_ADDRESS","MAC_DATA_STREET9");
+
+    }
+    public void editAdditionalAddressEntries() throws InterruptedException {
+        setUp();
+        inpEditAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","MAC_DATA_STREET3");
+    }
+    public void deleteAdditionalAddressEntries() throws InterruptedException {
+        keyword.click("MAC_MY_ADDRESS_DIRECTORY");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        keyword.click("MAC_LINKTEXT_DELETE");
+        keyword.click("MAC_BTN_DELETE_OK");
+        keyword.untilJqueryIsDone(60L);
+        if(keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")){
+            keyword.assertEquals("MAC_VERIFY_DATA_DELETE_ADDRESS","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
+        }
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
+
+
 
 
 

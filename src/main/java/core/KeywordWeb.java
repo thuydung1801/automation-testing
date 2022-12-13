@@ -756,6 +756,26 @@ public class KeywordWeb {
         logger.info(c);
         return c;
     }
+    public void keysBoard(String element1) throws InterruptedException {
+        String xPathElement1 = PropertiesFile.getPropValue(element1);
+
+        if (xPathElement1 == null) {
+            xPathElement1 = element1;
+        }
+        WebElement ele1 = driver.findElement(By.xpath(xPathElement1));
+
+        logger.info("key board1......");
+        Actions act = new Actions(driver);
+        act.moveToElement(ele1).click().sendKeys(Keys.ARROW_DOWN);
+//        act.sendKeys(Keys.ARROW_DOWN);
+        Thread.sleep(500);
+        logger.info("key board2......");
+        act.sendKeys(Keys.TAB);
+        logger.info("key board3......");
+
+//        act.keyDown(Keys.ARROW_DOWN);
+//        act.keyDown(Keys.TAB);
+    }
 
 }
 
