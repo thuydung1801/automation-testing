@@ -31,14 +31,14 @@ public class MyAccountTest extends BaseTest {
 //    public void testCase_MA_01() throws InterruptedException {
 //        testMyAccount.editBillingAddress();
 //    }
-//    @Test(priority = 6,description = "Edit SHIPPING ADDRESS")
-//    public void testCase_MA_02() throws InterruptedException {
-//        testMyAccount.editShippingAddress();
-//    }
-//    @Test(priority = 7,description = "ADD NEW ADDRESS")
-//    public void testCase_MA_09() throws InterruptedException {
-//        testMyAccount.addNewAddress();
-//    }
+    @Test(priority = 6,description = "Edit SHIPPING ADDRESS")
+    public void testCase_MA_02() throws InterruptedException {
+        testMyAccount.editShippingAddress();
+    }
+    @Test(priority = 7,description = "ADD NEW ADDRESS")
+    public void testCase_MA_09() throws InterruptedException {
+        testMyAccount.addNewAddress();
+    }
     @Test(priority = 8,description = "Edit a address in section Additional Address Entries")
     public void testCase_MA_03() throws InterruptedException {
         testMyAccount.editAdditionalAddressEntries();
@@ -46,6 +46,22 @@ public class MyAccountTest extends BaseTest {
     @Test(priority = 9,description = "Edit a address in section Additional Address Entries")
     public void testCase_MA_04() throws InterruptedException {
         testMyAccount.deleteAdditionalAddressEntries();
+    }
+    @Test(priority = 10,description = "Edit a address in section Additional Address Entries")
+    public void testCase_MA_05() throws InterruptedException {
+        testMyAccount.setAsDefaultAddress();
+    }
+    @Test(priority = 11,description = "Edit a address in section Additional Address Entries")
+    public void testCase_MA_06() throws InterruptedException {
+        testMyAccount.editSetDefaultBilling();
+    }
+    @Test(priority = 12,description = "Edit a address in section Additional Address Entries")
+    public void testCase_MA_07() throws InterruptedException {
+        testMyAccount.editSetDefaultShipping();
+    }
+    @Test(priority = 13,description = "Edit a address in section Additional Address Entries")
+    public void testCase_MA_08() throws InterruptedException {
+        testMyAccount.addNewAddress();
     }
 
 

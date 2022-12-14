@@ -7,6 +7,7 @@ import core.PropertiesFile;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
+import org.testng.Assert;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
@@ -125,6 +126,7 @@ public class MyAccountPage extends BasePage {
 
     }
     public void commonMyAddress(String element,String elementEdit) throws InterruptedException {
+        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
         keyword.click(element);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -150,7 +152,7 @@ public class MyAccountPage extends BasePage {
         keyword.clearText("MAC_INP_STREET");
         keyword.sendKeys("MAC_INP_STREET",textStreet);
         Thread.sleep(1000);
-        keyword.keysBoard("MAC_INP_STREET");
+        keyword.keysBoardWithDOWN("MAC_INP_STREET_DIV");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         Thread.sleep(1000);
@@ -166,29 +168,92 @@ public class MyAccountPage extends BasePage {
         inpEditAddress("MAC_MYHOME","MAC_BTN_EDIT_BILLING_ADDRESS","MAC_DATA_STREET1");
     }
     public void editShippingAddress() throws InterruptedException {
+        setUp();
         inpEditAddress("MAC_MYHOME","MAC_BTN_EDIT_SHIPPING_ADDRESS","MAC_DATA_STREET2");
     }
     public void addNewAddress() throws InterruptedException {
-        setUp();
+        //setUp();
         inpEditAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_ADD_NEW_ADDRESS","MAC_DATA_STREET9");
 
     }
     public void editAdditionalAddressEntries() throws InterruptedException {
-        setUp();
+        //setUp();
         inpEditAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","MAC_DATA_STREET3");
     }
     public void deleteAdditionalAddressEntries() throws InterruptedException {
+        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
         keyword.click("MAC_MY_ADDRESS_DIRECTORY");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
         keyword.click("MAC_LINKTEXT_DELETE");
+        keyword.untilJqueryIsDone(60L);
         keyword.click("MAC_BTN_DELETE_OK");
         keyword.untilJqueryIsDone(60L);
         if(keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")){
             keyword.assertEquals("MAC_VERIFY_DATA_DELETE_ADDRESS","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         }
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
+    public void setAsDefaultAddress() throws InterruptedException {
+        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_SETAS");
+        if(keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")){
+            keyword.assertEquals("MAC_VERIFY_DATA_ADDRESS","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
+        }
+        boolean check;
+        String s = keyword.getText("MAC_VERIFY_SETAS_ADDRESS");
+        String a = keyword.getText("MAC_VERIFY_SETAS_SHIPPING_ADDRESS");
+        String b = keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS");
+        System.out.printf("s==" + s +"\n");
+        System.out.printf("a==" + a +"\n");
+        System.out.printf("b==" + b +"\n");
+        if(keyword.getText("MAC_VERIFY_SETAS_SHIPPING_ADDRESS").contains(s) &&
+                keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS").contains(s)){
+
+                check=true;
+        }
+        else{
+            check=false;
+        }
+        logger.info("check verify address...");
+        Assert.assertEquals(check,true);
+    }
+    public void editSetAsDefaultAddress(String address,String checkBox,String eleText) throws InterruptedException {
+        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT");
+        keyword.sendKeys("MAC_INP_STREET",address);
+        keyword.keysBoardWithDOWN("MAC_INP_STREET_DIV");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click(checkBox);
+        boolean check;
+        String s = keyword.getAttributeWithValue("MAC_INP_STREET");
+        keyword.click("MAC_BTN_SAVE_ADDRESS");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        String a = keyword.getText(eleText);
+        System.out.printf("s==" + s +"\n");
+        System.out.printf("a==" + a +"\n");
+
+        if(keyword.getText(eleText).contains(s) ){
+
+            check=true;
+        }
+        else{
+            check=false;
+        }
+        logger.info("check verify address...");
+        Assert.assertEquals(check,true);
+
+    }
+    public void editSetDefaultBilling() throws InterruptedException {
+        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT");
+        editSetAsDefaultAddress("MAC_DATA_STREET6","MAC_CHECKBOX_DEFAULT_BILLING","MAC_VERIFY_SETAS_BILLING_ADDRESS");
+
+    }
+    public void editSetDefaultShipping() throws InterruptedException {
+        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT");
+        editSetAsDefaultAddress("MAC_DATA_STREET7","MAC_CHECKBOX_DEFAULT_SHIPPING","MAC_VERIFY_SETAS_SHIPPING_ADDRESS");
 
     }
 
