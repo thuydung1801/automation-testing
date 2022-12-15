@@ -43,26 +43,37 @@ public class MyAccountTest extends BaseTest {
     public void testCase_MA_03() throws InterruptedException {
         testMyAccount.editAdditionalAddressEntries();
     }
-    @Test(priority = 9,description = "Edit a address in section Additional Address Entries")
+    @Test(priority = 9,description = " Delete a address in section Additional Address Entries")
     public void testCase_MA_04() throws InterruptedException {
         testMyAccount.deleteAdditionalAddressEntries();
     }
-    @Test(priority = 10,description = "Edit a address in section Additional Address Entries")
+    @Test(priority = 10,description = "  Set as Default a address in section Additional Address Entries")
     public void testCase_MA_05() throws InterruptedException {
         testMyAccount.setAsDefaultAddress();
     }
-    @Test(priority = 11,description = "Edit a address in section Additional Address Entries")
+    @Test(priority = 11,description = "Set Default Billing Address when edit address")
     public void testCase_MA_06() throws InterruptedException {
         testMyAccount.editSetDefaultBilling();
     }
-    @Test(priority = 12,description = "Edit a address in section Additional Address Entries")
+    @Test(priority = 12,description = "Set  DEFAULT SHIPPING ADDRESS when edit address")
     public void testCase_MA_07() throws InterruptedException {
         testMyAccount.editSetDefaultShipping();
     }
-    @Test(priority = 13,description = "Edit a address in section Additional Address Entries")
+    @Test(priority = 13,description = "Add New Address")
     public void testCase_MA_08() throws InterruptedException {
         testMyAccount.addNewAddress();
     }
+    @Test(priority = 14,description = "Save a item form product view")
+    public void testCase_MW_01() throws InterruptedException {
+        testMyAccount.saveItemFormProductView();
+    }
+    @Test(priority = 15,description = "Save a item form product list")
+    public void testCase_MW_02() throws InterruptedException {
+        testMyAccount.saveItemFormProductList();
+    }
+
+
+
 
 
 

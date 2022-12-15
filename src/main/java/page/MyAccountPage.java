@@ -197,12 +197,22 @@ public class MyAccountPage extends BasePage {
 
     }
     public void setAsDefaultAddress() throws InterruptedException {
-        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_SETAS");
+        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
+        keyword.click("MAC_MY_ADDRESS_DIRECTORY");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        String s = keyword.getText("MAC_VERIFY_SETAS_ADDRESS");
+        keyword.click("MAC_LINKTEXT_SETAS");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         if(keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")){
             keyword.assertEquals("MAC_VERIFY_DATA_ADDRESS","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         }
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         boolean check;
-        String s = keyword.getText("MAC_VERIFY_SETAS_ADDRESS");
         String a = keyword.getText("MAC_VERIFY_SETAS_SHIPPING_ADDRESS");
         String b = keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS");
         System.out.printf("s==" + s +"\n");
@@ -220,13 +230,15 @@ public class MyAccountPage extends BasePage {
         Assert.assertEquals(check,true);
     }
     public void editSetAsDefaultAddress(String address,String checkBox,String eleText) throws InterruptedException {
-        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT");
+       // commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT");
         keyword.sendKeys("MAC_INP_STREET",address);
         keyword.keysBoardWithDOWN("MAC_INP_STREET_DIV");
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click(checkBox);
         boolean check;
-        String s = keyword.getAttributeWithValue("MAC_INP_STREET");
+        String s = PropertiesFile.getPropValue(address);
+
+//        String s = keyword.getAttributeWithValue("MAC_INP_STREET");
         keyword.click("MAC_BTN_SAVE_ADDRESS");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -255,6 +267,35 @@ public class MyAccountPage extends BasePage {
         commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT");
         editSetAsDefaultAddress("MAC_DATA_STREET7","MAC_CHECKBOX_DEFAULT_SHIPPING","MAC_VERIFY_SETAS_SHIPPING_ADDRESS");
 
+    }
+    public void commonWishList(String element) throws InterruptedException {
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.scrollDownToElement(element);
+        keyword.click(element);
+        keyword.untilJqueryIsDone(60L);
+        if(keyword.verifyElementVisible("MAC_VERIFY_ICON_HEART")){
+            logger.info("PASS");
+        };
+    }
+    public void saveItemFormProductView() throws InterruptedException {
+        keyword.navigateToUrl("URL_PRODUCT_DETAIL");
+        commonWishList("MAC_BTN_HEART");
+
+    }
+    public void saveItemFormProductList() throws InterruptedException {
+        keyword.navigateToUrl("URL_PRODUCT_INFO");
+        commonWishList("MAC_ICON_HEART");
+    }
+    public void compareMyWishProduct() throws InterruptedException {
+        keyword.reLoadPage();
+        keyword.click("MAC_LINK_HEART");
+        keyword.untilJqueryIsDone(60L);
+        keyword.click("MAC_BTN_VIEW_WISHLIST");
+
+    }
+    public void removeItemSave(){
+        keyword.click("MAC_BTN_REMOVE_WISHLIST");
     }
 
 
