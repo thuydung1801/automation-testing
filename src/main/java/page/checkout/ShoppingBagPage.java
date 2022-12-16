@@ -299,7 +299,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_CBX_WRAP_UNIVERSE");
     }
 
-    @Step("click to choose free gift wrapping")
+    @Step("move to checkout page")
     public void moveToPagecheckOut() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
         Thread.sleep(1000);

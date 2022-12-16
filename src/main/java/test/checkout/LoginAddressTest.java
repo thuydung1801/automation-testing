@@ -12,6 +12,7 @@ import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 
+
 @Listeners({ AllureTestListener.class })
 public class LoginAddressTest extends BaseTest {
     private static Logger logger = LogHelper.getLogger();
