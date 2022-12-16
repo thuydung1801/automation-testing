@@ -1,49 +1,112 @@
-INFO  | 2022-12-12 16:34:29 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2022-12-12 16:34:31 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
-INFO  | 2022-12-12 16:34:32 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
-INFO  | 2022-12-12 16:34:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2022-12-12 16:34:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-12-12 16:34:36 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@6ebbc06
-INFO  | 2022-12-12 16:34:53 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2022-12-12 16:34:53 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_02:25) - testCase_LA_02
-INFO  | 2022-12-12 16:34:53 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
-INFO  | 2022-12-12 16:35:17 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...BASE_URL_CHECKOUT_NOT_LOGIN
-INFO  | 2022-12-12 16:35:29 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2022-12-12 16:35:29 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
-INFO  | 2022-12-12 16:35:29 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementSELECT_PRODUCT_CHECKOUT
-INFO  | 2022-12-12 16:35:37 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSELECT_PRODUCT_CHECKOUT
-INFO  | 2022-12-12 16:36:28 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementPRD_DROPDOWN
-INFO  | 2022-12-12 16:36:29 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_DROPDOWN
-INFO  | 2022-12-12 16:36:30 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementSELECT_RINGSIZE_OPTION
-INFO  | 2022-12-12 16:36:32 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSELECT_RINGSIZE_OPTION
-INFO  | 2022-12-12 16:36:33 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_BTN_ADDCART
-INFO  | 2022-12-12 16:36:37 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCHECKOUT_VIEW_DETAIL
-INFO  | 2022-12-12 16:37:02 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLA_BTN_PROCEED_TO_CHECKOUT
-INFO  | 2022-12-12 16:37:26 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLA_INPUT_EMAILwith LA_DATA_EMAIL
-INFO  | 2022-12-12 16:37:26 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLA_INPUT_PASSWORDwith LA_DATA_PASSWORD
-INFO  | 2022-12-12 16:37:26 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCHECKOUT_LA_BTN_LOGIN
-INFO  | 2022-12-12 16:37:29 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from LA_MESSAGE_INVALID_LOGIN with LA_INPUT_MESSAGE_INVALID_LOGIN
-INFO  | 2022-12-12 16:37:29 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_03:34) - testCase_LA_03
-INFO  | 2022-12-12 16:37:29 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-12 16:37:30 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLA_INPUT_EMAILwith LA_DATA_EMAIL_INVALID
-INFO  | 2022-12-12 16:37:30 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from LA_MESSAGE_EMAIL_INVALID with CHECKOUT_LA_LBL_ERROR_MAIL
-INFO  | 2022-12-12 16:37:30 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_04:39) - testCase_LA_04
-INFO  | 2022-12-12 16:37:30 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-12 16:37:30 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-12 16:37:30 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCHECKOUT_LA_BTN_LOGIN
-INFO  | 2022-12-12 16:37:30 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from LA_MESSAGE_LEAVE_BLANK_EMAIL with CHECKOUT_LA_LBL_ERROR_MAIL
-INFO  | 2022-12-12 16:37:30 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from LA_MESSAGE_LEAVE_BLANK_PASSWORD with LA_ERROR_PASSWORD
-INFO  | 2022-12-12 16:37:30 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_05:44) - testCase_LA_05
-INFO  | 2022-12-12 16:37:30 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLA_LINK_FORGOT_PASSWORD
-INFO  | 2022-12-12 16:37:30 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleLP_FORGOT_PASSWORD_PAGE
-INFO  | 2022-12-12 16:37:30 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_06:49) - testCase_LA_06
-INFO  | 2022-12-12 16:37:30 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...LP_URL_OLD_DESIGN
-INFO  | 2022-12-12 16:37:42 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementLP_SELECT_PRODUCT_OLD
-INFO  | 2022-12-12 16:37:44 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLP_SELECT_PRODUCT_OLD
-INFO  | 2022-12-12 16:38:44 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementLP_SELECT_RING_SIZE
-INFO  | 2022-12-12 16:38:45 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLP_SELECT_RING_SIZE
-INFO  | 2022-12-12 16:38:47 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementLP_CHOSE_RING_SIZE
-INFO  | 2022-12-12 16:38:48 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLP_CHOSE_RING_SIZE
-INFO  | 2022-12-12 16:38:50 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_BTN_ADDCART
-INFO  | 2022-12-12 16:38:54 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCHECKOUT_VIEW_DETAIL
-INFO  | 2022-12-12 16:39:04 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLA_BTN_PROCEED_TO_CHECKOUT
+INFO  | 2022-12-16 16:48:56 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2022-12-16 16:49:02 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
+INFO  | 2022-12-16 16:49:02 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
+INFO  | 2022-12-16 16:49:08 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2022-12-16 16:49:08 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-12-16 16:49:08 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@2842c098
+INFO  | 2022-12-16 16:49:26 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
+INFO  | 2022-12-16 16:49:27 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_08:55) - testCase_LA_08
+INFO  | 2022-12-16 16:49:27 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
+INFO  | 2022-12-16 16:49:35 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...LP_URL_OLD_DESIGN
+INFO  | 2022-12-16 16:49:43 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:619) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2022-12-16 16:49:43 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
+INFO  | 2022-12-16 16:49:55 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementLP_SELECT_PRODUCT_OLD
+INFO  | 2022-12-16 16:49:56 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLP_SELECT_PRODUCT_OLD
+INFO  | 2022-12-16 16:50:10 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementLP_SELECT_RING_SIZE
+INFO  | 2022-12-16 16:50:12 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLP_SELECT_RING_SIZE
+INFO  | 2022-12-16 16:50:12 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementLP_CHOSE_RING_SIZE
+INFO  | 2022-12-16 16:50:14 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLP_CHOSE_RING_SIZE
+INFO  | 2022-12-16 16:50:16 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_BTN_ADDCART
+INFO  | 2022-12-16 16:50:19 | [main] core.KeywordWeb (KeywordWeb.java:imWait:614) - implicitlyWait
+INFO  | 2022-12-16 16:50:19 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCHECKOUT_VIEW_DETAIL
+INFO  | 2022-12-16 16:50:36 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLA_BTN_PROCEED_TO_CHECKOUT
+INFO  | 2022-12-16 16:50:48 | [main] core.KeywordWeb (KeywordWeb.java:imWait:614) - implicitlyWait
+INFO  | 2022-12-16 16:50:48 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLP_BTN_CONTINUE
+INFO  | 2022-12-16 16:50:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_FIRST_NAMEwith LA_DATA_FIRST_NAME
+INFO  | 2022-12-16 16:50:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_LAST_NAMEwith LA_DATA_LAST_NAME
+INFO  | 2022-12-16 16:50:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_EMAILwith LA_DATA_EMAIL
+INFO  | 2022-12-16 16:50:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_CONFIRM_EMAILwith LP_EMAIL_CONFIRM
+INFO  | 2022-12-16 16:50:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_TELEPHONEwith LA_DATA_PASSWORD
+INFO  | 2022-12-16 16:50:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_COMPANYwith LP_DATA_COMPANY
+INFO  | 2022-12-16 16:50:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_STREETwith LP_DATA_STREET
+INFO  | 2022-12-16 16:50:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_POSTALwith LP_POSTAL_CODE_MALTA
+INFO  | 2022-12-16 16:50:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_CITYwith LP_COUNTRY
+INFO  | 2022-12-16 16:50:50 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_MESSAGE_EMAIL_CONFIRM_ERROR with LP_INPUT_EMAIL_CONFIRM_ERROR
+INFO  | 2022-12-16 16:50:50 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_09:66) - testCase_LA_09
+INFO  | 2022-12-16 16:50:51 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:50:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_EMAIL_CONFIRM_FAILwith LP_EMAIL_INVALID
+INFO  | 2022-12-16 16:50:52 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_MESSAGE_EMAIL_INVALID with LP_EMAIL_CONFIRM_INVALID
+INFO  | 2022-12-16 16:50:52 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_010:72) - testCase_LA_010
+INFO  | 2022-12-16 16:50:53 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:50:53 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:50:53 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_MESSAGE_NOT_ALLOW with LA_INPUT_MESSAGE_NOT_ALLOW_ACTION
+INFO  | 2022-12-16 16:50:54 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_011:78) - testCase_LA_011
+INFO  | 2022-12-16 16:50:55 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:50:55 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:50:55 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:50:55 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:50:55 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:50:55 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:50:55 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:50:55 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:50:55 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLP_BTN_TO_PLAY
+INFO  | 2022-12-16 16:50:56 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_LIST_MESSAGE_REQUIRED_FIELD with LP_MESSAGE_FIELD_FIRST_NAME
+INFO  | 2022-12-16 16:50:56 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_LIST_MESSAGE_REQUIRED_FIELD with LA_MESSAGE_FIELD_LAST_NAME
+INFO  | 2022-12-16 16:50:56 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_LIST_MESSAGE_REQUIRED_FIELD with LA_MESSAGE_FIELD_EMAIL
+INFO  | 2022-12-16 16:50:56 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_LIST_MESSAGE_REQUIRED_FIELD with LA_MESSAGE_FIELD_CONFIRM_EMAIL
+INFO  | 2022-12-16 16:50:57 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_LIST_MESSAGE_REQUIRED_FIELD with LA_MESSAGE_FIELD_PHONE
+INFO  | 2022-12-16 16:50:57 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_LIST_MESSAGE_REQUIRED_FIELD with LA_MESSAGE_STREET_FIELD
+INFO  | 2022-12-16 16:50:57 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_LIST_MESSAGE_REQUIRED_FIELD with LA_MESSAGE_FIELD_ZIP_CODE
+INFO  | 2022-12-16 16:50:57 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_LIST_MESSAGE_REQUIRED_FIELD with LA_MESSAGE_FIELD_CITY
+INFO  | 2022-12-16 16:50:57 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_MESSAGE_ALL_REQUIRED_FIELDS with LP_INPUT_MESSAGE_REQUIRED_ALL_DATA_FIELD
+INFO  | 2022-12-16 16:50:57 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_012:85) - testCase_LA_012
+INFO  | 2022-12-16 16:50:57 | [main] core.KeywordWeb (KeywordWeb.java:clearLocalStorage:804) - clearLocalStorage
+INFO  | 2022-12-16 16:50:57 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
+INFO  | 2022-12-16 16:50:57 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLP_BTN_CONTINUE
+INFO  | 2022-12-16 16:51:05 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_FIRST_NAMEwith LA_DATA_FIRST_NAME
+INFO  | 2022-12-16 16:51:05 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_LAST_NAMEwith LA_DATA_LAST_NAME
+INFO  | 2022-12-16 16:51:05 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_EMAILwith LA_DATA_EMAIL
+INFO  | 2022-12-16 16:51:06 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_CONFIRM_EMAILwith LA_DATA_CONFIRM_EMAIL
+INFO  | 2022-12-16 16:51:06 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_TELEPHONEwith LA_DATA_PHONE_INVALID
+INFO  | 2022-12-16 16:51:06 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_COMPANYwith LP_DATA_COMPANY
+INFO  | 2022-12-16 16:51:06 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_STREETwith LP_DATA_STREET
+INFO  | 2022-12-16 16:51:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_POSTALwith LP_POSTAL_CODE_MALTA
+INFO  | 2022-12-16 16:51:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_CITYwith LP_COUNTRY
+INFO  | 2022-12-16 16:51:07 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_DATA_MESSAGE_PHONE_FIELD with LA_MESSAGE_FIELD_PHONE
+INFO  | 2022-12-16 16:51:07 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_06:91) - testCase_LA_06
+INFO  | 2022-12-16 16:51:07 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:51:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLA_INPUT_TELEPHONE_FIELDwith LA_DATA_PHONE
+INFO  | 2022-12-16 16:51:07 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLP_BTN_TO_PLAY
+INFO  | 2022-12-16 16:51:13 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_07:97) - testCase_LA_07
+INFO  | 2022-12-16 16:51:14 | [main] core.KeywordWeb (KeywordWeb.java:clearLocalStorage:804) - clearLocalStorage
+INFO  | 2022-12-16 16:51:14 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
+INFO  | 2022-12-16 16:51:14 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLP_BTN_CONTINUE
+INFO  | 2022-12-16 16:51:28 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_FIRST_NAMEwith LA_DATA_FIRST_NAME
+INFO  | 2022-12-16 16:51:28 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_LAST_NAMEwith LA_DATA_LAST_NAME
+INFO  | 2022-12-16 16:51:28 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_EMAILwith LA_DATA_EMAIL
+INFO  | 2022-12-16 16:51:29 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_CONFIRM_EMAILwith LA_DATA_CONFIRM_EMAIL
+INFO  | 2022-12-16 16:51:29 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_TELEPHONEwith LA_DATA_PHONE
+INFO  | 2022-12-16 16:51:29 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_COMPANYwith LP_DATA_COMPANY
+INFO  | 2022-12-16 16:51:29 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_STREETwith LP_DATA_STREET
+INFO  | 2022-12-16 16:51:30 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_POSTALwith LP_POSTAL_CODE_MALTA
+INFO  | 2022-12-16 16:51:30 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLP_INPUT_CITYwith LP_COUNTRY
+INFO  | 2022-12-16 16:51:30 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLA_BTN_NO_SHIP_ADDRES
+INFO  | 2022-12-16 16:51:31 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLP_BTN_TO_PLAY
+INFO  | 2022-12-16 16:51:32 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_018:103) - testCase_LA_018
+INFO  | 2022-12-16 16:51:32 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLA_INPUT_SAVE_ADDRESS
+INFO  | 2022-12-16 16:51:33 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLA_BTN_EDIT
+INFO  | 2022-12-16 16:51:33 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-16 16:51:33 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLA_INPUT_FILL_DATA_FIRST_NAMEwith LA_DATA_NAME_EDIT
+INFO  | 2022-12-16 16:51:33 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLA_INPUT_SAVE_ADDRESS
+INFO  | 2022-12-16 16:51:35 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:698) - compare from LA_MESSAGE_SAVE_SUCCESS with LA_INPUT_MESSAGE_SAVE_SUCCESS
+INFO  | 2022-12-16 16:51:35 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_021:108) - testCase_LA_019
+INFO  | 2022-12-16 16:51:35 | [main] core.KeywordWeb (KeywordWeb.java:clearLocalStorage:804) - clearLocalStorage
+INFO  | 2022-12-16 16:51:35 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
+INFO  | 2022-12-16 16:51:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLA_INPUT_USE_NAMEwith LA_DATA_EMAIL
+INFO  | 2022-12-16 16:51:55 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLA_INPUT_ACCOUNT_PASSWORDwith REGIST_DATA_PASSWORD
+INFO  | 2022-12-16 16:51:55 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLA_BTN_LOGIN
+INFO  | 2022-12-16 16:51:55 | [main] test.checkout.LoginAndAddressTest (LoginAndAddressTest.java:testCase_LA_019:113) - testCase_LA_019
+INFO  | 2022-12-16 16:51:55 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLA_BTN_DELETE_ADDRESS
+INFO  | 2022-12-16 16:52:07 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleLA_POPUP_CONFIRM_DELETE
+INFO  | 2022-12-16 16:52:07 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLA_BTN_OK_DELETE_ADDRESS
+INFO  | 2022-12-16 16:52:07 | [main] core.KeywordWeb (KeywordWeb.java:checkElementIsNotDisplayed:540) - checkElementVisibleOrNotLA_POPUP_CONFIRM_DELETE
