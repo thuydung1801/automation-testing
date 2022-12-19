@@ -53,13 +53,15 @@ public class MyAccountPage extends BasePage {
 
     }
     public void inpFullName(String firstName, String lastName) throws InterruptedException {
-
+        boolean check;
         keyword.clearText("MAC_INP_FIRST_NAME");
         keyword.sendKeys("MAC_INP_FIRST_NAME",firstName);
         keyword.clearText("MAC_INP_LAST_NAME");
         keyword.sendKeys("MAC_INP_LAST_NAME",lastName);
+
         keyword.click("MAC_BTN_SAVE_1");
         keyword.untilJqueryIsDone(60L);
+
 //        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
 
@@ -89,11 +91,56 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
-    public void checkVerifyChangeSuccess(String element, String message){
+    public void checkVerifyChangeSuccess(String element, String message,String change,String eleChange, String verify) throws InterruptedException {
+
         if(keyword.verifyElementVisible(element)){
+            boolean test ;
             keyword.assertEquals(message,element);
+            keyword.untilJqueryIsDone(60L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+            if(change == "name"){
+                String s1 = PropertiesFile.getPropValue("MAC_DATA_FIRST_NAME");
+                String s2 = PropertiesFile.getPropValue("MAC_DATA_LAST_NAME");
+                String name = s1 +" "+ s2;
+                String a = keyword.getText(eleChange);
+                if(a.contains(name)){
+                    test = true;
+                }
+                else {
+                    test = false;
+                }
+                logger.info("check change name....");
+                Assert.assertEquals(test,true);
+            }
+            if(change == "email"){
+                String s = keyword.getText(eleChange);
+                if(s.contains(PropertiesFile.getPropValue(verify))){
+                    test = true;
+                }
+                else {
+                    test = false;
+                }
+                logger.info("check change email....");
+                Assert.assertEquals(test,true);
+            }
+
+            if(change == "pass"){
+                keyword.click("MAC_PERSONAL_INF");
+                keyword.untilJqueryIsDone(60L);
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.click("MAC_CLICK_CHECKBOX_EMAIL");
+                if(keyword.getAttributeWithValue(eleChange).contains(PropertiesFile.getPropValue(verify))){
+                    test = true;
+                }
+                else {
+                    test = false;
+                }
+                logger.info("check change pass....");
+                Assert.assertEquals(test,true);
+            }
+
         }
-        else{
+        else {
             logger.info("Erorr....");
         }
     }
@@ -101,28 +148,29 @@ public class MyAccountPage extends BasePage {
     public void changeFullnameWithData() throws InterruptedException {
         setUp();
         inpFullName("MAC_DATA_FIRST_NAME","MAC_DATA_LAST_NAME");
-        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME");
+        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","name","MAC_VERIFY_NAME",null);
+
     }
-    public void checkVerifyInputNull(){
-        if(keyword.verifyElementVisible("COM_TEXT_ERROR")){
-            keyword.assertEquals("COM_DATA_MESSAGES_NULL",
-                    "COM_TEXT_ERROR");
-        }
-    }
+//    public void checkVerifyInputNull(){
+//        if(keyword.verifyElementVisible("COM_TEXT_ERROR")){
+//            keyword.assertEquals("COM_DATA_MESSAGES_NULL",
+//                    "COM_TEXT_ERROR");
+//        }
+//    }
 
     public void changeFullnameWithDataNUll() throws InterruptedException {
         commonPersonalInf(null);
         inpFullName("COM_DATA_NULL","COM_DATA_NULL");
-        checkVerifyInputNull();
+        checkVerifyChangeSuccess("COM_TEXT_ERROR", "COM_DATA_MESSAGES_NULL",null, null,null);
     }
     public void changeEmail() throws InterruptedException {
         inputChangeMail();
-        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME");
+        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","email","MAC_VERIFY_EMAIL_CHANGE","COM_INP_DATA_EMAIL");
 
     }
     public void changePassword() throws InterruptedException {
         inpChangePassword();
-        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME");
+        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","pass","MAC_VERIFY_PASS_CHANGE","COM_INP_DATA_PASS");
 
     }
     public void commonMyAddress(String element,String elementEdit) throws InterruptedException {
@@ -165,11 +213,11 @@ public class MyAccountPage extends BasePage {
 
     }
     public void editBillingAddress() throws InterruptedException {
-        inpEditAddress("MAC_MYHOME","MAC_BTN_EDIT_BILLING_ADDRESS","MAC_DATA_STREET1");
+        inpEditAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_BILLING_ADDRESS","MAC_DATA_STREET1");
     }
     public void editShippingAddress() throws InterruptedException {
-        setUp();
-        inpEditAddress("MAC_MYHOME","MAC_BTN_EDIT_SHIPPING_ADDRESS","MAC_DATA_STREET2");
+       // setUp();
+        inpEditAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_SHIPPING_ADDRESS","MAC_DATA_STREET2");
     }
     public void addNewAddress() throws InterruptedException {
         //setUp();
@@ -181,11 +229,12 @@ public class MyAccountPage extends BasePage {
         inpEditAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","MAC_DATA_STREET3");
     }
     public void deleteAdditionalAddressEntries() throws InterruptedException {
-        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
+//        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
         keyword.click("MAC_MY_ADDRESS_DIRECTORY");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
+        boolean check;
+        int a = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
         keyword.click("MAC_LINKTEXT_DELETE");
         keyword.untilJqueryIsDone(60L);
         keyword.click("MAC_BTN_DELETE_OK");
@@ -193,12 +242,21 @@ public class MyAccountPage extends BasePage {
         if(keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")){
             keyword.assertEquals("MAC_VERIFY_DATA_DELETE_ADDRESS","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         }
+        int b = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
+        if(a == b+1){
+            check = true;
+        }
+        else {
+            check=false;
+        }
+        logger.info("check delete...");
+        Assert.assertEquals(check,true);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
     public void setAsDefaultAddress() throws InterruptedException {
-        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
-        keyword.click("MAC_MY_ADDRESS_DIRECTORY");
+//        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
+//        keyword.click("MAC_MY_ADDRESS_DIRECTORY");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         String s = keyword.getText("MAC_VERIFY_SETAS_ADDRESS");

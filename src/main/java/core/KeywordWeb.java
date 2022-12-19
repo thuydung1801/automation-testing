@@ -778,6 +778,15 @@ public class KeywordWeb {
         act.moveToElement(tutorial).build().perform();
         act.contextClick(tutorial).sendKeys(Keys.ARROW_DOWN).build().perform();
     }
+    public Integer countNumberOfElement(String element){
+        logger.info("count the number of element "+ element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        int xpathCount = driver.findElements(By.xpath(xPathElement)).size();
+        return  xpathCount+1;
+    }
 
 }
 
