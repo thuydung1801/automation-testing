@@ -121,7 +121,7 @@ public class AcmeBankTests {
     }
 
     @Test
-    public void testUIGlamira() {
+    public void testUIGlamira() throws InterruptedException {
         // This test covers login for the Applitools demo site, which is a dummy banking app.
         // The interactions use typical Selenium WebDriver calls,
         // but the verifications use one-line snapshot calls with Applitools Eyes.
@@ -138,8 +138,12 @@ public class AcmeBankTests {
 //        // Verify the full main page loaded correctly.
 //        // This snapshot uses LAYOUT match level to avoid differences in closing time text.
         eyes.check(Target.window().fully().withName("Main page").layout());
-
+        Thread.sleep(10000);
+        driver.findElement(By.xpath("//form[@class='form login-form']//button[@type='submit']")).click();
         driver.findElement(By.xpath("//ul[@class='header links']//li[@class='authorization-link login']/a")).click();
+        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("linh@onlinebizsoft.com");
+        driver.findElement(By.xpath("//input[@id='login-password']")).sendKeys("Linh@123");
+        driver.findElement(By.xpath("//form[@class='form login-form']//button[@type='submit']")).click();
         eyes.check(Target.window().fully().withName("Login page").layout());
         driver.get("https://dev3.glamira.com/glgb/customer/address/edit/id/810234/");
         eyes.check(Target.window().fully().withName("Address Page").layout());
