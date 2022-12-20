@@ -776,6 +776,7 @@ public class KeywordWeb {
         WebElement tutorial = driver.findElement(By.xpath(xPathElement1));
         Actions act = new Actions(driver);
         act.moveToElement(tutorial).build().perform();
+        imWait(2);
         act.contextClick(tutorial).sendKeys(Keys.ARROW_DOWN).build().perform();
     }
     public Integer countNumberOfElement(String element){

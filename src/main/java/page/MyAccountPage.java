@@ -13,12 +13,14 @@ import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class MyAccountPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private LoginPage objLogin;
     private RegisterPage objRegister ;
     private SignInPage signInPage;
+    public int countAdd;
     public MyAccountPage(){super();}
     public MyAccountPage(KeywordWeb key){
         super(key);
@@ -43,6 +45,9 @@ public class MyAccountPage extends BasePage {
 
     }
     public void commonPersonalInf(String checkBox) throws InterruptedException {
+        keyword.untilJqueryIsDone(70L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("MAC_PERSONAL_INF");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -91,6 +96,31 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
+    public void logout() throws InterruptedException {
+        keyword.click("MAC_BTN_LOGOUT");
+        keyword.untilJqueryIsDone(60L);
+        keyword.click("MAC_LOGOUT_OK");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("LOGIN_BTN_LOGIN");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        boolean test;
+        String a = keyword.getText("MAC_VERIFY_NAME");
+        if(a.contains("Hallo")){
+            test = true;
+        }
+        else {
+            test = false;
+        }
+        logger.info("check change name....");
+        Assert.assertEquals(test,true);
+
+
+
+    }
     public void checkVerifyChangeSuccess(String element, String message,String change,String eleChange, String verify) throws InterruptedException {
 
         if(keyword.verifyElementVisible(element)){
@@ -98,47 +128,54 @@ public class MyAccountPage extends BasePage {
             keyword.assertEquals(message,element);
             keyword.untilJqueryIsDone(60L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-            if(change == "name"){
-                String s1 = PropertiesFile.getPropValue("MAC_DATA_FIRST_NAME");
-                String s2 = PropertiesFile.getPropValue("MAC_DATA_LAST_NAME");
-                String name = s1 +" "+ s2;
-                String a = keyword.getText(eleChange);
-                if(a.contains(name)){
-                    test = true;
-                }
-                else {
-                    test = false;
-                }
-                logger.info("check change name....");
-                Assert.assertEquals(test,true);
+            switch (change){
+                case "name" :
+                    String s1 = PropertiesFile.getPropValue("MAC_DATA_FIRST_NAME");
+                    String s2 = PropertiesFile.getPropValue("MAC_DATA_LAST_NAME");
+                    String name = s1 +" "+ s2;
+                    String a = keyword.getText(eleChange);
+                    if(a.contains(name)){
+                        test = true;
+                    }
+                    else {
+                        test = false;
+                    }
+                    logger.info("check change name....");
+                    Assert.assertEquals(test,true);
+                    break;
+                case "email":
+                    String s = keyword.getText(eleChange);
+                    if(s.contains(PropertiesFile.getPropValue(verify))){
+                        test = true;
+                    }
+                    else {
+                        test = false;
+                    }
+                    logger.info("check change email....");
+                    Assert.assertEquals(test,true);
+                    break;
+                case "pass":
+//                    keyword.click("MAC_PERSONAL_INF");
+//                    keyword.untilJqueryIsDone(60L);
+//                    keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+//                    keyword.click("MAC_CLICK_CHECKBOX_EMAIL");
+//                    if(keyword.getAttributeWithValue(eleChange).contains(PropertiesFile.getPropValue(verify))){
+//                        test = true;
+//                    }
+//                    else {
+//                        test = false;
+//                    }
+//                    logger.info("check change pass....");
+//                    Assert.assertEquals(test,true);
+                    logout();
+                    break;
+                case "null":
+                    logger.info("NULL....");
+                    break;
+                default:
+                    logger.info("NULL....");
+                    break;
             }
-            if(change == "email"){
-                String s = keyword.getText(eleChange);
-                if(s.contains(PropertiesFile.getPropValue(verify))){
-                    test = true;
-                }
-                else {
-                    test = false;
-                }
-                logger.info("check change email....");
-                Assert.assertEquals(test,true);
-            }
-
-            if(change == "pass"){
-                keyword.click("MAC_PERSONAL_INF");
-                keyword.untilJqueryIsDone(60L);
-                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-                keyword.click("MAC_CLICK_CHECKBOX_EMAIL");
-                if(keyword.getAttributeWithValue(eleChange).contains(PropertiesFile.getPropValue(verify))){
-                    test = true;
-                }
-                else {
-                    test = false;
-                }
-                logger.info("check change pass....");
-                Assert.assertEquals(test,true);
-            }
-
         }
         else {
             logger.info("Erorr....");
@@ -151,23 +188,25 @@ public class MyAccountPage extends BasePage {
         checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","name","MAC_VERIFY_NAME",null);
 
     }
-//    public void checkVerifyInputNull(){
-//        if(keyword.verifyElementVisible("COM_TEXT_ERROR")){
-//            keyword.assertEquals("COM_DATA_MESSAGES_NULL",
-//                    "COM_TEXT_ERROR");
-//        }
-//    }
+    public void checkVerifyInputNull(){
+        if(keyword.verifyElementVisible("COM_TEXT_ERROR")){
+            keyword.assertEquals("COM_DATA_MESSAGES_NULL",
+                    "COM_TEXT_ERROR");
+        }
+    }
 
     public void changeFullnameWithDataNUll() throws InterruptedException {
         commonPersonalInf(null);
         inpFullName("COM_DATA_NULL","COM_DATA_NULL");
-        checkVerifyChangeSuccess("COM_TEXT_ERROR", "COM_DATA_MESSAGES_NULL",null, null,null);
+        checkVerifyInputNull();
+//        checkVerifyChangeSuccess("COM_TEXT_ERROR", "COM_DATA_MESSAGES_NULL",null, null,null);
     }
     public void changeEmail() throws InterruptedException {
         inputChangeMail();
         checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","email","MAC_VERIFY_EMAIL_CHANGE","COM_INP_DATA_EMAIL");
 
     }
+
     public void changePassword() throws InterruptedException {
         inpChangePassword();
         checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","pass","MAC_VERIFY_PASS_CHANGE","COM_INP_DATA_PASS");
@@ -178,6 +217,7 @@ public class MyAccountPage extends BasePage {
         keyword.click(element);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        countAdd = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
         if(elementEdit!=null){
             keyword.click(elementEdit);
             keyword.untilJqueryIsDone(30L);
@@ -187,7 +227,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
-    public void inpEditAddress(String element,String btnEdit,String textStreet) throws InterruptedException {
+    public void inpEditAddress(String label,String element,String btnEdit,String textStreet) throws InterruptedException {
         commonMyAddress(element,btnEdit);
         keyword.clearText("MAC_INP_FIRST_NAME");
         keyword.sendKeys("MAC_INP_FIRST_NAME","MAC_DATA_FIRST_NAME");
@@ -198,6 +238,7 @@ public class MyAccountPage extends BasePage {
         keyword.clearText("MAC_INP_PHONE_NUM");
         keyword.sendKeys("MAC_INP_PHONE_NUM","MAC_DATA_PHONE_NUM");
         keyword.clearText("MAC_INP_STREET");
+        keyword.imWait(3);
         keyword.sendKeys("MAC_INP_STREET",textStreet);
         Thread.sleep(1000);
         keyword.keysBoardWithDOWN("MAC_INP_STREET_DIV");
@@ -210,23 +251,87 @@ public class MyAccountPage extends BasePage {
         if(keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")){
             keyword.assertEquals("MAC_VERIFY_DATA_ADDRESS","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         }
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        boolean check;
+        String s = PropertiesFile.getPropValue(textStreet);
+        String a =  keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS");
+        System.out.printf("a===" + a + "\n");
+        System.out.printf("s===" + s+ "\n");
+        switch (label){
+            case "billing":
+                if( keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS").contains(s)){
+
+                    check=true;
+                }
+                else{
+                    check=false;
+                }
+                logger.info("check verify edit billing address...");
+                Assert.assertEquals(check,true);
+                break;
+            case "shipping":
+                if(keyword.getText("MAC_VERIFY_SETAS_SHIPPING_ADDRESS").contains(s)){
+                    check=true;
+                }
+                else{
+                    check=false;
+                }
+                logger.info("check verify edit shipping address...");
+                Assert.assertEquals(check,true);
+                break;
+            case "add":
+                int b = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
+                System.out.printf("======count: " + countAdd + "\n");
+                System.out.printf("======count b: " + b + "\n");
+                if(countAdd + 1 == b){
+                    check = true;
+                }
+                else {
+                    check=false;
+                }
+                logger.info("check add...");
+                Assert.assertEquals(check,true);
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                break;
+            case "edit":
+                String n = keyword.getText("MAC_VERIFY_EDIT_ENTRIES");
+                System.out.printf("n== " + n +"\n");
+                System.out.printf("== " + PropertiesFile.getPropValue("MAC_DATA_STREET3") +"\n");
+                if(n.contains(s)){
+                    check = true;
+                }
+                else {
+                    check=false;
+                }
+                logger.info("check edit Additional Address Entries...");
+                Assert.assertEquals(check,true);
+
+                break;
+
+            default:
+                logger.info("NULL...");
+                break;
+
+        }
 
     }
     public void editBillingAddress() throws InterruptedException {
-        inpEditAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_BILLING_ADDRESS","MAC_DATA_STREET1");
+        inpEditAddress("billing","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_BILLING_ADDRESS","MAC_DATA_STREET1");
     }
     public void editShippingAddress() throws InterruptedException {
        // setUp();
-        inpEditAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_SHIPPING_ADDRESS","MAC_DATA_STREET2");
+        inpEditAddress("shipping","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_SHIPPING_ADDRESS","MAC_DATA_STREET2");
     }
     public void addNewAddress() throws InterruptedException {
         //setUp();
-        inpEditAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_ADD_NEW_ADDRESS","MAC_DATA_STREET9");
+        inpEditAddress("add","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_ADD_NEW_ADDRESS","MAC_DATA_STREET9");
 
     }
     public void editAdditionalAddressEntries() throws InterruptedException {
         //setUp();
-        inpEditAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","MAC_DATA_STREET3");
+        inpEditAddress("edit","MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","MAC_DATA_STREET3");
     }
     public void deleteAdditionalAddressEntries() throws InterruptedException {
 //        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
@@ -235,6 +340,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         boolean check;
         int a = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
+        System.out.printf("a===" + a +"\n");
         keyword.click("MAC_LINKTEXT_DELETE");
         keyword.untilJqueryIsDone(60L);
         keyword.click("MAC_BTN_DELETE_OK");
@@ -243,6 +349,7 @@ public class MyAccountPage extends BasePage {
             keyword.assertEquals("MAC_VERIFY_DATA_DELETE_ADDRESS","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         }
         int b = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
+        System.out.printf("b===" + b +"\n");
         if(a == b+1){
             check = true;
         }

@@ -71,6 +71,10 @@ public class MyAccountTest extends BaseTest {
     public void testCase_MW_02() throws InterruptedException {
         testMyAccount.saveItemFormProductList();
     }
+    @Test(priority = 16,description = "Save a item form product list")
+    public void testCase_MW_03() throws InterruptedException {
+        testMyAccount.compareMyWishProduct();
+    }
 
 
 
