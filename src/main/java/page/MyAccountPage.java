@@ -44,6 +44,22 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
+    public void setUp1() throws InterruptedException {
+        objLogin.loginOnAlert();
+//        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
+        objRegister.acceptAllCookies();
+        objRegister.chooseLanguages();
+        keyword.untilJqueryIsDone(30L);
+
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
+        keyword.untilJqueryIsDone(30L);
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+        keyword.untilJqueryIsDone(30L);
+//        keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/edit/");
+//        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
     public void commonPersonalInf(String checkBox) throws InterruptedException {
         keyword.untilJqueryIsDone(70L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -438,22 +454,35 @@ public class MyAccountPage extends BasePage {
         boolean check;
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         if(keyword.verifyElementVisible("MAC_WISHLISH_SAVE_NO_DISPLAY")){
             count = 0;
         }else{
-            count = Integer.parseInt(keyword.getText("MAC_WISHLISH_COUNT_SAVE"));
+            String s = keyword.getText("MAC_WISHLISH_COUNT_SAVE");
+            System.out.printf("s..... = " + s + "\n");
+            count = Integer.parseInt(s);
         }
         System.out.printf("count.... = " + count + "\n");
         keyword.scrollDownToElement(element);
         keyword.click(element);
         keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         if(keyword.verifyElementVisible("MAC_VERIFY_ICON_HEART")){
             keyword.untilJqueryIsDone(60L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-            Thread.sleep(2000);
-            int s = Integer.parseInt(keyword.getText("MAC_WISHLISH_COUNT_SAVE"));
-            System.out.printf("s.... = " + s + "\n");
-            if(count + 1 ==s){
+            Thread.sleep(20000);
+//            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+//            commonViewWishList();
+            String s = keyword.getText("MAC_WISHLISH_COUNT_SAVE");
+            System.out.printf("s..... = " + s + "\n");
+            if(s==null){
+                System.out.printf("Null"+"\n");
+            }
+            int count2 = Integer.parseInt(s);
+            if(count + 1 == count2){
                 check = true;
             }else{
                 check = false;
@@ -464,25 +493,55 @@ public class MyAccountPage extends BasePage {
 
     }
     public void saveItemFormProductView() throws InterruptedException {
-        keyword.navigateToUrl("URL_PRODUCT_DETAIL");
+        setUp1();
+        keyword.navigateToUrl("URL_WISHLIST_PRODUCT_DETAIL");
         commonWishList("MAC_BTN_HEART");
 
     }
     public void saveItemFormProductList() throws InterruptedException {
-        keyword.navigateToUrl("URL_PRODUCT_INFO");
+        keyword.navigateToUrl("URL_WISHLIST_PRODUCT_LIST");
         commonWishList("MAC_ICON_HEART");
     }
-    public void compareMyWishProduct() throws InterruptedException {
+    public void commonViewWishList() throws InterruptedException {
         keyword.reLoadPage();
         keyword.click("MAC_LINK_HEART");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-//        keyword.click("MAC_BTN_VIEW_WISHLIST");
-    }
-    public void removeItemSave(){
-        keyword.click("MAC_BTN_REMOVE_WISHLIST");
+        keyword.click("MAC_BTN_VIEW_WISHLIST");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
+    public void compareMyWishProduct() throws InterruptedException {
+        commonViewWishList();
+    }
+    public int checkCountRemove(){
+        String a = keyword.getText("MAC_WISHLIST_TITLLE_COUNT_SAVE");
+        System.out.printf("a=== " + a + "\n");
+        String split = a.split("\\s" , 0)[0];
+        System.out.printf("split=== " + split + "\n");
+        int num = Integer.parseInt(split);
+        System.out.printf("num === "+num +"\n");
+        return num;
+    }
+    public void removeItemSave() throws InterruptedException {
+        boolean check;
+        commonViewWishList();
+        int num1 = checkCountRemove();
+        keyword.click("MAC_BTN_REMOVE_WISHLIST");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        int num2 = checkCountRemove();
+        if(num1-1==num2){
+            check=true;
+        }else{
+            check=false;
+        }
+        logger.info("check verify remove save item...");
+        Assert.assertEquals(check,true);
+
+    }
+
 
 
 

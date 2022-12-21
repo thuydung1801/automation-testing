@@ -1,112 +1,30 @@
-INFO  | 2022-12-20 17:18:56 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2022-12-20 17:18:58 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
-INFO  | 2022-12-20 17:18:58 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
-INFO  | 2022-12-20 17:18:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2022-12-20 17:18:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-12-20 17:18:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@398694a6
-INFO  | 2022-12-20 17:19:32 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2022-12-20 17:19:32 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
-INFO  | 2022-12-20 17:19:40 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2022-12-20 17:19:40 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
-INFO  | 2022-12-20 17:19:42 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
-INFO  | 2022-12-20 17:19:59 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glde/
-INFO  | 2022-12-20 17:20:20 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
-INFO  | 2022-12-20 17:20:30 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
-INFO  | 2022-12-20 17:20:32 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL
-INFO  | 2022-12-20 17:20:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_PASSWORDwith COM_INP_DATA_PASS
-INFO  | 2022-12-20 17:20:36 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2022-12-20 17:20:59 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glde/customer/account/edit/
-INFO  | 2022-12-20 17:21:09 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glde/customer/address/index/#
-INFO  | 2022-12-20 17:21:19 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ADDRESS_DIRECTORY
-INFO  | 2022-12-20 17:21:20 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:783) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2022-12-20 17:21:20 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_BTN_ADD_NEW_ADDRESS
-INFO  | 2022-12-20 17:21:31 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-20 17:21:31 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME
-INFO  | 2022-12-20 17:21:31 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-20 17:21:32 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME
-INFO  | 2022-12-20 17:21:32 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-20 17:21:32 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_COMPANYwith COM_DATA_TITLE
-INFO  | 2022-12-20 17:21:32 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-20 17:21:32 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_PHONE_NUMwith MAC_DATA_PHONE_NUM
-INFO  | 2022-12-20 17:21:32 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-20 17:21:32 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
-INFO  | 2022-12-20 17:21:32 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_STREETwith MAC_DATA_STREET9
-INFO  | 2022-12-20 17:21:33 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
-INFO  | 2022-12-20 17:21:38 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_BTN_SAVE_ADDRESS
-INFO  | 2022-12-20 17:21:48 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2022-12-20 17:21:48 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2022-12-20 17:21:51 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2022-12-20 17:21:51 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:783) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2022-12-20 17:21:51 | [main] page.MyAccountPage (MyAccountPage.java:inpEditAddress:294) - check add...
-INFO  | 2022-12-20 17:21:53 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glde/customer/address/index/#
-INFO  | 2022-12-20 17:21:53 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ADDRESS_DIRECTORY
-INFO  | 2022-12-20 17:21:56 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:783) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2022-12-20 17:21:56 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_LINKTEXT_EDIT
-INFO  | 2022-12-20 17:22:11 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-20 17:22:11 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME
-INFO  | 2022-12-20 17:22:11 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-20 17:22:11 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME
-INFO  | 2022-12-20 17:22:11 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-20 17:22:11 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_COMPANYwith COM_DATA_TITLE
-INFO  | 2022-12-20 17:22:12 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-20 17:22:12 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_PHONE_NUMwith MAC_DATA_PHONE_NUM
-INFO  | 2022-12-20 17:22:12 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-20 17:22:12 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
-INFO  | 2022-12-20 17:22:12 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_STREETwith MAC_DATA_STREET3
-INFO  | 2022-12-20 17:22:13 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
-INFO  | 2022-12-20 17:22:17 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_BTN_SAVE_ADDRESS
-INFO  | 2022-12-20 17:22:28 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2022-12-20 17:22:28 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2022-12-20 17:22:31 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2022-12-20 17:22:31 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_EDIT_ENTRIES
-INFO  | 2022-12-20 17:22:31 | [main] page.MyAccountPage (MyAccountPage.java:inpEditAddress:308) - check edit Additional Address Entries...
-INFO  | 2022-12-20 17:22:31 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ADDRESS_DIRECTORY
-INFO  | 2022-12-20 17:22:34 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:783) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2022-12-20 17:22:34 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_LINKTEXT_DELETE
-INFO  | 2022-12-20 17:22:35 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_BTN_DELETE_OK
-INFO  | 2022-12-20 17:22:43 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2022-12-20 17:22:43 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from MAC_VERIFY_DATA_DELETE_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2022-12-20 17:22:43 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:783) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2022-12-20 17:22:43 | [main] page.MyAccountPage (MyAccountPage.java:deleteAdditionalAddressEntries:359) - check delete...
-INFO  | 2022-12-20 17:22:49 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_SETAS_ADDRESS
-INFO  | 2022-12-20 17:22:49 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_LINKTEXT_SETAS
-INFO  | 2022-12-20 17:23:00 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2022-12-20 17:23:00 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2022-12-20 17:23:03 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_SETAS_SHIPPING_ADDRESS
-INFO  | 2022-12-20 17:23:03 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2022-12-20 17:23:03 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_SETAS_SHIPPING_ADDRESS
-INFO  | 2022-12-20 17:23:03 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2022-12-20 17:23:03 | [main] page.MyAccountPage (MyAccountPage.java:setAsDefaultAddress:394) - check verify address...
-INFO  | 2022-12-20 17:23:03 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glde/customer/address/index/#
-INFO  | 2022-12-20 17:23:03 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ADDRESS_DIRECTORY
-INFO  | 2022-12-20 17:23:06 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:783) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2022-12-20 17:23:06 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_LINKTEXT_EDIT
-INFO  | 2022-12-20 17:23:21 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_STREETwith MAC_DATA_STREET6
-INFO  | 2022-12-20 17:23:22 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
-INFO  | 2022-12-20 17:23:24 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_CHECKBOX_DEFAULT_BILLING
-INFO  | 2022-12-20 17:23:24 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_BTN_SAVE_ADDRESS
-INFO  | 2022-12-20 17:23:36 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2022-12-20 17:23:36 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2022-12-20 17:23:36 | [main] page.MyAccountPage (MyAccountPage.java:editSetAsDefaultAddress:422) - check verify address...
-INFO  | 2022-12-20 17:23:36 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glde/customer/address/index/#
-INFO  | 2022-12-20 17:23:36 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ADDRESS_DIRECTORY
-INFO  | 2022-12-20 17:23:39 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:783) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2022-12-20 17:23:39 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_LINKTEXT_EDIT
-INFO  | 2022-12-20 17:24:05 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_STREETwith MAC_DATA_STREET7
-INFO  | 2022-12-20 17:24:05 | [main] core.KeywordWeb (KeywordWeb.java:imWait:613) - implicitlyWait
-INFO  | 2022-12-20 17:24:07 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_CHECKBOX_DEFAULT_SHIPPING
-INFO  | 2022-12-20 17:24:07 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_BTN_SAVE_ADDRESS
-INFO  | 2022-12-20 17:24:22 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_SETAS_SHIPPING_ADDRESS
-INFO  | 2022-12-20 17:24:22 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_SETAS_SHIPPING_ADDRESS
-INFO  | 2022-12-20 17:24:22 | [main] page.MyAccountPage (MyAccountPage.java:editSetAsDefaultAddress:422) - check verify address...
-INFO  | 2022-12-20 17:24:22 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
-INFO  | 2022-12-20 17:24:41 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2022-12-20 17:25:31 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...URL_PRODUCT_DETAIL
-INFO  | 2022-12-20 17:26:18 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementMAC_BTN_HEART
-INFO  | 2022-12-20 17:26:18 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_BTN_HEART
-INFO  | 2022-12-20 17:26:21 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleMAC_VERIFY_ICON_HEART
-INFO  | 2022-12-20 17:26:21 | [main] page.MyAccountPage (MyAccountPage.java:commonWishList:443) - PASS
-INFO  | 2022-12-20 17:26:21 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...URL_PRODUCT_INFO
-INFO  | 2022-12-20 17:26:46 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementMAC_ICON_HEART
-INFO  | 2022-12-20 17:26:46 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_ICON_HEART
-INFO  | 2022-12-20 17:26:49 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleMAC_VERIFY_ICON_HEART
+INFO  | 2022-12-21 18:05:34 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2022-12-21 18:05:35 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
+INFO  | 2022-12-21 18:05:35 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
+INFO  | 2022-12-21 18:05:37 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2022-12-21 18:05:37 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-12-21 18:05:37 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@4489f60f
+INFO  | 2022-12-21 18:05:57 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
+INFO  | 2022-12-21 18:05:57 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
+INFO  | 2022-12-21 18:06:05 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2022-12-21 18:06:05 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
+INFO  | 2022-12-21 18:06:07 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
+INFO  | 2022-12-21 18:06:19 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/
+INFO  | 2022-12-21 18:06:38 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
+INFO  | 2022-12-21 18:06:38 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
+INFO  | 2022-12-21 18:06:41 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL
+INFO  | 2022-12-21 18:06:43 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_PASSWORDwith COM_INP_DATA_PASS
+INFO  | 2022-12-21 18:06:45 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2022-12-21 18:06:53 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...URL_WISHLIST_PRODUCT_DETAIL
+INFO  | 2022-12-21 18:07:25 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleMAC_WISHLISH_SAVE_NO_DISPLAY
+INFO  | 2022-12-21 18:07:25 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementMAC_BTN_HEART
+INFO  | 2022-12-21 18:07:25 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_BTN_HEART
+INFO  | 2022-12-21 18:07:28 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleMAC_VERIFY_ICON_HEART
+INFO  | 2022-12-21 18:07:49 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_WISHLISH_COUNT_SAVE
+INFO  | 2022-12-21 18:07:49 | [main] page.MyAccountPage (MyAccountPage.java:commonWishList:490) - check verify save item...
+INFO  | 2022-12-21 18:07:50 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...URL_WISHLIST_PRODUCT_LIST
+INFO  | 2022-12-21 18:08:04 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleMAC_WISHLISH_SAVE_NO_DISPLAY
+INFO  | 2022-12-21 18:08:04 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_WISHLISH_COUNT_SAVE
+INFO  | 2022-12-21 18:08:04 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementMAC_ICON_HEART
+INFO  | 2022-12-21 18:08:04 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_ICON_HEART
+INFO  | 2022-12-21 18:08:08 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleMAC_VERIFY_ICON_HEART
