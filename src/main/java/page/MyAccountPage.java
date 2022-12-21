@@ -434,14 +434,34 @@ public class MyAccountPage extends BasePage {
 
     }
     public void commonWishList(String element) throws InterruptedException {
+        int count;
+        boolean check;
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(keyword.verifyElementVisible("MAC_WISHLISH_SAVE_NO_DISPLAY")){
+            count = 0;
+        }else{
+            count = Integer.parseInt(keyword.getText("MAC_WISHLISH_COUNT_SAVE"));
+        }
+        System.out.printf("count.... = " + count + "\n");
         keyword.scrollDownToElement(element);
         keyword.click(element);
         keyword.untilJqueryIsDone(60L);
         if(keyword.verifyElementVisible("MAC_VERIFY_ICON_HEART")){
-            logger.info("PASS");
-        };
+            keyword.untilJqueryIsDone(60L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+            Thread.sleep(2000);
+            int s = Integer.parseInt(keyword.getText("MAC_WISHLISH_COUNT_SAVE"));
+            System.out.printf("s.... = " + s + "\n");
+            if(count + 1 ==s){
+                check = true;
+            }else{
+                check = false;
+            }
+            logger.info("check verify save item...");
+            Assert.assertEquals(check,true);
+        }
+
     }
     public void saveItemFormProductView() throws InterruptedException {
         keyword.navigateToUrl("URL_PRODUCT_DETAIL");
@@ -456,11 +476,12 @@ public class MyAccountPage extends BasePage {
         keyword.reLoadPage();
         keyword.click("MAC_LINK_HEART");
         keyword.untilJqueryIsDone(60L);
-        keyword.click("MAC_BTN_VIEW_WISHLIST");
-
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+//        keyword.click("MAC_BTN_VIEW_WISHLIST");
     }
     public void removeItemSave(){
         keyword.click("MAC_BTN_REMOVE_WISHLIST");
+
     }
 
 
