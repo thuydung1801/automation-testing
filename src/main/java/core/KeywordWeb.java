@@ -407,6 +407,22 @@ public class KeywordWeb {
 
     }
 
+    //I want to use it when the text contains <br> . tag
+    public void checkDisplayOfStringInText(String element1, String element2) {
+        logger.info("compare from " + element1 + " with " + element2);
+        String xPathElement1 = PropertiesFile.getPropValue(element1);
+        String xPathElement2 = PropertiesFile.getPropValue(element2);
+        if (xPathElement1 == null) {
+            xPathElement1 = element1;
+        }
+        if (xPathElement2 == null) {
+            xPathElement2 = element2;
+        }
+        String actualString = driver.findElement(By.xpath(xPathElement1)).getText().replaceAll("\\s", " ");
+        String expectedString = xPathElement2;
+        Assert.assertEquals(actualString,expectedString);
+    }
+
     public void switchToTab(int tabNum) {
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tabNum));
@@ -833,7 +849,7 @@ public class KeywordWeb {
         actions.sendKeys(Keys.TAB);
         actions.build().perform();
         //Paste the Address in the Permanent Address field using CTRL + V
-        Thread.sleep(1000);
+//        Thread.sleep(2000);
         actions.keyDown(Keys.CONTROL);
         actions.sendKeys("v");
         actions.keyUp(Keys.CONTROL);
