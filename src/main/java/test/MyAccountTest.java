@@ -79,6 +79,10 @@ public class MyAccountTest extends BaseTest {
     public void testCase_MW_04() throws InterruptedException {
         testMyAccount.removeItemSave();
     }
+    @Test(priority = 18,description = "Check function of Email Selected Items")
+    public void testCase_MW_05() throws InterruptedException {
+        testMyAccount.emailSelectItem();
+    }
 
 
 

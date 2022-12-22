@@ -452,9 +452,7 @@ public class MyAccountPage extends BasePage {
     public void commonWishList(String element) throws InterruptedException {
         int count;
         boolean check;
-        keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.untilJqueryIsDone(60L);
+       keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
         if(keyword.verifyElementVisible("MAC_WISHLISH_SAVE_NO_DISPLAY")){
@@ -473,9 +471,10 @@ public class MyAccountPage extends BasePage {
         if(keyword.verifyElementVisible("MAC_VERIFY_ICON_HEART")){
             keyword.untilJqueryIsDone(60L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-            Thread.sleep(20000);
+            Thread.sleep(25000);
 //            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 //            commonViewWishList();
+//            keyword.webDriverWaitForElementPresent("MAC_WISHLISH_COUNT_SAVE_DISPLAY",100);
             String s = keyword.getText("MAC_WISHLISH_COUNT_SAVE");
             System.out.printf("s..... = " + s + "\n");
             if(s==null){
@@ -494,6 +493,13 @@ public class MyAccountPage extends BasePage {
     }
     public void saveItemFormProductView() throws InterruptedException {
         setUp1();
+
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/catalog/product_compare/index/");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.navigateToUrl("URL_WISHLIST_PRODUCT_DETAIL");
         commonWishList("MAC_BTN_HEART");
 
@@ -507,13 +513,30 @@ public class MyAccountPage extends BasePage {
         keyword.click("MAC_LINK_HEART");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("MAC_BTN_VIEW_WISHLIST");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
     public void compareMyWishProduct() throws InterruptedException {
+        boolean check;
+        keyword.navigateToUrl("URL_WISHLIST_PRODUCT_LIST");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("MAC_WISHLIST_ICON_HEART");
+        String a = keyword.getText("MAC_WISHLIST_GET_TITLE");
+        System.out.printf("a==== " + a + "\n");
         commonViewWishList();
+        String s = keyword.getText("MAC_WISHLIST_GET_TITLE_COMPARE");
+        System.out.printf("s====" + s + "\n");
+        if(a.equalsIgnoreCase(s)){
+            check=true;
+        }else{
+            check=false;
+        }
+        logger.info("check verify compare item...");
+        Assert.assertEquals(check,true);
     }
     public int checkCountRemove(){
         String a = keyword.getText("MAC_WISHLIST_TITLLE_COUNT_SAVE");
@@ -539,6 +562,23 @@ public class MyAccountPage extends BasePage {
         }
         logger.info("check verify remove save item...");
         Assert.assertEquals(check,true);
+
+    }
+    public void emailSelectItem() throws InterruptedException {
+        commonViewWishList();
+        keyword.click("MAC_WISHLIST_EMAIL_BTN");
+        keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_NAME","COM_INP_DATA_NAME");
+        keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MAIL","COM_INP_DATA_EMAIL");
+        keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_REMAIL","EMAIL_ADDRESS");
+        keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MESSAGE","COM_DATA_TITLE");
+        keyword.click("MAC_WISHLIST_EMAIL_CHECKBOX_SUB");
+        keyword.click("MAC_WISHLIST_EMAIL_BTN_SUBMIT");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")){
+            keyword.assertEquals("MAC_VERIFY_WISHLIST_EMAIL","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
+        }
+
 
     }
 
