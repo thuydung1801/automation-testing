@@ -27,9 +27,9 @@ public class SignUpTest extends BaseTest {
         objRegist = new RegisterPage(this.keyword);
         objSigUp = new SignUpPage(this.keyword);
         objLogin.loginOnAlert();
-//        objSigUp.nextUrl();
-        objRegist.acceptAllCookies();
-        objRegist.chooseLanguages();
+        objSigUp.nextUrl();
+//        objRegist.acceptAllCookies();
+//        objRegist.chooseLanguages();
         objSigUp.goToFormCreateMyAccount();
         objSigUp.createCustomerWithEmail();
     }

@@ -21,15 +21,16 @@ public class SignUpPage extends BasePage {
     }
 
     public void goToFormCreateMyAccount() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
         keyword.click("LOGIN_BTN_LOGIN");
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 20);
         Thread.sleep(2000);
         keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
-        if (keyword.verifyElementPresent("SIGNUP_WITH_PHONE")) {
-            keyword.webDriverWaitForElementPresent("SIGNUP_WITH_PHONE", 20);
-        } else {
+//        if (keyword.verifyElementPresent("SIGNUP_WITH_PHONE")) {
+//            keyword.webDriverWaitForElementPresent("SIGNUP_WITH_PHONE", 20);
+//        } else {
             keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 20);
-        }
+//        }
     }
 
     //    Create new customer and input email exist on database OR Create new customer and leave with blank form for required form with email

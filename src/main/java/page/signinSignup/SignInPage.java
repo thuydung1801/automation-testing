@@ -4,22 +4,38 @@ import core.BasePage;
 import core.KeywordWeb;
 import core.LogHelper;
 import org.slf4j.Logger;
+import page.home.LoginPage;
+import page.home.RegisterPage;
 
 public class SignInPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private SignUpPage objSignUp;
-    public SignInPage(KeywordWeb key) {super(key);}
-    public SignInPage() {super();}
+    private LoginPage objLogin;
+    private RegisterPage objRegist;
+    private SignInPage objSigin;
 
-    public void checkGoToFormLoginMobileOrPhoneAndLogin() throws InterruptedException {
+    public SignInPage(KeywordWeb key) {
+        super(key);
+    }
+
+    public SignInPage() {
+        super();
+    }
+
+    public void checkGoToFormLoginWithEmail() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.click("LOGIN_BTN_LOGIN");
         keyword.untilJqueryIsDone(50L);
-        if (!checkElement("SIGNIN_INPUT_PHONE_NUMBER")) {
-            loginLeaverInvalidAndVeriFy("SIGNIN_XPATH_EMAIL_REQUIRED_FIELD");
-        } else {
-            loginLeaverInvalidAndVeriFy("SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
-        }
+        loginLeaverInvalidAndVerify("SIGNIN_XPATH_EMAIL_REQUIRED_FIELD",
+                "SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_MESSAGE_REQUIRED_FIELD");
+    }
+
+    public void checkGoToFormLoginWithPhone() throws InterruptedException {
+        keyword.click("SIGNIN_BTN_ACC");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("SIGNIN_TAB_LOGIN_IN_WITH_PHONE");
+        keyword.untilJqueryIsDone(10L);
+        loginLeaverInvalidAndVerify("SIGNIN_MESSAGE_FAIL_WITH_MOBILE", "SIGNIN_MESSAGE_FAIL", "SIGNIN_MESSAGE_FAIL");
     }
 
     // Login with email and leave the password field blank
@@ -107,8 +123,15 @@ public class SignInPage extends BasePage {
         keyword.click("SIGNI_BTN_SUBMIT_RESET_PASSWORD");
         keyword.untilJqueryIsDone(30L);
         keyword.verifyElementVisible("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
-        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(10L);
         keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
+    }
+
+    public void loginSuccessfully() throws InterruptedException {
+        keyword.sendKeys("SIGNIN_EMAIL_LOG", "SIGNIN_DATA_EMAIL");
+        keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_NEW");
+        keyword.click("LOGIN_BTN_SUBMITLOGIN");
+        keyword.verifyElementVisible("LOGIN_MESSAGE_SUCCESS");
     }
 
     //    create valid new password
@@ -116,6 +139,7 @@ public class SignInPage extends BasePage {
         objSignUp.clearTextAndSendKey("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_RESET_PASSWORD");
 //        keyword.assertEquals("AAAA", "bbbbb");
         keyword.click("SIGNI_BTN_SUBMIT_RESET_PASSWORD");
+        keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "");
     }
 
 
@@ -233,11 +257,11 @@ public class SignInPage extends BasePage {
     }
 
     //
-    public void loginLeaverInvalidAndVeriFy(String actual1) throws InterruptedException {
+    public void loginLeaverInvalidAndVerify(String actual1, String expected1, String expected2) throws InterruptedException {
         keyword.untilJqueryIsDone(20L);
-        keyword.click("LOGIN_BTN_SUBMITLOGIN");
-        keyword.assertEquals("SIGNIN_MESSAGE_REQUIRED_FIELD", actual1);
-        keyword.assertEquals("SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_XPATH_PASSWORD_REQUIRED_FIELD");
+        keyword.click("SIGNIN_BTN_SUBMIT_FORM_PHONE");
+        keyword.assertEquals(expected1, actual1);
+        keyword.assertEquals(expected2, "SIGNIN_XPATH_PASSWORD_REQUIRED_FIELD");
     }
 
 

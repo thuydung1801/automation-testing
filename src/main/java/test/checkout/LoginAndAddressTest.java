@@ -53,11 +53,6 @@ public class LoginAndAddressTest extends BaseTest {
     @Test(priority = 5, description = "Next to Payment page successfully with Guest option and Ship to this address is yes")
     public void testCase_LA_08() throws InterruptedException {
         logger.info("testCase_LA_08");
-//        objRegis = new RegisterPage(this.keyword);
-//        objRegis.acceptAllCookies();
-//        objLoginAdrPage = new LoginAndAddressPage(this.keyword);
-//        objLogin = new LoginPage(this.keyword);
-//        objLogin.loginOnAlert();
         objLoginAdrPage.nextToPaymentPageWithAddress();
     }
 //
