@@ -564,9 +564,63 @@ public class MyAccountPage extends BasePage {
         Assert.assertEquals(check,true);
 
     }
+    public void checkVerifyAdmin() throws InterruptedException {
+        signInPage.openNewTabs();
+        signInPage.loginAdmin("LOGIN_DATA_USER_NAME_DUNG", "LOGIN_DATA_PASS_WORD_DUNG");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        signInPage.chooseItemCustomer("LOGIN_BTN_CUSTOMER","LOGIN_BTN_CUSTOMER",
+                "SIGNUP_VERIFY_CUSTOMER","LOGIN_BTN_EMAIL_LOG",
+                "SIGNUP_VERIFY_EMAIL_LOG");
+        adminChooseEmailLog("EMAIL_ADDRESS");
+    }
+    public void adminChooseEmailLog(String text) throws InterruptedException {
+
+//        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(30L);
+        keyword.webDriverWaitForElementPresent("ADMIN_CUS_EMAILLOG_BTN_FILTER",20);
+        Thread.sleep(2000);
+        keyword.click("ADMIN_CUS_EMAILLOG_BTN_FILTER");
+
+        keyword.untilJqueryIsDone(30L);
+
+        keyword.clearText("ADMIN_CUS_EMAILLOG_FILTER_INP_RECIPIENT");
+        keyword.sendKeys("ADMIN_CUS_EMAILLOG_FILTER_INP_RECIPIENT",text);
+
+        keyword.untilJqueryIsDone(30L);
+        keyword.click("ADMIN_CUS_EMAILLOG_ENTER_FILTER");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.assertEquals(text,"ADMIN_CUS_EMAILLOG_TEXT_RECIPIENT");
+        keyword.assertEquals("ADMIN_CUS_DATA_EMAILLOG_TEXT_RECIPIENT_TEMP","ADMIN_CUS_EMAILLOG_TEXT_RECIPIENT_TEMP");
+//        keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT");
+//        keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT_VIEW");
+//
+//        keyword.untilJqueryIsDone(30L);
+//        keyword.scrollDownToElement("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
+//        keyword.webDriverWaitForElementPresent("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE",20);
+//        keyword.checkStatusIsDisplay("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
+//        System.out.printf("===========");
+//        keyword.scrollDownToElement("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
+//        keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
+        keyword.untilJqueryIsDone(30L);
+
+    }
     public void emailSelectItem() throws InterruptedException {
-        commonViewWishList();
+        setUp1();
+//        keyword.reLoadPage();
+        keyword.click("MAC_LINK_HEART");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        // commonViewWishList();
         keyword.click("MAC_WISHLIST_EMAIL_BTN");
+        keyword.untilJqueryIsDone(60L);
+
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_NAME","COM_INP_DATA_NAME");
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MAIL","COM_INP_DATA_EMAIL");
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_REMAIL","EMAIL_ADDRESS");
@@ -576,14 +630,23 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         if(keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")){
-            keyword.assertEquals("MAC_VERIFY_WISHLIST_EMAIL","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
+            keyword.assertEquals("MAC_VERIFY_DATA_WISHLIST_EMAIL","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
+        }
+        checkVerifyAdmin();
+    }
+    public void logOut() throws InterruptedException {
+        setUp1();
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/customer/account/index/");
+        keyword.click("MAC_BTN_LOGOUT");
+        keyword.untilJqueryIsDone(60L);
+        keyword.click("MAC_LOGOUT_OK");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(keyword.verifyElementVisible("MAC_LOGOUT_VERIFY_MESSAGE")){
+            keyword.assertEquals("MAC_LOGOUT_DATA_MESSAGE","MAC_LOGOUT_VERIFY_MESSAGE");
         }
 
-
     }
-
-
-
 
 
 

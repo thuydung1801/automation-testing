@@ -63,25 +63,29 @@ public class MyAccountTest extends BaseTest {
 //    public void testCase_MA_08() throws InterruptedException {
 //        testMyAccount.addNewAddress();
 //    }
-    @Test(priority = 14,description = "Save a item form product view")
-    public void testCase_MW_01() throws InterruptedException {
-        testMyAccount.saveItemFormProductView();
-    }
-    @Test(priority = 15,description = "Save a item form product list")
-    public void testCase_MW_02() throws InterruptedException {
-        testMyAccount.saveItemFormProductList();
-    }
-    @Test(priority = 16,description = "Compare My Wishlist - product_compare")
-    public void testCase_MW_03() throws InterruptedException {
-        testMyAccount.compareMyWishProduct();
-    }
-    @Test(priority = 17,description = "Remove a item saved ")
-    public void testCase_MW_04() throws InterruptedException {
-        testMyAccount.removeItemSave();
-    }
+//    @Test(priority = 14,description = "Save a item form product view")
+//    public void testCase_MW_01() throws InterruptedException {
+//        testMyAccount.saveItemFormProductView();
+//    }
+//    @Test(priority = 15,description = "Save a item form product list")
+//    public void testCase_MW_02() throws InterruptedException {
+//        testMyAccount.saveItemFormProductList();
+//    }
+//    @Test(priority = 16,description = "Compare My Wishlist - product_compare")
+//    public void testCase_MW_03() throws InterruptedException {
+//        testMyAccount.compareMyWishProduct();
+//    }
+//    @Test(priority = 17,description = "Remove a item saved ")
+//    public void testCase_MW_04() throws InterruptedException {
+//        testMyAccount.removeItemSave();
+//    }
     @Test(priority = 18,description = "Check function of Email Selected Items")
     public void testCase_MW_05() throws InterruptedException {
         testMyAccount.emailSelectItem();
+    }
+    @Test(priority = 19,description = "Check function of Email Selected Items")
+    public void testCase_LO_01() throws InterruptedException {
+        testMyAccount.logOut();
     }
 
 
