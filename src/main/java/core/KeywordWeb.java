@@ -632,6 +632,10 @@ public class KeywordWeb {
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xPathElement)));
         }
 
+        public String splitEnterCharacters(String text, Integer index) {
+            String[] words = text.split("\n");
+            return words[index];
+        }
 
         public void waitForAjaxToFinish () throws InterruptedException {
             logger.info("waitForAjaxToFinish");

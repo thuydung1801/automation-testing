@@ -44,7 +44,7 @@ public class LoginAddressPage extends BasePage {
         keyword.sendKeys("CHECKOUT_LA_TBX_PHONE","AFFIRM_DATA_PHONE");
         if (isSuggestion){
             keyword.sendKeys("CHECKOUT_LA_TBX_STREET","CHECKOUT_LA_DATA_STREET_2");
-            keyword.webDriverWaitForElementPresent("CHECKOUT_LA_SUGGESTLIST",10);
+            keyword.webDriverWaitForElementPresent("CHECKOUT_LA_SUGGESTLIST",40);
             keyword.click("CHECKOUT_LA_SUGGESTLIST");
         }else {
             keyword.sendKeys("CHECKOUT_LA_TBX_STREET",street);

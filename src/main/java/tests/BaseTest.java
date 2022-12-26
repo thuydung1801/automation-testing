@@ -1,4 +1,5 @@
 package tests;
+import java.io.IOException;
 import java.lang.reflect.Method;
 
 import core.KeywordWeb;
@@ -23,11 +24,11 @@ public class BaseTest {
     public void beforeSuite(){
         System.setProperty("webdriver.chrome.driver","driver/chromedriver.exe");
         WebDriver wd =new ChromeDriver();
-        String baseUrl = "https://www.google.com";
+        String baseUrl = "https://dev4.glamira.com/glau";
         wd.get(baseUrl);
     }
     @BeforeClass
-    public void setupTestClass() {
+    public void setupTestClass() throws IOException {
         driver = new ChromeDriver(chromeOptionsUtil.getChromeOptions());
         driver.manage().window().maximize();
         steps = new Steps(driver);

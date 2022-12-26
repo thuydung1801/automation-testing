@@ -316,4 +316,17 @@ public class LoginAddressTest extends BaseTest {
         objLoginAddress.forgotPassword("blank code");
     }
 
+    @Test(priority = 28, description = "Add new billing address using suggest address with store having state")
+    public void NLA_04() throws InterruptedException {
+        customerNotLogin();
+        objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glus/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objLoginAddress.moveToAddressPage();
+        objLoginAddress.fillContactInformation(true, null,null,null);
+        objLoginAddress.verifyMelissa();
+        objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA_4","CHECKOUT_LBL_ADDRESS_INFO");
+    }
+
+
 }

@@ -23,6 +23,8 @@ public class FolderUtil {
     public File actualImageFile;
     public File differenceImageFile;
     public File differenceFileForParent;
+
+    public Integer count = 0;
     public void setUpFilesAndFolders(String name) {
         //Get the test name to create a specific screenshot folder for each test.
         testName = name;
@@ -31,7 +33,8 @@ public class FolderUtil {
         testScreenShotDirectory = parentScreenShotsLocation + testName + "/";
         createFolder(testScreenShotDirectory);
         //Declare element screenshot paths, concatenate with the test name.
-        declareScreenShotPaths(testName + "_Baseline.png", testName + "_Actual.png", testName + "_Diff.png");
+        declareScreenShotPaths(testName + "_Baseline.png", testName + "_Actual1.png", testName + "_Diff.png");
+        count++;
     }
     //Create Folder Method
     public void createFolder(String path) {

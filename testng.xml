@@ -28,7 +28,7 @@
 <suite name="Visual Test Automation Test Suite">
     <test name="RunTest">
         <classes>
-            <class name="tests.VisualTest" />
+            <class name="test.checkout.ShoppingBagTest" />
         </classes>
     </test>
 </suite>
