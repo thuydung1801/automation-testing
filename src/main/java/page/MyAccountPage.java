@@ -137,8 +137,8 @@ public class MyAccountPage extends BasePage {
         keyword.click("LOGIN_BTN_ACCOUNT");
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         boolean test;
-        String a = keyword.getText("MAC_VERIFY_NAME");
-        if(a.contains("Hello")){
+        String message = keyword.getText("MAC_VERIFY_NAME");
+        if(message.contains("Hello")){
             test = true;
         }
         else {
@@ -159,11 +159,11 @@ public class MyAccountPage extends BasePage {
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             switch (change){
                 case "name" :
-                    String s1 = PropertiesFile.getPropValue("MAC_DATA_FIRST_NAME");
-                    String s2 = PropertiesFile.getPropValue("MAC_DATA_LAST_NAME");
-                    String name = s1 +" "+ s2;
-                    String a = keyword.getText(eleChange);
-                    if(a.contains(name)){
+                    String firstName = PropertiesFile.getPropValue("MAC_DATA_FIRST_NAME");
+                    String lastName = PropertiesFile.getPropValue("MAC_DATA_LAST_NAME");
+                    String name = firstName +" "+ lastName;
+                    String text = keyword.getText(eleChange);
+                    if(text.contains(name)){
                         test = true;
                     }
                     else {
@@ -173,8 +173,8 @@ public class MyAccountPage extends BasePage {
                     Assert.assertEquals(test,true);
                     break;
                 case "email":
-                    String s = keyword.getText(eleChange);
-                    if(s.contains(PropertiesFile.getPropValue(verify))){
+                    String textEle = keyword.getText(eleChange);
+                    if(textEle.contains(PropertiesFile.getPropValue(verify))){
                         test = true;
                     }
                     else {
@@ -303,13 +303,13 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
         boolean check;
-        String s = PropertiesFile.getPropValue(textStreet);
-        String a =  keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS");
-        System.out.printf("a===" + a + "\n");
-        System.out.printf("s===" + s+ "\n");
+        String street = PropertiesFile.getPropValue(textStreet);
+        String textBilling =  keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS");
+        System.out.printf("a===" + textBilling + "\n");
+        System.out.printf("s===" + street+ "\n");
         switch (label){
             case "billing":
-                if( keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS").contains(s)){
+                if( keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS").contains(street)){
 
                     check=true;
                 }
@@ -320,7 +320,7 @@ public class MyAccountPage extends BasePage {
                 Assert.assertEquals(check,true);
                 break;
             case "shipping":
-                if(keyword.getText("MAC_VERIFY_SETAS_SHIPPING_ADDRESS").contains(s)){
+                if(keyword.getText("MAC_VERIFY_SETAS_SHIPPING_ADDRESS").contains(street)){
                     check=true;
                 }
                 else{
@@ -330,10 +330,10 @@ public class MyAccountPage extends BasePage {
                 Assert.assertEquals(check,true);
                 break;
             case "add":
-                int b = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
+                int count = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
                 System.out.printf("======count: " + countAdd + "\n");
-                System.out.printf("======count b: " + b + "\n");
-                if(countAdd + 1 == b){
+                System.out.printf("======count b: " + count + "\n");
+                if(countAdd + 1 == count){
                     check = true;
                 }
                 else {
@@ -344,10 +344,10 @@ public class MyAccountPage extends BasePage {
                 keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
                 break;
             case "edit":
-                String n = keyword.getText("MAC_VERIFY_EDIT_ENTRIES");
-                System.out.printf("n== " + n +"\n");
+                String textEdit = keyword.getText("MAC_VERIFY_EDIT_ENTRIES");
+                System.out.printf("n== " + textEdit +"\n");
                 System.out.printf("== " + PropertiesFile.getPropValue("MAC_DATA_STREET3") +"\n");
-                if(n.contains(s)){
+                if(textEdit.contains(street)){
                     check = true;
                 }
                 else {
@@ -387,8 +387,8 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         boolean check;
-        int a = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
-        System.out.printf("a===" + a +"\n");
+        int countAddress = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
+        System.out.printf("a===" + countAddress +"\n");
         keyword.click("MAC_LINKTEXT_DELETE");
         keyword.untilJqueryIsDone(60L);
         keyword.click("MAC_BTN_DELETE_OK");
@@ -396,9 +396,9 @@ public class MyAccountPage extends BasePage {
         if(keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")){
             keyword.assertEquals("MAC_VERIFY_DATA_DELETE_ADDRESS","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         }
-        int b = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
-        System.out.printf("b===" + b +"\n");
-        if(a == b+1){
+        int countAddressEdit = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
+        System.out.printf("b===" + countAddressEdit +"\n");
+        if(countAddress == countAddressEdit+1){
             check = true;
         }
         else {
@@ -414,7 +414,7 @@ public class MyAccountPage extends BasePage {
 //        keyword.click("MAC_MY_ADDRESS_DIRECTORY");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        String s = keyword.getText("MAC_VERIFY_SETAS_ADDRESS");
+        String address = keyword.getText("MAC_VERIFY_SETAS_ADDRESS");
         keyword.click("MAC_LINKTEXT_SETAS");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -428,11 +428,11 @@ public class MyAccountPage extends BasePage {
         boolean check;
         String a = keyword.getText("MAC_VERIFY_SETAS_SHIPPING_ADDRESS");
         String b = keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS");
-        System.out.printf("s==" + s +"\n");
+        System.out.printf("s==" + address +"\n");
         System.out.printf("a==" + a +"\n");
         System.out.printf("b==" + b +"\n");
-        if(keyword.getText("MAC_VERIFY_SETAS_SHIPPING_ADDRESS").contains(s) &&
-                keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS").contains(s)){
+        if(keyword.getText("MAC_VERIFY_SETAS_SHIPPING_ADDRESS").contains(address) &&
+                keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS").contains(address)){
 
                 check=true;
         }
@@ -449,18 +449,18 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click(checkBox);
         boolean check;
-        String s = PropertiesFile.getPropValue(address);
+        String textAddress = PropertiesFile.getPropValue(address);
 
 //        String s = keyword.getAttributeWithValue("MAC_INP_STREET");
         keyword.click("MAC_BTN_SAVE_ADDRESS");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
-        String a = keyword.getText(eleText);
-        System.out.printf("s==" + s +"\n");
-        System.out.printf("a==" + a +"\n");
+        String text = keyword.getText(eleText);
+        System.out.printf("s==" + textAddress +"\n");
+        System.out.printf("a==" + text +"\n");
 
-        if(keyword.getText(eleText).contains(s) ){
+        if(keyword.getText(eleText).contains(textAddress) ){
 
             check=true;
         }
@@ -490,9 +490,9 @@ public class MyAccountPage extends BasePage {
         if(keyword.verifyElementVisible("MAC_WISHLISH_SAVE_NO_DISPLAY")){
             count = 0;
         }else{
-            String s = keyword.getText("MAC_WISHLISH_COUNT_SAVE");
-            System.out.printf("s..... = " + s + "\n");
-            count = Integer.parseInt(s);
+            String countSave = keyword.getText("MAC_WISHLISH_COUNT_SAVE");
+            System.out.printf("s..... = " + countSave + "\n");
+            count = Integer.parseInt(countSave);
         }
         System.out.printf("count.... = " + count + "\n");
         keyword.scrollDownToElement(element);
@@ -507,12 +507,12 @@ public class MyAccountPage extends BasePage {
 //            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 //            commonViewWishList();
 //            keyword.webDriverWaitForElementPresent("MAC_WISHLISH_COUNT_SAVE_DISPLAY",100);
-            String s = keyword.getText("MAC_WISHLISH_COUNT_SAVE");
-            System.out.printf("s..... = " + s + "\n");
-            if(s==null){
+            String countSave = keyword.getText("MAC_WISHLISH_COUNT_SAVE");
+            System.out.printf("s..... = " + countSave + "\n");
+            if(countSave==null){
                 System.out.printf("Null"+"\n");
             }
-            int count2 = Integer.parseInt(s);
+            int count2 = Integer.parseInt(countSave);
             if(count + 1 == count2){
                 check = true;
             }else{
@@ -557,12 +557,12 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("MAC_WISHLIST_ICON_HEART");
-        String a = keyword.getText("MAC_WISHLIST_GET_TITLE");
-        System.out.printf("a==== " + a + "\n");
+        String textTitle = keyword.getText("MAC_WISHLIST_GET_TITLE");
+        System.out.printf("a==== " + textTitle + "\n");
         commonViewWishList();
-        String s = keyword.getText("MAC_WISHLIST_GET_TITLE_COMPARE");
-        System.out.printf("s====" + s + "\n");
-        if(a.equalsIgnoreCase(s)){
+        String textTitleComp = keyword.getText("MAC_WISHLIST_GET_TITLE_COMPARE");
+        System.out.printf("s====" + textTitleComp + "\n");
+        if(textTitle.equalsIgnoreCase(textTitleComp)){
             check=true;
         }else{
             check=false;
@@ -571,9 +571,9 @@ public class MyAccountPage extends BasePage {
         Assert.assertEquals(check,true);
     }
     public int checkCountRemove(){
-        String a = keyword.getText("MAC_WISHLIST_TITLLE_COUNT_SAVE");
-        System.out.printf("a=== " + a + "\n");
-        String split = a.split("\\s" , 0)[0];
+        String textTitle = keyword.getText("MAC_WISHLIST_TITLLE_COUNT_SAVE");
+        System.out.printf("a=== " + textTitle + "\n");
+        String split = textTitle.split("\\s" , 0)[0];
         System.out.printf("split=== " + split + "\n");
         int num = Integer.parseInt(split);
         System.out.printf("num === "+num +"\n");
@@ -664,15 +664,15 @@ public class MyAccountPage extends BasePage {
     public void viewOrder() throws InterruptedException {
         setUp1();
         keyword.openNewTab("https://dev3.glamira.com/glgb/sales/order/history/");
-        String a = keyword.getText("MAC_MY_ORD_TEXT_ID_ITEM");
-        System.out.printf("a======= " + a + "\n");
+        String textID = keyword.getText("MAC_MY_ORD_TEXT_ID_ITEM");
+        System.out.printf("a======= " + textID + "\n");
         keyword.click("MAC_MY_ORD_BTN_VIEW");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        String b = keyword.getText("MAC_MY_ORD_VERIFY_TEXT_ID_ITEM");
-        System.out.printf("b======= " + b + "\n");
+        String textIDComp = keyword.getText("MAC_MY_ORD_VERIFY_TEXT_ID_ITEM");
+        System.out.printf("b======= " + textIDComp + "\n");
         logger.info("check verify veiw my order....");
-        Assert.assertEquals(b,a);
+        Assert.assertEquals(textIDComp,textID);
 
     }
     public void upLoadItemOrder() throws InterruptedException {
@@ -680,13 +680,13 @@ public class MyAccountPage extends BasePage {
         keyword.back();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        int a =  keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM");
+        int numItem =  keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM");
         keyword.click("MAC_MY_ORD_BTN_UPLAOD_MORE");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        int b = keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM");
-        System.out.printf("a-b " +a +"<"+b+"\n");
-        if(a+10 == b){
+        int numItemEdit = keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM");
+        System.out.printf("a-b " +numItem +"<"+numItemEdit+"\n");
+        if(numItem+10 == numItemEdit){
             check = true;
         }else{
             check=false;
