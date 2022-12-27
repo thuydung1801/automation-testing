@@ -1,22 +1,48 @@
-INFO  | 2022-12-26 17:35:01 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2022-12-26 17:35:01 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
-INFO  | 2022-12-26 17:35:01 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
-INFO  | 2022-12-26 17:35:03 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2022-12-26 17:35:03 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-12-26 17:35:03 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@3ce7490a
-INFO  | 2022-12-26 17:35:11 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2022-12-26 17:35:12 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
-INFO  | 2022-12-26 17:35:24 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2022-12-26 17:35:24 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
-INFO  | 2022-12-26 17:35:26 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
-INFO  | 2022-12-26 17:35:37 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/
-INFO  | 2022-12-26 17:35:45 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
-INFO  | 2022-12-26 17:35:45 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
-INFO  | 2022-12-26 17:35:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL
-INFO  | 2022-12-26 17:35:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_PASSWORDwith COM_INP_DATA_PASS
-INFO  | 2022-12-26 17:35:53 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2022-12-26 17:36:02 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/customer/account/index/
-INFO  | 2022-12-26 17:36:09 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_BTN_LOGOUT
-INFO  | 2022-12-26 17:36:10 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_LOGOUT_OK
-INFO  | 2022-12-26 17:36:18 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleMAC_LOGOUT_VERIFY_MESSAGE
-INFO  | 2022-12-26 17:36:18 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from MAC_LOGOUT_DATA_MESSAGE with MAC_LOGOUT_VERIFY_MESSAGE
+INFO  | 2022-12-27 09:09:46 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2022-12-27 09:09:47 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
+INFO  | 2022-12-27 09:09:48 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
+INFO  | 2022-12-27 09:09:49 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2022-12-27 09:09:49 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-12-27 09:09:49 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@1f60824e
+INFO  | 2022-12-27 09:10:17 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
+INFO  | 2022-12-27 09:10:17 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
+INFO  | 2022-12-27 09:10:38 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2022-12-27 09:10:38 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
+INFO  | 2022-12-27 09:10:40 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
+INFO  | 2022-12-27 09:10:50 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/
+INFO  | 2022-12-27 09:10:57 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
+INFO  | 2022-12-27 09:10:57 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
+INFO  | 2022-12-27 09:11:01 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL
+INFO  | 2022-12-27 09:11:03 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_PASSWORDwith COM_INP_DATA_PASS
+INFO  | 2022-12-27 09:11:05 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2022-12-27 09:11:14 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
+INFO  | 2022-12-27 09:11:18 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_LINK_HEART
+INFO  | 2022-12-27 09:11:20 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_BTN_VIEW_WISHLIST
+INFO  | 2022-12-27 09:11:34 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_WISHLIST_EMAIL_BTN
+INFO  | 2022-12-27 09:11:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_WISHLIST_EMAIL_INP_NAMEwith COM_INP_DATA_NAME
+INFO  | 2022-12-27 09:11:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_WISHLIST_EMAIL_INP_MAILwith COM_INP_DATA_EMAIL
+INFO  | 2022-12-27 09:11:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_WISHLIST_EMAIL_INP_REMAILwith EMAIL_ADDRESS
+INFO  | 2022-12-27 09:11:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_WISHLIST_EMAIL_INP_MESSAGEwith COM_DATA_TITLE
+INFO  | 2022-12-27 09:11:36 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_WISHLIST_EMAIL_CHECKBOX_SUB
+INFO  | 2022-12-27 09:11:36 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_WISHLIST_EMAIL_BTN_SUBMIT
+INFO  | 2022-12-27 09:11:45 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2022-12-27 09:11:46 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from MAC_VERIFY_DATA_WISHLIST_EMAIL with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2022-12-27 09:11:46 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:255) - Executing JavaScript
+INFO  | 2022-12-27 09:11:46 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...LOGIN_URL_BACKEND
+INFO  | 2022-12-27 09:11:52 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentLOGIN_FORM_LOGIN_BACKEND
+INFO  | 2022-12-27 09:11:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME_DUNG
+INFO  | 2022-12-27 09:11:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD_DUNG
+INFO  | 2022-12-27 09:11:52 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2022-12-27 09:12:05 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
+INFO  | 2022-12-27 09:12:05 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementLOGIN_BTN_CUSTOMER
+INFO  | 2022-12-27 09:12:06 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_CUSTOMER
+INFO  | 2022-12-27 09:12:06 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentSIGNUP_VERIFY_CUSTOMER
+INFO  | 2022-12-27 09:12:08 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_EMAIL_LOG
+INFO  | 2022-12-27 09:12:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentSIGNUP_VERIFY_EMAIL_LOG
+INFO  | 2022-12-27 09:12:12 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:617) - webDriverWaitForElementPresentADMIN_CUS_EMAILLOG_BTN_FILTER
+INFO  | 2022-12-27 09:12:15 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickADMIN_CUS_EMAILLOG_BTN_FILTER
+INFO  | 2022-12-27 09:12:17 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-27 09:12:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysADMIN_CUS_EMAILLOG_FILTER_INP_RECIPIENTwith EMAIL_ADDRESS
+INFO  | 2022-12-27 09:12:18 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickADMIN_CUS_EMAILLOG_ENTER_FILTER
+INFO  | 2022-12-27 09:12:19 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from EMAIL_ADDRESS with ADMIN_CUS_EMAILLOG_TEXT_RECIPIENT
+INFO  | 2022-12-27 09:12:19 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:692) - compare from ADMIN_CUS_DATA_EMAILLOG_TEXT_RECIPIENT_TEMP with ADMIN_CUS_EMAILLOG_TEXT_RECIPIENT_TEMP

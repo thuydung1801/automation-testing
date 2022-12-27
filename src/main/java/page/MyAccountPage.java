@@ -610,12 +610,7 @@ public class MyAccountPage extends BasePage {
     }
     public void emailSelectItem() throws InterruptedException {
         setUp1();
-//        keyword.reLoadPage();
-        keyword.click("MAC_LINK_HEART");
-        keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
-        // commonViewWishList();
+        commonViewWishList();
         keyword.click("MAC_WISHLIST_EMAIL_BTN");
         keyword.untilJqueryIsDone(60L);
 
