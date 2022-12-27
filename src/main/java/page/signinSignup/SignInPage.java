@@ -24,6 +24,7 @@ public class SignInPage extends BasePage {
 
     public void checkGoToFormLoginWithEmail() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
         keyword.click("LOGIN_BTN_LOGIN");
         keyword.untilJqueryIsDone(50L);
         loginLeaverInvalidAndVerify("SIGNIN_XPATH_EMAIL_REQUIRED_FIELD",
@@ -31,11 +32,17 @@ public class SignInPage extends BasePage {
     }
 
     public void checkGoToFormLoginWithPhone() throws InterruptedException {
+        keyword.deleteAllCookies();
+        keyword.navigateToUrl("https://dev3.glamira.com/glcn/");
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(5000);
         keyword.click("SIGNIN_BTN_ACC");
         keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(2000);
         keyword.click("SIGNIN_TAB_LOGIN_IN_WITH_PHONE");
         keyword.untilJqueryIsDone(10L);
-        loginLeaverInvalidAndVerify("SIGNIN_MESSAGE_FAIL_WITH_MOBILE", "SIGNIN_MESSAGE_FAIL", "SIGNIN_MESSAGE_FAIL");
+        loginLeaverInvalidAndVerify("SIGNIN_MESSAGE_FAIL_WITH_MOBILE", "必填项。", "必填项。");
     }
 
     // Login with email and leave the password field blank
@@ -147,55 +154,82 @@ public class SignInPage extends BasePage {
     public void enterInvalidPhone() throws InterruptedException {
         clearTextSendKeyAndVerify("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_INPUT_PHONE_NUMBER",
                 "SIGNIN_PASSWORD_WRONG", "SIGNIN_BTN_SUBMIT_FORM_PHONE",
-                "SIGNIN_MESSAGE_PASSWORD_ACTUAL", "SIGNIN_MESSAGE_INVALID");
+                "用户名或者密码不正确", "SIGNIN_INPUT_MESSAGE_INVALID");
     }
 
     //    Login wrong password
     public void enterPasswordWrong() throws InterruptedException {
+        objSignUp = new SignUpPage(this.keyword);
         objSignUp.clearTextAndSendKey("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_INPUT_PHONE_NUMBER", "SIGNUP_DATA_PHONE");
         clearTextSendKeyAndVerify("SIGNIN_PASSWORD_INPUT", "SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_WRONG_PHONE",
-                "SIGNIN_BTN_SUBMIT_FORM_PHONE", "SIGNIN_MESSAGE_PASSWORD_ACTUAL", "SIGNIN_MESSAGE_INVALID");
+                "SIGNIN_BTN_SUBMIT_FORM_PHONE", "用户名或者密码不正确", "SIGNIN_INPUT_MESSAGE_INVALID");
     }
 
     //Enter a phone number that is not in the system
     public void forgotPassEnterPhoneIsNotTheSystem() throws InterruptedException {
-        keyword.click("LOGIN_BTN_FORGOT_PASSWORD");
-        keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_DATA_PHONE_NOT_IS_SYSTEM");
+        keyword.click("SIGNIN_XPATH_FORGOT_PASSWORD");
+        keyword.untilJqueryIsDone(30L);
+        keyword.click("SIGNIN_TAB_PHONE_FORGOT_PASSWORD");
+        keyword.untilJqueryIsDone(10L);
+        keyword.click("SIGNIN_SELECT_PHONE");
+        keyword.untilJqueryIsDone(10L);
+        keyword.click("SIGNIN_CHINA_PHONE");
+        keyword.untilJqueryIsDone(10L);
+        keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_VALID_PHONE_CHINA");
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(50L);
-        keyword.assertEquals("SIGNIN_MESSAGE_PHONE_INCORRECT", "SIGNIN_INPUT_MESSAGE_PHONE_INCORRECT");
+        keyword.assertEquals("你的电话号码不正确。请验证手机号码後重试。", "SIGNIN_INPUT_MESSAGE_PHONE_FAIL");
     }
 
     //    create valid new password Success
     public void createNewPassWordWithPhoneSuccess() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
-
-        objSignUp.clearTextAndSendKey("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_DAYA_PHONE_RESET_PASSWORD");
+        objSignUp.clearTextAndSendKey("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_PHONE_CHINA");
+        keyword.click("SIGNIN_CLICK_FORM");
+        keyword.untilJqueryIsDone(10L);
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
+        keyword.untilJqueryIsDone(10L);
         openNewTabs();
-        loginAdmin(
-                "LOGIN_DATA_USER_NAME",
-                "LOGIN_DATA_PASS_WORD");
+//        loginAdmin(
+//                "LOGIN_DATA_USER_NAME",
+//                "LOGIN_DATA_PASS_WORD");
+        keyword.untilJqueryIsDone(30L);
         chooseItemCustomer(
                 "SIGNUP_STORES_ITEM", "SIGNUP_STORES_ITEM",
                 "LOGIN_FORM_CUSTOMER", "SIGNUP_ELEMENT_SMS_LOG", "SIGNUP_VERIFY_SMS"
         );
-        objSignUp.filterSort(
-                "SIGNUP_BTN_FILTER", "SIGNUP_VERIFY_ELEMENT_FILTER",
-                "SIGNUP_PHONE_REGIS", "SIGNUP_BUTTON_APPLY_FILTERS"
-        );
-        keyword.untilJqueryIsDone(30L);
-        objSignUp.getCodeAndSendKey("SIGNUP_GET_CODE_SMS", "SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_BTN_SUBMIT_SEND_CODE"
+//        objSignUp.filterSort(
+//                "SIGNUP_BTN_FILTER", "SIGNUP_VERIFY_ELEMENT_FILTER",
+//                "SIGNIN_PHONE_CHINA", "SIGNUP_BUTTON_APPLY_FILTERS"
+//        );
+//        Thread.sleep(12000);
+        keyword.untilJqueryIsDone(50L);
+        objSignUp.getCodeAndSendKey("SIGNIN_INPUT_ENTER_CODE", "SIGNIN_BTN_SUBMIT_SEND_CODE"
         );
         keyword.untilJqueryIsDone(50L);
-        keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
+        keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_SEND_KEY");
+        keyword.untilJqueryIsDone(30L);
+        objSignUp.confirmPasswordEntryConditionWithChinese(
+                "SIGNIN_MESSAGE_CREATE_NEW_PW", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_CHINA",
+                "SIGNUP_ACTUAL_MESSAGE_CHINA1", "SIGNUP_ACTUAL_MESSAGE_CHINA2", "SIGNUP_ACTUAL_MESSAGE_CHINA3",
+                "SIGNUP_ACTUAL_MESSAGE04"
+        );
     }
 
+    //    createNewPasswordSuccess
+    public void createNewPasswordSuccess() throws InterruptedException {
+        keyword.untilJqueryIsDone(10L);
+        objSignUp.clearTextAndSendKey("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNUP_CREATE_PASSWORD_PHONE");
+        keyword.click("SIGNIN_BTN_SUBMIT_RESET_PASSWORD");
+        keyword.untilJqueryIsDone(100L);
+        Thread.sleep(2000);
+        keyword.assertEquals("您更新您的密码。", "SIGN_MESSAGE_SIGNIN_SUCCESS");
+    }
     public void enterInvalidPhoneNumber() throws InterruptedException {
         keyword.sendKeys("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_DATA_PHONE_NUMBER");
         keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_PHONE");
         keyword.click("SIGNIN_BTN_SUBMIT_FORM_PHONE");
-        keyword.assertEquals("SIGNIN_MESSAGE_PHONE_FAIL", "SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
+        keyword.assertEquals("请输入有效的手机号码。", "SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
     }
 
 
@@ -204,11 +238,12 @@ public class SignInPage extends BasePage {
         keyword.executeJavaScript("window.open()");
         keyword.switchToTab(1);
         keyword.navigateToUrl("LOGIN_URL_BACKEND");
-        keyword.webDriverWaitForElementPresent("LOGIN_FORM_LOGIN_BACKEND", 20);
+//        keyword.webDriverWaitForElementPresent("LOGIN_FORM_LOGIN_BACKEND", 50);
     }
 
     //login admin BackEnd (shared functions)
     public void loginAdmin(String userName, String passWord) throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
         keyword.sendKeys("LOGIN_FORM_USER_NAME_BACKEND", userName);
         keyword.sendKeys("LOGIN_FORM_PASSWORD_BACKEND", passWord);
         keyword.click("LOGIN_FORM_BTN_SUBMIT_BACKEND");
@@ -241,6 +276,7 @@ public class SignInPage extends BasePage {
         keyword.untilJqueryIsDone(20L);
         keyword.switchToIFrameByXpath(iframe);
         String text = keyword.getText(getTextInPutVerify);
+        keyword.closeWindowByIndex(1);
         keyword.switchToTab(0);
         keyword.sendKeys(dataInput, text);
         System.out.println("value copied");

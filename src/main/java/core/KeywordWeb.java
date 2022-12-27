@@ -111,6 +111,15 @@ public class KeywordWeb {
         driver.findElement(By.xpath(xPathElement)).click();
     }
 
+    public void clickLinktext(String element) {
+        logger.info("click" + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        driver.findElement(By.linkText(xPathElement)).click();
+    }
+
     public void clickByCss(String element) {
         logger.info("click" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
@@ -420,7 +429,7 @@ public class KeywordWeb {
         }
         String actualString = driver.findElement(By.xpath(xPathElement1)).getText().replaceAll("\\s", " ");
         String expectedString = xPathElement2;
-        Assert.assertEquals(actualString,expectedString);
+        Assert.assertEquals(actualString, expectedString);
     }
 
     public void switchToTab(int tabNum) {
@@ -641,7 +650,6 @@ public class KeywordWeb {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xPathElement)));
     }
 
-
     public void waitForAjaxToFinish() throws InterruptedException {
         logger.info("waitForAjaxToFinish");
 
@@ -849,7 +857,7 @@ public class KeywordWeb {
         actions.sendKeys(Keys.TAB);
         actions.build().perform();
         //Paste the Address in the Permanent Address field using CTRL + V
-//        Thread.sleep(2000);
+        Thread.sleep(2000);
         actions.keyDown(Keys.CONTROL);
         actions.sendKeys("v");
         actions.keyUp(Keys.CONTROL);
@@ -868,6 +876,15 @@ public class KeywordWeb {
         }
         String valueElement = driver.findElement(By.xpath(xPathElement1)).getAttribute("value");
         Assert.assertEquals(valueElement, xPathElement2);
+    }
+
+    public String numberOnly(String element) {
+        logger.info("get Text of" + element);
+        String text = PropertiesFile.getPropValue(element);
+        if (text == null) {
+            text = element;
+        }
+        return driver.findElement(By.xpath(text)).getText().replaceAll("[^0-9]", "");
     }
 
 }

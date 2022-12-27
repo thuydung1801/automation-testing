@@ -238,7 +238,7 @@ public class LoginAndAddressPage extends BasePage {
         objSignUp.clearTextAndSendKey("LA_INPUT_TELEPHONE_FIELD", "LA_INPUT_TELEPHONE_FIELD", "LA_DATA_PHONE");
         keyword.click("LP_BTN_TO_PLAY");
         keyword.untilJqueryIsDone(20L);
-//       keyword.assertEquals();
+        keyword.simpleAssertEquals("LA_SHIPPING_ADDRESS_MESSAGE", keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " "));
     }
 
     //    nextToPaymentSuccessOnChangeNoShipToAddress
@@ -249,7 +249,9 @@ public class LoginAndAddressPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
         keyword.click("LP_BTN_CONTINUE");
-        sendAllDataForm("LA_DATA_FIRST_NAME", "LA_DATA_LAST_NAME", "LA_DATA_EMAIL", "LA_DATA_CONFIRM_EMAIL", "LA_DATA_PHONE", "LP_DATA_COMPANY", "LP_DATA_STREET", "LP_POSTAL_CODE_MALTA", "LP_COUNTRY");
+        sendAllDataForm("LA_DATA_FIRST_NAME", "LA_DATA_LAST_NAME", "LA_DATA_EMAIL",
+                "LA_DATA_CONFIRM_EMAIL", "LA_DATA_PHONE", "LP_DATA_COMPANY",
+                "LP_DATA_STREET", "LP_POSTAL_CODE_MALTA", "LP_COUNTRY");
         keyword.click("LA_BTN_NO_SHIP_ADDRES");
         keyword.untilJqueryIsDone(50L);
         keyword.click("LP_BTN_TO_PLAY");
@@ -374,7 +376,7 @@ public class LoginAndAddressPage extends BasePage {
 
 
     //check Login AngVerify Customer Regis Wit Invalid Email
-    public void LoginAngVerifyCustomerRegisWitInvalidhEmail(String verifyEmail, String verifyPass) throws InterruptedException {
+    public void LoginAngVerifyCustomerRegisWithInvalidEmail(String verifyEmail, String verifyPass) throws InterruptedException {
         keyword.webDriverWaitForElementPresent(verifyEmail, 10);
         keyword.sendKeys("CHECKOUT_DATA_EMAIL_ADDRESS",
                 "CHECKOUT_DATA_EMAIL_NOT_EXIST");

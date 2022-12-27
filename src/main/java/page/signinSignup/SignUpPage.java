@@ -29,7 +29,7 @@ public class SignUpPage extends BasePage {
 //        if (keyword.verifyElementPresent("SIGNUP_WITH_PHONE")) {
 //            keyword.webDriverWaitForElementPresent("SIGNUP_WITH_PHONE", 20);
 //        } else {
-            keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 20);
+        keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 20);
 //        }
     }
 
@@ -85,8 +85,8 @@ public class SignUpPage extends BasePage {
     }
 
     //    Get code and send key
-    public void getCodeAndSendKey(String getCode, String dataInput, String btnSubmit) throws InterruptedException {
-        String text = keyword.getText(getCode).substring(35, 41);
+    public void getCodeAndSendKey(String dataInput, String btnSubmit) throws InterruptedException {
+        String text = keyword.numberOnly("SIGNUP_GET_CODE_SMS");
         keyword.switchToTab(0);
         keyword.sendKeys(dataInput, text);
         System.out.println("value copied");
@@ -101,6 +101,17 @@ public class SignUpPage extends BasePage {
         keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_02", lowerLetter);
         keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_03", upperLetter);
         keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_04", charactersLike);
+        keyword.webDriverWaitForElementPresent(checkElement, 10);
+    }
+
+    //    confirm password entry condition WITH  Chinese
+    public void confirmPasswordEntryConditionWithChinese(String Message, String characters, String number, String lowerLetter, String upperLetter, String charactersLike, String checkElement) throws InterruptedException {
+        keyword.assertEquals("您的密码应与您的电子邮件地址不同，并包含", Message);
+        keyword.assertEquals("至少8个字符", characters);
+        keyword.assertEquals("至少1个号码", number);
+        keyword.assertEquals("至少1个小写", lowerLetter);
+        keyword.assertEquals("至少1个大写", upperLetter);
+        keyword.assertEquals("至少1个字符，例如：# & $ ( ) * + , - . : , . = ? @ { } ~ !", charactersLike);
         keyword.webDriverWaitForElementPresent(checkElement, 10);
     }
 
@@ -315,7 +326,7 @@ public class SignUpPage extends BasePage {
                 "SIGNUP_PHONE_REGIS", "SIGNUP_BUTTON_APPLY_FILTERS"
         );
         keyword.untilJqueryIsDone(30L);
-        getCodeAndSendKey("SIGNUP_GET_CODE_SMS", "SIGNUP_SWITCH_TO_TAB_CHECK", "SIGNUP_BTN_SUBMIT"
+        getCodeAndSendKey("SIGNUP_SWITCH_TO_TAB_CHECK", "SIGNUP_BTN_SUBMIT"
         );
         keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS", "SIGNUP_MESSAGE_REGIS_SUCCESS");
     }

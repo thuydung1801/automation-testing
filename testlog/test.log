@@ -1,14 +1,22 @@
-INFO  | 2022-12-23 16:42:50 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2022-12-23 16:42:53 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
-INFO  | 2022-12-23 16:42:53 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
-INFO  | 2022-12-23 16:43:01 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2022-12-23 16:43:01 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-12-23 16:43:01 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@10a0d93a
-INFO  | 2022-12-23 16:43:10 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2022-12-23 16:43:11 | [main] test.signinSignup.SignInTest (SignInTest.java:testCase_SI02:26) - testCase_SU05 OR testCase 12
-INFO  | 2022-12-23 16:43:12 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
-INFO  | 2022-12-23 16:43:20 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT_FORM_PHONE
-INFO  | 2022-12-23 16:43:22 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:714) - compare from SIGNIN_MESSAGE_REQUIRED_FIELD with SIGNIN_XPATH_EMAIL_REQUIRED_FIELD
-INFO  | 2022-12-23 16:43:22 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:714) - compare from SIGNIN_MESSAGE_REQUIRED_FIELD with SIGNIN_XPATH_PASSWORD_REQUIRED_FIELD
-INFO  | 2022-12-23 16:43:23 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glcn/
-INFO  | 2022-12-23 16:43:42 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_ACC
+INFO  | 2022-12-27 17:56:30 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2022-12-27 17:56:34 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
+INFO  | 2022-12-27 17:56:34 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
+INFO  | 2022-12-27 17:56:42 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2022-12-27 17:56:42 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-12-27 17:56:42 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@6428591a
+INFO  | 2022-12-27 17:57:13 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:278) - Maximizing browser window...
+INFO  | 2022-12-27 17:57:14 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU05:25) - testCase_SU05
+INFO  | 2022-12-27 17:57:14 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:334) - login by authen link withtest !test123!
+INFO  | 2022-12-27 17:57:21 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:644) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2022-12-27 17:57:26 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
+INFO  | 2022-12-27 17:57:35 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
+INFO  | 2022-12-27 17:57:50 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:644) - webDriverWaitForElementPresentLOGIN_BTN_FORGOT_PASSWORD
+INFO  | 2022-12-27 17:57:57 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2022-12-27 17:58:04 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:644) - webDriverWaitForElementPresentSIGNUP_FORM_DATA_INFORMATION
+INFO  | 2022-12-27 17:58:05 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:166) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
+INFO  | 2022-12-27 17:58:05 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:166) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2022-12-27 17:58:06 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:166) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_EXIST
+INFO  | 2022-12-27 17:58:06 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:166) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_EMAIL_EXIST
+INFO  | 2022-12-27 17:58:09 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2022-12-27 17:58:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:166) - send keysSIGNUP_PASSWORD_INFORMATIONwith LOGIN_NEW_PASSWORD
+INFO  | 2022-12-27 17:58:10 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_TITLE
