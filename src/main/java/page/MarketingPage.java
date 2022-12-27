@@ -169,7 +169,7 @@ public class MarketingPage extends BasePage {
         String getIdOrder = keyword.getText("GCE_TEXT_ORDER");
         String text = getIdOrder.substring(1,getIdOrder.length());
         signInPage.openNewTabs();
-        signInPage.loginAdmin("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD");
+        signInPage.loginAdmin("LOGIN_DATA_USER_NAME_DUNG", "LOGIN_DATA_PASS_WORD_DUNG");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 

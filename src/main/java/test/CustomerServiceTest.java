@@ -192,19 +192,19 @@ public class CustomerServiceTest extends BaseTest {
 
 
 
-    @Test(priority = 28,description = "My Account - Subscribe to the Glamira newsletter.")
+    @Test(priority = 38,description = "My Account - Subscribe to the Glamira newsletter.")
     public void testCase_NL_01() throws InterruptedException {
         testCustomerService.myAccountSubscribeGlamiraNewsletter();
     }
-    @Test(priority = 29,description = "My Account - Un subscribe to the Glamira newsletter.")
+    @Test(priority = 39,description = "My Account - Un subscribe to the Glamira newsletter.")
     public void testCase_NL_02() throws InterruptedException {
         testCustomerService.myAccountUnSubscribeGlamiraNewsletter();
     }
-    @Test(priority = 30,description = "Footer - Subscribe to the Glamira newsletter.")
+    @Test(priority = 40,description = "Footer - Subscribe to the Glamira newsletter.")
     public void testCase_NL_03() throws InterruptedException {
         testCustomerService.footerSubscribeGlamiraNewsletter();
     }
-    @Test(priority = 31,description = "Footer - Subscribe to the Glamira newsletter.- forgot enter email adress")
+    @Test(priority = 41,description = "Footer - Subscribe to the Glamira newsletter.- forgot enter email adress")
     public void testCase_NL_04() throws InterruptedException {
         testCustomerService.footerSubscribeGlamiraNewsletterWithEmailNull();
     }
