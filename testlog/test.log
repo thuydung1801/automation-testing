@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 INFO  | 2022-12-27 15:58:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
 INFO  | 2022-12-27 15:58:36 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
 INFO  | 2022-12-27 15:58:36 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
@@ -21,3 +23,4 @@ INFO  | 2022-12-27 16:00:00 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:1
 INFO  | 2022-12-27 16:00:00 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_DELETE_ACCOUNT_BTN_DELETE
 INFO  | 2022-12-27 16:00:00 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_DELETE_ACCOUNT_BTN_OK
 INFO  | 2022-12-27 16:00:02 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleMAC_DELETE_ACCOUNT_VERIFY_MESSAGE
+>>>>>>> master

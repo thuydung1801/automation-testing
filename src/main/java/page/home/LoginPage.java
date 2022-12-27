@@ -8,11 +8,11 @@ import org.slf4j.Logger;
 
 public class LoginPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
-
+    public LoginPage(){ super(); }
     public LoginPage(KeywordWeb key){
         super(key);
     }
-    public LoginPage(){ super(); }
+
 
     public void loginOnAlert(){
         keyword.handleLoginPopup(PropertiesFile.getPropValue("LOGIN_DATA_ALERT_USERNAME"),
