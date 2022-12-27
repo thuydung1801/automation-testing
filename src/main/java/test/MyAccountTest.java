@@ -24,8 +24,12 @@ public class MyAccountTest extends BaseTest {
         testMyAccount.changeEmail();
     }
     @Test(priority = 4,description = "CHANGE PASSWORD")
-    public void testCase_PI_04() throws InterruptedException {
+    public void testCase_PI_04_LO_01() throws InterruptedException {
         testMyAccount.changePassword();
+    }
+    @Test(priority = 4,description = "DELETE ACCOUNT")
+    public void testCase_PI_06() throws InterruptedException {
+        testMyAccount.deleteAccount();
     }
     @Test(priority = 5,description = "Edit BILLING ADDRESS")
     public void testCase_MA_01() throws InterruptedException {
@@ -83,9 +87,13 @@ public class MyAccountTest extends BaseTest {
     public void testCase_MW_05() throws InterruptedException {
         testMyAccount.emailSelectItem();
     }
-   // @Test(priority = 19,description = "Check function of Email Selected Items")
-    public void testCase_LO_01() throws InterruptedException {
-        testMyAccount.logOut();
+    @Test(priority = 19,description = "Check function icon view order of Recent  orders")
+    public void testCase_MO_02() throws InterruptedException {
+        testMyAccount.viewOrder();
+    }
+    @Test(priority = 20,description = "Check function icon view order of Recent  orders")
+    public void testCase_MO_04() throws InterruptedException {
+        testMyAccount.upLoadItemOrder();
     }
 
 

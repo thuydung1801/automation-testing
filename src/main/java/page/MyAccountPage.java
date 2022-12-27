@@ -69,6 +69,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         if(checkBox!=null){
             keyword.click(checkBox);
+
         }
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
@@ -112,26 +113,38 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
-    public void logout() throws InterruptedException {
-        keyword.click("MAC_BTN_LOGOUT");
+    public void logOut() throws InterruptedException {
+         keyword.click("MAC_BTN_LOGOUT");
         keyword.untilJqueryIsDone(60L);
         keyword.click("MAC_LOGOUT_OK");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(keyword.verifyElementVisible("MAC_LOGOUT_VERIFY_MESSAGE")){
+            keyword.assertEquals("MAC_LOGOUT_DATA_MESSAGE","MAC_LOGOUT_VERIFY_MESSAGE");
+        }
+        Thread.sleep(5000);
+        keyword.verifyElementVisible("MAC_LOGOUT_VERIFY_HOMEPAGE");
+
+    }
+
+    public void logOutLogIn() throws InterruptedException {
+        logOut();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.click("LOGIN_BTN_LOGIN");
+        keyword.click("LOGIN_BTN_ACCOUNT");
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         boolean test;
         String a = keyword.getText("MAC_VERIFY_NAME");
-        if(a.contains("Hallo")){
+        if(a.contains("Hello")){
             test = true;
         }
         else {
             test = false;
         }
-        logger.info("check change name....");
+        logger.info("check change password....");
         Assert.assertEquals(test,true);
 
 
@@ -183,7 +196,7 @@ public class MyAccountPage extends BasePage {
 //                    }
 //                    logger.info("check change pass....");
 //                    Assert.assertEquals(test,true);
-                    logout();
+                    logOutLogIn();
                     break;
                 case "null":
                     logger.info("NULL....");
@@ -224,8 +237,27 @@ public class MyAccountPage extends BasePage {
     }
 
     public void changePassword() throws InterruptedException {
+        setUp1();
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/customer/account/");
         inpChangePassword();
         checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","pass","MAC_VERIFY_PASS_CHANGE","COM_INP_DATA_PASS");
+
+    }
+    public void deleteAccount() throws InterruptedException {
+        setUp1();
+        keyword.openNewTab("https://dev3.glamira.com/glgb/customer/account/edit/");
+        keyword.click("MAC_DELETE_ACCOUNT");
+        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.sendKeys("MAC_DELETE_ACCOUNT_INP_PASS","COM_INP_DATA_PASS");
+        keyword.click("MAC_DELETE_ACCOUNT_BTN_DELETE");
+        keyword.click("MAC_DELETE_ACCOUNT_BTN_OK");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(keyword.verifyElementVisible("MAC_DELETE_ACCOUNT_VERIFY_MESSAGE")){
+            keyword.assertEquals("MAC_DELETE_ACCOUNT_DATA_MESSAGE","MAC_DELETE_ACCOUNT_VERIFY_MESSAGE");
+        }
 
     }
     public void commonMyAddress(String element,String elementEdit) throws InterruptedException {
@@ -629,18 +661,38 @@ public class MyAccountPage extends BasePage {
         }
         checkVerifyAdmin();
     }
-    public void logOut() throws InterruptedException {
+    public void viewOrder() throws InterruptedException {
         setUp1();
-        keyword.navigateToUrl("https://dev3.glamira.com/glgb/customer/account/index/");
-        keyword.click("MAC_BTN_LOGOUT");
-        keyword.untilJqueryIsDone(60L);
-        keyword.click("MAC_LOGOUT_OK");
+        keyword.openNewTab("https://dev3.glamira.com/glgb/sales/order/history/");
+        String a = keyword.getText("MAC_MY_ORD_TEXT_ID_ITEM");
+        System.out.printf("a======= " + a + "\n");
+        keyword.click("MAC_MY_ORD_BTN_VIEW");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        if(keyword.verifyElementVisible("MAC_LOGOUT_VERIFY_MESSAGE")){
-            keyword.assertEquals("MAC_LOGOUT_DATA_MESSAGE","MAC_LOGOUT_VERIFY_MESSAGE");
-        }
+        String b = keyword.getText("MAC_MY_ORD_VERIFY_TEXT_ID_ITEM");
+        System.out.printf("b======= " + b + "\n");
+        logger.info("check verify veiw my order....");
+        Assert.assertEquals(b,a);
 
+    }
+    public void upLoadItemOrder() throws InterruptedException {
+        boolean check;
+        keyword.back();
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        int a =  keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM");
+        keyword.click("MAC_MY_ORD_BTN_UPLAOD_MORE");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        int b = keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM");
+        System.out.printf("a-b " +a +"<"+b+"\n");
+        if(a<b){
+            check = true;
+        }else{
+            check=false;
+        }
+        logger.info("check verify upload more my order....");
+        Assert.assertEquals(check,true);
     }
 
 
