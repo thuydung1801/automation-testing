@@ -756,6 +756,38 @@ public class KeywordWeb {
         logger.info(c);
         return c;
     }
+    public String getAttributeWithValue(String element) {
+        logger.info("get Attribute of" + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        WebElement  b = driver.findElement(By.xpath(xPathElement));
+        String c = b.getAttribute("value");
+        logger.info(c);
+        return c;
+    }
+    public void keysBoardWithDOWN(String element1) throws InterruptedException {
+        String xPathElement1 = PropertiesFile.getPropValue(element1);
+
+        if (xPathElement1 == null) {
+            xPathElement1 = element1;
+        }
+        WebElement tutorial = driver.findElement(By.xpath(xPathElement1));
+        Actions act = new Actions(driver);
+        act.moveToElement(tutorial).build().perform();
+        imWait(2);
+        act.contextClick(tutorial).sendKeys(Keys.ARROW_DOWN).build().perform();
+    }
+    public Integer countNumberOfElement(String element){
+        logger.info("count the number of element "+ element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        int xpathCount = driver.findElements(By.xpath(xPathElement)).size();
+        return  xpathCount+1;
+    }
 
 }
 
