@@ -686,7 +686,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         int b = keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM");
         System.out.printf("a-b " +a +"<"+b+"\n");
-        if(a<b){
+        if(a+10 == b){
             check = true;
         }else{
             check=false;
