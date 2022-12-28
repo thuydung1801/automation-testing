@@ -82,7 +82,7 @@ public class SignInPage extends BasePage {
         keyword.assertEquals("SIGNIN_MESSAGE_PASSWORD_ACTUAL", "SIGNIN_MESSAGE_INVALID");
     }
 
-    //    Enter the wrong email format
+    //  Enter the wrong email format
     public void enterWrongEmailFormat() throws InterruptedException {
         Thread.sleep(2000);
         objSignUp.clearTextAndSendKey("SIGNIN_EMAIL_LOG", "SIGNIN_EMAIL_LOG", "SIGNIN_DATA_EMAIL_WRONG_FORMAT");
@@ -127,7 +127,7 @@ public class SignInPage extends BasePage {
         );
     }
 
-    //Create invalid new password
+    //create valid new password
     public void createNewPassword() throws InterruptedException {
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String passWord = "Ngoc*" + timestamp + "@";
@@ -140,6 +140,7 @@ public class SignInPage extends BasePage {
         keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
     }
 
+    //Login successfully on Login modal
     public void loginSuccessfully() throws InterruptedException {
         keyword.untilJqueryIsDone(10L);
         keyword.sendKeys("SIGNIN_EMAIL_LOG", "SIGNIN_DATA_EMAIL");
@@ -164,7 +165,7 @@ public class SignInPage extends BasePage {
                 "用户名或者密码不正确", "SIGNIN_INPUT_MESSAGE_INVALID");
     }
 
-    //    Login wrong password
+    //   Login wrong password
     public void enterWrongPassword() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
         objSignUp.clearTextAndSendKey("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_INPUT_PHONE_NUMBER", "SIGNUP_DATA_PHONE");
@@ -172,7 +173,7 @@ public class SignInPage extends BasePage {
                 "SIGNIN_BTN_SUBMIT_FORM_PHONE", "用户名或者密码不正确", "SIGNIN_INPUT_MESSAGE_INVALID");
     }
 
-    //Enter a phone number that is not in the system
+    //for got Pass Enter Phone Is Not The System
     public void forgotPassEnterPhoneIsNotTheSystem() throws InterruptedException {
         keyword.click("SIGNIN_XPATH_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(30L);
@@ -188,7 +189,7 @@ public class SignInPage extends BasePage {
         keyword.assertEquals("你的电话号码不正确。请验证手机号码後重试。", "SIGNIN_INPUT_MESSAGE_PHONE_FAIL");
     }
 
-    //    create valid new password Success
+    //   create New Password With Invalid Phone
     public void createNewPasswordWithInvalidPhone() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
         objSignUp.clearTextAndSendKey("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_PHONE_CHINA");
@@ -223,7 +224,7 @@ public class SignInPage extends BasePage {
         );
     }
 
-    //    createNewPasswordSuccess
+    //    create New Password Success
     public void createNewPasswordSuccess() throws InterruptedException {
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String pass = "Ngoc*" + timestamp + "@";
@@ -236,11 +237,16 @@ public class SignInPage extends BasePage {
         keyword.assertEquals("您更新您的密码。", "SIGN_MESSAGE_SIGNIN_SUCCESS");
     }
 
+    //login With Phone Success
     public void loginWithPhoneSuccess() throws InterruptedException {
         keyword.untilJqueryIsDone(20L);
         keyword.click("SIGN_INPUT_SELECT_PHONE");
         keyword.untilJqueryIsDone(10L);
         keyword.click("SIGNIN_SELECT_PHONE_CHINA");
+        keyword.untilJqueryIsDone(10L);
+        keyword.click("SIGN_BTN_LOGIN_STORE_CHINA");
+        keyword.assertEquals("必填项。", "SIGN_MESSAGE_FAIL");
+        keyword.assertEquals("必填项。", "SIGNIN_MESSAGE_PASSWORD_INVALID");
         keyword.untilJqueryIsDone(10L);
         keyword.sendKeys("SIGN_INPUT_PHONE_CHINA", "SIGNIN_PHONE_CHINA");
         keyword.sendKeys("SIGN_INPUT_PASSWORD", "SIGNUP_CREATE_PASSWORD_PHONE_RD");
@@ -249,13 +255,13 @@ public class SignInPage extends BasePage {
         keyword.verifyElementVisible("SIGN_MESSAGE_SUCCESS");
     }
 
+    //Invalid phone number entered
     public void enterInvalidPhoneNumber() throws InterruptedException {
         keyword.sendKeys("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_DATA_PHONE_NUMBER");
         keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_PHONE");
         keyword.click("SIGNIN_BTN_SUBMIT_FORM_PHONE");
         keyword.assertEquals("请输入有效的手机号码。", "SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
     }
-
 
     // open new right tabs
     public void openNewTabs() throws InterruptedException {

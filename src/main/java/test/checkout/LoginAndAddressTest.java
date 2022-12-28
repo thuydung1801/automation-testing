@@ -138,6 +138,6 @@ public class LoginAndAddressTest extends BaseTest {
     @Test(priority = 19, description = "Next to Process To Checkout with Billing not same Shipping address")
     public void testCase_LA_025() throws InterruptedException {
         logger.info("testCase_LA_025");
-        objLoginAdrPage.nexToProcessToCheckOutUncheckedSameAsShipping();
+        objLoginAdrPage.nexToProcessToCheckOutcheckedSameAsShipping();
     }
 }

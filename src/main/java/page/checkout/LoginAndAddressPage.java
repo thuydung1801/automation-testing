@@ -287,7 +287,7 @@ public class LoginAndAddressPage extends BasePage {
     }
 
     //nexToProcessToCheckOutBillingNotSameShipping
-    public void nexToProcessToCheckOutUncheckedSameAsShipping() throws InterruptedException {
+    public void nexToProcessToCheckOutcheckedSameAsShipping() throws InterruptedException {
         keyword.untilJqueryIsDone(20L);
         keyword.click("LA_LOGIN_AND_ADDRESS");
         keyword.untilJqueryIsDone(50L);

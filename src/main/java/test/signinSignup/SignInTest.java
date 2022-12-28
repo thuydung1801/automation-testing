@@ -108,8 +108,8 @@ public class SignInTest extends BaseTest {
         objSigin.createNewPasswordSuccess();
     }
     @Test(priority = 18, description = "Login successfully on Login modal with phone number")
-    public void testCase_SI08() throws InterruptedException {
-        logger.info("testCase_SU08");
+    public void testCase_SI08_And_SI012() throws InterruptedException {
+        logger.info("testCase_SI08_And_SI012");
         objSigin.loginWithPhoneSuccess();
     }
 }
