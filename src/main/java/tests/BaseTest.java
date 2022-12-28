@@ -12,13 +12,18 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import steps.Steps;
 import utils.ChromeOptionsUtil;
+
+import static core.KeywordWeb.driver;
+
 public class BaseTest {
     protected KeywordWeb keyword;
     public BaseTest() {
         keyword = new KeywordWeb();
     }
     ChromeOptionsUtil chromeOptionsUtil = new ChromeOptionsUtil();
-    public WebDriver driver;
+    public static WebDriver getDriver() {
+        return driver;
+    }
     Steps steps;
     @BeforeSuite
     public void beforeSuite(){
