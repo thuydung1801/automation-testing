@@ -41,7 +41,7 @@ public class LoginAndAddressTest extends BaseTest {
         @Test(priority = 3, description = "Leave blank Email and Password")
     public void testCase_LA_04() throws InterruptedException {
         logger.info("testCase_LA_04");
-        objLoginAdrPage.leaveBlankEmialAndPassword();
+        objLoginAdrPage.leaveBlankEmailAndPassword();
     }
 
         @Test(priority = 4, description = "Check link forgot password")

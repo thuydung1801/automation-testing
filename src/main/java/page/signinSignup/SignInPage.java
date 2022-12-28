@@ -3,9 +3,12 @@ package page.signinSignup;
 import core.BasePage;
 import core.KeywordWeb;
 import core.LogHelper;
+import core.PropertiesFile;
 import org.slf4j.Logger;
 import page.home.LoginPage;
 import page.home.RegisterPage;
+
+import java.util.Date;
 
 public class SignInPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
@@ -27,7 +30,7 @@ public class SignInPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click("LOGIN_BTN_LOGIN");
         keyword.untilJqueryIsDone(50L);
-        loginLeaverInvalidAndVerify("SIGNIN_XPATH_EMAIL_REQUIRED_FIELD",
+        inputBlankAndVerify("SIGNIN_XPATH_EMAIL_REQUIRED_FIELD",
                 "SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_MESSAGE_REQUIRED_FIELD");
     }
 
@@ -42,7 +45,7 @@ public class SignInPage extends BasePage {
         Thread.sleep(2000);
         keyword.click("SIGNIN_TAB_LOGIN_IN_WITH_PHONE");
         keyword.untilJqueryIsDone(10L);
-        loginLeaverInvalidAndVerify("SIGNIN_MESSAGE_FAIL_WITH_MOBILE", "必填项。", "必填项。");
+        inputBlankAndVerify("SIGNIN_MESSAGE_FAIL_WITH_MOBILE", "必填项。", "必填项。");
     }
 
     // Login with email and leave the password field blank
@@ -126,6 +129,9 @@ public class SignInPage extends BasePage {
 
     //Create invalid new password
     public void createNewPassword() throws InterruptedException {
+        String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String passWord = "Ngoc*" + timestamp + "@";
+        PropertiesFile.serPropValue("SIGNIN_DATA_PASSWORD_NEW", passWord);
         objSignUp.clearTextAndSendKey("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_PASSWORD_NEW");
         keyword.click("SIGNI_BTN_SUBMIT_RESET_PASSWORD");
         keyword.untilJqueryIsDone(30L);
@@ -135,6 +141,7 @@ public class SignInPage extends BasePage {
     }
 
     public void loginSuccessfully() throws InterruptedException {
+        keyword.untilJqueryIsDone(10L);
         keyword.sendKeys("SIGNIN_EMAIL_LOG", "SIGNIN_DATA_EMAIL");
         keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_NEW");
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
@@ -158,7 +165,7 @@ public class SignInPage extends BasePage {
     }
 
     //    Login wrong password
-    public void enterPasswordWrong() throws InterruptedException {
+    public void enterWrongPassword() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
         objSignUp.clearTextAndSendKey("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_INPUT_PHONE_NUMBER", "SIGNUP_DATA_PHONE");
         clearTextSendKeyAndVerify("SIGNIN_PASSWORD_INPUT", "SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_WRONG_PHONE",
@@ -182,7 +189,7 @@ public class SignInPage extends BasePage {
     }
 
     //    create valid new password Success
-    public void createNewPassWordWithPhoneSuccess() throws InterruptedException {
+    public void createNewPasswordWithInvalidPhone() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
         objSignUp.clearTextAndSendKey("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_PHONE_CHINA");
         keyword.click("SIGNIN_CLICK_FORM");
@@ -218,8 +225,11 @@ public class SignInPage extends BasePage {
 
     //    createNewPasswordSuccess
     public void createNewPasswordSuccess() throws InterruptedException {
+        String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String pass = "Ngoc*" + timestamp + "@";
         keyword.untilJqueryIsDone(10L);
-        objSignUp.clearTextAndSendKey("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNUP_CREATE_PASSWORD_PHONE");
+        PropertiesFile.serPropValue("SIGNUP_CREATE_PASSWORD_PHONE_RD", pass);
+        objSignUp.clearTextAndSendKey("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNUP_CREATE_PASSWORD_PHONE_RD");
         keyword.click("SIGNIN_BTN_SUBMIT_RESET_PASSWORD");
         keyword.untilJqueryIsDone(100L);
         Thread.sleep(2000);
@@ -228,12 +238,14 @@ public class SignInPage extends BasePage {
 
     public void loginWithPhoneSuccess() throws InterruptedException {
         keyword.untilJqueryIsDone(20L);
-        keyword.click("SIGNIN_SELECT_PHONE");
+        keyword.click("SIGN_INPUT_SELECT_PHONE");
         keyword.untilJqueryIsDone(10L);
-        keyword.click("SIGNIN_CHINA_PHONE");
+        keyword.click("SIGNIN_SELECT_PHONE_CHINA");
         keyword.untilJqueryIsDone(10L);
-        keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_VALID_PHONE_CHINA");
-        keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_VALID_PHONE_CHINA");
+        keyword.sendKeys("SIGN_INPUT_PHONE_CHINA", "SIGNIN_PHONE_CHINA");
+        keyword.sendKeys("SIGN_INPUT_PASSWORD", "SIGNUP_CREATE_PASSWORD_PHONE_RD");
+        keyword.click("SIGN_BTN_LOGIN_STORE_CHINA");
+        keyword.verifyElementVisible("LOGIN_MESSAGE_SUCCESS");
     }
 
     public void enterInvalidPhoneNumber() throws InterruptedException {
@@ -248,7 +260,7 @@ public class SignInPage extends BasePage {
     public void openNewTabs() throws InterruptedException {
         keyword.executeJavaScript("window.open()");
         keyword.switchToTab(1);
-        keyword.navigateToUrl("LOGIN_URL_BACKEND");
+        keyword.navigateToUrl("ADDMIN_URL");
 //        keyword.webDriverWaitForElementPresent("LOGIN_FORM_LOGIN_BACKEND", 50);
     }
 
@@ -304,7 +316,7 @@ public class SignInPage extends BasePage {
     }
 
     //
-    public void loginLeaverInvalidAndVerify(String actual1, String expected1, String expected2) throws InterruptedException {
+    public void inputBlankAndVerify(String actual1, String expected1, String expected2) throws InterruptedException {
         keyword.untilJqueryIsDone(20L);
         keyword.click("SIGNIN_BTN_SUBMIT_FORM_PHONE");
         keyword.assertEquals(expected1, actual1);
@@ -314,6 +326,7 @@ public class SignInPage extends BasePage {
 
     // Create new password for entering and to use your account
     public void createNewPassWord() {
+
         keyword.webDriverWaitForElementPresent("LOGIN_FORM_NEW_PASS_WORD", 30);
         keyword.sendKeys("LOGIN_INPUT_NEW_PASSWORD", "LOGIN_NEW_PASSWORD");
         keyword.click("LOGIN_BTN_SUBMIT_RESET_PASSWORD");

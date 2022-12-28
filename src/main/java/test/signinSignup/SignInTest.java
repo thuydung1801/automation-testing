@@ -91,7 +91,7 @@ public class SignInTest extends BaseTest {
 
     @Test(priority = 14, description = "Login wrong password ")
     public void testCase_SI011() throws InterruptedException {
-        objSigin.enterPasswordWrong();
+        objSigin.enterWrongPassword();
     }
 
     @Test(priority = 15, description = "Enter a phone number that is not in the system")
@@ -101,7 +101,7 @@ public class SignInTest extends BaseTest {
 
     @Test(priority = 16, description = "create valid new password")
     public void testCase_SI018() throws InterruptedException {
-        objSigin.createNewPassWordWithPhoneSuccess();
+        objSigin.createNewPasswordWithInvalidPhone();
     }
     @Test(priority = 17, description = "create valid new password Success")
     public void testCase_SI019() throws InterruptedException {
@@ -109,6 +109,7 @@ public class SignInTest extends BaseTest {
     }
     @Test(priority = 18, description = "Login successfully on Login modal with phone number")
     public void testCase_SI08() throws InterruptedException {
+        logger.info("testCase_SU08");
         objSigin.loginWithPhoneSuccess();
     }
 }

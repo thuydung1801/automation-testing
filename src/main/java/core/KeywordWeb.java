@@ -111,15 +111,6 @@ public class KeywordWeb {
         driver.findElement(By.xpath(xPathElement)).click();
     }
 
-    public void clickLinktext(String element) {
-        logger.info("click" + element);
-        String xPathElement = PropertiesFile.getPropValue(element);
-        if (xPathElement == null) {
-            xPathElement = element;
-        }
-        driver.findElement(By.linkText(xPathElement)).click();
-    }
-
     public void clickByCss(String element) {
         logger.info("click" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
@@ -416,22 +407,6 @@ public class KeywordWeb {
 
     }
 
-    //I want to use it when the text contains <br> . tag
-    public void checkDisplayOfStringInText(String element1, String element2) {
-        logger.info("compare from " + element1 + " with " + element2);
-        String xPathElement1 = PropertiesFile.getPropValue(element1);
-        String xPathElement2 = PropertiesFile.getPropValue(element2);
-        if (xPathElement1 == null) {
-            xPathElement1 = element1;
-        }
-        if (xPathElement2 == null) {
-            xPathElement2 = element2;
-        }
-        String actualString = driver.findElement(By.xpath(xPathElement1)).getText().replaceAll("\\s", " ");
-        String expectedString = xPathElement2;
-        Assert.assertEquals(actualString, expectedString);
-    }
-
     public void switchToTab(int tabNum) {
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tabNum));
@@ -633,6 +608,16 @@ public class KeywordWeb {
         return status;
 
     }
+
+    public Integer countNumberOfElement(String element) {
+        logger.info("count the number of element " + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        int xpathCount = driver.findElements(By.xpath(xPathElement)).size();
+        return xpathCount + 1;
+    }
     // wait keywords
 
     public void imWait(long timeout) {
@@ -648,6 +633,11 @@ public class KeywordWeb {
         }
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xPathElement)));
+    }
+
+    public String splitEnterCharacters(String text, Integer index) {
+        String[] words = text.split("\n");
+        return words[index];
     }
 
     public void waitForAjaxToFinish() throws InterruptedException {
@@ -681,6 +671,7 @@ public class KeywordWeb {
     }
 
     public String waitForElementNotVisible(int timeOutInSeconds, String elementXPath) {
+        logger.info("elemnt " + elementXPath + " not visible");
         if ((driver == null) || (elementXPath == null) || elementXPath.isEmpty()) {
 
             return "Wrong usage of WaitforElementNotVisible()";
@@ -769,6 +760,7 @@ public class KeywordWeb {
         Actions act = new Actions(driver);
         WebElement ele1 = driver.findElement(By.xpath(xPathElement1));
         WebElement ele2 = driver.findElement(By.xpath(xPathElement2));
+
         act.moveToElement(ele1).click().sendKeys(xPathContent);
         act.keyDown(Keys.CONTROL).sendKeys("a");
         act.sendKeys("c");
@@ -790,44 +782,43 @@ public class KeywordWeb {
         return c;
     }
 
-    public void assertEqualsAfterCutting(String expected, String actual, int indexStart, int indexEnd) {
-        logger.info("compare from " + expected + " with " + actual);
-        String xPathElement1 = PropertiesFile.getPropValue(expected);
-        String xPathElement2 = PropertiesFile.getPropValue(actual);
+    public String getAttributeWithValue(String element) {
+        logger.info("get Attribute of" + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        WebElement b = driver.findElement(By.xpath(xPathElement));
+        String c = b.getAttribute("value");
+        logger.info(c);
+        return c;
+    }
+
+    public void keysBoardWithDOWN(String element1) throws InterruptedException {
+        String xPathElement1 = PropertiesFile.getPropValue(element1);
+
         if (xPathElement1 == null) {
-            xPathElement1 = expected;
+            xPathElement1 = element1;
+        }
+        WebElement tutorial = driver.findElement(By.xpath(xPathElement1));
+        Actions act = new Actions(driver);
+        act.moveToElement(tutorial).build().perform();
+        imWait(2);
+        act.contextClick(tutorial).sendKeys(Keys.ARROW_DOWN).build().perform();
+    }
+
+    public void verifyAttributeValues(String expect, String elementGetValue) {
+        // getAttribute() to get value as displayed in GUI // no value attribute for the field in the DOM.
+        String xPathElement1 = PropertiesFile.getPropValue(elementGetValue);
+        String xPathElement2 = PropertiesFile.getPropValue(expect);
+        if (xPathElement1 == null) {
+            xPathElement1 = elementGetValue;
         }
         if (xPathElement2 == null) {
-            xPathElement2 = actual;
+            xPathElement2 = expect;
         }
-        String actualText = driver.findElement(By.xpath(xPathElement2)).getText().substring(indexStart, indexEnd);
-        Assert.assertEquals(actualText, xPathElement1);
-    }
-
-    public void compareTheValueOfStrings(String expected, String actual, int indexStart, int indexEnd) {
-        logger.info("compare from " + expected + " with " + actual);
-        String xPathElement1 = PropertiesFile.getPropValue(expected);
-        String xPathElement2 = PropertiesFile.getPropValue(actual);
-        if (xPathElement1 == null) {
-            xPathElement1 = expected;
-        }
-        if (xPathElement2 == null) {
-            xPathElement2 = actual;
-        }
-        String actualText = driver.findElement(By.xpath(xPathElement2)).getAttribute("style").substring(indexStart, indexEnd);
-        Assert.assertEquals(actualText, xPathElement1);
-    }
-
-    public void scrollToTheBottomPage() {
-        logger.info("scrollDownToElementWithJavaExecutor");
-        JavascriptExecutor js = ((JavascriptExecutor) driver);
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-    }
-
-    public void clearLocalStorage() {
-        logger.info("clearLocalStorage");
-        JavascriptExecutor js = ((JavascriptExecutor) driver);
-        js.executeScript("localStorage.removeItem(\"mage-cache-storage\")");
+        String valueElement = driver.findElement(By.xpath(xPathElement1)).getAttribute("value");
+        Assert.assertEquals(valueElement, xPathElement2);
     }
 
     public void checkNotCopyPastesKeyboardEvents(String element1, String dataSendKey) throws InterruptedException {
@@ -857,25 +848,17 @@ public class KeywordWeb {
         actions.sendKeys(Keys.TAB);
         actions.build().perform();
         //Paste the Address in the Permanent Address field using CTRL + V
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         actions.keyDown(Keys.CONTROL);
         actions.sendKeys("v");
         actions.keyUp(Keys.CONTROL);
         actions.build().perform();
     }
 
-    public void verifyAttributeValues(String expect, String elementGetValue) {
-        // getAttribute() to get value as displayed in GUI // no value attribute for the field in the DOM.
-        String xPathElement1 = PropertiesFile.getPropValue(elementGetValue);
-        String xPathElement2 = PropertiesFile.getPropValue(expect);
-        if (xPathElement1 == null) {
-            xPathElement1 = elementGetValue;
-        }
-        if (xPathElement2 == null) {
-            xPathElement2 = expect;
-        }
-        String valueElement = driver.findElement(By.xpath(xPathElement1)).getAttribute("value");
-        Assert.assertEquals(valueElement, xPathElement2);
+    public void clearLocalStorage() {
+        logger.info("clearLocalStorage");
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("localStorage.removeItem(\"mage-cache-storage\")");
     }
 
     public String numberOnly(String element) {
@@ -886,6 +869,38 @@ public class KeywordWeb {
         }
         return driver.findElement(By.xpath(text)).getText().replaceAll("[^0-9]", "");
     }
+    public void assertEqualsAfterCutting(String expected, String actual, int indexStart, int indexEnd) {
+        logger.info("compare from " + expected + " with " + actual);
+        String xPathElement1 = PropertiesFile.getPropValue(expected);
+        String xPathElement2 = PropertiesFile.getPropValue(actual);
+        if (xPathElement1 == null) {
+            xPathElement1 = expected;
+        }
+        if (xPathElement2 == null) {
+            xPathElement2 = actual;
+        }
+        String actualText = driver.findElement(By.xpath(xPathElement2)).getText().substring(indexStart, indexEnd);
+        Assert.assertEquals(actualText, xPathElement1);
+    }
+    public void scrollToTheBottomPage() {
+        logger.info("scrollDownToElementWithJavaExecutor");
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+    public void compareTheValueOfStrings(String expected, String actual, int indexStart, int indexEnd) {
+        logger.info("compare from " + expected + " with " + actual);
+        String xPathElement1 = PropertiesFile.getPropValue(expected);
+        String xPathElement2 = PropertiesFile.getPropValue(actual);
+        if (xPathElement1 == null) {
+            xPathElement1 = expected;
+        }
+        if (xPathElement2 == null) {
+            xPathElement2 = actual;
+        }
+        String actualText = driver.findElement(By.xpath(xPathElement2)).getAttribute("style").substring(indexStart, indexEnd);
+        Assert.assertEquals(actualText, xPathElement1);
+    }
+
 
 }
 

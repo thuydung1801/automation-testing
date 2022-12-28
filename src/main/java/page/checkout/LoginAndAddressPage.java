@@ -169,12 +169,12 @@ public class LoginAndAddressPage extends BasePage {
     }
 
     //Leave blank Email and Password
-    public void leaveBlankEmialAndPassword() throws InterruptedException {
+    public void leaveBlankEmailAndPassword() throws InterruptedException {
         keyword.clearText("LA_INPUT_EMAIL");
         keyword.clearText("LA_INPUT_PASSWORD");
         keyword.click("CHECKOUT_LA_BTN_LOGIN");
-        keyword.assertEquals("LA_MESSAGE_LEAVE_BLANK_EMAIL", "CHECKOUT_LA_LBL_ERROR_MAIL");
-        keyword.assertEquals("LA_MESSAGE_LEAVE_BLANK_PASSWORD", "LA_ERROR_PASSWORD");
+        keyword.assertEquals("LA_LIST_MESSAGE_REQUIRED_FIELD", "CHECKOUT_LA_LBL_ERROR_MAIL");
+        keyword.assertEquals("LA_LIST_MESSAGE_REQUIRED_FIELD", "LA_ERROR_PASSWORD");
     }
 
     //Check link forgot password
@@ -252,7 +252,7 @@ public class LoginAndAddressPage extends BasePage {
         sendAllDataForm("LA_DATA_FIRST_NAME", "LA_DATA_LAST_NAME", "LA_DATA_EMAIL",
                 "LA_DATA_CONFIRM_EMAIL", "LA_DATA_PHONE", "LP_DATA_COMPANY",
                 "LP_DATA_STREET", "LP_POSTAL_CODE_MALTA", "LP_COUNTRY");
-        keyword.click("LA_BTN_NO_SHIP_ADDRES");
+        keyword.click("LA_BTN_NO_SHIP_ADDRESS");
         keyword.untilJqueryIsDone(50L);
         keyword.click("LP_BTN_TO_PLAY");
         verifyFillAllData();
@@ -352,8 +352,10 @@ public class LoginAndAddressPage extends BasePage {
         keyword.untilJqueryIsDone(100L);
         keyword.click("LA_BTN_DELETE_ADDRESS");
         keyword.verifyElementVisible("LA_POPUP_CONFIRM_DELETE");
+        keyword.assertEquals("LA_MESSAGE_DELETE", "LA_INPUT_MESSAGE_DELETE");
         keyword.click("LA_BTN_OK_DELETE_ADDRESS");
         keyword.checkElementIsNotDisplayed("LA_POPUP_CONFIRM_DELETE");
+
     }
 
     //  button submit
