@@ -245,7 +245,8 @@ public class SignInPage extends BasePage {
         keyword.sendKeys("SIGN_INPUT_PHONE_CHINA", "SIGNIN_PHONE_CHINA");
         keyword.sendKeys("SIGN_INPUT_PASSWORD", "SIGNUP_CREATE_PASSWORD_PHONE_RD");
         keyword.click("SIGN_BTN_LOGIN_STORE_CHINA");
-        keyword.verifyElementVisible("LOGIN_MESSAGE_SUCCESS");
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("SIGN_MESSAGE_SUCCESS");
     }
 
     public void enterInvalidPhoneNumber() throws InterruptedException {
