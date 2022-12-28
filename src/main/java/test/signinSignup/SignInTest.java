@@ -78,13 +78,12 @@ public class SignInTest extends BaseTest {
     }
 
 
-    //----PHONE
+    //----PHONE WHIT
     @Test(priority = 12, description = "Invalid phone number entered")
     public void testCase_SI09() throws InterruptedException {
         objSigin.checkGoToFormLoginWithPhone();
         objSigin.enterInvalidPhoneNumber();
     }
-
     @Test(priority = 13, description = "Login wrong phone number ")
     public void testCase_SI010() throws InterruptedException {
         objSigin.enterInvalidPhone();
@@ -107,5 +106,9 @@ public class SignInTest extends BaseTest {
     @Test(priority = 17, description = "create valid new password Success")
     public void testCase_SI019() throws InterruptedException {
         objSigin.createNewPasswordSuccess();
+    }
+    @Test(priority = 18, description = "Login successfully on Login modal with phone number")
+    public void testCase_SI08() throws InterruptedException {
+        objSigin.loginWithPhoneSuccess();
     }
 }

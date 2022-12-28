@@ -225,6 +225,17 @@ public class SignInPage extends BasePage {
         Thread.sleep(2000);
         keyword.assertEquals("您更新您的密码。", "SIGN_MESSAGE_SIGNIN_SUCCESS");
     }
+
+    public void loginWithPhoneSuccess() throws InterruptedException {
+        keyword.untilJqueryIsDone(20L);
+        keyword.click("SIGNIN_SELECT_PHONE");
+        keyword.untilJqueryIsDone(10L);
+        keyword.click("SIGNIN_CHINA_PHONE");
+        keyword.untilJqueryIsDone(10L);
+        keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_VALID_PHONE_CHINA");
+        keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_VALID_PHONE_CHINA");
+    }
+
     public void enterInvalidPhoneNumber() throws InterruptedException {
         keyword.sendKeys("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_DATA_PHONE_NUMBER");
         keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_PHONE");

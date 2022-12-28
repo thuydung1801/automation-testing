@@ -140,6 +140,4 @@ public class LoginAndAddressTest extends BaseTest {
         logger.info("testCase_LA_025");
         objLoginAdrPage.nexToProcessToCheckOutUncheckedSameAsShipping();
     }
-
-
 }
