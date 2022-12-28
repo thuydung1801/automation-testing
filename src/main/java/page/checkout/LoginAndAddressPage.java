@@ -238,8 +238,8 @@ public class LoginAndAddressPage extends BasePage {
         objSignUp.clearTextAndSendKey("LA_INPUT_TELEPHONE_FIELD", "LA_INPUT_TELEPHONE_FIELD", "LA_DATA_PHONE");
         keyword.click("LP_BTN_TO_PLAY");
         keyword.untilJqueryIsDone(20L);
-        String text6 = keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " ");
-        keyword.simpleAssertEquals("LA_SHIPPING_ADDRESS_MESSAGE", text6);
+        String textShipping = keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " ");
+        keyword.simpleAssertEquals("LA_SHIPPING_ADDRESS_MESSAGE", textShipping);
     }
 
     //    nextToPaymentSuccessOnChangeNoShipToAddress
@@ -284,8 +284,8 @@ public class LoginAndAddressPage extends BasePage {
         keyword.click("LA_PROCEED_TO_CHECK_OUT_BTN");
         keyword.untilJqueryIsDone(50L);
 //        keyword.checkDisplayOfStringInText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS", "LP_DATA_STREET");
-        String text4 = keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " ");
-        keyword.simpleAssertEquals("LA_MESSAGE_SHIPPING_ADDRESS", text4);
+        String textShipping = keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " ");
+        keyword.simpleAssertEquals("LA_MESSAGE_SHIPPING_ADDRESS", textShipping);
     }
 
     //nexToProcessToCheckOutBillingNotSameShipping
@@ -303,11 +303,11 @@ public class LoginAndAddressPage extends BasePage {
                 "LA_BILL_STREET", "LA_BILL_POSTAL", "LA_BILL_CITY");
         keyword.untilJqueryIsDone(70L);
         keyword.click("LA_PROCEED_TO_CHECK_OUT_BTN");
-        String text1 = keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " ");
-        String text2 = keyword.getText("LA_INPUT_BILL_ADDRESS").replaceAll("\\s", " ");
-        keyword.simpleAssertEquals("LA_MESSAGE_SHIPPING_ADDRESS", text1);
+        String textShipping = keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " ");
+        String textBill = keyword.getText("LA_INPUT_BILL_ADDRESS").replaceAll("\\s", " ");
+        keyword.simpleAssertEquals("LA_MESSAGE_SHIPPING_ADDRESS", textShipping);
         keyword.untilJqueryIsDone(10L);
-        keyword.simpleAssertEquals("LA_MESSAGE_BILL_ADDRESS", text2);
+        keyword.simpleAssertEquals("LA_MESSAGE_BILL_ADDRESS", textBill);
     }
 
     //nexToProcessToCheckOutBillingNotSameShipping
@@ -317,8 +317,8 @@ public class LoginAndAddressPage extends BasePage {
         keyword.untilJqueryIsDone(20L);
         keyword.click("LA_BTN_SAME_AS_SHIPPING");
         keyword.click("LA_PROCEED_TO_CHECK_OUT_BTN");
-        String text3 = keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " ");
-        keyword.simpleAssertEquals("LA_MESSAGE_SHIPPING_ADDRESS", text3);
+        String textShipping = keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " ");
+        keyword.simpleAssertEquals("LA_MESSAGE_SHIPPING_ADDRESS", textShipping);
         keyword.assertEquals("LA_BILLING_ADDRESS_FILL_TEXT_SAME_AS_SHIPPING", "LA_INPUT_TEXT_FILL_SAME_AS_SHIPPING");
     }
 

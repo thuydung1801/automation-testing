@@ -1,29 +1,3 @@
-INFO  | 2022-12-28 16:56:37 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2022-12-28 16:56:39 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
-INFO  | 2022-12-28 16:56:39 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
-INFO  | 2022-12-28 16:56:42 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2022-12-28 16:56:42 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-12-28 16:56:42 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@70777a65
-INFO  | 2022-12-28 16:56:54 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2022-12-28 16:56:55 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU05:25) - testCase_SU05
-INFO  | 2022-12-28 16:56:55 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
-INFO  | 2022-12-28 16:57:01 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2022-12-28 16:57:03 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
-INFO  | 2022-12-28 16:57:10 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
-INFO  | 2022-12-28 16:57:15 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentLOGIN_BTN_FORGOT_PASSWORD
-INFO  | 2022-12-28 16:57:23 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_CREATE_MY_ACCOUNT
-INFO  | 2022-12-28 16:57:35 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_FORM_DATA_INFORMATION
-INFO  | 2022-12-28 16:57:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
-INFO  | 2022-12-28 16:57:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
-INFO  | 2022-12-28 16:57:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_EXIST
-INFO  | 2022-12-28 16:57:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_EMAIL_EXIST
-INFO  | 2022-12-28 16:57:36 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_NEXT_STEEP
-INFO  | 2022-12-28 16:57:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_PASSWORD_INFORMATIONwith LOGIN_NEW_PASSWORD
-INFO  | 2022-12-28 16:57:36 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_TITLE
-INFO  | 2022-12-28 16:57:36 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:597) - Check status 
-INFO  | 2022-12-28 16:57:36 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_OPTION_TITLE
-INFO  | 2022-12-28 16:57:36 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_CHECKBOX_AGREE
-INFO  | 2022-12-28 16:57:38 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_CREATE_ACCOUNT
-INFO  | 2022-12-28 16:57:49 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNUP_MESSAGE_DUPLICATE with SIGNIN_MESSAGE_DATA_EXIST
-INFO  | 2022-12-28 16:57:49 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU02:39) - testCase_SU02
-INFO  | 2022-12-28 16:57:49 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
+INFO  | 2022-12-28 17:03:07 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2022-12-28 17:03:10 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
+INFO  | 2022-12-28 17:03:10 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
