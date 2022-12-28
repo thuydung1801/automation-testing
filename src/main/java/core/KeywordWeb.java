@@ -592,132 +592,139 @@ public class KeywordWeb {
         logger.info("deleteAllCookies");
         driver.manage().deleteAllCookies();
     }
-        public boolean checkStatusIsDisplay (String element){
-            logger.info("Check status ");
-            String xPathElement = PropertiesFile.getPropValue(element);
-            if (xPathElement == null) {
-                xPathElement = element;
-            }
-            boolean status = driver.findElement(By.xpath(xPathElement)).isDisplayed();
-            if (status) {
-                System.out.println("Is Display" + "\t" + element);
-            } else {
-                System.out.println("Is not Display" + "\t" + element);
-            }
-            return status;
 
+    public boolean checkStatusIsDisplay(String element) {
+        logger.info("Check status ");
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
         }
-        public Integer countNumberOfElement(String element){
-        logger.info("count the number of element "+ element);
-            String xPathElement = PropertiesFile.getPropValue(element);
-            if (xPathElement == null) {
-                xPathElement = element;
-            }
-            int xpathCount = driver.findElements(By.xpath(xPathElement)).size();
-            return  xpathCount+1;
+        boolean status = driver.findElement(By.xpath(xPathElement)).isDisplayed();
+        if (status) {
+            System.out.println("Is Display" + "\t" + element);
+        } else {
+            System.out.println("Is not Display" + "\t" + element);
         }
-        // wait keywords
-
-        public void imWait ( long timeout){
-            logger.info("implicitlyWait");
-            driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
-        }
-        public void webDriverWaitForElementPresent (String element,long timeout){
-            logger.info("webDriverWaitForElementPresent" + element);
-            String xPathElement = PropertiesFile.getPropValue(element);
-            if (xPathElement == null) {
-                xPathElement = element;
-            }
-            WebDriverWait wait = new WebDriverWait(driver, timeout);
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xPathElement)));
-        }
-
-        public String splitEnterCharacters(String text, Integer index) {
-            String[] words = text.split("\n");
-            return words[index];
-        }
-
-        public void waitForAjaxToFinish () throws InterruptedException {
-            logger.info("waitForAjaxToFinish");
-
-            WebDriverWait wait = new WebDriverWait(driver, 3000);
-
-            wait.until((ExpectedCondition<Boolean>) wdriver -> ((JavascriptExecutor) driver).executeScript(
-                    "return !!window.jQuery && !!window.jQuery.active == 0;").equals(true));
-            Thread.sleep(150);
-        }
-        private static void until (Function < WebDriver, Boolean > waitCondition, Long timeoutInSeconds){
-            WebDriverWait webDriverWait = new WebDriverWait(driver, timeoutInSeconds);
-            webDriverWait.withTimeout(timeoutInSeconds, TimeUnit.SECONDS);
-            try {
-                webDriverWait.until(waitCondition);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        }
-        public void untilJqueryIsDone (Long timeoutInSeconds) throws InterruptedException {
-            until((d) ->
-            {
-                Boolean isJqueryCallDone = (Boolean) ((JavascriptExecutor) driver).executeScript("return jQuery.active==0");
-                if (!isJqueryCallDone) System.out.println("JQuery call is in Progress");
-                return isJqueryCallDone;
-            }, timeoutInSeconds);
-            Thread.sleep(1000);
-        }
-        public String waitForElementNotVisible ( int timeOutInSeconds, String elementXPath){
-        logger.info("elemnt "+ elementXPath+" not visible");
-            if ((driver == null) || (elementXPath == null) || elementXPath.isEmpty()) {
-
-                return "Wrong usage of WaitforElementNotVisible()";
-            }
-            try {
-                (new WebDriverWait(driver, timeOutInSeconds)).until(ExpectedConditions.invisibilityOfElementLocated(By
-                        .xpath(elementXPath)));
-                return null;
-            } catch (TimeoutException e) {
-                return "Build your own errormessage...";
-            }
-        }
-        public void webDriverWaitForElementPresentByCss (String element,long timeout){
-            logger.info("webDriverWaitForElementPresentByCss");
-            String xPathElement = PropertiesFile.getPropValue(element);
-            if (xPathElement == null) {
-                xPathElement = element;
-            }
-            WebDriverWait wait = new WebDriverWait(driver, timeout);
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(xPathElement)));
-        }
-
-        public void fluentWaitForElementPresent (String element, Duration polling, Duration timeout){
-            logger.info("fluentWaitForElementPresent");
-            Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-                    .withTimeout(timeout)
-                    .pollingEvery(polling)
-                    .ignoring(NoSuchElementException.class);
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
-        }
-
-        public void deleteInput () {
-            ((JavascriptExecutor) driver).executeScript("document.getElementByClass('input-box').reset()");
-            System.out.printf("clear.....");
-        }
-
-        public void assertEquals (String expected, String actual){
-            logger.info("compare from " + expected + " with " + actual);
-            String xPathElement1 = PropertiesFile.getPropValue(expected);
-            String xPathElement2 = PropertiesFile.getPropValue(actual);
-            if (xPathElement1 == null) {
-                xPathElement1 = expected;
-            }
-            if (xPathElement2 == null) {
-                xPathElement2 = actual;
-            }
-            String actualText = driver.findElement(By.xpath(xPathElement2)).getText();
-            Assert.assertEquals(actualText, xPathElement1);
+        return status;
 
     }
 
-    public void openNewTabFromTabBase(int tabNum, String url){
+    public Integer countNumberOfElement(String element) {
+        logger.info("count the number of element " + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        int xpathCount = driver.findElements(By.xpath(xPathElement)).size();
+        return xpathCount + 1;
+    }
+    // wait keywords
+
+    public void imWait(long timeout) {
+        logger.info("implicitlyWait");
+        driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
+    }
+
+    public void webDriverWaitForElementPresent(String element, long timeout) {
+        logger.info("webDriverWaitForElementPresent" + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xPathElement)));
+    }
+
+    public String splitEnterCharacters(String text, Integer index) {
+        String[] words = text.split("\n");
+        return words[index];
+    }
+
+    public void waitForAjaxToFinish() throws InterruptedException {
+        logger.info("waitForAjaxToFinish");
+
+        WebDriverWait wait = new WebDriverWait(driver, 3000);
+
+        wait.until((ExpectedCondition<Boolean>) wdriver -> ((JavascriptExecutor) driver).executeScript(
+                "return !!window.jQuery && !!window.jQuery.active == 0;").equals(true));
+        Thread.sleep(150);
+    }
+
+    private static void until(Function<WebDriver, Boolean> waitCondition, Long timeoutInSeconds) {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, timeoutInSeconds);
+        webDriverWait.withTimeout(timeoutInSeconds, TimeUnit.SECONDS);
+        try {
+            webDriverWait.until(waitCondition);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void untilJqueryIsDone(Long timeoutInSeconds) throws InterruptedException {
+        until((d) ->
+        {
+            Boolean isJqueryCallDone = (Boolean) ((JavascriptExecutor) driver).executeScript("return jQuery.active==0");
+            if (!isJqueryCallDone) System.out.println("JQuery call is in Progress");
+            return isJqueryCallDone;
+        }, timeoutInSeconds);
+        Thread.sleep(1000);
+    }
+
+    public String waitForElementNotVisible(int timeOutInSeconds, String elementXPath) {
+        logger.info("elemnt " + elementXPath + " not visible");
+        if ((driver == null) || (elementXPath == null) || elementXPath.isEmpty()) {
+
+            return "Wrong usage of WaitforElementNotVisible()";
+        }
+        try {
+            (new WebDriverWait(driver, timeOutInSeconds)).until(ExpectedConditions.invisibilityOfElementLocated(By
+                    .xpath(elementXPath)));
+            return null;
+        } catch (TimeoutException e) {
+            return "Build your own errormessage...";
+        }
+    }
+
+    public void webDriverWaitForElementPresentByCss(String element, long timeout) {
+        logger.info("webDriverWaitForElementPresentByCss");
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(xPathElement)));
+    }
+
+    public void fluentWaitForElementPresent(String element, Duration polling, Duration timeout) {
+        logger.info("fluentWaitForElementPresent");
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+                .withTimeout(timeout)
+                .pollingEvery(polling)
+                .ignoring(NoSuchElementException.class);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
+    }
+
+    public void deleteInput() {
+        ((JavascriptExecutor) driver).executeScript("document.getElementByClass('input-box').reset()");
+        System.out.printf("clear.....");
+    }
+
+    public void assertEquals(String expected, String actual) {
+        logger.info("compare from " + expected + " with " + actual);
+        String xPathElement1 = PropertiesFile.getPropValue(expected);
+        String xPathElement2 = PropertiesFile.getPropValue(actual);
+        if (xPathElement1 == null) {
+            xPathElement1 = expected;
+        }
+        if (xPathElement2 == null) {
+            xPathElement2 = actual;
+        }
+        String actualText = driver.findElement(By.xpath(xPathElement2)).getText();
+        Assert.assertEquals(actualText, xPathElement1);
+
+    }
+
+    public void openNewTabFromTabBase(int tabNum, String url) {
         logger.info("open new tab from tab base");
         String xPathElement1 = PropertiesFile.getPropValue(url);
         if (xPathElement1 == null) {
@@ -736,15 +743,18 @@ public class KeywordWeb {
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("#footer_newsletter_recaptcha > div.box-recatpcha-actions > button"))).click();
 
     }
-    public void copyPaste(String element1,String element2, String content) throws InterruptedException {
+
+    public void copyPaste(String element1, String element2, String content) throws InterruptedException {
         String xPathElement1 = PropertiesFile.getPropValue(element1);
         String xPathElement2 = PropertiesFile.getPropValue(element2);
         String xPathContent = PropertiesFile.getPropValue(content);
         if (xPathElement1 == null) {
             xPathElement1 = element1;
-        }if (xPathElement2 == null) {
+        }
+        if (xPathElement2 == null) {
             xPathElement2 = element2;
-        }if (xPathContent == null) {
+        }
+        if (xPathContent == null) {
             xPathContent = content;
         }
         Actions act = new Actions(driver);
@@ -759,28 +769,31 @@ public class KeywordWeb {
         act.moveToElement(ele2).click().keyDown(Keys.CONTROL).sendKeys("v");
         act.keyUp(Keys.CONTROL).build().perform();
     }
+
     public String getAttribute(String element) {
         logger.info("get Attribute of" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
         if (xPathElement == null) {
             xPathElement = element;
         }
-        WebElement  b = driver.findElement(By.xpath(xPathElement));
+        WebElement b = driver.findElement(By.xpath(xPathElement));
         String c = b.getAttribute("style");
         logger.info(c);
         return c;
     }
+
     public String getAttributeWithValue(String element) {
         logger.info("get Attribute of" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
         if (xPathElement == null) {
             xPathElement = element;
         }
-        WebElement  b = driver.findElement(By.xpath(xPathElement));
+        WebElement b = driver.findElement(By.xpath(xPathElement));
         String c = b.getAttribute("value");
         logger.info(c);
         return c;
     }
+
     public void keysBoardWithDOWN(String element1) throws InterruptedException {
         String xPathElement1 = PropertiesFile.getPropValue(element1);
 
@@ -792,6 +805,100 @@ public class KeywordWeb {
         act.moveToElement(tutorial).build().perform();
         imWait(2);
         act.contextClick(tutorial).sendKeys(Keys.ARROW_DOWN).build().perform();
+    }
+
+    public void verifyAttributeValues(String expect, String elementGetValue) {
+        // getAttribute() to get value as displayed in GUI // no value attribute for the field in the DOM.
+        String xPathElement1 = PropertiesFile.getPropValue(elementGetValue);
+        String xPathElement2 = PropertiesFile.getPropValue(expect);
+        if (xPathElement1 == null) {
+            xPathElement1 = elementGetValue;
+        }
+        if (xPathElement2 == null) {
+            xPathElement2 = expect;
+        }
+        String valueElement = driver.findElement(By.xpath(xPathElement1)).getAttribute("value");
+        Assert.assertEquals(valueElement, xPathElement2);
+    }
+
+    public void checkNotCopyPastesKeyboardEvents(String element1, String dataSendKey) throws InterruptedException {
+        String xPathElement1 = PropertiesFile.getPropValue(element1);
+        String xPathContent = PropertiesFile.getPropValue(dataSendKey);
+        if (xPathElement1 == null) {
+            xPathElement1 = element1;
+        }
+        if (xPathContent == null) {
+            xPathContent = dataSendKey;
+        }
+        Actions actions = new Actions(driver);
+        // Enter the Current Address
+        WebElement currentAddress = driver.findElement(By.xpath(xPathElement1));
+        currentAddress.sendKeys(xPathContent);
+        // Select the Current Address using CTRL + A
+        actions.keyDown(Keys.CONTROL);
+        actions.sendKeys("a");
+        actions.keyUp(Keys.CONTROL);
+        actions.build().perform();
+        // Copy the Current Address using CTRL + C
+        actions.keyDown(Keys.CONTROL);
+        actions.sendKeys("c");
+        actions.keyUp(Keys.CONTROL);
+        actions.build().perform();
+        //Press the TAB Key to Switch Focus to Permanent Address
+        actions.sendKeys(Keys.TAB);
+        actions.build().perform();
+        //Paste the Address in the Permanent Address field using CTRL + V
+        Thread.sleep(1000);
+        actions.keyDown(Keys.CONTROL);
+        actions.sendKeys("v");
+        actions.keyUp(Keys.CONTROL);
+        actions.build().perform();
+    }
+
+    public void clearLocalStorage() {
+        logger.info("clearLocalStorage");
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("localStorage.removeItem(\"mage-cache-storage\")");
+    }
+
+    public String numberOnly(String element) {
+        logger.info("get Text of" + element);
+        String text = PropertiesFile.getPropValue(element);
+        if (text == null) {
+            text = element;
+        }
+        return driver.findElement(By.xpath(text)).getText().replaceAll("[^0-9]", "");
+    }
+    public void assertEqualsAfterCutting(String expected, String actual, int indexStart, int indexEnd) {
+        logger.info("compare from " + expected + " with " + actual);
+        String xPathElement1 = PropertiesFile.getPropValue(expected);
+        String xPathElement2 = PropertiesFile.getPropValue(actual);
+        if (xPathElement1 == null) {
+            xPathElement1 = expected;
+        }
+        if (xPathElement2 == null) {
+            xPathElement2 = actual;
+        }
+        String actualText = driver.findElement(By.xpath(xPathElement2)).getText().substring(indexStart, indexEnd);
+        Assert.assertEquals(actualText, xPathElement1);
+    }
+    public void scrollToTheBottomPage() {
+        logger.info("scrollDownToElementWithJavaExecutor");
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+    public void compareTheValueOfStrings(String expected, String actual, int indexStart, int indexEnd) {
+        logger.info("compare from " + expected + " with " + actual);
+        String xPathElement1 = PropertiesFile.getPropValue(expected);
+        String xPathElement2 = PropertiesFile.getPropValue(actual);
+        if (xPathElement1 == null) {
+            xPathElement1 = expected;
+        }
+        if (xPathElement2 == null) {
+            xPathElement2 = actual;
+        }
+        String actualText = driver.findElement(By.xpath(xPathElement2)).getAttribute("style").substring(indexStart, indexEnd);
+        Assert.assertEquals(actualText, xPathElement1);
     }
 
 
