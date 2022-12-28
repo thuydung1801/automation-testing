@@ -1,11 +1,19 @@
 package page;
 
 import core.*;
+import io.cucumber.java.sl.In;
+import page.home.LoginPage;
+import page.home.RegisterPage;
+import page.signinSignup.SignInPage;
+import page.signinSignup.SignUpPage;
 
 public class ListingPage extends BasePage {
     public ListingPage(KeywordWeb key) {
         super(key);
     }
+
+    private ListingPage objListingPage;
+    private SignUpPage objSignUp;
 
     public void acceptAllCookies() {
         keyword.webDriverWaitForElementPresent("BTN_COOKIES", 50);
@@ -23,28 +31,133 @@ public class ListingPage extends BasePage {
         keyword.CheckIsDisplayElement(statusElement);
     }
 
+    public void choseFilterAndVerify(String scrollElement, String clickElement, String verifyElement) throws InterruptedException {
+        keyword.untilJqueryIsDone(10L);
+        keyword.scrollDownToElement(scrollElement);
+        keyword.click(clickElement);
+        keyword.untilJqueryIsDone(20L);
+        keyword.checkStatusIsDisplay(verifyElement);
+    }
+
+    //
+    public void enterDataFilterAndVerify(String dataMin, String dataMax, String expected, String actual) throws InterruptedException {
+        objSignUp = new SignUpPage(this.keyword);
+        keyword.scrollDownToElement("LTP_PRICE");
+        objSignUp.clearTextAndSendKey("LTP_INPUT_MIN", "LTP_INPUT_MIN", dataMin);
+        objSignUp.clearTextAndSendKey("LTP_INPUT_MAX", "LTP_INPUT_MAX", dataMax);
+        keyword.click("LTP_BTN_SUBMIT_PRICE");
+        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
+        keyword.assertEquals(expected, actual);
+    }
+
+    public void scrollAndClick(String scrollToElement, String clickElent) throws InterruptedException {
+        keyword.scrollDownToElement(scrollToElement);
+        keyword.untilJqueryIsDone(50L);
+        keyword.click(clickElent);
+    }
+
     //go to AllProduct of listingPage section
-    public void goToAllProduct(String allBtn, String btnSwitch) throws InterruptedException {
-        keyword.navigateToUrl("BASE_URL_LISTINGPAGE");
-        keyword.webDriverWaitForElementPresent("BTN_COOKIES", 30);
-        keyword.click("BTN_COOKIES");
-        Thread.sleep(1000);
-        keyword.scrollToPosition();
-        keyword.webDriverWaitForElementPresent(btnSwitch, 50);
-        keyword.click(btnSwitch);
+    public void goToAllProduct() throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("LTP_TEXT_PAGE", 50);
         keyword.hoverAndClick("LTP_TEXT_MOVE");
         keyword.webDriverWaitForElementPresent("LTP_CLICK_PRODUCT", 10);
-        keyword.imWait(3);
+        keyword.untilJqueryIsDone(30L);
         keyword.click("LTP_CLICK_PRODUCT");
-        keyword.imWait(3);
-        keyword.scrollDownToElement(allBtn);
-        keyword.click(allBtn);
+        keyword.untilJqueryIsDone(30L);
+        scrollAndClick("ALL_RING_BTN", "ALL_RING_BTN");
+        keyword.scrollToPosition();
+        keyword.verifyElementVisible("LTP_LEFT_FILTER");
     }
 
-    // delete function filter
-    public void deleteFilters() {
-        keyword.click("LTP_BTN_DELETEALL");
+    //    Filter price displayed when the option has been applied
+    public void filterPrice() throws InterruptedException {
+        choseFilterAndVerify("LTP_CHOSE_STONE_CHECK_AJAX", "LTP_CHOSE_STONE_CHECK_AJAX", "LTP_PRICE_ACTIVE");
+    }
+
+
+    //
+    public void filterItem() throws InterruptedException {
+        scrollAndClick("LTP_FILTER_STONES", "LTP_FILTER_STONES");
+        keyword.untilJqueryIsDone(20L);
+        keyword.assertEqualsAfterCutting("LTP_FILTER_DIAMOND", "LTP_VERIFY_FILTER_STONES", 17, 31);
+        keyword.untilJqueryIsDone(20L);
+        keyword.checkStatusIsDisplay("LTP_VERIFY_IMG");
+    }
+
+    //    Input data of Min > Max price
+    public void enterPrice() throws InterruptedException {
+        enterDataFilterAndVerify("LTP_DATA_MIN", "LTP_MAX", "LTP_MESSAGE_NOTIFY", "LTP_ACTUAL");
+    }
+
+    //
+    public void checkUploadPage() throws InterruptedException {
+        keyword.scrollDownToElement("LTP_PRODUCT_VIEW");
+        keyword.untilJqueryIsDone(70L);
+        keyword.verifyElementVisible("LTP_CHECK_VIEW_PERCENT");
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("LTP_BTN_LOADING_MORE");
+        keyword.untilJqueryIsDone(50L);
+        scrollAndClick("LTP_BTN_LOADING_MORE", "LTP_BTN_LOADING_MORE");
+        keyword.verifyElementVisible("LTP_LOADING_MORE_ITEM");
+    }
+
+    //    check add  more 30 item
+    public void checkUploadMore30Item() throws InterruptedException {
+        scrollAndClick("LTP_BOX_CARAT", "LTP_SELECT_CARAT");
+        keyword.untilJqueryIsDone(100L);
+        keyword.scrollToPosition();
+        keyword.scrollToTheBottomPage();
+        keyword.scrollToTheBottomPage();
+        keyword.scrollToTheBottomPage();
+        keyword.scrollToTheBottomPage();
+        keyword.scrollDownToElement("LTP_BTN_LOADING_MORE");
+        keyword.assertEqualsAfterCutting("LTP_VIEW_PRODUCT_OF_6PAGE", "LYP_VIEW_LABEL_TEXT", 14, 17);
+//        keyword.click("LTP_BTN_LOADING_MORE");
+//        keyword.untilJqueryIsDone(30L);
+//        keyword.scrollDownToElement("LTP_SCROLL_TO_FOOTER");
+//        keyword.untilJqueryIsDone(50L);
+//        keyword.assertEqualsAfterCutting("LTP_DATA_VIEWED_PRODUCT_ITEM_ADD_30PRODUCT", "LYP_VIEW_LABEL_TEXT", 14, 17);
+    }
+
+    //TLoading page endless with "Upload more" button - do not display this text when not a product load
+    public void notShowButtonUploadMore() throws InterruptedException {
+        keyword.scrollDownToElement("LTP_PRICE");
+        objSignUp.clearTextAndSendKey("LTP_INPUT_MIN", "LTP_INPUT_MIN", "LTP_DATA_MIN1");
+        objSignUp.clearTextAndSendKey("LTP_INPUT_MAX", "LTP_INPUT_MAX", "LTP_MAX1");
+        keyword.click("LTP_BTN_SUBMIT_PRICE");
+        keyword.untilJqueryIsDone(50L);
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("LTP_BTN_DISPLAY_NONE");
+        keyword.assertEquals("LTP_MESSAGE_NOT_FILTER_PRODUCT", "LTP_XPATH_MESSAGE_NOT_FILTER_PRODUCT");
+    }
+
+    //    Check show button : Upload more (Number products of listing page < 30 products
+    public void notShowButtonUploadMoreWhenProductOfPageLessThan30() throws InterruptedException {
+        enterDataFilterAndVerify("LTP_DATA_MIN2", "LTP_DATA_MAX2", "LTP_MESSAGE_EXPECT", "LYP_VIEW_LABEL_TEXT");
+    }
+
+    //    Check show button: Upload more when all the products on the page have been loaded  then go back to top and scrolling again
+    public void checkButtonUploadMoreWhenShowFullProduct() throws InterruptedException {
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/diamond-rings/blue-topaz/950-platinum/?p=15");
+        keyword.untilJqueryIsDone(50L);
+        scrollAndClick("LTP_TOP_LINK", "LTP_TOP_LINK");
+        keyword.scrollToTheBottomPage();
+        keyword.scrollDownToElement("LTP_VIEW_FULL_PRODUCT");
+        keyword.untilJqueryIsDone(20L);
+        keyword.compareTheValueOfStrings("LTP_VALUE_FULL_PRODUCT", "LTP_VIEW_FULL_OPTION", 7, 11);
+        keyword.verifyElementVisible("LTP_BTN_DISPLAY_NONE");
+        keyword.assertEquals("LTP_MESSAGE_SHOW_FULL_PRODUCT", "LYP_VIEW_LABEL_TEXT");
+    }
+
+    //Auto loading product with 6 pages
+    public void removeItemsFilter() throws InterruptedException {
+        keyword.untilJqueryIsDone(20L);
+        keyword.checkStatusIsDisplay("LTP_CLOSE_ITEMS_FILTER");
+        keyword.untilJqueryIsDone(20L);
+        choseFilterAndVerify("LTP_CLOSE_ITEMS_FILTER", "LTP_CLOSE_ITEMS_FILTER", "LTP_AJAX_LOADING_ICON");
     }
 
     //Check sort button
@@ -99,5 +212,6 @@ public class ListingPage extends BasePage {
         keyword.clickByCss("LTP_MODAL_OVERLAY");
         keyword.clickByCss("LTP_MODAL_OVERLAY");
     }
-}
 
+
+}

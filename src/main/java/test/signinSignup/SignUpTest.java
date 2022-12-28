@@ -29,7 +29,7 @@ public class SignUpTest extends BaseTest {
         objLogin.loginOnAlert();
 //        objSigUp.nextUrl();
         objRegist.acceptAllCookies();
-        objRegist.chooseLanguages();
+//        objRegist.chooseLanguages();
         objSigUp.goToFormCreateMyAccount();
         objSigUp.createCustomerWithEmail();
     }
@@ -55,7 +55,7 @@ public class SignUpTest extends BaseTest {
 
     @Test(priority = 3, description = "Create an account with the same password as the register email")
     public void testCase_SU06() throws InterruptedException {
-        logger.info("testCase_SU02");
+        logger.info("testCase_SU06");
         objSigUp.enterTheSamePasswordAsEmail();
     }
 
@@ -141,6 +141,5 @@ public class SignUpTest extends BaseTest {
     public void testCase_SU018_and_testCase_14() throws Exception {
         logger.info("testCase_SU018_and_testCase_14");
         objSigUp.signUpWithPhoneButEmailInSystem();
-
     }
 }
