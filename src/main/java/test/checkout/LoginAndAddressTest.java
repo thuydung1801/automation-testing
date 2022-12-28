@@ -65,7 +65,7 @@ public class LoginAndAddressTest extends BaseTest {
     @Test(priority = 7, description = "Using copy/paste email for Email confirm form")
     public void testCase_LA_010() throws InterruptedException {
         logger.info("testCase_LA_010");
-        objLoginAdrPage.copyPasteEmail();
+        objLoginAdrPage.checkNotCopyPasteEmail();
     }
 
     @Test(priority = 8, description = "Next to Payment page with leave blank with the required form")

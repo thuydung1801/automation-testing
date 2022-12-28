@@ -1,147 +1,47 @@
-INFO  | 2022-12-28 15:48:08 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2022-12-28 15:48:10 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
-INFO  | 2022-12-28 15:48:10 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
-INFO  | 2022-12-28 15:48:16 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2022-12-28 15:48:16 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2022-12-28 15:48:16 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@2e3900dc
-INFO  | 2022-12-28 15:48:24 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2022-12-28 15:48:26 | [main] test.signinSignup.SignInTest (SignInTest.java:testCase_SI02:25) - testCase_SU05
-INFO  | 2022-12-28 15:48:26 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
-INFO  | 2022-12-28 15:48:40 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2022-12-28 15:48:40 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
-INFO  | 2022-12-28 15:48:52 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
-INFO  | 2022-12-28 15:48:55 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT_FORM_PHONE
-INFO  | 2022-12-28 15:48:56 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNIN_MESSAGE_REQUIRED_FIELD with SIGNIN_XPATH_EMAIL_REQUIRED_FIELD
-INFO  | 2022-12-28 15:48:56 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNIN_MESSAGE_REQUIRED_FIELD with SIGNIN_XPATH_PASSWORD_REQUIRED_FIELD
-INFO  | 2022-12-28 15:48:57 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_EMAIL_LOGwith SIGNIN_DATA_EMAIL
-INFO  | 2022-12-28 15:48:57 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2022-12-28 15:48:58 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNIN_MESSAGE_REQUIRED_FIELD with SIGNIN_XPATH_PASSWORD_REQUIRED_FIELD
-INFO  | 2022-12-28 15:48:58 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-28 15:48:58 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_PASSWORD_INPUTwith SIGNIN_DATA_PASSWORD01
-INFO  | 2022-12-28 15:48:58 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2022-12-28 15:48:59 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNIN_MESSAGE_REQUIRED_FIELD with SIGNIN_XPATH_EMAIL_REQUIRED_FIELD
-INFO  | 2022-12-28 15:49:01 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-28 15:49:01 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_EMAIL_LOGwith SIGNUP_DATA_EMAIL_INFORMATION
-INFO  | 2022-12-28 15:49:01 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-28 15:49:01 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_PASSWORD_INPUTwith SIGNIN_DATA_PASSWORD01
-INFO  | 2022-12-28 15:49:01 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_FORM_LOGIN
-INFO  | 2022-12-28 15:49:01 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT
-INFO  | 2022-12-28 15:49:07 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNIN_MESSAGE_PASSWORD_ACTUAL with SIGNIN_MESSAGE_INVALID
-INFO  | 2022-12-28 15:49:07 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-28 15:49:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_EMAIL_LOGwith SIGNUP_DATA_EMAIL_INVALID
-INFO  | 2022-12-28 15:49:07 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT
-INFO  | 2022-12-28 15:49:10 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNIN_MESSAGE_PASSWORD_ACTUAL with SIGNIN_MESSAGE_INVALID
-INFO  | 2022-12-28 15:49:12 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-28 15:49:12 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_EMAIL_LOGwith SIGNIN_DATA_EMAIL_WRONG_FORMAT
-INFO  | 2022-12-28 15:49:13 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2022-12-28 15:49:13 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNIN_MESSAGE_EMAIL_WRONG_FORMAT with SIGNIN_XPATH_EMAIL_REQUIRED_FIELD
-INFO  | 2022-12-28 15:49:13 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_FORGOT_PASSWORD
-INFO  | 2022-12-28 15:49:14 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNIN_MESSAGE_FORM_FORGOT with SIGNIN_XPATH_INPUTFORM_EMAIL_FORGOT
-INFO  | 2022-12-28 15:49:14 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGININ_INPUT_EMAIL_FORGOTwith SIGNIN_DATA_EMAIL
-INFO  | 2022-12-28 15:49:14 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
-INFO  | 2022-12-28 15:49:21 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNIN_MESSAGE_SENT_CODE with SIGNIN_XPATH_ACTUAL_SENT_CODE
-INFO  | 2022-12-28 15:49:21 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_ENTER_CODEwith SIGNIN_DATA_CODE_SEND_KEY
-INFO  | 2022-12-28 15:49:21 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT_SEND_CODE
-INFO  | 2022-12-28 15:49:24 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNIN_MESSAGE_UNABLE_CODE with SIGNIN_XPATH_UNABLE_CODE
-INFO  | 2022-12-28 15:49:24 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-28 15:49:24 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:255) - Executing JavaScript
-INFO  | 2022-12-28 15:49:24 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...ADDMIN_URL
-INFO  | 2022-12-28 15:49:33 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME
-INFO  | 2022-12-28 15:49:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD
-INFO  | 2022-12-28 15:49:34 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
-INFO  | 2022-12-28 15:49:59 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
-INFO  | 2022-12-28 15:49:59 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementLOGIN_BTN_CUSTOMER
-INFO  | 2022-12-28 15:49:59 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_CUSTOMER
-INFO  | 2022-12-28 15:49:59 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_VERIFY_CUSTOMER
-INFO  | 2022-12-28 15:50:03 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_EMAIL_LOG
-INFO  | 2022-12-28 15:50:08 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_VERIFY_EMAIL_LOG
-INFO  | 2022-12-28 15:50:08 | [main] core.KeywordWeb (KeywordWeb.java:imWait:624) - implicitlyWait
-INFO  | 2022-12-28 15:50:08 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_CHECK_EMAIL_LOG_ACTION_SELECT
-INFO  | 2022-12-28 15:50:15 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentLOGIN_SELECT_ACTIVE
-INFO  | 2022-12-28 15:50:16 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_SELECT_VIEW_CHECK_EMAIL_LOG
-INFO  | 2022-12-28 15:50:16 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentLOGIN_POPUP_MESSAGE_PASSWORD_RESET
-INFO  | 2022-12-28 15:50:17 | [main] core.KeywordWeb (KeywordWeb.java:switchToIFrameByXpath:366) - Switching to Iframe
-INFO  | 2022-12-28 15:50:17 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofLOGIN_INPUT_VERIFY_CODE
-INFO  | 2022-12-28 15:50:17 | [main] core.KeywordWeb (KeywordWeb.java:closeWindowByIndex:425) - closeWindowByIndex
-INFO  | 2022-12-28 15:50:17 | [main] core.KeywordWeb (KeywordWeb.java:switchToWindowByIndex:381) - switchToWindowByIndex
-INFO  | 2022-12-28 15:50:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_ENTER_CODEwith 155502
-INFO  | 2022-12-28 15:50:19 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT_SEND_CODE
-INFO  | 2022-12-28 15:50:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_CREATE_NEW_PASSWORDwith SIGNIN_DATA_SEND_KEY
-INFO  | 2022-12-28 15:50:23 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNIN_MESSAGE_CREATE_NEW_PW
-INFO  | 2022-12-28 15:50:23 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGNUP_ACTUAL_MESSAGE04
-INFO  | 2022-12-28 15:50:23 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
-INFO  | 2022-12-28 15:50:23 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
-INFO  | 2022-12-28 15:50:23 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
-INFO  | 2022-12-28 15:50:23 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_04 with SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE
-INFO  | 2022-12-28 15:50:23 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_ACTUAL_MESSAGE04
-INFO  | 2022-12-28 15:50:23 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-28 15:50:24 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_CREATE_NEW_PASSWORDwith SIGNIN_DATA_PASSWORD_NEW
-INFO  | 2022-12-28 15:50:24 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNI_BTN_SUBMIT_RESET_PASSWORD
-INFO  | 2022-12-28 15:50:27 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleSIGNIN_VERIFY_SUCCESS_SIGNIN_FORM
-INFO  | 2022-12-28 15:50:28 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNIN_UPDATE_PASSWORD_SUCCESS with LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS
-INFO  | 2022-12-28 15:50:29 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_EMAIL_LOGwith SIGNIN_DATA_EMAIL
-INFO  | 2022-12-28 15:50:29 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_PASSWORD_INPUTwith SIGNIN_DATA_PASSWORD_NEW
-INFO  | 2022-12-28 15:50:30 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2022-12-28 15:50:30 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleLOGIN_MESSAGE_SUCCESS
-INFO  | 2022-12-28 15:51:00 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:592) - deleteAllCookies
-INFO  | 2022-12-28 15:51:00 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glcn/
-INFO  | 2022-12-28 15:51:15 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_ACC
-INFO  | 2022-12-28 15:51:22 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_TAB_LOGIN_IN_WITH_PHONE
-INFO  | 2022-12-28 15:51:24 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT_FORM_PHONE
-INFO  | 2022-12-28 15:51:25 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 必填项。 with SIGNIN_MESSAGE_FAIL_WITH_MOBILE
-INFO  | 2022-12-28 15:51:25 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 必填项。 with SIGNIN_XPATH_PASSWORD_REQUIRED_FIELD
-INFO  | 2022-12-28 15:51:25 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_PHONE_NUMBERwith SIGNIN_DATA_PHONE_NUMBER
-INFO  | 2022-12-28 15:51:25 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_PASSWORD_INPUTwith SIGNIN_DATA_PASSWORD_PHONE
-INFO  | 2022-12-28 15:51:25 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT_FORM_PHONE
-INFO  | 2022-12-28 15:51:26 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 请输入有效的手机号码。 with SIGNIN_MESSAGE_FAIL_WITH_MOBILE
-INFO  | 2022-12-28 15:51:26 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-28 15:51:26 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_PHONE_NUMBERwith SIGNIN_PASSWORD_WRONG
-INFO  | 2022-12-28 15:51:26 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT_FORM_PHONE
-INFO  | 2022-12-28 15:51:29 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 用户名或者密码不正确 with SIGNIN_INPUT_MESSAGE_INVALID
-INFO  | 2022-12-28 15:51:29 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-28 15:51:29 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_PHONE_NUMBERwith SIGNUP_DATA_PHONE
-INFO  | 2022-12-28 15:51:30 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-28 15:51:30 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_PASSWORD_INPUTwith SIGNIN_DATA_PASSWORD_WRONG_PHONE
-INFO  | 2022-12-28 15:51:30 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT_FORM_PHONE
-INFO  | 2022-12-28 15:51:34 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 用户名或者密码不正确 with SIGNIN_INPUT_MESSAGE_INVALID
-INFO  | 2022-12-28 15:51:34 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_XPATH_FORGOT_PASSWORD
-INFO  | 2022-12-28 15:51:35 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_TAB_PHONE_FORGOT_PASSWORD
-INFO  | 2022-12-28 15:51:36 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_SELECT_PHONE
-INFO  | 2022-12-28 15:51:37 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_CHINA_PHONE
-INFO  | 2022-12-28 15:51:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_PHONE_ENTERwith SIGNIN_VALID_PHONE_CHINA
-INFO  | 2022-12-28 15:51:39 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
-INFO  | 2022-12-28 15:51:42 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 你的电话号码不正确。请验证手机号码後重试。 with SIGNIN_INPUT_MESSAGE_PHONE_FAIL
-INFO  | 2022-12-28 15:51:42 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-28 15:51:42 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_PHONE_ENTERwith SIGNIN_PHONE_CHINA
-INFO  | 2022-12-28 15:51:43 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_CLICK_FORM
-INFO  | 2022-12-28 15:51:44 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
-INFO  | 2022-12-28 15:51:46 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:255) - Executing JavaScript
-INFO  | 2022-12-28 15:51:47 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...ADDMIN_URL
-INFO  | 2022-12-28 15:51:56 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
-INFO  | 2022-12-28 15:51:57 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementSIGNUP_STORES_ITEM
-INFO  | 2022-12-28 15:51:57 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_STORES_ITEM
-INFO  | 2022-12-28 15:51:57 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentLOGIN_FORM_CUSTOMER
-INFO  | 2022-12-28 15:51:58 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_ELEMENT_SMS_LOG
-INFO  | 2022-12-28 15:52:02 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_VERIFY_SMS
-INFO  | 2022-12-28 15:52:03 | [main] core.KeywordWeb (KeywordWeb.java:numberOnly:865) - get Text ofSIGNUP_GET_CODE_SMS
-INFO  | 2022-12-28 15:52:05 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_ENTER_CODEwith 062001
-INFO  | 2022-12-28 15:52:05 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT_SEND_CODE
-INFO  | 2022-12-28 15:52:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_CREATE_NEW_PASSWORDwith SIGNIN_DATA_SEND_KEY
-INFO  | 2022-12-28 15:52:09 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 您的密码应与您的电子邮件地址不同，并包含 with SIGNIN_MESSAGE_CREATE_NEW_PW
-INFO  | 2022-12-28 15:52:09 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少8个字符 with SIGNUP_ACTUAL_MESSAGE04
-INFO  | 2022-12-28 15:52:09 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个号码 with SIGNUP_ACTUAL_MESSAGE_CHINA
-INFO  | 2022-12-28 15:52:09 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个小写 with SIGNUP_ACTUAL_MESSAGE_CHINA1
-INFO  | 2022-12-28 15:52:09 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个大写 with SIGNUP_ACTUAL_MESSAGE_CHINA2
-INFO  | 2022-12-28 15:52:09 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个字符，例如：# & $ ( ) * + , - . : , . = ? @ { } ~ ! with SIGNUP_ACTUAL_MESSAGE_CHINA3
-INFO  | 2022-12-28 15:52:10 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_ACTUAL_MESSAGE04
-INFO  | 2022-12-28 15:52:11 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2022-12-28 15:52:11 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_CREATE_NEW_PASSWORDwith SIGNUP_CREATE_PASSWORD_PHONE_RD
-INFO  | 2022-12-28 15:52:11 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT_RESET_PASSWORD
-INFO  | 2022-12-28 15:52:16 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 您更新您的密码。 with SIGN_MESSAGE_SIGNIN_SUCCESS
-INFO  | 2022-12-28 15:52:16 | [main] test.signinSignup.SignInTest (SignInTest.java:testCase_SI08:112) - testCase_SU08
-INFO  | 2022-12-28 15:52:17 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGN_INPUT_SELECT_PHONE
-INFO  | 2022-12-28 15:52:18 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_SELECT_PHONE_CHINA
-INFO  | 2022-12-28 15:52:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGN_INPUT_PHONE_CHINAwith SIGNIN_PHONE_CHINA
-INFO  | 2022-12-28 15:52:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGN_INPUT_PASSWORDwith SIGNUP_CREATE_PASSWORD_PHONE_RD
-INFO  | 2022-12-28 15:52:20 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGN_BTN_LOGIN_STORE_CHINA
-INFO  | 2022-12-28 15:52:36 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisibleSIGN_MESSAGE_SUCCESS
+INFO  | 2022-12-28 16:28:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2022-12-28 16:28:29 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
+INFO  | 2022-12-28 16:28:29 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
+INFO  | 2022-12-28 16:28:33 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2022-12-28 16:28:33 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2022-12-28 16:28:33 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@402f61f5
+INFO  | 2022-12-28 16:28:39 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
+INFO  | 2022-12-28 16:28:39 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU05:25) - testCase_SU05
+INFO  | 2022-12-28 16:28:39 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
+INFO  | 2022-12-28 16:28:54 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2022-12-28 16:28:54 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
+INFO  | 2022-12-28 16:29:33 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
+INFO  | 2022-12-28 16:29:33 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentLOGIN_BTN_FORGOT_PASSWORD
+INFO  | 2022-12-28 16:29:37 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2022-12-28 16:29:47 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_FORM_DATA_INFORMATION
+INFO  | 2022-12-28 16:29:47 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
+INFO  | 2022-12-28 16:29:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2022-12-28 16:29:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_EXIST
+INFO  | 2022-12-28 16:29:58 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_EMAIL_EXIST
+INFO  | 2022-12-28 16:29:58 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2022-12-28 16:29:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_PASSWORD_INFORMATIONwith LOGIN_NEW_PASSWORD
+INFO  | 2022-12-28 16:30:02 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_TITLE
+INFO  | 2022-12-28 16:30:02 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:597) - Check status 
+INFO  | 2022-12-28 16:30:02 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_OPTION_TITLE
+INFO  | 2022-12-28 16:30:03 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_CHECKBOX_AGREE
+INFO  | 2022-12-28 16:30:04 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_CREATE_ACCOUNT
+INFO  | 2022-12-28 16:30:20 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNUP_MESSAGE_DUPLICATE with SIGNIN_MESSAGE_DATA_EXIST
+INFO  | 2022-12-28 16:30:21 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU02:39) - testCase_SU02
+INFO  | 2022-12-28 16:30:21 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
+INFO  | 2022-12-28 16:30:26 | [main] core.KeywordWeb (KeywordWeb.java:imWait:624) - implicitlyWait
+INFO  | 2022-12-28 16:30:26 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_EMAIL_INVALID
+INFO  | 2022-12-28 16:30:27 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_EMAIL_CONFIRM_INVALID
+INFO  | 2022-12-28 16:30:27 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2022-12-28 16:30:27 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNUP_DATA_VERIFY_MESSAGE with SIGNUP_FIRSTNAME_ERROR
+INFO  | 2022-12-28 16:30:27 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNUP_DATA_VERIFY_MESSAGE with SIGNUP_LASTNAME_ERROR
+INFO  | 2022-12-28 16:30:27 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU06:58) - testCase_SU02
+INFO  | 2022-12-28 16:30:27 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
+INFO  | 2022-12-28 16:30:27 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2022-12-28 16:30:27 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2022-12-28 16:30:27 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNIN_PASSWORD_SAME_EMAIL
+INFO  | 2022-12-28 16:30:37 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU03:45) - testCase_SU03
+INFO  | 2022-12-28 16:30:37 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
+INFO  | 2022-12-28 16:30:38 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2022-12-28 16:30:38 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2022-12-28 16:30:38 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_EMAIL_FAIL
+INFO  | 2022-12-28 16:30:38 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2022-12-28 16:30:38 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from SIGNUP_EMAIL_SHOW_MESSAGE with TEXT_ERROR_EMAIL

@@ -203,7 +203,7 @@ public class LoginAndAddressPage extends BasePage {
     }
 
     //
-    public void copyPasteEmail() throws InterruptedException {
+    public void checkNotCopyPasteEmail() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
         keyword.clearText("LP_EMAIL_COPY_PASTE");
         keyword.clearText("LP_EMAIL_CONFIRM_FAIL");
@@ -283,7 +283,8 @@ public class LoginAndAddressPage extends BasePage {
         keyword.click("LA_PROCEED_TO_CHECK_OUT_BTN");
         keyword.untilJqueryIsDone(50L);
 //        keyword.checkDisplayOfStringInText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS", "LP_DATA_STREET");
-        keyword.simpleAssertEquals("LA_MESSAGE_SHIPPING_ADDRESS", keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " "));
+        String text4= keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " ");
+        keyword.simpleAssertEquals("LA_MESSAGE_SHIPPING_ADDRESS",text4);
     }
 
     //nexToProcessToCheckOutBillingNotSameShipping
@@ -301,9 +302,11 @@ public class LoginAndAddressPage extends BasePage {
                 "LA_BILL_STREET", "LA_BILL_POSTAL", "LA_BILL_CITY");
         keyword.untilJqueryIsDone(70L);
         keyword.click("LA_PROCEED_TO_CHECK_OUT_BTN");
-        keyword.simpleAssertEquals("LA_MESSAGE_SHIPPING_ADDRESS", keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " "));
+        String text1= keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " ");
+        String text2= keyword.getText("LA_INPUT_BILL_ADDRESS").replaceAll("\\s", " ");
+        keyword.simpleAssertEquals("LA_MESSAGE_SHIPPING_ADDRESS",text1);
         keyword.untilJqueryIsDone(10L);
-        keyword.simpleAssertEquals("LA_MESSAGE_BILL_ADDRESS", keyword.getText("LA_INPUT_BILL_ADDRESS").replaceAll("\\s", " "));
+        keyword.simpleAssertEquals("LA_MESSAGE_BILL_ADDRESS",text2);
     }
 
     //nexToProcessToCheckOutBillingNotSameShipping
@@ -313,7 +316,8 @@ public class LoginAndAddressPage extends BasePage {
         keyword.untilJqueryIsDone(20L);
         keyword.click("LA_BTN_SAME_AS_SHIPPING");
         keyword.click("LA_PROCEED_TO_CHECK_OUT_BTN");
-        keyword.simpleAssertEquals("LA_MESSAGE_SHIPPING_ADDRESS", keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " "));
+        String text3=keyword.getText("LP_INPUT_MESSAGE_SHOPPING_ADDRESS").replaceAll("\\s", " ");
+        keyword.simpleAssertEquals("LA_MESSAGE_SHIPPING_ADDRESS",text3);
         keyword.assertEquals("LA_BILLING_ADDRESS_FILL_TEXT_SAME_AS_SHIPPING", "LA_INPUT_TEXT_FILL_SAME_AS_SHIPPING");
     }
 
