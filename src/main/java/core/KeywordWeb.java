@@ -607,6 +607,15 @@ public class KeywordWeb {
             return status;
 
         }
+        public Integer countNumberOfElement(String element){
+        logger.info("count the number of element "+ element);
+            String xPathElement = PropertiesFile.getPropValue(element);
+            if (xPathElement == null) {
+                xPathElement = element;
+            }
+            int xpathCount = driver.findElements(By.xpath(xPathElement)).size();
+            return  xpathCount+1;
+        }
         // wait keywords
 
         public void imWait ( long timeout){
@@ -623,6 +632,10 @@ public class KeywordWeb {
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xPathElement)));
         }
 
+        public String splitEnterCharacters(String text, Integer index) {
+            String[] words = text.split("\n");
+            return words[index];
+        }
 
         public void waitForAjaxToFinish () throws InterruptedException {
             logger.info("waitForAjaxToFinish");
@@ -652,6 +665,7 @@ public class KeywordWeb {
             Thread.sleep(1000);
         }
         public String waitForElementNotVisible ( int timeOutInSeconds, String elementXPath){
+        logger.info("elemnt "+ elementXPath+" not visible");
             if ((driver == null) || (elementXPath == null) || elementXPath.isEmpty()) {
 
                 return "Wrong usage of WaitforElementNotVisible()";
@@ -779,18 +793,7 @@ public class KeywordWeb {
         imWait(2);
         act.contextClick(tutorial).sendKeys(Keys.ARROW_DOWN).build().perform();
     }
-    public Integer countNumberOfElement(String element){
-        logger.info("count the number of element "+ element);
-        String xPathElement = PropertiesFile.getPropValue(element);
-        if (xPathElement == null) {
-            xPathElement = element;
-        }
-        int xpathCount = driver.findElements(By.xpath(xPathElement)).size();
-        return  xpathCount+1;
-    }
-    public void abc(){
 
-    }
 
 }
 

@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-<test name="Suite" enabled="true">
+<!--<suite name="Suite">-->
+<!--<test name="Suite" enabled="true">-->
+<!--&lt;!&ndash;    <classes>&ndash;&gt;-->
+<!--&lt;!&ndash;        <class name="test.checkout.ShoppingBagTest">&ndash;&gt;-->
+<!--&lt;!&ndash;            <methods>&ndash;&gt;-->
+<!--&lt;!&ndash;                <include name="testCase_SP_02"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <include name="testCase_SP_03"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <include name="testCase_SP_24"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <include name="testCase_SP_26_RV_02_04"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </methods>&ndash;&gt;-->
+<!--&lt;!&ndash;        </class>&ndash;&gt;-->
+<!--&lt;!&ndash;    </classes>&ndash;&gt;-->
 <!--    <classes>-->
-<!--        <class name="test.checkout.ShoppingBagTest">-->
+<!--        <class name="test.checkout.LoginAddressTest">-->
 <!--            <methods>-->
-<!--                <include name="testCase_SP_02"/>-->
-<!--                <include name="testCase_SP_03"/>-->
-<!--                <include name="testCase_SP_24"/>-->
-<!--                <include name="testCase_SP_26_RV_02_04"/>-->
+<!--                <include name="NLA_53"/>-->
+<!--                <include name="NLA_54"/>-->
+<!--                <include name="NLA_26"/>-->
+<!--                <include name="NLA_31"/>-->
+<!--                <include name="NLA_32"/>-->
 <!--            </methods>-->
 <!--        </class>-->
 <!--    </classes>-->
-    <classes>
-        <class name="test.checkout.LoginAddressTest">
-            <methods>
-                <include name="NLA_19"/>
-                <include name="NLA_35"/>
-            </methods>
-        </class>
-    </classes>
-  </test>
+<!--  </test>-->
+<!--</suite>-->
+<suite name="Visual Test Automation Test Suite">
+    <test name="RunTest">
+        <classes>
+            <class name="test.checkout.ShoppingBagTest" />
+        </classes>
+    </test>
 </suite>
