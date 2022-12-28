@@ -694,6 +694,39 @@ public class MyAccountPage extends BasePage {
         logger.info("check verify upload more my order....");
         Assert.assertEquals(check,true);
     }
+    public void checkStatus(String status,String verifyId,String verifyIcon,String verifyText, String dataId, String dataText){
+        switch (status){
+            case "confirmation":
+                logger.info("check verify id order....");
+                keyword.assertEquals(dataId,verifyId);
+                logger.info("check verify status....");
+                keyword.assertEquals(dataText,verifyText);
+                keyword.verifyElementVisible(verifyIcon) ;
+                break;
+            case "delivery" :
+                keyword.click("MAC_OVER_BTN_COMPLETE");
+                logger.info("check verify id order....");
+                keyword.assertEquals(dataId,verifyId);
+                logger.info("check verify status....");
+                keyword.assertEquals(dataText,verifyText);
+                keyword.verifyElementVisible(verifyIcon) ;
+                break;
+
+        }
+
+    }
+    public void checkStatusConfirmation() throws InterruptedException {
+        setUp1();
+        keyword.openNewTab("https://dev3.glamira.com/glgb/sales/order/history/");
+
+        checkStatus("confirmation","MAC_OVER_ID_ORDER_STATUS_CONFIR","MAC_OVER_STATUS_CONFIR_ICON",
+                "MAC_OVER_STATUS_CONFIR","MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR","MAC_OVER_DATA_STATUS_CONFIR");
+    }
+    public void checkStatusDelivery(){
+        keyword.reLoadPage();
+        checkStatus("delivery","MAC_OVER_ID_ORDER_STATUS_DELIVERY","MAC_OVER_STATUS_DELIVERY_ICON",
+                "MAC_OVER_STATUS_DELIVERY","MAC_OVER_DATA_ID_ORDER_STATUS_DELIVERY","MAC_OVER_DATA_STATUS_DELIVERY");
+    }
 
 
 
