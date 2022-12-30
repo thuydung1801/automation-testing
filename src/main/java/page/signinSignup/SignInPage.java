@@ -270,6 +270,11 @@ public class SignInPage extends BasePage {
         keyword.navigateToUrl("ADDMIN_URL");
 //        keyword.webDriverWaitForElementPresent("LOGIN_FORM_LOGIN_BACKEND", 50);
     }
+    public void openTabBE(String urlBE) throws InterruptedException {
+        keyword.executeJavaScript("window.open()");
+        keyword.switchToTab(1);
+        keyword.navigateToUrl(urlBE);
+    }
 
     //login admin BackEnd (shared functions)
     public void loginAdmin(String userName, String passWord) throws InterruptedException {
