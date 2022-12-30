@@ -6,10 +6,7 @@ import core.KeywordWeb;
 import core.PropertiesFile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 import steps.Steps;
 import utils.ChromeOptionsUtil;
 
@@ -27,10 +24,12 @@ public class BaseTest {
     Steps steps;
     @BeforeSuite
     public void beforeSuite(){
-        System.setProperty("webdriver.chrome.driver","driver/chromedriver.exe");
-        WebDriver wd =new ChromeDriver();
-        String baseUrl = "https://dev4.glamira.com/glau";
-        wd.get(baseUrl);
+        PropertiesFile.setPropertiesFile();
+    }
+    @BeforeTest
+    public void beforeTest() throws Exception {
+        keyword.openBrowser(PropertiesFile.getPropValue("BROWSER_NAME"), PropertiesFile.getPropValue("BASE_URL"));
+        keyword.maximizeWindow();
     }
     @BeforeClass
     public void setupTestClass() throws IOException {
@@ -43,7 +42,7 @@ public class BaseTest {
     public void setupTestMethod(Method method) {
         steps.folderUtil.setUpFilesAndFolders(method.getName());
     }
-    @AfterClass
+    @AfterTest
     public void quitDriver() {
         driver.quit();
     }
