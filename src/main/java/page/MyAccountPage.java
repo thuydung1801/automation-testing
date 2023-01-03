@@ -727,6 +727,60 @@ public class MyAccountPage extends BasePage {
         checkStatus("delivery","MAC_OVER_ID_ORDER_STATUS_DELIVERY","MAC_OVER_STATUS_DELIVERY_ICON",
                 "MAC_OVER_STATUS_DELIVERY","MAC_OVER_DATA_ID_ORDER_STATUS_DELIVERY","MAC_OVER_DATA_STATUS_DELIVERY");
     }
+    public void setUp2() throws InterruptedException {
+        objLogin.loginOnAlert();
+
+        objRegister.acceptAllCookies();
+        objRegister.chooseLanguages();
+        keyword.untilJqueryIsDone(30L);
+
+        keyword.navigateToUrl("https://dev3.glamira.com/glau/");
+        keyword.untilJqueryIsDone(30L);
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+        keyword.untilJqueryIsDone(30L);
+
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
+    public void checkFunctionInfoCustomer(String element,String verify, String data) throws InterruptedException {
+        boolean check;
+        keyword.click(element);
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        System.out.printf("getText: " + keyword.getText(verify) + "\n");
+        System.out.printf("getData: " + PropertiesFile.getPropValue(data) + "\n");
+        if(keyword.getText(verify).contains(PropertiesFile.getPropValue(data))){
+            check=true;
+        }
+        else{
+            check=false;
+        }
+        logger.info("check verify My overview....");
+        Assert.assertEquals(check,true);
+    }
+    public void checkContactInfo() throws InterruptedException {
+        keyword.back();
+        checkFunctionInfoCustomer("MAC_OVER_EDIT_CONTACT_INFO","MAC_OVER_VERIFY_GET_CONTACT_INFO","MAC_OVER_VERIFY_DATA_CONTACT_INFO");
+
+    }
+    public void checkChangePassword() throws InterruptedException {
+//        setUp2();
+        keyword.navigateToUrl("https://dev3.glamira.com/glau/customer/account/");
+        checkFunctionInfoCustomer("MAC_OVER_LINK_CHANGE_PASS","MAC_OVER_VERIFY_GET_CHANGE_PASS","MAC_OVER_VERIFY_DATA_CHANGE_PASS");
+    }
+    public void checkChangeShippingAddress() throws InterruptedException {
+        keyword.back();
+        checkFunctionInfoCustomer("MAC_OVER_EDIT_SHIPPING_ADDRESS","MAC_OVER_VERIFY_GET_TITTLE_ADDRESS","MAC_VERIFY_DATA_TITTLE_ADDRESS");
+    }
+    public void checkChangeBillingAddress() throws InterruptedException {
+        keyword.back();
+        checkFunctionInfoCustomer("MAC_OVER_EDIT_BILLING_ADDRESS","MAC_OVER_VERIFY_GET_TITTLE_ADDRESS","MAC_VERIFY_DATA_TITTLE_ADDRESS");
+    }
+    public void checkChangeNewsLetter() throws InterruptedException {
+        keyword.back();
+        checkFunctionInfoCustomer("MAC_OVER_EDIT_NEWSLETTER","MAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER","MAC_VERIFY_DATA_TITTLE_NEWSLETTER");
+    }
+
 
 
 

@@ -87,6 +87,7 @@ public class MyAccountTest extends BaseTest {
     public void testCase_MW_05() throws InterruptedException {
         testMyAccount.emailSelectItem();
     }
+    // case My Order
     @Test(priority = 19,description = "Check function icon view order of Recent  orders")
     public void testCase_MO_02() throws InterruptedException {
         testMyAccount.viewOrder();
@@ -103,6 +104,26 @@ public class MyAccountTest extends BaseTest {
     @Test(priority = 22,description = "Check order status = Delivery, display in tab Recent Orders ")
     public void testCase_MO_05() throws InterruptedException {
         testMyAccount.checkStatusDelivery();
+    }
+    @Test(priority = 23,description = "Check -Change Password- function in contact information ")
+    public void testCase_MO_06() throws InterruptedException {
+        testMyAccount.checkChangePassword();
+    }
+    @Test(priority = 24,description = "Check -Contact Information- edit function")
+    public void testCase_MO_07() throws InterruptedException {
+        testMyAccount.checkContactInfo();
+    }
+    @Test(priority = 25,description = "Check -Shipping Address- edit function")
+    public void testCase_MO_08() throws InterruptedException {
+        testMyAccount.checkChangeShippingAddress();
+    }
+    @Test(priority = 26,description = "Check -Billing Address- edit function ")
+    public void testCase_MO_09() throws InterruptedException {
+        testMyAccount.checkChangeBillingAddress();
+    }
+    @Test(priority = 27,description = "Check -Newsletters- edit function")
+    public void testCase_MO_10() throws InterruptedException {
+        testMyAccount.checkChangeNewsLetter();
     }
 
 
