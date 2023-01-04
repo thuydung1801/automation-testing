@@ -345,13 +345,77 @@ public class SignUpPage extends BasePage {
     public void passwordLessThan8Characters() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
         clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE_CHINA");
-        keyword.click("SIGNUP_BTN_CREATE");
+        keyword.click("SIGNUP_BTN_CREATE_SUB");
         keyword.untilJqueryIsDone(30L);
+        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_03",
+                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+        keyword.untilJqueryIsDone(50L);
         objSignUp.confirmPasswordEntryConditionWithChinese(
-                "SIGNIN_MESSAGE_CREATE_NEW_PW", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_CHINA",
+                "SIGNIN_MESSAGE_PW_NOT_SAME_EMAIL", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_CHINA",
                 "SIGNUP_ACTUAL_MESSAGE_CHINA1", "SIGNUP_ACTUAL_MESSAGE_CHINA2", "SIGNUP_ACTUAL_MESSAGE_CHINA3",
                 "SIGNUP_ACTUAL_MESSAGE04"
         );
+    }
+
+    //    checkConditionAtLeast1Number
+    public void checkConditionAtLeast1Number() throws InterruptedException {
+        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_02");
+        keyword.untilJqueryIsDone(50L);
+        confirmPasswordEntryConditionWithChinese(
+                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_MESSAGE_ERROR_NUMBER",
+                "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
+                "SIGNUP_MESSAGE_ERROR_NUMBER"
+        );
+    }
+
+    //    checkConditionAtLeast1LowerLetter
+    public void checkConditionAtLeast1LowerLetter() throws InterruptedException {
+        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_04");
+        keyword.untilJqueryIsDone(50L);
+        confirmPasswordEntryConditionWithChinese(
+                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
+                "SIGNUP_MESSAGE_ERROR_LOWER_LETTER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
+                "SIGNUP_MESSAGE_ERROR_LOWER_LETTER"
+        );
+    }
+
+    //    checkConditionAtLeast1UpperLetter
+    public void checkConditionAtLeast1UpperLetter() throws InterruptedException {
+        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_05");
+        keyword.untilJqueryIsDone(50L);
+        confirmPasswordEntryConditionWithChinese(
+                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
+                "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_MESSAGE_ERROR_UPPER_LETTER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
+                "SIGNUP_MESSAGE_ERROR_UPPER_LETTER"
+        );
+    }
+
+    //    checkConditionAtLeast1CharactersLike
+    public void checkConditionAtLeast1CharactersLike() throws InterruptedException {
+        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_06");
+        confirmPasswordEntryConditionWithChinese(
+                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
+                "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE_CHINA",
+                "SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE_CHINA"
+        );
+    }
+
+    //    checkConditionAEmailAlreadyInTheSystem
+    public void checkConditionAEmailAlreadyInTheSystem() throws InterruptedException {
+        keyword.click("SIGNUP_BTN_BACK");
+        keyword.untilJqueryIsDone(50L);
+        clearTextAndSendKey("SIGNUP_EMAIL_INFORMATION", "SIGNUP_EMAIL_INFORMATION",
+                "CHECKOUT_DATA_EMAIL_ENTER");
+        clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "CHECKOUT_DATA_EMAIL_ENTER");
+        keyword.click("SIGNUP_BTN_NEXT_CHINA");
+        keyword.untilJqueryIsDone(30L);
+        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_07",
+                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+        clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE_ALREADY01");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("SIGNUP_BTN_CREATE");
+        keyword.untilJqueryIsDone(50L);
+        keyword.assertEquals("已存在此电子邮件地址的帐户。如果你确信它是您的电子邮件地址， 请单击此处 以获取您的密码和访问您的帐户。", "SIGNUP_ADDRESS_EMAIL_ERROR");
     }
 
     //    Create new customer successfully with store enable phone number confirm

@@ -112,4 +112,5 @@ public class SignInTest extends BaseTest {
         logger.info("testCase_SI08_And_SI012");
         objSigin.loginWithPhoneSuccess();
     }
+
 }
