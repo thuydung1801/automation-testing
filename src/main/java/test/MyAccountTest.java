@@ -89,11 +89,11 @@ public class MyAccountTest extends BaseTest {
     }
     // case My Order
     @Test(priority = 19,description = "Check function icon view order of Recent  orders")
-    public void testCase_MO_02() throws InterruptedException {
+    public void testCase_Myorder_02() throws InterruptedException {
         testMyAccount.viewOrder();
     }
     @Test(priority = 20,description = "Check function icon view order of Recent  orders")
-    public void testCase_MO_04() throws InterruptedException {
+    public void testCase_Myorder_04() throws InterruptedException {
         testMyAccount.upLoadItemOrder();
     }
     // case My Overview

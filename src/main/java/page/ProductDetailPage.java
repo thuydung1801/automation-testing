@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.testng.Assert;
 import page.home.LoginPage;
 import page.home.RegisterPage;
+import page.signinSignup.SignInPage;
 
 import java.util.ArrayList;
 import java.util.WeakHashMap;
@@ -19,6 +20,8 @@ public class ProductDetailPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private LoginPage objLogin;
     private RegisterPage objRegister ;
+    private SignInPage signInPage;
+
     public ProductDetailPage() {
         super();
     }
@@ -26,11 +29,25 @@ public class ProductDetailPage extends BasePage {
         super(key);
         objLogin = new LoginPage();
         objRegister = new RegisterPage();
+        signInPage = new SignInPage();
     }
     public void setUp() throws InterruptedException {
         objLogin.loginOnAlert();
         objRegister.acceptAllCookies();
         objRegister.chooseLanguages();
+    }
+    public void setUpWithLogin() throws InterruptedException {
+        objLogin.loginOnAlert();
+        objRegister.acceptAllCookies();
+        objRegister.chooseLanguages();
+        keyword.untilJqueryIsDone(30L);
+
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
+        keyword.untilJqueryIsDone(30L);
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
     }
     public void selectOption() throws InterruptedException {
         Thread.sleep(100);
@@ -346,8 +363,86 @@ public class ProductDetailPage extends BasePage {
 
             keyword.click("PRD_CHECK");
             keyword.click("PRD_BTN_SUBMIT");
+    }
+    public void commonProductPageWithLength(String getText,String dataBefore, String btnEdit,String verify,String option, String dataAfter ,String submit,boolean check) throws InterruptedException {
+//        keyword.navigateToUrl(url);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(30L);
+
+      //  String textBefore = keyword.getText(getText);
+        keyword.assertEquals(dataBefore,getText);
+        keyword.click(btnEdit);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        keyword.verifyElementVisible(verify);
+
+        keyword.click(option);
+        if(check){
+            keyword.click(submit);
+            keyword.untilJqueryIsDone(30L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        }
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+      //  String textAfter = keyword.getText(getText);
+        keyword.assertEquals(dataAfter,getText);
 
     }
+    public void newNPP01() throws InterruptedException {
+        setUpWithLogin();
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/glamira-bracelet-carolin.html?alloy=white-375&leather=beige&stone1=diamond-Brillant");
+        commonProductPageWithLength("PRD_NEW_PAGE_GET_VALUE_LENGTH_1","PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_1",
+                "PRD_NEW_PAGE_BTN_EDIT","PRD_NEW_PAGE_VERIFY_ALL_OPTION",
+                "PRD_NEW_PAGE_BTN_EDIT_OPTION_LARGE","PRD_NEW_PAGE_VERIFY_DATA_LENGTH_AFTER_1",
+                "PRD_NEW_PAGE_BTN_OK_PRODUCT",false);
+
+    }
+    public void newNPP02() throws InterruptedException {
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/glamira-bracelet-blejan-20-cm.html?alloy=yellow-750&stone1=diamond-Brillant");
+        commonProductPageWithLength("PRD_NEW_PAGE_GET_VALUE_LENGTH_2","PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_2",
+                "PRD_NEW_PAGE_BTN_EDIT_DETAIL","PRD_NEW_PAGE_VERIFY_OPTION_LARGE",
+                "PRD_NEW_PAGE_BTN_OPTION_MEDDIUM","PRD_NEW_PAGE_VERIFY_DATA_LENGTH_AFTER_2",
+                "PRD_NEW_PAGE_BTN_OK_PRODUCT",true);
+
+    }
+    public void newNPP03() throws InterruptedException {
+        keyword.back();
+        commonProductPageWithLength("PRD_NEW_PAGE_GET_VALUE_LENGTH_2","PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_2",
+                "PRD_NEW_PAGE_BTN_EDIT_DETAIL","PRD_NEW_PAGE_VERIFY_OPTION_LARGE",
+                "PRD_NEW_PAGE_BTN_OPTION_LENGTH","PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_2",
+                "PRD_NEW_PAGE_BTN_OK_PRODUCT",true);
+
+    }
+    public void newNPP04() throws InterruptedException {
+        keyword.reLoadPage();
+        commonProductPageWithLength("PRD_NEW_PAGE_GET_VALUE_LENGTH_2","PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_2",
+                "PRD_NEW_PAGE_BTN_EDIT_DETAIL","PRD_NEW_PAGE_VERIFY_OPTION_LARGE",
+                "PRD_NEW_PAGE_BTN_OPTION_MEDDIUM","PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_2",
+                "PRD_NEW_PAGE_BTN_CANCEL",true);
+
+    }
+    public void commonProductPageWithStoneSize(String element,String verify,String option,String message,String submit) throws InterruptedException {
+        keyword.click(element);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(30L);
+        keyword.verifyElementVisible(verify);
+        keyword.click(option);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(30L);
+        keyword.verifyElementVisible(message);
+        keyword.click(submit);
+
+    }
+    public void newNPP05() throws InterruptedException {
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/glamira-ring-bridal-rise-skud32258-1.html?alloy=white-585&stone1=diamond-sapphire");
+        commonProductPageWithStoneSize("PRD_NEW_PAGE_BTN_STONE_SIZE","PRD_NEW_PAGE_VERIFY_ALL_OPTION_STONE",
+                "PRD_NEW_PAGE_OPTION_STONE_005","PRD_NEW_PAGE_VERIFY_OPTION_STONE_005",
+                "PRD_NEW_PAGE_BTN_OK_PRODUCT");
+
+    }
+
+
 
 
 }

@@ -781,8 +781,4 @@ public class MyAccountPage extends BasePage {
         checkFunctionInfoCustomer("MAC_OVER_EDIT_NEWSLETTER","MAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER","MAC_VERIFY_DATA_TITTLE_NEWSLETTER");
     }
 
-
-
-
-
 }
