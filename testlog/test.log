@@ -1,69 +1,69 @@
-INFO  | 2023-01-04 17:37:57 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2023-01-04 17:37:58 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
-INFO  | 2023-01-04 17:37:58 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
-INFO  | 2023-01-04 17:37:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2023-01-04 17:37:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2023-01-04 17:37:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@5b490d5e
-INFO  | 2023-01-04 17:38:27 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2023-01-04 17:38:28 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
-INFO  | 2023-01-04 17:38:33 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-01-04 17:38:33 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
-INFO  | 2023-01-04 17:38:35 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
-INFO  | 2023-01-04 17:38:46 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/
-INFO  | 2023-01-04 17:38:53 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:38:53 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
-INFO  | 2023-01-04 17:38:53 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
-INFO  | 2023-01-04 17:38:56 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL
-INFO  | 2023-01-04 17:38:58 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_PASSWORDwith COM_INP_DATA_PASS
-INFO  | 2023-01-04 17:39:01 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2023-01-04 17:39:18 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:39:18 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-bracelet-carolin.html?alloy=white-375&leather=beige&stone1=diamond-Brillant
-INFO  | 2023-01-04 17:39:35 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:39:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_1 with PRD_NEW_PAGE_GET_VALUE_LENGTH_1
-INFO  | 2023-01-04 17:39:37 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_EDIT
-INFO  | 2023-01-04 17:39:38 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:39:38 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_ALL_OPTION
-INFO  | 2023-01-04 17:39:38 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_EDIT_OPTION_LARGE
-INFO  | 2023-01-04 17:39:39 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:39:39 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from PRD_NEW_PAGE_VERIFY_DATA_LENGTH_AFTER_1 with PRD_NEW_PAGE_GET_VALUE_LENGTH_1
-INFO  | 2023-01-04 17:39:40 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-bracelet-blejan-20-cm.html?alloy=yellow-750&stone1=diamond-Brillant
-INFO  | 2023-01-04 17:39:48 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:39:49 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_2 with PRD_NEW_PAGE_GET_VALUE_LENGTH_2
-INFO  | 2023-01-04 17:39:49 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_EDIT_DETAIL
-INFO  | 2023-01-04 17:39:50 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:39:50 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_OPTION_LARGE
-INFO  | 2023-01-04 17:39:50 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_OPTION_MEDDIUM
-INFO  | 2023-01-04 17:39:50 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_OK_PRODUCT
-INFO  | 2023-01-04 17:40:05 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:40:07 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:40:07 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from PRD_NEW_PAGE_VERIFY_DATA_LENGTH_AFTER_2 with PRD_NEW_PAGE_GET_VALUE_LENGTH_2
-INFO  | 2023-01-04 17:40:07 | [main] core.KeywordWeb (KeywordWeb.java:back:274) - Back window...
-INFO  | 2023-01-04 17:40:16 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:40:17 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_2 with PRD_NEW_PAGE_GET_VALUE_LENGTH_2
-INFO  | 2023-01-04 17:40:17 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_EDIT_DETAIL
-INFO  | 2023-01-04 17:40:18 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:40:19 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_OPTION_LARGE
-INFO  | 2023-01-04 17:40:19 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_OPTION_LENGTH
-INFO  | 2023-01-04 17:40:19 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_OK_PRODUCT
-INFO  | 2023-01-04 17:40:20 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:40:21 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:40:21 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_2 with PRD_NEW_PAGE_GET_VALUE_LENGTH_2
-INFO  | 2023-01-04 17:40:21 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:279) - ReLoad Page...
-INFO  | 2023-01-04 17:40:21 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:40:48 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_2 with PRD_NEW_PAGE_GET_VALUE_LENGTH_2
-INFO  | 2023-01-04 17:40:48 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_EDIT_DETAIL
-INFO  | 2023-01-04 17:40:49 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:40:49 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_OPTION_LARGE
-INFO  | 2023-01-04 17:40:49 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_OPTION_MEDDIUM
-INFO  | 2023-01-04 17:40:49 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_CANCEL
-INFO  | 2023-01-04 17:40:50 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:40:51 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:40:51 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_2 with PRD_NEW_PAGE_GET_VALUE_LENGTH_2
-INFO  | 2023-01-04 17:40:51 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-ring-bridal-rise-skud32258-1.html?alloy=white-585&stone1=diamond-sapphire
-INFO  | 2023-01-04 17:40:57 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_STONE_SIZE
-INFO  | 2023-01-04 17:40:57 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:40:58 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_ALL_OPTION_STONE
-INFO  | 2023-01-04 17:40:59 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_OPTION_STONE_005
-INFO  | 2023-01-04 17:41:00 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 17:41:01 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_OPTION_STONE_005
-INFO  | 2023-01-04 17:41:01 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_OK_PRODUCT
+INFO  | 2023-01-05 17:47:18 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2023-01-05 17:47:19 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
+INFO  | 2023-01-05 17:47:19 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
+INFO  | 2023-01-05 17:47:21 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2023-01-05 17:47:21 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2023-01-05 17:47:21 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@4c8d45cf
+INFO  | 2023-01-05 17:48:02 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
+INFO  | 2023-01-05 17:48:03 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
+INFO  | 2023-01-05 17:48:16 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-01-05 17:48:16 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
+INFO  | 2023-01-05 17:48:18 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
+INFO  | 2023-01-05 17:48:30 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/
+INFO  | 2023-01-05 17:48:38 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:48:38 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-01-05 17:48:38 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
+INFO  | 2023-01-05 17:48:43 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL
+INFO  | 2023-01-05 17:48:45 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_PASSWORDwith COM_INP_DATA_PASS
+INFO  | 2023-01-05 17:48:47 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2023-01-05 17:49:03 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:49:03 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-ring-bridal-rise-skud32258-1.html?alloy=white-585&stone1=diamond-sapphire
+INFO  | 2023-01-05 17:49:25 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_STONE_SIZE
+INFO  | 2023-01-05 17:49:25 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:49:26 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_ALL_OPTION_STONE
+INFO  | 2023-01-05 17:49:26 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_OPTION_STONE_005
+INFO  | 2023-01-05 17:49:27 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:49:28 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_OPTION_STONE_005
+INFO  | 2023-01-05 17:49:28 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_OK_PRODUCT
+INFO  | 2023-01-05 17:49:40 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:49:40 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_STONE_SIZE
+INFO  | 2023-01-05 17:49:40 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:49:40 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_OPTION_STONE_005_AFTER
+INFO  | 2023-01-05 17:49:40 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/fever-twist-1.html?alloy=white-silber&womenstone=diamond-zirconia
+INFO  | 2023-01-05 17:49:56 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_SET_OPTION
+INFO  | 2023-01-05 17:49:56 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:49:57 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_ALL_SET_OPTION
+INFO  | 2023-01-05 17:49:57 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_SET_OPTION_WOMEN
+INFO  | 2023-01-05 17:49:58 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:49:59 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_SET_OPTION_WOMEN
+INFO  | 2023-01-05 17:50:00 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_SET_OPTION_WOMEN_AFTER
+INFO  | 2023-01-05 17:50:00 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_OK_PRODUCT
+INFO  | 2023-01-05 17:50:20 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:50:20 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_SET_OPTION
+INFO  | 2023-01-05 17:50:21 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:50:21 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_SET_OPTION_WOMEN_AFTER
+INFO  | 2023-01-05 17:50:21 | [main] core.KeywordWeb (KeywordWeb.java:back:274) - Back window...
+INFO  | 2023-01-05 17:50:27 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_SET_OPTION
+INFO  | 2023-01-05 17:50:27 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:50:28 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_ALL_SET_OPTION
+INFO  | 2023-01-05 17:50:29 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_SET_OPTION_WOMEN
+INFO  | 2023-01-05 17:50:30 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:50:31 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_SET_OPTION_WOMEN
+INFO  | 2023-01-05 17:50:31 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_SET_OPTION_MEN
+INFO  | 2023-01-05 17:50:31 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_OK_PRODUCT
+INFO  | 2023-01-05 17:50:44 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:50:45 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_SET_OPTION
+INFO  | 2023-01-05 17:50:45 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:50:45 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_SET_OPTION_MEN_AFTER
+INFO  | 2023-01-05 17:50:45 | [main] core.KeywordWeb (KeywordWeb.java:back:274) - Back window...
+INFO  | 2023-01-05 17:51:03 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_SET_OPTION
+INFO  | 2023-01-05 17:51:03 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:51:04 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_ALL_SET_OPTION
+INFO  | 2023-01-05 17:51:05 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_SET_OPTION_WOMEN
+INFO  | 2023-01-05 17:51:06 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:51:07 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_SET_OPTION_WOMEN
+INFO  | 2023-01-05 17:51:07 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_SET_OPTION_PAIR
+INFO  | 2023-01-05 17:51:07 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickPRD_NEW_PAGE_BTN_OK_PRODUCT
+INFO  | 2023-01-05 17:51:08 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:51:08 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-05 17:51:08 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:524) - verifyElementVisiblePRD_NEW_PAGE_VERIFY_SET_OPTION_PAIR_AFTER

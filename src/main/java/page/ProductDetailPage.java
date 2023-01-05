@@ -387,10 +387,9 @@ public class ProductDetailPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
       //  String textAfter = keyword.getText(getText);
         keyword.assertEquals(dataAfter,getText);
-
     }
     public void newNPP01() throws InterruptedException {
-        setUpWithLogin();
+      //  setUpWithLogin();
         keyword.navigateToUrl("https://dev3.glamira.com/glgb/glamira-bracelet-carolin.html?alloy=white-375&leather=beige&stone1=diamond-Brillant");
         commonProductPageWithLength("PRD_NEW_PAGE_GET_VALUE_LENGTH_1","PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_1",
                 "PRD_NEW_PAGE_BTN_EDIT","PRD_NEW_PAGE_VERIFY_ALL_OPTION",
@@ -422,7 +421,7 @@ public class ProductDetailPage extends BasePage {
                 "PRD_NEW_PAGE_BTN_CANCEL",true);
 
     }
-    public void commonProductPageWithStoneSize(String element,String verify,String option,String message,String submit) throws InterruptedException {
+    public void commonProductPageWithStoneSize(String element,String verify,String option,String message,String optionAfter,String submit,String verifyAfter,boolean check) throws InterruptedException {
         keyword.click(element);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(30L);
@@ -431,14 +430,53 @@ public class ProductDetailPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(30L);
         keyword.verifyElementVisible(message);
+        if(optionAfter!=null){
+            keyword.click(optionAfter);
+        }
+
         keyword.click(submit);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(check){
+            keyword.click(element);
+        }
+
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.verifyElementVisible(verifyAfter);
 
     }
     public void newNPP05() throws InterruptedException {
+//        setUpWithLogin();
         keyword.navigateToUrl("https://dev3.glamira.com/glgb/glamira-ring-bridal-rise-skud32258-1.html?alloy=white-585&stone1=diamond-sapphire");
         commonProductPageWithStoneSize("PRD_NEW_PAGE_BTN_STONE_SIZE","PRD_NEW_PAGE_VERIFY_ALL_OPTION_STONE",
                 "PRD_NEW_PAGE_OPTION_STONE_005","PRD_NEW_PAGE_VERIFY_OPTION_STONE_005",
-                "PRD_NEW_PAGE_BTN_OK_PRODUCT");
+                null,
+                "PRD_NEW_PAGE_BTN_OK_PRODUCT","PRD_NEW_PAGE_VERIFY_OPTION_STONE_005_AFTER",true);
+
+    }
+    public void newNPP06() throws InterruptedException {
+//        setUpWithLogin();
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/fever-twist-1.html?alloy=white-silber&womenstone=diamond-zirconia");
+        commonProductPageWithStoneSize("PRD_NEW_PAGE_BTN_SET_OPTION","PRD_NEW_PAGE_VERIFY_ALL_SET_OPTION",
+                "PRD_NEW_PAGE_SET_OPTION_WOMEN","PRD_NEW_PAGE_VERIFY_SET_OPTION_WOMEN",
+                "PRD_NEW_PAGE_SET_OPTION_WOMEN_AFTER",
+                "PRD_NEW_PAGE_BTN_OK_PRODUCT","PRD_NEW_PAGE_VERIFY_SET_OPTION_WOMEN_AFTER",true);
+
+    }
+    public void newNPP07() throws InterruptedException {
+        keyword.back();
+        commonProductPageWithStoneSize("PRD_NEW_PAGE_BTN_SET_OPTION","PRD_NEW_PAGE_VERIFY_ALL_SET_OPTION",
+                "PRD_NEW_PAGE_SET_OPTION_WOMEN","PRD_NEW_PAGE_VERIFY_SET_OPTION_WOMEN",
+                "PRD_NEW_PAGE_SET_OPTION_MEN",
+                "PRD_NEW_PAGE_BTN_OK_PRODUCT","PRD_NEW_PAGE_VERIFY_SET_OPTION_MEN_AFTER",true);
+
+    }
+    public void newNPP08() throws InterruptedException {
+        keyword.back();
+        commonProductPageWithStoneSize("PRD_NEW_PAGE_BTN_SET_OPTION","PRD_NEW_PAGE_VERIFY_ALL_SET_OPTION",
+                "PRD_NEW_PAGE_SET_OPTION_WOMEN","PRD_NEW_PAGE_VERIFY_SET_OPTION_WOMEN",
+                "PRD_NEW_PAGE_SET_OPTION_PAIR",
+                "PRD_NEW_PAGE_BTN_OK_PRODUCT","PRD_NEW_PAGE_VERIFY_SET_OPTION_PAIR_AFTER",false);
 
     }
 
