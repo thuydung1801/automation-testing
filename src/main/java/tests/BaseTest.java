@@ -42,8 +42,8 @@ public class BaseTest {
     public void setupTestMethod(Method method) {
         steps.folderUtil.setUpFilesAndFolders(method.getName());
     }
-    @AfterTest
-    public void quitDriver() {
-        driver.quit();
-    }
+//    @AfterTest
+//    public void quitDriver() {
+//        driver.quit();
+//    }
 }

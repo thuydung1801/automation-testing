@@ -28,7 +28,22 @@
 <suite name="Visual Test Automation Test Suite">
     <test name="RunTest">
         <classes>
-            <class name="test.checkout.ShoppingBagTest" />
+            <class name="tests.VisualTest">
+                <methods>
+                    <include name="listingPage_1"/>
+                    <include name="listingPage_2"/>
+                    <include name="listingPage_3"/>
+                    <include name="listingPage_4"/>
+                    <include name="listingPage_5"/>
+                    <include name="listingPage_6"/>
+                    <include name="listingPage_7"/>
+                    <include name="listingPage_8"/>
+                    <include name="listingPage_9"/>
+                    <include name="listingPage_10"/>
+                    <include name="listingPage_11"/>
+                    <include name="listingPage_12"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
