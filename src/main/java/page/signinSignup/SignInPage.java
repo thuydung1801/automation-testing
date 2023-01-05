@@ -226,7 +226,7 @@ public class SignInPage extends BasePage {
 
     //    create New Password Success
     public void createNewPasswordSuccess() throws InterruptedException {
-        String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String timestamp = new java.text.SimpleDateFormat("yyyyMMdd").format(new Date());
         String pass = "Ngoc*" + timestamp + "@";
         keyword.untilJqueryIsDone(10L);
         PropertiesFile.serPropValue("SIGNUP_CREATE_PASSWORD_PHONE_RD", pass);

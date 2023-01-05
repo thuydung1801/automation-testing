@@ -35,7 +35,7 @@ public class SignUpPage extends BasePage {
 
     public void goToFormCreateMyAccountChina() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         keyword.click("SIGNUP_BTN_SIGNUP_CHINA");
         keyword.webDriverWaitForElementPresent("SIGNUP_POPUP_SIGNUP_CHINA", 50);
         Thread.sleep(2000);
@@ -101,6 +101,7 @@ public class SignUpPage extends BasePage {
     // verify input invalid with store China
     public void verifyMessageFormInvalid() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
+        Thread.sleep(2000);
         keyword.assertEquals("必填项。", "LBL_ERROR_MESSAGE");
         keyword.assertEquals("必填项。", "SIGNUP_LASTNAME_ERROR");
         keyword.assertEquals("必填项。", "SIGNUP_PHONE_ERROR");
@@ -122,7 +123,7 @@ public class SignUpPage extends BasePage {
         keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_05", number);
         keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_02", lowerLetter);
         keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_03", upperLetter);
-        keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_04", charactersLike);
+        keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_07", charactersLike);
         keyword.webDriverWaitForElementPresent(checkElement, 10);
     }
 
@@ -407,34 +408,52 @@ public class SignUpPage extends BasePage {
         clearTextAndSendKey("SIGNUP_EMAIL_INFORMATION", "SIGNUP_EMAIL_INFORMATION",
                 "CHECKOUT_DATA_EMAIL_ENTER");
         clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "CHECKOUT_DATA_EMAIL_ENTER");
+        clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE_ALREADY01");
+        keyword.click("SIGNUP_FORM_DATA_INFORMATION");
         keyword.click("SIGNUP_BTN_NEXT_CHINA");
         keyword.untilJqueryIsDone(30L);
-        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_07",
-                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
-        clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE_ALREADY01");
-        keyword.untilJqueryIsDone(50L);
+        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_07");
+        keyword.click("SIGNUP_SELECT_OPTION_TITLE");
+        keyword.untilJqueryIsDone(10L);
         keyword.click("SIGNUP_BTN_CREATE");
         keyword.untilJqueryIsDone(50L);
-        keyword.assertEquals("已存在此电子邮件地址的帐户。如果你确信它是您的电子邮件地址， 请单击此处 以获取您的密码和访问您的帐户。", "SIGNUP_ADDRESS_EMAIL_ERROR");
+        Thread.sleep(2000);
+        keyword.assertEquals("已存在此电子邮件地址的帐户。如果你确信它是您的电子邮件地址， 请单击此处 以获取您的密码和访问您的帐户。", "SIGNUP_MESSAGE_ERROR_PHONE");
+    }
+
+    //createNewCusstomerSuccsessWithPhone
+    public void createNewCusstomerSuccessfullyWithPhone() throws InterruptedException {
+        String timestamp = new java.text.SimpleDateFormat("ddHHmmss").format(new Date());
+        String email = "NgocNT" + timestamp + "@gmail.com";
+        String phoneNumber = "13" + timestamp + "7";
+        keyword.untilJqueryIsDone(10L);
+        PropertiesFile.serPropValue("SIGNUP_EMAIL_SIGNUP", email);
+        PropertiesFile.serPropValue("SIGNIN_PHONE_CHINA_RESET", phoneNumber);
+        clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNIN_PHONE_CHINA_RESET");
+        clearTextAndSendKey("SIGNUP_EMAIL_INFORMATION", "SIGNUP_EMAIL_INFORMATION", "SIGNUP_EMAIL_SIGNUP");
+        clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_SIGNUP");
+        keyword.click("SIGNUP_FORM_DATA_INFORMATION");
+        keyword.click("SIGNUP_BTN_NEXT_CHINA");
+        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_07",
+                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+//        keyword.untilJqueryIsDone(30L);
+//        keyword.click("SIGNUP_BTN_CREATE");
     }
 
     //    Create new customer successfully with store enable phone number confirm
-    public void signUpWithPhoneButEmailInSystem() throws InterruptedException {
-        objSignIn = new SignInPage(this.keyword);
-        clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE_ALREADY");
-        keyword.click("SIGNUP_BTN_NEXT_STEEP");
-        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD",
-                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-        keyword.assertEquals("SIGNUP_MESSAGE_DUPLICATE", "SIGNUP_MESSAGE_ACTUAL");
-//        Case14
-        clearTextAndSendKey("SIGNUP_EMAIL_INFORMATION", "SIGNUP_EMAIL_INFORMATION",
-                "SIGNUP_DATA_EMAIL_TEST_WITH_PHONE");
-        clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_DATA_EMAIL_TEST_WITH_PHONE");
-        keyword.click("SIGNUP_BTN_NEXT_STEEP");
-        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD",
-                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
+    public void getActivationCode() throws InterruptedException {
+//        keyword.sendKeys("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_CODE_DATA");
+//        keyword.click("SIGNUP_BTN_SUBMIT_SEND_CODE");
+//        keyword.untilJqueryIsDone(50L);
+////        Thread.sleep(2000);
+////        keyword.assertEquals("Invalid Verify Code", "SIGNUP_MESSAGE_ERROR_PHONE");
+////        keyword.untilJqueryIsDone(50L);
+//        Thread.sleep(60000);
+//        keyword.click("SIGNUP_FORM");
+//        keyword.click("//button[@title='开通账户']");
+////        keyword.untilJqueryIsDone(50L);
+////        keyword.assertEquals("Code sent", "SIGNUP_CODE_RESEND");
+
         objSignIn.openNewTabs();
         objSignIn.loginAdmin(
                 "LOGIN_DATA_USER_NAME",
