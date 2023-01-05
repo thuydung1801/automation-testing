@@ -28,17 +28,7 @@ public class Steps {
     public ScreenshotUtil  screenshotUtil  = new ScreenshotUtil();
     public ImageMagickUtil imageMagickUtil = new ImageMagickUtil();
 
-    private RegisterPage objRegist;
-    private LoginPage objLogin;
-    private ShoppingBagPage objShoppingBagPage;
     public KeywordWeb keyword;
-//
-//    public Steps(){
-//        keyword = new KeywordWeb();
-//    }
-////    public Steps(KeywordWeb key){
-////       this.keyword = key;
-////    }
 
     public Steps(WebDriver driver) {
         this.driver = driver;
@@ -54,20 +44,10 @@ public class Steps {
         File differencesFolder = new File(folderUtil.parentDifferencesLocation);
         FileUtils.cleanDirectory(differencesFolder);
         driver.navigate().to(url);
-        //driver.findElement(By.xpath("/html/body/div[2]/div[3]/header/div/div/div[3]/ul/li[1]/a")).click();
         jsUtil.waitJS();
         //jsUtil.hideDynamicContent();
     }
 
-    public void A() throws InterruptedException {
-
-    }
-
-    public Steps givenIAcceptTheCookies() throws InterruptedException {
-        Thread.sleep(20000);
-        driver.findElement(By.xpath("/html/body/div[2]/div[3]/header/div/div/div[3]/ul/li[1]/a")).click();
-        return this;
-    }
 
     public Steps givenITakeScreenShot() {
         //Take ScreenShot with AShot
