@@ -116,5 +116,41 @@ public class VisualTest extends BaseTest {
                 .thenIShouldCompareScreenshotsSuccessfully();
     }
 
+    @Test (priority = 13)
+    public void listingPage_1() throws Exception{
+        step2.filterListing();
+        steps
+                .givenITakeScreenShot()
+                .whenISaveTheScreenShotsToFolders()
+                .thenIShouldCompareScreenshotsSuccessfully();
+    }
+
+    @Test (priority = 13)
+    public void listingPage_2() throws Exception{
+        step2.filterListingByPerciousStones();
+        steps
+                .givenITakeScreenShot()
+                .whenISaveTheScreenShotsToFolders()
+                .thenIShouldCompareScreenshotsSuccessfully();
+    }
+
+    @Test (priority = 13)
+    public void listingPage_3() throws Exception{
+        step2.scroll();
+        steps
+                .givenITakeScreenShot()
+                .whenISaveTheScreenShotsToFolders()
+                .thenIShouldCompareScreenshotsSuccessfully();
+    }
+
+    @Test (priority = 13)
+    public void listingPage_4() throws Exception{
+        step2.scroll();
+        steps
+                .givenITakeScreenShot()
+                .whenISaveTheScreenShotsToFolders()
+                .thenIShouldCompareScreenshotsSuccessfully();
+    }
+
 
 }

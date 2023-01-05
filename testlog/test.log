@@ -1,23 +1,13 @@
-INFO  | 2022-12-30 14:56:16 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2022-12-30 14:56:17 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
-INFO  | 2022-12-30 14:56:17 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
-INFO  | 2022-12-30 14:56:18 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2022-12-30 14:56:18 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev4.glamira.com/glau/
-INFO  | 2022-12-30 14:56:18 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@419f0ea
-INFO  | 2022-12-30 14:56:30 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2022-12-30 14:56:44 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
-INFO  | 2022-12-30 14:56:45 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
-INFO  | 2022-12-30 14:56:47 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
-INFO  | 2022-12-30 14:56:49 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
-INFO  | 2022-12-30 14:56:51 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
-INFO  | 2022-12-30 14:56:52 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
-INFO  | 2022-12-30 14:56:54 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
-INFO  | 2022-12-30 14:56:57 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
-INFO  | 2022-12-30 14:56:59 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
-INFO  | 2022-12-30 14:57:00 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
-INFO  | 2022-12-30 14:57:02 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2022-12-30 14:57:03 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
-INFO  | 2022-12-30 14:57:04 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:634) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
-INFO  | 2022-12-30 14:57:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_EMAILwith LOGIN_DATA_EMAIL
-INFO  | 2022-12-30 14:57:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_PASSWORDwith LOGIN_DATA_PASSWORD
-INFO  | 2022-12-30 14:57:11 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2023-01-04 13:40:24 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2023-01-04 13:40:25 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
+INFO  | 2023-01-04 13:40:25 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
+INFO  | 2023-01-04 13:40:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2023-01-04 13:40:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev4.glamira.com/glau/
+INFO  | 2023-01-04 13:40:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@1008df1e
+INFO  | 2023-01-04 13:41:06 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
+INFO  | 2023-01-04 13:41:26 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev4.glamira.com/glau/diamond-rings/
+INFO  | 2023-01-04 13:41:41 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
+INFO  | 2023-01-04 13:41:41 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLTP_FILTER
+INFO  | 2023-01-04 13:41:45 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-04 13:41:45 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLTP_DIAMONDS
+INFO  | 2023-01-04 13:41:46 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
