@@ -661,19 +661,64 @@ public class MyAccountPage extends BasePage {
         }
         checkVerifyAdmin();
     }
-    public void viewOrder() throws InterruptedException {
-        setUp1();
-        keyword.openNewTab("https://dev3.glamira.com/glgb/sales/order/history/");
-        String textID = keyword.getText("MAC_MY_ORD_TEXT_ID_ITEM");
-        System.out.printf("a======= " + textID + "\n");
-        keyword.click("MAC_MY_ORD_BTN_VIEW");
+
+    public void viewOrder(String textBefore, String btnView,String textAfter) throws InterruptedException {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        String textIDComp = keyword.getText("MAC_MY_ORD_VERIFY_TEXT_ID_ITEM");
+        String textID = keyword.getText(textBefore);
+        System.out.printf("a======= " + textID + "\n");
+        keyword.click(btnView);
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        String textIDComp = keyword.getText(textAfter);
         System.out.printf("b======= " + textIDComp + "\n");
         logger.info("check verify veiw my order....");
         Assert.assertEquals(textIDComp,textID);
 
+    }
+    public void viewOrderComplete() throws InterruptedException {
+        setUp1();
+        keyword.openNewTab("https://dev3.glamira.com/glgb/sales/order/history/");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("MAC_MY_ORD_BTN_COMPLETE");
+        viewOrder("MAC_MY_ORD_TEXT_ID_COMPLETE","MAC_MY_ORD_BTN_VIEW_COMPLETE","MAC_MY_ORD_VERIFY_TEXT_ID_COMPLETE");
+
+    }
+    public void viewOrderRecent() throws InterruptedException {
+        keyword.back();
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        viewOrder("MAC_MY_ORD_TEXT_ID_ITEM","MAC_MY_ORD_BTN_VIEW","MAC_MY_ORD_VERIFY_TEXT_ID_ITEM");
+
+    }
+    public void loginAdmin() throws InterruptedException {
+        signInPage.openNewTabs();
+        signInPage.loginAdmin("LOGIN_DATA_USER_NAME_DUNG", "LOGIN_DATA_PASS_WORD_DUNG");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
+    public void viewReturn() throws InterruptedException {
+        loginAdmin();
+        keyword.click("LOGIN_ADMIN_BTN_LOGISTIC");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_ITEM");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS");
+        keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_OK");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("MAC_MY_ORD_BTN_COMPLETE");
+        keyword.click("MAC_MY_ORD_BTN_RETURN");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.verifyElementVisible("MAC_MY_ORD_VERIFY_RETURN");
     }
     public void upLoadItemOrder() throws InterruptedException {
         boolean check;
@@ -681,10 +726,12 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         int numItem =  keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM");
+        System.out.printf("a = " + numItem +"\n");
         keyword.click("MAC_MY_ORD_BTN_UPLAOD_MORE");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         int numItemEdit = keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM");
+        System.out.printf("a = " + numItemEdit +"\n");
         System.out.printf("a-b " +numItem +"<"+numItemEdit+"\n");
         if(numItem+10 == numItemEdit){
             check = true;
