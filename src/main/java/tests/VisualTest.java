@@ -324,8 +324,66 @@ public class VisualTest extends BaseTest {
                 .thenIShouldCompareScreenshotsSuccessfully();
     }
     @Test(priority = 14)
-    public void SinIn_FormForgotPassword_EmailError() throws Exception {
-        step2.sinIn_FormForgotPassword_EmailError();
+    public void SignIn_FormForgotPassword_HoverBtnSubmit() throws Exception {
+        step2.signIn_FormForgotPassword_HoverBtnSubmit();
+        steps
+                .givenITakeScreenShot()
+                .whenISaveTheScreenShotsToFolders()
+                .thenIShouldCompareScreenshotsSuccessfully();
+    }
+    @Test(priority = 15)
+    public void SignIn_FormForgotPassword_EmailError() throws Exception {
+        step2.signIn_FormForgotPassword_EmailError();
+        steps
+                .givenITakeScreenShot()
+                .whenISaveTheScreenShotsToFolders()
+                .thenIShouldCompareScreenshotsSuccessfully();
+    }
+    @Test(priority = 16)
+    public void SignIn_FormForgotPassword_SendCode() throws Exception {
+        step2.signIn_FormForgotPassword_SendCode();
+        steps
+                .givenITakeScreenShot()
+                .whenISaveTheScreenShotsToFolders()
+                .thenIShouldCompareScreenshotsSuccessfully();
+    }
+    @Test(priority = 17)
+    public void SignIn_FormForgotPassword_ChangePassWaite() throws Exception {
+        step2.signIn_FormForgotPassword_ChangePassWaite();
+        steps
+                .givenITakeScreenShot()
+                .whenISaveTheScreenShotsToFolders()
+                .thenIShouldCompareScreenshotsSuccessfully();
+    }
+
+    @Test(priority = 18)
+    public void SignIn_FormForgotPassword_SendCodeError() throws Exception {
+        step2.signIn_FormForgotPassword_SendCodeError();
+        steps
+                .givenITakeScreenShot()
+                .whenISaveTheScreenShotsToFolders()
+                .thenIShouldCompareScreenshotsSuccessfully();
+    }
+
+    @Test(priority = 19)
+    public void SignIn_FormForgotPassword_ChangePass() throws Exception {
+        step2.signIn_FormForgotPassword_ChangePass();
+        steps
+                .givenITakeScreenShot()
+                .whenISaveTheScreenShotsToFolders()
+                .thenIShouldCompareScreenshotsSuccessfully();
+    }
+    @Test(priority = 20)
+    public void SignIn_FormForgotPassword_ChangePassError() throws Exception {
+        step2.signIn_FormForgotPassword_ChangePassError();
+        steps
+                .givenITakeScreenShot()
+                .whenISaveTheScreenShotsToFolders()
+                .thenIShouldCompareScreenshotsSuccessfully();
+    }
+    @Test(priority = 21)
+    public void SignIn_FormForgotPassword_ChangePassSuccess() throws Exception {
+        step2.signIn_FormForgotPassword_ChangePassSuccess();
         steps
                 .givenITakeScreenShot()
                 .whenISaveTheScreenShotsToFolders()

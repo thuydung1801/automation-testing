@@ -1,17 +1,61 @@
-INFO  | 2023-01-10 17:19:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2023-01-10 17:19:37 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
-INFO  | 2023-01-10 17:19:37 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\nongt\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
-INFO  | 2023-01-10 17:19:39 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2023-01-10 17:19:39 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev4.glamira.com/glau/
-INFO  | 2023-01-10 17:19:39 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@25ea068e
-INFO  | 2023-01-10 17:20:15 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2023-01-10 17:20:37 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev4.glamira.com/glau/
-INFO  | 2023-01-10 17:20:42 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
-INFO  | 2023-01-10 17:20:49 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-01-10 17:20:51 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
-INFO  | 2023-01-10 17:21:33 | [main] core.KeywordWeb (KeywordWeb.java:hoverAndClick:233) - Move To ElementLOGIN_BTN_FORGOT_PASSWORD
-INFO  | 2023-01-10 17:21:34 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-10 17:21:35 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_FORGOT_PASSWORD
-INFO  | 2023-01-10 17:21:35 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-10 17:21:35 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
-INFO  | 2023-01-10 17:21:35 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:17:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2023-01-12 11:17:36 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 109.0.5414.74 (resolved driver for Chrome 109)
+INFO  | 2023-01-12 11:17:36 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\nongt\.cache\selenium\chromedriver\win32\109.0.5414.74\chromedriver.exe
+INFO  | 2023-01-12 11:17:38 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2023-01-12 11:17:38 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev4.glamira.com/glau/
+INFO  | 2023-01-12 11:17:38 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@11cc9e1e
+INFO  | 2023-01-12 11:17:57 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
+INFO  | 2023-01-12 11:20:20 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev4.glamira.com/glau/
+INFO  | 2023-01-12 11:22:38 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
+INFO  | 2023-01-12 11:22:45 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-01-12 11:22:47 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-01-12 11:22:51 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:22:52 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCLICK_FORM
+INFO  | 2023-01-12 11:22:52 | [main] core.KeywordWeb (KeywordWeb.java:hoverAndClick:233) - Move To ElementLOGIN_BTN_FORGOT_PASSWORD
+INFO  | 2023-01-12 11:22:53 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:22:54 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_FORGOT_PASSWORD
+INFO  | 2023-01-12 11:22:54 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:22:55 | [main] core.KeywordWeb (KeywordWeb.java:hoverAndClick:233) - Move To ElementLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
+INFO  | 2023-01-12 11:22:55 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:22:55 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
+INFO  | 2023-01-12 11:22:56 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:22:57 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:22:57 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCLICK_FORM1
+INFO  | 2023-01-12 11:22:57 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_EMAIL_LOG_SUBMITwith SIGNIN_FORGOT_DATA_EMAIL
+INFO  | 2023-01-12 11:22:57 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickCLICK_FORM1
+INFO  | 2023-01-12 11:22:59 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:22:59 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
+INFO  | 2023-01-12 11:22:59 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:25:09 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_FORGOT_BTN_RESETCODE
+INFO  | 2023-01-12 11:25:09 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:25:20 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_FORGOT_BTN_SUBMIT_CODE
+INFO  | 2023-01-12 11:25:21 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:255) - Executing JavaScript
+INFO  | 2023-01-12 11:25:21 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev4.glamira.com/secured2021/
+INFO  | 2023-01-12 11:25:45 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_FORM_USER_NAME_BACKENDwith ngoc ngoc
+INFO  | 2023-01-12 11:25:45 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_FORM_PASSWORD_BACKENDwith Ngoc1234@
+INFO  | 2023-01-12 11:25:45 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2023-01-12 11:25:58 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
+INFO  | 2023-01-12 11:25:58 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementLOGIN_BTN_CUSTOMER
+INFO  | 2023-01-12 11:25:58 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_CUSTOMER
+INFO  | 2023-01-12 11:25:59 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:634) - webDriverWaitForElementPresentSIGNUP_VERIFY_CUSTOMER
+INFO  | 2023-01-12 11:26:00 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_EMAIL_LOG
+INFO  | 2023-01-12 11:26:02 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:634) - webDriverWaitForElementPresentSIGNUP_VERIFY_EMAIL_LOG
+INFO  | 2023-01-12 11:26:03 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:26:04 | [main] core.KeywordWeb (KeywordWeb.java:imWait:629) - implicitlyWait
+INFO  | 2023-01-12 11:26:04 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_CHECK_EMAIL_LOG_ACTION_SELECT
+INFO  | 2023-01-12 11:26:07 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:634) - webDriverWaitForElementPresentLOGIN_SELECT_ACTIVE
+INFO  | 2023-01-12 11:26:08 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_SELECT_VIEW_CHECK_EMAIL_LOG
+INFO  | 2023-01-12 11:26:09 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:634) - webDriverWaitForElementPresentLOGIN_POPUP_MESSAGE_PASSWORD_RESET
+INFO  | 2023-01-12 11:26:10 | [main] core.KeywordWeb (KeywordWeb.java:switchToIFrameByXpath:366) - Switching to Iframe
+INFO  | 2023-01-12 11:26:10 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofLOGIN_INPUT_VERIFY_CODE
+INFO  | 2023-01-12 11:26:10 | [main] core.KeywordWeb (KeywordWeb.java:closeWindowByIndex:425) - closeWindowByIndex
+INFO  | 2023-01-12 11:26:10 | [main] core.KeywordWeb (KeywordWeb.java:switchToWindowByIndex:381) - switchToWindowByIndex
+INFO  | 2023-01-12 11:26:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_FORGOT_INP_CODEwith 925737
+INFO  | 2023-01-12 11:26:11 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_FORGOT_BTN_SUBMIT_CODE
+INFO  | 2023-01-12 11:26:11 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:26:13 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:26:13 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_FORGOT_BTN_SUBMIT_RESETPASS
+INFO  | 2023-01-12 11:26:13 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-12 11:26:13 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_INPUT_CREATE_NEW_PASSWORDwith Dung1234@
+INFO  | 2023-01-12 11:26:14 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_FORGOT_BTN_SUBMIT_RESETPASS
+INFO  | 2023-01-12 11:26:14 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible

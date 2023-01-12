@@ -2,6 +2,7 @@ package steps;
 
 import io.cucumber.java.sl.In;
 import page.home.RegisterPage;
+import page.signinSignup.SignInPage;
 import page.signinSignup.SignUpPage;
 import tests.BaseTest;
 import core.KeywordWeb;
@@ -27,7 +28,8 @@ public class Steps2 extends BasePage {
     }
 
     public LoginPage objLogin;
-    public SignUpPage objSignIn;
+    public SignUpPage objSignUp;
+    public SignInPage objSignIn;
 
 
     public void gotoLogin() throws InterruptedException {
@@ -108,7 +110,7 @@ public class Steps2 extends BasePage {
     public void setUp() throws InterruptedException {
         regis = new RegisterPage();
         objLogin = new LoginPage(this.keyword);
-        objSignIn = new SignUpPage(this.keyword);
+        objSignUp = new SignUpPage(this.keyword);
         keyword.navigateToUrl("https://dev4.glamira.com/glau/");
         regis.chooseLanguages();
         keyword.untilJqueryIsDone(70L);
@@ -118,7 +120,8 @@ public class Steps2 extends BasePage {
     public void setUp1() throws InterruptedException {
         regis = new RegisterPage();
         objLogin = new LoginPage(this.keyword);
-        objSignIn = new SignUpPage(this.keyword);
+        objSignUp = new SignUpPage(this.keyword);
+        objSignIn = new SignInPage(this.keyword);
         keyword.navigateToUrl("https://dev4.glamira.com/glau/");
         regis.chooseLanguages();
         keyword.untilJqueryIsDone(70L);
@@ -156,7 +159,7 @@ public class Steps2 extends BasePage {
     }
     public void signUp_FormCreateAccount_Step1() throws InterruptedException {
         keyword.reLoadPage();
-        objSignIn.goToFormCreateMyAccount();
+        objSignUp.goToFormCreateMyAccount();
     }
     public void signUp_FormCreateAccountError_Step1() throws InterruptedException {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -170,7 +173,7 @@ public class Steps2 extends BasePage {
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String mail = "dung"+timestamp+"@gmail.com";
         PropertiesFile.serPropValue("COM_INP_DATA_EMAIL_UI",mail);
-        objSignIn.sendKeyFullDataFormInformation(firstName,lastName,mail,mail);
+        objSignUp.sendKeyFullDataFormInformation(firstName,lastName,mail,mail);
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(70L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -197,6 +200,10 @@ public class Steps2 extends BasePage {
     public void sinIn_FormHomeForgotPassword() throws InterruptedException {
         setUp1();
         keyword.click("LOGIN_BTN_LOGIN");
+        keyword.untilJqueryIsDone(70L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(1000);
+        keyword.click("CLICK_FORM");
         keyword.hoverAndClick("LOGIN_BTN_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(70L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -205,11 +212,88 @@ public class Steps2 extends BasePage {
     public void sinIn_FormForgotPassword_Email() throws InterruptedException {
         keyword.click("LOGIN_BTN_FORGOT_PASSWORD");
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
     }
-    public void sinIn_FormForgotPassword_EmailError() throws InterruptedException {
+    public void signIn_FormForgotPassword_HoverBtnSubmit(){
+        keyword.hoverAndClick("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
+    public void signIn_FormForgotPassword_EmailError() throws InterruptedException {
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
     }
+    public void signIn_FormForgotPassword_SendCode() throws InterruptedException {
+        keyword.untilJqueryIsDone(70L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        keyword.click("CLICK_FORM1");
+        keyword.sendKeys("SIGNIN_EMAIL_LOG_SUBMIT","SIGNIN_FORGOT_DATA_EMAIL");
+        keyword.click("CLICK_FORM1");
+        keyword.untilJqueryIsDone(70L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
+    public void signIn_FormForgotPassword_ChangePassWaite() throws InterruptedException {
+        Thread.sleep(121000);
+
+    }
+    public void signIn_FormForgotPassword_SendCodeError(){
+        keyword.click("SIGNIN_FORGOT_BTN_RESETCODE");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("SIGNIN_FORGOT_BTN_SUBMIT_CODE");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
+    public void signIn_FormForgotPassword_ChangePass() throws Exception {
+        // open admin;
+        keyword.executeJavaScript("window.open()");
+        keyword.switchToTab(1);
+        keyword.navigateToUrl("https://dev4.glamira.com/secured2021/");
+        // login admin
+        objSignIn.loginAdmin(
+                "ngoc ngoc",
+                "Ngoc1234@");
+        objSignIn.chooseItemCustomer(
+                "LOGIN_BTN_CUSTOMER",
+                "LOGIN_BTN_CUSTOMER",
+                "SIGNUP_VERIFY_CUSTOMER",
+                "LOGIN_BTN_EMAIL_LOG",
+                "SIGNUP_VERIFY_EMAIL_LOG"
+        );
+
+        keyword.untilJqueryIsDone(70L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(1000);
+        objSignIn.selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT",
+                "LOGIN_SELECT_ACTIVE",
+                "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
+                "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
+        objSignIn.getCodeEnterTextInField("LOGIN_IFRAME",
+                "LOGIN_INPUT_VERIFY_CODE",
+                "SIGNIN_FORGOT_INP_CODE", "SIGNIN_FORGOT_BTN_SUBMIT_CODE");
+
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+    }
+
+    public void signIn_FormForgotPassword_ChangePassError(){
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("SIGNIN_FORGOT_BTN_SUBMIT_RESETPASS");
+    }
+    public void signIn_FormForgotPassword_ChangePassSuccess(){
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD","Dung1234@");
+        keyword.click("SIGNIN_FORGOT_BTN_SUBMIT_RESETPASS");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
+
+
+
+
 
 
 
