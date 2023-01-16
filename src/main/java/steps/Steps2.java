@@ -130,6 +130,13 @@ public class Steps2 extends BasePage {
         setUp();
         keyword.navigateToUrl("https://dev4.glamira.com/glau/customer/account/");
     }
+    public void myAccount_Overview_ChangePass() throws InterruptedException {
+        keyword.untilJqueryIsDone(70L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("MAC_OVER_LINK_CHANGE_PASS");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
     public void myAccount_Overview_Footer() throws InterruptedException {
        keyword.scrollToPositionByScript("window.scrollBy(0,10000)");
        keyword.untilJqueryIsDone(70L);
@@ -163,7 +170,7 @@ public class Steps2 extends BasePage {
     }
     public void signUp_FormCreateAccountError_Step1() throws InterruptedException {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.click("SIGNUP_BTN_NEXT_STEEP");
+        keyword.doubleClick("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(70L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
     }
@@ -212,7 +219,7 @@ public class Steps2 extends BasePage {
     public void sinIn_FormForgotPassword_Email() throws InterruptedException {
         keyword.click("LOGIN_BTN_FORGOT_PASSWORD");
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
+        Thread.sleep(1000);
     }
     public void signIn_FormForgotPassword_HoverBtnSubmit(){
         keyword.hoverAndClick("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
@@ -222,6 +229,7 @@ public class Steps2 extends BasePage {
     public void signIn_FormForgotPassword_EmailError() throws InterruptedException {
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(1000);
     }
     public void signIn_FormForgotPassword_SendCode() throws InterruptedException {
         keyword.untilJqueryIsDone(70L);
@@ -235,20 +243,22 @@ public class Steps2 extends BasePage {
 
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
+        Thread.sleep(1000);
     }
     public void signIn_FormForgotPassword_ChangePassWaite() throws InterruptedException {
-        Thread.sleep(121000);
+        Thread.sleep(110000);
 
     }
-    public void signIn_FormForgotPassword_SendCodeError(){
-        keyword.click("SIGNIN_FORGOT_BTN_RESETCODE");
+    public void signIn_FormForgotPassword_SendCodeError() throws InterruptedException {
+//        keyword.click("SIGNIN_FORGOT_BTN_RESETCODE");
+        Thread.sleep(10000);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("SIGNIN_FORGOT_BTN_SUBMIT_CODE");
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
     public void signIn_FormForgotPassword_ChangePass() throws Exception {
+        keyword.click("SIGNIN_FORGOT_BTN_RESETCODE");
         // open admin;
         keyword.executeJavaScript("window.open()");
         keyword.switchToTab(1);
@@ -277,18 +287,19 @@ public class Steps2 extends BasePage {
                 "SIGNIN_FORGOT_INP_CODE", "SIGNIN_FORGOT_BTN_SUBMIT_CODE");
 
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(1000);
     }
 
     public void signIn_FormForgotPassword_ChangePassError(){
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("SIGNIN_FORGOT_BTN_SUBMIT_RESETPASS");
     }
-    public void signIn_FormForgotPassword_ChangePassSuccess(){
+    public void signIn_FormForgotPassword_ChangePassSuccess() throws InterruptedException {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD","Dung1234@");
         keyword.click("SIGNIN_FORGOT_BTN_SUBMIT_RESETPASS");
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
+        Thread.sleep(2000);
     }
 
 
