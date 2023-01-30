@@ -866,6 +866,7 @@ public class KeywordWeb {
         js.executeScript("localStorage.removeItem(\"mage-cache-storage\")");
     }
 
+
     public String numberOnly(String element) {
         logger.info("get Text of" + element);
         String text = PropertiesFile.getPropValue(element);

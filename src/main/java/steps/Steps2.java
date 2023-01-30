@@ -52,4 +52,10 @@ public class Steps2 extends BasePage {
         keyword.click("LTP_PRECIOUS_EMERALD");
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
     }
+    public void filterByPercious() throws InterruptedException {
+        keyword.click("LTP_PRECIOUS_STONES");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("LTP_PRECIOUS_EMERALD");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+    }
 }
