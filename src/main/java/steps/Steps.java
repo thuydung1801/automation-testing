@@ -28,17 +28,7 @@ public class Steps {
     public ScreenshotUtil  screenshotUtil  = new ScreenshotUtil();
     public ImageMagickUtil imageMagickUtil = new ImageMagickUtil();
 
-    private RegisterPage objRegist;
-    private LoginPage objLogin;
-    private ShoppingBagPage objShoppingBagPage;
-    protected KeywordWeb keyword;
-
-//    public Steps(){
-//        keyword = new KeywordWeb();
-//    }
-//    public Steps(KeywordWeb key){
-//       this.keyword = key;
-//    }
+    public KeywordWeb keyword;
 
     public Steps(WebDriver driver) {
         this.driver = driver;
@@ -54,32 +44,11 @@ public class Steps {
         File differencesFolder = new File(folderUtil.parentDifferencesLocation);
         FileUtils.cleanDirectory(differencesFolder);
         driver.navigate().to(url);
-        driver.findElement(By.xpath("/html/body/div[2]/div[3]/header/div/div/div[3]/ul/li[1]/a")).click();
         jsUtil.waitJS();
         //jsUtil.hideDynamicContent();
     }
 
-    public void A() throws InterruptedException {
-        keyword = new KeywordWeb();
-        objLogin = new LoginPage(keyword);
-        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
-                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
-    }
 
-    public Steps givenIAcceptTheCookies() throws InterruptedException {
-//        driver.findElement(By.xpath("//form[@class='form login-form']//button[@type='submit']")).click();
-//        System.out.println("accpect all cookies");
-//        objRegist = new RegisterPage(this.keyword);
-//        objRegist.acceptAllCookies();
-        //objShoppingBagPage = new ShoppingBagPage(this.keyword);
-        keyword = new KeywordWeb();
-        objLogin = new LoginPage(this.keyword);
-        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
-                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
-        //objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
-        return this;
-    }
-    @SneakyThrows
     public Steps givenITakeScreenShot() {
         //Take ScreenShot with AShot
         googleScreenshot = screenshotUtil.takeScreenshot(driver);

@@ -8,7 +8,7 @@ INFO  | 2023-01-07 11:23:08 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWi
 INFO  | 2023-01-07 11:23:09 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
 INFO  | 2023-01-07 11:23:38 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentBTN_COOKIES
 INFO  | 2023-01-07 11:23:38 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
-INFO  | 2023-01-07 11:23:40 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position 
+INFO  | 2023-01-07 11:23:40 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position
 INFO  | 2023-01-07 11:23:53 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LANGUAGE
 INFO  | 2023-01-07 11:23:54 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/
 INFO  | 2023-01-07 11:24:05 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
@@ -51,3 +51,16 @@ INFO  | 2023-01-07 11:25:39 | [main] core.KeywordWeb (KeywordWeb.java:waitForEle
 INFO  | 2023-01-07 11:25:39 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_ADMIN_BTN_LOGISTIC
 INFO  | 2023-01-07 11:25:39 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
 INFO  | 2023-01-07 11:25:39 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_ADMIN_BTN_LOGISTIC_ITEM
+INFO  | 2023-01-04 13:40:24 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2023-01-04 13:40:25 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
+INFO  | 2023-01-04 13:40:25 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
+INFO  | 2023-01-04 13:40:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2023-01-04 13:40:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev4.glamira.com/glau/
+INFO  | 2023-01-04 13:40:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@1008df1e
+INFO  | 2023-01-04 13:41:06 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
+INFO  | 2023-01-04 13:41:26 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev4.glamira.com/glau/diamond-rings/
+INFO  | 2023-01-04 13:41:41 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position
+INFO  | 2023-01-04 13:41:41 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLTP_FILTER
+INFO  | 2023-01-04 13:41:45 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-04 13:41:45 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLTP_DIAMONDS
+INFO  | 2023-01-04 13:41:46 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible

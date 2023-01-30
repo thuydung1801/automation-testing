@@ -23,6 +23,7 @@ public class LoginPage extends BasePage {
                                String phonePassword, boolean byEmail) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(50L);
         keyword.click("LOGIN_BTN_LOGIN");
         keyword.webDriverWaitForElementPresent("LOGIN_LBL_LOGIN",30);
         Thread.sleep(2000);
@@ -54,6 +55,7 @@ public class LoginPage extends BasePage {
             Thread.sleep(2000);
         }
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
+        keyword.untilJqueryIsDone(50L);
 
     }
 }
