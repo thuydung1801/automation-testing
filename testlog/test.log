@@ -1,66 +1,42 @@
-INFO  | 2023-01-07 11:22:35 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2023-01-07 11:22:37 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 103.0.5060.134 (resolved driver for Chrome 103)
-INFO  | 2023-01-07 11:22:37 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as /home/vu/.cache/selenium/chromedriver/linux64/103.0.5060.134/chromedriver
-INFO  | 2023-01-07 11:22:38 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2023-01-07 11:22:38 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2023-01-07 11:22:38 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@75a9cc24
-INFO  | 2023-01-07 11:23:08 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2023-01-07 11:23:09 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
-INFO  | 2023-01-07 11:23:38 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-01-07 11:23:38 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
-INFO  | 2023-01-07 11:23:40 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:470) -  scrolling to position
-INFO  | 2023-01-07 11:23:53 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-01-07 11:23:54 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/
-INFO  | 2023-01-07 11:24:05 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-07 11:24:05 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
-INFO  | 2023-01-07 11:24:05 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
-INFO  | 2023-01-07 11:24:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL
-INFO  | 2023-01-07 11:24:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_PASSWORDwith COM_INP_DATA_PASS
-INFO  | 2023-01-07 11:24:12 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2023-01-07 11:24:28 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-07 11:24:28 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glgb/sales/order/history/
-INFO  | 2023-01-07 11:24:36 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-07 11:24:36 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_BTN_COMPLETE
-INFO  | 2023-01-07 11:24:37 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-07 11:24:37 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_MY_ORD_TEXT_ID_COMPLETE
-INFO  | 2023-01-07 11:24:37 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_BTN_VIEW_COMPLETE
-INFO  | 2023-01-07 11:24:45 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-07 11:24:45 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_MY_ORD_VERIFY_TEXT_ID_COMPLETE
-INFO  | 2023-01-07 11:24:45 | [main] page.MyAccountPage (MyAccountPage.java:viewOrder:675) - check verify veiw my order....
-INFO  | 2023-01-07 11:24:46 | [main] core.KeywordWeb (KeywordWeb.java:back:274) - Back window...
-INFO  | 2023-01-07 11:24:50 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-07 11:24:53 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-07 11:24:53 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_MY_ORD_TEXT_ID_ITEM
-INFO  | 2023-01-07 11:24:53 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_BTN_VIEW
-INFO  | 2023-01-07 11:24:59 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-07 11:24:59 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_MY_ORD_VERIFY_TEXT_ID_ITEM
-INFO  | 2023-01-07 11:24:59 | [main] page.MyAccountPage (MyAccountPage.java:viewOrder:675) - check verify veiw my order....
-INFO  | 2023-01-07 11:24:59 | [main] core.KeywordWeb (KeywordWeb.java:back:274) - Back window...
-INFO  | 2023-01-07 11:25:04 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-07 11:25:04 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:613) - count the number of element MAC_MY_ORD_TABLE_ITEM
-INFO  | 2023-01-07 11:25:04 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_BTN_UPLAOD_MORE
-INFO  | 2023-01-07 11:25:08 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-07 11:25:08 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:613) - count the number of element MAC_MY_ORD_TABLE_ITEM
-INFO  | 2023-01-07 11:25:08 | [main] page.MyAccountPage (MyAccountPage.java:upLoadItemOrder:741) - check verify upload more my order....
-INFO  | 2023-01-07 11:25:08 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:255) - Executing JavaScript
-INFO  | 2023-01-07 11:25:08 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...ADDMIN_URL
-INFO  | 2023-01-07 11:25:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME_DUNG
-INFO  | 2023-01-07 11:25:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD_DUNG
-INFO  | 2023-01-07 11:25:20 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
-INFO  | 2023-01-07 11:25:39 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-07 11:25:39 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_ADMIN_BTN_LOGISTIC
-INFO  | 2023-01-07 11:25:39 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:674) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-07 11:25:39 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_ADMIN_BTN_LOGISTIC_ITEM
-INFO  | 2023-01-04 13:40:24 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2023-01-04 13:40:25 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
-INFO  | 2023-01-04 13:40:25 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
-INFO  | 2023-01-04 13:40:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2023-01-04 13:40:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev4.glamira.com/glau/
-INFO  | 2023-01-04 13:40:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@1008df1e
-INFO  | 2023-01-04 13:41:06 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2023-01-04 13:41:26 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev4.glamira.com/glau/diamond-rings/
-INFO  | 2023-01-04 13:41:41 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position
-INFO  | 2023-01-04 13:41:41 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLTP_FILTER
-INFO  | 2023-01-04 13:41:45 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-01-04 13:41:45 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLTP_DIAMONDS
-INFO  | 2023-01-04 13:41:46 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-31 14:55:25 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2023-01-31 14:55:26 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 109.0.5414.74 (resolved driver for Chrome 109)
+INFO  | 2023-01-31 14:55:26 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\nongt\.cache\selenium\chromedriver\win32\109.0.5414.74\chromedriver.exe
+INFO  | 2023-01-31 14:55:28 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2023-01-31 14:55:28 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-01-31 14:55:28 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@6231f77a
+INFO  | 2023-01-31 14:55:46 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
+INFO  | 2023-01-31 14:55:47 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-31 14:55:48 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
+INFO  | 2023-01-31 14:55:56 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-01-31 14:55:56 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:634) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-01-31 14:55:56 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
+INFO  | 2023-01-31 14:56:11 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://stage.glamira.co.uk/
+INFO  | 2023-01-31 14:56:15 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-31 14:56:16 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-01-31 14:56:17 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:634) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
+INFO  | 2023-01-31 14:56:20 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL
+INFO  | 2023-01-31 14:56:22 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_PASSWORDwith COM_INP_DATA_PASS
+INFO  | 2023-01-31 14:56:24 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2023-01-31 14:56:34 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://stage.glamira.co.uk/customer/account/edit/
+INFO  | 2023-01-31 14:56:39 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-31 14:56:39 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2023-01-31 14:56:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
+INFO  | 2023-01-31 14:56:39 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2023-01-31 14:56:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
+INFO  | 2023-01-31 14:56:39 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_BTN_SAVE_1
+INFO  | 2023-01-31 14:56:47 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:529) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
+INFO  | 2023-01-31 14:56:47 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:718) - compare from MAC_VERIFY_DATA_FULLNAME with CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
+INFO  | 2023-01-31 14:56:48 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-31 14:56:48 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_VERIFY_NAME
+INFO  | 2023-01-31 14:56:48 | [main] page.MyAccountPage (MyAccountPage.java:checkVerifyChangeSuccess:179) - check change name....
+INFO  | 2023-01-31 14:56:49 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-31 14:56:50 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_PERSONAL_INF
+INFO  | 2023-01-31 14:56:55 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-31 14:56:55 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-01-31 14:56:55 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2023-01-31 14:56:55 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_FIRST_NAMEwith COM_DATA_NULL
+INFO  | 2023-01-31 14:56:55 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2023-01-31 14:56:55 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysMAC_INP_LAST_NAMEwith COM_DATA_NULL
+INFO  | 2023-01-31 14:56:55 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_BTN_SAVE_1
+INFO  | 2023-01-31 14:56:56 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:529) - verifyElementVisibleCOM_TEXT_ERROR
+INFO  | 2023-01-31 14:56:56 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:718) - compare from COM_DATA_MESSAGES_NULL with COM_TEXT_ERROR

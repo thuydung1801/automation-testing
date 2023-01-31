@@ -14,7 +14,9 @@ public class RegisterPage extends BasePage {
     }
 
     public void acceptAllCookies() throws InterruptedException {
+        keyword.scrollToPositionByScript("window.scrollBy(0,300)");
         keyword.untilJqueryIsDone(60L);
+        chooseLanguages();
         keyword.webDriverWaitForElementPresent("BTN_COOKIES",50);
         if(keyword.verifyElementPresent("BTN_COOKIES")){
             keyword.click("BTN_COOKIES");
@@ -22,8 +24,6 @@ public class RegisterPage extends BasePage {
 
     }
     public void chooseLanguages() throws InterruptedException {
-        Thread.sleep(2000);
-        keyword.scrollToPosition();
         Thread.sleep(7000);
         if(keyword.verifyElementPresent("LOGIN_BTN_LANGUAGE")){
             keyword.click("LOGIN_BTN_LANGUAGE");

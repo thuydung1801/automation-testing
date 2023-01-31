@@ -11,14 +11,14 @@ public class MyAccountTest extends BaseTest {
         super();
         testMyAccount = new MyAccountPage(this.keyword);
     }
-//    @Test(priority = 1,description = "Change PERSONAL INFORMATION ")
-//    public void testCase_PI_01() throws InterruptedException {
-//        testMyAccount.changeFullnameWithData();
-//    }
-//    @Test(priority = 2,description = "Change PERSONAL INFORMATION : forgot enter value First/last name  ")
-//    public void testCase_PI_02() throws InterruptedException {
-//        testMyAccount.changeFullnameWithDataNUll();
-//    }
+    @Test(priority = 1,description = "Change PERSONAL INFORMATION ")
+    public void testCase_PI_01() throws InterruptedException {
+        testMyAccount.changeFullnameWithData();
+    }
+    @Test(priority = 2,description = "Change PERSONAL INFORMATION : forgot enter value First/last name  ")
+    public void testCase_PI_02() throws InterruptedException {
+        testMyAccount.changeFullnameWithDataNUll();
+    }
 //    @Test(priority = 3,description = "Change email ")
 //    public void testCase_PI_03() throws InterruptedException {
 //        testMyAccount.changeEmail();
@@ -87,23 +87,24 @@ public class MyAccountTest extends BaseTest {
 //    public void testCase_MW_05() throws InterruptedException {
 //        testMyAccount.emailSelectItem();
 //    }
-    // case My Order
-    @Test(priority = 19,description = "Check function icon  view order of completed order")
-    public void testCase_Myorder_01() throws InterruptedException {
-        testMyAccount.viewOrderComplete();
-    }
-    @Test(priority = 20,description = "Check function icon view order of Recent  orders")
-    public void testCase_Myorder_02() throws InterruptedException {
-        testMyAccount.viewOrderRecent();
-    }
-    @Test(priority = 21,description = "Check function icon view order of Recent  orders")
-    public void testCase_Myorder_04() throws InterruptedException {
-        testMyAccount.upLoadItemOrder();
-    }
-    @Test(priority = 22,description = "Check function icon return  of completed order")
-    public void testCase_Myorder_03() throws InterruptedException {
-        testMyAccount.viewReturn();
-    }
+
+//     case My Order
+//    @Test(priority = 19,description = "Check function icon  view order of completed order")
+//    public void testCase_Myorder_01() throws InterruptedException {
+//        testMyAccount.viewOrderComplete();
+//    }
+//    @Test(priority = 20,description = "Check function icon view order of Recent  orders")
+//    public void testCase_Myorder_02() throws InterruptedException {
+//        testMyAccount.viewOrderRecent();
+//    }
+//    @Test(priority = 21,description = "Check function icon view order of Recent  orders")
+//    public void testCase_Myorder_04() throws InterruptedException {
+//        testMyAccount.upLoadItemOrder();
+//    }
+//    @Test(priority = 22,description = "Check function icon return  of completed order")
+//    public void testCase_Myorder_03() throws InterruptedException {
+//        testMyAccount.viewReturn();
+//    }
     // case My Overview
 //    @Test(priority = 21,description = "Check order status = Order Confirmation ,display in tab Recent Orders ")
 //    public void testCase_MO_03() throws InterruptedException {
