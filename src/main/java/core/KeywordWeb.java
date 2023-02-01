@@ -905,6 +905,13 @@ public class KeywordWeb {
         String actualText = driver.findElement(By.xpath(xPathElement2)).getAttribute("style").substring(indexStart, indexEnd);
         Assert.assertEquals(actualText, xPathElement1);
     }
+    public void pressEnter(){
+        logger.info("press enter");
+        Actions actions = new Actions(driver);
+        // Enter the Current Address
+       actions.sendKeys(Keys.ENTER);
+
+    }
 
 
 }
