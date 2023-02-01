@@ -25,10 +25,20 @@
 <!--    </classes>-->
 <!--  </test>-->
 <!--</suite>-->
-<suite name="Visual Test Automation Test Suite">
+<suite name="Test Staging Suite">
     <test name="RunTest">
         <classes>
-            <class name="test.checkout.ShoppingBagTest" />
+            <class name="test.checkout.ShoppingBagTest">
+            <methods>
+                <include name="testCase_SP_02"/>
+                <include name="testCase_SP_17"/>
+                <include name="testCase_SP_26_RV_02_04"/>
+                <include name="testCase_SP_24"/>
+                <include name="testCase_RV_07"/>
+                <include name="testCase_SP_04"/>
+                <include name="testCase_RV_08"/>
+            </methods>
+            </class>
         </classes>
     </test>
 </suite>
