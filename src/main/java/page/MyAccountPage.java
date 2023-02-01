@@ -283,7 +283,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
-    public void inpEditAddress(String label,String element,String btnEdit,String textStreet) throws InterruptedException {
+    public void inpEditAddress(String label,String element,String btnEdit,String textStreet,boolean melissa) throws InterruptedException {
         commonMyAddress(element,btnEdit);
         keyword.clearText("MAC_INP_FIRST_NAME");
         keyword.sendKeys("MAC_INP_FIRST_NAME","MAC_DATA_FIRST_NAME_STAGE");
@@ -296,11 +296,23 @@ public class MyAccountPage extends BasePage {
         keyword.clearText("MAC_INP_STREET");
         keyword.imWait(3);
         keyword.sendKeys("MAC_INP_STREET",textStreet);
-        Thread.sleep(1000);
-        keyword.keysBoardWithDOWN("MAC_INP_STREET_DIV");
-        keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        Thread.sleep(1000);
+        if(melissa){
+
+            Thread.sleep(1000);
+            keyword.keysBoardWithDOWN("MAC_INP_STREET_DIV");
+            keyword.untilJqueryIsDone(60L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+            Thread.sleep(1000);
+
+        }
+        else {
+            keyword.clearText("MAC_INP_CITY");
+            keyword.sendKeys("MAC_INP_CITY","MAC_INP_DATA_CITY");
+            keyword.keysBoardWithDOWN("MAC_INP_STATE");
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+            keyword.clearText("MAC_INP_CODE_CITY");
+            keyword.sendKeys("MAC_INP_CODE_CITY","MAC_INP_DATA_CODE_CITY");
+        }
         keyword.click("MAC_BTN_SAVE_ADDRESS");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -374,20 +386,20 @@ public class MyAccountPage extends BasePage {
 
     }
     public void editBillingAddress() throws InterruptedException {
-        inpEditAddress("billing","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_BILLING_ADDRESS","MAC_DATA_STREET1");
+        inpEditAddress("billing","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_BILLING_ADDRESS","MAC_DATA_STREET1",false);
     }
     public void editShippingAddress() throws InterruptedException {
        // setUp();
-        inpEditAddress("shipping","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_SHIPPING_ADDRESS","MAC_DATA_STREET2");
+        inpEditAddress("shipping","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_SHIPPING_ADDRESS","MAC_DATA_STREET2",false);
     }
     public void addNewAddress() throws InterruptedException {
         //setUp();
-        inpEditAddress("add","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_ADD_NEW_ADDRESS","MAC_DATA_STREET9");
+        inpEditAddress("add","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_ADD_NEW_ADDRESS","MAC_DATA_STREET9",false);
 
     }
     public void editAdditionalAddressEntries() throws InterruptedException {
         //setUp();
-        inpEditAddress("edit","MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","MAC_DATA_STREET3");
+        inpEditAddress("edit","MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","MAC_DATA_STREET3",false);
     }
     public void deleteAdditionalAddressEntries() throws InterruptedException {
 //        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
