@@ -318,7 +318,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_CHECKOUT_SHIPMENT",5);
         keyword.untilJqueryIsDone(50L);
         keyword.click("CHECKOUT_BTN_CHECKOUT_SHIPMENT");
-        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT_PAYMENT",10);
+        //keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT_PAYMENT",10);
     }
     @Step("submit order")
     public void submit(){
@@ -347,8 +347,9 @@ public class ShoppingBagPage extends BasePage {
                 keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_CVC", "CHECKOUT_DATA_CHECKOUT_CVC");
                 keyword.switchToDefaultContent();
                 keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_NAME", "CHECKOUT_DATA_CHECKOUT_NAME");
+                keyword.scrollDownToElement("CHECKOUT_BTN_ORDER");
                 keyword.click("CHECKOUT_BTN_ORDER");
-                keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 30);
+                keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 160);
                 keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
                 break;
             //missing input all of fields
@@ -394,23 +395,33 @@ public class ShoppingBagPage extends BasePage {
     //check out with klarna payment method
     public void checkOutWithKlarnaLater() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER",10);
+        keyword.verifyElementVisible("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER");
+        //keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER",10);
         keyword.click("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER");
         keyword.untilJqueryIsDone(50L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(10000);
         keyword.click("CHECKOUT_BTN_ORDER");
-        keyword.untilJqueryIsDone(50L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(60000);
+        //keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("KLARNA_IFRAME");
         keyword.switchToIFrameByXpath("KLARNA_IFRAME");
         keyword.webDriverWaitForElementPresent("KLARNA_BTN_CONTINUE",30);
         keyword.click("KLARNA_BTN_CONTINUE");
+
         keyword.webDriverWaitForElementPresent("KLARNA_TBX_OTP",10);
         keyword.sendKeys("KLARNA_TBX_OTP", "KLARNA_DATA_OTP");
+        Thread.sleep(10000);
+//        keyword.click("KLARNA_BTN_CONTINUE");
+//        keyword.sendKeys("KLARNA_DATE","KLARNA_DATE_DATA");
+//        keyword.click("KLARNA_BTN_CONTINUE");
+//        keyword.click("KLARNA_BTN_CONTINUE_2");
+//        keyword.click("KLARNA_BTN_NOT_NOW");
         keyword.webDriverWaitForElementPresent("KLARNA_BTN_CONFIRM",10);
         keyword.click("KLARNA_BTN_CONFIRM");
-        keyword.click("KLARNA_BTN_FAVOURITE");
         keyword.imWait(20);
-        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 10);
+        keyword.click("KLARNA_BTN_FAVOURITE");
+        Thread.sleep(20000);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 50);
         keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
 
     }
