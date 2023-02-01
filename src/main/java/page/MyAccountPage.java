@@ -4,6 +4,7 @@ import core.BasePage;
 import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
+import io.appium.java_client.android.nativekey.PressesKey;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
@@ -711,9 +712,15 @@ public class MyAccountPage extends BasePage {
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_ITEM");
-        keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.selectDropDownListByName("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_SELECT_PAGE","200");
+        keyword.pressEnter();
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        searchElement();
+
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER");
         keyword.untilJqueryIsDone(60L);
@@ -722,10 +729,15 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS");
+        keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
+        //login as customer
+        keyword.selectDropDownListByName("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_UK","GLAMIRA.co.uk");
+        keyword.pressEnter();
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_OK");
-
+        // go to My Return
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.switchToTab(3);
@@ -735,9 +747,24 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("MAC_MY_ORD_BTN_RETURN");
-        keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.verifyElementVisible("MAC_MY_ORD_VERIFY_RETURN");
+    }
+    public void searchElement() throws InterruptedException {
+        while(true) {
+            boolean check = keyword.verifyElementVisible("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER");
+            logger.info(String.valueOf(check));
+            if(check){
+                return;
+            }
+            else {
+                keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_BTN_NEXT_PAGE");
+                keyword.untilJqueryIsDone(60L);
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+            }
+        }
     }
     public boolean verifyIdReturn() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
@@ -746,18 +773,34 @@ public class MyAccountPage extends BasePage {
         String id=s.substring(1,s.length());
         System.out.printf("ID : " + id +"\n");
         if(id.equalsIgnoreCase(PropertiesFile.getPropValue("KEY_ID_ORDER"))){
-            return true;
+            logger.info("Failed by id:" + id);
+            return false;
         }
         else{
-            PropertiesFile.serPropValue("KEY_ID_ORDER",id);
-            return false;
+            //PropertiesFile.serPropValue("KEY_ID_ORDER",id);
+            return true;
         }
     }
     public void stepReurn() throws InterruptedException {
 
         viewReturn();
-        boolean check = verifyIdReturn();
-        if(check==false){
+        boolean check;
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        String s = keyword.getText("MAC_MY_ORD_VERIFY_RETURN_GET_ID_ORDER");
+        String id=s.substring(1,s.length());
+        System.out.printf("ID : " + id +"\n");
+        if(id.equalsIgnoreCase(PropertiesFile.getPropValue("KEY_ID_ORDER"))){
+            logger.info("Failed by id:" + id);
+            check=false;
+        }
+        else{
+            //PropertiesFile.serPropValue("KEY_ID_ORDER",id);
+            check= true;
+        }
+
+        //create new return
+        if(check){
             keyword.untilJqueryIsDone(60L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             keyword.click("MAC_MY_ORD_RETURN_STEP1_CHECKBOX1");
@@ -766,7 +809,8 @@ public class MyAccountPage extends BasePage {
             keyword.click("MAC_MY_ORD_RETURN_STEP1_CHECKBOX2");
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             keyword.click("MAC_MY_ORD_RETURN_STEP1_SELECT2");
-            keyword.click("MAC_MY_ORD_RETURN_STEP1_SELECT2_OPTION");
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+            keyword.doubleClick("MAC_MY_ORD_RETURN_STEP1_SELECT2_OPTION");
             keyword.untilJqueryIsDone(60L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             keyword.doubleClick("//div[@class='column main']");
@@ -778,13 +822,15 @@ public class MyAccountPage extends BasePage {
             keyword.click("MAC_MY_ORD_RETURN_STEP2_CHECKBOX");
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             keyword.click("MAC_MY_ORD_RETURN_STEP3");
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             keyword.click("MAC_MY_ORD_RETURN_SUBMIT");
             logger.info("done");
             keyword.untilJqueryIsDone(60L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
             keyword.verifyElementVisible("MAC_MY_ORD_RETURN_SUCCESS");
-        }
+            PropertiesFile.serPropValue("KEY_ID_ORDER",id);
+        }else {Assert.assertTrue(false);}
     }
     public void upLoadItemOrder() throws InterruptedException {
         boolean check;
