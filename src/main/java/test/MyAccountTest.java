@@ -107,7 +107,7 @@ public class MyAccountTest extends BaseTest {
 //    }
     @Test(priority = 22,description = "Check  return  of completed order")
     public void testCase_Myorder_04() throws InterruptedException {
-        testMyAccount.stepReurn();
+        testMyAccount.stepReturn();
     }
 
 

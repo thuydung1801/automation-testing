@@ -781,7 +781,7 @@ public class MyAccountPage extends BasePage {
             return true;
         }
     }
-    public void stepReurn() throws InterruptedException {
+    public void stepReturn() throws InterruptedException {
 
         viewReturn();
         boolean check;
