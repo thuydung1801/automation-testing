@@ -58,4 +58,11 @@ public class LoginPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
 
     }
+    public void loginOnMobile(String email, String password) throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("LOGIN_MENULEFT");
+        keyword.click("MOBILE_BTN_LOGIN");
+        //keyword.fluentWaitForElementPresent("MOBILE_BTN_LOGIN", 1,10);
+    }
 }
