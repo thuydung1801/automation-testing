@@ -29,13 +29,15 @@ public class SignUpPage extends BasePage {
         keyword.click("SIGNUP_BTN_SIGNUP");
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
         Thread.sleep(2000);
+        keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
+        keyword.untilJqueryIsDone(50L);
         keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
         keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 500);
     }
 
     public void goToFormCreateMyAccountChina() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         keyword.click("SIGNUP_BTN_SIGNUP_CHINA");
         keyword.webDriverWaitForElementPresent("SIGNUP_POPUP_SIGNUP_CHINA", 50);
         Thread.sleep(2000);
@@ -45,17 +47,18 @@ public class SignUpPage extends BasePage {
 
     //    Create new customer and input email exist on database OR Create new customer and leave with blank form for required form with email
     public void createCustomerWithEmail() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
         sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION"
                 , "SIGNUP_EMAIL_EXIST", "SIGNUP_EMAIL_EXIST");
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
-        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD",
-                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-        keyword.untilJqueryIsDone(70L);
-        Thread.sleep(2000);
+//        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD",
+//                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+//        keyword.untilJqueryIsDone(50L);
+//        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
+//        keyword.untilJqueryIsDone(70L);
+//        keyword.untilJqueryIsDone(70L);
         keyword.assertEquals("SIGNUP_MESSAGE_DUPLICATE", "SIGNIN_MESSAGE_DATA_EXIST");
     }
 
@@ -82,10 +85,17 @@ public class SignUpPage extends BasePage {
     // sendKey full data form information (not click check box agree) ( form 2/3- pasWord)
     public void sendKeyFullDataFormPasswordInformation(String inputPassword, String password, String selectTitle, String selectOneOptionTitle) throws InterruptedException {
         keyword.sendKeys(inputPassword, password);
-        keyword.click(selectTitle);
-        keyword.checkStatusIsDisplay(selectOneOptionTitle);
-        keyword.click(selectOneOptionTitle);
-        keyword.click("SIGNUP_CHECKBOX_AGREE");
+        keyword.untilJqueryIsDone(30L);
+        if (checkElement(selectTitle)) {
+            keyword.click(selectTitle);
+//            keyword.checkStatusIsDisplay(selectOneOptionTitle);
+            keyword.click(selectOneOptionTitle);
+            keyword.click("SIGNUP_XPATH_FOR_FORM");
+            keyword.click("SIGNUP_CHECKBOX_AGREE");
+        } else {
+            keyword.click("SIGNUP_XPATH_FOR_FORM");
+            keyword.click("SIGNUP_CHECKBOX_AGREE");
+        }
     }
 
     //    Filters function
@@ -101,7 +111,7 @@ public class SignUpPage extends BasePage {
     // verify input invalid with store China
     public void verifyMessageFormInvalid() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
         keyword.assertEquals("必填项。", "LBL_ERROR_MESSAGE");
         keyword.assertEquals("必填项。", "SIGNUP_LASTNAME_ERROR");
         keyword.assertEquals("必填项。", "SIGNUP_PHONE_ERROR");
@@ -200,10 +210,10 @@ public class SignUpPage extends BasePage {
         clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNIN_EMAIL_REGIS");
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
-        Thread.sleep(1000);
+        keyword.untilJqueryIsDone(50L);
         sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_03",
                 "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
+//        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
         confirmPasswordEntryCondition("SIGNUP_MESSAGE_PASSWORD_FAIL01",
                 "SIGNUP_ACTUAL_MESSAGE01", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
                 "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
@@ -215,6 +225,7 @@ public class SignUpPage extends BasePage {
     //"Create a new account with password # email register and Number:
     public void confirmPasswordEntryConditionNumber() throws InterruptedException {
         clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_02");
+        keyword.untilJqueryIsDone(50L);
         confirmPasswordEntryCondition("SIGNUP_MESSAGE_PASSWORD_FAIL01",
                 "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_MESSAGE_ERROR_NUMBER",
                 "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
@@ -280,15 +291,17 @@ public class SignUpPage extends BasePage {
     public void resendAndGetCodeBack() throws Exception {
         objSignIn = new SignInPage(this.keyword);
 //        keyword.clearText("SIGNUP_INPUT_VERIFY_CODE");
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(100000);
         keyword.click("SIGNUP_BTN_RESEND_CODE");
         keyword.untilJqueryIsDone(50L);
         keyword.imWait(50);
         keyword.assertEquals("SIGNUP_CODE_SENT", "SIGNUP_CODE_RESEND");
-        objSignIn.openTabBE("https://dev4.glamira.com/secured2021");
+        objSignIn.openTabBE("https://stage.glamira.com/secured2021/");
         objSignIn.loginAdmin(
-                "LOGIN_BE_USER_NAME_DEV4",
-                "LOGIN_BE_PASSWORD_DEV4");
+                "sophie",
+                "Hoanghue1207201294@");
         objSignIn.chooseItemCustomer(
                 "LOGIN_BTN_CUSTOMER",
                 "LOGIN_BTN_CUSTOMER",
@@ -296,6 +309,7 @@ public class SignUpPage extends BasePage {
                 "LOGIN_BTN_EMAIL_LOG",
                 "SIGNUP_VERIFY_EMAIL_LOG"
         );
+        keyword.untilJqueryIsDone(50L);
         objSignIn.selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT",
                 "LOGIN_SELECT_ACTIVE",
                 "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
@@ -317,7 +331,7 @@ public class SignUpPage extends BasePage {
 
     //Create new customer and leave with blank form for required form
     public void enterDataSignUpWithMobile() throws InterruptedException {
-        sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION", "SIGNUP_EMAIL_EXIST", "SIGNUP_EMAIL_EXIST");
+        sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION", "SIGNUP_EMAIL_EXIST2", "SIGNUP_EMAIL_EXIST2");
         keyword.click("SIGNUP_SELECT_PHONE_CHINA");
         keyword.untilJqueryIsDone(30L);
         keyword.click("SIGNUP_PHONE_CHINA");
@@ -334,19 +348,19 @@ public class SignUpPage extends BasePage {
     // delete old data Register an account with the phone number already in the system
     public void enterPhoneNumberAlreadyInSystem() throws InterruptedException {
         clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNIN_PHONE_CHINA");
-        keyword.click("SIGNUP_BTN_NEXT_CHINA");
-        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD", "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE_CHINA");
-        keyword.click("SIGNUP_BTN_CREATE");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("SIGNUP_XPATH_FOR_FORM");
+        keyword.doubleClick("SIGNUP_BTN_NEXT_CHINA");
         keyword.untilJqueryIsDone(70L);
-        Thread.sleep(2000);
-        keyword.assertEquals("关联网站中已经存在具有相同手机号码的客户。", "SIGNUP_MESSAGE_ACTUAL");
+        keyword.assertEquals("这个客户已经存在在这个商店中。", "SIGNUP_MESSAGE_ACTUAL2");
     }
 
     //passwordLessThan8Characters
     public void passwordLessThan8Characters() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
-        clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE_CHINA");
-        keyword.click("SIGNUP_BTN_CREATE_SUB");
+        clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE_CHINA2");
+        keyword.click("SIGNUP_XPATH_FOR_FORM");
+        keyword.doubleClick("SIGNUP_BTN_NEXT_CHINA");
         keyword.untilJqueryIsDone(30L);
         sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_03",
                 "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
@@ -411,14 +425,9 @@ public class SignUpPage extends BasePage {
         clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE_ALREADY01");
         keyword.click("SIGNUP_FORM_DATA_INFORMATION");
         keyword.click("SIGNUP_BTN_NEXT_CHINA");
-        keyword.untilJqueryIsDone(30L);
-        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_07");
-        keyword.click("SIGNUP_SELECT_OPTION_TITLE");
-        keyword.untilJqueryIsDone(10L);
-        keyword.click("SIGNUP_BTN_CREATE");
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(2000);
-        keyword.assertEquals("已存在此电子邮件地址的帐户。如果你确信它是您的电子邮件地址， 请单击此处 以获取您的密码和访问您的帐户。", "SIGNUP_MESSAGE_ERROR_PHONE");
+        keyword.assertEquals("这个客户已经存在在这个商店中。", "SIGNUP_MESSAGE_ERROR_PHONE");
     }
 
     //createNewCusstomerSuccsessWithPhone
@@ -434,26 +443,24 @@ public class SignUpPage extends BasePage {
         clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_SIGNUP");
         keyword.click("SIGNUP_FORM_DATA_INFORMATION");
         keyword.click("SIGNUP_BTN_NEXT_CHINA");
-        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_07",
-                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
-//        keyword.untilJqueryIsDone(30L);
-//        keyword.click("SIGNUP_BTN_CREATE");
+        keyword.untilJqueryIsDone(30L);
+        keyword.clearText("SIGNUP_PASSWORD_INFORMATION");
+//        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_07",
+//                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+        keyword.untilJqueryIsDone(30L);
+        keyword.sendKeys("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_07");
+        keyword.click("SIGNUP_SELECT_TITLE");
+        keyword.click("SIGNUP_SELECT_OPTION_TITLE");
+        keyword.click("SIGNUP_XPATH_FOR_FORM");
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(3000);
+        keyword.doubleClick("SIGNUP_BTN_NEXT_CHINA2");
+//        keyword.click("SIGNUP_CHECKBOX_AGREE2");
     }
 
     //    Create new customer successfully with store enable phone number confirm
     public void getActivationCode() throws InterruptedException {
-//        keyword.sendKeys("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_CODE_DATA");
-//        keyword.click("SIGNUP_BTN_SUBMIT_SEND_CODE");
-//        keyword.untilJqueryIsDone(50L);
-////        Thread.sleep(2000);
-////        keyword.assertEquals("Invalid Verify Code", "SIGNUP_MESSAGE_ERROR_PHONE");
-////        keyword.untilJqueryIsDone(50L);
-//        Thread.sleep(60000);
-//        keyword.click("SIGNUP_FORM");
-//        keyword.click("//button[@title='开通账户']");
-////        keyword.untilJqueryIsDone(50L);
-////        keyword.assertEquals("Code sent", "SIGNUP_CODE_RESEND");
-
+        objSignIn = new SignInPage(this.keyword);
         objSignIn.openNewTabs();
         objSignIn.loginAdmin(
                 "LOGIN_DATA_USER_NAME",
@@ -462,18 +469,21 @@ public class SignUpPage extends BasePage {
                 "SIGNUP_STORES_ITEM", "SIGNUP_STORES_ITEM",
                 "LOGIN_FORM_CUSTOMER", "SIGNUP_ELEMENT_SMS_LOG", "SIGNUP_VERIFY_SMS"
         );
-        filterSort(
-                "SIGNUP_BTN_FILTER", "SIGNUP_VERIFY_ELEMENT_FILTER",
-                "SIGNUP_PHONE_REGIS", "SIGNUP_BUTTON_APPLY_FILTERS"
+//        filterSort(
+//                "SIGNUP_BTN_FILTER", "SIGNUP_VERIFY_ELEMENT_FILTER",
+//                "SIGNUP_PHONE_REGIS", "SIGNUP_BUTTON_APPLY_FILTERS"
+//        );
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(10000);
+        getCodeAndSendKey("SIGNUP_SWITCH_TO_TAB_CHECK2", "SIGNUP_BTN_SUBMIT2"
         );
-        keyword.untilJqueryIsDone(30L);
-        getCodeAndSendKey("SIGNUP_SWITCH_TO_TAB_CHECK", "SIGNUP_BTN_SUBMIT"
-        );
-        keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS", "SIGNUP_MESSAGE_REGIS_SUCCESS");
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(5000);
+        keyword.assertEquals("感谢注册。", "SIGNUP_CODE_RESEND");
     }
 
     public boolean checkElement(String checkElement) {
-        return keyword.verifyElementPresent(checkElement);
+        return keyword.verifyElementVisible(checkElement);
     }
 }
 

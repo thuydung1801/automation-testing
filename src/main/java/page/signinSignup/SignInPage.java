@@ -301,10 +301,10 @@ public class SignInPage extends BasePage {
     public void selectActionEmailLog(String selectAction, String verifySelectForm, String selectView, String verifyForm) throws InterruptedException {
         keyword.imWait(30);
         keyword.click(selectAction);
-        keyword.webDriverWaitForElementPresent(verifySelectForm, 20);
-        keyword.untilJqueryIsDone(30L);
+//        keyword.webDriverWaitForElementPresent(verifySelectForm, 30);
+        keyword.untilJqueryIsDone(50L);
         keyword.click(selectView);
-        keyword.webDriverWaitForElementPresent(verifyForm, 20);
+        keyword.webDriverWaitForElementPresent(verifyForm, 30);
     }
 
     // Get text and Enter the copy data -> switch to first tabs

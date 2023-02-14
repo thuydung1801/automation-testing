@@ -1,125 +1,20 @@
-INFO  | 2023-01-05 13:24:27 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2023-01-05 13:24:32 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
-INFO  | 2023-01-05 13:24:32 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\108.0.5359.71\chromedriver.exe
-INFO  | 2023-01-05 13:24:36 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2023-01-05 13:24:36 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2023-01-05 13:24:36 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@67514bdd
-INFO  | 2023-01-05 13:25:10 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2023-01-05 13:25:11 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU05:25) - testCase_SU05
-INFO  | 2023-01-05 13:25:11 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
-INFO  | 2023-01-05 13:25:17 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU015:108) - testCase_SU015
-INFO  | 2023-01-05 13:25:17 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://dev3.glamira.com/glcn/
-INFO  | 2023-01-05 13:25:59 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_SIGNUP_CHINA
-INFO  | 2023-01-05 13:26:00 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_POPUP_SIGNUP_CHINA
-INFO  | 2023-01-05 13:26:20 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_CREATE_ACCOUNT_CHINA
-INFO  | 2023-01-05 13:26:44 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_TITLE_PAGE_REGIS
-INFO  | 2023-01-05 13:26:44 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_NEXT_CHINA
-INFO  | 2023-01-05 13:26:48 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 必填项。 with LBL_ERROR_MESSAGE
-INFO  | 2023-01-05 13:26:48 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 必填项。 with SIGNUP_LASTNAME_ERROR
-INFO  | 2023-01-05 13:26:48 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 必填项。 with SIGNUP_PHONE_ERROR
-INFO  | 2023-01-05 13:26:49 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU016:116) - testCase_SU016
-INFO  | 2023-01-05 13:26:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
-INFO  | 2023-01-05 13:26:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
-INFO  | 2023-01-05 13:26:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_EXIST
-INFO  | 2023-01-05 13:26:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_EMAIL_EXIST
-INFO  | 2023-01-05 13:26:49 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_PHONE_CHINA
-INFO  | 2023-01-05 13:26:51 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_PHONE_CHINA
-INFO  | 2023-01-05 13:26:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_WITH_PHONEwith SIGNUP_DATA_PHONE_CHINA_INVALID
-INFO  | 2023-01-05 13:26:51 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_NEXT_CHINA
-INFO  | 2023-01-05 13:26:51 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 请输入有效的手机号码。 with SIGNUP_PHONE_ERROR
-INFO  | 2023-01-05 13:26:51 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU017:122) - testCase_SU017
-INFO  | 2023-01-05 13:26:51 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:26:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_WITH_PHONEwith SIGNIN_PHONE_CHINA
-INFO  | 2023-01-05 13:26:52 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_NEXT_CHINA
-INFO  | 2023-01-05 13:26:52 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_PASSWORD_INFORMATIONwith LOGIN_NEW_PASSWORD
-INFO  | 2023-01-05 13:26:52 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_TITLE
-INFO  | 2023-01-05 13:26:53 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:597) - Check status 
-INFO  | 2023-01-05 13:26:53 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_OPTION_TITLE_CHINA
-INFO  | 2023-01-05 13:26:53 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_CHECKBOX_AGREE
-INFO  | 2023-01-05 13:26:53 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_CREATE
-INFO  | 2023-01-05 13:27:08 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 关联网站中已经存在具有相同手机号码的客户。 with SIGNUP_MESSAGE_ACTUAL
-INFO  | 2023-01-05 13:27:08 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU018:128) - testCase_SU018
-INFO  | 2023-01-05 13:27:08 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:27:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_WITH_PHONEwith SIGNUP_DATA_PHONE_CHINA
-INFO  | 2023-01-05 13:27:08 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_CREATE_SUB
-INFO  | 2023-01-05 13:27:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_03
-INFO  | 2023-01-05 13:27:10 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_TITLE
-INFO  | 2023-01-05 13:27:10 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:597) - Check status 
-INFO  | 2023-01-05 13:27:11 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_OPTION_TITLE
-INFO  | 2023-01-05 13:27:11 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_CHECKBOX_AGREE
-INFO  | 2023-01-05 13:27:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 您的密码应与您的电子邮件地址不同，并包含 with SIGNIN_MESSAGE_PW_NOT_SAME_EMAIL
-INFO  | 2023-01-05 13:27:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少8个字符 with SIGNUP_ACTUAL_MESSAGE04
-INFO  | 2023-01-05 13:27:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个号码 with SIGNUP_ACTUAL_MESSAGE_CHINA
-INFO  | 2023-01-05 13:27:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个小写 with SIGNUP_ACTUAL_MESSAGE_CHINA1
-INFO  | 2023-01-05 13:27:13 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个大写 with SIGNUP_ACTUAL_MESSAGE_CHINA2
-INFO  | 2023-01-05 13:27:13 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个字符，例如：# & $ ( ) * + , - . : , . = ? @ { } ~ ! with SIGNUP_ACTUAL_MESSAGE_CHINA3
-INFO  | 2023-01-05 13:27:13 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_ACTUAL_MESSAGE04
-INFO  | 2023-01-05 13:27:13 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU019:134) - testCase_SU019
-INFO  | 2023-01-05 13:27:13 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:27:13 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_02
-INFO  | 2023-01-05 13:27:14 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 您的密码应与您的电子邮件地址不同，并包含 with SIGNUP_ACTUAL_MESSAGE01
-INFO  | 2023-01-05 13:27:14 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少8个字符 with SIGN_MESSAGE_CHARACTERS
-INFO  | 2023-01-05 13:27:14 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个号码 with SIGNUP_MESSAGE_ERROR_NUMBER
-INFO  | 2023-01-05 13:27:14 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个小写 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
-INFO  | 2023-01-05 13:27:14 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个大写 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
-INFO  | 2023-01-05 13:27:14 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个字符，例如：# & $ ( ) * + , - . : , . = ? @ { } ~ ! with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
-INFO  | 2023-01-05 13:27:14 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_NUMBER
-INFO  | 2023-01-05 13:27:14 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU020:140) - testCase_SU020
-INFO  | 2023-01-05 13:27:14 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:27:14 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_04
-INFO  | 2023-01-05 13:27:16 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 您的密码应与您的电子邮件地址不同，并包含 with SIGNUP_ACTUAL_MESSAGE01
-INFO  | 2023-01-05 13:27:16 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少8个字符 with SIGN_MESSAGE_CHARACTERS
-INFO  | 2023-01-05 13:27:16 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个号码 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
-INFO  | 2023-01-05 13:27:16 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个小写 with SIGNUP_MESSAGE_ERROR_LOWER_LETTER
-INFO  | 2023-01-05 13:27:16 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个大写 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
-INFO  | 2023-01-05 13:27:16 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个字符，例如：# & $ ( ) * + , - . : , . = ? @ { } ~ ! with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
-INFO  | 2023-01-05 13:27:16 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_LOWER_LETTER
-INFO  | 2023-01-05 13:27:16 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU021:146) - testCase_SU021
-INFO  | 2023-01-05 13:27:16 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:27:16 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_05
-INFO  | 2023-01-05 13:27:17 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 您的密码应与您的电子邮件地址不同，并包含 with SIGNUP_ACTUAL_MESSAGE01
-INFO  | 2023-01-05 13:27:17 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少8个字符 with SIGN_MESSAGE_CHARACTERS
-INFO  | 2023-01-05 13:27:17 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个号码 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
-INFO  | 2023-01-05 13:27:17 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个小写 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
-INFO  | 2023-01-05 13:27:17 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个大写 with SIGNUP_MESSAGE_ERROR_UPPER_LETTER
-INFO  | 2023-01-05 13:27:17 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个字符，例如：# & $ ( ) * + , - . : , . = ? @ { } ~ ! with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
-INFO  | 2023-01-05 13:27:17 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_UPPER_LETTER
-INFO  | 2023-01-05 13:27:17 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU022:152) - testCase_SU022
-INFO  | 2023-01-05 13:27:17 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:27:18 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_06
-INFO  | 2023-01-05 13:27:18 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 您的密码应与您的电子邮件地址不同，并包含 with SIGNUP_ACTUAL_MESSAGE01
-INFO  | 2023-01-05 13:27:18 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少8个字符 with SIGN_MESSAGE_CHARACTERS
-INFO  | 2023-01-05 13:27:18 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个号码 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
-INFO  | 2023-01-05 13:27:18 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个小写 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
-INFO  | 2023-01-05 13:27:18 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个大写 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
-INFO  | 2023-01-05 13:27:18 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 至少1个字符，例如：# & $ ( ) * + , - . : , . = ? @ { } ~ ! with SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE_CHINA
-INFO  | 2023-01-05 13:27:18 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:629) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE_CHINA
-INFO  | 2023-01-05 13:27:18 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU024:158) - testCase_SU023
-INFO  | 2023-01-05 13:27:18 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_BACK
-INFO  | 2023-01-05 13:27:19 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:27:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_INFORMATIONwith CHECKOUT_DATA_EMAIL_ENTER
-INFO  | 2023-01-05 13:27:19 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:27:20 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith CHECKOUT_DATA_EMAIL_ENTER
-INFO  | 2023-01-05 13:27:20 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:27:20 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_WITH_PHONEwith SIGNUP_DATA_PHONE_ALREADY01
-INFO  | 2023-01-05 13:27:20 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_FORM_DATA_INFORMATION
-INFO  | 2023-01-05 13:27:20 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_NEXT_CHINA
-INFO  | 2023-01-05 13:27:22 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:27:22 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_07
-INFO  | 2023-01-05 13:27:22 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_OPTION_TITLE
-INFO  | 2023-01-05 13:27:23 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_CREATE
-INFO  | 2023-01-05 13:27:40 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:713) - compare from 已存在此电子邮件地址的帐户。如果你确信它是您的电子邮件地址， 请单击此处 以获取您的密码和访问您的帐户。 with SIGNUP_MESSAGE_ERROR_PHONE
-INFO  | 2023-01-05 13:27:40 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU023_Case_14:164) - testCase_SU023_Case_14
-INFO  | 2023-01-05 13:27:41 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:27:42 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_WITH_PHONEwith SIGNIN_PHONE_CHINA_RESET
-INFO  | 2023-01-05 13:27:42 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:27:42 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_SIGNUP
-INFO  | 2023-01-05 13:27:42 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
-INFO  | 2023-01-05 13:27:42 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_EMAIL_SIGNUP
-INFO  | 2023-01-05 13:27:43 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_FORM_DATA_INFORMATION
-INFO  | 2023-01-05 13:27:43 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_BTN_NEXT_CHINA
-INFO  | 2023-01-05 13:27:43 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_07
-INFO  | 2023-01-05 13:27:43 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_TITLE
-INFO  | 2023-01-05 13:27:44 | [main] core.KeywordWeb (KeywordWeb.java:checkStatusIsDisplay:597) - Check status 
-INFO  | 2023-01-05 13:27:44 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_SELECT_OPTION_TITLE
-INFO  | 2023-01-05 13:27:46 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNUP_CHECKBOX_AGREE
+INFO  | 2023-02-14 17:41:59 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
+INFO  | 2023-02-14 17:42:02 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 109.0.5414.74 (resolved driver for Chrome 109)
+INFO  | 2023-02-14 17:42:02 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\109.0.5414.74\chromedriver.exe
+INFO  | 2023-02-14 17:42:06 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
+INFO  | 2023-02-14 17:42:06 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2023-02-14 17:42:06 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@5bb99d1d
+INFO  | 2023-02-14 17:42:09 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
+INFO  | 2023-02-14 17:42:11 | [main] test.signinSignup.SignInTest (SignInTest.java:testCase_SI02:25) - testCase_SU05
+INFO  | 2023-02-14 17:42:11 | [main] core.KeywordWeb (KeywordWeb.java:handleLoginPopup:325) - login by authen link withtest !test123!
+INFO  | 2023-02-14 17:42:15 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-02-14 17:42:19 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickSIGNIN_BTN_SUBMIT_FORM_PHONE
+INFO  | 2023-02-14 17:42:20 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_EMAIL_LOGwith SIGNIN_DATA_EMAIL
+INFO  | 2023-02-14 17:42:20 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2023-02-14 17:42:21 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2023-02-14 17:42:21 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2023-02-14 17:42:23 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2023-02-14 17:42:23 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_FORGOT_PASSWORD
+INFO  | 2023-02-14 17:42:23 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2023-02-14 17:42:23 | [main] core.KeywordWeb (KeywordWeb.java:clearText:97) - clearText
+INFO  | 2023-02-14 17:42:25 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysSIGNIN_EMAIL_LOGwith SIGNIN_DATA_EMAIL
