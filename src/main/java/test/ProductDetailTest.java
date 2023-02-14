@@ -93,37 +93,37 @@ public class ProductDetailTest extends BaseTest {
     }
 
      //NEW DESIGN - Product Page
-//    @Test (priority = 19, description = "Edit length with product having length is options successfully")
-//    public void testCase_NPP_01() throws InterruptedException {
-//        testProductDetail.newNPP01();
-//    }
-//    @Test (priority = 20, description = "Edit length with product having length is product related successfully")
-//    public void testCase_NPP_02() throws InterruptedException {
-//        testProductDetail.newNPP02();
-//    }
-//    @Test (priority = 21, description = "Edit length with product having length is product related and still select old option on modal")
-//    public void testCase_NPP_03() throws InterruptedException {
-//        testProductDetail.newNPP03();
-//    }
-//    @Test (priority = 22, description = "Edit length with product having length is product related and Cancel")
-//    public void testCase_NPP_04() throws InterruptedException {
-//        testProductDetail.newNPP04();
-//    }
-//    @Test (priority = 23, description = "Edit stone size carat with product having carat is product related successfully")
-//    public void testCase_NPP_05() throws InterruptedException {
-//        testProductDetail.newNPP05();
-//    }
-//    @Test (priority = 24, description = "Edit set option for product wedding set successfully")
-//    public void testCase_NPP_06() throws InterruptedException {
-//        testProductDetail.newNPP06();
-//    }
-//    @Test (priority = 25, description = "Edit set option for product wedding set and then select another product on modal")
-//    public void testCase_NPP_07() throws InterruptedException {
-//        testProductDetail.newNPP07();
-//    }
-//    @Test (priority = 26, description = "Edit set option for product wedding set and then still select old option on modal")
-//    public void testCase_NPP_08() throws InterruptedException {
-//        testProductDetail.newNPP08();
-//    }
+    @Test (priority = 19, description = "Edit length with product having length is options successfully")
+    public void testCase_NPP_01() throws InterruptedException {
+        testProductDetail.newNPP01();
+    }
+    @Test (priority = 20, description = "Edit length with product having length is product related successfully")
+    public void testCase_NPP_02() throws InterruptedException {
+        testProductDetail.newNPP02();
+    }
+    @Test (priority = 21, description = "Edit length with product having length is product related and still select old option on modal")
+    public void testCase_NPP_03() throws InterruptedException {
+        testProductDetail.newNPP03();
+    }
+    @Test (priority = 22, description = "Edit length with product having length is product related and Cancel")
+    public void testCase_NPP_04() throws InterruptedException {
+        testProductDetail.newNPP04();
+    }
+    @Test (priority = 23, description = "Edit stone size carat with product having carat is product related successfully")
+    public void testCase_NPP_05() throws InterruptedException {
+        testProductDetail.newNPP05();
+    }
+    @Test (priority = 24, description = "Edit set option for product wedding set successfully")
+    public void testCase_NPP_06() throws InterruptedException {
+        testProductDetail.newNPP06();
+    }
+    @Test (priority = 25, description = "Edit set option for product wedding set and then select another product on modal")
+    public void testCase_NPP_07() throws InterruptedException {
+        testProductDetail.newNPP07();
+    }
+    @Test (priority = 26, description = "Edit set option for product wedding set and then still select old option on modal")
+    public void testCase_NPP_08() throws InterruptedException {
+        testProductDetail.newNPP08();
+    }
 
 }
