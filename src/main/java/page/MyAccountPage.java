@@ -865,7 +865,7 @@ public class MyAccountPage extends BasePage {
         logger.info("check verify upload more my order....");
         Assert.assertEquals(check,true);
     }
-    public void checkStatus(String status,String verifyId,String verifyIcon,String verifyText, String dataId, String dataText){
+    public void checkStatus(String status,String verifyId,String verifyIcon,String verifyText, String dataId, String dataText) throws InterruptedException {
         switch (status){
             case "confirmation":
                 logger.info("check verify id order....");
@@ -875,8 +875,12 @@ public class MyAccountPage extends BasePage {
                 keyword.verifyElementVisible(verifyIcon) ;
                 break;
             case "delivery" :
+                keyword.untilJqueryIsDone(60L);
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
                 keyword.click("MAC_OVER_BTN_COMPLETE");
                 logger.info("check verify id order....");
+                keyword.untilJqueryIsDone(60L);
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
                 keyword.assertEquals(dataId,verifyId);
                 logger.info("check verify status....");
                 keyword.assertEquals(dataText,verifyText);
@@ -888,12 +892,12 @@ public class MyAccountPage extends BasePage {
     }
     public void checkStatusConfirmation() throws InterruptedException {
         setUp1();
-        keyword.openNewTab("https://dev3.glamira.com/glgb/sales/order/history/");
+        keyword.openNewTab("https://stage.glamira.co.uk/sales/order/history/");
 
         checkStatus("confirmation","MAC_OVER_ID_ORDER_STATUS_CONFIR","MAC_OVER_STATUS_CONFIR_ICON",
                 "MAC_OVER_STATUS_CONFIR","MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR","MAC_OVER_DATA_STATUS_CONFIR");
     }
-    public void checkStatusDelivery(){
+    public void checkStatusDelivery() throws InterruptedException {
         keyword.reLoadPage();
         checkStatus("delivery","MAC_OVER_ID_ORDER_STATUS_DELIVERY","MAC_OVER_STATUS_DELIVERY_ICON",
                 "MAC_OVER_STATUS_DELIVERY","MAC_OVER_DATA_ID_ORDER_STATUS_DELIVERY","MAC_OVER_DATA_STATUS_DELIVERY");
@@ -909,12 +913,13 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
         keyword.untilJqueryIsDone(30L);
-
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
     public void checkFunctionInfoCustomer(String element,String verify, String data) throws InterruptedException {
         boolean check;
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click(element);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -936,7 +941,7 @@ public class MyAccountPage extends BasePage {
     }
     public void checkChangePassword() throws InterruptedException {
 //        setUp2();
-        keyword.navigateToUrl("https://dev3.glamira.com/glau/customer/account/");
+        keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/");
         checkFunctionInfoCustomer("MAC_OVER_LINK_CHANGE_PASS","MAC_OVER_VERIFY_GET_CHANGE_PASS","MAC_OVER_VERIFY_DATA_CHANGE_PASS");
     }
     public void checkChangeShippingAddress() throws InterruptedException {

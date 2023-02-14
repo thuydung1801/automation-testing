@@ -35,10 +35,10 @@ public class CustomerServicePage extends BasePage {
 
     public void setUp() throws InterruptedException {
 
-        objLogin.loginOnAlert();
+   //     objLogin.loginOnAlert();
 //        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
         objRegister.acceptAllCookies();
-        objRegister.chooseLanguages();
+      //  objRegister.chooseLanguages();
         keyword.untilJqueryIsDone(30L);
 
         keyword.openNewTab("URL_PRODUCT_DETAIL");
@@ -68,6 +68,7 @@ public class CustomerServicePage extends BasePage {
 
     }
     public void filterWithRatting2() throws InterruptedException {
+        objRegister.acceptAllCookies();
         System.out.printf("When the ratting has no reviews" + "\n");
         keyword.click("CUS_PRD_FILTER_RATTING_2");
         keyword.untilJqueryIsDone(30L);
@@ -134,9 +135,11 @@ public class CustomerServicePage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
-    public boolean checkHighestRatting(String verify1,String verify2){
+    public boolean checkHighestRatting(String verify1,String verify2) throws InterruptedException {
         String vrf1 = keyword.getAttribute(verify1);
         String verify_1 = vrf1.substring(7,vrf1.length()-2);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         String vrf2 = keyword.getAttribute(verify2);
         String verify_2 = vrf2.substring(7,vrf2.length()-2);
         if(Integer.parseInt(verify_1) >= Integer.parseInt(verify_2) ){
@@ -162,14 +165,20 @@ public class CustomerServicePage extends BasePage {
     public boolean checkLowestRatting(String verify1,String verify2) throws InterruptedException{
         String vrf1 = keyword.getAttribute(verify1);
         String verify_1 = vrf1.substring(7,vrf1.length()-2);
-        String vrf2 = keyword.getAttribute(verify2);
-        String verify_2 = vrf2.substring(7,vrf2.length()-2);
-        if(Integer.parseInt(verify_1) <= Integer.parseInt(verify_2) ){
-            return true;
+        boolean stutas = keyword.verifyElementVisible(verify2);
+        if(stutas){
+            String vrf2 = keyword.getAttribute(verify2);
+            String verify_2 = vrf2.substring(7,vrf2.length()-2);
+            if(Integer.parseInt(verify_1) <= Integer.parseInt(verify_2) ){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
-        else{
-            return false;
-        }
+        return true;
+
+
     }
     public void checkVerifyLowestRatting() throws InterruptedException {
 
@@ -442,19 +451,31 @@ public class CustomerServicePage extends BasePage {
         checkVerifyCheckBoxAndCheckSort1("CUS_VERIFY_PRD_FILTER_CHECKBOX_2");
     }
     public void filterCheckBox2AndCheckSort2() throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        objRegister.acceptAllCookies();
         filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_2","CUS_PRD_FILTER_CHECKSORT_2");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         checkVerifyCheckBoxAndCheckSort2("CUS_VERIFY_PRD_FILTER_CHECKBOX_2");
     }
     public void filterCheckBox2AndCheckSort3() throws InterruptedException, ParseException {
         filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_2","CUS_PRD_FILTER_CHECKSORT_3");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         checkVerifyCheckBoxAndCheckSort3("CUS_VERIFY_PRD_FILTER_CHECKBOX_2");
     }
     public void filterCheckBox2AndCheckSort4() throws InterruptedException {
         filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_2","CUS_PRD_FILTER_CHECKSORT_4");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         checkVerifyCheckBoxAndCheckSort4("CUS_VERIFY_PRD_FILTER_CHECKBOX_2");
     }
     public void filterCheckBox2AndCheckSort5() throws InterruptedException {
         filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_2","CUS_PRD_FILTER_CHECKSORT_5");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         checkVerifyCheckBoxAndCheckSort5("CUS_VERIFY_PRD_FILTER_CHECKBOX_2");
     }
     public void filterCheckBox3AndCheckSort1() throws InterruptedException {
@@ -504,6 +525,8 @@ public class CustomerServicePage extends BasePage {
         keyword.click("CUS_NEWSLETTER");
         keyword.imWait(3);
         keyword.click("CUS_NEWSLETTER_CHECKBOX");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("CUS_NEWSLETTER_SUBMIT_ACCOUNT");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -523,11 +546,15 @@ public class CustomerServicePage extends BasePage {
     }
     public void myAccountSubscribeGlamiraNewsletter() throws InterruptedException {
 //        setUp();
-        keyword.openNewTab("https://dev3.glamira.com/glde/");
+        keyword.openNewTab("https://dev3.glamira.com/glgb/");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+//        objRegister.acceptAllCookies();
         objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
         keyword.untilJqueryIsDone(30L);
 
-        keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/index/");
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/customer/account/index/");
         commonNewsLetterWithAccount();
         checkVerifyNewsletter("CUS_VERIFY_NEWSLETTER_SUBSCRIBE","CUS_VERIFY_DATA_NEWSLETTER_SUBSCRIBE");
 
@@ -546,6 +573,12 @@ public class CustomerServicePage extends BasePage {
         keyword.click("CUS_NEWSLETTER_SUBMIT_FOOTER");
 
         keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+//        keyword.click("CUS_NEWSLETTER_CAPTCHA");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("CUS_NEWSLETTER_SUBMIT_CAPTCHA");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");

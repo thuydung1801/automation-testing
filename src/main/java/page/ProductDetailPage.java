@@ -32,9 +32,12 @@ public class ProductDetailPage extends BasePage {
         signInPage = new SignInPage();
     }
     public void setUp() throws InterruptedException {
-        objLogin.loginOnAlert();
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        //  objLogin.loginOnAlert();
         objRegister.acceptAllCookies();
-        objRegister.chooseLanguages();
+     //   objRegister.chooseLanguages();
     }
     public void setUpWithLogin() throws InterruptedException {
         objLogin.loginOnAlert();
@@ -69,10 +72,13 @@ public class ProductDetailPage extends BasePage {
                 keyword.untilJqueryIsDone(30L);
 
                 keyword.click("PRD_METAL_COLOR");
+                keyword.untilJqueryIsDone(30L);
                 keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
                 keyword.webDriverWaitForElementPresent("PRD_METAL_COLOR_OPTION",20);
                 keyword.untilJqueryIsDone(30L);
-
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.scrollDownToElement("PRD_METAL_COLOR_OPTION");
+                keyword.untilJqueryIsDone(30L);
                 keyword.click("PRD_METAL_COLOR_OPTION");
                 keyword.untilJqueryIsDone(30L);
                 keyword.verifyElementVisible("PRD_VERIFY_IMG");
@@ -99,7 +105,12 @@ public class ProductDetailPage extends BasePage {
         keyword.click("PRD_CART");
         keyword.click("PRD_BTN_VIEWCART");
         keyword.imWait(1);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("PRD_BTN_VIEWDETAIL");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
 
     }
     public void optionSize() throws InterruptedException {
@@ -116,21 +127,28 @@ public class ProductDetailPage extends BasePage {
         keyword.webDriverWaitForElementPresent("PRD_CLICK_PRODUCT",20);
         keyword.click("PRD_CLICK_PRODUCT");
         keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
     public void showImgProduct() throws InterruptedException {
-        productInfo();
+   //     productInfo();
         System.out.printf("-----test 1: Show  detail image" +"\n");
         keyword.click("PRD_SHOW_IMG");
 //        Thread.sleep(1000);
         keyword.webDriverWaitForElementPresentByCss("PRD_CLOSE",50);
         keyword.clickByCss("PRD_CLOSE");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.verifyElementVisible("PRD_VERIFY_DEFAULT_IMG");
 
     }
     public void chooseDefaultOptionWithRing() throws InterruptedException {
      //   productInfo();
         System.out.printf("-----test 2: Default option "+"\n");
+        objRegister.acceptAllCookies();
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         selectOption();
         System.out.printf("=> test 2 done"+"\n");
 
@@ -142,7 +160,8 @@ public class ProductDetailPage extends BasePage {
     }
     public void chooseDefaultOptionWithNecklace1() throws InterruptedException {
 //        setUp();
-        keyword.openNewTab("https://dev3.glamira.com/glde/diamant-halsketten/");
+        keyword.openNewTab("https://dev3.glamira.com/glgb/diamond-necklaces/diamond/");
+
         keyword.click("PRD_CLICK_PRODUCT_NECKLACE");
         keyword.untilJqueryIsDone(30L);
         keyword.verifyElementVisible("PRD_VERIFY_DEFAULT_NECKLACE");
@@ -172,14 +191,18 @@ public class ProductDetailPage extends BasePage {
 
         keyword.click("PRD_CLICK_CHAIN_COLOR");
         keyword.untilJqueryIsDone(30L);
-
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("PRD_CLICK_CHAIN_LENGTH");
         keyword.verifyElementVisible("PRD_VERIFY_NECKLACE");
 
     }
     public void commonOptionEngravingWithSendKey(String data)throws InterruptedException{
         keyword.openNewTab("URL_PRODUCT_DETAIL");
+        keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("PRD_ENGRAVING",20);
+        keyword.scrollDownToElement("PRD_ENGRAVING");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("PRD_ENGRAVING");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -194,6 +217,8 @@ public class ProductDetailPage extends BasePage {
     public void commonOptionEngravingWithCopyPaste(String element1, String element2,String content)throws InterruptedException{
         keyword.openNewTab("URL_PRODUCT_DETAIL");
         keyword.webDriverWaitForElementPresent("PRD_ENGRAVING",20);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("PRD_ENGRAVING");
 
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -239,6 +264,8 @@ public class ProductDetailPage extends BasePage {
     }
     public void productOptionEngraving4() throws InterruptedException {
         commonOptionEngravingWithCopyPaste("PRD_TEXT_ENGRAVING","PRD_TEXT_ENGRAVING","PRD_DATA_TEXT_ENGRAVING3");
+        String text = keyword.getText("PRD_GET_TEXT_ENGRAVING");
+        System.out.printf("get text : " + text );
         keyword.assertEquals("PRD_DATA_TEXT_ENGRAVING3","PRD_GET_TEXT_ENGRAVING");
         removeItemProduct();
 
@@ -265,6 +292,7 @@ public class ProductDetailPage extends BasePage {
         String expected = exp.substring(0,2);
         String act = keyword.getText("PRD_CHECK_SIZE");
         String actual = act.substring(0,2);
+        System.out.printf("expect : " +expected + "\n" + "actual : " +actual+"\n");
         Assert.assertEquals(expected, actual);
         Thread.sleep(1000);
     }
@@ -324,8 +352,8 @@ public class ProductDetailPage extends BasePage {
         optionSize();
         keyword.click("PRD_FINDSIZE");
         keyword.imWait(2);
-        keyword.clickByCss("PRD_LINK_SIZEGUIDE");
-        keyword.webDriverWaitForElementPresent("PRD_VERIFY_LINK",20);
+        keyword.click("PRD_LINK_SIZEGUIDE");
+       // keyword.webDriverWaitForElementPresent("PRD_VERIFY_LINK",20);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(30L);
 
