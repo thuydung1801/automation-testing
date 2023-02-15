@@ -14,12 +14,22 @@ public class RegisterPage extends BasePage {
     }
 
     public void acceptAllCookies() throws InterruptedException {
+        keyword.untilJqueryIsDone(60L);
         keyword.scrollToPositionByScript("window.scrollBy(0,300)");
         keyword.untilJqueryIsDone(60L);
         chooseLanguages();
         keyword.webDriverWaitForElementPresent("BTN_COOKIES",50);
         if(keyword.verifyElementPresent("BTN_COOKIES")){
             keyword.click("BTN_COOKIES");
+        }
+
+    }
+    public void acceptAllCookiesOldDesign() throws InterruptedException {
+        keyword.scrollToPositionByScript("window.scrollBy(0,300)");
+        keyword.untilJqueryIsDone(60L);
+        keyword.webDriverWaitForElementPresent("BTN_COOKIES_2",50);
+        if(keyword.verifyElementPresent("BTN_COOKIES_2")){
+            keyword.click("BTN_COOKIES_2");
         }
 
     }

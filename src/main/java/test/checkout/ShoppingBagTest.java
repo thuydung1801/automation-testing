@@ -281,7 +281,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
         objShoppingBagPage.checkOutWithKlarnaLater();
-        objShoppingBagPage.clickPrint();
+        //objShoppingBagPage.clickPrint();
     }
 
     @Test (priority = 22, description = "Place order and apply full amount store credit successfully")
@@ -428,6 +428,13 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.checkOut();
         objShoppingBagPage.notAccpectConditions();
 
+    }
+
+    @Test
+    public void checkOutStageDE() throws InterruptedException {
+        objShoppingBagPage = new ShoppingBagPage(this.keyword);
+        logger.info("checkOutStageDE");
+        objShoppingBagPage.checkOutWithOldDesign();
     }
 
 

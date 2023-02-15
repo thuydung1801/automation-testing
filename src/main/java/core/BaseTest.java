@@ -5,10 +5,12 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.slf4j.Logger;
+
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.io.File;
+
 
 import static core.KeywordWeb.driver;
 
@@ -29,11 +31,15 @@ public class BaseTest {
     public void beforeSuite() throws Exception {
         PropertiesFile.setPropertiesFile();
     }
-
+    @Parameters("devices")
     @BeforeTest
-    public void beforeTest() throws Exception {
+    public void beforeTest(String devices) throws Exception {
         keyword.openBrowser(PropertiesFile.getPropValue("BROWSER_NAME"), PropertiesFile.getPropValue("BASE_URL"));
-        keyword.maximizeWindow();
+        if (devices.equalsIgnoreCase("mobile")){
+            keyword.resizeBrowser(319,848);
+        }else {
+            keyword.maximizeWindow();
+        }
     }
     public void takeScreenshot(ITestResult result) {
         if (ITestResult.FAILURE == result.getStatus()) {
