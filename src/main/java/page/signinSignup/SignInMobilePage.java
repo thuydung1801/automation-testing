@@ -10,40 +10,41 @@ import page.home.RegisterPage;
 
 import java.util.Date;
 
-public class SignInPage extends BasePage {
+public class SignInMobilePage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private SignUpPage objSignUp;
-    private LoginPage objLogin;
     private RegisterPage objRegist;
-    private SignInPage objSigin;
 
-    public SignInPage(KeywordWeb key) {
-        super(key);
-    }
-
-    public SignInPage() {
+    public SignInMobilePage() {
         super();
     }
 
+    public SignInMobilePage(KeywordWeb key) {
+        super(key);
+    }
+
+
     public void checkGoToFormLoginWithEmail() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
+        keyword.scrollDownToElement("MOBILE_HAMBURGER");
+        keyword.click("MOBILE_HAMBURGER");
         keyword.untilJqueryIsDone(50L);
-        keyword.click("LOGIN_BTN_LOGIN");
+        keyword.click("MOBILE_ICON_SIGNIN");
         keyword.untilJqueryIsDone(50L);
         inputBlankAndVerify("SIGNIN_XPATH_EMAIL_REQUIRED_FIELD",
                 "SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_MESSAGE_REQUIRED_FIELD");
     }
-    public void navigateURL()throws InterruptedException {
-        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
-    }
 
     public void checkGoToFormLoginWithPhone() throws InterruptedException {
+        objRegist = new RegisterPage(this.keyword);
         keyword.deleteAllCookies();
         keyword.navigateToUrl("https://dev3.glamira.com/glcn/");
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(5000);
-        keyword.click("SIGNIN_BTN_ACC");
+        keyword.click("LOGIN_MENULEFT");
         keyword.untilJqueryIsDone(50L);
+        keyword.click("MOBILE_ICON_SIGNIN");
+        objRegist.chooseLanguages();
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(2000);
         keyword.click("SIGNIN_TAB_LOGIN_IN_WITH_PHONE");
@@ -111,8 +112,12 @@ public class SignInPage extends BasePage {
     //Resend the code to email
     public void resentTheCodeToEmail() throws Exception {
         keyword.clearText("SIGNIN_INPUT_ENTER_CODE");
-        openNewTabs();
+        keyword.executeJavaScript("window.open()");
+        keyword.untilJqueryIsDone(50L);
+        keyword.switchToTab(1);
+        keyword.navigateToUrl("ADDMIN_URL1");
         loginAdmin("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD");
+        keyword.maximizeWindow();
         chooseItemCustomer("LOGIN_BTN_CUSTOMER", "LOGIN_BTN_CUSTOMER", "SIGNUP_VERIFY_CUSTOMER",
                 "LOGIN_BTN_EMAIL_LOG", "SIGNUP_VERIFY_EMAIL_LOG"
         );
@@ -121,6 +126,7 @@ public class SignInPage extends BasePage {
         );
         getCodeEnterTextInField("LOGIN_IFRAME", "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNIN_INPUT_ENTER_CODE", "SIGNIN_BTN_SUBMIT_SEND_CODE");
+        keyword.resizeBrowser(319, 848);
         keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_SEND_KEY");
         keyword.untilJqueryIsDone(70L);
         objSignUp.confirmPasswordEntryCondition("SIGNUP_MESSAGE_PASSWORD_FAIL01",
@@ -201,9 +207,9 @@ public class SignInPage extends BasePage {
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(10L);
         openNewTabs();
-//        loginAdmin(
-//                "LOGIN_DATA_USER_NAME",
-//                "LOGIN_DATA_PASS_WORD");
+        loginAdmin(
+                "LOGIN_DATA_USER_NAME",
+                "LOGIN_DATA_PASS_WORD");
         keyword.untilJqueryIsDone(30L);
         chooseItemCustomer(
                 "SIGNUP_STORES_ITEM", "SIGNUP_STORES_ITEM",

@@ -8,34 +8,22 @@ import org.slf4j.Logger;
 
 public class RegisterPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
-
-    public RegisterPage() {
-        super();
-    }
-
-    public RegisterPage(KeywordWeb key) {
+    public RegisterPage(){ super(); }
+    public RegisterPage(KeywordWeb key){
         super(key);
     }
 
     public void acceptAllCookies() throws InterruptedException {
         keyword.untilJqueryIsDone(60L);
-<<<<<<< HEAD
-        keyword.webDriverWaitForElementPresent("BTN_COOKIES", 50);
-        if (keyword.verifyElementPresent("BTN_COOKIES")) {
-=======
         keyword.scrollToPositionByScript("window.scrollBy(0,300)");
         keyword.untilJqueryIsDone(60L);
         chooseLanguages();
         keyword.webDriverWaitForElementPresent("BTN_COOKIES",50);
         if(keyword.verifyElementPresent("BTN_COOKIES")){
->>>>>>> master
             keyword.click("BTN_COOKIES");
         }
 
     }
-<<<<<<< HEAD
-
-=======
     public void acceptAllCookiesOldDesign() throws InterruptedException {
         keyword.scrollToPositionByScript("window.scrollBy(0,300)");
         keyword.untilJqueryIsDone(60L);
@@ -45,28 +33,21 @@ public class RegisterPage extends BasePage {
         }
 
     }
->>>>>>> master
     public void chooseLanguages() throws InterruptedException {
 //        keyword.untilJqueryIsDone(60L);
         Thread.sleep(7000);
-<<<<<<< HEAD
-        if (keyword.verifyElementPresent("LOGIN_BTN_LANGUAGE")) {
-=======
         if(keyword.verifyElementPresent("LOGIN_BTN_LANGUAGE")){
             Thread.sleep(7000);
->>>>>>> master
             keyword.click("LOGIN_BTN_LANGUAGE");
         }
     }
-
-    public void registFail() {
+    public void registFail(){
 
         keyword.navigateToUrl(PropertiesFile.getPropValue("BASE_URL"));
         keyword.click(PropertiesFile.getPropValue("REGIST_BTN_SUBMIT"));
         keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("LBL_ERROR_MESSAGE"), 10);
     }
-
-    public void registSuccess() throws InterruptedException {
+    public void  registSuccess() throws InterruptedException {
         keyword.sendKeys(PropertiesFile.getPropValue("REGIST_TXT_FIRSTNAME"),
                 PropertiesFile.getPropValue("REGIST_DATA_FISTNAME"));
         Thread.sleep(2000);

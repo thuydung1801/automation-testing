@@ -362,8 +362,4 @@ public class LoginAndAddressPage extends BasePage {
         keyword.checkElementIsNotDisplayed("LA_POPUP_CONFIRM_DELETE");
 
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 }
