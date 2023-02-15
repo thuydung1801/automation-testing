@@ -27,15 +27,15 @@ public class ProductDetailTest extends BaseTest {
         testProductDetail.chooseDefaultOptionWithRing();
 
     }
-//    @Test(priority = 4, description = "Check the details of the necklace product displayed")
-//    public void testCase_DP_03() throws InterruptedException {
-//        testProductDetail.chooseDefaultOptionWithNecklace1();
-//
-//    }
-//    @Test(priority = 5,description = "Check necklace product details displayed after change options")
-//    public void testCase_DP_04() throws InterruptedException {
-//        testProductDetail.chooseDefaultOptionWithNecklace2();
-//    }
+    @Test(priority = 4, description = "Check the details of the necklace product displayed")
+    public void testCase_DP_03() throws InterruptedException {
+        testProductDetail.chooseDefaultOptionWithNecklace1();
+
+    }
+    @Test(priority = 5,description = "Check necklace product details displayed after change options")
+    public void testCase_DP_04() throws InterruptedException {
+        testProductDetail.chooseDefaultOptionWithNecklace2();
+    }
     @Test(priority = 6, description = "Engraving - Enter with text entered from the keyboard")
     public void testCase_PO_01() throws InterruptedException {
         testProductDetail.productOptionEngraving1();
@@ -66,18 +66,18 @@ public class ProductDetailTest extends BaseTest {
     public void testCase_DG_03() throws InterruptedException {
         testProductDetail.optionFindSizeWithInpSuccess();
     }
-//    @Test (priority = 12,description = "Add to cart a single Ring item - selected ring size")
-//    public void testCase_RS_01() throws InterruptedException {
-//        testProductDetail.ringSize1();
-//    }
-//    @Test (priority = 13,description = "Add to cart a single Ring item - don't choose ring size")
-//    public void testCase_RS_02() throws InterruptedException {
-//        testProductDetail.ringSize2();
-//    }
-//    @Test (priority = 14,description = "Add to cart a Ring item- Send My Ring in Average Size")
-//    public void testCase_RS_03() throws InterruptedException {
-//        testProductDetail.ringSize3();
-//    }
+    @Test (priority = 12,description = "Add to cart a single Ring item - selected ring size")
+    public void testCase_RS_01() throws InterruptedException {
+        testProductDetail.ringSize1();
+    }
+    @Test (priority = 13,description = "Add to cart a single Ring item - don't choose ring size")
+    public void testCase_RS_02() throws InterruptedException {
+        testProductDetail.ringSize2();
+    }
+    @Test (priority = 14,description = "Add to cart a Ring item- Send My Ring in Average Size")
+    public void testCase_RS_03() throws InterruptedException {
+        testProductDetail.ringSize3();
+    }
 
   //  @Test (priority = 16,description = "ORDER A FREE RING SIZER - do not enter a value")
     public void testCase_RS_form_02() throws InterruptedException {
