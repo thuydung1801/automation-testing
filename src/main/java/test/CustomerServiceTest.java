@@ -15,16 +15,16 @@ public class CustomerServiceTest extends BaseTest {
         testCustomerService = new CustomerServicePage(this.keyword);
 
     }
-//    @Test(priority = 1, description = "My product detail/ Filter _ Filter reviews with ratting option")
-//    public void filter_ratting_01() throws InterruptedException {
-//        testCustomerService.filterWithRatting1();
-//
-//    }
-//    @Test(priority = 2, description = "My product detail/ Filter _ Filter When the ratting has no reviews")
-//    public void filter_ratting_02() throws InterruptedException {
-//        testCustomerService.filterWithRatting2();
-//
-//    }
+    @Test(priority = 1, description = "My product detail/ Filter _ Filter reviews with ratting option")
+    public void filter_ratting_01() throws InterruptedException {
+        testCustomerService.filterWithRatting1();
+
+    }
+    @Test(priority = 2, description = "My product detail/ Filter _ Filter When the ratting has no reviews")
+    public void filter_ratting_02() throws InterruptedException {
+        testCustomerService.filterWithRatting2();
+
+    }
 //    @Test(priority = 3,description = "Filter reviews with Show reviews with my current combination")
 //    public void filter_ratting_03() throws InterruptedException {
 //        testCustomerService.filterWithCheckBox1();
@@ -61,11 +61,11 @@ public class CustomerServiceTest extends BaseTest {
 //
 //
 //    }
-////    @Test(priority = 10,description = "Check Sort By: Date")
-////    public void filter_ratting_10() throws InterruptedException, ParseException {
-////        testCustomerService.filterWithCheckSort3();
-////
-////    }
+    @Test(priority = 10,description = "Check Sort By: Date")
+    public void filter_ratting_10() throws InterruptedException, ParseException {
+        testCustomerService.filterWithCheckSort3();
+
+    }
 //    @Test(priority = 11,description = "Check Sort By: Lowest Rating")
 //    public void filter_ratting_11() throws InterruptedException {
 //        testCustomerService.filterWithCheckSort4();
@@ -131,22 +131,22 @@ public class CustomerServiceTest extends BaseTest {
 //    public void filter_ratting_23() throws InterruptedException {
 //        testCustomerService.filterCheckBox2AndCheckSort1();
 //    }
-    @Test(priority = 24,description = "Combine filter with sort by:Only reviews from United Kingdom + Highest ratting")
-    public void filter_ratting_24() throws InterruptedException {
-        testCustomerService.filterCheckBox2AndCheckSort2();
-    }
+//    @Test(priority = 24,description = "Combine filter with sort by:Only reviews from United Kingdom + Highest ratting")
+//    public void filter_ratting_24() throws InterruptedException {
+//        testCustomerService.filterCheckBox2AndCheckSort2();
+//    }
 //    @Test(priority = 25,description = "Combine filter with sort by: Only reviews from United Kingdom + Date ")
 //    public void filter_ratting_25() throws InterruptedException, ParseException {
 //        testCustomerService.filterCheckBox2AndCheckSort3();
 //    }
-    @Test(priority = 26,description = "Combine filter with sort by: Only reviews from United Kingdom + Lowest ratting")
-    public void filter_ratting_26() throws InterruptedException {
-        testCustomerService.filterCheckBox2AndCheckSort4();
-    }
-    @Test(priority = 27,description = "Combine filter with sort by: Only reviews from United Kingdom + Helpfulness")
-    public void filter_ratting_27() throws InterruptedException {
-        testCustomerService.filterCheckBox2AndCheckSort5();
-    }
+//    @Test(priority = 26,description = "Combine filter with sort by: Only reviews from United Kingdom + Lowest ratting")
+//    public void filter_ratting_26() throws InterruptedException {
+//        testCustomerService.filterCheckBox2AndCheckSort4();
+//    }
+//    @Test(priority = 27,description = "Combine filter with sort by: Only reviews from United Kingdom + Helpfulness")
+//    public void filter_ratting_27() throws InterruptedException {
+//        testCustomerService.filterCheckBox2AndCheckSort5();
+//    }
 //    //pending...
 //    @Test(priority = 28,description = "Combine filter with sort by: With images + Relevance")
 //    public void filter_ratting_28() throws InterruptedException {
@@ -185,10 +185,10 @@ public class CustomerServiceTest extends BaseTest {
 //    public void filter_ratting_36() throws InterruptedException {
 //        testCustomerService.filterCheckBox4AndCheckSort4();
 //    }
-    @Test(priority = 37,description = "Combine filter with sort by: Verified Buyers + Helpfulness")
-    public void filter_ratting_37() throws InterruptedException {
-        testCustomerService.filterCheckBox4AndCheckSort5();
-    }
+//    @Test(priority = 37,description = "Combine filter with sort by: Verified Buyers + Helpfulness")
+//    public void filter_ratting_37() throws InterruptedException {
+//        testCustomerService.filterCheckBox4AndCheckSort5();
+//    }
 
 
 

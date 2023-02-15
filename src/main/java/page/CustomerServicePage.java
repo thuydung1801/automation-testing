@@ -221,7 +221,7 @@ public class CustomerServicePage extends BasePage {
 
         String date1 = keyword.getText("CUS_VERIFY_DATE1_PRD_FILTER_CHECKSORT_3");
         String date2 = keyword.getText("CUS_VERIFY_DATE2_PRD_FILTER_CHECKSORT_3");
-        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
         System.out.printf("date 1 : " + date1 + "\n");
         System.out.printf("date 2 : " + date2 + "\n");
 
