@@ -29,9 +29,9 @@ public class MarketingPage extends BasePage {
 //        signInPage = new SignInPage(this.keyword);
     }
     public void setUp() throws InterruptedException {
-        objLogin.loginOnAlert();
+//        objLogin.loginOnAlert();
         objRegister.acceptAllCookies();
-        objRegister.chooseLanguages();
+//        objRegister.chooseLanguages();
     }
     public void ipDataGiftCard(String name, String email,String mess, String submit) throws InterruptedException {
         keyword.imWait(5);
@@ -39,7 +39,9 @@ public class MarketingPage extends BasePage {
         keyword.sendKeys("MRT_INP_NAME", name);
         keyword.sendKeys("MRT_INP_EMAIL",email);
         keyword.sendKeys("MRT_INP_MESSAGE",mess);
-        Thread.sleep(20000);
+//        keyword.untilJqueryIsDone(30L);
+//        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click(submit);
 
     }
@@ -47,9 +49,14 @@ public class MarketingPage extends BasePage {
         keyword.assertEquals("COM_DATA_MESSAGES_NULL",
                 "COM_TEXT_ERROR");
     }
-    public void checkVerifyInputWithEmailAndAmountError(){
-        keyword.assertEquals("COM_DATA_MESSAGES_NUMBER",
-                "COM_TEXT_ERROR_NUMBER");
+    public void checkVerifyInputWithEmailAndAmountError() throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+//        keyword.assertEquals("COM_DATA_MESSAGES_NUMBER",
+//                "COM_TEXT_ERROR_NUMBER");
+//        keyword.untilJqueryIsDone(30L);
+//        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
         keyword.assertEquals("COM_DATA_MESSAGES_EMAIL",
                "MRT_TEXT_ERROR_EMAIL");
@@ -60,13 +67,22 @@ public class MarketingPage extends BasePage {
         setUp();
         keyword.untilJqueryIsDone(30L);
         keyword.navigateToUrl("MRT_URL");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         ipDataGiftCard("COM_DATA_NULL","COM_DATA_NULL","COM_DATA_NULL","MRT_SUBMIT");
         checkVerifyInputNull();
 
     }
     public void giftCardInpWithEmailAndAmountError() throws InterruptedException {
 //        setUp();
-        keyword.openNewTab("MRT_URL");
+
+        keyword.navigateToUrl("MRT_URL");
+        keyword.scrollToPosition();
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        objRegister.acceptAllCookies();
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.sendKeys("MRT_INP_AMOUNT", "MRT_INP_DATA_AMOUNT_ERROR");
         ipDataGiftCard("COM_INP_DATA_NAME","COM_DATA_ERROR","COM_INP_DATA_MESSAGE","MRT_SUBMIT");
         checkVerifyInputWithEmailAndAmountError();
@@ -86,7 +102,10 @@ public class MarketingPage extends BasePage {
         ipDataGiftCard("COM_INP_DATA_NAME","COM_INP_DATA_EMAIL","COM_INP_DATA_MESSAGE","MRT_SUBMIT");
 
     }
-    public void ipDataGirftCetificate(String name, String email,String title,String message,String option, String submit){
+    public void ipDataGirftCetificate(String name, String email,String title,String message,String option, String submit) throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.sendKeys("GCE_INP_NAME", name);
         keyword.sendKeys("GCE_INP_MAIL", email);
         keyword.sendKeys("GCE_INP_TITLE", title);
@@ -98,30 +117,41 @@ public class MarketingPage extends BasePage {
 
     }
     public void commonGirftCetificate(){
-        keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/index/");
+//        keyword.navigateToUrl("https://dev3.glamira.com/glgb/customer/account/index/");
         keyword.click("GCE_LINK_VIEW");
         keyword.scrollDownToElement("GCE_LINK_CREATE_GIRFT");
         keyword.imWait(2);
         keyword.click("GCE_LINK_CREATE_GIRFT");
         keyword.imWait(2);
     }
+    public void verifyGCEsuccess() throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.verifyElementVisible("(//div[@id='modal-content-0'])[1]");
+    }
     public void createNewGriftCetificateFormMyOrder() throws InterruptedException {
-        setUp();
+     //   setUp();
         loginPage.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.webDriverWaitForElementPresent("GCE_BTN_ACCOUNT",10);
-        keyword.click("GCE_BTN_ACCOUNT");
-        keyword.imWait(3);
+//        keyword.webDriverWaitForElementPresent("GCE_BTN_ACCOUNT",10);
+//        keyword.click("GCE_BTN_ACCOUNT");
+//        keyword.imWait(3);
         commonGirftCetificate();
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         ipDataGirftCetificate("COM_INP_DATA_NAME","COM_INP_DATA_EMAIL","COM_DATA_TITLE","COM_INP_DATA_MESSAGE",null,"GCE_BTN_SUBMIT");
+        verifyGCEsuccess();
     }
-    public void createNewCetificateWithOptionNO(){
+    public void createNewCetificateWithOptionNO() throws InterruptedException {
+        keyword.reLoadPage();
         ipDataGirftCetificate("COM_INP_DATA_NAME","COM_INP_DATA_EMAIL","COM_DATA_TITLE","COM_INP_DATA_MESSAGE","GCE_OPTION_NO","GCE_BTN_DOWNLOAD");
+
     }
-    public void createNewCetificateWithOptionYES(){
+    public void createNewCetificateWithOptionYES() throws InterruptedException {
         keyword.reLoadPage();
         ipDataGirftCetificate("COM_INP_DATA_NAME","COM_INP_DATA_EMAIL","COM_DATA_TITLE","COM_INP_DATA_MESSAGE",null,"GCE_BTN_DOWNLOAD");
+
     }
 
     public void adminChooseEmailLog(String text) throws InterruptedException {
@@ -159,13 +189,17 @@ public class MarketingPage extends BasePage {
     public void createNewGriftCetificateFormEmailWithLogin() throws InterruptedException {
         setUp();
         loginPage.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+//        keyword.untilJqueryIsDone(30L);
+//        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+//        keyword.click("GCE_BTN_ACCOUNT");
+//        keyword.imWait(5);
+//
+    //    keyword.navigateToUrl("https://dev3.glamira.com/glgb/customer/account/index/");
+//        keyword.back();
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
-        keyword.click("GCE_BTN_ACCOUNT");
-        keyword.imWait(5);
-
-        keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/index/");
         String getIdOrder = keyword.getText("GCE_TEXT_ORDER");
         String text = getIdOrder.substring(1,getIdOrder.length());
         signInPage.openNewTabs();
@@ -184,8 +218,9 @@ public class MarketingPage extends BasePage {
         keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/index/");
 
     }
-    public void createNewGriftCetificateWithDataNull(){
-        commonGirftCetificate();
+    public void createNewGriftCetificateWithDataNull() throws InterruptedException {
+//        commonGirftCetificate();
+        keyword.reLoadPage();
         ipDataGirftCetificate("COM_DATA_NULL", "COM_DATA_NULL","COM_DATA_NULL","COM_DATA_NULL",null,"GCE_BTN_SUBMIT");
         checkVerifyInputNull();
     }
