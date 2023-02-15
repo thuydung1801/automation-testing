@@ -19,18 +19,42 @@ public class RegisterPage extends BasePage {
 
     public void acceptAllCookies() throws InterruptedException {
         keyword.untilJqueryIsDone(60L);
+<<<<<<< HEAD
         keyword.webDriverWaitForElementPresent("BTN_COOKIES", 50);
         if (keyword.verifyElementPresent("BTN_COOKIES")) {
+=======
+        keyword.scrollToPositionByScript("window.scrollBy(0,300)");
+        keyword.untilJqueryIsDone(60L);
+        chooseLanguages();
+        keyword.webDriverWaitForElementPresent("BTN_COOKIES",50);
+        if(keyword.verifyElementPresent("BTN_COOKIES")){
+>>>>>>> master
             keyword.click("BTN_COOKIES");
         }
 
     }
+<<<<<<< HEAD
 
+=======
+    public void acceptAllCookiesOldDesign() throws InterruptedException {
+        keyword.scrollToPositionByScript("window.scrollBy(0,300)");
+        keyword.untilJqueryIsDone(60L);
+        keyword.webDriverWaitForElementPresent("BTN_COOKIES_2",50);
+        if(keyword.verifyElementPresent("BTN_COOKIES_2")){
+            keyword.click("BTN_COOKIES_2");
+        }
+
+    }
+>>>>>>> master
     public void chooseLanguages() throws InterruptedException {
-        Thread.sleep(2000);
-        keyword.scrollToPosition();
+//        keyword.untilJqueryIsDone(60L);
         Thread.sleep(7000);
+<<<<<<< HEAD
         if (keyword.verifyElementPresent("LOGIN_BTN_LANGUAGE")) {
+=======
+        if(keyword.verifyElementPresent("LOGIN_BTN_LANGUAGE")){
+            Thread.sleep(7000);
+>>>>>>> master
             keyword.click("LOGIN_BTN_LANGUAGE");
         }
     }
