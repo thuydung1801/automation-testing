@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--<suite name="Test Staging Suite" parallel="tests">-->
 <!--    <test name="RunTest">-->
+<!--        <parameter name="devices" value="web"></parameter>-->
 <!--        <classes>-->
 <!--            <class name="test.checkout.ShoppingBagTest">-->
 <!--            <methods>-->

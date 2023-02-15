@@ -1,0 +1,663 @@
+[
+
+{
+
+name: 'unbxd.userId',
+
+value: 'uid-1675753170577-45621',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: 1990828800,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'unbxd.visit',
+
+value: 'first_time',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: 1675754970,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'form_key',
+
+value: 'qnBtRRk7YrupcWgQ',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1675839571,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'form_key',
+
+value: 'qnBtRRk7YrupcWgQ',
+
+domain: '.stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345187.332926,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'PHPSESSID',
+
+value: 'qar05vlt6e1eq2rutogklb4pc2',
+
+domain: '.stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345187.332848,
+
+httpOnly: true,
+
+secure: true,
+
+sameSite: 'None'
+
+},
+
+{
+
+name: 'mage-cache-storage',
+
+value: '{}',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345176,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'mage-cache-storage-section-invalidation',
+
+value: '{}',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345176,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'mage-cache-sessid',
+
+value: 'true',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345176,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'unbxd.visitId',
+
+value: 'visitId-1675753176879-59264',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: 1675754986,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'recently_viewed_product',
+
+value: '{}',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345176,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'recently_viewed_product_previous',
+
+value: '{}',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345176,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'recently_compared_product',
+
+value: '{}',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345176,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'recently_compared_product_previous',
+
+value: '{}',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345176,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'product_data_storage',
+
+value: '{}',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345176,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'magepal-enhanced-ecommerce',
+
+value: '{}',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345176,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'mage-messages',
+
+value: '',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345186,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Strict'
+
+},
+
+{
+
+name: 'amcookie_policy_restriction',
+
+value: 'allowed',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1676617187,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'sqzl_vw',
+
+value: '{"6":{"c":1,"ex":1678345180}}',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: 1707289180,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'None'
+
+},
+
+{
+
+name: 'IS_GEOIP_CLOSE',
+
+value: 'true',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1676617181,
+
+httpOnly: false,
+
+secure: false,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'amcookie_allowed',
+
+value: '0',
+
+domain: '.stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1707289181.741561,
+
+httpOnly: false,
+
+secure: false,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: '_ga',
+
+value: 'GA1.3.1778786081.1675753183',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: 1738825187,
+
+httpOnly: false,
+
+secure: false,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: '_gid',
+
+value: 'GA1.3.402245770.1675753183',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: 1675839587,
+
+httpOnly: false,
+
+secure: false,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: '_gat_gtag_UA_4156591_10',
+
+value: '1',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: 1675753242,
+
+httpOnly: false,
+
+secure: false,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'forterToken',
+
+value: '18de7ee28c1e4542837269e92e2f928d_1675753183049__UDF43_13ck',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: 1833433184,
+
+httpOnly: false,
+
+secure: false,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'unbxd.pen.click.1675753186201',
+
+value: 'eyJwaWQiOiIxMDI0ODQiLCJyZXF1ZXN0SWQiOiJxbkJ0UlJrN1lydXBjV2dRIiwibWlzYyI6eyJwcm9kdWN0X21ldGFkYXRhIjp7ImFsbG95U2t1Ijoid2hpdGVfcmVkLTM3NSIsInN0b25lMVNrdSI6ImRpYW1vbmQtQnJpbGxhbnQifX0sInVybCI6Imh0dHBzOi8vc3RhZ2UuZ2xhbWlyYS5jby51ay9nbGFtaXJhLWJyYWNlbGV0LXRhbmVsLmh0bWw%2FYWxsb3k9d2hpdGVfcmVkLTM3NSZzdG9uZTE9ZGlhbW9uZC1CcmlsbGFudCIsInJlZmVycmVyIjoiaHR0cHM6Ly9zdGFnZS5nbGFtaXJhLmNvLnVrL2dsYW1pcmEtYnJhY2VsZXQtdGFuZWwuaHRtbD9hbGxveT13aGl0ZV9yZWQtMzc1JnN0b25lMT1kaWFtb25kLUJyaWxsYW50IiwidmlzaXRfdHlwZSI6ImZpcnN0X3RpbWUiLCJ2ZXIiOiI0LjAuMjgiLCJfdWYiOjQyNTAyNzcyNzAsInZpc2l0SWQiOiJ2aXNpdElkLTE2NzU3NTMxNzY4NzktNTkyNjQifQ%3D%3D',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: -1,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'sqzl_consent',
+
+value: 'analytics,marketing',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345187,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'None'
+
+},
+
+{
+
+name: 'sqzllocal',
+
+value: 'sqzl63e1f6e300000319dbfd',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: 2621833187,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'None'
+
+},
+
+{
+
+name: 'sqzl_session_id',
+
+value: '63e1f6e300000319dbfc|1675753187.204',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: 1675754987,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'None'
+
+},
+
+{
+
+name: 'sqzl_abs',
+
+value: '0',
+
+domain: '.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345187,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'None'
+
+},
+
+{
+
+name: 'sqzllocal',
+
+value: 'sqzl63e1f6e300000319dbfd',
+
+domain: '.squeezely.tech',
+
+path: '/',
+
+expires: 2622524387.392916,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'None'
+
+},
+
+{
+
+name: 'private_content_version',
+
+value: '0ac7d094b1ddedca0e9c6747da2db6cf',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1991113187.332941,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+},
+
+{
+
+name: 'CLID',
+
+value: '166f6555d95b425883eb7defd218bc56.20230207.20240207',
+
+domain: 'www.clarity.ms',
+
+path: '/',
+
+expires: 1707289188.37396,
+
+httpOnly: true,
+
+secure: true,
+
+sameSite: 'None'
+
+},
+
+{
+
+name: 'section_data_ids',
+
+value: '{%22messages%22:1675754185}',
+
+domain: 'stage.glamira.co.uk',
+
+path: '/',
+
+expires: 1678345185,
+
+httpOnly: false,
+
+secure: true,
+
+sameSite: 'Lax'
+
+}
+
+]
