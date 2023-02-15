@@ -1,13 +1,27 @@
-INFO  | 2023-02-10 17:39:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser
-INFO  | 2023-02-10 17:39:28 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 109.0.5414.74 (resolved driver for Chrome 109)
-INFO  | 2023-02-10 17:39:28 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\109.0.5414.74\chromedriver.exe
-INFO  | 2023-02-10 17:39:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:64) - open browser successfullyCHROME
-INFO  | 2023-02-10 17:39:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - go to url: https://stage.glamira.co.uk/
-INFO  | 2023-02-10 17:39:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - url: [Ljava.lang.String;@18cc5030
-INFO  | 2023-02-10 17:39:36 | [TestNG-tests-1] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_SP_02:52) - testCase_SP_02
-INFO  | 2023-02-10 17:39:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:508) -  scrolling to position 
-INFO  | 2023-02-10 17:39:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-02-10 17:39:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-02-10 17:39:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickBTN_COOKIES
-INFO  | 2023-02-10 17:39:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-10 17:40:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-02-15 09:36:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser
+INFO  | 2023-02-15 09:36:12 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 109.0.5414.74 (resolved driver for Chrome 109)
+INFO  | 2023-02-15 09:36:12 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\109.0.5414.74\chromedriver.exe
+INFO  | 2023-02-15 09:36:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:64) - open browser successfullyCHROME
+INFO  | 2023-02-15 09:36:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-02-15 09:36:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - url: [Ljava.lang.String;@38557427
+INFO  | 2023-02-15 09:36:23 | [TestNG-tests-1] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_SP_02:53) - testCase_SP_02
+INFO  | 2023-02-15 09:36:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:508) -  scrolling to position 
+INFO  | 2023-02-15 09:36:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-02-15 09:36:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-02-15 09:36:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickBTN_COOKIES
+INFO  | 2023-02-15 09:36:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-15 09:36:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_MENULEFT
+INFO  | 2023-02-15 09:36:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickMOBILE_BTN_LOGIN
+INFO  | 2023-02-15 09:36:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:190) - send keysLOGIN_TXT_EMAILwith LOGIN_DATA_EMAIL
+INFO  | 2023-02-15 09:36:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:190) - send keysLOGIN_TXT_PASSWORDwith LOGIN_DATA_PASSWORD
+INFO  | 2023-02-15 09:36:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2023-02-15 09:37:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://stage.glamira.co.uk/mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation
+INFO  | 2023-02-15 09:37:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:479) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-02-15 09:37:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-15 09:37:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-02-15 09:37:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-15 09:37:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickCHECKOUT_ADDPRODUCT_CHECKBOX_SIZE_H
+INFO  | 2023-02-15 09:37:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-15 09:37:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickCHECKOUT_ADDPRODUCT_BTN_ADD_SIZE
+INFO  | 2023-02-15 09:37:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-15 09:37:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickCHECKOUT_BTN_MINICART
