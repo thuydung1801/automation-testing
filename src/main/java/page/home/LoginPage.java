@@ -62,7 +62,15 @@ public class LoginPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("LOGIN_MENULEFT");
+        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
         keyword.click("MOBILE_BTN_LOGIN");
-        //keyword.fluentWaitForElementPresent("MOBILE_BTN_LOGIN", 1,10);
+        keyword.untilJqueryIsDone(50L);
+        keyword.sendKeys("LOGIN_TXT_EMAIL", email);
+        Thread.sleep(2000);
+        keyword.sendKeys("LOGIN_TXT_PASSWORD", password);
+        Thread.sleep(2000);
+        keyword.click("LOGIN_BTN_SUBMITLOGIN");
+        keyword.untilJqueryIsDone(50L);
     }
 }
