@@ -1,86 +1,13 @@
-INFO  | 2023-02-01 15:50:10 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:41) - Open browser
-INFO  | 2023-02-01 15:50:12 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 109.0.5414.74 (resolved driver for Chrome 109)
-INFO  | 2023-02-01 15:50:12 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\nongt\.cache\selenium\chromedriver\win32\109.0.5414.74\chromedriver.exe
-INFO  | 2023-02-01 15:50:13 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:57) - open browser successfullyCHROME
-INFO  | 2023-02-01 15:50:13 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:60) - go to url: https://stage.glamira.co.uk/
-INFO  | 2023-02-01 15:50:13 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:61) - url: [Ljava.lang.String;@878feb2
-INFO  | 2023-02-01 15:50:26 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:269) - Maximizing browser window...
-INFO  | 2023-02-01 15:50:28 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:50:28 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:475) -  scrolling to position 
-INFO  | 2023-02-01 15:50:44 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-02-01 15:50:44 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:634) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-02-01 15:50:44 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickBTN_COOKIES
-INFO  | 2023-02-01 15:50:49 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://stage.glamira.co.uk/
-INFO  | 2023-02-01 15:50:54 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:50:55 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_LOGIN
-INFO  | 2023-02-01 15:50:55 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:634) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
-INFO  | 2023-02-01 15:50:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL
-INFO  | 2023-02-01 15:51:01 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_TXT_PASSWORDwith COM_INP_DATA_PASS
-INFO  | 2023-02-01 15:51:03 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2023-02-01 15:51:13 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:51:13 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...https://stage.glamira.co.uk/sales/order/history/
-INFO  | 2023-02-01 15:51:19 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:51:19 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_BTN_COMPLETE
-INFO  | 2023-02-01 15:51:21 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:51:21 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_MY_ORD_TEXT_ID_COMPLETE
-INFO  | 2023-02-01 15:51:21 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_BTN_VIEW_COMPLETE
-INFO  | 2023-02-01 15:51:27 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:51:27 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_MY_ORD_VERIFY_TEXT_ID_COMPLETE
-INFO  | 2023-02-01 15:51:27 | [main] page.MyAccountPage (MyAccountPage.java:viewOrder:683) - check verify veiw my order....
-INFO  | 2023-02-01 15:51:27 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:255) - Executing JavaScript
-INFO  | 2023-02-01 15:51:27 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:284) - Navigating to URL...ADDMIN_URL
-INFO  | 2023-02-01 15:51:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME_DUNG
-INFO  | 2023-02-01 15:51:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:157) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD_DUNG
-INFO  | 2023-02-01 15:51:35 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
-INFO  | 2023-02-01 15:51:46 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:51:46 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_ADMIN_BTN_LOGISTIC
-INFO  | 2023-02-01 15:51:47 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:51:47 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_ADMIN_BTN_LOGISTIC_ITEM
-INFO  | 2023-02-01 15:51:56 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:51:56 | [main] core.KeywordWeb (KeywordWeb.java:selectDropDownListByName:514) - select item by visibe text
-INFO  | 2023-02-01 15:51:57 | [main] core.KeywordWeb (KeywordWeb.java:pressEnter:909) - press enter
-INFO  | 2023-02-01 15:52:12 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:12 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:529) - verifyElementVisibleLOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER
-INFO  | 2023-02-01 15:52:13 | [main] page.MyAccountPage (MyAccountPage.java:searchElement:757) - true
-INFO  | 2023-02-01 15:52:13 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:13 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER
-INFO  | 2023-02-01 15:52:14 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:20 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:20 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS
-INFO  | 2023-02-01 15:52:22 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:22 | [main] core.KeywordWeb (KeywordWeb.java:selectDropDownListByName:514) - select item by visibe text
-INFO  | 2023-02-01 15:52:22 | [main] core.KeywordWeb (KeywordWeb.java:pressEnter:909) - press enter
-INFO  | 2023-02-01 15:52:24 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:24 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickLOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_OK
-INFO  | 2023-02-01 15:52:26 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:36 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:36 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_BTN_COMPLETE
-INFO  | 2023-02-01 15:52:37 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:38 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_BTN_RETURN
-INFO  | 2023-02-01 15:52:44 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:44 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:529) - verifyElementVisibleMAC_MY_ORD_VERIFY_RETURN
-INFO  | 2023-02-01 15:52:45 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:45 | [main] core.KeywordWeb (KeywordWeb.java:getText:148) - get Text ofMAC_MY_ORD_VERIFY_RETURN_GET_ID_ORDER
-INFO  | 2023-02-01 15:52:46 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:46 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_RETURN_STEP1_CHECKBOX1
-INFO  | 2023-02-01 15:52:47 | [main] core.KeywordWeb (KeywordWeb.java:imWait:629) - implicitlyWait
-INFO  | 2023-02-01 15:52:47 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:47 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_RETURN_STEP1_CHECKBOX2
-INFO  | 2023-02-01 15:52:47 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:47 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_RETURN_STEP1_SELECT2
-INFO  | 2023-02-01 15:52:47 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:47 | [main] core.KeywordWeb (KeywordWeb.java:doubleClick:190) - double clickMAC_MY_ORD_RETURN_STEP1_SELECT2_OPTION
-INFO  | 2023-02-01 15:52:48 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:48 | [main] core.KeywordWeb (KeywordWeb.java:doubleClick:190) - double click//div[@class='column main']
-INFO  | 2023-02-01 15:52:49 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:49 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:446) - scrollDownToElementMAC_MY_ORD_RETURN_STEP2
-INFO  | 2023-02-01 15:52:49 | [main] core.KeywordWeb (KeywordWeb.java:doubleClick:190) - double clickMAC_MY_ORD_RETURN_STEP2
-INFO  | 2023-02-01 15:52:50 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:50 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_RETURN_STEP2_CHECKBOX
-INFO  | 2023-02-01 15:52:50 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:50 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_RETURN_STEP3
-INFO  | 2023-02-01 15:52:51 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:52:51 | [main] core.KeywordWeb (KeywordWeb.java:click:106) - clickMAC_MY_ORD_RETURN_SUBMIT
-INFO  | 2023-02-01 15:52:51 | [main] page.MyAccountPage (MyAccountPage.java:stepReurn:827) - done
-INFO  | 2023-02-01 15:53:00 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:679) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-01 15:53:00 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:529) - verifyElementVisibleMAC_MY_ORD_RETURN_SUCCESS
+INFO  | 2023-02-10 17:39:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser
+INFO  | 2023-02-10 17:39:28 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 109.0.5414.74 (resolved driver for Chrome 109)
+INFO  | 2023-02-10 17:39:28 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\109.0.5414.74\chromedriver.exe
+INFO  | 2023-02-10 17:39:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:64) - open browser successfullyCHROME
+INFO  | 2023-02-10 17:39:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-02-10 17:39:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - url: [Ljava.lang.String;@18cc5030
+INFO  | 2023-02-10 17:39:36 | [TestNG-tests-1] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testCase_SP_02:52) - testCase_SP_02
+INFO  | 2023-02-10 17:39:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:508) -  scrolling to position 
+INFO  | 2023-02-10 17:39:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-02-10 17:39:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-02-10 17:39:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickBTN_COOKIES
+INFO  | 2023-02-10 17:39:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-10 17:40:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LOGIN

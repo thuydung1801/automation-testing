@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.*;
 import org.slf4j.Logger;
@@ -14,9 +16,12 @@ import org.testng.Assert;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import org.openqa.selenium.Dimension;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +33,8 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.util.function.Function;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 
 
 public class KeywordWeb {
@@ -61,6 +68,32 @@ public class KeywordWeb {
             logger.info("url: " + url);
             driver.get(rawUrl);
         }
+    }
+
+    public void setUp(String username, String accesskey, String baseURL) {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", "chrome");
+        capabilities.setCapability("version", "109.0.5414.120");
+        capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get any available one.
+        capabilities.setCapability("build", "LambdaTestSampleApp");
+        capabilities.setCapability("name", "LambdaTestJavaSample");
+        capabilities.setCapability("network", true); // To enable network logs
+        capabilities.setCapability("visual", true); // To enable step by step screenshot
+        capabilities.setCapability("video", true); // To enable video recording
+        capabilities.setCapability("console", true);
+        try {
+            driver = new RemoteWebDriver(new URL("https://" + username + ":" + accesskey + baseURL), capabilities);
+        } catch (MalformedURLException e) {
+            System.out.println("Invalid grid URL");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void resizeBrowser(int width, int height){
+        Dimension d = new Dimension(width,height);
+        //Resize the current window to the given dimension
+        driver.manage().window().setSize(d);
     }
 
     public void openNewTab(String url) {
@@ -662,8 +695,10 @@ public class KeywordWeb {
             webDriverWait.until(waitCondition);
         } catch (Exception e) {
             System.out.println(e.getMessage());
+
         }
     }
+
 
     public void untilJqueryIsDone(Long timeoutInSeconds) throws InterruptedException {
         until((d) ->
