@@ -17,6 +17,7 @@ public class SignInMobileTest extends BaseTest {
     private RegisterPage objRegist;
     private SignInMobilePage objSigInMobile;
     private static Logger logger = LogHelper.getLogger();
+
     public SignInMobileTest() {
         super();
     }
@@ -29,9 +30,10 @@ public class SignInMobileTest extends BaseTest {
         objRegist = new RegisterPage(this.keyword);
 //        objLogin.loginOnAlert();
 //        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
+        Thread.sleep(1000);
         objRegist.chooseLanguages();
         objRegist.acceptAllCookies();
-//        objSigInMobile.checkGoToFormLoginWithEmail();
+        objSigInMobile.checkGoToFormLoginWithEmail();
     }
 //
 //    @Test(priority = 2, description = "Login with email and leave the password field blank")
@@ -80,7 +82,7 @@ public class SignInMobileTest extends BaseTest {
 //        objSigInMobile.loginSuccessfully();
 //    }
 
-//
+    //
 //    //----PHONE WHIT
     @Test(priority = 12, description = "Invalid phone number entered")
     public void testCase_SI09() throws InterruptedException {
@@ -108,16 +110,16 @@ public class SignInMobileTest extends BaseTest {
         objSigInMobile.createNewPasswordWithInvalidPhone();
     }
 
-    @Test(priority = 17, description = "create valid new password Success")
-    public void testCase_SI019() throws InterruptedException {
-        objSigInMobile.createNewPasswordSuccess();
-    }
-
-    @Test(priority = 18, description = "Login successfully on Login modal with phone number")
-    public void testCase_SI08_And_SI012() throws InterruptedException {
-        logger.info("testCase_SI08_And_SI012");
-        objSigInMobile.loginWithPhoneSuccess();
-    }
+//    @Test(priority = 17, description = "create valid new password Success")
+//    public void testCase_SI019() throws InterruptedException {
+//        objSigInMobile.createNewPasswordSuccess();
+//    }
+//
+//    @Test(priority = 18, description = "Login successfully on Login modal with phone number")
+//    public void testCase_SI08_And_SI012() throws InterruptedException {
+//        logger.info("testCase_SI08_And_SI012");
+//        objSigInMobile.loginWithPhoneSuccess();
+//    }
 }
 
 

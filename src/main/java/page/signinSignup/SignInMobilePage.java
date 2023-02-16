@@ -39,10 +39,10 @@ public class SignInMobilePage extends BasePage {
         objRegist = new RegisterPage(this.keyword);
         keyword.deleteAllCookies();
         keyword.navigateToUrl("https://dev3.glamira.com/glcn/");
-        keyword.untilJqueryIsDone(50L);
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(70L);
         keyword.click("LOGIN_MENULEFT");
         keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("MOBILE_ICON_SIGNIN");
         keyword.click("MOBILE_ICON_SIGNIN");
         objRegist.chooseLanguages();
         keyword.untilJqueryIsDone(50L);
@@ -207,10 +207,12 @@ public class SignInMobilePage extends BasePage {
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(10L);
         openNewTabs();
+        keyword.maximizeWindow();
         loginAdmin(
                 "LOGIN_DATA_USER_NAME",
                 "LOGIN_DATA_PASS_WORD");
         keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(50L);
         chooseItemCustomer(
                 "SIGNUP_STORES_ITEM", "SIGNUP_STORES_ITEM",
                 "LOGIN_FORM_CUSTOMER", "SIGNUP_ELEMENT_SMS_LOG", "SIGNUP_VERIFY_SMS"
@@ -224,6 +226,7 @@ public class SignInMobilePage extends BasePage {
         objSignUp.getCodeAndSendKey("SIGNIN_INPUT_ENTER_CODE", "SIGNIN_BTN_SUBMIT_SEND_CODE"
         );
         keyword.untilJqueryIsDone(50L);
+        keyword.resizeBrowser(319, 848);
         keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_SEND_KEY");
         keyword.untilJqueryIsDone(30L);
         objSignUp.confirmPasswordEntryConditionWithChinese(
@@ -308,7 +311,8 @@ public class SignInMobilePage extends BasePage {
 
     // Select Action Email Log
     public void selectActionEmailLog(String selectAction, String verifySelectForm, String selectView, String verifyForm) throws InterruptedException {
-        keyword.imWait(30);
+        keyword.imWait(50);
+        Thread.sleep(3000);
         keyword.click(selectAction);
 //        keyword.webDriverWaitForElementPresent(verifySelectForm, 30);
         keyword.untilJqueryIsDone(50L);
@@ -323,6 +327,7 @@ public class SignInMobilePage extends BasePage {
         String text = keyword.getText(getTextInPutVerify);
         keyword.closeWindowByIndex(1);
         keyword.switchToTab(0);
+        keyword.resizeBrowser(319, 848);
         keyword.sendKeys(dataInput, text);
         System.out.println("value copied");
         keyword.untilJqueryIsDone(20L);

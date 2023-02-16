@@ -33,7 +33,8 @@ public class SignInPage extends BasePage {
         inputBlankAndVerify("SIGNIN_XPATH_EMAIL_REQUIRED_FIELD",
                 "SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_MESSAGE_REQUIRED_FIELD");
     }
-    public void navigateURL()throws InterruptedException {
+
+    public void navigateURL() throws InterruptedException {
         keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
     }
 
@@ -302,7 +303,7 @@ public class SignInPage extends BasePage {
 
     // Select Action Email Log
     public void selectActionEmailLog(String selectAction, String verifySelectForm, String selectView, String verifyForm) throws InterruptedException {
-        keyword.imWait(30);
+        keyword.imWait(50);
         keyword.click(selectAction);
 //        keyword.webDriverWaitForElementPresent(verifySelectForm, 30);
         keyword.untilJqueryIsDone(50L);

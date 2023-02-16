@@ -4,18 +4,16 @@ import core.BasePage;
 import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
-import io.cucumber.java.sl.In;
 import org.slf4j.Logger;
 
-import java.security.PublicKey;
 import java.util.Date;
 
-public class SignUpPage extends BasePage {
+public class SignUpMobilePage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
-    private SignInPage objSignIn;
-    private SignUpPage objSignUp;
+    private SignInMobilePage objSignIn;
+    private SignUpMobilePage objSigUpMobile;
 
-    public SignUpPage(KeywordWeb key) {
+    public SignUpMobilePage(KeywordWeb key) {
         super(key);
     }
 
@@ -25,8 +23,11 @@ public class SignUpPage extends BasePage {
 
     public void goToFormCreateMyAccount() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(1000);
-        keyword.click("SIGNUP_BTN_SIGNUP");
+        keyword.scrollDownToElement("MOBILE_HAMBURGER");
+        keyword.click("MOBILE_HAMBURGER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("MOBILE_ICON_SIGNIN");
+        keyword.untilJqueryIsDone(50L);
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
         Thread.sleep(2000);
         keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
@@ -186,6 +187,8 @@ public class SignUpPage extends BasePage {
         keyword.untilJqueryIsDone(10L);
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
+        keyword.untilJqueryIsDone(50L);
+        keyword.clearText("SIGNUP_PASSWORD_INFORMATION");
         sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION",
                 "SIGNUP_DATA_EMAIL_NEW_INFORMATION", "SIGNUP_SELECT_TITLE",
                 "SIGNUP_SELECT_OPTION_TITLE");
@@ -290,7 +293,7 @@ public class SignUpPage extends BasePage {
 
     // resend and get the code back
     public void resendAndGetCodeBack() throws Exception {
-        objSignIn = new SignInPage(this.keyword);
+        objSignIn = new SignInMobilePage(this.keyword);
 //        keyword.clearText("SIGNUP_INPUT_VERIFY_CODE");
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
@@ -299,10 +302,11 @@ public class SignUpPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.imWait(50);
         keyword.assertEquals("SIGNUP_CODE_SENT", "SIGNUP_CODE_RESEND");
-        objSignIn.openTabBE("https://stage.glamira.com/secured2021/");
+        objSignIn.openTabBE("https://dev3.glamira.com/secured2021/");
+        keyword.maximizeWindow();
         objSignIn.loginAdmin(
-                "sophie",
-                "Hoanghue1207201294@");
+                "LOGIN_DATA_USER_NAME",
+                "LOGIN_DATA_PASS_WORD");
         objSignIn.chooseItemCustomer(
                 "LOGIN_BTN_CUSTOMER",
                 "LOGIN_BTN_CUSTOMER",
@@ -315,11 +319,11 @@ public class SignUpPage extends BasePage {
                 "LOGIN_SELECT_ACTIVE",
                 "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
                 "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
-        objSignIn.getCodeEnterTextInField("LOGIN_IFRAME_DEV4",
+        keyword.untilJqueryIsDone(50L);
+        objSignIn.getCodeEnterTextInField("IFRAME_DEV3",
                 "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
-        keyword.untilJqueryIsDone(50L);
-        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIS_SUCCESS_US");
+        keyword.untilJqueryIsDone(30L);
         keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIS_SUCCESS_US");
     }
 
@@ -359,7 +363,7 @@ public class SignUpPage extends BasePage {
 
     //passwordLessThan8Characters
     public void passwordLessThan8Characters() throws InterruptedException {
-        objSignUp = new SignUpPage(this.keyword);
+        objSigUpMobile = new SignUpMobilePage(this.keyword);
         clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE_CHINA2");
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.doubleClick("SIGNUP_BTN_NEXT_CHINA");
@@ -367,7 +371,7 @@ public class SignUpPage extends BasePage {
         sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_03",
                 "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
         keyword.untilJqueryIsDone(50L);
-        objSignUp.confirmPasswordEntryConditionWithChinese(
+        objSigUpMobile.confirmPasswordEntryConditionWithChinese(
                 "SIGNIN_MESSAGE_PW_NOT_SAME_EMAIL", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_CHINA",
                 "SIGNUP_ACTUAL_MESSAGE_CHINA1", "SIGNUP_ACTUAL_MESSAGE_CHINA2", "SIGNUP_ACTUAL_MESSAGE_CHINA3",
                 "SIGNUP_ACTUAL_MESSAGE04"
@@ -462,7 +466,7 @@ public class SignUpPage extends BasePage {
 
     //    Create new customer successfully with store enable phone number confirm
     public void getActivationCode() throws InterruptedException {
-        objSignIn = new SignInPage(this.keyword);
+        objSignIn = new SignInMobilePage(this.keyword);
         objSignIn.openNewTabs();
         objSignIn.loginAdmin(
                 "LOGIN_DATA_USER_NAME",
@@ -488,4 +492,3 @@ public class SignUpPage extends BasePage {
         return keyword.verifyElementVisible(checkElement);
     }
 }
-
