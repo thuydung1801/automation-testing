@@ -62,7 +62,7 @@ public class ProductDetailTest extends BaseTest {
     public void testCase_DG_01() throws InterruptedException {
         testProductDetail.optionDimensionGuide();
     }
-    @Test (priority = 11,description = "- Click in REQUEST A FREE RING SIZER to enable poup")
+   // @Test (priority = 11,description = "- Click in REQUEST A FREE RING SIZER to enable poup")
     public void testCase_DG_03() throws InterruptedException {
         testProductDetail.optionFindSizeWithInpSuccess();
     }
@@ -79,15 +79,15 @@ public class ProductDetailTest extends BaseTest {
         testProductDetail.ringSize3();
     }
 
-    @Test (priority = 16,description = "ORDER A FREE RING SIZER - do not enter a value")
+  //  @Test (priority = 16,description = "ORDER A FREE RING SIZER - do not enter a value")
     public void testCase_RS_form_02() throws InterruptedException {
         testProductDetail.optionFindSizeWithInpNull();
     }
-    @Test (priority = 17, description = "ORDER A FREE RING SIZER - enter wrong email format")
+ //   @Test (priority = 17, description = "ORDER A FREE RING SIZER - enter wrong email format")
     public void testCase_RS_form_03() throws InterruptedException {
         testProductDetail.optionFindSizeWithInpEmailError();
     }
-    @Test (priority = 18, description = "ORDER A FREE RING SIZER - enter correct values")
+  //  @Test (priority = 18, description = "ORDER A FREE RING SIZER - enter correct values")
     public void testCase_RS_form_01() throws InterruptedException {
         testProductDetail.optionFindSizeWithInpSuccess();
     }

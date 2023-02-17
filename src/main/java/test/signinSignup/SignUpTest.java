@@ -31,8 +31,8 @@ public class SignUpTest extends BaseTest {
         keyword.scrollToPosition();
 //        objRegist.chooseLanguages();
         objRegist.acceptAllCookies();
-//        objSigUp.goToFormCreateMyAccount();
-//        objSigUp.createCustomerWithEmail();
+        objSigUp.goToFormCreateMyAccount();
+        objSigUp.createCustomerWithEmail();
     }
     //
 //    @Test(priority = 2, description = "Create new customer and leave with blank form for required form")

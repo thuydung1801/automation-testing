@@ -1,34 +1,16 @@
-INFO  | 2023-02-17 13:25:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser
-INFO  | 2023-02-17 13:25:07 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
-INFO  | 2023-02-17 13:25:07 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\110.0.5481.77\chromedriver.exe
-INFO  | 2023-02-17 13:25:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:64) - open browser successfullyCHROME
-INFO  | 2023-02-17 13:25:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2023-02-17 13:25:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - url: [Ljava.lang.String;@2f5f6ffb
-INFO  | 2023-02-17 13:25:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:302) - Maximizing browser window...
-INFO  | 2023-02-17 13:25:26 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU05:25) - testCase_SU05
-INFO  | 2023-02-17 13:25:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://stage.glamira.co.uk/
-INFO  | 2023-02-17 13:25:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPosition:503) -  scrolling to position 
-INFO  | 2023-02-17 13:25:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:508) -  scrolling to position 
-INFO  | 2023-02-17 13:25:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-02-17 13:25:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-02-17 13:25:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickBTN_COOKIES
-INFO  | 2023-02-17 13:25:54 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU015:109) - testCase_SU015
-INFO  | 2023-02-17 13:25:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glcn/
-INFO  | 2023-02-17 13:26:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickSIGNUP_BTN_SIGNUP_CHINA
-INFO  | 2023-02-17 13:26:17 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU016:118) - testCase_SU016
-INFO  | 2023-02-17 13:26:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:190) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
-INFO  | 2023-02-17 13:26:19 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU017:124) - testCase_SU017
-INFO  | 2023-02-17 13:26:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:130) - clearText
-INFO  | 2023-02-17 13:26:19 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU018:130) - testCase_SU018
-INFO  | 2023-02-17 13:26:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:130) - clearText
-INFO  | 2023-02-17 13:26:19 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU019:136) - testCase_SU019
-INFO  | 2023-02-17 13:26:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:130) - clearText
-INFO  | 2023-02-17 13:26:19 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU020:142) - testCase_SU020
-INFO  | 2023-02-17 13:26:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:130) - clearText
-INFO  | 2023-02-17 13:26:19 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU021:148) - testCase_SU021
-INFO  | 2023-02-17 13:26:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:130) - clearText
-INFO  | 2023-02-17 13:26:19 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU022:154) - testCase_SU022
-INFO  | 2023-02-17 13:26:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:130) - clearText
-INFO  | 2023-02-17 13:26:20 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU024:160) - testCase_SU023
-INFO  | 2023-02-17 13:26:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickSIGNUP_BTN_BACK
-INFO  | 2023-02-17 13:26:20 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU023_Case_14:165) - testCase_SU023_Case_14
+INFO  | 2023-02-17 18:04:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser
+INFO  | 2023-02-17 18:04:39 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
+INFO  | 2023-02-17 18:04:39 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\110.0.5481.77\chromedriver.exe
+INFO  | 2023-02-17 18:04:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:64) - open browser successfullyCHROME
+INFO  | 2023-02-17 18:04:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2023-02-17 18:04:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - url: [Ljava.lang.String;@770f9bcc
+INFO  | 2023-02-17 18:05:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/
+INFO  | 2023-02-17 18:05:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:508) -  scrolling to position 
+INFO  | 2023-02-17 18:06:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-02-17 18:06:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-02-17 18:06:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickBTN_COOKIES
+INFO  | 2023-02-17 18:06:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:479) - scrollDownToElementMOBILE_HAMBURGER
+INFO  | 2023-02-17 18:06:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickMOBILE_HAMBURGER
+INFO  | 2023-02-17 18:06:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickMOBILE_ICON_SIGNIN
+INFO  | 2023-02-17 18:06:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-17 18:06:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LOGIN
