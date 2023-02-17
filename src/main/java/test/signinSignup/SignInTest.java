@@ -80,42 +80,42 @@ public class SignInTest extends BaseTest {
         objSigin.loginSuccessfully();
     }
 
-//
-//    //----PHONE WHIT
-//    @Test(priority = 12, description = "Invalid phone number entered")
-//    public void testCase_SI09() throws InterruptedException {
-//        objSigin.checkGoToFormLoginWithPhone();
-//        objSigin.enterInvalidPhoneNumber();
-//    }
-//
-//    @Test(priority = 13, description = "Login wrong phone number ")
-//    public void testCase_SI010() throws InterruptedException {
-//        objSigin.enterInvalidPhone();
-//    }
-//
-//    @Test(priority = 14, description = "Login wrong password ")
-//    public void testCase_SI011() throws InterruptedException {
-//        objSigin.enterWrongPassword();
-//    }
-//
-//    @Test(priority = 15, description = "Enter a phone number that is not in the system")
-//    public void testCase_SI017() throws InterruptedException {
-//        objSigin.forgotPassEnterPhoneIsNotTheSystem();
-//    }
-//
-//    @Test(priority = 16, description = "create valid new password")
-//    public void testCase_SI018() throws InterruptedException {
-//        objSigin.createNewPasswordWithInvalidPhone();
-//    }
-//
-//    @Test(priority = 17, description = "create valid new password Success")
-//    public void testCase_SI019() throws InterruptedException {
-//        objSigin.createNewPasswordSuccess();
-//    }
-//
-//    @Test(priority = 18, description = "Login successfully on Login modal with phone number")
-//    public void testCase_SI08_And_SI012() throws InterruptedException {
-//        logger.info("testCase_SI08_And_SI012");
-//        objSigin.loginWithPhoneSuccess();
-//    }
+
+    //----PHONE WHIT
+    @Test(priority = 12, description = "Invalid phone number entered")
+    public void testCase_SI09() throws InterruptedException {
+        objSigin.checkGoToFormLoginWithPhone();
+        objSigin.enterInvalidPhoneNumber();
+    }
+
+    @Test(priority = 13, description = "Login wrong phone number ")
+    public void testCase_SI010() throws InterruptedException {
+        objSigin.enterInvalidPhone();
+    }
+
+    @Test(priority = 14, description = "Login wrong password ")
+    public void testCase_SI011() throws InterruptedException {
+        objSigin.enterWrongPassword();
+    }
+
+    @Test(priority = 15, description = "Enter a phone number that is not in the system")
+    public void testCase_SI017() throws InterruptedException {
+        objSigin.forgotPassEnterPhoneIsNotTheSystem();
+    }
+
+    @Test(priority = 16, description = "create valid new password")
+    public void testCase_SI018() throws InterruptedException {
+        objSigin.createNewPasswordWithInvalidPhone();
+    }
+
+    @Test(priority = 17, description = "create valid new password Success")
+    public void testCase_SI019() throws InterruptedException {
+        objSigin.createNewPasswordSuccess();
+    }
+
+    @Test(priority = 18, description = "Login successfully on Login modal with phone number")
+    public void testCase_SI08_And_SI012() throws InterruptedException {
+        logger.info("testCase_SI08_And_SI012");
+        objSigin.loginWithPhoneSuccess();
+    }
 }

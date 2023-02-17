@@ -38,14 +38,23 @@ public class SignInPage extends BasePage {
         keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
     }
 
+    public void setup() throws InterruptedException {
+        objRegist = new RegisterPage(this.keyword);
+        keyword.untilJqueryIsDone(50L);
+        objRegist.chooseLanguages();
+    }
+
     public void checkGoToFormLoginWithPhone() throws InterruptedException {
+        objRegist = new RegisterPage(this.keyword);
         keyword.deleteAllCookies();
         keyword.navigateToUrl("https://dev3.glamira.com/glcn/");
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(5000);
+
+        Thread.sleep(3000);
         keyword.click("SIGNIN_BTN_ACC");
         keyword.untilJqueryIsDone(50L);
-        keyword.untilJqueryIsDone(50L);
+        objRegist.chooseLanguages();
+//        keyword.untilJqueryIsDone(50L);
         Thread.sleep(2000);
         keyword.click("SIGNIN_TAB_LOGIN_IN_WITH_PHONE");
         keyword.untilJqueryIsDone(10L);
