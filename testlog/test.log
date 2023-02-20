@@ -1,50 +1,31 @@
-INFO  | 2023-02-15 17:56:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser
-INFO  | 2023-02-15 17:56:46 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 109.0.5414.74 (resolved driver for Chrome 109)
-INFO  | 2023-02-15 17:56:46 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\nongt\.cache\selenium\chromedriver\win32\109.0.5414.74\chromedriver.exe
-INFO  | 2023-02-15 17:56:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:64) - open browser successfullyCHROME
-INFO  | 2023-02-15 17:56:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - go to url: https://stage.glamira.co.uk/
-INFO  | 2023-02-15 17:56:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - url: [Ljava.lang.String;@3158b352
-INFO  | 2023-02-15 17:56:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-15 17:56:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:508) -  scrolling to position 
-INFO  | 2023-02-15 17:57:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-02-15 17:57:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-02-15 17:57:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickBTN_COOKIES
-INFO  | 2023-02-15 17:57:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...URL_PRODUCT_INFO
-INFO  | 2023-02-15 17:57:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentPRD_CLICK_PRODUCT
-INFO  | 2023-02-15 17:57:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_CLICK_PRODUCT
-INFO  | 2023-02-15 17:57:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-15 17:57:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_SHOW_IMG_MOBILE
-INFO  | 2023-02-15 17:57:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresentByCss:729) - webDriverWaitForElementPresentByCss
-INFO  | 2023-02-15 17:57:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clickByCss:148) - clickPRD_CLOSE
-INFO  | 2023-02-15 17:57:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-15 17:57:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:562) - verifyElementVisiblePRD_SHOW_IMG_MOBILE
-INFO  | 2023-02-15 17:57:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:508) -  scrolling to position 
-INFO  | 2023-02-15 17:58:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-02-15 17:58:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-02-15 17:58:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickBTN_COOKIES
-INFO  | 2023-02-15 17:58:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-15 17:58:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - click(//div[@class='option_label inactive'])[1]
-INFO  | 2023-02-15 17:58:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - click//div[@id='alloy_colour']//div[@class='option_label inactive']
-INFO  | 2023-02-15 17:58:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-15 17:58:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:562) - verifyElementVisiblePRD_SHOW_IMG_MOBILE
-INFO  | 2023-02-15 17:58:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:662) - implicitlyWait
-INFO  | 2023-02-15 17:58:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_DROPDOWN
-INFO  | 2023-02-15 17:58:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-15 17:58:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/diamond-necklaces/diamond/
-INFO  | 2023-02-15 17:58:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_CLICK_PRODUCT_NECKLACE
-INFO  | 2023-02-15 17:58:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:562) - verifyElementVisiblePRD_VERIFY_DEFAULT_NECKLACE
-INFO  | 2023-02-15 17:58:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:312) - ReLoad Page...
-INFO  | 2023-02-15 17:58:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentPRD_METAL_ALLOY
-INFO  | 2023-02-15 17:58:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_METAL_ALLOY
-INFO  | 2023-02-15 17:58:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-15 17:58:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_METAL_COLOR_NECKLACE
-INFO  | 2023-02-15 17:58:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-15 17:58:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentPRD_METAL_COLOR_OPTION_MOBILE
-INFO  | 2023-02-15 17:58:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_METAL_COLOR_OPTION_MOBILE
-INFO  | 2023-02-15 17:58:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_CLICK_CHAIN
-INFO  | 2023-02-15 17:58:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-15 17:58:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentPRD_CLICK_CHAIN_COLOR
-INFO  | 2023-02-15 17:58:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_CLICK_CHAIN_COLOR
-INFO  | 2023-02-15 17:58:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-15 17:58:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_CLICK_CHAIN_LENGTH
-INFO  | 2023-02-15 17:58:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:562) - verifyElementVisiblePRD_VERIFY_NECKLACE
+INFO  | 2023-02-20 16:02:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser
+INFO  | 2023-02-20 16:02:49 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
+INFO  | 2023-02-20 16:02:49 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\nongt\.cache\selenium\chromedriver\win32\110.0.5481.77\chromedriver.exe
+INFO  | 2023-02-20 16:02:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:64) - open browser successfullyCHROME
+INFO  | 2023-02-20 16:02:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-02-20 16:02:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - url: [Ljava.lang.String;@f0d60c6
+INFO  | 2023-02-20 16:03:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-20 16:03:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:508) -  scrolling to position 
+INFO  | 2023-02-20 16:03:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-02-20 16:03:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-02-20 16:03:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickBTN_COOKIES
+INFO  | 2023-02-20 16:03:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...URL_PRODUCT_INFO
+INFO  | 2023-02-20 16:04:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentPRD_CLICK_PRODUCT
+INFO  | 2023-02-20 16:04:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
+INFO  | 2023-02-20 16:06:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentPRD_ENGRAVING
+INFO  | 2023-02-20 16:07:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...URL_PRODUCT_DETAIL
+INFO  | 2023-02-20 16:07:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:312) - ReLoad Page...
+INFO  | 2023-02-20 16:07:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_DROPDOWN
+INFO  | 2023-02-20 16:07:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:312) - ReLoad Page...
+INFO  | 2023-02-20 16:07:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_BTN_ADDCART
+INFO  | 2023-02-20 16:07:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickPRD_DROPDOWN
+INFO  | 2023-02-20 16:07:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-bracelet-carolin.html?alloy=white-375&leather=beige&stone1=diamond-Brillant
+INFO  | 2023-02-20 16:07:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-bracelet-blejan-20-cm.html?alloy=yellow-750&stone1=diamond-Brillant
+INFO  | 2023-02-20 16:08:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:back:307) - Back window...
+INFO  | 2023-02-20 16:08:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-20 16:08:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:753) - compare from PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_2 with PRD_NEW_PAGE_GET_VALUE_LENGTH_2
+INFO  | 2023-02-20 16:08:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:312) - ReLoad Page...
+INFO  | 2023-02-20 16:08:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-20 16:08:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:753) - compare from PRD_NEW_PAGE_VERIFY_DATA_LENGTH_BEFORE_2 with PRD_NEW_PAGE_GET_VALUE_LENGTH_2
+INFO  | 2023-02-20 16:08:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-ring-bridal-rise-skud32258-1.html?alloy=white-585&stone1=diamond-sapphire
+INFO  | 2023-02-20 16:08:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/fever-twist-1.html?alloy=white-silber&womenstone=diamond-zirconia

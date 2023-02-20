@@ -16,6 +16,7 @@ public class ProductDetailPage_Mobile extends BasePage {
     private LoginPage objLogin;
     private RegisterPage objRegister ;
     private SignInPage signInPage;
+    private ProductDetailPage productDetailPage;
 
     public ProductDetailPage_Mobile() {
         super();
@@ -25,6 +26,7 @@ public class ProductDetailPage_Mobile extends BasePage {
         objLogin = new LoginPage();
         objRegister = new RegisterPage();
         signInPage = new SignInPage();
+        productDetailPage = new ProductDetailPage();
     }
     public void showImgProduct() throws InterruptedException {
         //     productInfo();
@@ -121,6 +123,97 @@ public class ProductDetailPage_Mobile extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("PRD_CLICK_CHAIN_LENGTH");
         keyword.verifyElementVisible("PRD_VERIFY_NECKLACE");
+
+    }
+    public void clickAddCart() throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        keyword.click("PRD_BTN_ADDCART");
+//        Thread.sleep(10000);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(7000);
+        keyword.click("PRD_CART");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        keyword.click("PRD_BTN_VIEWCART");
+        keyword.imWait(1);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        keyword.click("PRD_BTN_VIEWDETAIL_MOBILE");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+
+    }
+    public void commonOptionEngravingWithSendKey(String data, int caseNum)throws InterruptedException{
+        keyword.openNewTab("URL_PRODUCT_DETAIL");
+        keyword.untilJqueryIsDone(30L);
+        keyword.webDriverWaitForElementPresent("PRD_ENGRAVING",20);
+        keyword.scrollDownToElement("PRD_ENGRAVING");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(3000);
+        if(caseNum == 1){
+            objRegister.chooseLanguages();
+            keyword.webDriverWaitForElementPresent("BTN_COOKIES",50);
+            if(keyword.verifyElementPresent("BTN_COOKIES")){
+                keyword.click("BTN_COOKIES");
+                keyword.untilJqueryIsDone(30L);
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+            }
+        }
+        keyword.click("PRD_ENGRAVING");
+
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("PRD_TEXT_ENGRAVING");
+//        Thread.sleep(10000);
+        keyword.sendKeys("PRD_TEXT_ENGRAVING", data);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        clickDropdown();
+        clickAddCart();
+    }
+    public void productOptionEngraving1() throws InterruptedException {
+        commonOptionEngravingWithSendKey("PRD_DATA_TEXT_ENGRAVING1",1);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        String text = keyword.getText("PRD_GET_TEXT_ENGRAVING");
+        System.out.printf("get text : " + text );
+        keyword.assertEquals("PRD_DATA_TEXT_ENGRAVING1","PRD_GET_TEXT_ENGRAVING");
+        productDetailPage.removeItemProduct();
+    }
+    public void productOptionEngraving2() throws InterruptedException{
+        productDetailPage.commonOptionEngravingWithCopyPaste("PRD_TEXT_ENGRAVING","PRD_TEXT_ENGRAVING","PRD_DATA_TEXT_ENGRAVING1");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        String text = keyword.getText("PRD_GET_TEXT_ENGRAVING");
+        System.out.printf("get text : " + text );
+        keyword.assertEquals("PRD_DATA_TEXT_ENGRAVING1","PRD_GET_TEXT_ENGRAVING");
+        productDetailPage.removeItemProduct();
+    }
+    public void productOptionEngraving3() throws InterruptedException {
+        commonOptionEngravingWithSendKey("PRD_DATA_TEXT_ENGRAVING3",3);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        String text = keyword.getText("PRD_GET_TEXT_ENGRAVING");
+        System.out.printf("get text : " + text );
+        keyword.assertEquals("PRD_DATA_TEXT_ENGRAVING3","PRD_GET_TEXT_ENGRAVING");
+        productDetailPage.removeItemProduct();
+    }
+    public void productOptionEngraving4() throws InterruptedException {
+        productDetailPage.commonOptionEngravingWithCopyPaste("PRD_TEXT_ENGRAVING","PRD_TEXT_ENGRAVING","PRD_DATA_TEXT_ENGRAVING3");
+        String text = keyword.getText("PRD_GET_TEXT_ENGRAVING");
+        System.out.printf("get text : " + text );
+        keyword.assertEquals("PRD_DATA_TEXT_ENGRAVING3","PRD_GET_TEXT_ENGRAVING");
+        productDetailPage.removeItemProduct();
 
     }
 
