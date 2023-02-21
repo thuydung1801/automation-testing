@@ -1,16 +1,41 @@
-INFO  | 2023-02-17 18:04:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser
-INFO  | 2023-02-17 18:04:39 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
-INFO  | 2023-02-17 18:04:39 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\110.0.5481.77\chromedriver.exe
-INFO  | 2023-02-17 18:04:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:64) - open browser successfullyCHROME
-INFO  | 2023-02-17 18:04:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2023-02-17 18:04:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - url: [Ljava.lang.String;@770f9bcc
-INFO  | 2023-02-17 18:05:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/
-INFO  | 2023-02-17 18:05:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:508) -  scrolling to position 
-INFO  | 2023-02-17 18:06:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-02-17 18:06:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-02-17 18:06:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickBTN_COOKIES
-INFO  | 2023-02-17 18:06:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:479) - scrollDownToElementMOBILE_HAMBURGER
-INFO  | 2023-02-17 18:06:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickMOBILE_HAMBURGER
-INFO  | 2023-02-17 18:06:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickMOBILE_ICON_SIGNIN
-INFO  | 2023-02-17 18:06:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-02-17 18:06:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-02-21 17:49:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser
+INFO  | 2023-02-21 17:49:11 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
+INFO  | 2023-02-21 17:49:11 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\110.0.5481.77\chromedriver.exe
+INFO  | 2023-02-21 17:49:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:64) - open browser successfullyCHROME
+INFO  | 2023-02-21 17:49:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2023-02-21 17:49:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - url: [Ljava.lang.String;@4277de1
+INFO  | 2023-02-21 17:49:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:508) -  scrolling to position 
+INFO  | 2023-02-21 17:49:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-02-21 17:49:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:667) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-02-21 17:49:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickBTN_COOKIES
+INFO  | 2023-02-21 17:49:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:479) - scrollDownToElementMOBILE_HAMBURGER
+INFO  | 2023-02-21 17:49:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickMOBILE_HAMBURGER
+INFO  | 2023-02-21 17:49:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickMOBILE_ICON_SIGNIN
+INFO  | 2023-02-21 17:49:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:190) - send keysLOGIN_TXT_EMAIL_4with COM_INP_DATA_EMAIL2
+INFO  | 2023-02-21 17:50:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:190) - send keysLOGIN_TXT_PASSWORDwith COM_INP_DATA_PASS2
+INFO  | 2023-02-21 17:50:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2023-02-21 17:50:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/customer/account/edit/
+INFO  | 2023-02-21 17:50:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-21 17:50:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-21 17:50:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/catalog/product_compare/index/
+INFO  | 2023-02-21 17:50:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-21 17:50:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-ring-mutia.html?alloy=yellow_white-750&stone1=diamond-Brillant&stone2=diamond-Brillant
+INFO  | 2023-02-21 17:50:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-21 17:50:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:562) - verifyElementVisibleMAC_WISHLISH_SAVE_NO_DISPLAY
+INFO  | 2023-02-21 17:50:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:181) - get Text ofMAC_WISHLISH_COUNT_SAVE
+INFO  | 2023-02-21 17:50:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:479) - scrollDownToElementMAC_BTN_HEART
+INFO  | 2023-02-21 17:50:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickMAC_BTN_HEART
+INFO  | 2023-02-21 17:50:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-21 17:50:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:562) - verifyElementVisibleMAC_VERIFY_ICON_HEART
+INFO  | 2023-02-21 17:50:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/diamond-rings/diamond/
+INFO  | 2023-02-21 17:51:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-21 17:51:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:562) - verifyElementVisibleMAC_WISHLISH_SAVE_NO_DISPLAY
+INFO  | 2023-02-21 17:51:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:181) - get Text ofMAC_WISHLISH_COUNT_SAVE
+INFO  | 2023-02-21 17:51:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:317) - Navigating to URL...https://dev3.glamira.com/glgb/diamond-rings/diamond/
+INFO  | 2023-02-21 17:51:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-21 17:51:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickMAC_WISHLIST_ICON_HEART
+INFO  | 2023-02-21 17:51:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:181) - get Text ofMAC_WISHLIST_GET_TITLE
+INFO  | 2023-02-21 17:51:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:479) - scrollDownToElementMAC_LINK_HEART_PHONE
+INFO  | 2023-02-21 17:51:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickMAC_LINK_HEART_PHONE
+INFO  | 2023-02-21 17:51:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:714) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-02-21 17:51:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickMAC_BTN_VIEW_WISHLIST
