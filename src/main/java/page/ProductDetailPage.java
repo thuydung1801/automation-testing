@@ -365,6 +365,11 @@ public class ProductDetailPage extends BasePage {
 
         keyword.verifyElementVisible("PRD_VERIFY_LINK");
         keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.switchToTab(0);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
     }
     public void optionFreeSize() throws InterruptedException {
         optionSize();

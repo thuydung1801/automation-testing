@@ -181,6 +181,19 @@ public class ProductDetailPage_Mobile extends BasePage {
         clickDropdown();
         clickAddCart();
     }
+    public void commonOptionEngravingWithCopyPaste(String element1, String element2,String content)throws InterruptedException{
+        keyword.openNewTab("URL_PRODUCT_DETAIL");
+        keyword.webDriverWaitForElementPresent("PRD_ENGRAVING",20);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("PRD_ENGRAVING");
+
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(30L);
+        keyword.copyPaste(element1,element2,content);
+        clickDropdown();
+        clickAddCart();
+    }
     public void productOptionEngraving1() throws InterruptedException {
         commonOptionEngravingWithSendKey("PRD_DATA_TEXT_ENGRAVING1",1);
         keyword.untilJqueryIsDone(30L);
@@ -191,7 +204,7 @@ public class ProductDetailPage_Mobile extends BasePage {
         productDetailPage.removeItemProduct();
     }
     public void productOptionEngraving2() throws InterruptedException{
-        productDetailPage.commonOptionEngravingWithCopyPaste("PRD_TEXT_ENGRAVING","PRD_TEXT_ENGRAVING","PRD_DATA_TEXT_ENGRAVING1");
+        commonOptionEngravingWithCopyPaste("PRD_TEXT_ENGRAVING","PRD_TEXT_ENGRAVING","PRD_DATA_TEXT_ENGRAVING1");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         String text = keyword.getText("PRD_GET_TEXT_ENGRAVING");
@@ -209,7 +222,7 @@ public class ProductDetailPage_Mobile extends BasePage {
         productDetailPage.removeItemProduct();
     }
     public void productOptionEngraving4() throws InterruptedException {
-        productDetailPage.commonOptionEngravingWithCopyPaste("PRD_TEXT_ENGRAVING","PRD_TEXT_ENGRAVING","PRD_DATA_TEXT_ENGRAVING3");
+        commonOptionEngravingWithCopyPaste("PRD_TEXT_ENGRAVING","PRD_TEXT_ENGRAVING","PRD_DATA_TEXT_ENGRAVING3");
         String text = keyword.getText("PRD_GET_TEXT_ENGRAVING");
         System.out.printf("get text : " + text );
         keyword.assertEquals("PRD_DATA_TEXT_ENGRAVING3","PRD_GET_TEXT_ENGRAVING");
