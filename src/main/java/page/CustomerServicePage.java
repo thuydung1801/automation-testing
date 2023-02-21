@@ -89,6 +89,7 @@ public class CustomerServicePage extends BasePage {
             keyword.verifyElementVisible(verify);
         }
         keyword.reLoadPage();
+        keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
     }
 
@@ -109,6 +110,9 @@ public class CustomerServicePage extends BasePage {
 
     }
     public void filterNoResults() throws InterruptedException {
+        keyword.doubleClick("//div[@class='amrev-toolbar']");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         System.out.printf("when filter with filter has no results" + "\n");
         keyword.click("CUS_PRD_FILTER_CHECKBOX_1");
         keyword.untilJqueryIsDone(30L);
