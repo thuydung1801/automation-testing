@@ -398,7 +398,7 @@ public class CustomerServicePage extends BasePage {
         if(keyword.verifyElementVisible("CUS_VERIFY_PRD_FILTER_NO_REVIEW")){
             keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
             check=true;
-        }else if(checkHighestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2")){
+        }else if(checkHighestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2_MOBILE","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2_MOBILE")){
             if(verifyCheckBox == null || keyword.verifyElementVisible(verifyCheckBox)){
                 check=true;
             }else{
@@ -433,7 +433,7 @@ public class CustomerServicePage extends BasePage {
         if(keyword.verifyElementVisible("CUS_VERIFY_PRD_FILTER_NO_REVIEW")){
             keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
             check=true;
-        }else if(checkLowestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2")){
+        }else if(checkLowestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2_MOBILE","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2_MOBILE")){
             if(verifyCheckBox == null || keyword.verifyElementVisible(verifyCheckBox)){
                 check=true;
             }else{
