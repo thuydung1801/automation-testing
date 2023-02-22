@@ -245,14 +245,14 @@ public class MyAccountPage extends BasePage {
     }
 
     public void changePassword() throws InterruptedException {
-        setUp1();
+//        setUp1();
         keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/");
         inpChangePassword();
         checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","pass","MAC_VERIFY_PASS_CHANGE","COM_INP_DATA_PASS");
 
     }
     public void deleteAccount() throws InterruptedException {
-        setUp1();
+//        setUp1();
         keyword.openNewTab("https://stage.glamira.co.uk/customer/account/edit/");
         keyword.click("MAC_DELETE_ACCOUNT");
         Thread.sleep(2000);

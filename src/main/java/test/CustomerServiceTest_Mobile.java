@@ -180,6 +180,22 @@ public class CustomerServiceTest_Mobile extends BaseTest {
     public void filter_ratting_37() throws InterruptedException {
         testCustomerService.filterCheckBox4AndCheckSort5();
     }
+    @Test(priority = 38,description = "My Account - Subscribe to the Glamira newsletter.")
+    public void testCase_NL_01() throws InterruptedException {
+        testCustomerServiceMobile.myAccountSubscribeGlamiraNewsletter();
+    }
+    @Test(priority = 39,description = "My Account - Un subscribe to the Glamira newsletter.")
+    public void testCase_NL_02() throws InterruptedException {
+        testCustomerServiceMobile.myAccountUnSubscribeGlamiraNewsletter();
+    }
+    @Test(priority = 40,description = "Footer - Subscribe to the Glamira newsletter.")
+    public void testCase_NL_03() throws InterruptedException {
+        testCustomerService.footerSubscribeGlamiraNewsletter();
+    }
+    @Test(priority = 41,description = "Footer - Subscribe to the Glamira newsletter.- forgot enter email adress")
+    public void testCase_NL_04() throws InterruptedException {
+        testCustomerService.footerSubscribeGlamiraNewsletterWithEmailNull();
+    }
 
 
 }

@@ -84,5 +84,42 @@ public class CustomerServicePage_Mobile extends BasePage {
         customerServicePage.clickDropdown("CUS_PRD_FILTER_CHECKSORT_4");
         checkVerifyLowestRatting();
     }
+    public void commonNewsLetterWithAccount() throws InterruptedException {
+        keyword.imWait(3);
+        keyword.click("CUS_MENU");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("CUS_NEWSLETTER");
+        keyword.imWait(3);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("CUS_NEWSLETTER_CHECKBOX");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        keyword.click("CUS_NEWSLETTER_SUBMIT_ACCOUNT");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+    }
+    public void myAccountSubscribeGlamiraNewsletter() throws InterruptedException {
+//        setUp();
+        keyword.openNewTab("https://dev3.glamira.com/glgb/");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+//        objRegister.acceptAllCookies();
+        objLogin.loginOnMobile("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+//        keyword.navigateToUrl("https://dev3.glamira.com/glgb/customer/account/index/");
+        commonNewsLetterWithAccount();
+        customerServicePage.checkVerifyNewsletter("CUS_VERIFY_NEWSLETTER_SUBSCRIBE","CUS_VERIFY_DATA_NEWSLETTER_SUBSCRIBE");
+
+
+    }
+    public void myAccountUnSubscribeGlamiraNewsletter() throws InterruptedException {
+        commonNewsLetterWithAccount();
+        customerServicePage.checkVerifyNewsletter("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","CUS_VERIFY_DATA_NEWSLETTER_UNSUBSCRIBE");
+
+    }
 
 }
