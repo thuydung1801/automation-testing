@@ -41,7 +41,7 @@ public class MyAccountPage extends BasePage {
 
         keyword.navigateToUrl("https://stage.glamira.co.uk/");
         keyword.untilJqueryIsDone(30L);
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE", "COM_INP_DATA_PASS_STAGE",null,null,true);
         keyword.untilJqueryIsDone(30L);
         keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/edit/");
         keyword.untilJqueryIsDone(30L);
@@ -544,7 +544,7 @@ public class MyAccountPage extends BasePage {
 
     }
     public void saveItemFormProductView() throws InterruptedException {
-        setUp1();
+//        setUp1();
 
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -562,6 +562,9 @@ public class MyAccountPage extends BasePage {
     }
     public void commonViewWishList() throws InterruptedException {
         keyword.reLoadPage();
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("MAC_LINK_HEART");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -661,7 +664,7 @@ public class MyAccountPage extends BasePage {
 
     }
     public void emailSelectItem() throws InterruptedException {
-        setUp1();
+     //   setUp1();
         commonViewWishList();
         keyword.click("MAC_WISHLIST_EMAIL_BTN");
         keyword.untilJqueryIsDone(60L);
@@ -669,7 +672,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_NAME","COM_INP_DATA_NAME");
-        keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MAIL","COM_INP_DATA_EMAIL");
+        keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MAIL","COM_INP_DATA_EMAIL_STAGE");
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_REMAIL","EMAIL_ADDRESS");
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MESSAGE","COM_DATA_TITLE");
         keyword.click("MAC_WISHLIST_EMAIL_CHECKBOX_SUB");
@@ -697,7 +700,7 @@ public class MyAccountPage extends BasePage {
 
     }
     public void viewOrderComplete() throws InterruptedException {
-        setUp1();
+//        setUp1();
         keyword.openNewTab("https://stage.glamira.co.uk/sales/order/history/");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -891,7 +894,7 @@ public class MyAccountPage extends BasePage {
 
     }
     public void checkStatusConfirmation() throws InterruptedException {
-        setUp1();
+       // setUp1();
         keyword.openNewTab("https://stage.glamira.co.uk/sales/order/history/");
 
         checkStatus("confirmation","MAC_OVER_ID_ORDER_STATUS_CONFIR","MAC_OVER_STATUS_CONFIR_ICON",
@@ -899,6 +902,8 @@ public class MyAccountPage extends BasePage {
     }
     public void checkStatusDelivery() throws InterruptedException {
         keyword.reLoadPage();
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         checkStatus("delivery","MAC_OVER_ID_ORDER_STATUS_DELIVERY","MAC_OVER_STATUS_DELIVERY_ICON",
                 "MAC_OVER_STATUS_DELIVERY","MAC_OVER_DATA_ID_ORDER_STATUS_DELIVERY","MAC_OVER_DATA_STATUS_DELIVERY");
     }
