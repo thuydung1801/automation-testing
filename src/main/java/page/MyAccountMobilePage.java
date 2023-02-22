@@ -32,16 +32,18 @@ public class MyAccountMobilePage extends BasePage {
 
     public void setUp() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("MOBILE_HAMBURGER");
+        keyword.untilJqueryIsDone(50L);
         keyword.click("MOBILE_HAMBURGER");
         keyword.untilJqueryIsDone(50L);
         keyword.click("MOBILE_ICON_SIGNIN");
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
         keyword.sendKeys("LOGIN_TXT_EMAIL_4", "COM_INP_DATA_EMAIL2");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         keyword.sendKeys("LOGIN_TXT_PASSWORD", "COM_INP_DATA_PASS2");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
         keyword.untilJqueryIsDone(30L);
         keyword.navigateToUrl("https://dev3.glamira.com/glgb/customer/account/edit/");
@@ -50,22 +52,18 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void setUp1() throws InterruptedException {
-//        objLogin.loginOnAlert();
-//        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
-        keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-
-        objRegister.acceptAllCookies();
-//        objRegister.chooseLanguages();
-        keyword.untilJqueryIsDone(30L);
-
-        keyword.navigateToUrl("https://stage.glamira.co.uk/");
-        keyword.untilJqueryIsDone(30L);
-//        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL2", "COM_INP_DATA_PASS2", null, null, true);
-        keyword.untilJqueryIsDone(30L);
-//        keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/edit/");
-//        keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(50L);
+        keyword.scrollDownToElement("MOBILE_HAMBURGER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("MOBILE_HAMBURGER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("MOBILE_ICON_SIGNIN");
+        keyword.untilJqueryIsDone(50L);
+        keyword.sendKeys("LOGIN_TXT_EMAIL_4", "COM_INP_DATA_EMAIL");
+        Thread.sleep(1000);
+        keyword.sendKeys("LOGIN_TXT_PASSWORD", "COM_INP_DATA_PASS");
+        Thread.sleep(1000);
+        keyword.click("LOGIN_BTN_SUBMITLOGIN");
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
 
     }
@@ -146,7 +144,7 @@ public class MyAccountMobilePage extends BasePage {
         logOut();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS", null, null, true);
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL4", "COM_INP_DATA_PASS", null, null, true);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.click("LOGIN_BTN_ACCOUNT");
@@ -583,6 +581,7 @@ public class MyAccountMobilePage extends BasePage {
     public void commonViewWishList() throws InterruptedException {
 //        keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("MAC_LINK_HEART_PHONE");
         keyword.untilJqueryIsDone(50L);
         keyword.click("MAC_LINK_HEART_PHONE");
@@ -591,7 +590,6 @@ public class MyAccountMobilePage extends BasePage {
         keyword.click("MAC_BTN_VIEW_WISHLIST");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-
     }
 
     public void compareMyWishProduct() throws InterruptedException {
@@ -599,6 +597,7 @@ public class MyAccountMobilePage extends BasePage {
         keyword.navigateToUrl("https://dev3.glamira.com/glgb/diamond-rings/diamond/");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        Thread.sleep(2000);
         keyword.click("MAC_WISHLIST_ICON_HEART");
         String textTitle = keyword.getText("MAC_WISHLIST_GET_TITLE");
         System.out.printf("a==== " + textTitle + "\n");
@@ -648,14 +647,15 @@ public class MyAccountMobilePage extends BasePage {
 
     public void checkVerifyAdmin() throws InterruptedException {
         signInPage.openNewTabs();
-        signInPage.loginAdmin("LOGIN_DATA_USER_NAME_DUNG", "LOGIN_DATA_PASS_WORD_DUNG");
+        signInPage.loginAdmin("LOGIN_DATA_USER_NAME", "BE_ADMIN_PASSWORD");
         keyword.untilJqueryIsDone(30L);
+        keyword.maximizeWindow();
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-
         signInPage.chooseItemCustomer("LOGIN_BTN_CUSTOMER", "LOGIN_BTN_CUSTOMER",
                 "SIGNUP_VERIFY_CUSTOMER", "LOGIN_BTN_EMAIL_LOG",
                 "SIGNUP_VERIFY_EMAIL_LOG");
         adminChooseEmailLog("EMAIL_ADDRESS");
+        keyword.resizeBrowser(319, 848);
     }
 
     public void adminChooseEmailLog(String text) throws InterruptedException {
@@ -697,11 +697,9 @@ public class MyAccountMobilePage extends BasePage {
         commonViewWishList();
         keyword.click("MAC_WISHLIST_EMAIL_BTN");
         keyword.untilJqueryIsDone(60L);
-
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_NAME", "COM_INP_DATA_NAME");
-        keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MAIL", "COM_INP_DATA_EMAIL");
+        keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MAIL", "COM_INP_DATA_EMAIL4");
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_REMAIL", "EMAIL_ADDRESS");
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MESSAGE", "COM_DATA_TITLE");
         keyword.click("MAC_WISHLIST_EMAIL_CHECKBOX_SUB");
@@ -717,8 +715,14 @@ public class MyAccountMobilePage extends BasePage {
     public void viewOrder(String textBefore, String btnView, String textAfter) throws InterruptedException {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(50L);
         String textID = keyword.getText(textBefore);
         System.out.printf("a======= " + textID + "\n");
+        keyword.untilJqueryIsDone(50L);
+        keyword.scrollToPositionByScript("window.scrollBy(0,300)");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("BTN_MORE_SHOW");
+        keyword.untilJqueryIsDone(50L);
         keyword.click(btnView);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -730,11 +734,11 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void viewOrderComplete() throws InterruptedException {
-//        setUp();
+        setUp1();
         keyword.openNewTab("https://dev3.glamira.com/glgb/sales/order/history/");
         keyword.untilJqueryIsDone(60L);
+        keyword.click("MAC_MY_ORD_BTN_COMPLETE");
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-//        keyword.click("MAC_MY_ORD_BTN_COMPLETE");
         viewOrder("MAC_MY_ORD_TEXT_ID_COMPLETE", "MAC_MY_ORD_BTN_VIEW_COMPLETE", "MAC_MY_ORD_VERIFY_TEXT_ID_COMPLETE");
     }
 

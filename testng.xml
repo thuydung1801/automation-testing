@@ -27,7 +27,7 @@
     <test name="IPhone 12 Pro">
         <parameter name="devices" value="mobile"></parameter>
         <classes>
-            <class name="test.MyAccountMobileTest">
+            <class name="test.CreateAccountMobileTest">
                 <!--                <methods>-->
                 <!--                    <include name="testCase_SP_02"/>-->
                 <!--                </methods>-->

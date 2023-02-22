@@ -4,33 +4,33 @@ import core.BasePage;
 import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
-import io.cucumber.java.sl.In;
 import org.slf4j.Logger;
-import page.CreateAccountOnStagePage;
-import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 import page.signinSignup.SignUpPage;
 
-import java.security.PublicKey;
 import java.util.Date;
 
-public class CreateAccountOnStagePage extends BasePage {
+public class CreateAccountMobilePage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private SignUpPage objSignUp;
     private RegisterPage objRegist;
     private SignInPage objSignIn;
 
-    public CreateAccountOnStagePage(KeywordWeb key) {
+    public CreateAccountMobilePage(KeywordWeb key) {
         super(key);
     }
 
     public void CreateNewCustomerSuccessfully() throws Exception {
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(1000);
-        keyword.click("SIGNUP_BTN_SIGNUP");
-        keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
-        Thread.sleep(2000);
+        keyword.scrollDownToElement("MOBILE_HAMBURGER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("MOBILE_HAMBURGER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("MOBILE_ICON_SIGNIN");
+        keyword.untilJqueryIsDone(50L);
+//        keyword.click("SIGNUP_BTN_SIGNUP");
+//        keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
         keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
         keyword.untilJqueryIsDone(50L);
         keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
@@ -75,6 +75,7 @@ public class CreateAccountOnStagePage extends BasePage {
         Thread.sleep(3000);
         keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
     }
+
     public void sendData() throws Exception {
         keyword.untilJqueryIsDone(50L);
         sendEmail();
@@ -114,6 +115,7 @@ public class CreateAccountOnStagePage extends BasePage {
         objSignIn.loginAdmin(
                 "nguyenngoc",
                 "Admin123");
+        keyword.maximizeWindow();
         objSignIn.chooseItemCustomer(
                 "LOGIN_BTN_CUSTOMER",
                 "LOGIN_BTN_CUSTOMER",
@@ -129,6 +131,7 @@ public class CreateAccountOnStagePage extends BasePage {
         objSignIn.getCodeEnterTextInField("IFRAME_DEV3",
                 "LOGIN_INPUT_VERIFY_CODE",
                 code, btnSubmit);
+        keyword.resizeBrowser(319, 848);
     }
 
     public void sendKeyFormPassword() throws InterruptedException {

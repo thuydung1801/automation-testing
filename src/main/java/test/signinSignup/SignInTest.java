@@ -62,7 +62,6 @@ public class SignInTest extends BaseTest {
     @Test(priority = 8, description = "Entered the wrong code sent to the email")
     public void testCase_SI014() throws Exception {
         objSigin.enterWrongCodeSentToEmail();
-
     }
 
     @Test(priority = 8, description = "Resend the code to email")
