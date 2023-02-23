@@ -59,7 +59,7 @@ public class MarketingPage extends BasePage {
 //        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
         keyword.assertEquals("COM_DATA_MESSAGES_EMAIL",
-               "MRT_TEXT_ERROR_EMAIL");
+               "COM_TEXT_ERROR");
 
     }
 
@@ -164,11 +164,14 @@ public class MarketingPage extends BasePage {
         keyword.click("ADMIN_CUS_EMAILLOG_BTN_FILTER");
 
         keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
         keyword.clearText("ADMIN_CUS_EMAILLOG_FILTER_INP_SUBJECT");
         keyword.sendKeys("ADMIN_CUS_EMAILLOG_FILTER_INP_SUBJECT",text);
 
         keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("ADMIN_CUS_EMAILLOG_ENTER_FILTER");
         keyword.untilJqueryIsDone(30L);
         keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT");
@@ -176,34 +179,43 @@ public class MarketingPage extends BasePage {
 
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.switchToIFrameByXpath("//iframe");
         keyword.scrollDownToElement("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
-//        keyword.webDriverWaitForElementPresent("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE",20);
+
         keyword.checkStatusIsDisplay("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
         System.out.printf("===========");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
 //        keyword.scrollDownToElement("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
         keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
         keyword.untilJqueryIsDone(30L);
-
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+    }
+    public void openNewTabs() throws InterruptedException {
+        keyword.executeJavaScript("window.open()");
+        keyword.switchToTab(1);
+        keyword.navigateToUrl("ADDMIN_URL_DEV");
+//        keyword.webDriverWaitForElementPresent("LOGIN_FORM_LOGIN_BACKEND", 50);
     }
 
     public void createNewGriftCetificateFormEmailWithLogin() throws InterruptedException {
-        setUp();
-        loginPage.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+//        setUp();
+//        loginPage.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
 //        keyword.untilJqueryIsDone(30L);
 //        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
 //        keyword.click("GCE_BTN_ACCOUNT");
 //        keyword.imWait(5);
 //
-    //    keyword.navigateToUrl("https://dev3.glamira.com/glgb/customer/account/index/");
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/customer/account/index/");
 //        keyword.back();
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
         String getIdOrder = keyword.getText("GCE_TEXT_ORDER");
         String text = getIdOrder.substring(1,getIdOrder.length());
-        signInPage.openNewTabs();
-        signInPage.loginAdmin("LOGIN_DATA_USER_NAME_DUNG", "LOGIN_DATA_PASS_WORD_DUNG");
+        openNewTabs();
+        signInPage.loginAdmin("LOGIN_DATA_USER_NAME_DUNG", "LOGIN_DATA_PASS_WORD_DUNG_DEV3");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
