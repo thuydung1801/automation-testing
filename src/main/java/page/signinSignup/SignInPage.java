@@ -316,6 +316,8 @@ public class SignInPage extends BasePage {
         keyword.click(selectAction);
 //        keyword.webDriverWaitForElementPresent(verifySelectForm, 30);
         keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible(selectView);
+        keyword.untilJqueryIsDone(50L);
         keyword.click(selectView);
         keyword.webDriverWaitForElementPresent(verifyForm, 30);
     }

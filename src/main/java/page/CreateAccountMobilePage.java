@@ -29,8 +29,6 @@ public class CreateAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click("MOBILE_ICON_SIGNIN");
         keyword.untilJqueryIsDone(50L);
-//        keyword.click("SIGNUP_BTN_SIGNUP");
-//        keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
         keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
         keyword.untilJqueryIsDone(50L);
         keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
@@ -46,6 +44,7 @@ public class CreateAccountMobilePage extends BasePage {
     public void forGotPassWordCheckOut() throws Exception {
         keyword.navigateToUrl("https://stage.glamira.co.uk/glamira-pendant-elsie.html?alloy=red_white-585&stone1=diamond-Brillant");
         keyword.untilJqueryIsDone(50L);
+        keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.click("BTN_COOKIES");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.verifyElementVisible("BTN_VIEW_CART");
@@ -64,12 +63,14 @@ public class CreateAccountMobilePage extends BasePage {
         keyword.reLoadPage();
         keyword.deleteAllCookies();
         keyword.untilJqueryIsDone(50L);
-        objRegist.chooseLanguages();
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("FORM_LOGIN_NEW");
         keyword.untilJqueryIsDone(50L);
-        keyword.click("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
         keyword.click("BTN_FORGOT_PASSWORD_NEW");
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(3000);
+        objRegist.chooseLanguages();
+        keyword.untilJqueryIsDone(30L);
         sendData();
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(3000);
@@ -83,6 +84,7 @@ public class CreateAccountMobilePage extends BasePage {
         keyword.deleteAllCookies();
         keyword.closeWindowByIndex(1);
         keyword.switchToTab(0);
+        keyword.untilJqueryIsDone(50L);
         getCodeSetup("LOGIN_INPUT_ENTER_DATA", "BTN_SUBMIT");
         sendPassWord();
         keyword.verifyElementVisible("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
@@ -112,10 +114,16 @@ public class CreateAccountMobilePage extends BasePage {
     public void getCodeSetup(String code, String btnSubmit) throws Exception {
         objSignIn = new SignInPage(this.keyword);
         objSignIn.openTabBE("https://stage.glamira.com/secured2021/");
+        keyword.deleteAllCookies();
+        keyword.reLoadPage();
         objSignIn.loginAdmin(
                 "nguyenngoc",
                 "Admin123");
         keyword.maximizeWindow();
+        keyword.untilJqueryIsDone(30L);
+        if (check()) {
+            keyword.click("BTN_CLOSE_MESSAGE");
+        }
         objSignIn.chooseItemCustomer(
                 "LOGIN_BTN_CUSTOMER",
                 "LOGIN_BTN_CUSTOMER",
@@ -152,4 +160,10 @@ public class CreateAccountMobilePage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
     }
+
+    boolean check() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        return keyword.verifyElementVisible("BTN_CLOSE_MESSAGE");
+    }
+
 }

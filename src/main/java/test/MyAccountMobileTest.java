@@ -114,22 +114,22 @@ public class MyAccountMobileTest extends BaseTest {
         objRegister.acceptAllCookies();
         testMyAccountMobile.viewOrderComplete();
     }
-//    @Test(priority = 20,description = "Check function icon view order of Recent  orders")
-//    public void testCase_Myorder_02() throws InterruptedException {
-//        testMyAccountMobile.viewOrderRecent();
-//    }
-//    @Test(priority = 21,description = "Check function icon view order of Recent  orders")
-//    public void testCase_Myorder_04() throws InterruptedException {
-//        testMyAccountMobile.upLoadItemOrder();
-//    }
-//    @Test(priority = 22,description = "Check function icon return  of completed order")
-//    public void testCase_Myorder_03() throws InterruptedException {
-//        testMyAccountMobile.viewReturn();
-//    }
-//    @Test(priority = 22,description = "Check  return  of completed order")
-//    public void testCase_Myorder_05() throws InterruptedException {
-//        testMyAccountMobile.stepReturn();
-//    }
+    @Test(priority = 20,description = "Check function icon view order of Recent  orders")
+    public void testCase_Myorder_02() throws InterruptedException {
+        testMyAccountMobile.viewOrderRecent();
+    }
+    @Test(priority = 21,description = "Check function icon view order of Recent  orders")
+    public void testCase_Myorder_04() throws InterruptedException {
+        testMyAccountMobile.upLoadItemOrder();
+    }
+    @Test(priority = 22,description = "Check function icon return  of completed order")
+    public void testCase_Myorder_03() throws InterruptedException {
+        testMyAccountMobile.viewReturn();
+    }
+    @Test(priority = 22,description = "Check  return  of completed order")
+    public void testCase_Myorder_05() throws InterruptedException {
+        testMyAccountMobile.stepReturn();
+    }
 //
 ////
 //    // case My Overview

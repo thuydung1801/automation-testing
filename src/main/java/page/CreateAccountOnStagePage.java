@@ -48,37 +48,43 @@ public class CreateAccountOnStagePage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_COOKIES");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        keyword.verifyElementVisible("BTN_VIEW_CART");
+       keyword.untilJqueryIsDone(50L);
+       keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_VIEW_CART");
+        keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
         keyword.click("LA_BTN_PROCEED_TO_CHECKOUT");
         keyword.verifyElementVisible("FORM_CHECKOUT_VRF");
+        keyword.untilJqueryIsDone(70L);
         keyword.click("CHECKOUT_LA_HPL_FORGOT_PASS");
         sendData();
     }
-
     public void forGotPassWord() throws Exception {
         objRegist = new RegisterPage(this.keyword);
         keyword.untilJqueryIsDone(50L);
         keyword.deleteAllCookies();
         keyword.reLoadPage();
-        keyword.deleteAllCookies();
-        keyword.untilJqueryIsDone(50L);
-        objRegist.chooseLanguages();
+//        keyword.untilJqueryIsDone(50L);
+//        objRegist.chooseLanguages();
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("FORM_LOGIN_NEW");
         keyword.untilJqueryIsDone(50L);
-        keyword.click("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
+        keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_FORGOT_PASSWORD_NEW");
         sendData();
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(3000);
         keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
     }
+
     public void sendData() throws Exception {
         keyword.untilJqueryIsDone(50L);
+        if (check()) {
+            keyword.click("LOGIN_BTN_LANGUAGE");
+        }
         sendEmail();
         objSignIn.openTabBE("https://stage.glamira.com/secured2021/");
+        keyword.deleteAllCookies();
         keyword.deleteAllCookies();
         keyword.closeWindowByIndex(1);
         keyword.switchToTab(0);
@@ -104,6 +110,7 @@ public class CreateAccountOnStagePage extends BasePage {
     public void sendEmail() throws InterruptedException {
         keyword.verifyElementVisible("LOGIN_INPUT_FORGOT_PASSWORD");
         keyword.sendKeys("LOGIN_INPUT_FORGOT_PASSWORD", "SIGNUP_EMAIL_EXIST1");
+        keyword.untilJqueryIsDone(50L);
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.verifyElementVisible("SIGNIN_XPATH_ACTUAL_SENT_CODE");
     }
@@ -148,5 +155,10 @@ public class CreateAccountOnStagePage extends BasePage {
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
+    }
+
+    boolean check() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        return keyword.verifyElementVisible("LOGIN_BTN_LANGUAGE");
     }
 }

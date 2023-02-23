@@ -25,9 +25,9 @@
 <!--</suite>-->
 <suite name="Test Mobile" parallel="tests">
     <test name="IPhone 12 Pro">
-        <parameter name="devices" value="mobile"></parameter>
+        <parameter name="devices" value="web"></parameter>
         <classes>
-            <class name="test.CreateAccountMobileTest">
+            <class name="test.CreateAccountOnStageTest">
                 <!--                <methods>-->
                 <!--                    <include name="testCase_SP_02"/>-->
                 <!--                </methods>-->
