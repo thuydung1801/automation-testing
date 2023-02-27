@@ -834,7 +834,7 @@ public class MyAccountPage extends BasePage {
             keyword.doubleClick("MAC_MY_ORD_RETURN_STEP2");
             keyword.untilJqueryIsDone(60L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-            keyword.click("MAC_MY_ORD_RETURN_STEP2_CHECKBOX");
+//            keyword.click("MAC_MY_ORD_RETURN_STEP2_CHECKBOX");
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             keyword.click("MAC_MY_ORD_RETURN_STEP3");
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
