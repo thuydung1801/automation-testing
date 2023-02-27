@@ -28,59 +28,58 @@ public class SignInMobileTest extends BaseTest {
         objSigInMobile = new SignInMobilePage(this.keyword);
         objLogin = new LoginPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
-//        objLogin.loginOnAlert();
-//        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
-        Thread.sleep(1000);
-        objRegist.chooseLanguages();
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(5000);
         objRegist.acceptAllCookies();
         objSigInMobile.checkGoToFormLoginWithEmail();
     }
-//
-//    @Test(priority = 2, description = "Login with email and leave the password field blank")
-//    public void testCase_SI03() throws InterruptedException {
-//        objSigInMobile.enterEmailLeavePasswordFiendBlank();
-//    }
-//
-//    @Test(priority = 3, description = "Login with password and leave the email field blank")
-//    public void testCase_SI04() throws InterruptedException {
-//        objSigInMobile.enterPasswordLeaveEmailFiendBlank();
-//    }
-//
-//    @Test(priority = 4, description = "Login wrong email - password")
-//    public void testCase_SI05() throws InterruptedException {
-//        objSigInMobile.wrongPasswordAndEmail();
-//    }
-//
-//    @Test(priority = 5, description = "Login with wrong password")
-//    public void testCase_SI06() throws InterruptedException {
-//        objSigInMobile.sigInWithWrongPassword();
-//    }
-//
-//    @Test(priority = 6, description = "Enter the wrong email format")
-//    public void testCase_SI07() throws InterruptedException {
-//        objSigInMobile.enterWrongEmailFormat();
-//    }
-//
-//    @Test(priority = 8, description = "Entered the wrong code sent to the email")
-//    public void testCase_SI014() throws Exception {
-//        objSigInMobile.enterWrongCodeSentToEmail();
-//
-//    }
-//
-//    @Test(priority = 8, description = "Resend the code to email")
-//    public void testCase_SI015() throws Exception {
-//        objSigInMobile.resentTheCodeToEmail();
-//    }
-//
-//    @Test(priority = 9, description = "create valid new password")
-//    public void testCase_SI016_testCase_SI013() throws InterruptedException {
-//        objSigInMobile.createNewPassword();
-//    }
-//
-//    @Test(priority = 10, description = "Login successfully on Login modal")
-//    public void testCase_SI01() throws InterruptedException {
-//        objSigInMobile.loginSuccessfully();
-//    }
+
+    //
+    @Test(priority = 2, description = "Login with email and leave the password field blank")
+    public void testCase_SI03() throws InterruptedException {
+        objSigInMobile.enterEmailLeavePasswordFiendBlank();
+    }
+
+    @Test(priority = 3, description = "Login with password and leave the email field blank")
+    public void testCase_SI04() throws InterruptedException {
+        objSigInMobile.enterPasswordLeaveEmailFiendBlank();
+    }
+
+    @Test(priority = 4, description = "Login wrong email - password")
+    public void testCase_SI05() throws InterruptedException {
+        objSigInMobile.wrongPasswordAndEmail();
+    }
+
+    @Test(priority = 5, description = "Login with wrong password")
+    public void testCase_SI06() throws InterruptedException {
+        objSigInMobile.sigInWithWrongPassword();
+    }
+
+    @Test(priority = 6, description = "Enter the wrong email format")
+    public void testCase_SI07() throws InterruptedException {
+        objSigInMobile.enterWrongEmailFormat();
+    }
+
+    @Test(priority = 8, description = "Entered the wrong code sent to the email")
+    public void testCase_SI014() throws Exception {
+        objSigInMobile.enterWrongCodeSentToEmail();
+
+    }
+
+    @Test(priority = 8, description = "Resend the code to email")
+    public void testCase_SI015() throws Exception {
+        objSigInMobile.resentTheCodeToEmail();
+    }
+
+    @Test(priority = 9, description = "create valid new password")
+    public void testCase_SI016_testCase_SI013() throws InterruptedException {
+        objSigInMobile.createNewPassword();
+    }
+
+    @Test(priority = 10, description = "Login successfully on Login modal")
+    public void testCase_SI01() throws InterruptedException {
+        objSigInMobile.loginSuccessfully();
+    }
 
     //
 //    //----PHONE WHIT
@@ -110,16 +109,16 @@ public class SignInMobileTest extends BaseTest {
         objSigInMobile.createNewPasswordWithInvalidPhone();
     }
 
-//    @Test(priority = 17, description = "create valid new password Success")
-//    public void testCase_SI019() throws InterruptedException {
-//        objSigInMobile.createNewPasswordSuccess();
-//    }
-//
-//    @Test(priority = 18, description = "Login successfully on Login modal with phone number")
-//    public void testCase_SI08_And_SI012() throws InterruptedException {
-//        logger.info("testCase_SI08_And_SI012");
-//        objSigInMobile.loginWithPhoneSuccess();
-//    }
+    @Test(priority = 17, description = "create valid new password Success")
+    public void testCase_SI019() throws InterruptedException {
+        objSigInMobile.createNewPasswordSuccess();
+    }
+
+    @Test(priority = 18, description = "Login successfully on Login modal with phone number")
+    public void testCase_SI08_And_SI012() throws InterruptedException {
+        logger.info("testCase_SI08_And_SI012");
+        objSigInMobile.loginWithPhoneSuccess();
+    }
 }
 
 

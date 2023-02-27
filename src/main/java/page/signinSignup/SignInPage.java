@@ -129,7 +129,7 @@ public class SignInPage extends BasePage {
         selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT", "LOGIN_SELECT_ACTIVE",
                 "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG", "LOGIN_POPUP_MESSAGE_PASSWORD_RESET"
         );
-        getCodeEnterTextInField("LOGIN_IFRAME", "LOGIN_INPUT_VERIFY_CODE",
+        getCodeEnterTextInField("LOGIN_IFRAME_DEV3", "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNIN_INPUT_ENTER_CODE", "SIGNIN_BTN_SUBMIT_SEND_CODE");
         keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_SEND_KEY");
         keyword.untilJqueryIsDone(70L);

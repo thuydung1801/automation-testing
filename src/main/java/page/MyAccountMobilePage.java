@@ -68,6 +68,27 @@ public class MyAccountMobilePage extends BasePage {
 
     }
 
+    public void setUp2() throws InterruptedException {
+//        objLogin.loginOnAlert();
+//        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+
+        objRegister.acceptAllCookies();
+//        objRegister.chooseLanguages();
+        keyword.untilJqueryIsDone(30L);
+
+        keyword.navigateToUrl("https://stage.glamira.co.uk/");
+        keyword.untilJqueryIsDone(30L);
+//        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS", null, null, true);
+        keyword.untilJqueryIsDone(30L);
+//        keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/edit/");
+//        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+
+    }
+
     public void commonPersonalInf(String checkBox) throws InterruptedException {
         keyword.untilJqueryIsDone(70L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -290,13 +311,13 @@ public class MyAccountMobilePage extends BasePage {
         countAdd = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
         if (elementEdit != null) {
             keyword.untilJqueryIsDone(50L);
+            keyword.scrollToPositionByScript("window.scrollBy(0,700)");
             keyword.click(elementEdit);
             keyword.untilJqueryIsDone(30L);
             keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
 
         }
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-
     }
 
     public void inpEditAddress(String label, String element, String btnEdit, String textStreet, boolean melissa) throws InterruptedException {
@@ -370,6 +391,7 @@ public class MyAccountMobilePage extends BasePage {
                     check = false;
                 }
                 logger.info("check add...");
+                keyword.untilJqueryIsDone(50L);
                 Assert.assertEquals(check, true);
                 keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
                 break;
@@ -438,6 +460,7 @@ public class MyAccountMobilePage extends BasePage {
             check = false;
         }
         logger.info("check delete...");
+        keyword.untilJqueryIsDone(50L);
         Assert.assertEquals(check, true);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
 
@@ -561,7 +584,7 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void saveItemFormProductView() throws InterruptedException {
-        setUp();
+//        setUp();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.navigateToUrl("https://dev3.glamira.com/glgb/catalog/product_compare/index/");
@@ -712,7 +735,7 @@ public class MyAccountMobilePage extends BasePage {
         checkVerifyAdmin();
     }
 
-    public void viewOrder(String textBefore, String btnView, String textAfter) throws InterruptedException {
+    public void viewOrder(String textBefore, String btnView, String textAfter, String btnShow) throws InterruptedException {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(50L);
@@ -721,7 +744,7 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.scrollToPositionByScript("window.scrollBy(0,300)");
         keyword.untilJqueryIsDone(50L);
-        keyword.click("BTN_MORE_SHOW");
+        keyword.click(btnShow);
         keyword.untilJqueryIsDone(50L);
         keyword.click(btnView);
         keyword.untilJqueryIsDone(60L);
@@ -739,23 +762,23 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.click("MAC_MY_ORD_BTN_COMPLETE");
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-        viewOrder("MAC_MY_ORD_TEXT_ID_COMPLETE", "MAC_MY_ORD_BTN_VIEW_COMPLETE", "MAC_MY_ORD_VERIFY_TEXT_ID_COMPLETE");
+        viewOrder("MAC_MY_ORD_TEXT_ID_COMPLETE", "MAC_MY_ORD_BTN_VIEW_COMPLETE", "MAC_MY_ORD_VERIFY_TEXT_ID_COMPLETE", "BTN_MORE_SHOW");
     }
 
     public void viewOrderRecent() throws InterruptedException {
         keyword.back();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-        viewOrder("MAC_MY_ORD_TEXT_ID_ITEM", "MAC_MY_ORD_BTN_VIEW", "MAC_MY_ORD_VERIFY_TEXT_ID_ITEM");
+        viewOrder("MAC_MY_ORD_TEXT_ID_ITEM", "MAC_MY_ORD_BTN_VIEW", "MAC_MY_ORD_VERIFY_TEXT_ID_ITEM", "BTN_VIEW_2");
 
     }
 
     public void loginAdmin() throws InterruptedException {
         signInPage.openNewTabs();
-        signInPage.loginAdmin("LOGIN_DATA_USER_NAME_DUNG", "LOGIN_DATA_PASS_WORD_DUNG");
+        signInPage.loginAdmin("LOGIN_DATA_USER_NAME", "BE_ADMIN_PASSWORD");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-
+        keyword.maximizeWindow();
     }
 
     public void viewReturn() throws InterruptedException {
@@ -771,7 +794,6 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         searchElement();
-
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER");
         keyword.untilJqueryIsDone(60L);
@@ -891,12 +913,12 @@ public class MyAccountMobilePage extends BasePage {
         keyword.back();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-        int numItem = keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM");
+        int numItem = keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM1");
         System.out.printf("a = " + numItem + "\n");
         keyword.click("MAC_MY_ORD_BTN_UPLAOD_MORE");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-        int numItemEdit = keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM");
+        int numItemEdit = keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM1");
         System.out.printf("a = " + numItemEdit + "\n");
         System.out.printf("a-b " + numItem + "<" + numItemEdit + "\n");
         if (numItem + 10 == numItemEdit) {
@@ -935,9 +957,11 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void checkStatusConfirmation() throws InterruptedException {
-        setUp1();
-        keyword.openNewTab("https://stage.glamira.co.uk/sales/order/history/");
-
+        keyword.deleteAllCookies();
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
+        setUp3();
+        keyword.openNewTab("https://dev3.glamira.com/glgb/sales/order/history/");
         checkStatus("confirmation", "MAC_OVER_ID_ORDER_STATUS_CONFIR", "MAC_OVER_STATUS_CONFIR_ICON",
                 "MAC_OVER_STATUS_CONFIR", "MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR", "MAC_OVER_DATA_STATUS_CONFIR");
     }
@@ -948,36 +972,50 @@ public class MyAccountMobilePage extends BasePage {
                 "MAC_OVER_STATUS_DELIVERY", "MAC_OVER_DATA_ID_ORDER_STATUS_DELIVERY", "MAC_OVER_DATA_STATUS_DELIVERY");
     }
 
-    public void setUp2() throws InterruptedException {
-        objLogin.loginOnAlert();
-
+    public void setUp3() throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
+        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(30L);
+        objRegister = new RegisterPage(this.keyword);
         objRegister.acceptAllCookies();
-        objRegister.chooseLanguages();
-        keyword.untilJqueryIsDone(30L);
-
-        keyword.navigateToUrl("https://dev3.glamira.com/glau/");
-        keyword.untilJqueryIsDone(30L);
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS", null, null, true);
-        keyword.untilJqueryIsDone(30L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-
+        keyword.untilJqueryIsDone(50L);
+        keyword.scrollDownToElement("MOBILE_HAMBURGER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.scrollDownToElement("MOBILE_HAMBURGER");
+        keyword.click("MOBILE_HAMBURGER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("MOBILE_ICON_SIGNIN_STAGE");
+        keyword.untilJqueryIsDone(50L);
+//        keyword.click("LOGIN_BTN_LANGUAGE");
+//        keyword.click("BTN_COOKIES");
+        keyword.untilJqueryIsDone(50L);
+        keyword.sendKeys("SIGNIN_EMAIL_LOG", "COM_INP_DATA_EMAIL");
+        Thread.sleep(1000);
+        keyword.sendKeys("SIGN_INPUT_PASSWORD", "COM_INP_DATA_PASS");
+        Thread.sleep(1000);
+        keyword.click("LOGIN_BTN_SUBMITLOGIN");
+        keyword.waitForElementNotVisible(20, "//div[@class='loading-mask']");
     }
 
     public void checkFunctionInfoCustomer(String element, String verify, String data) throws InterruptedException {
         boolean check;
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(50, "//div[@class='loading-mask']");
+        keyword.scrollToPositionByScript("window.scrollBy(0,500)");
         keyword.click(element);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         System.out.printf("getText: " + keyword.getText(verify) + "\n");
         System.out.printf("getData: " + PropertiesFile.getPropValue(data) + "\n");
+        keyword.untilJqueryIsDone(50L);
         if (keyword.getText(verify).contains(PropertiesFile.getPropValue(data))) {
             check = true;
         } else {
             check = false;
         }
         logger.info("check verify My overview....");
+
         Assert.assertEquals(check, true);
     }
 
@@ -989,7 +1027,7 @@ public class MyAccountMobilePage extends BasePage {
 
     public void checkChangePassword() throws InterruptedException {
 //        setUp2();
-        keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/");
+        keyword.navigateToUrl("https://dev3.glamira.com/glgb/customer/account/");
         checkFunctionInfoCustomer("MAC_OVER_LINK_CHANGE_PASS", "MAC_OVER_VERIFY_GET_CHANGE_PASS", "MAC_OVER_VERIFY_DATA_CHANGE_PASS");
     }
 
@@ -1005,6 +1043,10 @@ public class MyAccountMobilePage extends BasePage {
 
     public void checkChangeNewsLetter() throws InterruptedException {
         keyword.back();
-        checkFunctionInfoCustomer("MAC_OVER_EDIT_NEWSLETTER", "MAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER", "MAC_VERIFY_DATA_TITTLE_NEWSLETTER");
+        checkFunctionInfoCustomer("MAC_OVER_EDIT_NEWSLETTER", "MAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER", "MAC_VERIFY_DATA_TITTLE_NEWSLETTER1");
+    }
+
+    boolean check() throws InterruptedException {
+        return keyword.verifyElementPresent("BTN_VIEW_2");
     }
 }

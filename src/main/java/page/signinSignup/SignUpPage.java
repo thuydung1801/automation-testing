@@ -25,8 +25,9 @@ public class SignUpPage extends BasePage {
 
     public void goToFormCreateMyAccount() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(1000);
-        keyword.click("SIGNUP_BTN_SIGNUP");
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("SIGNUP_BTN_SIGNUP2");
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
         Thread.sleep(2000);
         keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
@@ -299,10 +300,10 @@ public class SignUpPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.imWait(50);
         keyword.assertEquals("SIGNUP_CODE_SENT", "SIGNUP_CODE_RESEND");
-        objSignIn.openTabBE("https://stage.glamira.com/secured2021/");
+        objSignIn.openTabBE("https://dev3.glamira.com/secured2021/");
         objSignIn.loginAdmin(
-                "sophie",
-                "Hoanghue1207201294@");
+                "LOGIN_DATA_USER_NAME",
+                "LOGIN_DATA_PASS_WORD");
         objSignIn.chooseItemCustomer(
                 "LOGIN_BTN_CUSTOMER",
                 "LOGIN_BTN_CUSTOMER",
@@ -315,7 +316,7 @@ public class SignUpPage extends BasePage {
                 "LOGIN_SELECT_ACTIVE",
                 "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
                 "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
-        objSignIn.getCodeEnterTextInField("LOGIN_IFRAME_DEV4",
+        objSignIn.getCodeEnterTextInField("LOGIN_IFRAME_DEV3",
                 "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
         keyword.untilJqueryIsDone(50L);

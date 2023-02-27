@@ -124,7 +124,7 @@ public class SignInMobilePage extends BasePage {
         selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT", "LOGIN_SELECT_ACTIVE",
                 "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG", "LOGIN_POPUP_MESSAGE_PASSWORD_RESET"
         );
-        getCodeEnterTextInField("LOGIN_IFRAME", "LOGIN_INPUT_VERIFY_CODE",
+        getCodeEnterTextInField("LOGIN_IFRAME_DEV3", "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNIN_INPUT_ENTER_CODE", "SIGNIN_BTN_SUBMIT_SEND_CODE");
         keyword.resizeBrowser(319, 848);
         keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_SEND_KEY");
@@ -208,10 +208,13 @@ public class SignInMobilePage extends BasePage {
         keyword.untilJqueryIsDone(10L);
         openNewTabs();
         keyword.maximizeWindow();
+        keyword.deleteAllCookies();
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
         loginAdmin(
                 "LOGIN_DATA_USER_NAME",
                 "LOGIN_DATA_PASS_WORD");
-        keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
         chooseItemCustomer(
                 "SIGNUP_STORES_ITEM", "SIGNUP_STORES_ITEM",

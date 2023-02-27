@@ -50,7 +50,7 @@ public class MyAccountPage extends BasePage {
     }
     public void setUp1() throws InterruptedException {
 //        objLogin.loginOnAlert();
-//        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
+       keyword.navigateToUrl("https://stage.glamira.co.uk/");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
@@ -66,6 +66,7 @@ public class MyAccountPage extends BasePage {
 //        keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/edit/");
 //        keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
 
     }
     public void commonPersonalInf(String checkBox) throws InterruptedException {

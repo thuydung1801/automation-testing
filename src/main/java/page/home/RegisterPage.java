@@ -24,7 +24,8 @@ public class RegisterPage extends BasePage {
         chooseLanguages();
         keyword.webDriverWaitForElementPresent("BTN_COOKIES", 50);
         if (keyword.verifyElementPresent("BTN_COOKIES")) {
-            Thread.sleep(2000);
+            keyword.untilJqueryIsDone(60L);
+            Thread.sleep(5000);
             keyword.click("BTN_COOKIES");
         }
     }
