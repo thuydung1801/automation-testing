@@ -11,17 +11,17 @@ import page.signinSignup.SignInPage;
 
 import java.util.ArrayList;
 
-public class ProductDetailPage_Mobile extends BasePage {
+public class ProductDetailPageMobile extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private LoginPage objLogin;
     private RegisterPage objRegister ;
     private SignInPage signInPage;
     private ProductDetailPage productDetailPage;
 
-    public ProductDetailPage_Mobile() {
+    public ProductDetailPageMobile() {
         super();
     }
-    public ProductDetailPage_Mobile(KeywordWeb key){
+    public ProductDetailPageMobile(KeywordWeb key){
         super(key);
         objLogin = new LoginPage();
         objRegister = new RegisterPage();

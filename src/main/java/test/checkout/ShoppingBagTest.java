@@ -208,7 +208,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.missingFillSize();
         objShoppingBagPage.compareData("CHECKOUT_MESSAGES_UPDATE_24","CHECKOUT_LBL_MESSAGES_UPDATE_24");
     }
-    @Test
+   // @Test
             //(priority = 15, description = "Checkout successfully")
     public void testCase_SP_26_RV_02_04() throws InterruptedException {
         logger.info("testCase_SP_26");

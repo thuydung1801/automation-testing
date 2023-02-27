@@ -3,17 +3,17 @@ package test;
 import core.BaseTest;
 import org.testng.annotations.Test;
 import page.CustomerServicePage;
-import page.CustomerServicePage_Mobile;
+import page.CustomerServicePageMobile;
 
 import java.text.ParseException;
 
-public class CustomerServiceTest_Mobile extends BaseTest {
+public class CustomerServiceTestMobile extends BaseTest {
     private CustomerServicePage testCustomerService;
-    private CustomerServicePage_Mobile testCustomerServiceMobile;
-    public CustomerServiceTest_Mobile() {
+    private CustomerServicePageMobile testCustomerServiceMobile;
+    public CustomerServiceTestMobile() {
         super();
         testCustomerService = new CustomerServicePage(this.keyword);
-        testCustomerServiceMobile = new CustomerServicePage_Mobile(this.keyword);
+        testCustomerServiceMobile = new CustomerServicePageMobile(this.keyword);
     }
     @Test(priority = 1, description = "My product detail/ Filter _ Filter reviews with ratting option")
     public void filter_ratting_01() throws InterruptedException {

@@ -8,7 +8,7 @@ import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 
-public class MarketingPage_Mobile extends BasePage {
+public class MarketingPageMobile extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private LoginPage objLogin;
     private RegisterPage objRegister ;
@@ -16,10 +16,10 @@ public class MarketingPage_Mobile extends BasePage {
     public SignInPage signInPage;
     private MarketingPage marketingPage;
     //    private SignInPage objsignInPage;
-    public MarketingPage_Mobile() {
+    public MarketingPageMobile() {
         super();
     }
-    public MarketingPage_Mobile(KeywordWeb key){
+    public MarketingPageMobile(KeywordWeb key){
         super(key);
         objLogin = new LoginPage();
         objRegister = new RegisterPage();

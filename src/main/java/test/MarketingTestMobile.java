@@ -1,20 +1,17 @@
 package test;
 
 import core.BaseTest;
-import core.KeywordWeb;
 import org.testng.annotations.Test;
-import page.CustomerServicePage;
-import page.CustomerServicePage_Mobile;
 import page.MarketingPage;
-import page.MarketingPage_Mobile;
+import page.MarketingPageMobile;
 
-public class MarketingTest_Mobile extends BaseTest {
+public class MarketingTestMobile extends BaseTest {
     private MarketingPage testMarketing;
-    private MarketingPage_Mobile testMarketingMobile;
-    public MarketingTest_Mobile() {
+    private MarketingPageMobile testMarketingMobile;
+    public MarketingTestMobile() {
         super();
         testMarketing = new MarketingPage(this.keyword);
-        testMarketingMobile = new MarketingPage_Mobile(this.keyword);
+        testMarketingMobile = new MarketingPageMobile(this.keyword);
     }
     @Test(priority = 1, description = "Add to cart a new Gift card ")
     public void testCase_GC_03() throws InterruptedException {

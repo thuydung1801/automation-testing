@@ -9,17 +9,17 @@ import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 
-public class CustomerServicePage_Mobile extends BasePage {
+public class CustomerServicePageMobile extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private LoginPage objLogin;
     private RegisterPage objRegister ;
     private SignInPage signInPage;
     private CustomerServicePage customerServicePage;
 
-    public CustomerServicePage_Mobile() {
+    public CustomerServicePageMobile() {
         super();
     }
-    public CustomerServicePage_Mobile(KeywordWeb key){
+    public CustomerServicePageMobile(KeywordWeb key){
         super(key);
         objLogin = new LoginPage();
         objRegister = new RegisterPage();

@@ -2,18 +2,17 @@ package test;
 
 import core.BaseTest;
 import org.testng.annotations.Test;
-import page.CustomerServicePage;
 import page.ProductDetailPage;
-import page.ProductDetailPage_Mobile;
+import page.ProductDetailPageMobile;
 
-public class ProductDetailTest_Mobile extends BaseTest {
+public class ProductDetailTestMobile extends BaseTest {
     private ProductDetailPage testProductDetail;
-    private ProductDetailPage_Mobile testProductDetailMobile;
+    private ProductDetailPageMobile testProductDetailMobile;
 
-    public ProductDetailTest_Mobile() {
+    public ProductDetailTestMobile() {
         super();
         testProductDetail = new ProductDetailPage(this.keyword);
-        testProductDetailMobile = new ProductDetailPage_Mobile(this.keyword);
+        testProductDetailMobile = new ProductDetailPageMobile(this.keyword);
     }
     @Test(priority = 1, description = "Product Infomation")
     public void runProductInfo() throws InterruptedException {
