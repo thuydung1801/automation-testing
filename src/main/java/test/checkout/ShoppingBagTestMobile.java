@@ -28,6 +28,7 @@ public class ShoppingBagTestMobile extends BaseTest {
     public ShoppingBagTestMobile(){ super();}
     public void commonShopping() throws InterruptedException {
         objShoppingBagPage = new ShoppingBagPage(this.keyword);
+        shoppingBagPageMobile = new ShoppingBagPageMobile(this.keyword);
         objLogin = new LoginPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
         objSignIn = new SignInPage(this.keyword);
@@ -58,10 +59,10 @@ public class ShoppingBagTestMobile extends BaseTest {
 //        commonShopping();
         objShoppingBagPage.addProductWithGift("https://stage.glamira.co.uk/charming-view.html?alloy=white-585&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
-        objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
+        objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE");
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_ENGRAVING","CHECKOUT_HYPERLINK_ADD"
                 ,"CHECKOUT_TXT_WOMEN_ENGRAVING","CHECKOUT_TXT_MEN_ENGRAVING");
-        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING","CHECKOUT_LBL_ENGRAVING");
+        shoppingBagPageMobile.inputCorrectly("CHECKOUT_DATA_ENGRAVING_MOBILE","CHECKOUT_LBL_ENGRAVING_MOBILE");
 
     }
     @Test
@@ -84,10 +85,11 @@ public class ShoppingBagTestMobile extends BaseTest {
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_UNIVERSE");
         objShoppingBagPage.editCoupleRings();
-        objShoppingBagPage.compareData("CHECKOUT_DATA_24_1","CHECKOUT_BAG_LBL_STONE");
-        objShoppingBagPage.compareData("CHECKOUT_DATA_24_2","CHECKOUT_BAG_LBL_PROFILE");
+        shoppingBagPageMobile.compareData("CHECKOUT_DATA_24_1","CHECKOUT_BAG_LBL_STONE_MOBILE");
+        objShoppingBagPage.compareData("CHECKOUT_DATA_24_2","CHECKOUT_BAG_LBL_PROFILE_MOBILE");
         objShoppingBagPage.confirmMessage("CHECKOUT_BAG_LBL_SIZE");
     }
+    @Test
     public void testCase_SP_04() throws InterruptedException{
         logger.info("testCase_SP_04");
         //commonShoppingWithOutCookies();
@@ -105,6 +107,12 @@ public class ShoppingBagTestMobile extends BaseTest {
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
         objShoppingBagPage.checkOutWithPayPal();
+    }
+    @Test
+    public void testCase_Myorder_Return() throws InterruptedException {
+        logger.info("testCase_Myorder_Return");
+        commonShopping();
+        shoppingBagPageMobile.stepReturn();
     }
 
 }

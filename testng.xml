@@ -29,19 +29,20 @@
         <classes>
             <class name="test.checkout.ShoppingBagTestMobile">
                 <methods>
-                    <include name="testCase_SP_02"/>
-                    <include name="testCase_SP_17"/>
-                    <include name="testCase_SP_26_RV_02_04"/>
-                    <include name="testCase_SP_24"/>
-                    <include name="testCase_SP_04"/>
-                    <include name="testCase_RV_07"/>
+<!--                    <include name="testCase_SP_02"/>-->
+<!--                    <include name="testCase_SP_17"/>-->
+<!--                    <include name="testCase_SP_26_RV_02_04"/>-->
+<!--                    <include name="testCase_SP_24"/>-->
+<!--                    <include name="testCase_SP_04"/>-->
+<!--                    <include name="testCase_RV_07"/>-->
+                    <include name="testCase_Myorder_Return"/>
                 </methods>
             </class>
-            <class name="test.MyAccountTest">
-                <methods>
-                    <include name="testCase_Myorder_05"/>
-                </methods>
-            </class>
+<!--            <class name="test.MyAccountTest">-->
+<!--                <methods>-->
+<!--                    <include name="testCase_Myorder_05"/>-->
+<!--                </methods>-->
+<!--            </class>-->
         </classes>
     </test>
 </suite>

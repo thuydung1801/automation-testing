@@ -766,9 +766,43 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.verifyElementVisible("MAC_MY_ORD_VERIFY_RETURN");
     }
+    public boolean checkOrderLoginCus() throws InterruptedException {
+        boolean check = false;
+            int count = Integer.parseInt(PropertiesFile.getPropValue("COUNT_ITEM"));
+            String key = PropertiesFile.getPropValue("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER1")+count
+                    +PropertiesFile.getPropValue("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER2");
+            System.out.printf("key----" + key);
+            while(keyword.verifyElementVisible(key)){
+
+                keyword.click(key);
+                keyword.untilJqueryIsDone(80L);
+                keyword.waitForElementNotVisible(20,"//div[@class='loading-mask']");
+                keyword.untilJqueryIsDone(80L);
+                keyword.waitForElementNotVisible(20,"//div[@class='loading-mask']");
+                keyword.untilJqueryIsDone(80L);
+                keyword.waitForElementNotVisible(20,"//div[@class='loading-mask']");
+
+                Thread.sleep(20000);
+                if(keyword.verifyElementPresent("//body[@id='html-body']")){
+                    count++;
+                    PropertiesFile.serPropValue("COUNT_ITEM", String.valueOf(count));
+                    key =PropertiesFile.getPropValue("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER1")+count
+                            +PropertiesFile.getPropValue("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER2") ;
+                    keyword.switchToTab(1);
+                }
+                else{
+                    check=true;
+                    break;
+                }
+
+            }
+            return check;
+
+
+    }
     public void searchElement() throws InterruptedException {
         while(true) {
-            boolean check = keyword.verifyElementVisible("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER");
+            boolean check = checkOrderLoginCus();
             logger.info(String.valueOf(check));
             if(check){
                 return;
