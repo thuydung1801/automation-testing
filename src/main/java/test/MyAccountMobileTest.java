@@ -25,6 +25,7 @@ public class MyAccountMobileTest extends BaseTest {
         testMyAccountMobile.changeFullnameWithData();
     }
 
+    ////
     @Test(priority = 2, description = "Change PERSONAL INFORMATION : forgot enter value First/last name  ")
     public void testCase_PI_02() throws InterruptedException {
         testMyAccountMobile.changeFullnameWithDataNUll();
@@ -39,44 +40,54 @@ public class MyAccountMobileTest extends BaseTest {
     public void testCase_PI_04_LO_01() throws InterruptedException {
         testMyAccountMobile.changePassword();
     }
-    @Test(priority = 4,description = "DELETE ACCOUNT")
+
+    @Test(priority = 4, description = "DELETE ACCOUNT")
     public void testCase_PI_06() throws InterruptedException {
         testMyAccountMobile.deleteAccount();
     }
-////    My Addresses
-    @Test(priority = 5,description = "Edit BILLING ADDRESS")
+
+    ////    My Addresses
+    @Test(priority = 5, description = "Edit BILLING ADDRESS")
     public void testCase_MA_01() throws InterruptedException {
         testMyAccountMobile.editBillingAddress();
     }
-    @Test(priority = 6,description = "Edit SHIPPING ADDRESS")
+
+    @Test(priority = 6, description = "Edit SHIPPING ADDRESS")
     public void testCase_MA_02() throws InterruptedException {
         testMyAccountMobile.editShippingAddress();
     }
-    @Test(priority = 7,description = "ADD NEW ADDRESS")
+
+    @Test(priority = 7, description = "ADD NEW ADDRESS")
     public void testCase_MA_09() throws InterruptedException {
         testMyAccountMobile.addNewAddress();
     }
-    @Test(priority = 8,description = "Edit a address in section Additional Address Entries")
+
+    @Test(priority = 8, description = "Edit a address in section Additional Address Entries")
     public void testCase_MA_03() throws InterruptedException {
         testMyAccountMobile.editAdditionalAddressEntries();
     }
-    @Test(priority = 9,description = " Delete a address in section Additional Address Entries")
+
+    @Test(priority = 9, description = " Delete a address in section Additional Address Entries")
     public void testCase_MA_04() throws InterruptedException {
         testMyAccountMobile.deleteAdditionalAddressEntries();
     }
-    @Test(priority = 10,description = "  Set as Default a address in section Additional Address Entries")
+
+    @Test(priority = 10, description = "  Set as Default a address in section Additional Address Entries")
     public void testCase_MA_05() throws InterruptedException {
         testMyAccountMobile.setAsDefaultAddress();
     }
-    @Test(priority = 11,description = "Set Default Billing Address when edit address")
+
+    @Test(priority = 11, description = "Set Default Billing Address when edit address")
     public void testCase_MA_06() throws InterruptedException {
         testMyAccountMobile.editSetDefaultBilling();
     }
-    @Test(priority = 12,description = "Set  DEFAULT SHIPPING ADDRESS when edit address")
+
+    @Test(priority = 12, description = "Set  DEFAULT SHIPPING ADDRESS when edit address")
     public void testCase_MA_07() throws InterruptedException {
         testMyAccountMobile.editSetDefaultShipping();
     }
-    @Test(priority = 13,description = "Add New Address")
+
+    @Test(priority = 13, description = "Add New Address")
     public void testCase_MA_08() throws InterruptedException {
         testMyAccountMobile.addNewAddress();
     }
@@ -106,58 +117,58 @@ public class MyAccountMobileTest extends BaseTest {
     public void testCase_MW_05() throws InterruptedException {
         testMyAccountMobile.emailSelectItem();
     }
+
     //   case My Order
-//    @Test(priority = 19,description = "Check function icon  view order of completed order")
-//    public void testCase_Myorder_01() throws InterruptedException {
-//        objRegister = new RegisterPage();
-//        keyword.untilJqueryIsDone(50L);
+    @Test(priority = 19, description = "Check function icon  view order of completed order")
+    public void testCase_Myorder_01() throws InterruptedException {
+        objRegister = new RegisterPage();
 //        objRegister.acceptAllCookies();
-//        testMyAccountMobile.viewOrderComplete();
-//    }
-//    @Test(priority = 20,description = "Check function icon view order of Recent  orders")
-//    public void testCase_Myorder_02() throws InterruptedException {
-//        testMyAccountMobile.viewOrderRecent();
-//    }
-//    @Test(priority = 21,description = "Check function icon view order of Recent  orders")
-//    public void testCase_Myorder_04() throws InterruptedException {
-//        testMyAccountMobile.upLoadItemOrder();
-//    }
-//    @Test(priority = 22,description = "Check function icon return  of completed order")
-//    public void testCase_Myorder_03() throws InterruptedException {
-//        testMyAccountMobile.viewReturn();
-//    }
-////    @Test(priority = 22,description = "Check  return  of completed order")
+        testMyAccountMobile.viewOrderComplete();
+    }
+    @Test(priority = 20,description = "Check function icon view order of Recent  orders")
+    public void testCase_Myorder_02() throws InterruptedException {
+        testMyAccountMobile.viewOrderRecent();
+    }
+    @Test(priority = 21,description = "Check function icon view order of Recent  orders")
+    public void testCase_Myorder_04() throws InterruptedException {
+        testMyAccountMobile.upLoadItemOrder();
+    }
+    @Test(priority = 22,description = "Check function icon return  of completed order")
+    public void testCase_Myorder_03() throws InterruptedException {
+        testMyAccountMobile.viewReturn();
+    }
+//    @Test(priority = 22,description = "Check  return  of completed order")
 //    public void testCase_Myorder_05() throws InterruptedException {
 //        testMyAccountMobile.stepReturn();
 //    }
-//
+
 ////
-//    // case My Overview
-    @Test(priority = 21,description = "Check order status = Order Confirmation ,display in tab Recent Orders ")
+    // case My Overview
+    @Test(priority = 23,description = "Check order status = Order Confirmation ,display in tab Recent Orders ")
     public void testCase_MO_03() throws InterruptedException {
         testMyAccountMobile.checkStatusConfirmation();
     }
-    @Test(priority = 22,description = "Check order status = Delivery, display in tab Recent Orders ")
+    @Test(priority = 24,description = "Check order status = Delivery, display in tab Recent Orders ")
     public void testCase_MO_05() throws InterruptedException {
         testMyAccountMobile.checkStatusDelivery();
     }
-    @Test(priority = 23,description = "Check -Change Password- function in contact information ")
+    @Test(priority = 25,description = "Check -Change Password- function in contact information ")
     public void testCase_MO_06() throws InterruptedException {
         testMyAccountMobile.checkChangePassword();
     }
-    @Test(priority = 24,description = "Check -Contact Information- edit function")
+    @Test(priority = 26,description = "Check -Contact Information- edit function")
     public void testCase_MO_07() throws InterruptedException {
         testMyAccountMobile.checkContactInfo();
     }
-    @Test(priority = 25,description = "Check -Shipping Address- edit function")
+    @Test(priority = 27,description = "Check -Shipping Address- edit function")
     public void testCase_MO_08() throws InterruptedException {
         testMyAccountMobile.checkChangeShippingAddress();
     }
-    @Test(priority = 26,description = "Check -Billing Address- edit function ")
+    @Test(priority = 28,description = "Check -Billing Address- edit function ")
     public void testCase_MO_09() throws InterruptedException {
         testMyAccountMobile.checkChangeBillingAddress();
     }
-    @Test(priority = 27,description = "Check -Newsletters- edit function")
+    @Test(priority = 29,description = "Check -Newsletters- edit function")
     public void testCase_MO_10() throws InterruptedException {
         testMyAccountMobile.checkChangeNewsLetter();
     }
