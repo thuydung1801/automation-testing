@@ -138,9 +138,9 @@ public class MyAccountMobileTest extends BaseTest {
         testMyAccountMobile.viewReturn();
     }
 //    @Test(priority = 22,description = "Check  return  of completed order")
-//    public void testCase_Myorder_05() throws InterruptedException {
-//        testMyAccountMobile.stepReturn();
-//    }
+    public void testCase_Myorder_05() throws InterruptedException {
+        testMyAccountMobile.stepReturn();
+    }
 
 ////
     // case My Overview

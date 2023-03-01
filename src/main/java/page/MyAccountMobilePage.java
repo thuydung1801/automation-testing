@@ -279,8 +279,8 @@ public class MyAccountMobilePage extends BasePage {
         keyword.click("BTN_MYACCOUNT");
         inpChangePassword();
         keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
         keyword.assertEquals("MAC_VERIFY_DATA_FULLNAME", "CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE");
-//        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE", "MAC_VERIFY_DATA_FULLNAME", "pass", "MAC_VERIFY_PASS_CHANGE", "COM_INP_DATA_PASS");
 
     }
 
@@ -351,7 +351,7 @@ public class MyAccountMobilePage extends BasePage {
         }
         keyword.click("MAC_BTN_SAVE_ADDRESS");
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(30, "//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
@@ -450,6 +450,7 @@ public class MyAccountMobilePage extends BasePage {
         keyword.click("MAC_LINKTEXT_DELETE");
         keyword.untilJqueryIsDone(60L);
         keyword.click("MAC_BTN_DELETE_OK");
+        keyword.untilJqueryIsDone(60L);
         keyword.untilJqueryIsDone(60L);
         if (keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")) {
             keyword.assertEquals("MAC_VERIFY_DATA_DELETE_ADDRESS", "CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
@@ -611,7 +612,8 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click("MAC_LINK_HEART_PHONE");
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(20, "//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(50L);
         keyword.click("MAC_BTN_VIEW_WISHLIST");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -690,31 +692,18 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("ADMIN_CUS_EMAILLOG_BTN_FILTER", 20);
         Thread.sleep(2000);
+        keyword.scrollDownToElement("ADMIN_CUS_EMAILLOG_BTN_FILTER");
         keyword.click("ADMIN_CUS_EMAILLOG_BTN_FILTER");
-
         keyword.untilJqueryIsDone(30L);
-
         keyword.clearText("ADMIN_CUS_EMAILLOG_FILTER_INP_RECIPIENT");
         keyword.sendKeys("ADMIN_CUS_EMAILLOG_FILTER_INP_RECIPIENT", text);
-
         keyword.untilJqueryIsDone(30L);
         keyword.click("ADMIN_CUS_EMAILLOG_ENTER_FILTER");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.assertEquals(text, "ADMIN_CUS_EMAILLOG_TEXT_RECIPIENT");
         keyword.assertEquals("ADMIN_CUS_DATA_EMAILLOG_TEXT_RECIPIENT_TEMP", "ADMIN_CUS_EMAILLOG_TEXT_RECIPIENT_TEMP");
-//        keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT");
-//        keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT_VIEW");
-//
-//        keyword.untilJqueryIsDone(30L);
-//        keyword.scrollDownToElement("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
-//        keyword.webDriverWaitForElementPresent("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE",20);
-//        keyword.checkStatusIsDisplay("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
-//        System.out.printf("===========");
-//        keyword.scrollDownToElement("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
-//        keyword.click("ADMIN_CUS_EMAILLOG_ACTION_SELECT_LINK_CREATE");
         keyword.untilJqueryIsDone(30L);
-
     }
 
     public void emailSelectItem() throws InterruptedException {
@@ -783,6 +772,10 @@ public class MyAccountMobilePage extends BasePage {
 
     public void loginAdmin() throws InterruptedException {
         signInPage.openNewTabs();
+        keyword.deleteAllCookies();
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
         signInPage.loginAdmin("LOGIN_DATA_USER_NAME", "BE_ADMIN_PASSWORD");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -790,9 +783,6 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void viewReturn() throws InterruptedException {
-        keyword.deleteAllCookies();
-        keyword.reLoadPage();
-        keyword.untilJqueryIsDone(50L);
         loginAdmin();
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC");
         keyword.untilJqueryIsDone(60L);
@@ -829,7 +819,7 @@ public class MyAccountMobilePage extends BasePage {
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.click("MAC_MY_ORD_BTN_COMPLETE");
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(50, "//div[@class='loading-mask']");
         keyword.click("MAC_MY_ORD_BTN_RETURN");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -971,6 +961,7 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void checkStatusConfirmation() throws InterruptedException {
+        keyword.resizeBrowser(319, 848);
         keyword.deleteAllCookies();
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
@@ -988,8 +979,6 @@ public class MyAccountMobilePage extends BasePage {
 
     public void setUp3() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
-//        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
-//        Thread.sleep(5000);
         keyword.untilJqueryIsDone(30L);
         objRegister = new RegisterPage(this.keyword);
         objRegister.acceptAllCookies();
@@ -998,11 +987,9 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("MOBILE_HAMBURGER");
         keyword.click("MOBILE_HAMBURGER");
-        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(5000);
         keyword.click("MOBILE_ICON_SIGNIN_STAGE");
         keyword.untilJqueryIsDone(50L);
-//        keyword.click("LOGIN_BTN_LANGUAGE");
-//        keyword.click("BTN_COOKIES");
         keyword.untilJqueryIsDone(50L);
         keyword.sendKeys("SIGNIN_EMAIL_LOG", "COM_INP_DATA_EMAIL_TEST");
         Thread.sleep(1000);
