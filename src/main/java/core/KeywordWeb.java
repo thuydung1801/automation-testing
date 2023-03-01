@@ -26,6 +26,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
@@ -441,6 +442,7 @@ public class KeywordWeb {
     }
 
     public void switchToTab(int tabNum) {
+        logger.info("switchToTab");
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tabNum));
     }
@@ -530,6 +532,7 @@ public class KeywordWeb {
 
     //verify keyword
     public boolean verifyElementPresent(String element) {
+        logger.info("verifyElementPresent" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
         if (xPathElement == null) {
             xPathElement = element;
@@ -556,6 +559,18 @@ public class KeywordWeb {
         Select dropDownList = new Select(driver.findElement(By.xpath(xPathElement1)));
         dropDownList.selectByVisibleText(xPathElement2);
 
+    }
+
+    public void switchToTabCurrent(){
+        logger.info("switchToTabCurrentSuccess");
+        String currentTab = driver.getWindowHandle();
+        Set<String> tabs = driver.getWindowHandles();
+
+        for (String tab : tabs) {
+            if (!currentTab.equals(tab)) {
+                driver.switchTo().window(tab);
+            }
+        }
     }
 
     public boolean verifyElementVisible(String element) {

@@ -68,12 +68,25 @@ public class ShoppingBagPageMobile extends BasePage {
         keyword.pressEnter();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+        System.out.printf("----select UK-----");
+        logger.info("select UK");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.selectDropDownListByName("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_UK","    Glamira UK");
+        Thread.sleep(1000);
+        keyword.pressEnter();
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         myAccountPage.searchElement();
 
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 //        keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        //keyword.switchToTabCurrent();
+
         keyword.switchToTab(2);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -81,10 +94,10 @@ public class ShoppingBagPageMobile extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         //login as customer
-        keyword.selectDropDownListByName("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_UK","GLAMIRA.co.uk");
-        keyword.pressEnter();
-        keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+//        keyword.selectDropDownListByName("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_UK","GLAMIRA.co.uk");
+//        keyword.pressEnter();
+//        keyword.untilJqueryIsDone(60L);
+//        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_OK");
         // go to My Return
         keyword.untilJqueryIsDone(60L);

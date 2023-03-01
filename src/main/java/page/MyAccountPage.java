@@ -732,25 +732,28 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.selectDropDownListByName("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_SELECT_PAGE","200");
         keyword.pressEnter();
+        System.out.printf("----select UK-----");
+        logger.info("select UK");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        searchElement();
+        keyword.selectDropDownListByName("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_UK","Glamira UK");
+        keyword.pressEnter();
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER");
+        searchElement();
+//        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+//        keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.switchToTab(2);
+        keyword.switchToTabCurrent();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         //login as customer
-        keyword.selectDropDownListByName("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_UK","GLAMIRA.co.uk");
-        keyword.pressEnter();
-        keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_OK");
         // go to My Return
         keyword.untilJqueryIsDone(60L);
@@ -783,7 +786,9 @@ public class MyAccountPage extends BasePage {
                 keyword.waitForElementNotVisible(20,"//div[@class='loading-mask']");
 
                 Thread.sleep(20000);
-                if(keyword.verifyElementPresent("//body[@id='html-body']")){
+                keyword.switchToTabCurrent();
+               // keyword.click("//div[@id='ordereditor-account-link']//a[@href='#'][normalize-space()='Edit']");
+                if(keyword.verifyElementPresent("VERIFY_NOT_LOGIN_CUS")){
                     count++;
                     PropertiesFile.serPropValue("COUNT_ITEM", String.valueOf(count));
                     key =PropertiesFile.getPropValue("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER1")+count
@@ -798,7 +803,6 @@ public class MyAccountPage extends BasePage {
             }
             return check;
 
-
     }
     public void searchElement() throws InterruptedException {
         while(true) {
@@ -806,6 +810,7 @@ public class MyAccountPage extends BasePage {
             logger.info(String.valueOf(check));
             if(check){
                 return;
+
             }
             else {
                 keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_BTN_NEXT_PAGE");
