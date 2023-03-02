@@ -130,7 +130,7 @@ public class ShoppingBagPageMobile extends BasePage {
         boolean check;
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        String s = keyword.getText("MAC_MY_ORD_VERIFY_RETURN_GET_ID_ORDER");
+        String s = keyword.getText("MAC_MY_ORD_VERIFY_RETURN_GET_ID_ORDER2");
         String id=s.substring(1,s.length());
         System.out.printf("ID : " + id +"\n");
         if(id.equalsIgnoreCase(PropertiesFile.getPropValue("KEY_ID_ORDER"))){
