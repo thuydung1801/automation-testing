@@ -50,6 +50,7 @@ public class CreateAccountMobilePage extends BasePage {
         keyword.verifyElementVisible("BTN_VIEW_CART");
         keyword.click("BTN_VIEW_CART");
         keyword.untilJqueryIsDone(50L);
+        Thread.sleep(3000);
         keyword.click("LA_BTN_PROCEED_TO_CHECKOUT");
         keyword.verifyElementVisible("FORM_CHECKOUT_VRF");
         keyword.click("CHECKOUT_LA_HPL_FORGOT_PASS");

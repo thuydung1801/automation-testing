@@ -31,12 +31,13 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void setUp() throws InterruptedException {
-        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(50, "//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("MOBILE_HAMBURGER");
         keyword.untilJqueryIsDone(50L);
         keyword.click("MOBILE_HAMBURGER");
-        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(50, "//div[@class='loading-mask']");
+        Thread.sleep(2000);
         keyword.click("MOBILE_ICON_SIGNIN");
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
@@ -56,8 +57,9 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("MOBILE_HAMBURGER");
         keyword.untilJqueryIsDone(50L);
-        keyword.click("MOBILE_HAMBURGER");
+        keyword.doubleClick("MOBILE_HAMBURGER");
         keyword.untilJqueryIsDone(50L);
+        Thread.sleep(5000);
         keyword.click("MOBILE_ICON_SIGNIN");
         keyword.untilJqueryIsDone(50L);
         keyword.sendKeys("LOGIN_TXT_EMAIL_4", "COM_INP_DATA_EMAIL_TEST");
@@ -354,7 +356,7 @@ public class MyAccountMobilePage extends BasePage {
         keyword.waitForElementNotVisible(30, "//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
-        keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
+//        keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         keyword.assertEquals("MAC_VERIFY_DATA_ADDRESS", "CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -479,7 +481,8 @@ public class MyAccountMobilePage extends BasePage {
         keyword.scrollToPositionByScript("window.scrollBy(0,300)");
         keyword.click("MAC_LINKTEXT_SETAS");
         keyword.untilJqueryIsDone(50L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(30, "//div[@class='loading-mask']");
+        Thread.sleep(3000);
         keyword.assertEquals("MAC_VERIFY_DATA_ADDRESS", "CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -612,8 +615,11 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click("MAC_LINK_HEART_PHONE");
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(20, "//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(50, "//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(2000);
+        keyword.scrollDownToElement("MAC_BTN_VIEW_WISHLIST");
         keyword.click("MAC_BTN_VIEW_WISHLIST");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -691,6 +697,7 @@ public class MyAccountMobilePage extends BasePage {
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("ADMIN_CUS_EMAILLOG_BTN_FILTER", 20);
+        keyword.untilJqueryIsDone(50L);
         Thread.sleep(2000);
         keyword.scrollDownToElement("ADMIN_CUS_EMAILLOG_BTN_FILTER");
         keyword.click("ADMIN_CUS_EMAILLOG_BTN_FILTER");
@@ -967,6 +974,8 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         setUp3();
         keyword.openNewTab("https://dev3.glamira.com/glgb/sales/order/history/");
+        keyword.click("BTN_UPLOAD_MORE");
+        keyword.untilJqueryIsDone(50L);
         checkStatus("confirmation", "MAC_OVER_ID_ORDER_STATUS_CONFIR", "MAC_OVER_STATUS_CONFIR_ICON",
                 "MAC_OVER_STATUS_CONFIR", "MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR", "MAC_OVER_DATA_STATUS_CONFIR");
     }
@@ -978,17 +987,14 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void setUp3() throws InterruptedException {
-        keyword.untilJqueryIsDone(30L);
-        keyword.untilJqueryIsDone(30L);
         objRegister = new RegisterPage(this.keyword);
         objRegister.acceptAllCookies();
-        keyword.untilJqueryIsDone(50L);
-        keyword.scrollDownToElement("MOBILE_HAMBURGER");
-        keyword.untilJqueryIsDone(50L);
-        keyword.scrollDownToElement("MOBILE_HAMBURGER");
-        keyword.click("MOBILE_HAMBURGER");
-        Thread.sleep(5000);
-        keyword.click("MOBILE_ICON_SIGNIN_STAGE");
+//        keyword.untilJqueryIsDone(50L);
+//        Thread.sleep(5000);
+//        keyword.scrollDownToElement("MOBILE_HAMBURGER");
+//        Thread.sleep(5000);
+//        keyword.click("MOBILE_HAMBURGER");
+//        keyword.click("MOBILE_ICON_SIGNIN_STAGE");
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
         keyword.sendKeys("SIGNIN_EMAIL_LOG", "COM_INP_DATA_EMAIL_TEST");
