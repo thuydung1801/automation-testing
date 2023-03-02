@@ -74,8 +74,10 @@ public class ShoppingBagPageMobile extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.selectDropDownListByName("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_UK","    Glamira UK");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         Thread.sleep(1000);
-        keyword.pressEnter();
+        keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_BTN_SEARCH_CUS_UK");
+//        keyword.pressEnter();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
@@ -86,8 +88,9 @@ public class ShoppingBagPageMobile extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         //keyword.switchToTabCurrent();
-
-        keyword.switchToTab(2);
+        int tabNum = Integer.parseInt(PropertiesFile.getPropValue("COUNT_ITEM") )+1;
+        logger.info(String.valueOf(tabNum));
+        keyword.switchToTab(tabNum);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS");
@@ -113,6 +116,9 @@ public class ShoppingBagPageMobile extends BasePage {
         keyword.click("MAC_MY_ORD_BTN_COMPLETE");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click("MAC_MY_ORD_BTN_VIEW_RETURN_MOBILE");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("MAC_MY_ORD_BTN_RETURN");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -144,14 +150,28 @@ public class ShoppingBagPageMobile extends BasePage {
             keyword.keysBoardWithDOWN("MAC_MY_ORD_RETURN_STEP1_SELECT1");
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             keyword.click("MAC_MY_ORD_RETURN_STEP1_CHECKBOX2");
-            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-            keyword.click("MAC_MY_ORD_RETURN_STEP1_SELECT2");
-            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-            keyword.doubleClick("MAC_MY_ORD_RETURN_STEP1_SELECT2_OPTION");
-            keyword.untilJqueryIsDone(60L);
-            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-            keyword.doubleClick("//div[@class='column main']");
-            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+            if(keyword.verifyElementVisible("MAC_MY_ORD_RETURN_STEP1_TEXTAREA")){
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_TEXTAREA","MAC_MY_ORD_RETURN_STEP1_DATA_TEXTAREA");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG1","C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemhop.jpg");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG2","C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemly.jpg");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG3","C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemque.jpg");
+
+            }
+            else{
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.click("MAC_MY_ORD_RETURN_STEP1_SELECT2");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.doubleClick("MAC_MY_ORD_RETURN_STEP1_SELECT2_OPTION");
+                keyword.untilJqueryIsDone(60L);
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.doubleClick("//div[@class='column main']");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+            }
+
             keyword.scrollDownToElement("MAC_MY_ORD_RETURN_STEP2");
             keyword.doubleClick("MAC_MY_ORD_RETURN_STEP2");
             keyword.untilJqueryIsDone(60L);

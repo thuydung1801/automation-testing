@@ -746,7 +746,9 @@ public class MyAccountPage extends BasePage {
 //        keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.switchToTabCurrent();
+        int tabNum = Integer.parseInt(PropertiesFile.getPropValue("COUNT_ITEM") )+1;
+        logger.info(String.valueOf(tabNum));
+        keyword.switchToTab(tabNum);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS");
@@ -787,8 +789,9 @@ public class MyAccountPage extends BasePage {
 
                 Thread.sleep(20000);
                 keyword.switchToTabCurrent();
+                String status = String.valueOf(verifyIdReturn());
                // keyword.click("//div[@id='ordereditor-account-link']//a[@href='#'][normalize-space()='Edit']");
-                if(keyword.verifyElementPresent("VERIFY_NOT_LOGIN_CUS")){
+                if(status.equalsIgnoreCase(String.valueOf(false)) || keyword.verifyElementPresent("VERIFY_NOT_LOGIN_CUS")){
                     count++;
                     PropertiesFile.serPropValue("COUNT_ITEM", String.valueOf(count));
                     key =PropertiesFile.getPropValue("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER1")+count
@@ -824,14 +827,14 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         String s = keyword.getText("MAC_MY_ORD_VERIFY_RETURN_GET_ID_ORDER");
-        String id=s.substring(1,s.length());
+        String id=s.substring(1,10);
         System.out.printf("ID : " + id +"\n");
         if(id.equalsIgnoreCase(PropertiesFile.getPropValue("KEY_ID_ORDER"))){
             logger.info("Failed by id:" + id);
             return false;
         }
         else{
-            //PropertiesFile.serPropValue("KEY_ID_ORDER",id);
+           // PropertiesFile.serPropValue("KEY_ID_ORDER",id);
             return true;
         }
     }
@@ -841,10 +844,10 @@ public class MyAccountPage extends BasePage {
         boolean check;
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        String s = keyword.getText("MAC_MY_ORD_VERIFY_RETURN_GET_ID_ORDER");
+        String s = keyword.getText("MAC_MY_ORD_VERIFY_RETURN_GET_ID_ORDER2");
         String id=s.substring(1,s.length());
-        System.out.printf("ID : " + id +"\n");
-        if(id.equalsIgnoreCase(PropertiesFile.getPropValue("KEY_ID_ORDER"))){
+        System.out.printf("ID2 : " + id +"\n");
+        if(id.equalsIgnoreCase(PropertiesFile.getPropValue("KEY_ID_ORDER2"))){
             logger.info("Failed by id:" + id);
             check=false;
         }
@@ -854,21 +857,34 @@ public class MyAccountPage extends BasePage {
         }
 
         //create new return
-        if(check){
+        if(check ){
             keyword.untilJqueryIsDone(60L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             keyword.click("MAC_MY_ORD_RETURN_STEP1_CHECKBOX1");
             keyword.keysBoardWithDOWN("MAC_MY_ORD_RETURN_STEP1_SELECT1");
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             keyword.click("MAC_MY_ORD_RETURN_STEP1_CHECKBOX2");
-            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-            keyword.click("MAC_MY_ORD_RETURN_STEP1_SELECT2");
-            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-            keyword.doubleClick("MAC_MY_ORD_RETURN_STEP1_SELECT2_OPTION");
-            keyword.untilJqueryIsDone(60L);
-            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-            keyword.doubleClick("//div[@class='column main']");
-            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+            if(keyword.verifyElementVisible("MAC_MY_ORD_RETURN_STEP1_TEXTAREA")){
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_TEXTAREA","MAC_MY_ORD_RETURN_STEP1_DATA_TEXTAREA");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG1","C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemhop.jpg");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG2","C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemly.jpg");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG3","C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemque.jpg");
+
+            }
+            else{
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.click("MAC_MY_ORD_RETURN_STEP1_SELECT2");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.doubleClick("MAC_MY_ORD_RETURN_STEP1_SELECT2_OPTION");
+                keyword.untilJqueryIsDone(60L);
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.doubleClick("//div[@class='column main']");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+            }
             keyword.scrollDownToElement("MAC_MY_ORD_RETURN_STEP2");
             keyword.doubleClick("MAC_MY_ORD_RETURN_STEP2");
             keyword.untilJqueryIsDone(60L);
