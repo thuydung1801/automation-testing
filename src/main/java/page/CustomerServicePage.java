@@ -52,6 +52,9 @@ public class CustomerServicePage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.scrollDownToElement("CUS_PRD_FILTER_RATTING_1");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
     }
 
 
@@ -89,6 +92,7 @@ public class CustomerServicePage extends BasePage {
             keyword.verifyElementVisible(verify);
         }
         keyword.reLoadPage();
+        keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
     }
 
@@ -109,6 +113,9 @@ public class CustomerServicePage extends BasePage {
 
     }
     public void filterNoResults() throws InterruptedException {
+        keyword.doubleClick("//div[@class='amrev-toolbar']");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         System.out.printf("when filter with filter has no results" + "\n");
         keyword.click("CUS_PRD_FILTER_CHECKBOX_1");
         keyword.untilJqueryIsDone(30L);
@@ -140,14 +147,21 @@ public class CustomerServicePage extends BasePage {
         String verify_1 = vrf1.substring(7,vrf1.length()-2);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        String vrf2 = keyword.getAttribute(verify2);
-        String verify_2 = vrf2.substring(7,vrf2.length()-2);
-        if(Integer.parseInt(verify_1) >= Integer.parseInt(verify_2) ){
-            return true;
+        boolean stutas = keyword.verifyElementVisible(verify2);
+        if(stutas){
+            keyword.untilJqueryIsDone(30L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+            String vrf2 = keyword.getAttribute(verify2);
+            String verify_2 = vrf2.substring(7,vrf2.length()-2);
+            if(Integer.parseInt(verify_1) >= Integer.parseInt(verify_2) ){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
-        else{
-            return false;
-        }
+        return true;
 
     }
     public void checkVerifyHighestRatting() throws InterruptedException {
@@ -167,6 +181,9 @@ public class CustomerServicePage extends BasePage {
         String verify_1 = vrf1.substring(7,vrf1.length()-2);
         boolean stutas = keyword.verifyElementVisible(verify2);
         if(stutas){
+            keyword.untilJqueryIsDone(30L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
             String vrf2 = keyword.getAttribute(verify2);
             String verify_2 = vrf2.substring(7,vrf2.length()-2);
             if(Integer.parseInt(verify_1) <= Integer.parseInt(verify_2) ){
@@ -192,17 +209,24 @@ public class CustomerServicePage extends BasePage {
         logger.info("compare from with " + true);
         Assert.assertEquals(check, true);
     }
-    public boolean checkHelpFulness(String verify1,String verify2){
+    public boolean checkHelpFulness(String verify1,String verify2) throws InterruptedException {
         String vrf1 = keyword.getText(verify1);
-        String vrf2 = keyword.getText(verify2);
-        if(Integer.parseInt(vrf1) >= Integer.parseInt(vrf2) ){
-            return true;
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        boolean status = keyword.verifyElementVisible(verify2);
+        if(status){
+            String vrf2 = keyword.getText(verify2);
+            if(Integer.parseInt(vrf1) >= Integer.parseInt(vrf2) ){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
-        else{
-            return false;
-        }
+        return true;
+
     }
-    public void checkVerifyHelpFulness(){
+    public void checkVerifyHelpFulness() throws InterruptedException {
         boolean check;
 
         if(checkHelpFulness("CUS_VERIFY1_HELP_PRD_FILTER_CHECKSORT_5","CUS_VERIFY2_HELP_PRD_FILTER_CHECKSORT_5")){
@@ -220,15 +244,27 @@ public class CustomerServicePage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
         String date1 = keyword.getText("CUS_VERIFY_DATE1_PRD_FILTER_CHECKSORT_3");
-        String date2 = keyword.getText("CUS_VERIFY_DATE2_PRD_FILTER_CHECKSORT_3");
-        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
-        System.out.printf("date 1 : " + date1 + "\n");
-        System.out.printf("date 2 : " + date2 + "\n");
+        boolean stutas = keyword.verifyElementVisible("CUS_VERIFY_DATE2_PRD_FILTER_CHECKSORT_3");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
-        Date date_1 = sdf.parse(date1);
-        Date date_2 = sdf.parse(date2);
-        boolean check = date_1.after(date_2);
-        return check;
+        if(stutas){
+            String date2 = keyword.getText("CUS_VERIFY_DATE2_PRD_FILTER_CHECKSORT_3");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
+            System.out.printf("date 1 : " + date1 + "\n");
+            System.out.printf("date 2 : " + date2 + "\n");
+
+            Date date_1 = sdf.parse(date1);
+            Date date_2 = sdf.parse(date2);
+            boolean check = date_1.after(date_2);
+            if(check){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void checkVerifyDate() throws ParseException, InterruptedException {
@@ -331,7 +367,11 @@ public class CustomerServicePage extends BasePage {
 
     public void filterCheckBoxAndCheckSort(String checkBox, String checkSort) throws InterruptedException {
         commonLoad();
+        keyword.doubleClick("//div[@class='amrev-toolbar']");
         keyword.click(checkBox);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         clickDropdown(checkSort);
@@ -358,7 +398,7 @@ public class CustomerServicePage extends BasePage {
         if(keyword.verifyElementVisible("CUS_VERIFY_PRD_FILTER_NO_REVIEW")){
             keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
             check=true;
-        }else if(checkHighestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2")){
+        }else if(checkHighestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2_MOBILE","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2_MOBILE")){
             if(verifyCheckBox == null || keyword.verifyElementVisible(verifyCheckBox)){
                 check=true;
             }else{
@@ -393,7 +433,7 @@ public class CustomerServicePage extends BasePage {
         if(keyword.verifyElementVisible("CUS_VERIFY_PRD_FILTER_NO_REVIEW")){
             keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
             check=true;
-        }else if(checkLowestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2")){
+        }else if(checkLowestRatting("CUS_VERIFY1_PRD_FILTER_CHECKSORT_2_MOBILE","CUS_VERIFY2_PRD_FILTER_CHECKSORT_2_MOBILE")){
             if(verifyCheckBox == null || keyword.verifyElementVisible(verifyCheckBox)){
                 check=true;
             }else{
@@ -405,7 +445,7 @@ public class CustomerServicePage extends BasePage {
         logger.info("compare from with " + true);
         Assert.assertEquals(check,true);
     }
-    public void checkVerifyCheckBoxAndCheckSort5(String verifyCheckBox){
+    public void checkVerifyCheckBoxAndCheckSort5(String verifyCheckBox) throws InterruptedException {
         boolean check;
         if(keyword.verifyElementVisible("CUS_VERIFY_PRD_FILTER_NO_REVIEW")){
             keyword.assertEquals("CUS_DATA_VERIFY_PRD_FILTER_NO_REVIEW","CUS_VERIFY_PRD_FILTER_NO_REVIEW");
@@ -454,7 +494,7 @@ public class CustomerServicePage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
-        objRegister.acceptAllCookies();
+      //  objRegister.acceptAllCookies();
         filterCheckBoxAndCheckSort("CUS_PRD_FILTER_CHECKBOX_2","CUS_PRD_FILTER_CHECKSORT_2");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");

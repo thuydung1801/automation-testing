@@ -137,8 +137,9 @@ public class ShoppingBagPage extends BasePage {
     //click to view all product in shopping bag
     public void clickShoppingBagPage() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(1000);
-        //keyword.scrollDownToElement("CHECKOUT_BTN_MINICART");
+        Thread.sleep(3000);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.scrollDownToElement("CHECKOUT_BTN_MINICART");
         keyword.click("CHECKOUT_BTN_MINICART");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -345,7 +346,10 @@ public class ShoppingBagPage extends BasePage {
 
     @Step("move to checkout page")
     public void moveToPagecheckOut() throws InterruptedException {
-        keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         Thread.sleep(1000);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_CHECKOUT");
@@ -380,18 +384,39 @@ public class ShoppingBagPage extends BasePage {
         switch (flag) {
             //input valid information
             case "success":
+                keyword.untilJqueryIsDone(50L);
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
                 keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_VISA");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
                 keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_VISA", "CHECKOUT_DATA_CHECKOUT_VISA");
                 keyword.switchToDefaultContent();
+
                 keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_EXPIRYDATE");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
                 keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_EXPIRYDATE", "CHECKOUT_DATA_CHECKOUT_EXPIRYDATE");
                 keyword.switchToDefaultContent();
+
                 keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_CVC");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
                 keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_CVC", "CHECKOUT_DATA_CHECKOUT_CVC");
                 keyword.switchToDefaultContent();
-                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_NAME", "CHECKOUT_DATA_CHECKOUT_NAME");
+//                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_NAME", "CHECKOUT_DATA_CHECKOUT_NAME");
                 keyword.scrollDownToElement("CHECKOUT_BTN_ORDER");
                 keyword.click("CHECKOUT_BTN_ORDER");
+
+                keyword.untilJqueryIsDone(50L);
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
+                keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_VISA_COMF");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_CODE", "CHECKOUT_DATA_CHECKOUT_CODE");
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.click("CHECKOUT_DATA_CHECKOUT_SUBMIT_COMF");
+                keyword.switchToDefaultContent();
+                keyword.untilJqueryIsDone(50L);
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
                 keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 160);
                 keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
                 break;

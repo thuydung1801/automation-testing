@@ -19,6 +19,7 @@ public class LoginPage extends BasePage {
                 PropertiesFile.getPropValue("LOGIN_DATA_ALERT_PASSWORD"),
                 PropertiesFile.getPropValue("LOGIN_AUTHEN_URL"));
     }
+
     public void loginOnWebsite(String email, String password, String phone,
                                String phonePassword, boolean byEmail) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);

@@ -31,9 +31,9 @@ public class ShoppingBagTest extends BaseTest {
         //objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
         //objRegist.chooseLanguages();
-        //objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
-        //        "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
-        objLogin.loginOnMobile("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
+        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
+                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
+      //  objLogin.loginOnMobile("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
     }
 
     @Test (priority = 4, description = "Remove item from cart succcessfully with the shopping bag having mutiple items")
@@ -108,7 +108,7 @@ public class ShoppingBagTest extends BaseTest {
             //(priority = 8, description = "Add engraving for couple ring")
     public void testCase_SP_17() throws InterruptedException {
         logger.info("testCase_SP_17");
-        //commonShopping();
+        commonShopping();
         objShoppingBagPage.addProductWithGift("https://stage.glamira.co.uk/charming-view.html?alloy=white-585&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
@@ -212,7 +212,7 @@ public class ShoppingBagTest extends BaseTest {
             //(priority = 15, description = "Checkout successfully")
     public void testCase_SP_26_RV_02_04() throws InterruptedException {
         logger.info("testCase_SP_26");
-        //commonShopping();
+        commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         //objShoppingBagPage.clickGiftWrapping();
         objShoppingBagPage.moveToPagecheckOut();
