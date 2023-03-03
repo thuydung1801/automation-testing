@@ -194,7 +194,7 @@ public class MarketingPage extends BasePage {
     public void openNewTabs() throws InterruptedException {
         keyword.executeJavaScript("window.open()");
         keyword.switchToTab(1);
-        keyword.navigateToUrl("ADDMIN_URL_DEV");
+        keyword.navigateToUrl("ADMIN_URL_DEV");
 //        keyword.webDriverWaitForElementPresent("LOGIN_FORM_LOGIN_BACKEND", 50);
     }
 

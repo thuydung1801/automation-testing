@@ -561,8 +561,8 @@ public class KeywordWeb {
 
     }
 
-    public void switchToTabCurrent(){
-        logger.info("switchToTabCurrentSuccess");
+    public void switchToCurrentTab(){
+        logger.info("switchToCurrentTabSuccess");
         String currentTab = driver.getWindowHandle();
         Set<String> tabs = driver.getWindowHandles();
 

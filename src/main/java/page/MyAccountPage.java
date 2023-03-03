@@ -788,7 +788,7 @@ public class MyAccountPage extends BasePage {
                 keyword.waitForElementNotVisible(20,"//div[@class='loading-mask']");
 
                 Thread.sleep(20000);
-                keyword.switchToTabCurrent();
+                keyword.switchToCurrentTab();
                 String status = String.valueOf(verifyIdReturn());
                // keyword.click("//div[@id='ordereditor-account-link']//a[@href='#'][normalize-space()='Edit']");
                 if(status.equalsIgnoreCase(String.valueOf(false)) || keyword.verifyElementPresent("VERIFY_NOT_LOGIN_CUS")){

@@ -87,7 +87,7 @@ public class ShoppingBagPageMobile extends BasePage {
 //        keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_ITEM_VIEW_ORDER");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        //keyword.switchToTabCurrent();
+
         int tabNum = Integer.parseInt(PropertiesFile.getPropValue("COUNT_ITEM") )+1;
         logger.info(String.valueOf(tabNum));
         keyword.switchToTab(tabNum);
