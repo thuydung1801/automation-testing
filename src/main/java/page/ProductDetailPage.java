@@ -101,7 +101,7 @@ public class ProductDetailPage extends BasePage {
 //        Thread.sleep(10000);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.imWait(10);
+        Thread.sleep(5000);
         keyword.click("PRD_CART");
         keyword.click("PRD_BTN_VIEWCART");
         keyword.imWait(1);
@@ -309,12 +309,18 @@ public class ProductDetailPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.click("PRD_BTN_ADDCART");
         keyword.click("PRD_BTN_CLOSE_POPUP_SIZE");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         checkVerifyInputNull();
     }
     public void ringSize3() throws InterruptedException {
         keyword.click("PRD_DROPDOWN");
         keyword.untilJqueryIsDone(30L);
         keyword.click("PRD_OPTION_SIZE_AVERAGE");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         checkVerifySizeRing();
         keyword.click("PRD_BTN_ADDCART");
     }
@@ -359,6 +365,11 @@ public class ProductDetailPage extends BasePage {
 
         keyword.verifyElementVisible("PRD_VERIFY_LINK");
         keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.switchToTab(0);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
     }
     public void optionFreeSize() throws InterruptedException {
         optionSize();
