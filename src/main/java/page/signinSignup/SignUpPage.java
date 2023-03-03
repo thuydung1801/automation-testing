@@ -37,6 +37,9 @@ public class SignUpPage extends BasePage {
     }
 
     public void goToFormCreateMyAccountChina() throws InterruptedException {
+        keyword.deleteAllCookies();
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(5000);
         keyword.click("SIGNUP_BTN_SIGNUP_CHINA");
@@ -45,7 +48,6 @@ public class SignUpPage extends BasePage {
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT_CHINA");
         keyword.webDriverWaitForElementPresent("SIGNUP_TITLE_PAGE_REGIS", 500);
     }
-
     //    Create new customer and input email exist on database OR Create new customer and leave with blank form for required form with email
     public void createCustomerWithEmail() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);

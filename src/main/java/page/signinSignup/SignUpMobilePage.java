@@ -5,6 +5,7 @@ import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
 import org.slf4j.Logger;
+import page.home.RegisterPage;
 
 import java.util.Date;
 
@@ -12,10 +13,12 @@ public class SignUpMobilePage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private SignInMobilePage objSignIn;
     private SignUpMobilePage objSigUpMobile;
+    private RegisterPage objRegist;
 
     public SignUpMobilePage(KeywordWeb key) {
         super(key);
     }
+
 
     public void navigateToUrlPage(String url) throws InterruptedException {
         keyword.navigateToUrl(url);
@@ -37,12 +40,27 @@ public class SignUpMobilePage extends BasePage {
     }
 
     public void goToFormCreateMyAccountChina() throws InterruptedException {
+        objRegist = new RegisterPage(this.keyword);
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(5000);
-        keyword.click("SIGNUP_BTN_SIGNUP_CHINA");
-        keyword.webDriverWaitForElementPresent("SIGNUP_POPUP_SIGNUP_CHINA", 50);
-        Thread.sleep(2000);
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT_CHINA");
+        keyword.deleteAllCookies();
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
+        keyword.scrollToPosition();
+        objRegist.chooseLanguages();
+        keyword.untilJqueryIsDone(50L);
+        keyword.scrollDownToElement("MOBILE_HAMBURGER");
+        keyword.click("MOBILE_HAMBURGER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("MOBILE_ICON_SIGNIN");
+        keyword.untilJqueryIsDone(50L);
+        if (check()) {
+            keyword.untilJqueryIsDone(50L);
+            keyword.click("BTN_LOGIN_PHONE");
+            keyword.click("SIGNUP_BTN_CREATE_ACCOUNT_CHINA");
+        } else {
+            keyword.webDriverWaitForElementPresent("SIGNUP_POPUP_SIGNUP_CHINA", 50);
+            keyword.click("SIGNUP_BTN_CREATE_ACCOUNT_CHINA");
+        }
         keyword.webDriverWaitForElementPresent("SIGNUP_TITLE_PAGE_REGIS", 500);
     }
 
@@ -54,12 +72,6 @@ public class SignUpMobilePage extends BasePage {
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
-//        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD",
-//                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
-//        keyword.untilJqueryIsDone(50L);
-//        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-//        keyword.untilJqueryIsDone(70L);
-//        keyword.untilJqueryIsDone(70L);
         keyword.assertEquals("SIGNUP_MESSAGE_DUPLICATE", "SIGNIN_MESSAGE_DATA_EXIST");
     }
 
@@ -490,5 +502,9 @@ public class SignUpMobilePage extends BasePage {
 
     public boolean checkElement(String checkElement) {
         return keyword.verifyElementVisible(checkElement);
+    }
+
+    Boolean check() throws InterruptedException {
+        return keyword.verifyElementVisible("BTN_LOGIN_PHONE");
     }
 }

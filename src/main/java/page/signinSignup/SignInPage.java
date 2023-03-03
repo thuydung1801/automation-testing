@@ -49,7 +49,6 @@ public class SignInPage extends BasePage {
         keyword.deleteAllCookies();
         keyword.navigateToUrl("https://dev3.glamira.com/glcn/");
         keyword.untilJqueryIsDone(50L);
-
         Thread.sleep(3000);
         keyword.click("SIGNIN_BTN_ACC");
         keyword.untilJqueryIsDone(50L);
@@ -267,15 +266,15 @@ public class SignInPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("SIGN_MESSAGE_SUCCESS");
     }
-
     //Invalid phone number entered
     public void enterInvalidPhoneNumber() throws InterruptedException {
         keyword.sendKeys("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_DATA_PHONE_NUMBER");
         keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_PHONE");
+//        objRegist.chooseLanguages();
+        keyword.untilJqueryIsDone(50L);
         keyword.click("SIGNIN_BTN_SUBMIT_FORM_PHONE");
         keyword.assertEquals("请输入有效的手机号码。", "SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
     }
-
     // open new right tabs
     public void openNewTabs() throws InterruptedException {
         keyword.executeJavaScript("window.open()");

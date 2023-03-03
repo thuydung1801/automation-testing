@@ -104,7 +104,7 @@ public class SignUpTest extends BaseTest {
     public void testCase_SU015() throws Exception {
         logger.info("testCase_SU015");
         objSigUp.navigateToUrlPage("https://dev3.glamira.com/glcn/");
-        objRegist.chooseLanguages();
+//        objRegist.chooseLanguages();
         objSigUp.goToFormCreateMyAccountChina();
         objSigUp.verifyRequiredFieldWithMobile();
     }

@@ -27,9 +27,7 @@ public class SignUpMobileTest extends BaseTest {
         objLogin = new LoginPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
         objSigUpMobile = new SignUpMobilePage(this.keyword);
-//        objLogin.loginOnAlert();
         objSigUpMobile.navigateToUrlPage("https://dev3.glamira.com/glgb/");
-//        objRegist.chooseLanguages();
         objRegist.acceptAllCookies();
         objSigUpMobile.goToFormCreateMyAccount();
         objSigUpMobile.createCustomerWithEmail();
@@ -111,7 +109,6 @@ public class SignUpMobileTest extends BaseTest {
     public void testCase_SU015() throws Exception {
         logger.info("testCase_SU015");
         objSigUpMobile.navigateToUrlPage("https://dev3.glamira.com/glcn/");
-//        objRegist.chooseLanguages();
         objSigUpMobile.goToFormCreateMyAccountChina();
         objSigUpMobile.verifyRequiredFieldWithMobile();
     }
