@@ -16,10 +16,11 @@ public class Login extends BaseTest {
     public void login() throws InterruptedException {
         objLogin = new LoginPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
-        objLogin.loginOnAlert();
+        //objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
-        objRegist.chooseLanguages();
-        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
-                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
+        //objRegist.chooseLanguages();
+//        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
+//                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
+        objLogin.loginOnMobile("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
     }
 }
