@@ -6,6 +6,7 @@ import core.LogHelper;
 import core.PropertiesFile;
 import io.cucumber.java.sl.In;
 import org.slf4j.Logger;
+import page.home.RegisterPage;
 
 import java.security.PublicKey;
 import java.util.Date;
@@ -14,7 +15,7 @@ public class SignUpPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private SignInPage objSignIn;
     private SignUpPage objSignUp;
-
+    private RegisterPage objRegist;
     public SignUpPage(KeywordWeb key) {
         super(key);
     }
@@ -22,7 +23,6 @@ public class SignUpPage extends BasePage {
     public void navigateToUrlPage(String url) throws InterruptedException {
         keyword.navigateToUrl(url);
     }
-
     public void goToFormCreateMyAccount() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.reLoadPage();
@@ -37,6 +37,7 @@ public class SignUpPage extends BasePage {
     }
 
     public void goToFormCreateMyAccountChina() throws InterruptedException {
+        navigateToUrlPage("URL_DEV3");
         keyword.deleteAllCookies();
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
@@ -198,13 +199,6 @@ public class SignUpPage extends BasePage {
         keyword.assertEquals("SIGNUP_MESSAGE_PASSWORD_NOT_SAME_MAIL", "SIGNIN_MESSAGE_DATA_EXIST");
     }
 
-    //    Create new customer create password  There are 3  types of characters and < 8 characters
-    public void inputValidPassWordAndCheckBoxSubscribe() throws InterruptedException {
-        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL",
-                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-    }
-
     //"Create a new account with password # email register and Character:
     public void confirmPasswordEntryConditionCharacters() throws InterruptedException {
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
@@ -275,7 +269,7 @@ public class SignUpPage extends BasePage {
     }
 
     //    get code BE and Enter the wrong code sent to the email
-    public void ConfirmAndProcessGetCodeWrong() throws InterruptedException {
+    public void confirmAndProcessGetCodeWrong() throws InterruptedException {
         keyword.untilJqueryIsDone(20L);
         keyword.imWait(30);
         clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD");
@@ -286,8 +280,7 @@ public class SignUpPage extends BasePage {
         keyword.sendKeys("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_CODE_DATA");
         keyword.click("SIGNUP_BTN_SUBMIT_ACCOUNT");
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(1000);
-        keyword.imWait(50);
+        keyword.untilJqueryIsDone(50L);
         keyword.assertEquals("SIGNUP_MESSAGE_CODE_ERROR", "SIGNUP_MESSAGE_ACTUAL");
     }
 
@@ -344,12 +337,6 @@ public class SignUpPage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_CHINA");
         keyword.assertEquals("请输入有效的手机号码。", "SIGNUP_PHONE_ERROR");
     }
-
-    public void reSendPassWord() throws InterruptedException {
-        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_01");
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-    }
-
     // delete old data Register an account with the phone number already in the system
     public void enterPhoneNumberAlreadyInSystem() throws InterruptedException {
         clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNIN_PHONE_CHINA");
@@ -421,7 +408,7 @@ public class SignUpPage extends BasePage {
     }
 
     //    checkConditionAEmailAlreadyInTheSystem
-    public void checkConditionAEmailAlreadyInTheSystem() throws InterruptedException {
+    public void checkConditionAEmailExisted() throws InterruptedException {
         keyword.click("SIGNUP_BTN_BACK");
         keyword.untilJqueryIsDone(50L);
         clearTextAndSendKey("SIGNUP_EMAIL_INFORMATION", "SIGNUP_EMAIL_INFORMATION",
@@ -436,7 +423,7 @@ public class SignUpPage extends BasePage {
     }
 
     //createNewCusstomerSuccsessWithPhone
-    public void createNewCusstomerSuccessfullyWithPhone() throws InterruptedException {
+    public void createNewCustomerSuccessfullyWithPhone() throws InterruptedException {
         String timestamp = new java.text.SimpleDateFormat("ddHHmmss").format(new Date());
         String email = "NgocNT" + timestamp + "@gmail.com";
         String phoneNumber = "13" + timestamp + "7";

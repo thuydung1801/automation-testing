@@ -25,7 +25,6 @@ public class CreateAccountOnStageTest extends BaseTest {
     @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
     public void testCase_CreateAccount() throws Exception {
         logger.info("testCase_CreateAccount");
-        objLogin = new LoginPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
         objSigUp = new SignUpPage(this.keyword);
         objCreateAcc = new CreateAccountOnStagePage(this.keyword);
@@ -42,10 +41,7 @@ public class CreateAccountOnStageTest extends BaseTest {
     }
     @Test(priority = 3, description = "forgot password - checkOut")
     public void testCase_forgotPassWordCheckOut() throws Exception {
-        logger.info("testCase_forGotPassWordCheckOut");
-        objLogin = new LoginPage(this.keyword);
-        objRegist = new RegisterPage(this.keyword);
-        objSigUp = new SignUpPage(this.keyword);
-        objCreateAcc.forGotPassWordCheckOut();
+        logger.info("testCase_forgotPassWordCheckOut");
+        objCreateAcc.forgotPassWordCheckOut();
     }
 }

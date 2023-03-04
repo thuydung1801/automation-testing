@@ -27,9 +27,8 @@ public class SignInTest extends BaseTest {
         objLogin = new LoginPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
         objSigin = new SignInPage(this.keyword);
-//        objLogin.loginOnAlert();
-        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
-        objRegist.chooseLanguages();
+//        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
+//        objRegist.chooseLanguages();
         objRegist.acceptAllCookies();
         objSigin.checkGoToFormLoginWithEmail();
     }

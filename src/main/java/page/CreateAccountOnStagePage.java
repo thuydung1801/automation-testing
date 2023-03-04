@@ -43,7 +43,7 @@ public class CreateAccountOnStagePage extends BasePage {
         keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIS_SUCCESS_US");
     }
 
-    public void forGotPassWordCheckOut() throws Exception {
+    public void forgotPassWordCheckOut() throws Exception {
         keyword.navigateToUrl("https://stage.glamira.co.uk/glamira-pendant-elsie.html?alloy=red_white-585&stone1=diamond-Brillant");
         keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_COOKIES");

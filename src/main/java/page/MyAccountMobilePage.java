@@ -47,7 +47,7 @@ public class MyAccountMobilePage extends BasePage {
         Thread.sleep(1000);
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
         keyword.untilJqueryIsDone(30L);
-        keyword.navigateToUrl("https://dev3.glamira.com/glgb/customer/account/edit/");
+        keyword.navigateToUrl("URL_CUSTOMER_ACCOUNT_EDIT");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(30, "//div[@class='loading-mask']");
     }
@@ -68,28 +68,6 @@ public class MyAccountMobilePage extends BasePage {
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
     }
-
-    public void setUp2() throws InterruptedException {
-//        objLogin.loginOnAlert();
-//        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
-        keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-
-        objRegister.acceptAllCookies();
-//        objRegister.chooseLanguages();
-        keyword.untilJqueryIsDone(30L);
-
-        keyword.navigateToUrl("https://stage.glamira.co.uk/");
-        keyword.untilJqueryIsDone(30L);
-//        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_TEST", "COM_INP_DATA_PASS", null, null, true);
-        keyword.untilJqueryIsDone(30L);
-//        keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/edit/");
-//        keyword.untilJqueryIsDone(30L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-
-    }
-
     public void commonPersonalInf(String checkBox) throws InterruptedException {
         keyword.untilJqueryIsDone(70L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");

@@ -13,22 +13,22 @@ public class SignUpTest extends BaseTest {
     private LoginPage objLogin;
     private RegisterPage objRegist;
     private SignUpPage objSigUp;
-    private SignInPage objSignIn;
     private static Logger logger = LogHelper.getLogger();
 
     public SignUpTest() {
         super();
     }
-
-    @Test(priority = 1, description = "Create new customer and input email exist on database")
-    public void testCase_SU05() throws InterruptedException {
-        logger.info("testCase_SU05");
-        objLogin = new LoginPage(this.keyword);
+    public void setUpCreateCustomer()throws InterruptedException {
         objRegist = new RegisterPage(this.keyword);
         objSigUp = new SignUpPage(this.keyword);
         objRegist.acceptAllCookies();
         objSigUp.goToFormCreateMyAccount();
         objSigUp.createCustomerWithEmail();
+    }
+    @Test(priority = 1, description = "Create new customer and input email exist on database")
+    public void testCase_SU05() throws InterruptedException {
+        logger.info("testCase_SU05");
+        setUpCreateCustomer();
     }
     //
     @Test(priority = 2, description = "Create new customer and leave with blank form for required form")
@@ -89,7 +89,7 @@ public class SignUpTest extends BaseTest {
         @Test(priority = 11, description = "Enter the wrong code sent to the email")
     public void testCase_SU012() throws InterruptedException {
         logger.info("testCase_SU012");
-        objSigUp.ConfirmAndProcessGetCodeWrong();
+        objSigUp.confirmAndProcessGetCodeWrong();
     }
 //
     @Test(priority = 12, description = "Resend the code to email and Signup Success")
@@ -103,7 +103,6 @@ public class SignUpTest extends BaseTest {
     @Test(priority = 13, description = "Create new customer and leave with blank form for required form")
     public void testCase_SU015() throws Exception {
         logger.info("testCase_SU015");
-        objSigUp.navigateToUrlPage("https://dev3.glamira.com/glcn/");
 //        objRegist.chooseLanguages();
         objSigUp.goToFormCreateMyAccountChina();
         objSigUp.verifyRequiredFieldWithMobile();
@@ -154,12 +153,12 @@ public class SignUpTest extends BaseTest {
     @Test(priority = 21, description = "Register an account with the email already in the system")
     public void testCase_SU024() throws Exception {
         logger.info("testCase_SU023");
-        objSigUp.checkConditionAEmailAlreadyInTheSystem();
+        objSigUp.checkConditionAEmailExisted();
     }
     @Test(priority = 22, description = "Create new customer successfully with store enable phone number confirm")
     public void testCase_SU023_Case_14() throws Exception {
         logger.info("testCase_SU023_Case_14");
-        objSigUp.createNewCusstomerSuccessfullyWithPhone();
+        objSigUp.createNewCustomerSuccessfullyWithPhone();
         objSigUp.getActivationCode();
     }
 }

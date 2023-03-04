@@ -33,11 +33,6 @@ public class SignInPage extends BasePage {
         inputBlankAndVerify("SIGNIN_XPATH_EMAIL_REQUIRED_FIELD",
                 "SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_MESSAGE_REQUIRED_FIELD");
     }
-
-    public void navigateURL() throws InterruptedException {
-        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
-    }
-
     public void setup() throws InterruptedException {
         objRegist = new RegisterPage(this.keyword);
         keyword.untilJqueryIsDone(50L);
@@ -238,7 +233,7 @@ public class SignInPage extends BasePage {
 
     //    create New Password Success
     public void createNewPasswordSuccess() throws InterruptedException {
-        String timestamp = new java.text.SimpleDateFormat("yyyyMMdd").format(new Date());
+        String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss ").format(new Date());
         String pass = "Ngoc*" + timestamp + "@";
         keyword.untilJqueryIsDone(10L);
         PropertiesFile.serPropValue("SIGNUP_CREATE_PASSWORD_PHONE_RD", pass);
