@@ -35,7 +35,7 @@ public void setUp()throws InterruptedException {
         setUp();
 //        objSigUpMobile.navigateToUrlPage("https://dev3.glamira.com/glgb/");
         objSigUpMobile.goToFormCreateMyAccount();
-        objSigUpMobile.createCustomerWithEmail();
+        objSigUp.createCustomerWithEmail();
     }
     //
     @Test(priority = 2, description = "Create new customer and leave with blank form for required form")
@@ -111,8 +111,8 @@ public void setUp()throws InterruptedException {
     public void testCase_SU015() throws Exception {
         logger.info("testCase_SU015");
         objSigUpMobile.navigateToUrlPage("https://dev3.glamira.com/glcn/");
-        objSigUpMobile.goToFormCreateMyAccountChina();
-        objSigUpMobile.verifyRequiredFieldWithMobile();
+        objSigUp.goToFormCreateMyAccountChina();
+        objSigUp.verifyRequiredFieldWithMobile();
     }
 
     @Test(priority = 14, description = "Invalid phone number entered")

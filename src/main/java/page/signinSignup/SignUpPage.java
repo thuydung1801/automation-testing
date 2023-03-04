@@ -57,12 +57,6 @@ public class SignUpPage extends BasePage {
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
-//        sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "LOGIN_NEW_PASSWORD",
-//                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
-//        keyword.untilJqueryIsDone(50L);
-//        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-//        keyword.untilJqueryIsDone(70L);
-//        keyword.untilJqueryIsDone(70L);
         keyword.assertEquals("SIGNUP_MESSAGE_DUPLICATE", "SIGNIN_MESSAGE_DATA_EXIST");
     }
 
