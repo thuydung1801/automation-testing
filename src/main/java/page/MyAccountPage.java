@@ -675,6 +675,9 @@ public class MyAccountPage extends BasePage {
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MAIL","COM_INP_DATA_EMAIL_STAGE");
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_REMAIL","EMAIL_ADDRESS");
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MESSAGE","COM_DATA_TITLE");
+//        keyword.click("//div[@class=\"recaptcha-checkbox-checkmark\"]");
+//        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("MAC_WISHLIST_EMAIL_CHECKBOX_SUB");
         keyword.click("MAC_WISHLIST_EMAIL_BTN_SUBMIT");
         keyword.untilJqueryIsDone(60L);
