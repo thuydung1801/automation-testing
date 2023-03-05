@@ -265,6 +265,7 @@ public class SignInPage extends BasePage {
     public void enterInvalidPhoneNumber() throws InterruptedException {
         keyword.sendKeys("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_DATA_PHONE_NUMBER");
         keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_PHONE");
+        keyword.untilJqueryIsDone(50L);
 //        objRegist.chooseLanguages();
         keyword.untilJqueryIsDone(50L);
         keyword.click("SIGNIN_BTN_SUBMIT_FORM_PHONE");

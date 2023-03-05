@@ -16,16 +16,21 @@ public class SignUpPage extends BasePage {
     private SignInPage objSignIn;
     private SignUpPage objSignUp;
     private RegisterPage objRegist;
+
     public SignUpPage(KeywordWeb key) {
         super(key);
+        objRegist = new RegisterPage(this.keyword);
+        objSignUp = new SignUpPage(this.keyword);
     }
 
     public void navigateToUrlPage(String url) throws InterruptedException {
         keyword.navigateToUrl(url);
     }
+
     public void goToFormCreateMyAccount() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
         keyword.click("SIGNUP_BTN_SIGNUP2");
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
@@ -39,16 +44,19 @@ public class SignUpPage extends BasePage {
     public void goToFormCreateMyAccountChina() throws InterruptedException {
         navigateToUrlPage("URL_DEV3");
         keyword.deleteAllCookies();
+        keyword.deleteAllCookies();
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(5000);
         keyword.click("SIGNUP_BTN_SIGNUP_CHINA");
         keyword.webDriverWaitForElementPresent("SIGNUP_POPUP_SIGNUP_CHINA", 50);
-        Thread.sleep(2000);
+        objRegist.chooseLanguages();
+        keyword.untilJqueryIsDone(50L);
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT_CHINA");
         keyword.webDriverWaitForElementPresent("SIGNUP_TITLE_PAGE_REGIS", 500);
     }
+
     //    Create new customer and input email exist on database OR Create new customer and leave with blank form for required form with email
     public void createCustomerWithEmail() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
@@ -331,6 +339,7 @@ public class SignUpPage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_CHINA");
         keyword.assertEquals("请输入有效的手机号码。", "SIGNUP_PHONE_ERROR");
     }
+
     // delete old data Register an account with the phone number already in the system
     public void enterPhoneNumberAlreadyInSystem() throws InterruptedException {
         clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNIN_PHONE_CHINA");
@@ -343,8 +352,7 @@ public class SignUpPage extends BasePage {
 
     //passwordLessThan8Characters
     public void passwordLessThan8Characters() throws InterruptedException {
-        objSignUp = new SignUpPage(this.keyword);
-        clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE_CHINA2");
+        clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNUP_DATA_PHONE_CHINA_PASS");
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.doubleClick("SIGNUP_BTN_NEXT_CHINA");
         keyword.untilJqueryIsDone(30L);

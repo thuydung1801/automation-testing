@@ -72,7 +72,7 @@ public class SignInMobileTest extends BaseTest {
 
     @Test(priority = 8, description = "Resend the code to email")
     public void testCase_SI015() throws Exception {
-        objSign.resentTheCodeToEmail();
+        objSigInMobile.resentTheCodeToEmail();
     }
 
     @Test(priority = 9, description = "create valid new password")
@@ -88,7 +88,7 @@ public class SignInMobileTest extends BaseTest {
     //----WITH PHONE.
     @Test(priority = 12, description = "Invalid phone number entered")
     public void testCase_SI09() throws InterruptedException {
-        objSign.checkGoToFormLoginWithPhone();
+        objSigInMobile.checkGoToFormLoginWithPhone();
         objSign.enterInvalidPhoneNumber();
     }
 
@@ -109,7 +109,7 @@ public class SignInMobileTest extends BaseTest {
 
     @Test(priority = 16, description = "create valid new password")
     public void testCase_SI018() throws InterruptedException {
-        objSign.createNewPasswordWithInvalidPhone();
+        objSigInMobile.createNewPasswordWithInvalidPhone();
     }
 
     @Test(priority = 17, description = "create valid new password Success")

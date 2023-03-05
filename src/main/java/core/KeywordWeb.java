@@ -510,11 +510,6 @@ public class KeywordWeb {
         js.executeScript(jsScript);
     }
 
-    public void scrollToReversePosition() {
-        logger.info(" scrolling to position ");
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,-5000)");
-    }
 
     public void switchToDefaultContent() {
         logger.info("SwitchTODefaultContent");
