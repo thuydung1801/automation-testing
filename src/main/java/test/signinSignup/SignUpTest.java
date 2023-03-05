@@ -1,6 +1,7 @@
 package test.signinSignup;
 
 import core.BaseTest;
+import core.KeywordWeb;
 import core.LogHelper;
 import org.testng.annotations.Test;
 import page.home.LoginPage;
@@ -17,21 +18,17 @@ public class SignUpTest extends BaseTest {
 
     public SignUpTest() {
         super();
-
-    }
-
-    public void setUpCreateCustomer() throws InterruptedException {
         objRegist = new RegisterPage(this.keyword);
         objSigUp = new SignUpPage(this.keyword);
-        objRegist.acceptAllCookies();
-        objSigUp.goToFormCreateMyAccount();
-        objSigUp.createCustomerWithEmail();
     }
 
     @Test(priority = 1, description = "Create new customer and input email exist on database")
     public void testCase_SU05() throws InterruptedException {
         logger.info("testCase_SU05");
-        setUpCreateCustomer();
+//        setUpCreateCustomer();
+        objRegist.acceptAllCookies();
+        objSigUp.goToFormCreateMyAccount();
+        objSigUp.createCustomerWithEmail();
     }
 
     //

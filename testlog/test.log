@@ -1,22 +1,29 @@
-INFO  | 2023-03-06 02:59:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser
-INFO  | 2023-03-06 02:59:31 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
-INFO  | 2023-03-06 02:59:31 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\110.0.5481.77\chromedriver.exe
-INFO  | 2023-03-06 02:59:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:64) - open browser successfullyCHROME
-INFO  | 2023-03-06 02:59:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2023-03-06 02:59:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - url: [Ljava.lang.String;@5c324e5
-INFO  | 2023-03-06 02:59:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:302) - Maximizing browser window...
-INFO  | 2023-03-06 02:59:40 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU05:33) - testCase_SU05
-INFO  | 2023-03-06 02:59:41 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU02:40) - testCase_SU02
-INFO  | 2023-03-06 02:59:41 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU03:46) - testCase_SU03
-INFO  | 2023-03-06 02:59:41 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU04:52) - testCase_SU04
-INFO  | 2023-03-06 02:59:41 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU06:58) - testCase_SU06
-INFO  | 2023-03-06 02:59:41 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU07:65) - testCase_SU07
-INFO  | 2023-03-06 02:59:42 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU08:72) - testCase_SU08
-INFO  | 2023-03-06 02:59:42 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU09:78) - testCase_SU09
-INFO  | 2023-03-06 02:59:42 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU010:84) - testCase_SU010
-INFO  | 2023-03-06 02:59:42 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU011:90) - testCase_SU011
-INFO  | 2023-03-06 02:59:42 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU012:96) - testCase_SU012
-INFO  | 2023-03-06 02:59:42 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU013_and_testCase_01:103) - testCase_SU013_and_testCase_01
-INFO  | 2023-03-06 02:59:42 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU015:111) - testCase_SU015
-INFO  | 2023-03-06 02:59:42 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU016:119) - testCase_SU016
-INFO  | 2023-03-06 02:59:42 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU017:125) - testCase_SU017
+INFO  | 2023-03-06 03:55:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser
+INFO  | 2023-03-06 03:55:09 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
+INFO  | 2023-03-06 03:55:09 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\110.0.5481.77\chromedriver.exe
+INFO  | 2023-03-06 03:55:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:64) - open browser successfullyCHROME
+INFO  | 2023-03-06 03:55:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2023-03-06 03:55:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - url: [Ljava.lang.String;@214fa743
+INFO  | 2023-03-06 03:55:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:302) - Maximizing browser window...
+INFO  | 2023-03-06 03:55:25 | [TestNG-tests-1] test.signinSignup.SignInTest (SignInTest.java:testCase_SI02:25) - testCase_SU02
+INFO  | 2023-03-06 03:55:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:508) -  scrolling to position 
+INFO  | 2023-03-06 03:55:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-06 03:55:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:662) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-06 03:55:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickBTN_COOKIES
+INFO  | 2023-03-06 03:55:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-03-06 03:55:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickSIGNIN_BTN_SUBMIT_FORM_PHONE
+INFO  | 2023-03-06 03:55:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:748) - compare from SIGNIN_MESSAGE_REQUIRED_FIELD with SIGNIN_XPATH_EMAIL_REQUIRED_FIELD
+INFO  | 2023-03-06 03:55:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:748) - compare from SIGNIN_MESSAGE_REQUIRED_FIELD with SIGNIN_XPATH_PASSWORD_REQUIRED_FIELD
+INFO  | 2023-03-06 03:55:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:190) - send keysSIGNIN_EMAIL_LOGwith SIGNIN_DATA_EMAIL
+INFO  | 2023-03-06 03:55:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2023-03-06 03:55:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:748) - compare from SIGNIN_MESSAGE_REQUIRED_FIELD with SIGNIN_XPATH_PASSWORD_REQUIRED_FIELD
+INFO  | 2023-03-06 03:55:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:130) - clearText
+INFO  | 2023-03-06 03:55:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:190) - send keysSIGNIN_PASSWORD_INPUTwith SIGNIN_DATA_PASSWORD01
+INFO  | 2023-03-06 03:55:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2023-03-06 03:55:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:748) - compare from SIGNIN_MESSAGE_REQUIRED_FIELD with SIGNIN_XPATH_EMAIL_REQUIRED_FIELD
+INFO  | 2023-03-06 03:55:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:130) - clearText
+INFO  | 2023-03-06 03:55:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:190) - send keysSIGNIN_EMAIL_LOGwith SIGNUP_DATA_EMAIL_INFORMATION
+INFO  | 2023-03-06 03:55:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:130) - clearText
+INFO  | 2023-03-06 03:55:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:190) - send keysSIGNIN_PASSWORD_INPUTwith SIGNIN_DATA_PASSWORD01
+INFO  | 2023-03-06 03:55:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickSIGNIN_FORM_LOGIN
+INFO  | 2023-03-06 03:55:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickSIGNIN_BTN_SUBMIT

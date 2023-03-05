@@ -18,15 +18,9 @@ public class SignUpPage extends BasePage {
     private RegisterPage objRegist;
 
     public SignUpPage(KeywordWeb key) {
-        super(key);
+        super();
         objRegist = new RegisterPage(this.keyword);
-        objSignUp = new SignUpPage(this.keyword);
     }
-
-    public void navigateToUrlPage(String url) throws InterruptedException {
-        keyword.navigateToUrl(url);
-    }
-
     public void goToFormCreateMyAccount() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.reLoadPage();
@@ -42,7 +36,7 @@ public class SignUpPage extends BasePage {
     }
 
     public void goToFormCreateMyAccountChina() throws InterruptedException {
-        navigateToUrlPage("URL_DEV3");
+        keyword.navigateToUrl("URL_DEV3");
         keyword.deleteAllCookies();
         keyword.deleteAllCookies();
         keyword.reLoadPage();
@@ -81,13 +75,6 @@ public class SignUpPage extends BasePage {
         keyword.sendKeys(inputSendKey, dataSendKey);
     }
 
-    //
-    public void clearAndSendKeyEmail() throws InterruptedException {
-        clearTextAndSendKey("SIGNUP_EMAIL_INFORMATION", "SIGNUP_EMAIL_INFORMATION", "SIGNUP_DATA_EMAIL_VALID");
-        clearTextAndSendKey("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_EMAIL_CONFIRMATION_INFORMATION", "SIGNUP_DATA_EMAIL_VALID");
-        keyword.click("SIGNUP_BTN_NEXT_STEEP");
-    }
-
     // sendKey full data form information (not click check box agree) ( form 2/3- pasWord)
     public void sendKeyFullDataFormPasswordInformation(String inputPassword, String password, String selectTitle, String selectOneOptionTitle) throws InterruptedException {
         keyword.sendKeys(inputPassword, password);
@@ -107,7 +94,7 @@ public class SignUpPage extends BasePage {
     //    Filters function
     public void filterSort(String elementFilter, String inputFilter, String sendKeyFilter, String buttonApplyFilter) throws InterruptedException {
         keyword.webDriverWaitForElementPresent(elementFilter, 20);
-        Thread.sleep(12000);
+//        Thread.sleep(12000);
         keyword.click(elementFilter);
         keyword.verifyElementPresent(inputFilter);
         keyword.sendKeys(inputFilter, sendKeyFilter);
@@ -359,7 +346,7 @@ public class SignUpPage extends BasePage {
         sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_03",
                 "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
         keyword.untilJqueryIsDone(50L);
-        objSignUp.confirmPasswordEntryConditionWithChinese(
+        confirmPasswordEntryConditionWithChinese(
                 "SIGNIN_MESSAGE_PW_NOT_SAME_EMAIL", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_CHINA",
                 "SIGNUP_ACTUAL_MESSAGE_CHINA1", "SIGNUP_ACTUAL_MESSAGE_CHINA2", "SIGNUP_ACTUAL_MESSAGE_CHINA3",
                 "SIGNUP_ACTUAL_MESSAGE04"

@@ -20,6 +20,7 @@ public class CreateAccountMobileTest extends BaseTest {
     public CreateAccountMobileTest() {
         super();
     }
+
     @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
     public void testCaseMb_CreateAccount() throws Exception {
         logger.info("testCase_CreateAccount");
@@ -27,17 +28,18 @@ public class CreateAccountMobileTest extends BaseTest {
         objRegist = new RegisterPage(this.keyword);
         objSigUp = new SignUpPage(this.keyword);
         objCreateAccMobile = new CreateAccountMobilePage(this.keyword);
-        objSigUp.navigateToUrlPage("https://stage.glamira.co.uk/");
-        keyword.untilJqueryIsDone(50L);
+        keyword.navigateToUrl("https://stage.glamira.co.uk/");
         keyword.scrollToPosition();
         objRegist.acceptAllCookies();
         objCreateAccMobile.CreateNewCustomerSuccessfully();
     }
+
     @Test(priority = 2, description = "forgot password")
     public void testCaseMb_forgotPassWord() throws Exception {
         logger.info("testCase_forGotPassWord");
         objCreateAccMobile.forGotPassWord();
     }
+
     @Test(priority = 3, description = "forgot password - checkOut")
     public void testCaseMb_forgotPassWordCheckOut() throws Exception {
         logger.info("testCase_forGotPassWordCheckOut");

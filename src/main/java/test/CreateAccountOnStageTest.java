@@ -28,8 +28,7 @@ public class CreateAccountOnStageTest extends BaseTest {
         objRegist = new RegisterPage(this.keyword);
         objSigUp = new SignUpPage(this.keyword);
         objCreateAcc = new CreateAccountOnStagePage(this.keyword);
-        objSigUp.navigateToUrlPage("https://stage.glamira.co.uk/");
-        keyword.untilJqueryIsDone(50L);
+        keyword.navigateToUrl("https://stage.glamira.co.uk/");
         keyword.scrollToPosition();
         objRegist.acceptAllCookies();
         objCreateAcc.CreateNewCustomerSuccessfully();
