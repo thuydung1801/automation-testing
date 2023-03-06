@@ -1,12 +1,1 @@
-INFO  | 2023-03-06 08:44:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser
-INFO  | 2023-03-06 08:44:23 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
-INFO  | 2023-03-06 08:44:23 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\110.0.5481.77\chromedriver.exe
-INFO  | 2023-03-06 08:44:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:64) - open browser successfullyCHROME
-INFO  | 2023-03-06 08:44:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2023-03-06 08:44:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - url: [Ljava.lang.String;@5ca1c5b2
-INFO  | 2023-03-06 08:44:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:302) - Maximizing browser window...
-INFO  | 2023-03-06 08:45:01 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU05:33) - testCase_SU05
-INFO  | 2023-03-06 08:45:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:508) -  scrolling to position 
-INFO  | 2023-03-06 08:45:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-03-06 08:45:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:662) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-03-06 08:45:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:139) - clickBTN_COOKIES
+INFO  | 2023-03-06 09:39:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:48) - Open browser

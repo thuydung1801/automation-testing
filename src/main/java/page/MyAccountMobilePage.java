@@ -18,6 +18,7 @@ public class MyAccountMobilePage extends BasePage {
     private RegisterPage objRegister;
     private SignInPage signInPage;
     private MyAccountPage myAccount;
+    private LoginPage login;
     public int countAdd;
 
     public MyAccountMobilePage() {
@@ -30,20 +31,12 @@ public class MyAccountMobilePage extends BasePage {
         objRegister = new RegisterPage();
         signInPage = new SignInPage();
         myAccount = new MyAccountPage();
+        login = new LoginPage();
     }
     public void setUp1() throws InterruptedException {
         objRegister.acceptAllCookies();
         keyword.untilJqueryIsDone(50L);
-        keyword.scrollDownToElement("MOBILE_HAMBURGER");
-        keyword.untilJqueryIsDone(50L);
-        keyword.doubleClick("MOBILE_HAMBURGER");
-        keyword.untilJqueryIsDone(50L);
-        Thread.sleep(5000);
-        keyword.click("MOBILE_ICON_SIGNIN");
-        keyword.untilJqueryIsDone(50L);
-        keyword.sendKeys("LOGIN_TXT_EMAIL_4", "COM_INP_DATA_EMAIL_TEST");
-        Thread.sleep(1000);
-        keyword.sendKeys("LOGIN_TXT_PASSWORD", "COM_INP_DATA_PASS");
+        login.loginOnMobile("COM_INP_DATA_EMAIL_TEST","COM_INP_DATA_PASS");
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
     }
@@ -210,7 +203,6 @@ public class MyAccountMobilePage extends BasePage {
         checkVerifyInputNull();
 //        checkVerifyChangeSuccess("COM_TEXT_ERROR", "COM_DATA_MESSAGES_NULL",null, null,null);
     }
-
     public void changeEmail() throws InterruptedException {
         inputChangeMail();
         keyword.untilJqueryIsDone(50L);
