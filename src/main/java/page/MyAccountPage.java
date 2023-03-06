@@ -139,7 +139,7 @@ public class MyAccountPage extends BasePage {
         logOut();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE", "COM_INP_DATA_PASS_STAGE",null,null,true);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("LOGIN_BTN_ACCOUNT");
@@ -240,7 +240,7 @@ public class MyAccountPage extends BasePage {
     }
     public void changeEmail() throws InterruptedException {
         inputChangeMail();
-        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","email","MAC_VERIFY_EMAIL_CHANGE","COM_INP_DATA_EMAIL");
+        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","email","MAC_VERIFY_EMAIL_CHANGE","COM_INP_DATA_EMAIL_STAGE");
 
     }
 
@@ -248,7 +248,7 @@ public class MyAccountPage extends BasePage {
 //        setUp1();
         keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/");
         inpChangePassword();
-        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","pass","MAC_VERIFY_PASS_CHANGE","COM_INP_DATA_PASS");
+        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","pass","MAC_VERIFY_PASS_CHANGE","COM_INP_DATA_PASS_STAGE");
 
     }
     public void deleteAccount() throws InterruptedException {
@@ -258,7 +258,7 @@ public class MyAccountPage extends BasePage {
         Thread.sleep(2000);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.sendKeys("MAC_DELETE_ACCOUNT_INP_PASS","COM_INP_DATA_PASS");
+        keyword.sendKeys("MAC_DELETE_ACCOUNT_INP_PASS","COM_INP_DATA_PASS_STAGE");
         keyword.click("MAC_DELETE_ACCOUNT_BTN_DELETE");
         keyword.click("MAC_DELETE_ACCOUNT_BTN_OK");
         keyword.untilJqueryIsDone(30L);
