@@ -16,15 +16,12 @@ public class SignInPage extends BasePage {
     private LoginPage objLogin;
     private RegisterPage objRegist;
     private SignInPage objSigin;
-
     public SignInPage(KeywordWeb key) {
         super(key);
     }
-
     public SignInPage() {
         super();
     }
-
     public void checkGoToFormLoginWithEmail() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
@@ -275,13 +272,12 @@ public class SignInPage extends BasePage {
     public void openNewTabs() throws InterruptedException {
         keyword.executeJavaScript("window.open()");
         keyword.switchToTab(1);
-        keyword.navigateToUrl("ADDMIN_URL1");
+        keyword.navigateToUrl("URL_BE_DEV3");
     }
-
-    public void openTabBE(String urlBE) throws InterruptedException {
+    public void openTabBE(String urlBe) throws InterruptedException {
         keyword.executeJavaScript("window.open()");
         keyword.switchToTab(1);
-        keyword.navigateToUrl(urlBE);
+        keyword.navigateToUrl(urlBe);
     }
 
     //login admin BackEnd (shared functions)
