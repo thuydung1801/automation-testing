@@ -18,15 +18,15 @@ public class SignInTest extends BaseTest {
 
     public SignInTest() {
         super();
+        objSigin = new SignInPage(this.keyword);
+        objLogin = new LoginPage(this.keyword);
+        objRegist = new RegisterPage(this.keyword);
+        objSigin = new SignInPage(this.keyword);
     }
 
     @Test(priority = 1, description = "Log in and leave the email and password fields blank  \n" + "or register to the form to login the mobile")
     public void testCase_SI02() throws InterruptedException {
         logger.info("testCase_SU02");
-        objSigin = new SignInPage(this.keyword);
-        objLogin = new LoginPage(this.keyword);
-        objRegist = new RegisterPage(this.keyword);
-        objSigin = new SignInPage(this.keyword);
 //        objRegist.chooseLanguages();
         objRegist.acceptAllCookies();
         objSigin.checkGoToFormLoginWithEmail();

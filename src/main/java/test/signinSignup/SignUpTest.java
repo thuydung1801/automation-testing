@@ -22,13 +22,17 @@ public class SignUpTest extends BaseTest {
         objSigUp = new SignUpPage(this.keyword);
     }
 
+    public void startCreateAccount() throws InterruptedException {
+        objRegist.acceptAllCookies();
+        objSigUp.goToFormCreateMyAccount();
+        objSigUp.createCustomerWithEmail();
+    }
+
     @Test(priority = 1, description = "Create new customer and input email exist on database")
     public void testCase_SU05() throws InterruptedException {
         logger.info("testCase_SU05");
 //        setUpCreateCustomer();
-        objRegist.acceptAllCookies();
-        objSigUp.goToFormCreateMyAccount();
-        objSigUp.createCustomerWithEmail();
+        startCreateAccount();
     }
 
     //
