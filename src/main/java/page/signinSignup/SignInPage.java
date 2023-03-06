@@ -276,7 +276,6 @@ public class SignInPage extends BasePage {
         keyword.executeJavaScript("window.open()");
         keyword.switchToTab(1);
         keyword.navigateToUrl("ADDMIN_URL1");
-//        keyword.webDriverWaitForElementPresent("LOGIN_FORM_LOGIN_BACKEND", 50);
     }
 
     public void openTabBE(String urlBE) throws InterruptedException {
