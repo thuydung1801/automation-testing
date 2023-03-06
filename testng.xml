@@ -25,18 +25,18 @@
 <!--</suite>-->
 <suite name="Test Mobile" parallel="tests">
     <test name="IPhone 12 Pro">
-        <parameter name="devices" value="mobile"></parameter>
+        <parameter name="devices" value="web"></parameter>
         <classes>
-            <class name="test.checkout.ShoppingBagTestMobile">
-                <methods>
+            <class name="test.MyAccountTest">
+<!--                <methods>-->
 <!--                    <include name="testCase_SP_02"/>-->
 <!--                    <include name="testCase_SP_17"/>-->
 <!--                    <include name="testCase_SP_26_RV_02_04"/>-->
 <!--                    <include name="testCase_SP_24"/>-->
 <!--                    <include name="testCase_SP_04"/>-->
 <!--                    <include name="testCase_RV_07"/>-->
-                    <include name="testCase_Myorder_Return"/>
-                </methods>
+<!--                    <include name="testCase_Myorder_Return"/>-->
+<!--                </methods>-->
             </class>
 <!--            <class name="test.MyAccountTest">-->
 <!--                <methods>-->
