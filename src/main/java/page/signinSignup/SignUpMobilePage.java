@@ -23,10 +23,10 @@ public class SignUpMobilePage extends BasePage {
     }
     public void goToFormCreateMyAccount() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        keyword.scrollDownToElement("MOBILE_HAMBURGER");
-        keyword.click("MOBILE_HAMBURGER");
+        keyword.scrollDownToElement("LOGIN_MENULEFT");
+        keyword.click("LOGIN_MENULEFT");
         keyword.untilJqueryIsDone(50L);
-        keyword.click("MOBILE_ICON_SIGNIN");
+        keyword.click("MOBILE_BTN_LOGIN");
         keyword.untilJqueryIsDone(50L);
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
         Thread.sleep(2000);

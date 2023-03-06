@@ -21,9 +21,7 @@ public class CreateAccountMobileTest extends BaseTest {
         super();
     }
 
-    @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
-    public void testCaseMb_CreateAccount() throws Exception {
-        logger.info("testCase_CreateAccount");
+    public void installation() throws Exception {
         objLogin = new LoginPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
         objSigUp = new SignUpPage(this.keyword);
@@ -31,13 +29,19 @@ public class CreateAccountMobileTest extends BaseTest {
         keyword.navigateToUrl("https://stage.glamira.co.uk/");
         keyword.scrollToPosition();
         objRegist.acceptAllCookies();
+    }
+
+    @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
+    public void testCaseMb_CreateAccount() throws Exception {
+        logger.info("testCase_CreateAccount");
+        installation();
         objCreateAccMobile.CreateNewCustomerSuccessfully();
     }
 
     @Test(priority = 2, description = "forgot password")
     public void testCaseMb_forgotPassWord() throws Exception {
         logger.info("testCase_forGotPassWord");
-        objCreateAccMobile.forGotPassWord();
+        objCreateAccMobile.forgotPassWord();
     }
 
     @Test(priority = 3, description = "forgot password - checkOut")
@@ -46,6 +50,6 @@ public class CreateAccountMobileTest extends BaseTest {
         objLogin = new LoginPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
         objSigUp = new SignUpPage(this.keyword);
-        objCreateAccMobile.forGotPassWordCheckOut();
+        objCreateAccMobile.forgotPassWordCheckOut();
     }
 }

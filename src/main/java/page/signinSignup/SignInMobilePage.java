@@ -29,10 +29,9 @@ public class SignInMobilePage extends BasePage {
     }
 
     public void checkGoToFormLoginWithEmail() throws InterruptedException {
-
         keyword.untilJqueryIsDone(50L);
-        keyword.scrollDownToElement("MOBILE_HAMBURGER");
-        keyword.click("MOBILE_HAMBURGER");
+        keyword.scrollDownToElement("LOGIN_MENULEFT");
+        keyword.click("LOGIN_MENULEFT");
         keyword.untilJqueryIsDone(50L);
         keyword.click("MOBILE_ICON_SIGNIN");
         keyword.untilJqueryIsDone(50L);

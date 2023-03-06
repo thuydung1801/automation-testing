@@ -22,7 +22,9 @@ public class CreateAccountOnStagePage extends BasePage {
     private SignInPage objSignIn;
 
     public CreateAccountOnStagePage(KeywordWeb key) {
+
         super(key);
+        objRegist = new RegisterPage(this.keyword);
     }
 
     public void CreateNewCustomerSuccessfully() throws Exception {
@@ -49,7 +51,6 @@ public class CreateAccountOnStagePage extends BasePage {
         keyword.click("BTN_COOKIES");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
        keyword.untilJqueryIsDone(50L);
-       keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_VIEW_CART");
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
@@ -59,8 +60,7 @@ public class CreateAccountOnStagePage extends BasePage {
         keyword.click("CHECKOUT_LA_HPL_FORGOT_PASS");
         sendData();
     }
-    public void forGotPassWord() throws Exception {
-        objRegist = new RegisterPage(this.keyword);
+    public void forgotPassWord() throws Exception {
         keyword.untilJqueryIsDone(50L);
         keyword.deleteAllCookies();
         keyword.reLoadPage();

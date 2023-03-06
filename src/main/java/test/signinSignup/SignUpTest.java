@@ -127,45 +127,45 @@ public class SignUpTest extends BaseTest {
         objSigUp.enterPhoneNumberAlreadyInSystem();
     }
 
-    //    @Test(priority = 16, description = "Create a new account with password # Phone register and has:\\n\" + \"+ At least < 8 characters\\n\" + \"+ At least 1 number\\n\" + \"+ At least 1 lower case letter\\n\" + \"+ At least 1 upper case letter\\n\" + \"+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~\\\"\")\n")
+        @Test(priority = 16, description = "Create a new account with password # Phone register and has:\\n\" + \"+ At least < 8 characters\\n\" + \"+ At least 1 number\\n\" + \"+ At least 1 lower case letter\\n\" + \"+ At least 1 upper case letter\\n\" + \"+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~\\\"\")\n")
     public void testCase_SU018() throws Exception {
         logger.info("testCase_SU018");
         objSigUp.passwordLessThan8Characters();
     }
 
-    //    @Test(priority = 17, description = "\"Create a new account with password # email register and has:\n" + "characters < 8\"")
+        @Test(priority = 17, description = "\"Create a new account with password # email register and has:\n" + "characters < 8\"")
     public void testCase_SU019() throws Exception {
         logger.info("testCase_SU019");
         objSigUp.checkConditionAtLeast1Number();
     }
 
-//    @Test(priority = 18, description = "Create a new account with password # email register and missing lower case lette")
-//    public void testCase_SU020() throws Exception {
-//        logger.info("testCase_SU020");
-//        objSigUp.checkConditionAtLeast1LowerLetter();
-//    }
-//
-//    @Test(priority = 19, description = "Create a new account with password # email register and missing upper case letter")
-//    public void testCase_SU021() throws Exception {
-//        logger.info("testCase_SU021");
-//        objSigUp.checkConditionAtLeast1UpperLetter();
-//    }
-//
-//    @Test(priority = 20, description = "Create a new account with password # email register and missing special character")
-//    public void testCase_SU022() throws Exception {
-//        logger.info("testCase_SU022");
-//        objSigUp.checkConditionAtLeast1CharactersLike();
-//    }
-//
-//    @Test(priority = 21, description = "Register an account with the email already in the system")
-//    public void testCase_SU024() throws Exception {
-//        logger.info("testCase_SU023");
-//        objSigUp.checkConditionAEmailExisted();
-//    }
-//    @Test(priority = 22, description = "Create new customer successfully with store enable phone number confirm")
-//    public void testCase_SU023_Case_14() throws Exception {
-//        logger.info("testCase_SU023_Case_14");
-//        objSigUp.createNewCustomerSuccessfullyWithPhone();
-//        objSigUp.getActivationCode();
-//    }
+    @Test(priority = 18, description = "Create a new account with password # email register and missing lower case lette")
+    public void testCase_SU020() throws Exception {
+        logger.info("testCase_SU020");
+        objSigUp.checkConditionAtLeast1LowerLetter();
+    }
+
+    @Test(priority = 19, description = "Create a new account with password # email register and missing upper case letter")
+    public void testCase_SU021() throws Exception {
+        logger.info("testCase_SU021");
+        objSigUp.checkConditionAtLeast1UpperLetter();
+    }
+
+    @Test(priority = 20, description = "Create a new account with password # email register and missing special character")
+    public void testCase_SU022() throws Exception {
+        logger.info("testCase_SU022");
+        objSigUp.checkConditionAtLeast1CharactersLike();
+    }
+
+    @Test(priority = 21, description = "Register an account with the email already in the system")
+    public void testCase_SU024() throws Exception {
+        logger.info("testCase_SU023");
+        objSigUp.checkConditionAEmailExisted();
+    }
+    @Test(priority = 22, description = "Create new customer successfully with store enable phone number confirm")
+    public void testCase_SU023_Case_14() throws Exception {
+        logger.info("testCase_SU023_Case_14");
+        objSigUp.createNewCustomerSuccessfullyWithPhone();
+        objSigUp.getActivationCode();
+    }
 }

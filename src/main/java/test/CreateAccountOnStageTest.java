@@ -5,6 +5,7 @@ import core.KeywordWeb;
 import core.LogHelper;
 import org.slf4j.Logger;
 import org.testng.annotations.Test;
+import page.CreateAccountMobilePage;
 import page.CreateAccountOnStagePage;
 import page.home.LoginPage;
 import page.home.RegisterPage;
@@ -21,23 +22,29 @@ public class CreateAccountOnStageTest extends BaseTest {
         super();
     }
 
-
-    @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
-    public void testCase_CreateAccount() throws Exception {
-        logger.info("testCase_CreateAccount");
+    public void installation() throws Exception {
         objRegist = new RegisterPage(this.keyword);
         objSigUp = new SignUpPage(this.keyword);
         objCreateAcc = new CreateAccountOnStagePage(this.keyword);
         keyword.navigateToUrl("https://stage.glamira.co.uk/");
         keyword.scrollToPosition();
         objRegist.acceptAllCookies();
+    }
+
+
+    @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
+    public void testCase_CreateAccount() throws Exception {
+        logger.info("testCase_CreateAccount");
+        installation();
         objCreateAcc.CreateNewCustomerSuccessfully();
     }
+
     @Test(priority = 2, description = "forgot password")
     public void testCase_forgotPassWord() throws Exception {
         logger.info("testCase_forGotPassWord");
-        objCreateAcc.forGotPassWord();
+        objCreateAcc.forgotPassWord();
     }
+
     @Test(priority = 3, description = "forgot password - checkOut")
     public void testCase_forgotPassWordCheckOut() throws Exception {
         logger.info("testCase_forgotPassWordCheckOut");

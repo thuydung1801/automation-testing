@@ -16,32 +16,34 @@ public class CreateAccountMobilePage extends BasePage {
     private SignUpPage objSignUp;
     private RegisterPage objRegist;
     private SignInPage objSignIn;
+    private CreateAccountOnStagePage objCreateAccount;
 
     public CreateAccountMobilePage(KeywordWeb key) {
         super(key);
+        objCreateAccount=new CreateAccountOnStagePage(this.keyword);
     }
 
     public void CreateNewCustomerSuccessfully() throws Exception {
         keyword.untilJqueryIsDone(50L);
-        keyword.scrollDownToElement("MOBILE_HAMBURGER");
+        keyword.scrollDownToElement("LOGIN_MENULEFT");
         keyword.untilJqueryIsDone(50L);
-        keyword.click("MOBILE_HAMBURGER");
+        keyword.click("LOGIN_MENULEFT");
         keyword.untilJqueryIsDone(50L);
-        keyword.click("MOBILE_ICON_SIGNIN");
+        keyword.click("MOBILE_BTN_LOGIN");
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
         keyword.untilJqueryIsDone(50L);
         keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
         keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 500);
-        sendKeyFormDataLogin();
-        sendKeyFormPassword();
+        objCreateAccount.sendKeyFormDataLogin();
+        objCreateAccount.sendKeyFormPassword();
         getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIS_SUCCESS_US");
         keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIS_SUCCESS_US");
     }
 
-    public void forGotPassWordCheckOut() throws Exception {
+    public void forgotPassWordCheckOut() throws Exception {
         keyword.navigateToUrl("https://stage.glamira.co.uk/glamira-pendant-elsie.html?alloy=red_white-585&stone1=diamond-Brillant");
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
@@ -57,7 +59,7 @@ public class CreateAccountMobilePage extends BasePage {
         sendData();
     }
 
-    public void forGotPassWord() throws Exception {
+    public void forgotPassWord() throws Exception {
         objRegist = new RegisterPage(this.keyword);
         keyword.untilJqueryIsDone(50L);
         keyword.deleteAllCookies();
@@ -80,7 +82,7 @@ public class CreateAccountMobilePage extends BasePage {
 
     public void sendData() throws Exception {
         keyword.untilJqueryIsDone(50L);
-        sendEmail();
+        objCreateAccount.sendEmail();
         objSignIn.openTabBE("https://stage.glamira.com/secured2021/");
         keyword.deleteAllCookies();
         keyword.closeWindowByIndex(1);
@@ -103,13 +105,6 @@ public class CreateAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_SUBMIT_PASSWORD");
 
-    }
-
-    public void sendEmail() throws InterruptedException {
-        keyword.verifyElementVisible("LOGIN_INPUT_FORGOT_PASSWORD");
-        keyword.sendKeys("LOGIN_INPUT_FORGOT_PASSWORD", "SIGNUP_EMAIL_EXIST1");
-        keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
-        keyword.verifyElementVisible("SIGNIN_XPATH_ACTUAL_SENT_CODE");
     }
 
     public void getCodeSetup(String code, String btnSubmit) throws Exception {
@@ -143,24 +138,6 @@ public class CreateAccountMobilePage extends BasePage {
         keyword.resizeBrowser(319, 848);
     }
 
-    public void sendKeyFormPassword() throws InterruptedException {
-        objSignUp.sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION",
-                "SIGNUP_DATA_EMAIL_NEW_INFORMATION", "SIGNUP_SELECT_TITLE",
-                "SIGNUP_SELECT_OPTION_TITLE");
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-    }
-
-    public void sendKeyFormDataLogin() throws InterruptedException {
-        objSignUp = new SignUpPage(this.keyword);
-        String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        String emailCreateAcc = "NgocNT" + timestamp + "@gmail.com";
-        PropertiesFile.serPropValue("SIGNUP_EMAIL_EXIST1", emailCreateAcc);
-        objSignUp.sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION"
-                , "SIGNUP_EMAIL_EXIST1", "SIGNUP_EMAIL_EXIST1");
-        keyword.click("SIGNUP_XPATH_FOR_FORM");
-        keyword.click("SIGNUP_BTN_NEXT_STEEP");
-        keyword.untilJqueryIsDone(50L);
-    }
 
     boolean check() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);

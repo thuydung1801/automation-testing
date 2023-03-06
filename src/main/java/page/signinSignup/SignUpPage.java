@@ -21,6 +21,7 @@ public class SignUpPage extends BasePage {
         super();
         objRegist = new RegisterPage(this.keyword);
     }
+
     public void goToFormCreateMyAccount() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.reLoadPage();
@@ -79,7 +80,7 @@ public class SignUpPage extends BasePage {
     public void sendKeyFullDataFormPasswordInformation(String inputPassword, String password, String selectTitle, String selectOneOptionTitle) throws InterruptedException {
         keyword.sendKeys(inputPassword, password);
         keyword.untilJqueryIsDone(30L);
-        if (checkElement(selectTitle)) {
+        if ( keyword.verifyElementVisible(selectTitle)) {
             keyword.click(selectTitle);
 //            keyword.checkStatusIsDisplay(selectOneOptionTitle);
             keyword.click(selectOneOptionTitle);
@@ -90,7 +91,6 @@ public class SignUpPage extends BasePage {
             keyword.click("SIGNUP_CHECKBOX_AGREE");
         }
     }
-
     //    Filters function
     public void filterSort(String elementFilter, String inputFilter, String sendKeyFilter, String buttonApplyFilter) throws InterruptedException {
         keyword.webDriverWaitForElementPresent(elementFilter, 20);
@@ -343,8 +343,11 @@ public class SignUpPage extends BasePage {
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.doubleClick("SIGNUP_BTN_NEXT_CHINA");
         keyword.untilJqueryIsDone(30L);
+        keyword.clearText("SIGNUP_PASSWORD_INFORMATION");
+        keyword.untilJqueryIsDone(30L);
         sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_03",
-                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE");
+                "SIGNUP_SELECT_TITLE", "SIGNUP_SELECT_OPTION_TITLE_FRAU");
+//        keyword.click("SIGNUP_CHECKBOX_AGREE");
         keyword.untilJqueryIsDone(50L);
         confirmPasswordEntryConditionWithChinese(
                 "SIGNIN_MESSAGE_PW_NOT_SAME_EMAIL", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_CHINA",
@@ -358,8 +361,8 @@ public class SignUpPage extends BasePage {
         clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_02");
         keyword.untilJqueryIsDone(50L);
         confirmPasswordEntryConditionWithChinese(
-                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_MESSAGE_ERROR_NUMBER",
-                "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
+                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS_SUCCESS", "SIGNUP_MESSAGE_ERROR_NUMBER",
+                "SIGN_MESSAGE_CHARACTERS_MOBILE", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
                 "SIGNUP_MESSAGE_ERROR_NUMBER"
         );
     }
@@ -463,8 +466,5 @@ public class SignUpPage extends BasePage {
         keyword.assertEquals("感谢注册。", "SIGNUP_CODE_RESEND");
     }
 
-    public boolean checkElement(String checkElement) {
-        return keyword.verifyElementVisible(checkElement);
-    }
 }
 
