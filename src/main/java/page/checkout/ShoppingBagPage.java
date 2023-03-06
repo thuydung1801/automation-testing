@@ -8,6 +8,7 @@ import io.cucumber.java.eo.Do;
 import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
@@ -137,6 +138,7 @@ public class ShoppingBagPage extends BasePage {
     //click to view all product in shopping bag
     public void clickShoppingBagPage() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         Thread.sleep(3000);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.scrollDownToElement("CHECKOUT_BTN_MINICART");
@@ -219,8 +221,9 @@ public class ShoppingBagPage extends BasePage {
 
     }
 
-    public void addShippingLabel() throws InterruptedException {
-        keyword.navigateToUrl("https://dev3.glamira.com/glgb/catalog/product/view/id/103896");
+    public void addShippingLabel(String url) throws InterruptedException {
+        //https://dev3.glamira.com/glgb/
+        keyword.navigateToUrl(url+"catalog/product/view/id/103896");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         clickShoppingBagPage();
         moveToPagecheckOut();
@@ -241,6 +244,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_CBX_BLACKDIAMOND");
         keyword.untilJqueryIsDone(30L);
         keyword.click("CHECKOUT_LBL_METAL");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_METAL",10);
         keyword.scrollDownToElement("CHECKOUT_BTN_UPDATE");
         keyword.click("CHECKOUT_CBX_METAL");
@@ -350,8 +354,10 @@ public class ShoppingBagPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        Thread.sleep(1000);
+        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.verifyElementPresent("CHECKOUT_BTN_CHECKOUT");
         keyword.click("CHECKOUT_BTN_CHECKOUT");
         keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",10);
@@ -665,9 +671,11 @@ public class ShoppingBagPage extends BasePage {
     }
 
     //go to BE and verify order's status
-    public void verifyOrderStatus(String status) throws InterruptedException {
+
+    public void verifyOrderStatus(String status, String url) throws InterruptedException {
         //go to BE
-        keyword.navigateToUrl("https://dev3.glamira.com/secured2021/sales/order/");
+        //https://dev3.glamira.com/
+        keyword.navigateToUrl(url + "secured2021/sales/order/");
         //verify status
         keyword.webDriverWaitForElementPresent("BE_ORDER_TBX_SEARCH",10);
         keyword.clearText("BE_ORDER_TBX_SEARCH");
