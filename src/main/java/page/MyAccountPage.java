@@ -100,9 +100,9 @@ public class MyAccountPage extends BasePage {
         commonPersonalInf("MAC_CLICK_CHECKBOX_EMAIL");
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String mail = "dung"+timestamp+"@gmail.com";
-        PropertiesFile.serPropValue("COM_INP_DATA_EMAIL",mail);
-        keyword.sendKeys("MAC_INP_EMAIL_NEW","COM_INP_DATA_EMAIL");
-        keyword.sendKeys("MAC_INP_PASS_CURENT_1","COM_INP_DATA_PASS");
+        PropertiesFile.serPropValue("COM_INP_DATA_EMAIL_STAGE",mail);
+        keyword.sendKeys("MAC_INP_EMAIL_NEW","COM_INP_DATA_EMAIL_STAGE");
+        keyword.sendKeys("MAC_INP_PASS_CURENT_1","COM_INP_DATA_PASS_STAGE");
         keyword.click("MAC_BTN_SAVE_2");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -112,10 +112,10 @@ public class MyAccountPage extends BasePage {
         commonPersonalInf("MAC_CLICK_CHECKBOX_PASS");
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String pass = "Dung*"+timestamp;
-        keyword.sendKeys("MAC_INP_PASS_CURENT_2","COM_INP_DATA_PASS");
-        PropertiesFile.serPropValue("COM_INP_DATA_PASS",pass);
-        keyword.sendKeys("MAC_INP_PASS_NEW","COM_INP_DATA_PASS");
-        keyword.sendKeys("MAC_INP_PASS_CONFIRM","COM_INP_DATA_PASS");
+        keyword.sendKeys("MAC_INP_PASS_CURENT_2","COM_INP_DATA_PASS_STAGE");
+        PropertiesFile.serPropValue("COM_INP_DATA_PASS_STAGE",pass);
+        keyword.sendKeys("MAC_INP_PASS_NEW","COM_INP_DATA_PASS_STAGE");
+        keyword.sendKeys("MAC_INP_PASS_CONFIRM","COM_INP_DATA_PASS_STAGE");
         keyword.click("MAC_BTN_SAVE_3");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -139,7 +139,7 @@ public class MyAccountPage extends BasePage {
         logOut();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL", "COM_INP_DATA_PASS",null,null,true);
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE", "COM_INP_DATA_PASS_STAGE",null,null,true);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("LOGIN_BTN_ACCOUNT");
@@ -240,7 +240,7 @@ public class MyAccountPage extends BasePage {
     }
     public void changeEmail() throws InterruptedException {
         inputChangeMail();
-        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","email","MAC_VERIFY_EMAIL_CHANGE","COM_INP_DATA_EMAIL");
+        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","email","MAC_VERIFY_EMAIL_CHANGE","COM_INP_DATA_EMAIL_STAGE");
 
     }
 
@@ -248,7 +248,7 @@ public class MyAccountPage extends BasePage {
 //        setUp1();
         keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/");
         inpChangePassword();
-        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","pass","MAC_VERIFY_PASS_CHANGE","COM_INP_DATA_PASS");
+        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","pass","MAC_VERIFY_PASS_CHANGE","COM_INP_DATA_PASS_STAGE");
 
     }
     public void deleteAccount() throws InterruptedException {
@@ -258,7 +258,7 @@ public class MyAccountPage extends BasePage {
         Thread.sleep(2000);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.sendKeys("MAC_DELETE_ACCOUNT_INP_PASS","COM_INP_DATA_PASS");
+        keyword.sendKeys("MAC_DELETE_ACCOUNT_INP_PASS","COM_INP_DATA_PASS_STAGE");
         keyword.click("MAC_DELETE_ACCOUNT_BTN_DELETE");
         keyword.click("MAC_DELETE_ACCOUNT_BTN_OK");
         keyword.untilJqueryIsDone(30L);
@@ -675,6 +675,9 @@ public class MyAccountPage extends BasePage {
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MAIL","COM_INP_DATA_EMAIL_STAGE");
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_REMAIL","EMAIL_ADDRESS");
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MESSAGE","COM_DATA_TITLE");
+//        keyword.click("//div[@class=\"recaptcha-checkbox-checkmark\"]");
+//        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("MAC_WISHLIST_EMAIL_CHECKBOX_SUB");
         keyword.click("MAC_WISHLIST_EMAIL_BTN_SUBMIT");
         keyword.untilJqueryIsDone(60L);
