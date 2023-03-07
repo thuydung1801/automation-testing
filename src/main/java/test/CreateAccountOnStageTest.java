@@ -14,30 +14,30 @@ public class CreateAccountOnStageTest extends BaseTest {
     private static Logger logger = LogHelper.getLogger();
     private LoginPage objLogin;
     private RegisterPage objRegist;
-    private CreateAccountOnStagePage objCreateAcc;
+    private CreateAccountOnStagePage objCreateAccOnWeb;
     public CreateAccountOnStageTest() {
         super();
     }
     public void installation() throws Exception {
-        objCreateAcc = new CreateAccountOnStagePage(this.keyword);
+        objCreateAccOnWeb = new CreateAccountOnStagePage(this.keyword);
         objRegist.acceptAllCookies();
     }
     @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
     public void testCase_CreateAccount() throws Exception {
         logger.info("testCase_CreateAccount");
         installation();
-        objCreateAcc.CreateNewCustomerSuccessfully();
+        objCreateAccOnWeb.CreateNewCustomerSuccessfully();
     }
 
     @Test(priority = 2, description = "forgot password")
     public void testCase_forgotPassWord() throws Exception {
         logger.info("testCase_forGotPassWord");
-        objCreateAcc.forgotPassWord();
+        objCreateAccOnWeb.forgotPassWord();
     }
 
     @Test(priority = 3, description = "forgot password - checkOut")
     public void testCase_forgotPassWordCheckOut() throws Exception {
         logger.info("testCase_forgotPassWordCheckOut");
-        objCreateAcc.forgotPasswordCheckOut();
+        objCreateAccOnWeb.forgotPasswordCheckOut();
     }
 }

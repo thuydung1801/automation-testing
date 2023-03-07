@@ -36,7 +36,7 @@ public class CreateAccountMobilePage extends BasePage {
         objCreateAccount.createAndVerifyForm();
     }
 
-    public void forgotPassWord() throws Exception {
+    public void forgotPassword() throws Exception {
         objCreateAccount.setUpFormForgot();
         objCreateAccount.sendData();
         keyword.resizeBrowser(319, 848);

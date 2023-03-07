@@ -22,7 +22,6 @@ public class SignUpMobileTest extends BaseTest {
         super();
     }
 public void setUp()throws InterruptedException {
-    logger.info("testCase_SU05");
     objLogin = new LoginPage(this.keyword);
     objRegist = new RegisterPage(this.keyword);
     objSigUpMobile = new SignUpMobilePage(this.keyword);
@@ -32,6 +31,7 @@ public void setUp()throws InterruptedException {
 }
     @Test(priority = 1, description = "Create new customer and input email exist on database")
     public void testCase_SU05() throws InterruptedException {
+        logger.info("testCase_SU05");
         setUp();
 //        objSigUpMobile.navigateToUrlPage("https://dev3.glamira.com/glgb/");
         objSigUpMobile.goToFormCreateMyAccount();

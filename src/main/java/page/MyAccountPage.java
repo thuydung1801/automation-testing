@@ -695,7 +695,7 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("MAC_MY_ORD_BTN_COMPLETE");
-        viewOrder("MAC_MY_ORD_TEXT_ID_COMPLETE","BTN_SHOW_VIEW_ORDER","MAC_MY_ORD_VERIFY_TEXT_ID_COMPLETE");
+        viewOrder("MAC_MY_ORD_TEXT_ID_COMPLETE","MAC_MY_ORD_BTN_VIEW_COMPLETE","MAC_MY_ORD_VERIFY_TEXT_ID_COMPLETE");
 
     }
     public void viewOrderRecent() throws InterruptedException {
