@@ -32,7 +32,7 @@ public class CreateAccountOnStageTest extends BaseTest {
     @Test(priority = 2, description = "forgot password")
     public void testCase_forgotPassWord() throws Exception {
         logger.info("testCase_forGotPassWord");
-        objCreateAccOnWeb.forgotPassWord();
+        objCreateAccOnWeb.forgotPassword();
     }
 
     @Test(priority = 3, description = "forgot password - checkOut")

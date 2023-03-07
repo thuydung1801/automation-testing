@@ -73,7 +73,7 @@ public void createAndVerifyForm() throws Exception {
         keyword.click("CHECKOUT_LA_HPL_FORGOT_PASS");
     }
 
-    public void forgotPassWord() throws Exception {
+    public void forgotPassword() throws Exception {
         setUpFormForgot();
         sendData();
         keyword.untilJqueryIsDone(50L);
