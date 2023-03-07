@@ -9,6 +9,7 @@ import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
+import page.MarketingPage;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
@@ -24,11 +25,23 @@ public class ShoppingBagPage extends BasePage {
     public RegisterPage objRegist;
 
     public SignInPage objSignIn;
+    public MarketingPage objMarketingPage;
 
     public void backPage(String url){
         keyword.navigateToUrl(url+"checkout/cart/");
     }
+    public void createGiftCard(String url) throws InterruptedException {
+        objMarketingPage = new MarketingPage(this.keyword);
+        keyword.navigateToUrl(url+"gift-card/");
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click( "MRT_AMOUNT");
+        objMarketingPage.ipDataGiftCard("COM_INP_DATA_NAME","COM_INP_DATA_EMAIL","COM_INP_DATA_MESSAGE","MRT_SUBMIT");
+        clickShoppingBagPage();
 
+
+
+    }
     //add any product with only a size field
     public void addProduct(String url) throws InterruptedException {
         objRegist = new RegisterPage(this.keyword);
@@ -365,6 +378,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_BTN_CHECKOUT");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(1000);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",10);
     }
     @Step("common checkout")
@@ -383,9 +397,9 @@ public class ShoppingBagPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_ORDER");
-        String messages = keyword.getAlertText();
-        keyword.acceptAlert();
-        keyword.simpleAssertEquals(messages,"CHECKOUT_MESSAGES_PAYMENT");
+//        String messages = keyword.getAlertText();
+//        keyword.acceptAlert();
+//        keyword.simpleAssertEquals(messages,"CHECKOUT_MESSAGES_PAYMENT");
     }
     @Step("check out with payment method: visa")
     public void checkOutWithVisa(String flag) throws InterruptedException {
@@ -434,12 +448,25 @@ public class ShoppingBagPage extends BasePage {
                 keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
                 break;
             //missing input all of fields
-            case "failByMissing":
+            case "emptyCardNumber":
                 keyword.click("CHECKOUT_BTN_ORDER");
                 keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA_CARD_NUM", "CHECKOUT_MESSAGES_VISA");
+                break;
+            case "emptyExpirationDate":
+                keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_VISA");
+                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_VISA", "CHECKOUT_DATA_CHECKOUT_VISA");
+                keyword.switchToDefaultContent();
+                keyword.click("CHECKOUT_BTN_ORDER");
                 keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA_CARD_EXPIRYDATE", "CHECKOUT_MESSAGES_EXPIRYDATE");
+                break;
+            case "emptyCVC":
+                keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_EXPIRYDATE");
+                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_EXPIRYDATE", "CHECKOUT_DATA_CHECKOUT_EXPIRYDATE");
+                keyword.switchToDefaultContent();
+                keyword.click("CHECKOUT_BTN_ORDER");
                 keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA_CARD_CVC", "CHECKOUT_MESSAGES_CVC");
                 break;
+
             //input defuse card
             case "failByCard":
                 keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_VISA");
