@@ -127,13 +127,13 @@ public class SignUpTest extends BaseTest {
         objSigUp.enterPhoneNumberAlreadyInSystem();
     }
 
-        @Test(priority = 16, description = "Create a new account with password # Phone register and has:\\n\" + \"+ At least < 8 characters\\n\" + \"+ At least 1 number\\n\" + \"+ At least 1 lower case letter\\n\" + \"+ At least 1 upper case letter\\n\" + \"+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~\\\"\")\n")
+    @Test(priority = 16, description = "Create a new account with password # Phone register and has:\\n\" + \"+ At least < 8 characters\\n\" + \"+ At least 1 number\\n\" + \"+ At least 1 lower case letter\\n\" + \"+ At least 1 upper case letter\\n\" + \"+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~\\\"\")\n")
     public void testCase_SU018() throws Exception {
         logger.info("testCase_SU018");
         objSigUp.passwordLessThan8Characters();
     }
 
-        @Test(priority = 17, description = "\"Create a new account with password # email register and has:\n" + "characters < 8\"")
+    @Test(priority = 17, description = "\"Create a new account with password # email register and has:\n" + "characters < 8\"")
     public void testCase_SU019() throws Exception {
         logger.info("testCase_SU019");
         objSigUp.checkConditionAtLeast1Number();
