@@ -8,13 +8,13 @@ import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 import page.signinSignup.SignUpPage;
 
-public class CreateAccountMobilePage extends BasePage {
+public class CreateAccountOnMobilePage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private SignUpPage objSignUp;
     private RegisterPage objRegist;
     private SignInPage objSignIn;
     private CreateAccountOnWebPage objCreateAccount;
-    public CreateAccountMobilePage(KeywordWeb key) {
+    public CreateAccountOnMobilePage(KeywordWeb key) {
         super(key);
         objCreateAccount = new CreateAccountOnWebPage(this.keyword);
         objSignIn = new SignInPage(this.keyword);

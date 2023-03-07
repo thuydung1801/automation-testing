@@ -4,26 +4,21 @@ import core.BasePage;
 import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
-import io.cucumber.java.sl.In;
-import net.bytebuddy.asm.Advice;
 import org.slf4j.Logger;
-import page.CreateAccountOnStagePage;
-import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 import page.signinSignup.SignUpPage;
 
-import java.security.PublicKey;
 import java.util.Date;
 
-public class CreateAccountOnStagePage extends BasePage {
+public class CreateAccountOnWebPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private SignUpPage objSignUp;
     private RegisterPage objRegist;
     private SignInPage objSignIn;
-    private CreateAccountMobilePage objCreateAccMobile;
+    private CreateAccountOnMobilePage objCreateAccMobile;
 
-    public CreateAccountOnStagePage(KeywordWeb key) {
+    public CreateAccountOnWebPage(KeywordWeb key) {
         super(key);
         objRegist = new RegisterPage(this.keyword);
         objSignIn = new SignInPage(this.keyword);
@@ -38,18 +33,20 @@ public class CreateAccountOnStagePage extends BasePage {
         Thread.sleep(2000);
         createAndVerifyForm();
     }
-public void createAndVerifyForm() throws Exception {
-    keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
-    keyword.untilJqueryIsDone(50L);
-    keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
-    keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 500);
-    sendKeyFormDataLogin();
-    sendKeyFormPassword();
-    getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
-    keyword.untilJqueryIsDone(50L);
-    keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIST_SUCCESS_US");
-    keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
-}
+
+    public void createAndVerifyForm() throws Exception {
+        keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
+        keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 500);
+        sendKeyFormDataLogin();
+        sendKeyFormPassword();
+        getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIST_SUCCESS_US");
+        keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
+    }
+
     public void forgotPasswordCheckOut() throws Exception {
         setupForgot("https://stage.glamira.co.uk/glamira-pendant-elsie.html?alloy=red_white-585&stone1=diamond-Brillant");
         sendData();

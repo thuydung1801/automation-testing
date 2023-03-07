@@ -4,21 +4,18 @@ import core.BaseTest;
 import core.LogHelper;
 import org.slf4j.Logger;
 import org.testng.annotations.Test;
-import page.CreateAccountMobilePage;
-import page.CreateAccountOnStagePage;
-import page.home.LoginPage;
+import page.CreateAccountOnMobilePage;
 import page.home.RegisterPage;
-import page.signinSignup.SignUpPage;
 
 public class CreateAccountMobileTest extends BaseTest {
     private static Logger logger = LogHelper.getLogger();
     private RegisterPage objRegist;
-    private CreateAccountMobilePage objCreateAccountMobile;
-    private CreateAccountOnStageTest objCreateAccountOnWeb;
+    private CreateAccountOnMobilePage objCreateAccountMobile;
+    private CreateAccountOnWebTest objCreateAccountOnWeb;
     public CreateAccountMobileTest() {
         super();
-        objCreateAccountMobile = new CreateAccountMobilePage(this.keyword);
-        objCreateAccountOnWeb = new CreateAccountOnStageTest();
+        objCreateAccountMobile = new CreateAccountOnMobilePage(this.keyword);
+        objCreateAccountOnWeb = new CreateAccountOnWebTest();
     }
     @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
     public void testCaseMb_CreateAccount() throws Exception {
