@@ -33,7 +33,7 @@ public class CreateAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click("MOBILE_BTN_LOGIN");
         keyword.untilJqueryIsDone(50L);
-        objCreateAccount.aa();
+        objCreateAccount.createAndVerifyForm();
     }
 
     public void forgotPassWord() throws Exception {

@@ -36,9 +36,9 @@ public class CreateAccountOnStagePage extends BasePage {
         keyword.click("LOGIN_BTN_LOGIN");
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
         Thread.sleep(2000);
-      aa();
+        createAndVerifyForm();
     }
-public void aa() throws Exception {
+public void createAndVerifyForm() throws Exception {
     keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
     keyword.untilJqueryIsDone(50L);
     keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
