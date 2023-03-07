@@ -25,6 +25,10 @@ public class ShoppingBagPage extends BasePage {
 
     public SignInPage objSignIn;
 
+    public void backPage(String url){
+        keyword.navigateToUrl(url+"checkout/cart/");
+    }
+
     //add any product with only a size field
     public void addProduct(String url) throws InterruptedException {
         objRegist = new RegisterPage(this.keyword);
@@ -139,7 +143,7 @@ public class ShoppingBagPage extends BasePage {
     public void clickShoppingBagPage() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.scrollDownToElement("CHECKOUT_BTN_MINICART");
         keyword.click("CHECKOUT_BTN_MINICART");
@@ -360,6 +364,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.verifyElementPresent("CHECKOUT_BTN_CHECKOUT");
         keyword.click("CHECKOUT_BTN_CHECKOUT");
         keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",10);
     }
     @Step("common checkout")
@@ -374,7 +379,9 @@ public class ShoppingBagPage extends BasePage {
         //keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT_PAYMENT",10);
     }
     @Step("submit order")
-    public void submit(){
+    public void submit() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_ORDER");
         String messages = keyword.getAlertText();
         keyword.acceptAlert();
@@ -429,9 +436,9 @@ public class ShoppingBagPage extends BasePage {
             //missing input all of fields
             case "failByMissing":
                 keyword.click("CHECKOUT_BTN_ORDER");
-                keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA", "CHECKOUT_MESSAGES_VISA");
-                keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA", "CHECKOUT_MESSAGES_EXPIRYDATE");
-                keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA", "CHECKOUT_MESSAGES_CVC");
+                keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA_CARD_NUM", "CHECKOUT_MESSAGES_VISA");
+                keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA_CARD_EXPIRYDATE", "CHECKOUT_MESSAGES_EXPIRYDATE");
+                keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA_CARD_CVC", "CHECKOUT_MESSAGES_CVC");
                 break;
             //input defuse card
             case "failByCard":
@@ -444,7 +451,7 @@ public class ShoppingBagPage extends BasePage {
                 keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_CVC");
                 keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_CVC", "CHECKOUT_DATA_CHECKOUT_CVC_2");
                 keyword.switchToDefaultContent();
-                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_NAME", "CHECKOUT_DATA_CHECKOUT_NAME");
+//                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_NAME", "CHECKOUT_DATA_CHECKOUT_NAME");
                 keyword.click("CHECKOUT_BTN_ORDER");
                 Thread.sleep(5000);
                 keyword.verifyElementVisible("CHECKOUT_MESSAGES_VISA_2");
@@ -457,6 +464,9 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_CBX_CHECKOUT_PAYPAL");
         Thread.sleep(2000);
         keyword.click("CHECKOUT_BTN_ORDER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.clearText("PAYPAL_EMAIL");
         keyword.sendKeys("PAYPAL_EMAIL", "PAYPAL_DATA_EMAIL");
         keyword.sendKeys("PAYPAL_PASSWORD", "PAYPAL_DATA_PASSWORD");

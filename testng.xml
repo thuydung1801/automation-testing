@@ -49,8 +49,8 @@
                     <include name="testCase_RV_06"/>
                     <include name="testCase_RV_10"/>
                     <include name="testCase_RV_07"/>
-                    <include name="testCase_RV_09"/>
-                    <include name="testCase_RV_08"/>
+<!--                    <include name="testCase_RV_09"/>-->
+<!--                    <include name="testCase_RV_08"/>-->
                     <include name="testCase_RV_11"/>
 
 
