@@ -38,8 +38,11 @@ public class ShoppingBagPage extends BasePage {
         keyword.click( "MRT_AMOUNT");
         objMarketingPage.ipDataGiftCard("COM_INP_DATA_NAME","COM_INP_DATA_EMAIL","COM_INP_DATA_MESSAGE","MRT_SUBMIT");
         clickShoppingBagPage();
-
-
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.assertEquals("CHECKOUT_DATA_TEXT_PRICE","CHECKOUT_GET_TEXT_PRICE");
+        checkOut();
+        checkOutWithVisa("success");
 
     }
     //add any product with only a size field
@@ -61,7 +64,6 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD_SIZE");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
     }
 
     //add product without any option

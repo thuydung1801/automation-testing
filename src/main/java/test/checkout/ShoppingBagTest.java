@@ -53,7 +53,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.removeProduct("CHECKOUT_ICON_REMOVE_WOMENRING");
 
     }
-    //pending
+    //pending with reCapcha
     @Test
     @Parameters("baseURL")
     public void testCase_CheckoutWithGiftCard(String baseURL) throws InterruptedException {

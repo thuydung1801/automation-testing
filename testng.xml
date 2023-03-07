@@ -25,6 +25,7 @@
 <!--</suite>-->
 <suite name="Test Mobile" parallel="tests">
     <test name="IPhone 12 Pro">
+        
         <parameter name="devices" value="web"></parameter>
         <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
@@ -36,7 +37,7 @@
 <!--                    <include name="testCase_SP_15"/>-->
 <!--                    <include name="testCase_SP_01"/>-->
 <!--                    <include name="testCase_SP_04"/>-->
-                    <include name="testCase_SP_05"/>
+<!--                    <include name="testCase_SP_05"/>-->
 <!--                    <include name="testCase_SP_16"/>-->
 <!--                    <include name="testCase_SP_17"/>-->
 <!--                    <include name="testCase_SP_18"/>-->
