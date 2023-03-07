@@ -34,11 +34,9 @@ public class MyAccountPage extends BasePage {
 //        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
         objRegister.acceptAllCookies();
       //  objRegister.chooseLanguages();
         keyword.untilJqueryIsDone(30L);
-
         keyword.navigateToUrl("https://stage.glamira.co.uk/");
         keyword.untilJqueryIsDone(30L);
         objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE", "COM_INP_DATA_PASS_STAGE",null,null,true);
@@ -46,11 +44,10 @@ public class MyAccountPage extends BasePage {
         keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/edit/");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
     }
     public void setUp1() throws InterruptedException {
 //        objLogin.loginOnAlert();
-//        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
+       keyword.navigateToUrl("https://stage.glamira.co.uk/");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
@@ -66,12 +63,10 @@ public class MyAccountPage extends BasePage {
 //        keyword.navigateToUrl("https://dev3.glamira.com/glde/customer/account/edit/");
 //        keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
     }
     public void commonPersonalInf(String checkBox) throws InterruptedException {
         keyword.untilJqueryIsDone(70L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
         keyword.click("MAC_PERSONAL_INF");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -266,7 +261,6 @@ public class MyAccountPage extends BasePage {
         if(keyword.verifyElementVisible("MAC_DELETE_ACCOUNT_VERIFY_MESSAGE")){
             keyword.assertEquals("MAC_DELETE_ACCOUNT_DATA_MESSAGE","MAC_DELETE_ACCOUNT_VERIFY_MESSAGE");
         }
-
     }
     public void commonMyAddress(String element,String elementEdit) throws InterruptedException {
         keyword.openNewTab("https://stage.glamira.co.uk/customer/address/index/#");
@@ -278,10 +272,8 @@ public class MyAccountPage extends BasePage {
             keyword.click(elementEdit);
             keyword.untilJqueryIsDone(30L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
         }
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
     }
     public void inpEditAddress(String label,String element,String btnEdit,String textStreet,boolean melissa) throws InterruptedException {
         commonMyAddress(element,btnEdit);
@@ -438,13 +430,11 @@ public class MyAccountPage extends BasePage {
         keyword.click("MAC_LINKTEXT_SETAS");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
         if(keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")){
             keyword.assertEquals("MAC_VERIFY_DATA_ADDRESS","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         }
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
         boolean check;
         String a = keyword.getText("MAC_VERIFY_SETAS_SHIPPING_ADDRESS");
         String b = keyword.getText("MAC_VERIFY_SETAS_BILLING_ADDRESS");
@@ -568,7 +558,6 @@ public class MyAccountPage extends BasePage {
         keyword.click("MAC_LINK_HEART");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
         keyword.click("MAC_BTN_VIEW_WISHLIST");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -668,9 +657,7 @@ public class MyAccountPage extends BasePage {
         commonViewWishList();
         keyword.click("MAC_WISHLIST_EMAIL_BTN");
         keyword.untilJqueryIsDone(60L);
-
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_NAME","COM_INP_DATA_NAME");
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_MAIL","COM_INP_DATA_EMAIL_STAGE");
         keyword.sendKeys("MAC_WISHLIST_EMAIL_INP_REMAIL","EMAIL_ADDRESS");
@@ -1000,7 +987,6 @@ public class MyAccountPage extends BasePage {
     public void checkContactInfo() throws InterruptedException {
         keyword.back();
         checkFunctionInfoCustomer("MAC_OVER_EDIT_CONTACT_INFO","MAC_OVER_VERIFY_GET_CONTACT_INFO","MAC_OVER_VERIFY_DATA_CONTACT_INFO");
-
     }
     public void checkChangePassword() throws InterruptedException {
 //        setUp2();
