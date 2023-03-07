@@ -22,7 +22,6 @@ public class CreateAccountOnStagePage extends BasePage {
     private SignInPage objSignIn;
 
     public CreateAccountOnStagePage(KeywordWeb key) {
-
         super(key);
         objRegist = new RegisterPage(this.keyword);
     }
