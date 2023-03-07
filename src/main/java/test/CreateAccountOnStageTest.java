@@ -10,22 +10,16 @@ import page.CreateAccountOnStagePage;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignUpPage;
-
 public class CreateAccountOnStageTest extends BaseTest {
     private static Logger logger = LogHelper.getLogger();
     private LoginPage objLogin;
     private RegisterPage objRegist;
     private CreateAccountOnStagePage objCreateAcc;
-    private SignUpPage objSigUp;
     public CreateAccountOnStageTest() {
         super();
     }
-
     public void installation() throws Exception {
-        objRegist = new RegisterPage(this.keyword);
-        objSigUp = new SignUpPage(this.keyword);
         objCreateAcc = new CreateAccountOnStagePage(this.keyword);
-        keyword.navigateToUrl("https://stage.glamira.co.uk/");
         objRegist.acceptAllCookies();
     }
     @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
