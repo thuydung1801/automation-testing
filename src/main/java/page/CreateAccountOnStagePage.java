@@ -5,6 +5,7 @@ import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
 import io.cucumber.java.sl.In;
+import net.bytebuddy.asm.Advice;
 import org.slf4j.Logger;
 import page.CreateAccountOnStagePage;
 import page.home.LoginPage;
@@ -20,16 +21,19 @@ public class CreateAccountOnStagePage extends BasePage {
     private SignUpPage objSignUp;
     private RegisterPage objRegist;
     private SignInPage objSignIn;
+    private CreateAccountMobilePage objCreateAccMobile;
 
     public CreateAccountOnStagePage(KeywordWeb key) {
         super(key);
         objRegist = new RegisterPage(this.keyword);
+        objSignIn = new SignInPage(this.keyword);
+        objSignUp = new SignUpPage(this.keyword);
     }
 
     public void CreateNewCustomerSuccessfully() throws Exception {
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(1000);
-        keyword.click("SIGNUP_BTN_SIGNUP");
+        keyword.click("LOGIN_BTN_LOGIN");
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
         Thread.sleep(2000);
         keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
@@ -45,56 +49,70 @@ public class CreateAccountOnStagePage extends BasePage {
     }
 
     public void forgotPassWordCheckOut() throws Exception {
-        keyword.navigateToUrl("https://stage.glamira.co.uk/glamira-pendant-elsie.html?alloy=red_white-585&stone1=diamond-Brillant");
+        setupForgot("https://stage.glamira.co.uk/glamira-pendant-elsie.html?alloy=red_white-585&stone1=diamond-Brillant");
+        sendData();
+        keyword.verifyElementVisible("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
+    }
+
+    public void setupForgot(String url) throws InterruptedException {
+        keyword.navigateToUrl(url);
         keyword.untilJqueryIsDone(50L);
-        keyword.click("BTN_COOKIES");
+        keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
+//        keyword.click("BTN_COOKIES");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
-       keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("BTN_VIEW_CART");
         keyword.click("BTN_VIEW_CART");
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
+        Thread.sleep(2000);
         keyword.click("LA_BTN_PROCEED_TO_CHECKOUT");
         keyword.verifyElementVisible("FORM_CHECKOUT_VRF");
         keyword.untilJqueryIsDone(70L);
         keyword.click("CHECKOUT_LA_HPL_FORGOT_PASS");
-        sendData();
     }
+
     public void forgotPassWord() throws Exception {
-        keyword.untilJqueryIsDone(50L);
-        keyword.deleteAllCookies();
-        keyword.reLoadPage();
-//        keyword.untilJqueryIsDone(50L);
-//        objRegist.chooseLanguages();
-        keyword.untilJqueryIsDone(50L);
-        keyword.verifyElementVisible("FORM_LOGIN_NEW");
-        keyword.untilJqueryIsDone(50L);
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("BTN_FORGOT_PASSWORD_NEW");
+        setUpFormForgot();
         sendData();
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(3000);
         keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
     }
 
+    public void setUpFormForgot() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.reLoadPage();
+        keyword.deleteAllCookies();
+        keyword.deleteAllCookies();
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
+        objRegist.acceptAllCookies();
+        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("BTN_FORGOT_PASSWORD_NEW");
+        keyword.untilJqueryIsDone(50L);
+    }
+
     public void sendData() throws Exception {
         keyword.untilJqueryIsDone(50L);
-        if (check()) {
-            keyword.click("LOGIN_BTN_LANGUAGE");
-        }
+//        if (check("LOGIN_BTN_LANGUAGE")) {
+//            keyword.click("LOGIN_BTN_LANGUAGE");
+//        }
         sendEmail();
         objSignIn.openTabBE("https://stage.glamira.com/secured2021/");
         keyword.deleteAllCookies();
+        keyword.reLoadPage();
         keyword.deleteAllCookies();
         keyword.closeWindowByIndex(1);
         keyword.switchToTab(0);
         getCodeSetup("LOGIN_INPUT_ENTER_DATA", "BTN_SUBMIT");
         sendPassWord();
-        keyword.verifyElementVisible("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
     }
 
     public void sendPassWord() throws InterruptedException {
         keyword.verifyElementVisible("INPUT_CODE_NEW_EMAIL");
-        String timestamp = new java.text.SimpleDateFormat("yyyyMMdd").format(new Date());
+        String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String pass = "Ngoc*" + timestamp + "@";
         keyword.untilJqueryIsDone(10L);
         PropertiesFile.serPropValue("PASS_NEW_RD", pass);
@@ -143,6 +161,7 @@ public class CreateAccountOnStagePage extends BasePage {
                 "SIGNUP_SELECT_OPTION_TITLE");
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
     }
+
     public void sendKeyFormDataLogin() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
@@ -154,8 +173,9 @@ public class CreateAccountOnStagePage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
     }
-    boolean check() throws InterruptedException {
+
+    boolean check(String element) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        return keyword.verifyElementVisible("LOGIN_BTN_LANGUAGE");
+        return keyword.verifyElementVisible(element);
     }
 }

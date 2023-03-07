@@ -8,15 +8,12 @@ import org.slf4j.Logger;
 
 public class RegisterPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
-
     public RegisterPage() {
         super();
     }
-
     public RegisterPage(KeywordWeb key) {
         super(key);
     }
-
     public void acceptAllCookies() throws InterruptedException {
         keyword.untilJqueryIsDone(60L);
         keyword.scrollToPositionByScript("window.scrollBy(0,300)");
@@ -29,7 +26,6 @@ public class RegisterPage extends BasePage {
             keyword.click("BTN_COOKIES");
         }
     }
-
     public void acceptAllCookiesOldDesign() throws InterruptedException {
         keyword.scrollToPositionByScript("window.scrollBy(0,300)");
         keyword.untilJqueryIsDone(60L);
@@ -39,7 +35,6 @@ public class RegisterPage extends BasePage {
         }
 
     }
-
     public void chooseLanguages() throws InterruptedException {
 //        keyword.untilJqueryIsDone(60L);
         Thread.sleep(7000);

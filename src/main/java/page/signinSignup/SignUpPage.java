@@ -27,7 +27,7 @@ public class SignUpPage extends BasePage {
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
-        keyword.click("SIGNUP_BTN_SIGNUP2");
+        keyword.click("LOGIN_BTN_LOGIN");
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
         Thread.sleep(2000);
         keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
@@ -37,7 +37,7 @@ public class SignUpPage extends BasePage {
     }
 
     public void goToFormCreateMyAccountChina() throws InterruptedException {
-        keyword.navigateToUrl("URL_DEV3");
+        keyword.navigateToUrl("URL_DEV3_CHINA");
         keyword.deleteAllCookies();
         keyword.deleteAllCookies();
         keyword.reLoadPage();
@@ -250,13 +250,6 @@ public class SignUpPage extends BasePage {
         );
     }
 
-    //   verify message  with password <8 characters and < 3 character types
-    public void verifyMessageWithPasswordNotIllegal() throws InterruptedException {
-//        verifyMessageFail("SIGNUP_MESSAGE_PASSWORD_FAIL01", "SIGNUP_ACTUAL_MESSAGE01", "SIGNUP_MESSAGE_PASSWORD_FAIL02", "SIGNUP_ACTUAL_MESSAGE03");
-        Thread.sleep(1000);
-        keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_01", "SIGNUP_ACTUAL_MESSAGE02");
-    }
-
     //    get code BE and Enter the wrong code sent to the email
     public void confirmAndProcessGetCodeWrong() throws InterruptedException {
         keyword.untilJqueryIsDone(20L);
@@ -304,7 +297,7 @@ public class SignUpPage extends BasePage {
                 "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
         keyword.untilJqueryIsDone(50L);
-        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIS_SUCCESS_US");
+//        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIS_SUCCESS_US");
         keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIS_SUCCESS_US");
     }
 

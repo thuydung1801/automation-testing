@@ -17,7 +17,6 @@ public class CreateAccountOnStageTest extends BaseTest {
     private RegisterPage objRegist;
     private CreateAccountOnStagePage objCreateAcc;
     private SignUpPage objSigUp;
-
     public CreateAccountOnStageTest() {
         super();
     }
@@ -27,11 +26,8 @@ public class CreateAccountOnStageTest extends BaseTest {
         objSigUp = new SignUpPage(this.keyword);
         objCreateAcc = new CreateAccountOnStagePage(this.keyword);
         keyword.navigateToUrl("https://stage.glamira.co.uk/");
-        keyword.scrollToPosition();
         objRegist.acceptAllCookies();
     }
-
-
     @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
     public void testCase_CreateAccount() throws Exception {
         logger.info("testCase_CreateAccount");

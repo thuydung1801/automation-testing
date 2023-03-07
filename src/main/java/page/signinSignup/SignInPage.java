@@ -277,6 +277,7 @@ public class SignInPage extends BasePage {
     public void openTabBE(String urlBe) throws InterruptedException {
         keyword.executeJavaScript("window.open()");
         keyword.switchToTab(1);
+        keyword.maximizeWindow();
         keyword.navigateToUrl(urlBe);
     }
 
