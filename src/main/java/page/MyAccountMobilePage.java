@@ -19,7 +19,6 @@ public class MyAccountMobilePage extends BasePage {
     private SignInPage signInPage;
     private MyAccountPage objMyAccount;
     public int countAdd;
-
     public MyAccountMobilePage(KeywordWeb key) {
         super(key);
         objLogin = new LoginPage();
@@ -27,12 +26,10 @@ public class MyAccountMobilePage extends BasePage {
         signInPage = new SignInPage();
         objMyAccount = new MyAccountPage(this.keyword);
     }
-
     public void changeFullnameWithData() throws InterruptedException {
         setUp();
         objMyAccount.inpFullName("MAC_DATA_FIRST_NAME_STAGE", "MAC_DATA_LAST_NAME_STAGE");
         objMyAccount.checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE", "MAC_VERIFY_DATA_FULLNAME", "name", "MAC_VERIFY_NAME", null);
-
     }
     public void changeFullNameWithDataNUll() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
@@ -42,7 +39,7 @@ public class MyAccountMobilePage extends BasePage {
         objMyAccount.checkVerifyInputNull();
     }
     public void changeEmail() throws InterruptedException {
-        keyword.click("BTN_PERSONAL");
+//        keyword.click("BTN_PERSONAL");
         inputChangeMail();
         objMyAccount.checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE", "MAC_VERIFY_DATA_FULLNAME", "email", "MAC_VERIFY_EMAIL_CHANGE", "COM_INP_DATA_EMAIL_STAGE");
     }
@@ -57,7 +54,6 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
     }
-
     public void commonPersonalInfOnMobile(String checkBox) throws InterruptedException {
         keyword.untilJqueryIsDone(70L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -69,7 +65,6 @@ public class MyAccountMobilePage extends BasePage {
         }
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
     }
-
     public void setUp() throws InterruptedException {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -84,5 +79,4 @@ public class MyAccountMobilePage extends BasePage {
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
     }
 //
-
 }
