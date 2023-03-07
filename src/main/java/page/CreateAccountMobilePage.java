@@ -33,16 +33,7 @@ public class CreateAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click("MOBILE_BTN_LOGIN");
         keyword.untilJqueryIsDone(50L);
-        keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
-        keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 500);
-        objCreateAccount.sendKeyFormDataLogin();
-        objCreateAccount.sendKeyFormPassword();
-        objCreateAccount.getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
-        keyword.untilJqueryIsDone(50L);
-        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIS_SUCCESS_US");
-        keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIS_SUCCESS_US");
+        objCreateAccount.aa();
     }
 
     public void forgotPassWord() throws Exception {
@@ -52,16 +43,10 @@ public class CreateAccountMobilePage extends BasePage {
         keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
     }
 
-    public void forgotPassWordCheckOut() throws Exception {
+    public void forgotPasswordCheckOut() throws Exception {
         objCreateAccount.setupForgot("https://stage.glamira.co.uk/glamira-pendant-elsie.html?alloy=red_white-585&stone1=diamond-Brillan");
         objCreateAccount.sendData();
         keyword.resizeBrowser(319, 848);
         keyword.verifyElementVisible("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
     }
-    public void getCodeSetup() throws Exception {
-        objCreateAccount.getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
-        keyword.resizeBrowser(319, 848);
-    }
-
-
 }

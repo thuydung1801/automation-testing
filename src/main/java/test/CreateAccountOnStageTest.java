@@ -38,6 +38,6 @@ public class CreateAccountOnStageTest extends BaseTest {
     @Test(priority = 3, description = "forgot password - checkOut")
     public void testCase_forgotPassWordCheckOut() throws Exception {
         logger.info("testCase_forgotPassWordCheckOut");
-        objCreateAcc.forgotPassWordCheckOut();
+        objCreateAcc.forgotPasswordCheckOut();
     }
 }

@@ -36,19 +36,21 @@ public class CreateAccountOnStagePage extends BasePage {
         keyword.click("LOGIN_BTN_LOGIN");
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
         Thread.sleep(2000);
-        keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
-        keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 500);
-        sendKeyFormDataLogin();
-        sendKeyFormPassword();
-        getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
-        keyword.untilJqueryIsDone(50L);
-        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIS_SUCCESS_US");
-        keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIS_SUCCESS_US");
+      aa();
     }
-
-    public void forgotPassWordCheckOut() throws Exception {
+public void aa() throws Exception {
+    keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
+    keyword.untilJqueryIsDone(50L);
+    keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
+    keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 500);
+    sendKeyFormDataLogin();
+    sendKeyFormPassword();
+    getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
+    keyword.untilJqueryIsDone(50L);
+    keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIST_SUCCESS_US");
+    keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
+}
+    public void forgotPasswordCheckOut() throws Exception {
         setupForgot("https://stage.glamira.co.uk/glamira-pendant-elsie.html?alloy=red_white-585&stone1=diamond-Brillant");
         sendData();
         keyword.verifyElementVisible("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
@@ -58,7 +60,6 @@ public class CreateAccountOnStagePage extends BasePage {
         keyword.navigateToUrl(url);
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
-//        keyword.click("BTN_COOKIES");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("BTN_VIEW_CART");
@@ -96,9 +97,6 @@ public class CreateAccountOnStagePage extends BasePage {
 
     public void sendData() throws Exception {
         keyword.untilJqueryIsDone(50L);
-//        if (check("LOGIN_BTN_LANGUAGE")) {
-//            keyword.click("LOGIN_BTN_LANGUAGE");
-//        }
         sendEmail();
         objSignIn.openTabBE("https://stage.glamira.com/secured2021/");
         keyword.deleteAllCookies();

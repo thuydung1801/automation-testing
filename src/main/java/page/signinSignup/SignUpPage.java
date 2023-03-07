@@ -298,7 +298,7 @@ public class SignUpPage extends BasePage {
                 "SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
         keyword.untilJqueryIsDone(50L);
 //        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIS_SUCCESS_US");
-        keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIS_SUCCESS_US");
+        keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
     }
 
     //---------------------------------SIGN UP WITH MOBILE
