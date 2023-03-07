@@ -327,6 +327,4 @@ public class LoginAddressTest extends BaseTest {
         objLoginAddress.verifyMelissa();
         objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA_4","CHECKOUT_LBL_ADDRESS_INFO");
     }
-
-
 }
