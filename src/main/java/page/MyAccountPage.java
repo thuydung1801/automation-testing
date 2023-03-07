@@ -34,11 +34,9 @@ public class MyAccountPage extends BasePage {
 //        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
         objRegister.acceptAllCookies();
       //  objRegister.chooseLanguages();
         keyword.untilJqueryIsDone(30L);
-
         keyword.navigateToUrl("https://stage.glamira.co.uk/");
         keyword.untilJqueryIsDone(30L);
         objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE", "COM_INP_DATA_PASS_STAGE",null,null,true);
@@ -46,7 +44,6 @@ public class MyAccountPage extends BasePage {
         keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/edit/");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
     }
     public void setUp1() throws InterruptedException {
 //        objLogin.loginOnAlert();
@@ -71,16 +68,13 @@ public class MyAccountPage extends BasePage {
     public void commonPersonalInf(String checkBox) throws InterruptedException {
         keyword.untilJqueryIsDone(70L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
         keyword.click("MAC_PERSONAL_INF");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         if(checkBox!=null){
             keyword.click(checkBox);
-
         }
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
     }
     public void inpFullName(String firstName, String lastName) throws InterruptedException {
         boolean check;
@@ -159,7 +153,6 @@ public class MyAccountPage extends BasePage {
 
     }
     public void checkVerifyChangeSuccess(String element, String message,String change,String eleChange, String verify) throws InterruptedException {
-
         if(keyword.verifyElementVisible(element)){
             boolean test ;
             keyword.assertEquals(message,element);
