@@ -22,7 +22,6 @@ public class CreateAccountMobilePage extends BasePage {
         super(key);
         objCreateAccount=new CreateAccountOnStagePage(this.keyword);
     }
-
     public void CreateNewCustomerSuccessfully() throws Exception {
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("LOGIN_MENULEFT");

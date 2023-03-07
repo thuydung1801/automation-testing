@@ -14,12 +14,9 @@ public class SignUpMobilePage extends BasePage {
     private SignInMobilePage objSignIn;
     private SignUpMobilePage objSigUpMobile;
     private RegisterPage objRegist;
-
     public SignUpMobilePage(KeywordWeb key) {
         super(key);
-    }
-    public void navigateToUrlPage(String url) throws InterruptedException {
-        keyword.navigateToUrl(url);
+        objSignIn= new SignInMobilePage(this.keyword);
     }
     public void goToFormCreateMyAccount() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);

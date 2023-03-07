@@ -45,7 +45,7 @@ public class MyAccountMobilePage extends BasePage {
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
     }
 
-    public void setUp1() throws InterruptedException {
+    public void setUpLoginNewAccount() throws InterruptedException {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(50L);
@@ -213,9 +213,8 @@ public class MyAccountMobilePage extends BasePage {
             logger.info("Erorr....");
         }
     }
-
     public void changeFullnameWithData() throws InterruptedException {
-        setUp1();
+        setUpLoginNewAccount();
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
         myAccount.inpFullName("MAC_DATA_FIRST_NAME_STAGE", "MAC_DATA_LAST_NAME_STAGE");
@@ -229,7 +228,6 @@ public class MyAccountMobilePage extends BasePage {
                     "COM_TEXT_ERROR");
         }
     }
-
     public void changeFullnameWithDataNUll() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_MYACCOUNT");
@@ -389,9 +387,7 @@ public class MyAccountMobilePage extends BasePage {
                 break;
 
         }
-
     }
-
     public void deleteAdditionalAddressEntries() throws InterruptedException {
 //        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
 //        keyword.click("MAC_MY_ADDRESS_DIRECTORY");
@@ -421,19 +417,16 @@ public class MyAccountMobilePage extends BasePage {
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
 
     }
-
     public void editSetDefaultBilling() throws InterruptedException {
         commonMyAddress("MAC_MY_ADDRESS_DIRECTORY", "MAC_LINKTEXT_EDIT");
         myAccount.editSetAsDefaultAddress("MAC_DATA_STREET6", "MAC_CHECKBOX_DEFAULT_BILLING", "MAC_VERIFY_SETAS_BILLING_ADDRESS");
 
     }
-
     public void editSetDefaultShipping() throws InterruptedException {
         commonMyAddress("MAC_MY_ADDRESS_DIRECTORY", "MAC_LINKTEXT_EDIT");
         myAccount.editSetAsDefaultAddress("MAC_DATA_STREET7", "MAC_CHECKBOX_DEFAULT_SHIPPING", "MAC_VERIFY_SETAS_SHIPPING_ADDRESS");
 
     }
-
     public void saveItemFormProductView() throws InterruptedException {
 //        setUp();
         keyword.untilJqueryIsDone(60L);
@@ -446,14 +439,11 @@ public class MyAccountMobilePage extends BasePage {
         myAccount.commonWishList("MAC_BTN_HEART");
 
     }
-
     public void saveItemFormProductList() throws InterruptedException {
         keyword.navigateToUrl("https://dev3.glamira.com/glgb/diamond-rings/diamond/");
         myAccount.commonWishList("MAC_ICON_HEART");
     }
-
     public void commonViewWishList() throws InterruptedException {
-//        keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("MAC_LINK_HEART_MOBILE");
@@ -518,8 +508,6 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void adminChooseEmailLog(String text) throws InterruptedException {
-
-//        keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("ADMIN_CUS_EMAILLOG_BTN_FILTER", 20);
@@ -540,7 +528,6 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void emailSelectItem() throws InterruptedException {
-//        setUp();
         commonViewWishList();
         keyword.click("MAC_WISHLIST_EMAIL_BTN");
         keyword.untilJqueryIsDone(60L);

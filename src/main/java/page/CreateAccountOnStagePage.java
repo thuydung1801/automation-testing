@@ -144,7 +144,6 @@ public class CreateAccountOnStagePage extends BasePage {
                 "SIGNUP_SELECT_OPTION_TITLE");
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
     }
-
     public void sendKeyFormDataLogin() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
@@ -156,7 +155,6 @@ public class CreateAccountOnStagePage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
     }
-
     boolean check() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         return keyword.verifyElementVisible("LOGIN_BTN_LANGUAGE");

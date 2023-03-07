@@ -110,7 +110,7 @@ public void setUp()throws InterruptedException {
     @Test(priority = 13, description = "Create new customer and leave with blank form for required form")
     public void testCase_SU015() throws Exception {
         logger.info("testCase_SU015");
-        objSigUpMobile.navigateToUrlPage("https://dev3.glamira.com/glcn/");
+        keyword.navigateToUrl("https://dev3.glamira.com/glcn/");
         objSigUp.goToFormCreateMyAccountChina();
         objSigUp.verifyRequiredFieldWithMobile();
     }
