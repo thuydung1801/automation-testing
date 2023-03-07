@@ -43,16 +43,38 @@ public class MyAccountMobilePage extends BasePage {
         inputChangeMail();
         objMyAccount.checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE", "MAC_VERIFY_DATA_FULLNAME", "email", "MAC_VERIFY_EMAIL_CHANGE", "COM_INP_DATA_EMAIL_STAGE");
     }
+
+    public void changePassword() throws InterruptedException {
+//        setUp1();
+        keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/");
+        inpChangePassword();
+        objMyAccount.checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","pass","MAC_VERIFY_PASS_CHANGE","COM_INP_DATA_PASS_STAGE");
+
+    }
     public void inputChangeMail() throws InterruptedException {
-        commonPersonalInfOnMobile("MAC_CLICK_CHECKBOX_EMAIL");
+//        commonPersonalInfOnMobile("MAC_CLICK_CHECKBOX_EMAIL");
+        keyword.click("BTN_CHANGE_EMAIL_MOBILE");
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String mail = "thanh" + timestamp + "@gmail.com";
-        PropertiesFile.serPropValue("COM_INP_DATA_EMAIL_STAGE", mail);
+        PropertiesFile.serPropValue("COM_INP_DATA_EMAIL_NEW_MOBILE", mail);
+        keyword.untilJqueryIsDone(50L);
         keyword.sendKeys("MAC_INP_EMAIL_NEW", "COM_INP_DATA_EMAIL_NEW_MOBILE");
-        keyword.sendKeys("MAC_INP_PASS_CURENT_1", "COM_INP_DATA_EMAIL_STAGE_MOBILE");
+        keyword.sendKeys("MAC_INP_PASS_CURENT_1", "COM_INP_DATA_PASS_STAGE_MOBILE");
         keyword.click("MAC_BTN_SAVE_2");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+    }
+    public void inpChangePassword() throws InterruptedException {
+//        commonPersonalInf("MAC_CLICK_CHECKBOX_PASS");
+        String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String pass = "thanh*"+timestamp;
+        keyword.sendKeys("MAC_INP_PASS_CURENT_2","COM_INP_DATA_PASS_STAGE_MOBILE");
+        PropertiesFile.serPropValue("COM_INP_DATA_PASS_NEW_MOBILE",pass);
+        keyword.sendKeys("MAC_INP_PASS_NEW","COM_INP_DATA_PASS_NEW_MOBILE");
+        keyword.sendKeys("MAC_INP_PASS_CONFIRM","COM_INP_DATA_PASS_NEW_MOBILE");
+        keyword.click("MAC_BTN_SAVE_3");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
     }
     public void commonPersonalInfOnMobile(String checkBox) throws InterruptedException {
         keyword.untilJqueryIsDone(70L);

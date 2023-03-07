@@ -102,7 +102,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
-    public void inpChangePassword() throws InterruptedException {
+    public void inpChangePassword( ) throws InterruptedException {
         commonPersonalInf("MAC_CLICK_CHECKBOX_PASS");
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String pass = "Dung*"+timestamp;
@@ -113,7 +113,6 @@ public class MyAccountPage extends BasePage {
         keyword.click("MAC_BTN_SAVE_3");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
     }
     public void logOut() throws InterruptedException {
          keyword.click("MAC_BTN_LOGOUT");
@@ -182,6 +181,8 @@ public class MyAccountPage extends BasePage {
                         test = false;
                     }
                     logger.info("check change email....");
+                    keyword.untilJqueryIsDone(50L);
+                    keyword.untilJqueryIsDone(50L);
                     Assert.assertEquals(test,true);
                     break;
                 case "pass":
