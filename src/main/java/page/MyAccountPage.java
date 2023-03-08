@@ -125,9 +125,7 @@ public class MyAccountPage extends BasePage {
         }
         Thread.sleep(5000);
         keyword.verifyElementVisible("MAC_LOGOUT_VERIFY_HOMEPAGE");
-
     }
-
     public void logOutLogIn() throws InterruptedException {
         logOut();
         keyword.untilJqueryIsDone(60L);
@@ -147,9 +145,6 @@ public class MyAccountPage extends BasePage {
         }
         logger.info("check change password....");
         Assert.assertEquals(test,true);
-
-
-
     }
     public void checkVerifyChangeSuccess(String element, String message,String change,String eleChange, String verify) throws InterruptedException {
         if(keyword.verifyElementVisible(element)){
@@ -174,6 +169,7 @@ public class MyAccountPage extends BasePage {
                     break;
                 case "email":
                     String textEle = keyword.getText(eleChange);
+                    System.out.println("------------"+ textEle);
                     if(textEle.contains(PropertiesFile.getPropValue(verify))){
                         test = true;
                     }
@@ -243,16 +239,15 @@ public class MyAccountPage extends BasePage {
         keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/");
         inpChangePassword();
         checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","pass","MAC_VERIFY_PASS_CHANGE","COM_INP_DATA_PASS_STAGE");
-
     }
-    public void deleteAccount() throws InterruptedException {
+    public void deleteAccount(String data) throws InterruptedException {
 //        setUp1();
         keyword.openNewTab("https://stage.glamira.co.uk/customer/account/edit/");
         keyword.click("MAC_DELETE_ACCOUNT");
         Thread.sleep(2000);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.sendKeys("MAC_DELETE_ACCOUNT_INP_PASS","COM_INP_DATA_PASS_STAGE");
+        keyword.sendKeys("MAC_DELETE_ACCOUNT_INP_PASS",data);
         keyword.click("MAC_DELETE_ACCOUNT_BTN_DELETE");
         keyword.click("MAC_DELETE_ACCOUNT_BTN_OK");
         keyword.untilJqueryIsDone(30L);
@@ -272,13 +267,11 @@ public class MyAccountPage extends BasePage {
             keyword.click(elementEdit);
             keyword.untilJqueryIsDone(30L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
         }
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
     }
     public void inpEditAddress(String label,String element,String btnEdit,String textStreet,boolean melissa) throws InterruptedException {
-        commonMyAddress(element,btnEdit);
+//        commonMyAddress(element,btnEdit);
         keyword.clearText("MAC_INP_FIRST_NAME");
         keyword.sendKeys("MAC_INP_FIRST_NAME","MAC_DATA_FIRST_NAME_STAGE");
         keyword.clearText("MAC_INP_LAST_NAME");
@@ -291,7 +284,6 @@ public class MyAccountPage extends BasePage {
         keyword.imWait(3);
         keyword.sendKeys("MAC_INP_STREET",textStreet);
         if(melissa){
-
             Thread.sleep(1000);
             keyword.keysBoardWithDOWN("MAC_INP_STREET_DIV");
             keyword.untilJqueryIsDone(60L);

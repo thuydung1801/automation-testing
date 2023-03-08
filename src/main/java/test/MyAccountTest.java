@@ -29,7 +29,7 @@ public class MyAccountTest extends BaseTest {
     }
     @Test(priority = 4,description = "DELETE ACCOUNT")
     public void testCase_PI_06() throws InterruptedException {
-        testMyAccount.deleteAccount();
+        testMyAccount.deleteAccount("COM_INP_DATA_PASS_STAGE");
     }
     @Test(priority = 5,description = "Edit BILLING ADDRESS")
     public void testCase_MA_01() throws InterruptedException {
