@@ -40,8 +40,21 @@ public class ShoppingBagPage extends BasePage {
         clickShoppingBagPage();
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.assertEquals("CHECKOUT_DATA_TEXT_PRICE","CHECKOUT_GET_TEXT_PRICE");
-        checkOut();
+
+        boolean check=false;
+        String getTextPrice = keyword.getText("CHECKOUT_GET_TEXT_PRICE");
+        getTextPrice = getTextPrice.substring(1,getTextPrice.length());
+        logger.info("expected: " + PropertiesFile.getPropValue("CHECKOUT_DATA_TEXT_PRICE"));
+        logger.info("getTextPrice: " + getTextPrice);
+        if(getTextPrice.equalsIgnoreCase(PropertiesFile.getPropValue("CHECKOUT_DATA_TEXT_PRICE"))){
+            check=true;
+        }
+        Assert.assertEquals(check,true);
+        moveToPagecheckOut();
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         checkOutWithVisa("success");
 
     }
@@ -158,9 +171,10 @@ public class ShoppingBagPage extends BasePage {
     public void clickShoppingBagPage() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        Thread.sleep(4000);
+        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.scrollDownToElement("CHECKOUT_BTN_MINICART");
+//        keyword.scrollDownToElement("CHECKOUT_BTN_MINICART");
         keyword.click("CHECKOUT_BTN_MINICART");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -247,7 +261,8 @@ public class ShoppingBagPage extends BasePage {
         clickShoppingBagPage();
         moveToPagecheckOut();
         checkOut();
-        checkOutWithBankTransfer();
+        checkOutWithPayPal();
+//        checkOutWithBankTransfer();
     }
 
     //click button Edit depends on the type of product
@@ -380,7 +395,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_BTN_CHECKOUT");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",10);
     }
     @Step("common checkout")
@@ -870,8 +885,9 @@ public class ShoppingBagPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.click("CHECKOUT_BTN_ACCEPT_CONDITIONS");
         keyword.untilJqueryIsDone(30L);
-        keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_BANK",10);
-        keyword.click("CHECKOUT_CBX_CHECKOUT_BANK");
+//        keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_BANK",10);
+//        keyword.click("CHECKOUT_CBX_CHECKOUT_BANK");
+        keyword.click("CHECKOUT_CBX_CHECKOUT_PAYPAL");
         keyword.untilJqueryIsDone(30L);
         keyword.click("CHECKOUT_BTN_ORDER");
         keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_ACCEPT_CONDITIONS", 20);
