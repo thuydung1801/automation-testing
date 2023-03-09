@@ -51,7 +51,6 @@ public class ShoppingBagTest extends BaseTest {
         //  objLogin.loginOnMobile("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
     }
 
-
     @Test
 //            (priority = 4, description = "Remove item from cart succcessfully with the shopping bag having mutiple items")
     @Parameters("baseURL")
@@ -514,7 +513,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_31(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_31");
-        //commonShopping();
+        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.addShippingLabel(baseURL);
@@ -535,6 +534,18 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.notAccpectConditions();
 
     }
+    @Test
+//            (priority = 34, description = "Place order with shipping label successfully")
+    @Parameters("baseURL")
+    public void testCase_RV_33(String baseURL) throws InterruptedException {
+        logger.info("testCase_RV_31");
+        commonShopping();
+        //https://stage.glamira.co.uk/
+//        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.addShippingLabel(baseURL);
+
+    }
+
 
     //@Test
     public void checkOutStageDE() throws InterruptedException {
