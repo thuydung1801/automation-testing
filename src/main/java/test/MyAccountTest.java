@@ -77,15 +77,15 @@ public class MyAccountTest extends BaseTest {
     }
     @Test(priority = 16,description = "Compare My Wishlist - product_compare")
     public void testCase_MW_03() throws InterruptedException {
-        testMyAccount.compareMyWishProduct();
+        testMyAccount.compareMyWishProduct("MAC_LINK_HEART");
     }
     @Test(priority = 17,description = "Remove a item saved ")
     public void testCase_MW_04() throws InterruptedException {
-        testMyAccount.removeItemSave();
+        testMyAccount.removeItemSave("MAC_LINK_HEART");
     }
     @Test(priority = 18,description = "Check function of Email Selected Items")
     public void testCase_MW_05() throws InterruptedException {
-        testMyAccount.emailSelectItem();
+        testMyAccount.emailSelectItem("MAC_LINK_HEART");
     }
 
   //   case My Order

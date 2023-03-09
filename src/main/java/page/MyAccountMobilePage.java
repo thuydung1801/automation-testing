@@ -9,7 +9,6 @@ import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 
-import java.security.PublicKey;
 import java.util.Date;
 
 public class MyAccountMobilePage extends BasePage {
@@ -81,10 +80,44 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_MYADDRESS_MOBILE");
         keyword.untilJqueryIsDone(50L);
-        keyword.click("BTN_EDIT_ADDRESS");
+        keyword.click("MAC_BTN_EDIT_BILLING_ADDRESS");
         objMyAccount.inpEditAddress("billing", "BTN_MYADDRESS_MOBILE", "BTN_EDIT_ADDRESS", "MAC_DATA_STREET1", false);
     }
+    public void editShippingAddress() throws InterruptedException {
+        keyword.click("MAC_BTN_EDIT_SHIPPING_ADDRESS");
+        objMyAccount.inpEditAddress("billing", "BTN_MYADDRESS_MOBILE", "BTN_EDIT_ADDRESS", "MAC_DATA_STREET1", false);
+    }
+    public void addNewAddress() throws InterruptedException {
+        countAdd = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
+        System.out.println("-------------------------------- :" + countAdd);
+        keyword.click("MAC_BTN_ADD_NEW_ADDRESS");
+        objMyAccount.inpEditAddress("add", "MAC_MY_ADDRESS_DIRECTORY", "MAC_BTN_ADD_NEW_ADDRESS", "MAC_DATA_STREET9", false);
+    }
+    public void compareMyWishProductMobile()throws InterruptedException{
+        objMyAccount.compareMyWishProduct("MAC_LINK_HEART_MOBILE");
+    }
+    public void editAdditionalAddressEntries() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("MAC_LINKTEXT_EDIT");
+        objMyAccount.inpEditAddress("edit", "MAC_MY_ADDRESS_DIRECTORY", "MAC_LINKTEXT_EDIT", "MAC_DATA_STREET3", false);
+    }
 
+    public void deleteAdditionalAddressEntries() throws InterruptedException {
+        keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/");
+        keyword.click("BTN_MYACCOUNT_ON_MOBILE");
+        objMyAccount.deleteAdditionalAddressEntries();
+    }
+    public void editSetDefaultBilling() throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
+        keyword.click("MAC_LINKTEXT_EDIT");
+        keyword.untilJqueryIsDone(30L);
+        objMyAccount.editSetAsDefaultAddress("MAC_DATA_STREET6", "MAC_CHECKBOX_DEFAULT_BILLING", "MAC_VERIFY_SETAS_BILLING_ADDRESS");
+    }
+    public void editSetDefaultShipping() throws InterruptedException {
+//        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY", "MAC_LINKTEXT_EDIT");
+        objMyAccount.editSetAsDefaultAddress("MAC_DATA_STREET7", "MAC_CHECKBOX_DEFAULT_SHIPPING", "MAC_VERIFY_SETAS_SHIPPING_ADDRESS");
+
+    }
     public void inpChangePassword() throws InterruptedException {
 //        commonPersonalInf("MAC_CLICK_CHECKBOX_PASS");
         keyword.click("BTN_MYACCOUNT_ON_MOBILE");
