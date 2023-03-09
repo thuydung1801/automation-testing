@@ -42,6 +42,7 @@ public class ShoppingBagTestMobile extends BaseTest {
 //                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
           objLogin.loginOnMobile("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
     }
+    //done SP02
     @Test
     //(priority = 1, description = "Remove item from cart successfully with the shopping bag having 1 item")
     @Parameters("baseURL")
@@ -96,16 +97,17 @@ public class ShoppingBagTestMobile extends BaseTest {
         objShoppingBagPage.removeProduct("CHECKOUT_ICON_REMOVE_WOMENRING");
 
     }
+    //DONE SP04
     @Test
 //            (priority = 5, description = "Update quantity using qty button successfully")
     @Parameters("baseURL")
     public void testCase_SP_04(String baseURL) throws InterruptedException{
         logger.info("testCase_SP_04");
         //commonShoppingWithOutCookies();
-//        https://stage.glamira.co.uk/
         objShoppingBagPage.addProduct(baseURL+"mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.changeQty("CHECKOUT_DATA_QTY_2");
+
 
     }
     @Test
@@ -137,7 +139,7 @@ public class ShoppingBagTestMobile extends BaseTest {
                 "CHECKOUT_LBL_ENGRAVING_GLAMIRA");
 
     }
-
+    //DONE SP17
     @Test
     //(priority = 8, description = "Add engraving for couple ring")
     @Parameters("baseURL")
@@ -152,6 +154,7 @@ public class ShoppingBagTestMobile extends BaseTest {
         shoppingBagPageMobile.inputCorrectly("CHECKOUT_DATA_ENGRAVING_MOBILE","CHECKOUT_LBL_ENGRAVING_MOBILE");
 
     }
+    //DONE SP26_RV02_04
     @Test
     //(priority = 15, description = "Checkout successfully")
     @Parameters("baseURL")
@@ -164,6 +167,7 @@ public class ShoppingBagTestMobile extends BaseTest {
         objShoppingBagPage.checkOut();
         objShoppingBagPage.checkOutWithVisa("success");
     }
+    //DONE SP24
     @Test
     //(priority = 13, description ="Edit product with bridal set product")
     @Parameters("baseURL")
@@ -178,6 +182,7 @@ public class ShoppingBagTestMobile extends BaseTest {
         objShoppingBagPage.compareData("CHECKOUT_DATA_24_2","CHECKOUT_BAG_LBL_PROFILE_MOBILE");
         objShoppingBagPage.confirmMessage("CHECKOUT_BAG_LBL_SIZE");
     }
+    //DONE RV07
     @Test
     //(priority = 19, description = "Place order with Paypal express /Affirm/... successfully")
     @Parameters("baseURL")
@@ -189,6 +194,7 @@ public class ShoppingBagTestMobile extends BaseTest {
         objShoppingBagPage.checkOut();
         objShoppingBagPage.checkOutWithPayPal();
     }
+    //DONE
     @Test
     @Parameters("baseURL")
     public void testCase_Myorder_Return(String baseURL) throws InterruptedException {
