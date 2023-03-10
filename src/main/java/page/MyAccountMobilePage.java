@@ -83,19 +83,23 @@ public class MyAccountMobilePage extends BasePage {
         keyword.click("MAC_BTN_EDIT_BILLING_ADDRESS");
         objMyAccount.inpEditAddress("billing", "BTN_MYADDRESS_MOBILE", "BTN_EDIT_ADDRESS", "MAC_DATA_STREET1", false);
     }
+
     public void editShippingAddress() throws InterruptedException {
         keyword.click("MAC_BTN_EDIT_SHIPPING_ADDRESS");
         objMyAccount.inpEditAddress("billing", "BTN_MYADDRESS_MOBILE", "BTN_EDIT_ADDRESS", "MAC_DATA_STREET1", false);
     }
+
     public void addNewAddress() throws InterruptedException {
         countAdd = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
         System.out.println("-------------------------------- :" + countAdd);
         keyword.click("MAC_BTN_ADD_NEW_ADDRESS");
         objMyAccount.inpEditAddress("add", "MAC_MY_ADDRESS_DIRECTORY", "MAC_BTN_ADD_NEW_ADDRESS", "MAC_DATA_STREET9", false);
     }
-    public void compareMyWishProductMobile()throws InterruptedException{
+
+    public void compareMyWishProductMobile() throws InterruptedException {
         objMyAccount.compareMyWishProduct("MAC_LINK_HEART_MOBILE");
     }
+
     public void editAdditionalAddressEntries() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.click("MAC_LINKTEXT_EDIT");
@@ -107,17 +111,20 @@ public class MyAccountMobilePage extends BasePage {
         keyword.click("BTN_MYACCOUNT_ON_MOBILE");
         objMyAccount.deleteAdditionalAddressEntries();
     }
+
     public void editSetDefaultBilling() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
         keyword.click("MAC_LINKTEXT_EDIT");
         keyword.untilJqueryIsDone(30L);
         objMyAccount.editSetAsDefaultAddress("MAC_DATA_STREET6", "MAC_CHECKBOX_DEFAULT_BILLING", "MAC_VERIFY_SETAS_BILLING_ADDRESS");
     }
+
     public void editSetDefaultShipping() throws InterruptedException {
 //        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY", "MAC_LINKTEXT_EDIT");
         objMyAccount.editSetAsDefaultAddress("MAC_DATA_STREET7", "MAC_CHECKBOX_DEFAULT_SHIPPING", "MAC_VERIFY_SETAS_SHIPPING_ADDRESS");
 
     }
+
     public void inpChangePassword() throws InterruptedException {
 //        commonPersonalInf("MAC_CLICK_CHECKBOX_PASS");
         keyword.click("BTN_MYACCOUNT_ON_MOBILE");
@@ -159,6 +166,22 @@ public class MyAccountMobilePage extends BasePage {
         keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/edit/");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+    }
+    public void viewOrderComplete() throws InterruptedException {
+        keyword.openNewTab("https://stage.glamira.co.uk/sales/order/history/");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.click("MAC_MY_ORD_BTN_COMPLETE");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("BTN_MORE_SHOW");
+        objMyAccount.viewOrder("MAC_MY_ORD_TEXT_ID_COMPLETE", "MAC_MY_ORD_BTN_VIEW_COMPLETE", "MAC_MY_ORD_VERIFY_TEXT_ID_COMPLETE");
+    }
+    public void viewOrderRecent() throws InterruptedException {
+        keyword.back();
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.click("BTN_MORE_SHOW");
+        objMyAccount.viewOrder("MAC_MY_ORD_TEXT_ID_ITEM", "MAC_MY_ORD_BTN_VIEW", "MAC_MY_ORD_VERIFY_TEXT_ID_ITEM");
     }
 //
 }

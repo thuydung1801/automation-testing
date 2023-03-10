@@ -286,7 +286,7 @@ public class MyAccountPage extends BasePage {
     }
 
     public void inpEditAddress(String label, String element, String btnEdit, String textStreet, boolean melissa) throws InterruptedException {
-        commonMyAddress(element,btnEdit);
+//        commonMyAddress(element,btnEdit);
         keyword.clearText("MAC_INP_FIRST_NAME");
         keyword.sendKeys("MAC_INP_FIRST_NAME", "MAC_DATA_FIRST_NAME_STAGE");
         keyword.clearText("MAC_INP_LAST_NAME");
@@ -722,7 +722,6 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         viewOrder("MAC_MY_ORD_TEXT_ID_ITEM", "MAC_MY_ORD_BTN_VIEW", "MAC_MY_ORD_VERIFY_TEXT_ID_ITEM");
-
     }
 
     public void loginAdmin() throws InterruptedException {
