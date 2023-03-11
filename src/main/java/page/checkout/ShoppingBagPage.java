@@ -55,7 +55,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        checkOutWithVisa("success");
+        checkOutWithVisa("success","stage");
 
     }
     //add any product with only a size field
@@ -430,7 +430,7 @@ public class ShoppingBagPage extends BasePage {
 //        keyword.simpleAssertEquals(messages,"CHECKOUT_MESSAGES_PAYMENT");
     }
     @Step("check out with payment method: visa")
-    public void checkOutWithVisa(String flag) throws InterruptedException {
+    public void checkOutWithVisa(String flag,String label) throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_VISA",10);
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -462,20 +462,23 @@ public class ShoppingBagPage extends BasePage {
 
                 keyword.untilJqueryIsDone(50L);
                 keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                if(label.equalsIgnoreCase("stage")){
+                    keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_VISA_COMF");
+                    keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                    keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_CODE", "CHECKOUT_DATA_CHECKOUT_CODE");
+                    keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                    keyword.click("CHECKOUT_DATA_CHECKOUT_SUBMIT_COMF");
+                    keyword.switchToDefaultContent();
+                    keyword.untilJqueryIsDone(50L);
+                    keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
-                keyword.switchToIFrameByXpath("CHECKOUT_IFRAME_CHECKOUT_VISA_COMF");
-                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-                keyword.sendKeys("CHECKOUT_TBX_CHECKOUT_CODE", "CHECKOUT_DATA_CHECKOUT_CODE");
-                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-                keyword.click("CHECKOUT_DATA_CHECKOUT_SUBMIT_COMF");
-                keyword.switchToDefaultContent();
-                keyword.untilJqueryIsDone(50L);
-                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                }
 
                 keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 160);
                 keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
                 break;
-            //missing input all of fields
+
+                //missing input all of fields
             case "emptyCardNumber":
                 keyword.click("CHECKOUT_BTN_ORDER");
                 keyword.assertEquals("CHECKOUT_DATA_MESSAGES_VISA_CARD_NUM", "CHECKOUT_MESSAGES_VISA");

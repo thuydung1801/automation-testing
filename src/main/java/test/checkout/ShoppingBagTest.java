@@ -269,8 +269,21 @@ public class ShoppingBagTest extends BaseTest {
         //objShoppingBagPage.clickGiftWrapping();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        objShoppingBagPage.checkOutWithVisa("success");
+        objShoppingBagPage.checkOutWithVisa("success","stage");
     }
+    @Test
+    //(priority = 15, description = "Checkout successfully")
+    @Parameters("baseURL")
+    public void testCase_SP_26_RV_02_04_dev(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_26");
+        commonShopping1();
+        objShoppingBagPage.clickShoppingBagPage();
+        //objShoppingBagPage.clickGiftWrapping();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithVisa("success","dev");
+    }
+
 
     @Test
 //            (priority = 16, description = "Place order with Credit card but missing information card")
@@ -283,9 +296,9 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        objShoppingBagPage.checkOutWithVisa("emptyCardNumber");
-        objShoppingBagPage.checkOutWithVisa("emptyExpirationDate");
-        objShoppingBagPage.checkOutWithVisa("emptyCVC");
+        objShoppingBagPage.checkOutWithVisa("emptyCardNumber",null);
+        objShoppingBagPage.checkOutWithVisa("emptyExpirationDate",null);
+        objShoppingBagPage.checkOutWithVisa("emptyCVC",null);
     }
 
     @Test
@@ -297,7 +310,7 @@ public class ShoppingBagTest extends BaseTest {
 //        objShoppingBagPage.clickShoppingBagPage();
 //        objShoppingBagPage.moveToPagecheckOut();
 //        objShoppingBagPage.checkOut();
-        objShoppingBagPage.checkOutWithVisa("failByCard");
+        objShoppingBagPage.checkOutWithVisa("failByCard",null);
 
     }
 
@@ -447,7 +460,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_17_19(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_17_19");
-        commonShopping();
+//        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithGift(baseURL+"universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
@@ -494,7 +507,7 @@ public class ShoppingBagTest extends BaseTest {
 
     }
 
-    @Test
+//    @Test
 //            (priority = 31, description = "Place order and apply (store credit + giftcard)")
     @Parameters("baseURL")
     public void testCase_RV_21(String baseURL) throws InterruptedException {
@@ -513,7 +526,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_31(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_31");
-        commonShopping();
+//        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.addShippingLabel(baseURL);
@@ -539,7 +552,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_33(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_31");
-        commonShopping();
+//        commonShopping();
         //https://stage.glamira.co.uk/
 //        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.addShippingLabel(baseURL);

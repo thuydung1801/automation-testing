@@ -165,7 +165,7 @@ public class ShoppingBagTestMobile extends BaseTest {
         //objShoppingBagPage.clickGiftWrapping();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        objShoppingBagPage.checkOutWithVisa("success");
+        objShoppingBagPage.checkOutWithVisa("success","stage");
     }
     //DONE SP24
     @Test
