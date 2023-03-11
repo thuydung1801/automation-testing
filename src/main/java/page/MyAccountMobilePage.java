@@ -28,7 +28,6 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void changeFullnameWithData() throws InterruptedException {
-        setUp();
         objMyAccount.inpFullName("MAC_DATA_FIRST_NAME_STAGE", "MAC_DATA_LAST_NAME_STAGE");
         objMyAccount.checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE", "MAC_VERIFY_DATA_FULLNAME", "name", "MAC_VERIFY_NAME", null);
     }
@@ -97,6 +96,7 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void compareMyWishProductMobile() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
         objMyAccount.compareMyWishProduct("MAC_LINK_HEART_MOBILE");
     }
 
@@ -167,21 +167,42 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
     }
+
     public void viewOrderComplete() throws InterruptedException {
         keyword.openNewTab("https://stage.glamira.co.uk/sales/order/history/");
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(30, "//div[@class='loading-mask']");
         keyword.click("MAC_MY_ORD_BTN_COMPLETE");
         keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_MORE_SHOW");
         objMyAccount.viewOrder("MAC_MY_ORD_TEXT_ID_COMPLETE", "MAC_MY_ORD_BTN_VIEW_COMPLETE", "MAC_MY_ORD_VERIFY_TEXT_ID_COMPLETE");
     }
+
     public void viewOrderRecent() throws InterruptedException {
         keyword.back();
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-        keyword.click("BTN_MORE_SHOW");
+        keyword.waitForElementNotVisible(30, "//div[@class='loading-mask']");
+        keyword.click("BTN_SHOW_MORE_RECENT");
         objMyAccount.viewOrder("MAC_MY_ORD_TEXT_ID_ITEM", "MAC_MY_ORD_BTN_VIEW", "MAC_MY_ORD_VERIFY_TEXT_ID_ITEM");
     }
-//
+
+    public void viewReturn() throws InterruptedException {
+        keyword.switchToTab(1);
+        keyword.deleteAllCookies();
+        keyword.reLoadPage();
+        keyword.switchToTab(0);
+        objMyAccount.viewReturn();
+    }
+public void checkStatusConfirmation() throws InterruptedException {
+    keyword.openNewTab("https://stage.glamira.co.uk/sales/order/history/");
+    objMyAccount.checkStatus("confirmation", "MAC_OVER_ID_ORDER_STATUS_CONFIR_MOBILE", "MAC_OVER_STATUS_CONFIR_ICON",
+            "MAC_OVER_STATUS_CONFIR_MOBILE", "MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR_MOBILE", "MAC_OVER_DATA_STATUS_CONFIR");
+}
+    public void checkStatusDelivery() throws InterruptedException {
+        keyword.reLoadPage();
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        objMyAccount.checkStatus("delivery", "MAC_OVER_ID_ORDER_STATUS_DELIVERY_MOBILE", "MAC_OVER_STATUS_DELIVERY_ICON_MOBILE",
+                "MAC_OVER_STATUS_DELIVERY_MOBILE", "MAC_OVER_DATA_ID_ORDER_STATUS_DELIVERY_MOBILE", "MAC_OVER_DATA_STATUS_DELIVERY");
+    }
+
 }

@@ -685,7 +685,7 @@ public class MyAccountPage extends BasePage {
         keyword.click("MAC_WISHLIST_EMAIL_CHECKBOX_SUB");
         keyword.click("MAC_WISHLIST_EMAIL_BTN_SUBMIT");
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(50, "//div[@class='loading-mask']");
         if (keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")) {
             keyword.assertEquals("MAC_VERIFY_DATA_WISHLIST_EMAIL", "CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         }
@@ -746,7 +746,7 @@ public class MyAccountPage extends BasePage {
         logger.info("select UK");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-        keyword.selectDropDownListByName("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_UK", "Glamira UK");
+        keyword.selectDropDownListByName("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_UK","    Glamira UK");
         keyword.pressEnter();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -965,7 +965,6 @@ public class MyAccountPage extends BasePage {
     public void checkStatusConfirmation() throws InterruptedException {
         // setUp1();
         keyword.openNewTab("https://stage.glamira.co.uk/sales/order/history/");
-
         checkStatus("confirmation", "MAC_OVER_ID_ORDER_STATUS_CONFIR", "MAC_OVER_STATUS_CONFIR_ICON",
                 "MAC_OVER_STATUS_CONFIR", "MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR", "MAC_OVER_DATA_STATUS_CONFIR");
     }
