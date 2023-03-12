@@ -88,7 +88,7 @@ public class MyAccountTest extends BaseTest {
         testMyAccount.emailSelectItem("MAC_LINK_HEART");
     }
 
-  //   case My Order
+    //   case My Order
     @Test(priority = 19,description = "Check function icon  view order of completed order")
     public void testCase_Myorder_01() throws InterruptedException {
         testMyAccount.viewOrderComplete();

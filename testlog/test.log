@@ -1,406 +1,166 @@
-INFO  | 2023-03-11 23:31:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - Open browser
-INFO  | 2023-03-11 23:31:18 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
-INFO  | 2023-03-11 23:31:18 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\110.0.5481.77\chromedriver.exe
-INFO  | 2023-03-11 23:31:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - open browser successfullyCHROME
-INFO  | 2023-03-11 23:31:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:70) - go to url: https://stage.glamira.co.uk/
-INFO  | 2023-03-11 23:31:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:71) - url: [Ljava.lang.String;@7da83988
-INFO  | 2023-03-11 23:31:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:31:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
-INFO  | 2023-03-11 23:31:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:538) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-03-11 23:31:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-03-11 23:31:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:685) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-03-11 23:31:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:538) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-03-11 23:31:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
-INFO  | 2023-03-11 23:31:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/
-INFO  | 2023-03-11 23:31:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:31:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_MENULEFT
-INFO  | 2023-03-11 23:31:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMOBILE_BTN_LOGIN
-INFO  | 2023-03-11 23:32:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL_MOBILE
-INFO  | 2023-03-11 23:32:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_TXT_PASSWORDwith COM_PASSWORD_NEW_MOBILE
-INFO  | 2023-03-11 23:32:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2023-03-11 23:32:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/account/edit/
-INFO  | 2023-03-11 23:32:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:32:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:32:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
-INFO  | 2023-03-11 23:32:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:32:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
-INFO  | 2023-03-11 23:32:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_1
-INFO  | 2023-03-11 23:32:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
-INFO  | 2023-03-11 23:32:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_VERIFY_DATA_FULLNAME with CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
-INFO  | 2023-03-11 23:32:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:32:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_NAME
-INFO  | 2023-03-11 23:32:25 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:checkVerifyChangeSuccess:178) - check change name....
-INFO  | 2023-03-11 23:32:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_MYACCOUNT_ON_MOBILE
-INFO  | 2023-03-11 23:32:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:32:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_PERSONAL_INF_MOBILE
-INFO  | 2023-03-11 23:32:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:32:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:32:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:32:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith COM_DATA_NULL
-INFO  | 2023-03-11 23:32:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:32:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith COM_DATA_NULL
-INFO  | 2023-03-11 23:32:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_1
-INFO  | 2023-03-11 23:32:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleCOM_TEXT_ERROR
-INFO  | 2023-03-11 23:32:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from COM_DATA_MESSAGES_NULL with COM_TEXT_ERROR
-INFO  | 2023-03-11 23:32:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_CHANGE_EMAIL_MOBILE
-INFO  | 2023-03-11 23:32:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_EMAIL_NEWwith COM_INP_DATA_EMAIL_MOBILE
-INFO  | 2023-03-11 23:32:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PASS_CURENT_1with COM_PASSWORD_NEW_MOBILE
-INFO  | 2023-03-11 23:32:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_2
-INFO  | 2023-03-11 23:32:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:32:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
-INFO  | 2023-03-11 23:32:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_VERIFY_DATA_FULLNAME with CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
-INFO  | 2023-03-11 23:32:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:32:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_EMAIL_CHANGE
-INFO  | 2023-03-11 23:32:48 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:checkVerifyChangeSuccess:189) - check change email....
-INFO  | 2023-03-11 23:32:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/account/
-INFO  | 2023-03-11 23:32:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_MYACCOUNT_ON_MOBILE
-INFO  | 2023-03-11 23:32:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_PERSONAL_INF_MOBILE
-INFO  | 2023-03-11 23:32:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_CHANGE_PASSWORD
-INFO  | 2023-03-11 23:32:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PASS_CURENT_2with COM_PASSWORD_NEW_MOBILE
-INFO  | 2023-03-11 23:32:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PASS_NEWwith COM_PASSWORD_NEW_MOBILE
-INFO  | 2023-03-11 23:32:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PASS_CONFIRMwith COM_PASSWORD_NEW_MOBILE
-INFO  | 2023-03-11 23:33:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_3
-INFO  | 2023-03-11 23:33:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_VERIFY_DATA_FULLNAME with CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
-INFO  | 2023-03-11 23:33:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_MYACCOUNT_ON_MOBILE
-INFO  | 2023-03-11 23:33:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_LOGOUT
-INFO  | 2023-03-11 23:33:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LOGOUT_OK
-INFO  | 2023-03-11 23:33:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:33:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleMAC_LOGOUT_VERIFY_MESSAGE
-INFO  | 2023-03-11 23:33:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_LOGOUT_DATA_MESSAGE with MAC_LOGOUT_VERIFY_MESSAGE
-INFO  | 2023-03-11 23:33:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleMAC_LOGOUT_VERIFY_HOMEPAGE
-INFO  | 2023-03-11 23:33:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:33:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_MENULEFT
-INFO  | 2023-03-11 23:33:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMOBILE_BTN_LOGIN
-INFO  | 2023-03-11 23:33:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL_MOBILE
-INFO  | 2023-03-11 23:33:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_TXT_PASSWORDwith COM_PASSWORD_NEW_MOBILE
-INFO  | 2023-03-11 23:33:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2023-03-11 23:33:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:33:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleSIGNUP_VERIFY_SIGNUP
-INFO  | 2023-03-11 23:33:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/account/edit/
-INFO  | 2023-03-11 23:33:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_DELETE_ACCOUNT
-INFO  | 2023-03-11 23:33:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:33:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_DELETE_ACCOUNT_INP_PASSwith COM_PASSWORD_NEW_MOBILE
-INFO  | 2023-03-11 23:33:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_DELETE_ACCOUNT_BTN_DELETE
-INFO  | 2023-03-11 23:33:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_DELETE_ACCOUNT_BTN_OK
-INFO  | 2023-03-11 23:34:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:34:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleMAC_DELETE_ACCOUNT_VERIFY_MESSAGE
-INFO  | 2023-03-11 23:34:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_DELETE_ACCOUNT_DATA_MESSAGE with MAC_DELETE_ACCOUNT_VERIFY_MESSAGE
-INFO  | 2023-03-11 23:34:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_MYACCOUNT_ON_MOBILE
-INFO  | 2023-03-11 23:34:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_MYADDRESS_MOBILE
-INFO  | 2023-03-11 23:34:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_EDIT_BILLING_ADDRESS
-INFO  | 2023-03-11 23:34:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
-INFO  | 2023-03-11 23:34:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
-INFO  | 2023-03-11 23:34:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_COMPANYwith COM_DATA_TITLE
-INFO  | 2023-03-11 23:34:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PHONE_NUMwith MAC_DATA_PHONE_NUM
-INFO  | 2023-03-11 23:34:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:680) - implicitlyWait
-INFO  | 2023-03-11 23:34:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET1
-INFO  | 2023-03-11 23:34:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CITYwith MAC_INP_DATA_CITY
-INFO  | 2023-03-11 23:34:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:680) - implicitlyWait
-INFO  | 2023-03-11 23:34:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:34:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CODE_CITYwith MAC_INP_DATA_CODE_CITY
-INFO  | 2023-03-11 23:34:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
-INFO  | 2023-03-11 23:34:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:34:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:34:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:34:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:34:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2023-03-11 23:34:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2023-03-11 23:34:20 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:inpEditAddress:336) - check verify edit billing address...
-INFO  | 2023-03-11 23:34:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_EDIT_SHIPPING_ADDRESS
-INFO  | 2023-03-11 23:34:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
-INFO  | 2023-03-11 23:34:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
-INFO  | 2023-03-11 23:34:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_COMPANYwith COM_DATA_TITLE
-INFO  | 2023-03-11 23:34:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PHONE_NUMwith MAC_DATA_PHONE_NUM
-INFO  | 2023-03-11 23:34:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:680) - implicitlyWait
-INFO  | 2023-03-11 23:34:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET1
-INFO  | 2023-03-11 23:34:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CITYwith MAC_INP_DATA_CITY
-INFO  | 2023-03-11 23:34:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:680) - implicitlyWait
-INFO  | 2023-03-11 23:34:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:34:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CODE_CITYwith MAC_INP_DATA_CODE_CITY
-INFO  | 2023-03-11 23:34:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
-INFO  | 2023-03-11 23:34:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:34:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:34:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:34:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:34:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2023-03-11 23:34:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2023-03-11 23:34:33 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:inpEditAddress:336) - check verify edit billing address...
-INFO  | 2023-03-11 23:34:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:669) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2023-03-11 23:34:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_ADD_NEW_ADDRESS
-INFO  | 2023-03-11 23:34:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
-INFO  | 2023-03-11 23:34:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
-INFO  | 2023-03-11 23:34:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_COMPANYwith COM_DATA_TITLE
-INFO  | 2023-03-11 23:34:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PHONE_NUMwith MAC_DATA_PHONE_NUM
-INFO  | 2023-03-11 23:34:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:680) - implicitlyWait
-INFO  | 2023-03-11 23:34:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET9
-INFO  | 2023-03-11 23:34:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CITYwith MAC_INP_DATA_CITY
-INFO  | 2023-03-11 23:34:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:680) - implicitlyWait
-INFO  | 2023-03-11 23:34:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:34:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CODE_CITYwith MAC_INP_DATA_CODE_CITY
-INFO  | 2023-03-11 23:34:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
-INFO  | 2023-03-11 23:34:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:34:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:34:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:34:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:34:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2023-03-11 23:34:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:669) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2023-03-11 23:34:46 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:inpEditAddress:357) - check add...
-INFO  | 2023-03-11 23:34:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINKTEXT_EDIT
-INFO  | 2023-03-11 23:34:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
-INFO  | 2023-03-11 23:34:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
-INFO  | 2023-03-11 23:34:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_COMPANYwith COM_DATA_TITLE
-INFO  | 2023-03-11 23:34:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PHONE_NUMwith MAC_DATA_PHONE_NUM
-INFO  | 2023-03-11 23:34:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:680) - implicitlyWait
-INFO  | 2023-03-11 23:34:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET3
-INFO  | 2023-03-11 23:34:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CITYwith MAC_INP_DATA_CITY
-INFO  | 2023-03-11 23:34:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:680) - implicitlyWait
-INFO  | 2023-03-11 23:34:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:34:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:34:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CODE_CITYwith MAC_INP_DATA_CODE_CITY
-INFO  | 2023-03-11 23:34:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
-INFO  | 2023-03-11 23:34:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:34:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:34:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:35:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2023-03-11 23:35:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_EDIT_ENTRIES
-INFO  | 2023-03-11 23:35:00 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:inpEditAddress:370) - check edit Additional Address Entries...
-INFO  | 2023-03-11 23:35:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/account/
-INFO  | 2023-03-11 23:35:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_MYACCOUNT_ON_MOBILE
-INFO  | 2023-03-11 23:35:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ADDRESS_DIRECTORY
-INFO  | 2023-03-11 23:35:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:669) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2023-03-11 23:35:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINKTEXT_DELETE
-INFO  | 2023-03-11 23:35:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_DELETE_OK
-INFO  | 2023-03-11 23:35:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:35:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_VERIFY_DATA_DELETE_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:35:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:669) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2023-03-11 23:35:14 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:deleteAdditionalAddressEntries:425) - check delete...
-INFO  | 2023-03-11 23:35:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_ADDRESS
-INFO  | 2023-03-11 23:35:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINKTEXT_SETAS
-INFO  | 2023-03-11 23:35:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:35:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:35:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_SHIPPING_ADDRESS
-INFO  | 2023-03-11 23:35:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2023-03-11 23:35:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_SHIPPING_ADDRESS
-INFO  | 2023-03-11 23:35:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2023-03-11 23:35:22 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:setAsDefaultAddress:460) - check verify address...
-INFO  | 2023-03-11 23:35:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINKTEXT_EDIT
-INFO  | 2023-03-11 23:35:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET6
-INFO  | 2023-03-11 23:35:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:680) - implicitlyWait
-INFO  | 2023-03-11 23:35:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_CHECKBOX_DEFAULT_BILLING
-INFO  | 2023-03-11 23:35:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
-INFO  | 2023-03-11 23:35:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2023-03-11 23:35:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2023-03-11 23:35:33 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:editSetAsDefaultAddress:488) - check verify address...
-INFO  | 2023-03-11 23:35:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:669) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2023-03-11 23:35:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_ADD_NEW_ADDRESS
-INFO  | 2023-03-11 23:35:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:35:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
-INFO  | 2023-03-11 23:35:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:35:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
-INFO  | 2023-03-11 23:35:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:35:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_COMPANYwith COM_DATA_TITLE
-INFO  | 2023-03-11 23:35:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:35:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PHONE_NUMwith MAC_DATA_PHONE_NUM
-INFO  | 2023-03-11 23:35:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:35:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:680) - implicitlyWait
-INFO  | 2023-03-11 23:35:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET9
-INFO  | 2023-03-11 23:35:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:35:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CITYwith MAC_INP_DATA_CITY
-INFO  | 2023-03-11 23:35:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:680) - implicitlyWait
-INFO  | 2023-03-11 23:35:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:35:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CODE_CITYwith MAC_INP_DATA_CODE_CITY
-INFO  | 2023-03-11 23:35:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
-INFO  | 2023-03-11 23:35:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:35:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:35:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
-INFO  | 2023-03-11 23:35:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:669) - count the number of element MAC_COUNT_ADDRESS
-INFO  | 2023-03-11 23:35:46 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:inpEditAddress:357) - check add...
-INFO  | 2023-03-11 23:35:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/catalog/product_compare/index/
-INFO  | 2023-03-11 23:35:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:35:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...URL_WISHLIST_PRODUCT_DETAIL
-INFO  | 2023-03-11 23:36:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleMAC_WISHLISH_SAVE_NO_DISPLAY
-INFO  | 2023-03-11 23:36:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_WISHLISH_COUNT_SAVE
-INFO  | 2023-03-11 23:36:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementMAC_BTN_HEART
-INFO  | 2023-03-11 23:36:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_HEART
-INFO  | 2023-03-11 23:36:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleMAC_VERIFY_ICON_HEART
-INFO  | 2023-03-11 23:36:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...URL_WISHLIST_PRODUCT_LIST
-INFO  | 2023-03-11 23:36:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleMAC_WISHLISH_SAVE_NO_DISPLAY
-INFO  | 2023-03-11 23:36:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_WISHLISH_COUNT_SAVE
-INFO  | 2023-03-11 23:36:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementMAC_ICON_HEART
-INFO  | 2023-03-11 23:36:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_ICON_HEART
-INFO  | 2023-03-11 23:36:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleMAC_VERIFY_ICON_HEART
-INFO  | 2023-03-11 23:36:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...URL_WISHLIST_PRODUCT_LIST
-INFO  | 2023-03-11 23:36:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_WISHLIST_ICON_HEART
-INFO  | 2023-03-11 23:36:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_WISHLIST_GET_TITLE
-INFO  | 2023-03-11 23:36:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
-INFO  | 2023-03-11 23:36:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINK_HEART_MOBILE
-INFO  | 2023-03-11 23:36:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_VIEW_WISHLIST
-INFO  | 2023-03-11 23:36:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_WISHLIST_GET_TITLE_COMPARE
-INFO  | 2023-03-11 23:36:35 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:compareMyWishProduct:594) - check verify compare item...
-INFO  | 2023-03-11 23:36:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
-INFO  | 2023-03-11 23:36:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINK_HEART_MOBILE
-INFO  | 2023-03-11 23:36:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_VIEW_WISHLIST
-INFO  | 2023-03-11 23:36:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_WISHLIST_TITLLE_COUNT_SAVE
-INFO  | 2023-03-11 23:36:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_REMOVE_WISHLIST
-INFO  | 2023-03-11 23:36:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_WISHLIST_TITLLE_COUNT_SAVE
-INFO  | 2023-03-11 23:36:47 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:removeItemSave:621) - check verify remove save item...
-INFO  | 2023-03-11 23:36:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
-INFO  | 2023-03-11 23:36:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINK_HEART_MOBILE
-INFO  | 2023-03-11 23:36:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_VIEW_WISHLIST
-INFO  | 2023-03-11 23:36:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_WISHLIST_EMAIL_BTN
-INFO  | 2023-03-11 23:36:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:36:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_WISHLIST_EMAIL_INP_NAMEwith COM_INP_DATA_NAME
-INFO  | 2023-03-11 23:36:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_WISHLIST_EMAIL_INP_MAILwith COM_INP_DATA_EMAIL_STAGE
-INFO  | 2023-03-11 23:36:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_WISHLIST_EMAIL_INP_REMAILwith EMAIL_ADDRESS
-INFO  | 2023-03-11 23:36:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_WISHLIST_EMAIL_INP_MESSAGEwith COM_DATA_TITLE
-INFO  | 2023-03-11 23:36:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_WISHLIST_EMAIL_CHECKBOX_SUB
-INFO  | 2023-03-11 23:36:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_WISHLIST_EMAIL_BTN_SUBMIT
-INFO  | 2023-03-11 23:37:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:37:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
-INFO  | 2023-03-11 23:37:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
-INFO  | 2023-03-11 23:37:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
-INFO  | 2023-03-11 23:37:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
-INFO  | 2023-03-11 23:37:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...ADMIN_URL
-INFO  | 2023-03-11 23:37:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME_DUNG
-INFO  | 2023-03-11 23:37:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD_DUNG
-INFO  | 2023-03-11 23:37:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
-INFO  | 2023-03-11 23:37:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:37:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPosition:507) -  scrolling to position 
-INFO  | 2023-03-11 23:37:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementLOGIN_BTN_CUSTOMER
-INFO  | 2023-03-11 23:37:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_CUSTOMER
-INFO  | 2023-03-11 23:37:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:685) - webDriverWaitForElementPresentSIGNUP_VERIFY_CUSTOMER
-INFO  | 2023-03-11 23:37:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_EMAIL_LOG
-INFO  | 2023-03-11 23:37:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:685) - webDriverWaitForElementPresentSIGNUP_VERIFY_EMAIL_LOG
-INFO  | 2023-03-11 23:37:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:37:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:685) - webDriverWaitForElementPresentADMIN_CUS_EMAILLOG_BTN_FILTER
-INFO  | 2023-03-11 23:37:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickADMIN_CUS_EMAILLOG_BTN_FILTER
-INFO  | 2023-03-11 23:37:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
-INFO  | 2023-03-11 23:37:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysADMIN_CUS_EMAILLOG_FILTER_INP_RECIPIENTwith EMAIL_ADDRESS
-INFO  | 2023-03-11 23:37:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickADMIN_CUS_EMAILLOG_ENTER_FILTER
-INFO  | 2023-03-11 23:37:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:37:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from EMAIL_ADDRESS with ADMIN_CUS_EMAILLOG_TEXT_RECIPIENT
-INFO  | 2023-03-11 23:37:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from ADMIN_CUS_DATA_EMAILLOG_TEXT_RECIPIENT_TEMP with ADMIN_CUS_EMAILLOG_TEXT_RECIPIENT_TEMP
-INFO  | 2023-03-11 23:37:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/sales/order/history/
-INFO  | 2023-03-11 23:37:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:37:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_BTN_COMPLETE
-INFO  | 2023-03-11 23:37:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_MORE_SHOW
-INFO  | 2023-03-11 23:37:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:37:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_MY_ORD_TEXT_ID_COMPLETE
-INFO  | 2023-03-11 23:37:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_BTN_VIEW_COMPLETE
-INFO  | 2023-03-11 23:37:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:37:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_MY_ORD_VERIFY_TEXT_ID_COMPLETE
-INFO  | 2023-03-11 23:37:57 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:viewOrder:705) - check verify veiw my order....
-INFO  | 2023-03-11 23:37:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:back:310) - Back window...
-INFO  | 2023-03-11 23:38:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SHOW_MORE_RECENT
-INFO  | 2023-03-11 23:38:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_MY_ORD_TEXT_ID_ITEM
-INFO  | 2023-03-11 23:38:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_BTN_VIEW
-INFO  | 2023-03-11 23:38:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_MY_ORD_VERIFY_TEXT_ID_ITEM
-INFO  | 2023-03-11 23:38:08 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:viewOrder:705) - check verify veiw my order....
-INFO  | 2023-03-11 23:38:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/sales/order/history/
-INFO  | 2023-03-11 23:38:11 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:checkStatus:942) - check verify id order....
-INFO  | 2023-03-11 23:38:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR_MOBILE with MAC_OVER_ID_ORDER_STATUS_CONFIR_MOBILE
-INFO  | 2023-03-11 23:38:12 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:checkStatus:944) - check verify status....
-INFO  | 2023-03-11 23:38:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_OVER_DATA_STATUS_CONFIR with MAC_OVER_STATUS_CONFIR_MOBILE
-INFO  | 2023-03-11 23:38:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleMAC_OVER_STATUS_CONFIR_ICON
-INFO  | 2023-03-11 23:38:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
-INFO  | 2023-03-11 23:38:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_OVER_BTN_COMPLETE
-INFO  | 2023-03-11 23:38:17 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:checkStatus:952) - check verify id order....
-INFO  | 2023-03-11 23:38:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_OVER_DATA_ID_ORDER_STATUS_DELIVERY_MOBILE with MAC_OVER_ID_ORDER_STATUS_DELIVERY_MOBILE
-INFO  | 2023-03-11 23:38:18 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:checkStatus:956) - check verify status....
-INFO  | 2023-03-11 23:38:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:771) - compare from MAC_OVER_DATA_STATUS_DELIVERY with MAC_OVER_STATUS_DELIVERY_MOBILE
-INFO  | 2023-03-11 23:38:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:580) - verifyElementVisibleMAC_OVER_STATUS_DELIVERY_ICON_MOBILE
-INFO  | 2023-03-11 23:38:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/account/
-INFO  | 2023-03-11 23:38:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_OVER_LINK_CHANGE_PASS
-INFO  | 2023-03-11 23:38:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_CHANGE_PASS
-INFO  | 2023-03-11 23:38:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_CHANGE_PASS
-INFO  | 2023-03-11 23:38:28 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:checkFunctionInfoCustomer:1009) - check verify My overview....
-INFO  | 2023-03-11 23:38:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:back:310) - Back window...
-INFO  | 2023-03-11 23:38:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_OVER_EDIT_CONTACT_INFO
-INFO  | 2023-03-11 23:38:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_CONTACT_INFO
-INFO  | 2023-03-11 23:38:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_CONTACT_INFO
-INFO  | 2023-03-11 23:38:37 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:checkFunctionInfoCustomer:1009) - check verify My overview....
-INFO  | 2023-03-11 23:38:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:back:310) - Back window...
-INFO  | 2023-03-11 23:38:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_OVER_EDIT_SHIPPING_ADDRESS
-INFO  | 2023-03-11 23:38:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_TITTLE_ADDRESS
-INFO  | 2023-03-11 23:38:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_TITTLE_ADDRESS
-INFO  | 2023-03-11 23:38:46 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:checkFunctionInfoCustomer:1009) - check verify My overview....
-INFO  | 2023-03-11 23:38:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:back:310) - Back window...
-INFO  | 2023-03-11 23:38:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_OVER_EDIT_BILLING_ADDRESS
-INFO  | 2023-03-11 23:38:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_TITTLE_ADDRESS
-INFO  | 2023-03-11 23:38:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_TITTLE_ADDRESS
-INFO  | 2023-03-11 23:38:54 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:checkFunctionInfoCustomer:1009) - check verify My overview....
-INFO  | 2023-03-11 23:38:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:back:310) - Back window...
-INFO  | 2023-03-11 23:38:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:38:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_OVER_EDIT_NEWSLETTER
-INFO  | 2023-03-11 23:39:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:732) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-11 23:39:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER
-INFO  | 2023-03-11 23:39:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER
-INFO  | 2023-03-11 23:39:03 | [TestNG-tests-1] page.MyAccountPage (MyAccountPage.java:checkFunctionInfoCustomer:1009) - check verify My overview....
+INFO  | 2023-03-12 22:59:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - Open browser
+INFO  | 2023-03-12 22:59:39 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
+INFO  | 2023-03-12 22:59:39 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\110.0.5481.77\chromedriver.exe
+INFO  | 2023-03-12 22:59:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - open browser successfullyCHROME
+INFO  | 2023-03-12 22:59:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:70) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-03-12 22:59:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:71) - url: [Ljava.lang.String;@831eca8
+INFO  | 2023-03-12 22:59:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-03-12 22:59:50 | [TestNG-tests-1] test.CreateAccountOnWebTest (CreateAccountOnWebTest.java:testCase_CreateAccount:27) - testCase_CreateAccount
+INFO  | 2023-03-12 22:59:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
+INFO  | 2023-03-12 22:59:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-12 23:00:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-12 23:00:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-12 23:00:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-03-12 23:00:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-03-12 23:00:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-03-12 23:00:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentLOGIN_BTN_FORGOT_PASSWORD
+INFO  | 2023-03-12 23:00:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2023-03-12 23:00:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2023-03-12 23:00:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_FORM_DATA_INFORMATION
+INFO  | 2023-03-12 23:00:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
+INFO  | 2023-03-12 23:00:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2023-03-12 23:00:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_EXIST1
+INFO  | 2023-03-12 23:00:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_EMAIL_EXIST1
+INFO  | 2023-03-12 23:00:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-03-12 23:00:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-03-12 23:00:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_DATA_PASSWORD_INFORMATION
+INFO  | 2023-03-12 23:00:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleSIGNUP_SELECT_TITLE
+INFO  | 2023-03-12 23:00:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-03-12 23:00:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_CHECKBOX_AGREE
+INFO  | 2023-03-12 23:00:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_CREATE_ACCOUNT
+INFO  | 2023-03-12 23:00:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
+INFO  | 2023-03-12 23:00:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-03-12 23:00:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-03-12 23:00:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.com/secured2021/
+INFO  | 2023-03-12 23:00:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_USER_NAME_BACKENDwith nguyenngoc
+INFO  | 2023-03-12 23:00:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_PASSWORD_BACKENDwith Admin123
+INFO  | 2023-03-12 23:00:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2023-03-12 23:00:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPosition:507) -  scrolling to position 
+INFO  | 2023-03-12 23:00:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementLOGIN_BTN_CUSTOMER
+INFO  | 2023-03-12 23:00:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_CUSTOMER
+INFO  | 2023-03-12 23:00:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_VERIFY_CUSTOMER
+INFO  | 2023-03-12 23:00:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_EMAIL_LOG
+INFO  | 2023-03-12 23:00:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_VERIFY_EMAIL_LOG
+INFO  | 2023-03-12 23:00:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:675) - implicitlyWait
+INFO  | 2023-03-12 23:00:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_CHECK_EMAIL_LOG_ACTION_SELECT
+INFO  | 2023-03-12 23:01:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentLOGIN_SELECT_ACTIVE
+INFO  | 2023-03-12 23:01:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_SELECT_VIEW_CHECK_EMAIL_LOG
+INFO  | 2023-03-12 23:01:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentLOGIN_POPUP_MESSAGE_PASSWORD_RESET
+INFO  | 2023-03-12 23:01:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToIFrameByXpath:402) - Switching to Iframe
+INFO  | 2023-03-12 23:01:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofLOGIN_INPUT_VERIFY_CODE
+INFO  | 2023-03-12 23:01:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:closeWindowByIndex:462) - closeWindowByIndex
+INFO  | 2023-03-12 23:01:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToWindowByIndex:417) - switchToWindowByIndex
+INFO  | 2023-03-12 23:01:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-03-12 23:01:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_INPUT_VERIFY_CODEwith 088459
+INFO  | 2023-03-12 23:01:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_SUBMIT_ACCOUNT
+INFO  | 2023-03-12 23:01:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleSIGNUP_MESSAGE_REGIST_SUCCESS_US
+INFO  | 2023-03-12 23:01:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU with SIGNUP_MESSAGE_REGIST_SUCCESS_US
+INFO  | 2023-03-12 23:01:15 | [TestNG-tests-1] test.CreateAccountOnWebTest (CreateAccountOnWebTest.java:testCase_forgotPassWord:34) - testCase_forGotPassWord
+INFO  | 2023-03-12 23:01:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-12 23:01:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-12 23:01:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-12 23:01:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-12 23:01:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
+INFO  | 2023-03-12 23:01:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-12 23:01:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-12 23:01:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-12 23:01:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-03-12 23:01:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-03-12 23:01:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_FORGOT_PASSWORD_NEW
+INFO  | 2023-03-12 23:01:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleLOGIN_INPUT_FORGOT_PASSWORD
+INFO  | 2023-03-12 23:01:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_INPUT_FORGOT_PASSWORDwith SIGNUP_EMAIL_EXIST1
+INFO  | 2023-03-12 23:01:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
+INFO  | 2023-03-12 23:01:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleSIGNIN_XPATH_ACTUAL_SENT_CODE
+INFO  | 2023-03-12 23:01:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
+INFO  | 2023-03-12 23:01:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-03-12 23:01:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-03-12 23:01:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.com/secured2021/
+INFO  | 2023-03-12 23:02:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-12 23:02:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-12 23:02:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-12 23:02:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:closeWindowByIndex:462) - closeWindowByIndex
+INFO  | 2023-03-12 23:02:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToWindowByIndex:417) - switchToWindowByIndex
+INFO  | 2023-03-12 23:02:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-03-12 23:02:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
+INFO  | 2023-03-12 23:02:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-03-12 23:02:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-03-12 23:02:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.com/secured2021/
+INFO  | 2023-03-12 23:02:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_USER_NAME_BACKENDwith nguyenngoc
+INFO  | 2023-03-12 23:02:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_PASSWORD_BACKENDwith Admin123
+INFO  | 2023-03-12 23:02:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2023-03-12 23:02:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPosition:507) -  scrolling to position 
+INFO  | 2023-03-12 23:02:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementLOGIN_BTN_CUSTOMER
+INFO  | 2023-03-12 23:02:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_CUSTOMER
+INFO  | 2023-03-12 23:02:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_VERIFY_CUSTOMER
+INFO  | 2023-03-12 23:02:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_EMAIL_LOG
+INFO  | 2023-03-12 23:02:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_VERIFY_EMAIL_LOG
+INFO  | 2023-03-12 23:02:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:675) - implicitlyWait
+INFO  | 2023-03-12 23:02:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_CHECK_EMAIL_LOG_ACTION_SELECT
+INFO  | 2023-03-12 23:02:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentLOGIN_SELECT_ACTIVE
+INFO  | 2023-03-12 23:02:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_SELECT_VIEW_CHECK_EMAIL_LOG
+INFO  | 2023-03-12 23:02:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentLOGIN_POPUP_MESSAGE_PASSWORD_RESET
+INFO  | 2023-03-12 23:02:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToIFrameByXpath:402) - Switching to Iframe
+INFO  | 2023-03-12 23:02:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofLOGIN_INPUT_VERIFY_CODE
+INFO  | 2023-03-12 23:02:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:closeWindowByIndex:462) - closeWindowByIndex
+INFO  | 2023-03-12 23:02:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToWindowByIndex:417) - switchToWindowByIndex
+INFO  | 2023-03-12 23:02:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-03-12 23:02:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_INPUT_ENTER_DATAwith 487265
+INFO  | 2023-03-12 23:02:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT
+INFO  | 2023-03-12 23:02:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleINPUT_CODE_NEW_EMAIL
+INFO  | 2023-03-12 23:02:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickINPUT_CODE_NEW_EMAIL
+INFO  | 2023-03-12 23:02:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysINPUT_CODE_NEW_EMAILwith PASS_NEW_RD
+INFO  | 2023-03-12 23:02:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_PASSWORD
+INFO  | 2023-03-12 23:02:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNIN_UPDATE_PASSWORD_SUCCESS with LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS
+INFO  | 2023-03-12 23:02:33 | [TestNG-tests-1] test.CreateAccountOnWebTest (CreateAccountOnWebTest.java:testCase_forgotPassWordCheckOut:40) - testCase_forgotPassWordCheckOut
+INFO  | 2023-03-12 23:02:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/glamira-pendant-elsie.html?alloy=red_white-585&stone1=diamond-Brillant
+INFO  | 2023-03-12 23:02:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-12 23:02:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-12 23:02:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleBTN_VIEW_CART
+INFO  | 2023-03-12 23:02:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_VIEW_CART
+INFO  | 2023-03-12 23:02:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLA_BTN_PROCEED_TO_CHECKOUT
+INFO  | 2023-03-12 23:02:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleFORM_CHECKOUT_VRF
+INFO  | 2023-03-12 23:03:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_HPL_FORGOT_PASS
+INFO  | 2023-03-12 23:03:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleLOGIN_INPUT_FORGOT_PASSWORD
+INFO  | 2023-03-12 23:03:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_INPUT_FORGOT_PASSWORDwith SIGNUP_EMAIL_EXIST1
+INFO  | 2023-03-12 23:03:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
+INFO  | 2023-03-12 23:03:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleSIGNIN_XPATH_ACTUAL_SENT_CODE
+INFO  | 2023-03-12 23:03:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
+INFO  | 2023-03-12 23:03:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-03-12 23:03:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-03-12 23:03:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.com/secured2021/
+INFO  | 2023-03-12 23:03:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-12 23:03:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-12 23:03:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-12 23:03:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:closeWindowByIndex:462) - closeWindowByIndex
+INFO  | 2023-03-12 23:03:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToWindowByIndex:417) - switchToWindowByIndex
+INFO  | 2023-03-12 23:03:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-03-12 23:03:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
+INFO  | 2023-03-12 23:03:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-03-12 23:03:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-03-12 23:03:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.com/secured2021/
+INFO  | 2023-03-12 23:03:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_USER_NAME_BACKENDwith nguyenngoc
+INFO  | 2023-03-12 23:03:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_PASSWORD_BACKENDwith Admin123
+INFO  | 2023-03-12 23:03:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2023-03-12 23:03:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPosition:507) -  scrolling to position 
+INFO  | 2023-03-12 23:03:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementLOGIN_BTN_CUSTOMER
+INFO  | 2023-03-12 23:03:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_CUSTOMER
+INFO  | 2023-03-12 23:03:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_VERIFY_CUSTOMER
+INFO  | 2023-03-12 23:03:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_EMAIL_LOG
+INFO  | 2023-03-12 23:03:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_VERIFY_EMAIL_LOG
+INFO  | 2023-03-12 23:03:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:675) - implicitlyWait
+INFO  | 2023-03-12 23:03:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_CHECK_EMAIL_LOG_ACTION_SELECT
+INFO  | 2023-03-12 23:03:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentLOGIN_SELECT_ACTIVE
+INFO  | 2023-03-12 23:03:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_SELECT_VIEW_CHECK_EMAIL_LOG
+INFO  | 2023-03-12 23:03:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentLOGIN_POPUP_MESSAGE_PASSWORD_RESET
+INFO  | 2023-03-12 23:03:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToIFrameByXpath:402) - Switching to Iframe
+INFO  | 2023-03-12 23:03:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofLOGIN_INPUT_VERIFY_CODE
+INFO  | 2023-03-12 23:03:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:closeWindowByIndex:462) - closeWindowByIndex
+INFO  | 2023-03-12 23:03:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToWindowByIndex:417) - switchToWindowByIndex
+INFO  | 2023-03-12 23:03:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-03-12 23:03:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_INPUT_ENTER_DATAwith 399065
+INFO  | 2023-03-12 23:03:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT
+INFO  | 2023-03-12 23:03:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleINPUT_CODE_NEW_EMAIL
+INFO  | 2023-03-12 23:03:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickINPUT_CODE_NEW_EMAIL
+INFO  | 2023-03-12 23:03:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysINPUT_CODE_NEW_EMAILwith PASS_NEW_RD
+INFO  | 2023-03-12 23:03:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_PASSWORD
+INFO  | 2023-03-12 23:03:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleSIGNIN_VERIFY_SUCCESS_SIGNIN_FORM

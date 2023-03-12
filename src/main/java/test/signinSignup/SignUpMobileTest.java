@@ -1,40 +1,42 @@
 package test.signinSignup;
 
 import core.BaseTest;
-import core.KeywordWeb;
 import core.LogHelper;
 import org.testng.annotations.Test;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
+import page.signinSignup.SignUpMobilePage;
 import page.signinSignup.SignUpPage;
 import org.slf4j.Logger;
 
-public class SignUpTest extends BaseTest {
+public class SignUpMobileTest extends BaseTest {
     private LoginPage objLogin;
     private RegisterPage objRegist;
-    private SignUpPage objSigUp;
+    private SignUpMobilePage objSigUpMobile;
+    private  SignUpPage objSigUp;
+    private SignInPage objSignIn;
     private static Logger logger = LogHelper.getLogger();
 
-    public SignUpTest() {
+    public SignUpMobileTest() {
         super();
-        objRegist = new RegisterPage(this.keyword);
-        objSigUp = new SignUpPage(this.keyword);
     }
+public void setUp()throws InterruptedException {
+    objLogin = new LoginPage(this.keyword);
+    objRegist = new RegisterPage(this.keyword);
+    objSigUpMobile = new SignUpMobilePage(this.keyword);
+    objSigUp = new SignUpPage(this.keyword);
+    objRegist.acceptAllCookies();
 
-    public void startCreateAccount() throws InterruptedException {
-        objRegist.acceptAllCookies();
-        objSigUp.goToFormCreateMyAccount();
-        objSigUp.createCustomerWithEmail();
-    }
-
+}
     @Test(priority = 1, description = "Create new customer and input email exist on database")
     public void testCase_SU05() throws InterruptedException {
         logger.info("testCase_SU05");
-//        setUpCreateCustomer();
-        startCreateAccount();
+        setUp();
+//        objSigUpMobile.navigateToUrlPage("https://dev3.glamira.com/glgb/");
+        objSigUpMobile.goToFormCreateMyAccount();
+        objSigUp.createCustomerWithEmail();
     }
-
     //
     @Test(priority = 2, description = "Create new customer and leave with blank form for required form")
     public void testCase_SU02() throws InterruptedException {
@@ -53,11 +55,11 @@ public class SignUpTest extends BaseTest {
         logger.info("testCase_SU04");
         objSigUp.confirmEmailNotSameEmailForm();
     }
-
+//
     @Test(priority = 5, description = "Create an account with the same password as the register email")
     public void testCase_SU06() throws InterruptedException {
         logger.info("testCase_SU06");
-        objSigUp.enterPasswordSameEmail();
+        objSigUpMobile.enterPasswordSameEmail();
     }
 
 
@@ -66,14 +68,12 @@ public class SignUpTest extends BaseTest {
         logger.info("testCase_SU07");
         objSigUp.confirmPasswordEntryConditionCharacters();
     }
-
-    ////
     @Test(priority = 7, description = "\"Create a new account with password # email register and has:\n" + "+ At least < 8 characters\n" + "+ At least 1 number\n" + "+ At least 1 lower case letter\n" + "+ At least 1 upper case letter\n" + "+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~\"")
     public void testCase_SU08() throws InterruptedException {
         logger.info("testCase_SU08");
         objSigUp.confirmPasswordEntryConditionNumber();
     }
-
+//
     @Test(priority = 8, description = "\"Create a new account with password # email register and has:\n" + "+ At least > 8 characters\n" + "+ At least 1 number\n" + "+ At least 1 upper case letter\n" + "+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~\"")
     public void testCase_SU09() throws InterruptedException {
         logger.info("testCase_SU09");
@@ -105,12 +105,12 @@ public class SignUpTest extends BaseTest {
         objSigUp.resendAndGetCodeBack();
     }
 
-
-    //        SIGNUP WITH MOBILE
+    //
+    //    SIGNUP WITH MOBILE
     @Test(priority = 13, description = "Create new customer and leave with blank form for required form")
     public void testCase_SU015() throws Exception {
         logger.info("testCase_SU015");
-//        objRegist.chooseLanguages();
+        keyword.navigateToUrl("https://dev3.glamira.com/glcn/");
         objSigUp.goToFormCreateMyAccountChina();
         objSigUp.verifyRequiredFieldWithMobile();
     }

@@ -271,6 +271,12 @@ public class SignInPage extends BasePage {
         keyword.navigateToUrl("ADMIN_URL");
 //        keyword.webDriverWaitForElementPresent("LOGIN_FORM_LOGIN_BACKEND", 50);
     }
+    public void openTabBE(String urlBe) throws InterruptedException {
+        keyword.executeJavaScript("window.open()");
+        keyword.switchToTab(1);
+        keyword.maximizeWindow();
+        keyword.navigateToUrl(urlBe);
+    }
 
     //login admin BackEnd (shared functions)
     public void loginAdmin(String userName, String passWord) throws InterruptedException {
@@ -287,7 +293,8 @@ public class SignInPage extends BasePage {
         keyword.scrollDownToElement(scrollToElement);
         keyword.click(clickItem);
         keyword.webDriverWaitForElementPresent(verifyItem, 20);
-        keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
         keyword.click(clickItemSub);
         keyword.webDriverWaitForElementPresent(verifyItemSub, 20);
     }
