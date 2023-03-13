@@ -31,9 +31,9 @@ public class LoginAddressTest extends BaseTest {
         objRegist = new RegisterPage(this.keyword);
         objSignIn = new SignInPage(this.keyword);
         objLoginAddress = new LoginAddressPage(this.keyword);
-        objLogin.loginOnAlert();
+        //objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
-        objRegist.chooseLanguages();
+        //objRegist.chooseLanguages();
     }
     public void customerLogin() throws InterruptedException {
         keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
@@ -60,6 +60,7 @@ public class LoginAddressTest extends BaseTest {
             description = "Add new billing address using suggest address with store no state")
     public void NLA_03() throws InterruptedException {
         logger.info("NLA_03");
+        //customerNotLogin();
         objLoginAddress.resetForNewCase();
         objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
