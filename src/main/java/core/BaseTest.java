@@ -33,6 +33,7 @@ public class BaseTest {
     }
     @Parameters("devices")
     @BeforeTest
+
     public void beforeTest(String devices) throws Exception {
         keyword.openBrowser(PropertiesFile.getPropValue("BROWSER_NAME"), PropertiesFile.getPropValue("BASE_URL"));
         if (devices.equalsIgnoreCase("mobile")){

@@ -246,15 +246,16 @@ public class MyAccountPage extends BasePage {
         checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","pass","MAC_VERIFY_PASS_CHANGE","COM_INP_DATA_PASS_STAGE");
 
     }
-    public void deleteAccount() throws InterruptedException {
+    public void deleteAccount(String data) throws InterruptedException {
 //        setUp1();
         keyword.openNewTab("https://stage.glamira.co.uk/customer/account/edit/");
         keyword.click("MAC_DELETE_ACCOUNT");
         Thread.sleep(2000);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.sendKeys("MAC_DELETE_ACCOUNT_INP_PASS","COM_INP_DATA_PASS_STAGE");
+        keyword.sendKeys("MAC_DELETE_ACCOUNT_INP_PASS",data);
         keyword.click("MAC_DELETE_ACCOUNT_BTN_DELETE");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("MAC_DELETE_ACCOUNT_BTN_OK");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -514,7 +515,7 @@ public class MyAccountPage extends BasePage {
             keyword.untilJqueryIsDone(60L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             Thread.sleep(25000);
-//            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 //            commonViewWishList();
 //            keyword.webDriverWaitForElementPresent("MAC_WISHLISH_COUNT_SAVE_DISPLAY",100);
             String countSave = keyword.getText("MAC_WISHLISH_COUNT_SAVE");
@@ -925,7 +926,7 @@ public class MyAccountPage extends BasePage {
             case "delivery" :
                 keyword.untilJqueryIsDone(60L);
                 keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-                keyword.click("MAC_OVER_BTN_COMPLETE");
+                keyword.click("MAC_MY_ORD_BTN_COMPLETE");
                 logger.info("check verify id order....");
                 keyword.untilJqueryIsDone(60L);
                 keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
