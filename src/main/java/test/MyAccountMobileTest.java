@@ -1,6 +1,7 @@
 package test;
 
 import core.BaseTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.MyAccountMobilePage;
 import page.MyAccountPage;
@@ -15,12 +16,12 @@ public class MyAccountMobileTest extends BaseTest {
         testMyAccountMobile = new MyAccountMobilePage(this.keyword);
     }
 
-    public void setUpLogin() throws InterruptedException {
-        testMyAccountMobile.setUp();
+    public void setUpLogin(String baseURL) throws InterruptedException {
+        testMyAccountMobile.setUp(baseURL);
     }
     @Test(priority = 1, description = "Change PERSONAL INFORMATION ")
-    public void testCase_PI_01() throws InterruptedException {
-        setUpLogin();
+    public void testCase_PI_01(String baseURL) throws InterruptedException {
+        setUpLogin(baseURL);
         testMyAccountMobile.changeFullnameWithData();
     }
 //
@@ -64,8 +65,9 @@ public class MyAccountMobileTest extends BaseTest {
     }
 
     @Test(priority = 10, description = " Delete a address in section Additional Address Entries")
-    public void testCase_MA_04() throws InterruptedException {
-        testMyAccountMobile.deleteAdditionalAddressEntries();
+    @Parameters("baseURL")
+    public void testCase_MA_04(String baseURL) throws InterruptedException {
+        testMyAccountMobile.deleteAdditionalAddressEntries(baseURL);
     }
 
     @Test(priority = 11, description = "  Set as Default a address in section Additional Address Entries")
@@ -94,7 +96,7 @@ public class MyAccountMobileTest extends BaseTest {
     }
 
     @Test(priority = 16, description = "Compare My Wishlist - product_compare")
-    public void testCase_MW_03() throws InterruptedException {
+    public void testCase_MW_03( ) throws InterruptedException {
         testMyAccountMobile.compareMyWishProductMobile();
     }
 
@@ -111,8 +113,9 @@ public class MyAccountMobileTest extends BaseTest {
     }
         //   case My Order
     @Test(priority = 19, description = "Check function icon  view order of completed order")
-    public void testCase_Myorder_01() throws InterruptedException {
-        testMyAccountMobile.viewOrderComplete();
+    @Parameters("baseURL")
+    public void testCase_Myorder_01(String baseURL) throws InterruptedException {
+        testMyAccountMobile.viewOrderComplete(baseURL);
     }
 
     @Test(priority = 20, description = "Check function icon view order of Recent  orders")
@@ -139,8 +142,9 @@ public class MyAccountMobileTest extends BaseTest {
 
 //////    // case My Overview
     @Test(priority = 21,description = "Check order status = Order Confirmation ,display in tab Recent Orders ")
-    public void testCase_MO_03() throws InterruptedException {
-        testMyAccountMobile.checkStatusConfirmation();
+    @Parameters("baseURL")
+    public void testCase_MO_03(String baseURL) throws InterruptedException {
+        testMyAccountMobile.checkStatusConfirmation(baseURL);
     }
     @Test(priority = 22,description = "Check order status = Delivery, display in tab Recent Orders ")
     public void testCase_MO_05() throws InterruptedException {
