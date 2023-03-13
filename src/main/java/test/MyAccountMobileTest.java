@@ -100,12 +100,12 @@ public class MyAccountMobileTest extends BaseTest {
 
     @Test(priority = 17, description = "Remove a item saved ")
     public void testCase_MW_04() throws InterruptedException {
-        testMyAccount.removeItemSave();
+        testMyAccount.removeItemSave("MAC_LINK_HEART_MOBILE");
     }
 
     @Test(priority = 18, description = "Check function of Email Selected Items")
     public void testCase_MW_05() throws InterruptedException {
-        testMyAccount.emailSelectItem();
+        testMyAccount.emailSelectItem("MAC_LINK_HEART_MOBILE");
         keyword.resizeBrowser(319, 848);
         keyword.untilJqueryIsDone(50L);
     }
