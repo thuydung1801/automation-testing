@@ -121,7 +121,7 @@ public class MyAccountMobilePage extends BasePage {
 
     public void compareMyWishProductMobile() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        objMyAccount.compareMyWishProduct("MAC_LINK_HEART_MOBILE");
+        objMyAccount.compareMyWishProduct();
     }
 
     public void editAdditionalAddressEntries() throws InterruptedException {
