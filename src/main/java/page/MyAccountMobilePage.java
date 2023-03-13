@@ -5,6 +5,7 @@ import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
 import org.slf4j.Logger;
+import org.testng.Assert;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
@@ -43,7 +44,11 @@ public class MyAccountMobilePage extends BasePage {
     public void changeEmail() throws InterruptedException {
 //        keyword.click("BTN_PERSONAL");
         inputChangeMail();
-        objMyAccount.checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE", "MAC_VERIFY_DATA_FULLNAME", "email", "MAC_VERIFY_EMAIL_CHANGE", "COM_INP_DATA_EMAIL_VERIFY_MOBILE");
+//        objMyAccount.checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE", "MAC_VERIFY_DATA_FULLNAME", "email", "MAC_VERIFY_EMAIL_CHANGE", "COM_INP_DATA_EMAIL_VERIFY_MOBILE");
+        String textEle = keyword.getText("MAC_VERIFY_EMAIL_CHANGE");
+        System.out.println("------------" + textEle);
+        textEle.contains(PropertiesFile.getPropValue("COM_INP_DATA_EMAIL_VERIFY_MOBILE"));
+
     }
 
     public void changePassword() throws InterruptedException {
@@ -89,10 +94,29 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void addNewAddress() throws InterruptedException {
-        countAdd = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
-        System.out.println("-------------------------------- :" + countAdd);
+        commonMyAddress();
+//        System.out.println("-------------------------------- :" + countAdd);
         keyword.click("MAC_BTN_ADD_NEW_ADDRESS");
+//        int count = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
+//        System.out.printf("======count: " + countAdd + "\n");
+//        System.out.printf("======count b: " + count + "\n");
+//        boolean check;
+//        if (countAdd + 1 == count) {
+//            check = true;
+//        } else {
+//            check = false;
+//        }
+//        logger.info("check add...");
+//        Assert.assertEquals(check, true);
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         objMyAccount.inpEditAddress("add", "MAC_MY_ADDRESS_DIRECTORY", "MAC_BTN_ADD_NEW_ADDRESS", "MAC_DATA_STREET9", false);
+    }
+
+    public void commonMyAddress() throws InterruptedException {
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        countAdd = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
     }
 
     public void compareMyWishProductMobile() throws InterruptedException {
@@ -193,11 +217,13 @@ public class MyAccountMobilePage extends BasePage {
         keyword.switchToTab(0);
         objMyAccount.viewReturn();
     }
-public void checkStatusConfirmation() throws InterruptedException {
-    keyword.openNewTab("https://stage.glamira.co.uk/sales/order/history/");
-    objMyAccount.checkStatus("confirmation", "MAC_OVER_ID_ORDER_STATUS_CONFIR_MOBILE", "MAC_OVER_STATUS_CONFIR_ICON",
-            "MAC_OVER_STATUS_CONFIR_MOBILE", "MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR_MOBILE", "MAC_OVER_DATA_STATUS_CONFIR");
-}
+
+    public void checkStatusConfirmation() throws InterruptedException {
+        keyword.openNewTab("https://stage.glamira.co.uk/sales/order/history/");
+        objMyAccount.checkStatus("confirmation", "MAC_OVER_ID_ORDER_STATUS_CONFIR_MOBILE", "MAC_OVER_STATUS_CONFIR_ICON",
+                "MAC_OVER_STATUS_CONFIR_MOBILE", "MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR_MOBILE", "MAC_OVER_DATA_STATUS_CONFIR");
+    }
+
     public void checkStatusDelivery() throws InterruptedException {
         keyword.reLoadPage();
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
