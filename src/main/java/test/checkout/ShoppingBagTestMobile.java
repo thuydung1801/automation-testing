@@ -40,7 +40,7 @@ public class ShoppingBagTestMobile extends BaseTest {
         //objRegist.chooseLanguages();
 //        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
 //                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
-          objLogin.loginOnMobile("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
+          objLogin.loginOnMobile("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE");
     }
     //done SP02
     @Test
@@ -154,18 +154,45 @@ public class ShoppingBagTestMobile extends BaseTest {
         shoppingBagPageMobile.inputCorrectly("CHECKOUT_DATA_ENGRAVING_MOBILE","CHECKOUT_LBL_ENGRAVING_MOBILE");
 
     }
-    //DONE SP26_RV02_04
     @Test
-    //(priority = 15, description = "Checkout successfully")
+//            (priority = 9, description = "Edit engraving for the bridal set item")
     @Parameters("baseURL")
-    public void testCase_SP_26_RV_02_04(String baseURL) throws InterruptedException {
-        logger.info("testCase_SP_26");
-//        commonShopping();
+    public void testCase_SP_18(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_18");
+        //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
-        //objShoppingBagPage.clickGiftWrapping();
-        objShoppingBagPage.moveToPagecheckOut();
-        objShoppingBagPage.checkOut();
-        objShoppingBagPage.checkOutWithVisa("success","stage");
+        objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
+        objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_ICON_ADD",
+                "CHECKOUT_TXT_WOMEN_ENGRAVING_18","CHECKOUT_TXT_MEN_ENGRAVING_18");
+        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_LBL_ENGRAVING");
+
+    }
+    @Test
+//            (priority = 10, description="Add engraving with text > max lenght")
+    @Parameters("baseURL")
+    public void testCase_SP_19(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_19");
+
+        //commonShopping();
+
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
+        objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_19","CHECKOUT_ICON_ADD",
+                "CHECKOUT_TXT_WOMEN_ENGRAVING_18","CHECKOUT_TXT_MEN_ENGRAVING_18");
+        objShoppingBagPage.inputError("CHECKOUT_LBL_MAXLENGTH_MESSAGES_1","CHECKOUT_LBL_MAXLENGTH_MESSAGES_2",
+                "CHECKOUT_DATA_19_OUTPUT","CHECKOUT_LBL_ENGRAVING", true);
+
+    }
+    @Test
+//            (priority = 12, description = "Edit product successfully with normal product")
+    @Parameters("baseURL")
+    public void testCase_SP_21(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_21");
+        //commonShopping();
+        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_BRACELET");
+        objShoppingBagPage.editOptions();
     }
     //DONE SP24
     @Test
@@ -182,6 +209,32 @@ public class ShoppingBagTestMobile extends BaseTest {
         objShoppingBagPage.compareData("CHECKOUT_DATA_24_2","CHECKOUT_BAG_LBL_PROFILE_MOBILE");
         objShoppingBagPage.confirmMessage("CHECKOUT_BAG_LBL_SIZE");
     }
+    @Test
+//            (priority = 14, description = "Edit product but missing fill required field")
+    @Parameters("baseURL")
+    public void testCase_SP_25(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_25");
+        //commonShopping();
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_UNIVERSE");
+        objShoppingBagPage.missingFillSize();
+        objShoppingBagPage.compareData("CHECKOUT_MESSAGES_UPDATE_24","CHECKOUT_LBL_MESSAGES_UPDATE_24");
+    }
+
+    //DONE SP26_RV02_04
+    @Test
+    //(priority = 15, description = "Checkout successfully")
+    @Parameters("baseURL")
+    public void testCase_SP_26_RV_02_04(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_26");
+//        commonShopping();
+        objShoppingBagPage.clickShoppingBagPage();
+        //objShoppingBagPage.clickGiftWrapping();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithVisa("success","stage");
+    }
+
     //DONE RV07
     @Test
     //(priority = 19, description = "Place order with Paypal express /Affirm/... successfully")
