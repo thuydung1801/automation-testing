@@ -5,6 +5,7 @@ import core.BaseTest;
 import core.LogHelper;
 import org.slf4j.Logger;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.MyAccountPage;
 import page.checkout.ShoppingBagPage;
@@ -39,25 +40,113 @@ public class ShoppingBagTestMobile extends BaseTest {
         //objRegist.chooseLanguages();
 //        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
 //                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
-          objLogin.loginOnMobile("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
+          objLogin.loginOnMobile("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE");
     }
+    //done SP02
     @Test
     //(priority = 1, description = "Remove item from cart successfully with the shopping bag having 1 item")
-    public void testCase_SP_02() throws InterruptedException{
+    @Parameters("baseURL")
+    public void testCase_SP_02(String baseURL) throws InterruptedException{
         logger.info("testCase_SP_02");
         commonShopping();
 //        shoppingBagPageMobile.setup();
-        objShoppingBagPage.addProduct("https://stage.glamira.co.uk/mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
+        objShoppingBagPage.addProduct(baseURL+"mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.removeProduct("CHECKOUT_ICON_REMOVE_MENRING");
         objShoppingBagPage.confirmMessage("CHECKOUT_MESSAGES_EMPTY");
     }
     @Test
+//            (priority = 2, description="Remove item from cart successfully with the shopping bag having 1 normal item and 1 free gift")
+    @Parameters("baseURL")
+    public void testCase_SP_03(String baseURL) throws InterruptedException{
+        logger.info("testCase_SP_03");
+//        commonShopping();
+        //https://stage.glamira.co.uk/
+        objShoppingBagPage.addProductWithGift(baseURL+"smart-ornament-skub7047.html?alloy=white-platin");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.removeProduct("CHECKOUT_ICON_REMOVE_COUPLERING");
+        objShoppingBagPage.confirmMessage("CHECKOUT_MESSAGES_EMPTY");
+        //objShoppingBagPage.confirmMessage("CHECKOUT_MESSAGES_GIFT");
+
+    }
+    @Test
+//            (priority = 3, description = "Add engraving with single ring")
+    @Parameters("baseURL")
+    public void testCase_SP_15(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_15");
+        //commonShopping();
+        //https://stage.glamira.co.uk/
+        objShoppingBagPage.addProduct(baseURL+"glamira-ring-zanessa.html?alloy=white-585&stone1=diamond-sapphire&stone2=diamond-sapphire");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_GLAMIRARING");
+        objShoppingBagPage.inputEngravingwithSingleRing("CHECKOUT_DATA_ENGRAVING",
+                "CHECKOUT_HYPERLINK_ADD",
+                "CHECKOUT_LBL_ENGRAVING_GLAMIRA");
+
+    }
+    @Test
+//            (priority = 4, description = "Remove item from cart succcessfully with the shopping bag having mutiple items")
+    @Parameters("baseURL")
+    public void testCase_SP_01(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_01");
+//        commonShopping();
+        //https://stage.glamira.co.uk/
+        objShoppingBagPage.addProduct(baseURL+"womens-ring-smart-ornament-skub7047.html?alloy=white-silber");
+        objShoppingBagPage.addProduct(baseURL+"mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.removeProduct("CHECKOUT_ICON_REMOVE_WOMENRING");
+
+    }
+    //DONE SP04
+    @Test
+//            (priority = 5, description = "Update quantity using qty button successfully")
+    @Parameters("baseURL")
+    public void testCase_SP_04(String baseURL) throws InterruptedException{
+        logger.info("testCase_SP_04");
+        //commonShoppingWithOutCookies();
+        objShoppingBagPage.addProduct(baseURL+"mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.changeQty("CHECKOUT_DATA_QTY_2");
+
+
+    }
+    @Test
+//            (priority = 6, description = "Checking situation that add more than 4 products with same type")
+    @Parameters("baseURL")
+    public void testCase_SP_05(String baseURL) throws InterruptedException{
+        logger.info("testCase_SP_05");
+//        commonShopping();
+//        commonShoppingWithOutCookies();
+        objShoppingBagPage.clickShoppingBagPage();
+
+        objShoppingBagPage.changeQty("CHECKOUT_DATA_QTY_MAX");
+        objShoppingBagPage.confirmMessage("CHECKOUT_MESSAGES_GIFT_UPDATE");
+        objShoppingBagPage.addProduct(baseURL+"mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
+        objShoppingBagPage.confirmMessage("CHECKOUT_MESSAGES_ERROR");
+
+    }
+    @Test
+//            (priority = 7, description = "edit engraving")
+    @Parameters("baseURL")
+    public void testCase_SP_16(String baseURL) throws Exception {
+        logger.info("testCase_SP_16");
+        //commonShopping();
+        //objShoppingBagPage.addProductWithEngraving("https://dev4.glamira.com/glau/glamira-ring-zanessa.html?alloy=white-585&stone1=diamond-sapphire&stone2=diamond-sapphire");
+        //objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.backPage(baseURL);
+        objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_GLAMIRARING");
+        objShoppingBagPage.inputEngravingwithSingleRing("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_ICON_ADD",
+                "CHECKOUT_LBL_ENGRAVING_GLAMIRA");
+
+    }
+    //DONE SP17
+    @Test
     //(priority = 8, description = "Add engraving for couple ring")
-    public void testCase_SP_17() throws InterruptedException {
+    @Parameters("baseURL")
+    public void testCase_SP_17(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_17");
 //        commonShopping();
-        objShoppingBagPage.addProductWithGift("https://stage.glamira.co.uk/charming-view.html?alloy=white-585&womenstone=diamond-zirconia");
+        objShoppingBagPage.addProductWithGift(baseURL+"charming-view.html?alloy=white-585&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE");
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_ENGRAVING","CHECKOUT_HYPERLINK_ADD"
@@ -66,22 +155,53 @@ public class ShoppingBagTestMobile extends BaseTest {
 
     }
     @Test
-    //(priority = 15, description = "Checkout successfully")
-    public void testCase_SP_26_RV_02_04() throws InterruptedException {
-        logger.info("testCase_SP_26");
-//        commonShopping();
+//            (priority = 9, description = "Edit engraving for the bridal set item")
+    @Parameters("baseURL")
+    public void testCase_SP_18(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_18");
+        //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
-        //objShoppingBagPage.clickGiftWrapping();
-        objShoppingBagPage.moveToPagecheckOut();
-        objShoppingBagPage.checkOut();
-        objShoppingBagPage.checkOutWithVisa("success");
+        objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
+        objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_ICON_ADD",
+                "CHECKOUT_TXT_WOMEN_ENGRAVING_18","CHECKOUT_TXT_MEN_ENGRAVING_18");
+        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_LBL_ENGRAVING");
+
     }
     @Test
+//            (priority = 10, description="Add engraving with text > max lenght")
+    @Parameters("baseURL")
+    public void testCase_SP_19(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_19");
+
+        //commonShopping();
+
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
+        objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_19","CHECKOUT_ICON_ADD",
+                "CHECKOUT_TXT_WOMEN_ENGRAVING_18","CHECKOUT_TXT_MEN_ENGRAVING_18");
+        objShoppingBagPage.inputError("CHECKOUT_LBL_MAXLENGTH_MESSAGES_1","CHECKOUT_LBL_MAXLENGTH_MESSAGES_2",
+                "CHECKOUT_DATA_19_OUTPUT","CHECKOUT_LBL_ENGRAVING", true);
+
+    }
+    @Test
+//            (priority = 12, description = "Edit product successfully with normal product")
+    @Parameters("baseURL")
+    public void testCase_SP_21(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_21");
+        //commonShopping();
+        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_BRACELET");
+        objShoppingBagPage.editOptions();
+    }
+    //DONE SP24
+    @Test
     //(priority = 13, description ="Edit product with bridal set product")
-    public void testCase_SP_24() throws InterruptedException {
+    @Parameters("baseURL")
+    public void testCase_SP_24(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_24");
         //commonShopping();
-        objShoppingBagPage.addProductWithGift("https://stage.glamira.co.uk/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        objShoppingBagPage.addProductWithGift(baseURL+"universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_UNIVERSE");
         objShoppingBagPage.editCoupleRings();
@@ -90,17 +210,36 @@ public class ShoppingBagTestMobile extends BaseTest {
         objShoppingBagPage.confirmMessage("CHECKOUT_BAG_LBL_SIZE");
     }
     @Test
-    public void testCase_SP_04() throws InterruptedException{
-        logger.info("testCase_SP_04");
-        //commonShoppingWithOutCookies();
-        objShoppingBagPage.addProduct("https://stage.glamira.co.uk/mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
+//            (priority = 14, description = "Edit product but missing fill required field")
+    @Parameters("baseURL")
+    public void testCase_SP_25(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_25");
+        //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
-        objShoppingBagPage.changeQty("CHECKOUT_DATA_QTY_2");
-
+        objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_UNIVERSE");
+        objShoppingBagPage.missingFillSize();
+        objShoppingBagPage.compareData("CHECKOUT_MESSAGES_UPDATE_24","CHECKOUT_LBL_MESSAGES_UPDATE_24");
     }
+
+    //DONE SP26_RV02_04
+    @Test
+    //(priority = 15, description = "Checkout successfully")
+    @Parameters("baseURL")
+    public void testCase_SP_26_RV_02_04(String baseURL) throws InterruptedException {
+        logger.info("testCase_SP_26");
+//        commonShopping();
+        objShoppingBagPage.clickShoppingBagPage();
+        //objShoppingBagPage.clickGiftWrapping();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithVisa("success","stage");
+    }
+
+    //DONE RV07
     @Test
     //(priority = 19, description = "Place order with Paypal express /Affirm/... successfully")
-    public void testCase_RV_07() throws InterruptedException {
+    @Parameters("baseURL")
+    public void testCase_RV_07(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_07");
         //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
@@ -108,8 +247,10 @@ public class ShoppingBagTestMobile extends BaseTest {
         objShoppingBagPage.checkOut();
         objShoppingBagPage.checkOutWithPayPal();
     }
+    //DONE
     @Test
-    public void testCase_Myorder_Return() throws InterruptedException {
+    @Parameters("baseURL")
+    public void testCase_Myorder_Return(String baseURL) throws InterruptedException {
         logger.info("testCase_Myorder_Return");
         commonShopping();
         shoppingBagPageMobile.stepReturn();

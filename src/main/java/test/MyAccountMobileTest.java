@@ -109,7 +109,6 @@ public class MyAccountMobileTest extends BaseTest {
         keyword.resizeBrowser(319, 848);
         keyword.untilJqueryIsDone(50L);
     }
-////
         //   case My Order
     @Test(priority = 19, description = "Check function icon  view order of completed order")
     public void testCase_Myorder_01() throws InterruptedException {

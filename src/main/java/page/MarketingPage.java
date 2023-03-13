@@ -39,6 +39,7 @@ public class MarketingPage extends BasePage {
         keyword.sendKeys("MRT_INP_NAME", name);
         keyword.sendKeys("MRT_INP_EMAIL",email);
         keyword.sendKeys("MRT_INP_MESSAGE",mess);
+        Thread.sleep(20000);
 //        keyword.untilJqueryIsDone(30L);
 //        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
