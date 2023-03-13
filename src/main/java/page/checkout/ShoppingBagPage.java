@@ -157,7 +157,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(30L);
         Thread.sleep(1000);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(30,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_CHECKOUT");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
