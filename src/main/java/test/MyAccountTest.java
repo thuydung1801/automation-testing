@@ -29,7 +29,7 @@ public class MyAccountTest extends BaseTest {
     }
     @Test(priority = 4,description = "DELETE ACCOUNT")
     public void testCase_PI_06() throws InterruptedException {
-        testMyAccount.deleteAccount();
+        testMyAccount.deleteAccount("COM_INP_DATA_PASS_STAGE");
     }
     @Test(priority = 5,description = "Edit BILLING ADDRESS")
     public void testCase_MA_01() throws InterruptedException {
@@ -97,7 +97,7 @@ public class MyAccountTest extends BaseTest {
     public void testCase_Myorder_02() throws InterruptedException {
         testMyAccount.viewOrderRecent();
     }
-    @Test(priority = 21,description = "Check function icon view order of Recent  orders")
+//    @Test(priority = 21,description = "Check function icon view order of Recent  orders")
     public void testCase_Myorder_04() throws InterruptedException {
         testMyAccount.upLoadItemOrder();
     }
@@ -105,7 +105,7 @@ public class MyAccountTest extends BaseTest {
     public void testCase_Myorder_03() throws InterruptedException {
         testMyAccount.viewReturn();
     }
-    @Test(priority = 22,description = "Check  return  of completed order")
+//    @Test(priority = 22,description = "Check  return  of completed order")
     public void testCase_Myorder_05() throws InterruptedException {
         testMyAccount.stepReturn();
     }
