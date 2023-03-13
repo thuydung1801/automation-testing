@@ -27,66 +27,67 @@
     <test name="IPhone 12 Pro">
         
 
-        <parameter name="devices" value="mobile"></parameter>
+        <parameter name="devices" value="web"></parameter>
         <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
-
-            <class name="test.checkout.ShoppingBagTestMobile">
-                <methods>
-<!--                    <include name="testCase_SP_02"/>-->
-<!--                    <include name="testCase_SP_17"/>-->
-<!--                    <include name="testCase_SP_26_RV_02_04"/>-->
-<!--                    <include name="testCase_SP_24"/>-->
-<!--                    <include name="testCase_SP_04"/>-->
-<!--                    <include name="testCase_RV_07"/>-->
-
-
-                    <include name="testCase_SP_02"/>
-<!--                    <include name="testCase_CheckoutWithGiftCard"/>-->
-                    <include name="testCase_SP_03"/>
-                    <include name="testCase_SP_15"/>
-                    <include name="testCase_SP_01"/>
-                    <include name="testCase_SP_04"/>
-                    <include name="testCase_SP_05"/>
-                    <include name="testCase_SP_16"/>
-                    <include name="testCase_SP_17"/>
-                    <include name="testCase_SP_18"/>
-                    <include name="testCase_SP_19"/>
-                    <include name="testCase_SP_21"/>
-                    <include name="testCase_SP_24"/>
-                    <include name="testCase_SP_25"/>
-                    <include name="testCase_SP_26_RV_02_04_dev"/>
-
-                    <include name="testCase_RV_05"/>
-                    <include name="testCase_RV_06"/>
-
-<!--                    <include name="testCase_RV_10"/>-->
-                    <include name="testCase_RV_07"/>
-<!--                    <include name="testCase_RV_09"/>-->
-<!--                    <include name="testCase_RV_08"/>-->
-<!--                    <include name="testCase_RV_11"/>-->
-<!--                    <include name="testCase_RV_12"/>-->
-<!--                    <include name="testCase_RV_13"/>-->
-<!--                    <include name="testCase_RV_14"/>-->
-<!--                    <include name="testCase_RV_15"/>-->
-<!--                    <include name="testCase_RV_16"/>-->
-
-                    <include name="testCase_RV_17_19"/>
-                    <include name="testCase_RV_18"/>
-                    <include name="testCase_RV_20"/>
-<!--                    <include name="testCase_RV_21"/>-->
-
-                    <include name="testCase_RV_31"/>
-                    <include name="testCase_RV_32"/>
-<!--                    <include name="testCase_RV_33"/>-->
-
-                </methods>
-            </class>
             <class name="test.MyAccountTest">
                 <methods>
-                    <include name="testCase_Myorder_05"/>
+                    <include name="testCase_MW_05"/>
                 </methods>
             </class>
+
+<!--            <class name="test.checkout.ShoppingBagTestMobile">-->
+<!--                <methods>-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_02"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_17"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_26_RV_02_04"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_24"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_04"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_07"/>&ndash;&gt;-->
+
+
+<!--                    <include name="testCase_SP_02"/>-->
+<!--&lt;!&ndash;                    <include name="testCase_CheckoutWithGiftCard"/>&ndash;&gt;-->
+<!--                    <include name="testCase_SP_03"/>-->
+<!--                    <include name="testCase_SP_15"/>-->
+<!--                    <include name="testCase_SP_01"/>-->
+<!--                    <include name="testCase_SP_04"/>-->
+<!--                    <include name="testCase_SP_05"/>-->
+<!--                    <include name="testCase_SP_16"/>-->
+<!--                    <include name="testCase_SP_17"/>-->
+<!--                    <include name="testCase_SP_18"/>-->
+<!--                    <include name="testCase_SP_19"/>-->
+<!--                    <include name="testCase_SP_21"/>-->
+<!--                    <include name="testCase_SP_24"/>-->
+<!--                    <include name="testCase_SP_25"/>-->
+<!--                    <include name="testCase_SP_26_RV_02_04_dev"/>-->
+
+<!--                    <include name="testCase_RV_05"/>-->
+<!--                    <include name="testCase_RV_06"/>-->
+
+<!--&lt;!&ndash;                    <include name="testCase_RV_10"/>&ndash;&gt;-->
+<!--                    <include name="testCase_RV_07"/>-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_09"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_08"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_11"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_12"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_13"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_14"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_15"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_16"/>&ndash;&gt;-->
+
+<!--                    <include name="testCase_RV_17_19"/>-->
+<!--                    <include name="testCase_RV_18"/>-->
+<!--                    <include name="testCase_RV_20"/>-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_21"/>&ndash;&gt;-->
+
+<!--                    <include name="testCase_RV_31"/>-->
+<!--                    <include name="testCase_RV_32"/>-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_33"/>&ndash;&gt;-->
+
+<!--                </methods>-->
+<!--            </class>-->
+
         </classes>
     </test>
 </suite>

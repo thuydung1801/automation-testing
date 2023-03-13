@@ -263,9 +263,17 @@ public class MyAccountPage extends BasePage {
             keyword.assertEquals("MAC_DELETE_ACCOUNT_DATA_MESSAGE","MAC_DELETE_ACCOUNT_VERIFY_MESSAGE");
         }
     }
-    public void commonMyAddress(String element,String elementEdit) throws InterruptedException {
-        keyword.openNewTab("https://stage.glamira.co.uk/customer/address/index/#");
+
+    public void commonMyAddress(String element,String elementEdit,String domain) throws InterruptedException {
+//        keyword.openNewTab("https://stage.glamira.co.uk/customer/address/index/#");
+//        keyword.click(element);
+        if(domain.equalsIgnoreCase("web")){
+            keyword.openNewTab("https://stage.glamira.co.uk/customer/address/index/#");
+        }else{
+            keyword.click("BTN_MYACCOUNT_ON_MOBILE");
+        }
         keyword.click(element);
+
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         countAdd = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
@@ -276,8 +284,8 @@ public class MyAccountPage extends BasePage {
         }
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
     }
-    public void inpEditAddress(String label,String element,String btnEdit,String textStreet,boolean melissa) throws InterruptedException {
-        commonMyAddress(element,btnEdit);
+    public void inpEditAddress(String label,String element,String btnEdit,String textStreet,boolean melissa,String domain) throws InterruptedException {
+        commonMyAddress(element,btnEdit,domain);
         keyword.clearText("MAC_INP_FIRST_NAME");
         keyword.sendKeys("MAC_INP_FIRST_NAME","MAC_DATA_FIRST_NAME_STAGE");
         keyword.clearText("MAC_INP_LAST_NAME");
@@ -379,20 +387,20 @@ public class MyAccountPage extends BasePage {
 
     }
     public void editBillingAddress() throws InterruptedException {
-        inpEditAddress("billing","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_BILLING_ADDRESS","MAC_DATA_STREET1",false);
+        inpEditAddress("billing","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_BILLING_ADDRESS","MAC_DATA_STREET1",false,"web");
     }
     public void editShippingAddress() throws InterruptedException {
        // setUp();
-        inpEditAddress("shipping","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_SHIPPING_ADDRESS","MAC_DATA_STREET2",false);
+        inpEditAddress("shipping","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_SHIPPING_ADDRESS","MAC_DATA_STREET2",false,"web");
     }
     public void addNewAddress() throws InterruptedException {
         //setUp();
-        inpEditAddress("add","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_ADD_NEW_ADDRESS","MAC_DATA_STREET9",false);
+        inpEditAddress("add","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_ADD_NEW_ADDRESS","MAC_DATA_STREET9",false,"web");
 
     }
     public void editAdditionalAddressEntries() throws InterruptedException {
         //setUp();
-        inpEditAddress("edit","MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","MAC_DATA_STREET3",false);
+        inpEditAddress("edit","MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","MAC_DATA_STREET3",false,"web");
     }
     public void deleteAdditionalAddressEntries() throws InterruptedException {
 //        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
@@ -483,12 +491,12 @@ public class MyAccountPage extends BasePage {
 
     }
     public void editSetDefaultBilling() throws InterruptedException {
-        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT");
+        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","web");
         editSetAsDefaultAddress("MAC_DATA_STREET6","MAC_CHECKBOX_DEFAULT_BILLING","MAC_VERIFY_SETAS_BILLING_ADDRESS");
 
     }
     public void editSetDefaultShipping() throws InterruptedException {
-        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT");
+        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","web");
         editSetAsDefaultAddress("MAC_DATA_STREET7","MAC_CHECKBOX_DEFAULT_SHIPPING","MAC_VERIFY_SETAS_SHIPPING_ADDRESS");
 
     }
