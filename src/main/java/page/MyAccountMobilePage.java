@@ -79,37 +79,16 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void editBillingAddress() throws InterruptedException {
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("BTN_MYACCOUNT_ON_MOBILE");
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("BTN_MYADDRESS_MOBILE");
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("MAC_BTN_EDIT_BILLING_ADDRESS");
-        objMyAccount.inpEditAddress("billing", "BTN_MYADDRESS_MOBILE", "BTN_EDIT_ADDRESS", "MAC_DATA_STREET1", false);
+        objMyAccount.inpEditAddress("billing", "BTN_MYADDRESS_MOBILE", "MAC_BTN_EDIT_BILLING_ADDRESS", "MAC_DATA_STREET1", false, "mobile");
     }
 
     public void editShippingAddress() throws InterruptedException {
-        keyword.click("MAC_BTN_EDIT_SHIPPING_ADDRESS");
-        objMyAccount.inpEditAddress("billing", "BTN_MYADDRESS_MOBILE", "BTN_EDIT_ADDRESS", "MAC_DATA_STREET1", false);
+        objMyAccount.inpEditAddress("billing", "BTN_MYACCOUNT_ON_MOBILE_ACTIVE", "MAC_BTN_EDIT_BILLING_ADDRESS", "MAC_DATA_STREET1", false, "mobile");
     }
 
     public void addNewAddress() throws InterruptedException {
-        commonMyAddress();
-//        System.out.println("-------------------------------- :" + countAdd);
-        keyword.click("MAC_BTN_ADD_NEW_ADDRESS");
-//        int count = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
-//        System.out.printf("======count: " + countAdd + "\n");
-//        System.out.printf("======count b: " + count + "\n");
-//        boolean check;
-//        if (countAdd + 1 == count) {
-//            check = true;
-//        } else {
-//            check = false;
-//        }
-//        logger.info("check add...");
-//        Assert.assertEquals(check, true);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-        objMyAccount.inpEditAddress("add", "MAC_MY_ADDRESS_DIRECTORY", "MAC_BTN_ADD_NEW_ADDRESS", "MAC_DATA_STREET9", false);
+        objMyAccount.inpEditAddress("add", "BTN_MYACCOUNT_ON_MOBILE_ACTIVE", "MAC_BTN_ADD_NEW_ADDRESS", "MAC_DATA_STREET9", false, "mobile");
     }
 
     public void commonMyAddress() throws InterruptedException {
@@ -126,8 +105,7 @@ public class MyAccountMobilePage extends BasePage {
 
     public void editAdditionalAddressEntries() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        keyword.click("MAC_LINKTEXT_EDIT");
-        objMyAccount.inpEditAddress("edit", "MAC_MY_ADDRESS_DIRECTORY", "MAC_LINKTEXT_EDIT", "MAC_DATA_STREET3", false);
+        objMyAccount.inpEditAddress("edit", "BTN_MYACCOUNT_ON_MOBILE_ACTIVE", "MAC_LINKTEXT_EDIT", "MAC_DATA_STREET3", false, "mobile");
     }
 
     public void deleteAdditionalAddressEntries() throws InterruptedException {

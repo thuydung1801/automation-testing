@@ -49,12 +49,10 @@ public class MyAccountMobileTest extends BaseTest {
     public void testCase_MA_01() throws InterruptedException {
         testMyAccountMobile.editBillingAddress();
     }
-
     @Test(priority = 7, description = "Edit SHIPPING ADDRESS")
     public void testCase_MA_02() throws InterruptedException {
         testMyAccountMobile.editShippingAddress();
     }
-
     @Test(priority = 8, description = "ADD NEW ADDRESS")
     public void testCase_MA_09() throws InterruptedException {
         testMyAccountMobile.addNewAddress();
@@ -79,13 +77,12 @@ public class MyAccountMobileTest extends BaseTest {
     public void testCase_MA_06() throws InterruptedException {
         testMyAccountMobile.editSetDefaultBilling();
     }
-
-    @Test(priority = 14, description = "Add New Address")
+//
+    @Test(priority = 13, description = "Add New Address")
     public void testCase_MA_08() throws InterruptedException {
         testMyAccountMobile.addNewAddress();
     }
 
-//        -----------------------------------------------------------------
     @Test(priority = 14, description = "Save a item form product view")
     public void testCase_MW_01() throws InterruptedException {
         testMyAccount.saveItemFormProductView();
@@ -112,36 +109,36 @@ public class MyAccountMobileTest extends BaseTest {
         keyword.resizeBrowser(319, 848);
         keyword.untilJqueryIsDone(50L);
     }
-//
-//        //   case My Order
-//    @Test(priority = 19, description = "Check function icon  view order of completed order")
-//    public void testCase_Myorder_01() throws InterruptedException {
-//        testMyAccountMobile.viewOrderComplete();
-//    }
-//
-//    @Test(priority = 20, description = "Check function icon view order of Recent  orders")
-//    public void testCase_Myorder_02() throws InterruptedException {
-//        testMyAccountMobile.viewOrderRecent();
-//    }
-//
-////    @Test(priority = 21, description = "Check function of button Upload More")
-//    public void testCase_Myorder_04() throws InterruptedException {
-//        testMyAccount.upLoadItemOrder();
-//        keyword.resizeBrowser(319, 848);
-//        keyword.untilJqueryIsDone(50L);
-//    }
-//
-////    @Test(priority = 22, description = "Check function icon return  of completed order")
-//    public void testCase_Myorder_03() throws InterruptedException {
-//        testMyAccountMobile.viewReturn();
-//    }
-//
-////    @Test(priority = 22, description = "Check  return  of completed order")
-//    public void testCase_Myorder_05() throws InterruptedException {
-//        testMyAccount.stepReturn();
-//    }
-//
-////    // case My Overview
+////
+        //   case My Order
+    @Test(priority = 19, description = "Check function icon  view order of completed order")
+    public void testCase_Myorder_01() throws InterruptedException {
+        testMyAccountMobile.viewOrderComplete();
+    }
+
+    @Test(priority = 20, description = "Check function icon view order of Recent  orders")
+    public void testCase_Myorder_02() throws InterruptedException {
+        testMyAccountMobile.viewOrderRecent();
+    }
+
+    @Test(priority = 21, description = "Check function of button Upload More")
+    public void testCase_Myorder_04() throws InterruptedException {
+        testMyAccount.upLoadItemOrder();
+        keyword.resizeBrowser(319, 848);
+        keyword.untilJqueryIsDone(50L);
+    }
+
+    @Test(priority = 22, description = "Check function icon return  of completed order")
+    public void testCase_Myorder_03() throws InterruptedException {
+        testMyAccountMobile.viewReturn();
+    }
+
+//    @Test(priority = 22, description = "Check  return  of completed order")
+    public void testCase_Myorder_05() throws InterruptedException {
+        testMyAccount.stepReturn();
+    }
+
+//////    // case My Overview
     @Test(priority = 21,description = "Check order status = Order Confirmation ,display in tab Recent Orders ")
     public void testCase_MO_03() throws InterruptedException {
         testMyAccountMobile.checkStatusConfirmation();
