@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 INFO  | 2023-03-13 14:22:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:49) - Open browser
 INFO  | 2023-03-13 14:22:10 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
 INFO  | 2023-03-13 14:22:10 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\110.0.5481.77\chromedriver.exe
@@ -327,4 +328,21 @@ INFO  | 2023-03-13 11:30:52 | [TestNG-tests-1] test.checkout.ShoppingBagTestMobi
 INFO  | 2023-03-13 11:30:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:724) - elemnt //div[@class='loading-mask'] not visible
 INFO  | 2023-03-13 11:30:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:724) - elemnt //div[@class='loading-mask'] not visible
 INFO  | 2023-03-13 11:30:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickCHECKOUT_BTN_MINICART
+>>>>>>> master
+=======
+INFO  | 2023-03-13 14:24:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:49) - Open browser
+INFO  | 2023-03-13 14:24:33 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 111.0.5563.64 (resolved driver for Chrome 111)
+INFO  | 2023-03-13 14:24:33 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:logSeekRepo:1284) - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
+INFO  | 2023-03-13 14:24:34 | [TestNG-tests-1] wdm.online.Downloader (Downloader.java:downloadAndExtract:127) - Downloading https://chromedriver.storage.googleapis.com/111.0.5563.64/chromedriver_win32.zip
+INFO  | 2023-03-13 14:25:16 | [TestNG-tests-1] wdm.online.Downloader (Downloader.java:extract:188) - Extracting driver from compressed file chromedriver_win32.zip
+INFO  | 2023-03-13 14:25:16 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\nongt\.cache\selenium\chromedriver\win32\111.0.5563.64\chromedriver.exe
+INFO  | 2023-03-13 14:25:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:65) - open browser successfullyCHROME
+INFO  | 2023-03-13 14:25:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-03-13 14:25:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:69) - url: [Ljava.lang.String;@4750684
+INFO  | 2023-03-13 14:25:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:303) - Maximizing browser window...
+INFO  | 2023-03-13 14:25:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:313) - ReLoad Page...
+INFO  | 2023-03-13 14:26:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:724) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-13 14:26:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickMAC_LINK_HEART
+INFO  | 2023-03-13 14:26:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:724) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-13 14:26:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickMAC_BTN_VIEW_WISHLIST
 >>>>>>> master

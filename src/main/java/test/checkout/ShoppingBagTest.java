@@ -143,14 +143,9 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_SP_17(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_17");
-<<<<<<< HEAD
-        //commonShopping();
-        objShoppingBagPage.addProductWithGift("https://stage.glamira.co.uk/charming-view.html?alloy=white-585&womenstone=diamond-zirconia");
-=======
 //        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithGift(baseURL+"charming-view.html?alloy=white-585&womenstone=diamond-zirconia");
->>>>>>> master
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_ENGRAVING","CHECKOUT_HYPERLINK_ADD"
@@ -280,11 +275,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_SP_26_RV_02_04_dev(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_26");
-<<<<<<< HEAD
-        //commonShopping();
-=======
-        commonShopping1();
->>>>>>> master
+        //commonShopping1();
         objShoppingBagPage.clickShoppingBagPage();
         //objShoppingBagPage.clickGiftWrapping();
         objShoppingBagPage.moveToPagecheckOut();
