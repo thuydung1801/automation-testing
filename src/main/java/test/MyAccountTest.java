@@ -2,6 +2,7 @@ package test;
 
 import core.BaseTest;
 import core.KeywordWeb;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.MyAccountPage;
 
@@ -28,8 +29,9 @@ public class MyAccountTest extends BaseTest {
         testMyAccount.changePassword();
     }
     @Test(priority = 4,description = "DELETE ACCOUNT")
-    public void testCase_PI_06() throws InterruptedException {
-        testMyAccount.deleteAccount("COM_INP_DATA_PASS_STAGE");
+    @Parameters("baseURL")
+    public void testCase_PI_06(String baseURL) throws InterruptedException {
+        testMyAccount.deleteAccount("COM_INP_DATA_PASS_STAGE",baseURL);
     }
     @Test(priority = 5,description = "Edit BILLING ADDRESS")
     public void testCase_MA_01() throws InterruptedException {
@@ -68,8 +70,9 @@ public class MyAccountTest extends BaseTest {
         testMyAccount.addNewAddress();
     }
     @Test(priority = 14,description = "Save a item form product view")
-    public void testCase_MW_01() throws InterruptedException {
-        testMyAccount.saveItemFormProductView();
+    @Parameters("baseURL")
+    public void testCase_MW_01(String baseURL) throws InterruptedException {
+        testMyAccount.saveItemFormProductView(baseURL);
     }
     @Test(priority = 15,description = "Save a item form product list")
     public void testCase_MW_02() throws InterruptedException {
@@ -77,18 +80,18 @@ public class MyAccountTest extends BaseTest {
     }
     @Test(priority = 16,description = "Compare My Wishlist - product_compare")
     public void testCase_MW_03() throws InterruptedException {
-        testMyAccount.compareMyWishProduct();
+        testMyAccount.compareMyWishProduct("MAC_LINK_HEART");
     }
     @Test(priority = 17,description = "Remove a item saved ")
     public void testCase_MW_04() throws InterruptedException {
-        testMyAccount.removeItemSave();
+        testMyAccount.removeItemSave("MAC_LINK_HEART");
     }
     @Test(priority = 18,description = "Check function of Email Selected Items")
     public void testCase_MW_05() throws InterruptedException {
-        testMyAccount.emailSelectItem();
+        testMyAccount.emailSelectItem("MAC_LINK_HEART");
     }
 
-  //   case My Order
+    //   case My Order
     @Test(priority = 19,description = "Check function icon  view order of completed order")
     public void testCase_Myorder_01() throws InterruptedException {
         testMyAccount.viewOrderComplete();
@@ -97,7 +100,11 @@ public class MyAccountTest extends BaseTest {
     public void testCase_Myorder_02() throws InterruptedException {
         testMyAccount.viewOrderRecent();
     }
+<<<<<<< HEAD
     @Test(priority = 21,description = "Check function icon view order of Recent  orders")
+=======
+    //    @Test(priority = 21,description = "Check function icon view order of Recent  orders")
+>>>>>>> master
     public void testCase_Myorder_04() throws InterruptedException {
         testMyAccount.upLoadItemOrder();
     }
@@ -105,7 +112,11 @@ public class MyAccountTest extends BaseTest {
     public void testCase_Myorder_03() throws InterruptedException {
         testMyAccount.viewReturn();
     }
+<<<<<<< HEAD
     @Test(priority = 22,description = "Check  return  of completed order")
+=======
+    //    @Test(priority = 22,description = "Check  return  of completed order")
+>>>>>>> master
     public void testCase_Myorder_05() throws InterruptedException {
         testMyAccount.stepReturn();
     }
@@ -138,7 +149,4 @@ public class MyAccountTest extends BaseTest {
     public void testCase_MO_10() throws InterruptedException {
         testMyAccount.checkChangeNewsLetter();
     }
-
-
-
 }
