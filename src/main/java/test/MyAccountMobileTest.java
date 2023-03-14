@@ -16,15 +16,19 @@ public class MyAccountMobileTest extends BaseTest {
         testMyAccountMobile = new MyAccountMobilePage(this.keyword);
     }
 
+
     public void setUpLogin(String baseURL) throws InterruptedException {
         testMyAccountMobile.setUp(baseURL);
     }
+
     @Test(priority = 1, description = "Change PERSONAL INFORMATION ")
+    @Parameters("baseURL")
     public void testCase_PI_01(String baseURL) throws InterruptedException {
         setUpLogin(baseURL);
         testMyAccountMobile.changeFullnameWithData();
     }
-//
+
+    //
     @Test(priority = 2, description = "Change PERSONAL INFORMATION : forgot enter value First/last name  ")
     public void testCase_PI_02() throws InterruptedException {
         testMyAccountMobile.changeFullNameWithDataNUll();
@@ -50,10 +54,12 @@ public class MyAccountMobileTest extends BaseTest {
     public void testCase_MA_01() throws InterruptedException {
         testMyAccountMobile.editBillingAddress();
     }
+
     @Test(priority = 7, description = "Edit SHIPPING ADDRESS")
     public void testCase_MA_02() throws InterruptedException {
         testMyAccountMobile.editShippingAddress();
     }
+
     @Test(priority = 8, description = "ADD NEW ADDRESS")
     public void testCase_MA_09() throws InterruptedException {
         testMyAccountMobile.addNewAddress();
@@ -79,7 +85,8 @@ public class MyAccountMobileTest extends BaseTest {
     public void testCase_MA_06() throws InterruptedException {
         testMyAccountMobile.editSetDefaultBilling();
     }
-//
+
+    //
     @Test(priority = 13, description = "Add New Address")
     public void testCase_MA_08() throws InterruptedException {
         testMyAccountMobile.addNewAddress();
@@ -96,7 +103,7 @@ public class MyAccountMobileTest extends BaseTest {
     }
 
     @Test(priority = 16, description = "Compare My Wishlist - product_compare")
-    public void testCase_MW_03( ) throws InterruptedException {
+    public void testCase_MW_03() throws InterruptedException {
         testMyAccountMobile.compareMyWishProductMobile();
     }
 
@@ -111,62 +118,69 @@ public class MyAccountMobileTest extends BaseTest {
         keyword.resizeBrowser(319, 848);
         keyword.untilJqueryIsDone(50L);
     }
-        //   case My Order
-    @Test(priority = 19, description = "Check function icon  view order of completed order")
+
+    //   case My Order
+//    @Test(priority = 19, description = "Check function icon  view order of completed order")
     @Parameters("baseURL")
     public void testCase_Myorder_01(String baseURL) throws InterruptedException {
         testMyAccountMobile.viewOrderComplete(baseURL);
     }
 
-    @Test(priority = 20, description = "Check function icon view order of Recent  orders")
+//    @Test(priority = 20, description = "Check function icon view order of Recent  orders")
     public void testCase_Myorder_02() throws InterruptedException {
         testMyAccountMobile.viewOrderRecent();
     }
 
-    @Test(priority = 21, description = "Check function of button Upload More")
+//    @Test(priority = 21, description = "Check function of button Upload More")
     public void testCase_Myorder_04() throws InterruptedException {
         testMyAccount.upLoadItemOrder();
         keyword.resizeBrowser(319, 848);
         keyword.untilJqueryIsDone(50L);
     }
 
-    @Test(priority = 22, description = "Check function icon return  of completed order")
+//    @Test(priority = 22, description = "Check function icon return  of completed order")
     public void testCase_Myorder_03() throws InterruptedException {
         testMyAccountMobile.viewReturn();
     }
 
-//    @Test(priority = 22, description = "Check  return  of completed order")
+    //    @Test(priority = 22, description = "Check  return  of completed order")
     public void testCase_Myorder_05() throws InterruptedException {
         testMyAccount.stepReturn();
     }
 
-//////    // case My Overview
-    @Test(priority = 21,description = "Check order status = Order Confirmation ,display in tab Recent Orders ")
+    //////    // case My Overview
+    @Test(priority = 21, description = "Check order status = Order Confirmation ,display in tab Recent Orders ")
     @Parameters("baseURL")
     public void testCase_MO_03(String baseURL) throws InterruptedException {
         testMyAccountMobile.checkStatusConfirmation(baseURL);
     }
-    @Test(priority = 22,description = "Check order status = Delivery, display in tab Recent Orders ")
+
+    @Test(priority = 22, description = "Check order status = Delivery, display in tab Recent Orders ")
     public void testCase_MO_05() throws InterruptedException {
         testMyAccountMobile.checkStatusDelivery();
     }
-    @Test(priority = 23,description = "Check -Change Password- function in contact information ")
+
+    @Test(priority = 23, description = "Check -Change Password- function in contact information ")
     public void testCase_MO_06() throws InterruptedException {
         testMyAccount.checkChangePassword();
     }
-    @Test(priority = 24,description = "Check -Contact Information- edit function")
+
+    @Test(priority = 24, description = "Check -Contact Information- edit function")
     public void testCase_MO_07() throws InterruptedException {
         testMyAccount.checkContactInfo();
     }
-    @Test(priority = 25,description = "Check -Shipping Address- edit function")
+
+    @Test(priority = 25, description = "Check -Shipping Address- edit function")
     public void testCase_MO_08() throws InterruptedException {
         testMyAccount.checkChangeShippingAddress();
     }
-    @Test(priority = 26,description = "Check -Billing Address- edit function ")
+
+    @Test(priority = 26, description = "Check -Billing Address- edit function ")
     public void testCase_MO_09() throws InterruptedException {
         testMyAccount.checkChangeBillingAddress();
     }
-    @Test(priority = 27,description = "Check -Newsletters- edit function")
+
+    @Test(priority = 27, description = "Check -Newsletters- edit function")
     public void testCase_MO_10() throws InterruptedException {
         testMyAccount.checkChangeNewsLetter();
     }

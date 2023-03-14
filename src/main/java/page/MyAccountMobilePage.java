@@ -155,7 +155,6 @@ public class MyAccountMobilePage extends BasePage {
         }
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
     }
-
     public void setUp(String baseURL) throws InterruptedException {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -169,7 +168,6 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
     }
-
     public void viewOrderComplete(String baseURL) throws InterruptedException {
         keyword.openNewTab(baseURL+"sales/order/history/");
         keyword.untilJqueryIsDone(60L);
