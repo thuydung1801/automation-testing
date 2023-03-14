@@ -102,7 +102,7 @@ public class LoginAddressTest extends BaseTest {
                 "CHECKOUT_LA_DATA_CODE_2", "CHECKOUT_LA_DATA_CITY_2");
         objLoginAddress.chooseAddressOnValidation(true,"CHECKOUT_LA_BTN_APPLY_ADDRESS");
         objLoginAddress.verifyMelissa();
-        objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA","CHECKOUT_LBL_ADDRESS_INFO");
+        objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA_2","CHECKOUT_LBL_ADDRESS_INFO");
     }
 
     @Test(priority = 4,

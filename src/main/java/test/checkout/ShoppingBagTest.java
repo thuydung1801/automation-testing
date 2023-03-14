@@ -34,7 +34,7 @@ public class ShoppingBagTest extends BaseTest {
         //objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
         //objRegist.chooseLanguages();
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE",
+        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
                 "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
     }
     public void commonShopping1() throws InterruptedException {
@@ -74,7 +74,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_SP_02(String baseURL) throws InterruptedException{
         logger.info("testCase_SP_02");
-        commonShopping1();
+        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProduct(baseURL+"mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
         objShoppingBagPage.clickShoppingBagPage();
@@ -551,9 +551,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_33(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_31");
-//        commonShopping();
-        //https://stage.glamira.co.uk/
-//        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        commonShopping();
         objShoppingBagPage.addShippingLabel(baseURL);
 
     }

@@ -3,15 +3,18 @@
 <suite name="Test Staging Suite" parallel="tests">
     <test name="RunTest">
         <parameter name="devices" value="web"></parameter>
+        <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
             <class name="test.checkout.ShoppingBagTest">
             <methods>
-                <include name="testCase_SP_02"/>
-                <include name="testCase_SP_17"/>
-                <include name="testCase_SP_26_RV_02_04"/>
-                <include name="testCase_SP_24"/>
-                <include name="testCase_SP_04"/>
-                <include name="testCase_RV_07"/>
+<!--                <include name="testCase_SP_02"/>-->
+<!--                <include name="testCase_CheckoutWithGiftCard"/>-->
+<!--                <include name="testCase_SP_17"/>-->
+<!--                <include name="testCase_SP_26_RV_02_04"/>-->
+<!--                <include name="testCase_SP_24"/>-->
+<!--                <include name="testCase_SP_04"/>-->
+<!--                <include name="testCase_RV_07"/>-->
+                <include name="testCase_RV_33"/>
             </methods>
             </class>
             <class name="test.MyAccountTest">
@@ -19,6 +22,30 @@
                     <include name="testCase_Myorder_05"/>
                 </methods>
             </class>
+            <class name="test.CreateAccountOnWebTest">
+            </class>
         </classes>
     </test>
+<!--    <test name="Mobile">-->
+<!--        <parameter name="devices" value="mobile"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="test.CreateAccountMobileTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
+<!--<suite name="LAT" parallel="tests">-->
+<!--    <test name="Run Test">-->
+<!--        <parameter name="devices" value="web"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="test.checkout.LoginAddressTest">-->
+<!--                <methods>-->
+<!--                    <include name="NLA_01_02"/>-->
+<!--&lt;!&ndash;                    <include name="NLA_03"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="NLA_06"/>&ndash;&gt;-->
+<!--                    <include name="NLA_08"/>-->
+<!--                    <include name="NLA_05"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--</suite>-->

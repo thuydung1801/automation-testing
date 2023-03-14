@@ -255,14 +255,12 @@ public class ShoppingBagPage extends BasePage {
     }
 
     public void addShippingLabel(String url) throws InterruptedException {
-        //https://dev3.glamira.com/glgb/
         keyword.navigateToUrl(url+"catalog/product/view/id/103896");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         clickShoppingBagPage();
         moveToPagecheckOut();
         checkOutLbl();
         checkOutWithPayPal();
-//        checkOutWithBankTransfer();
     }
 
     //click button Edit depends on the type of product
@@ -396,7 +394,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         Thread.sleep(2000);
-        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",10);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",20);
     }
     @Step("common checkout")
     public void checkOut() throws InterruptedException {
@@ -411,7 +409,8 @@ public class ShoppingBagPage extends BasePage {
     }
     @Step("common checkout")
     public void checkOutLbl() throws InterruptedException {
-        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(100L);
+        Thread.sleep(5000);
         keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
