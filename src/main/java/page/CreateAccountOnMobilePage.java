@@ -30,13 +30,13 @@ public class CreateAccountOnMobilePage extends BasePage {
     }
     public void forgotPassword() throws Exception {
         objCreateAccount.setUpFormForgot();
-        objCreateAccount.sendData();
+        objCreateAccount.sendData("URL_BE_DEV3");
         keyword.resizeBrowser(319, 848);
         keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
     }
-    public void forgotPasswordCheckOut() throws Exception {
+    public void forgotPasswordCheckOut(String dataURL) throws Exception {
         objCreateAccount.setupForgot("https://stage.glamira.co.uk/glamira-pendant-elsie.html?alloy=red_white-585&stone1=diamond-Brillan");
-        objCreateAccount.sendData();
+        objCreateAccount.sendData(dataURL);
         keyword.resizeBrowser(319, 848);
         keyword.verifyElementVisible("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
     }

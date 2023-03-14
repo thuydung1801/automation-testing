@@ -37,6 +37,6 @@ public class CreateAccountMobileTest extends BaseTest {
     @Test(priority = 3, description = "forgot password - checkOut")
     public void testCaseMb_forgotPassWordCheckOut() throws Exception {
         logger.info("testCase_forGotPassWordCheckOut");
-        objCreateAccountMobile.forgotPasswordCheckOut();
+        objCreateAccountMobile.forgotPasswordCheckOut("URL_BE_DEV3");
     }
 }

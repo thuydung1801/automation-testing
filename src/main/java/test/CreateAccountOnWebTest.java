@@ -8,10 +8,11 @@ import org.testng.annotations.Test;
 import page.CreateAccountOnWebPage;
 import page.home.LoginPage;
 import page.home.RegisterPage;
+import page.signinSignup.SignUpPage;
 
 public class CreateAccountOnWebTest extends BaseTest {
     private static Logger logger = LogHelper.getLogger();
-    private LoginPage objLogin;
+    private SignUpPage objSignUp;
     private RegisterPage objRegist;
     private CreateAccountOnWebPage objCreateAccOnWeb;
 
@@ -19,6 +20,7 @@ public class CreateAccountOnWebTest extends BaseTest {
         super();
         objCreateAccOnWeb = new CreateAccountOnWebPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
+        objSignUp = new SignUpPage(this.keyword);
     }
 
     public void installation() throws Exception {
@@ -35,7 +37,7 @@ public class CreateAccountOnWebTest extends BaseTest {
     //    @Test(priority = 2, description = "forgot password")
     public void testCase_forgotPassWord() throws Exception {
         logger.info("testCase_forGotPassWord");
-        objCreateAccOnWeb.forgotPassword();
+        objCreateAccOnWeb.forgotPassword("URL_BE_DEV3");
     }
 
     //    @Test(priority = 3, description = "forgot password - checkOut")
@@ -45,11 +47,18 @@ public class CreateAccountOnWebTest extends BaseTest {
     }
 
     //  ------------------------------- WITH PHONE--------------------------
-    @Test(priority = 1, description = "Create new customer successfully with store enable phone confirm")
+    @Test(priority = 4, description = "Create new customer successfully with store enable phone confirm")
 //    @Parameters("baseURL")
-    public void testCase_CreateAccountWithPhone() throws Exception {
-        logger.info("testCase_CreateAccountWithPhone");
+    public void testCaseWithPhon_CreateAccount() throws Exception {
+        logger.info("testCaseWithPhon_CreateAccount");
         installation();
         objCreateAccOnWeb.CreateNewCustomerWithPhone();
     }
+
+    @Test(priority = 5, description = "forgot password")
+    public void testCaseWithPhone_forgotPassWord() throws Exception {
+        logger.info("testCaseWithPhone_forgotPassWord");
+        objCreateAccOnWeb.forgotPasswordPhone();
+    }
 }
+
