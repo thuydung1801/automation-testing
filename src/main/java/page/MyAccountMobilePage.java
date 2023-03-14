@@ -51,9 +51,9 @@ public class MyAccountMobilePage extends BasePage {
 
     }
 
-    public void changePassword() throws InterruptedException {
+    public void changePassword(String baseURL) throws InterruptedException {
 //        setUp1();
-        keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/");
+        keyword.navigateToUrl(baseURL+"customer/account/");
         inpChangePassword();
         keyword.click("BTN_MYACCOUNT_ON_MOBILE");
         keyword.untilJqueryIsDone(50L);

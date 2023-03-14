@@ -2,6 +2,7 @@ package test;
 
 import core.BaseTest;
 import core.KeywordWeb;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.MyAccountPage;
 
@@ -28,8 +29,9 @@ public class MyAccountTest extends BaseTest {
         testMyAccount.changePassword();
     }
     @Test(priority = 4,description = "DELETE ACCOUNT")
-    public void testCase_PI_06() throws InterruptedException {
-        testMyAccount.deleteAccount("COM_INP_DATA_PASS_STAGE");
+    @Parameters("baseURL")
+    public void testCase_PI_06(String baseURL) throws InterruptedException {
+        testMyAccount.deleteAccount("COM_INP_DATA_PASS_STAGE",baseURL);
     }
     @Test(priority = 5,description = "Edit BILLING ADDRESS")
     public void testCase_MA_01() throws InterruptedException {
@@ -68,8 +70,9 @@ public class MyAccountTest extends BaseTest {
         testMyAccount.addNewAddress();
     }
     @Test(priority = 14,description = "Save a item form product view")
-    public void testCase_MW_01() throws InterruptedException {
-        testMyAccount.saveItemFormProductView();
+    @Parameters("baseURL")
+    public void testCase_MW_01(String baseURL) throws InterruptedException {
+        testMyAccount.saveItemFormProductView(baseURL);
     }
     @Test(priority = 15,description = "Save a item form product list")
     public void testCase_MW_02() throws InterruptedException {

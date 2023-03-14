@@ -256,9 +256,9 @@ public class MyAccountPage extends BasePage {
 
     }
 
-    public void deleteAccount(String data) throws InterruptedException {
+    public void deleteAccount(String data, String baseURL) throws InterruptedException {
 //        setUp1();
-        keyword.openNewTab("https://stage.glamira.co.uk/customer/account/edit/");
+        keyword.openNewTab(baseURL+"customer/account/edit/");
         keyword.click("MAC_DELETE_ACCOUNT");
         Thread.sleep(2000);
         keyword.untilJqueryIsDone(30L);
@@ -421,6 +421,7 @@ public class MyAccountPage extends BasePage {
         boolean check;
         int countAddress = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
         System.out.printf("a===" + countAddress + "\n");
+        keyword.executeJavaScript("window.scrollBy(0,300)");
         keyword.click("MAC_LINKTEXT_DELETE");
         keyword.untilJqueryIsDone(60L);
         keyword.click("MAC_BTN_DELETE_OK");
@@ -438,9 +439,7 @@ public class MyAccountPage extends BasePage {
         logger.info("check delete...");
         Assert.assertEquals(check, true);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-
     }
-
     public void setAsDefaultAddress() throws InterruptedException {
 //        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
 //        keyword.click("MAC_MY_ADDRESS_DIRECTORY");
@@ -449,7 +448,7 @@ public class MyAccountPage extends BasePage {
         String address = keyword.getText("MAC_VERIFY_SETAS_ADDRESS");
         keyword.click("MAC_LINKTEXT_SETAS");
         keyword.untilJqueryIsDone(30L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(30, "//div[@class='loading-mask']");
         if (keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")) {
             keyword.assertEquals("MAC_VERIFY_DATA_ADDRESS", "CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         }
@@ -556,15 +555,13 @@ public class MyAccountPage extends BasePage {
 
     }
 
-    public void saveItemFormProductView() throws InterruptedException {
+    public void saveItemFormProductView(String baseURL) throws InterruptedException {
 //        setUp1();
-
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-        keyword.navigateToUrl("https://stage.glamira.co.uk/catalog/product_compare/index/");
+        keyword.navigateToUrl(baseURL+"catalog/product_compare/index/");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-
         keyword.navigateToUrl("URL_WISHLIST_PRODUCT_DETAIL");
         commonWishList("MAC_BTN_HEART");
 
