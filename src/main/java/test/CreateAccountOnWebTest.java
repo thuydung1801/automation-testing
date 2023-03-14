@@ -43,7 +43,7 @@ public class CreateAccountOnWebTest extends BaseTest {
     //    @Test(priority = 3, description = "forgot password - checkOut")
     public void testCase_forgotPassWordCheckOut() throws Exception {
         logger.info("testCase_forgotPassWordCheckOut");
-        objCreateAccOnWeb.forgotPasswordCheckOut();
+        objCreateAccOnWeb.forgotPasswordCheckOut("URL_DATA_PRODUCT", "URL_BE_DEV3");
     }
 
     //  ------------------------------- WITH PHONE--------------------------
@@ -60,5 +60,12 @@ public class CreateAccountOnWebTest extends BaseTest {
         logger.info("testCaseWithPhone_forgotPassWord");
         objCreateAccOnWeb.forgotPasswordPhone();
     }
+
+    @Test(priority = 6, description = "forgot password - checkOut")
+    public void testCaseWithPhone_forgotPassWordCheckOut() throws Exception {
+        logger.info("testCase_forgotPassWordCheckOut");
+        objCreateAccOnWeb.forgotPasswordCheckOut("URL_DATA_PRODUCT", "URL_BE_DEV3");
+    }
+
 }
 

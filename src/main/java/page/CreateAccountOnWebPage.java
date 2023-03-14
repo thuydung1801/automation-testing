@@ -55,14 +55,15 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
     }
 
-    public void forgotPasswordCheckOut() throws Exception {
-        setupForgot("https://stage.glamira.co.uk/glamira-pendant-elsie.html?alloy=red_white-585&stone1=diamond-Brillant");
-        sendData("URL_BE_DEV3");
+    public void forgotPasswordCheckOut(String dataURL, String url) throws Exception {
+        setupForgot(dataURL);
+        sendData(url);
         keyword.verifyElementVisible("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
     }
 
     public void setupForgot(String url) throws InterruptedException {
         keyword.navigateToUrl(url);
+        objRegist.acceptAllCookies();
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
@@ -200,6 +201,8 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "DATA_CREATE_ACCOUNT_WITH_PHONE");
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(50L);
-        objSignUp.getActivationCode();
+        objSignUp.getActivationCode("INPUT_SEND_CODE_PHONE", "DATA_FORM_PASSWORD_NEW", "ACTUAL_DATA_TITLE_PASSWORD_NEW");
+        keyword.untilJqueryIsDone(50L);
+        sendPassWord();
     }
 }
