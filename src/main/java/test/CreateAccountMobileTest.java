@@ -12,11 +12,14 @@ public class CreateAccountMobileTest extends BaseTest {
     private RegisterPage objRegist;
     private CreateAccountOnMobilePage objCreateAccountMobile;
     private CreateAccountOnWebTest objCreateAccountOnWeb;
+
     public CreateAccountMobileTest() {
         super();
         objCreateAccountMobile = new CreateAccountOnMobilePage(this.keyword);
         objCreateAccountOnWeb = new CreateAccountOnWebTest();
+        objRegist = new RegisterPage(this.keyword);
     }
+
     @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
     public void testCaseMb_CreateAccount() throws Exception {
         logger.info("testCase_CreateAccount");
