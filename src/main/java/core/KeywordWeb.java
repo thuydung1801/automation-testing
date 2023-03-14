@@ -212,7 +212,8 @@ public class KeywordWeb {
             xPathElement2 = oldChar;
 
         }
-        return driver.findElement(By.xpath(xPathElement1)).getText().replace(xPathElement2, "");
+        logger.info("==========" +driver.findElement(By.xpath(xPathElement1)).getText().replace(xPathElement2, "").replace(",","") );
+        return driver.findElement(By.xpath(xPathElement1)).getText().replace(xPathElement2, "").replace(",","");
     }
 
 

@@ -20,6 +20,7 @@ public class ShoppingBagPageMobile extends BasePage {
     private MyAccountPage myAccountPage;
 
     public SignInPage objSignIn;
+    private ShoppingBagPage shoppingBagPage;
 
     public ShoppingBagPageMobile(){ super(); }
     public ShoppingBagPageMobile(KeywordWeb key){
@@ -29,19 +30,20 @@ public class ShoppingBagPageMobile extends BasePage {
         loginPage = new LoginPage();
         signInPage = new SignInPage();
         myAccountPage = new MyAccountPage();
+        shoppingBagPage=new ShoppingBagPage();
     }
     public void inputCorrectly(String data, String engraving) throws InterruptedException {
-        keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
-        Thread.sleep(10000);
-        keyword.click("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE");
-        Thread.sleep(1000);
-        keyword.assertEquals(data,engraving);
-        keyword.click("PRD_BTN_CLOSE_VIEWDETAIL");
+//        keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
+//        Thread.sleep(10000);
+//        keyword.click("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE");
+//        Thread.sleep(2000);
 //        String actual = keyword.getText(engraving);
 //        String expect = PropertiesFile.getPropValue(data);
 //        logger.info(expect);
 //        keyword.simpleAssertEquals(expect+ " - "+ expect
 //                , actual);
+        shoppingBagPage.inputCorrectly(data,engraving);
+        keyword.click("PRD_BTN_CLOSE_VIEWDETAIL");
     }
 
     public void loginAdmin() throws InterruptedException {

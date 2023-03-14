@@ -75,7 +75,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_SP_02(String baseURL) throws InterruptedException{
         logger.info("testCase_SP_02");
-        commonShopping1();
+        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProduct(baseURL+"mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
         objShoppingBagPage.clickShoppingBagPage();
@@ -134,7 +134,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.addProduct(baseURL+"glamira-ring-zanessa.html?alloy=white-585&stone1=diamond-sapphire&stone2=diamond-sapphire");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_GLAMIRARING");
-        objShoppingBagPage.inputEngravingwithSingleRing("CHECKOUT_DATA_ENGRAVING",
+        objShoppingBagPage.inputEngravingwithSingleRing("web","CHECKOUT_DATA_ENGRAVING",
                 "CHECKOUT_HYPERLINK_ADD",
                 "CHECKOUT_LBL_ENGRAVING_GLAMIRA");
 
@@ -164,7 +164,7 @@ public class ShoppingBagTest extends BaseTest {
         //objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.backPage(baseURL);
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_GLAMIRARING");
-        objShoppingBagPage.inputEngravingwithSingleRing("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_ICON_ADD",
+        objShoppingBagPage.inputEngravingwithSingleRing("web","CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_ICON_ADD",
                 "CHECKOUT_LBL_ENGRAVING_GLAMIRA");
 
     }
@@ -460,16 +460,16 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_17_19(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_17_19");
-//        commonShopping();
+        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithGift(baseURL+"universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        objShoppingBagPage.applyCoupon("TNZ_489_NC87",false);
+        objShoppingBagPage.applyCoupon("AUTOTEST",false);
         objShoppingBagPage.getOrderNumber();
         objShoppingBagPage.openNewTab();
-        objShoppingBagPage.verifyOrderStatus("ORDER_STATUS_PROCESS", baseURL);
+        objShoppingBagPage.verifyOrderStatus("ORDER_STATUS_PROCESS");
         objShoppingBagPage.checkInvoices();
     }
 
@@ -484,11 +484,11 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        objShoppingBagPage.applyCoupon("TNZ_489_HJ96",true);
+        objShoppingBagPage.applyCoupon("AUTOTEST1",true);
         objShoppingBagPage.getOrderNumber();
         objShoppingBagPage.openNewTab();
-        objShoppingBagPage.verifyOrderStatus("ORDER_STATUS_PENDING",baseURL);
-        objShoppingBagPage.checkGiftCardStatus("TNZ_489_HJ96");
+        objShoppingBagPage.verifyOrderStatus("ORDER_STATUS_PENDING");
+        objShoppingBagPage.checkGiftCardStatus("AUTOTEST1");
 
     }
 
@@ -503,7 +503,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        objShoppingBagPage.applyUsedCoupon("TNZ_489_HJ96");
+        objShoppingBagPage.applyUsedCoupon("AUTOTEST1");
 
     }
 
@@ -552,7 +552,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_33(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_31");
-//        commonShopping();
+        commonShopping();
         //https://stage.glamira.co.uk/
 //        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.addShippingLabel(baseURL);

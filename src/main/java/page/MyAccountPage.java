@@ -382,7 +382,6 @@ public class MyAccountPage extends BasePage {
             default:
                 logger.info("NULL...");
                 break;
-
         }
 
     }
@@ -410,6 +409,7 @@ public class MyAccountPage extends BasePage {
         boolean check;
         int countAddress = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
         System.out.printf("a===" + countAddress +"\n");
+        keyword.executeJavaScript("window.scrollBy(0,300)");
         keyword.click("MAC_LINKTEXT_DELETE");
         keyword.untilJqueryIsDone(60L);
         keyword.click("MAC_BTN_DELETE_OK");
@@ -559,12 +559,12 @@ public class MyAccountPage extends BasePage {
         keyword.navigateToUrl("URL_WISHLIST_PRODUCT_LIST");
         commonWishList("MAC_ICON_HEART");
     }
-    public void commonViewWishList() throws InterruptedException {
+    public void commonViewWishList(String element) throws InterruptedException {
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
-        keyword.click("MAC_LINK_HEART");
+        keyword.scrollDownToElement(element);
+        keyword.click(element);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("MAC_BTN_VIEW_WISHLIST");
@@ -572,15 +572,15 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
-    public void compareMyWishProduct() throws InterruptedException {
+    public void compareMyWishProduct(String element) throws InterruptedException {
         boolean check;
         keyword.navigateToUrl("URL_WISHLIST_PRODUCT_LIST");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.click("MAC_WISHLIST_ICON_HEART");
+        keyword.click(element);
         String textTitle = keyword.getText("MAC_WISHLIST_GET_TITLE");
         System.out.printf("a==== " + textTitle + "\n");
-        commonViewWishList();
+        commonViewWishList("MAC_LINK_HEART");
         String textTitleComp = keyword.getText("MAC_WISHLIST_GET_TITLE_COMPARE");
         System.out.printf("s====" + textTitleComp + "\n");
         if(textTitle.equalsIgnoreCase(textTitleComp)){
@@ -600,9 +600,9 @@ public class MyAccountPage extends BasePage {
         System.out.printf("num === "+num +"\n");
         return num;
     }
-    public void removeItemSave() throws InterruptedException {
+    public void removeItemSave(String element) throws InterruptedException {
         boolean check;
-        commonViewWishList();
+        commonViewWishList(element);
         int num1 = checkCountRemove();
         keyword.click("MAC_BTN_REMOVE_WISHLIST");
         keyword.untilJqueryIsDone(60L);
@@ -661,9 +661,9 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
 
     }
-    public void emailSelectItem() throws InterruptedException {
+    public void emailSelectItem(String element) throws InterruptedException {
      //   setUp1();
-        commonViewWishList();
+        commonViewWishList(element);
         keyword.click("MAC_WISHLIST_EMAIL_BTN");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
