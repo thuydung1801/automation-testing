@@ -67,7 +67,6 @@ public class LoginAddressTest extends BaseTest {
         objLoginAddress.verifyMelissa();
 
     }
-
 //    @Test(priority = 5,
 //            description = "Add new billing address and continue with your input options")
 //    public void NLA_05() throws InterruptedException {

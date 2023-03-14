@@ -145,14 +145,14 @@ public class CreateAccountOnWebPage extends BasePage {
                 "LOGIN_SELECT_ACTIVE",
                 "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
                 "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
-        objSignIn.getCodeEnterTextInField("IFRAME_DEV3",
+        objSignIn.getCodeEnterTextInField("IFRAME_STAGE",
                 "LOGIN_INPUT_VERIFY_CODE",
                 code, btnSubmit);
     }
 
     public void sendKeyFormPassword() throws InterruptedException {
         objSignUp.sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION",
-                "SIGNUP_DATA_EMAIL_NEW_INFORMATION", "SIGNUP_SELECT_TITLE",
+                "SIGNUP_DATA_PASSWORD_INFORMATION", "SIGNUP_SELECT_TITLE",
                 "SIGNUP_SELECT_OPTION_TITLE");
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
     }
@@ -168,7 +168,6 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
     }
-
     boolean check(String element) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         return keyword.verifyElementVisible(element);

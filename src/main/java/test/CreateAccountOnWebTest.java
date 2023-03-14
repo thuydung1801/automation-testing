@@ -13,13 +13,16 @@ public class CreateAccountOnWebTest extends BaseTest {
     private LoginPage objLogin;
     private RegisterPage objRegist;
     private CreateAccountOnWebPage objCreateAccOnWeb;
+
     public CreateAccountOnWebTest() {
         super();
+        objCreateAccOnWeb = new CreateAccountOnWebPage(this.keyword);
+        objRegist = new RegisterPage(this.keyword);
     }
     public void installation() throws Exception {
-        objCreateAccOnWeb = new CreateAccountOnWebPage(this.keyword);
         objRegist.acceptAllCookies();
     }
+
     @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
     public void testCase_CreateAccount() throws Exception {
         logger.info("testCase_CreateAccount");
@@ -38,4 +41,13 @@ public class CreateAccountOnWebTest extends BaseTest {
         logger.info("testCase_forgotPassWordCheckOut");
         objCreateAccOnWeb.forgotPasswordCheckOut();
     }
+//  ------------------------------- WITH PHONE--------------------------
+@Test(priority = 1, description = "Create new customer successfully with store enable phone confirm")
+public void testCase_CreateAccountWithPhone() throws Exception {
+    logger.info("testCase_CreateAccountWithPhone");
+    installation();
+    objCreateAccOnWeb.CreateNewCustomerSuccessfully();
+}
+
+
 }
