@@ -119,7 +119,6 @@ public class MyAccountMobileTest extends BaseTest {
     public void testCase_MW_05() throws InterruptedException {
         testMyAccount.emailSelectItem("MAC_LINK_HEART_MOBILE");
         keyword.resizeBrowser(319, 848);
-        keyword.untilJqueryIsDone(50L);
     }
 
     //   case My Order

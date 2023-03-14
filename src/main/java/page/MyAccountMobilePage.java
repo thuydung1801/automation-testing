@@ -53,7 +53,7 @@ public class MyAccountMobilePage extends BasePage {
 
     public void changePassword(String baseURL) throws InterruptedException {
 //        setUp1();
-        keyword.navigateToUrl(baseURL+"customer/account/");
+        keyword.navigateToUrl(baseURL + "customer/account/");
         inpChangePassword();
         keyword.click("BTN_MYACCOUNT_ON_MOBILE");
         keyword.untilJqueryIsDone(50L);
@@ -109,7 +109,7 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void deleteAdditionalAddressEntries(String baseURL) throws InterruptedException {
-        keyword.navigateToUrl(baseURL+"customer/account/");
+        keyword.navigateToUrl(baseURL + "customer/account/");
         keyword.click("BTN_MYACCOUNT_ON_MOBILE");
         objMyAccount.deleteAdditionalAddressEntries();
     }
@@ -155,6 +155,7 @@ public class MyAccountMobilePage extends BasePage {
         }
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
     }
+
     public void setUp(String baseURL) throws InterruptedException {
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -164,12 +165,14 @@ public class MyAccountMobilePage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         objLogin.loginOnMobile("COM_INP_DATA_EMAIL_MOBILE", "COM_PASSWORD_NEW_MOBILE");
         keyword.untilJqueryIsDone(30L);
-        keyword.navigateToUrl(baseURL+"customer/account/edit/");
+        keyword.navigateToUrl(baseURL + "customer/account/edit/");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
     }
+
     public void viewOrderComplete(String baseURL) throws InterruptedException {
-        keyword.openNewTab(baseURL+"sales/order/history/");
+        keyword.untilJqueryIsDone(50L);
+        keyword.openNewTab(baseURL + "sales/order/history/");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(30, "//div[@class='loading-mask']");
         keyword.click("MAC_MY_ORD_BTN_COMPLETE");
@@ -195,7 +198,7 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void checkStatusConfirmation(String baseURL) throws InterruptedException {
-        keyword.openNewTab(baseURL+"sales/order/history/");
+        keyword.openNewTab(baseURL + "sales/order/history/");
         objMyAccount.checkStatus("confirmation", "MAC_OVER_ID_ORDER_STATUS_CONFIR_MOBILE", "MAC_OVER_STATUS_CONFIR_ICON",
                 "MAC_OVER_STATUS_CONFIR_MOBILE", "MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR_MOBILE", "MAC_OVER_DATA_STATUS_CONFIR");
     }
