@@ -45,7 +45,11 @@ public class CreateAccountOnWebPage extends BasePage {
     public void createAndVerifyForm() throws Exception {
         sendKeyFormDataLogin();
         sendKeyFormPassword();
-        getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
+        getCodeVerifyForm("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD_DUNG");
+    }
+
+    public void getCodeVerifyForm(String userName, String pass) throws Exception {
+        getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT", userName,pass);
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIST_SUCCESS_US");
         keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
@@ -105,7 +109,7 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.deleteAllCookies();
         keyword.closeWindowByIndex(1);
         keyword.switchToTab(0);
-        getCodeSetup("LOGIN_INPUT_ENTER_DATA", "BTN_SUBMIT");
+        getCodeSetup("LOGIN_INPUT_ENTER_DATA", "BTN_SUBMIT", "LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD_DUNG");
         sendPassWord();
     }
 
@@ -131,12 +135,12 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.verifyElementVisible("SIGNIN_XPATH_ACTUAL_SENT_CODE");
     }
 
-    public void getCodeSetup(String code, String btnSubmit) throws Exception {
+    public void getCodeSetup(String code, String btnSubmit, String userName, String pass) throws Exception {
         objSignIn = new SignInPage(this.keyword);
         objSignIn.openTabBE("https://stage.glamira.com/secured2021/");
         objSignIn.loginAdmin(
-                "nguyenngoc",
-                "Admin123");
+                userName,
+                pass);
         objSignIn.chooseItemCustomer(
                 "LOGIN_BTN_CUSTOMER",
                 "LOGIN_BTN_CUSTOMER",
@@ -174,7 +178,7 @@ public class CreateAccountOnWebPage extends BasePage {
     }
 
     //    ------whthPhone
-    public void CreateNewCustomerWithPhone() throws InterruptedException {
+    public void CreateNewCustomerWithPhone() throws Exception {
 //        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
         goToFormCreateAccount();
         sendKeyFormDataLogin();
@@ -183,5 +187,6 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
         sendKeyFormPassword();
+//        getCodeVerifyForm("");
     }
 }
