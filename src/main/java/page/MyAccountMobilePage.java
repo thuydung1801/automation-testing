@@ -91,13 +91,6 @@ public class MyAccountMobilePage extends BasePage {
         objMyAccount.inpEditAddress("add", "BTN_MYACCOUNT_ON_MOBILE_ACTIVE", "MAC_BTN_ADD_NEW_ADDRESS", "MAC_DATA_STREET9", false, "mobile");
     }
 
-    public void commonMyAddress() throws InterruptedException {
-        keyword.untilJqueryIsDone(30L);
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-        countAdd = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
-        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-    }
-
     public void compareMyWishProductMobile() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         objMyAccount.compareMyWishProduct("MAC_LINK_HEART_MOBILE");
@@ -190,6 +183,7 @@ public class MyAccountMobilePage extends BasePage {
     }
 
     public void viewReturn() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
         keyword.switchToTab(1);
         keyword.deleteAllCookies();
         keyword.reLoadPage();
