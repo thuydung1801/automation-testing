@@ -25,20 +25,24 @@ public class CreateAccountOnWebPage extends BasePage {
         objSignUp = new SignUpPage(this.keyword);
     }
 
-    public void CreateNewCustomerSuccessfully() throws Exception {
+    public void goToFormCreateAccount() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(1000);
         keyword.click("LOGIN_BTN_LOGIN");
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
         Thread.sleep(2000);
-        createAndVerifyForm();
-    }
-
-    public void createAndVerifyForm() throws Exception {
         keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
         keyword.untilJqueryIsDone(50L);
         keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
         keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 500);
+    }
+
+    public void CreateNewCustomerSuccessfully() throws Exception {
+        goToFormCreateAccount();
+        createAndVerifyForm();
+    }
+
+    public void createAndVerifyForm() throws Exception {
         sendKeyFormDataLogin();
         sendKeyFormPassword();
         getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
@@ -168,8 +172,16 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
     }
-    boolean check(String element) throws InterruptedException {
+
+    //    ------whthPhone
+    public void CreateNewCustomerWithPhone() throws InterruptedException {
+//        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
+        goToFormCreateAccount();
+        sendKeyFormDataLogin();
+        keyword.sendKeys("SIGNUP_WITH_PHONE", "DATA_CREATE_ACCOUNT_WITH_PHONE");
+        keyword.click("SIGNUP_XPATH_FOR_FORM");
+        keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
-        return keyword.verifyElementVisible(element);
+        sendKeyFormPassword();
     }
 }

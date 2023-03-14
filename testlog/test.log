@@ -1,54 +1,35 @@
-INFO  | 2023-03-13 13:17:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:49) - Open browser
-INFO  | 2023-03-13 13:17:42 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 110.0.5481.77 (resolved driver for Chrome 110)
-INFO  | 2023-03-13 13:17:43 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\110.0.5481.77\chromedriver.exe
-INFO  | 2023-03-13 13:17:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:65) - open browser successfullyCHROME
-INFO  | 2023-03-13 13:17:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2023-03-13 13:17:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:69) - url: [Ljava.lang.String;@31887c68
-INFO  | 2023-03-13 13:18:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:303) - Maximizing browser window...
-INFO  | 2023-03-13 13:18:01 | [TestNG-tests-1] test.checkout.LoginAddressTest (LoginAddressTest.java:NLA_01_02:47) - NLA_02
-INFO  | 2023-03-13 13:18:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:510) -  scrolling to position 
-INFO  | 2023-03-13 13:18:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:530) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-03-13 13:18:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-03-13 13:18:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:677) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-03-13 13:18:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:530) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-03-13 13:18:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickBTN_COOKIES
-INFO  | 2023-03-13 13:18:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:318) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant
-INFO  | 2023-03-13 13:18:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:481) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
-INFO  | 2023-03-13 13:18:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:724) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-13 13:18:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
-INFO  | 2023-03-13 13:18:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:724) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-13 13:19:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:724) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-13 13:19:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:481) - scrollDownToElementCHECKOUT_BTN_MINICART
-INFO  | 2023-03-13 13:19:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickCHECKOUT_BTN_MINICART
-INFO  | 2023-03-13 13:19:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:724) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-13 13:19:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickCHECKOUT_MINICART_VIEWALL
-INFO  | 2023-03-13 13:19:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:724) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-13 13:19:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:724) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-13 13:19:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:724) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-13 13:19:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickCHECKOUT_BTN_CHECKOUT
-INFO  | 2023-03-13 13:19:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:677) - webDriverWaitForElementPresentCHECKOUT_LBL_CHECKOUT
-INFO  | 2023-03-13 13:19:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:677) - webDriverWaitForElementPresentCHECKOUT_BTN_CONTINUE_GUEST
-INFO  | 2023-03-13 13:19:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:724) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-03-13 13:19:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickCHECKOUT_BTN_CONTINUE_GUEST
-INFO  | 2023-03-13 13:19:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:677) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
-INFO  | 2023-03-13 13:19:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysCHECKOUT_LA_TBX_FIRSTwith LOGIN_DATA_ALERT_USERNAME
-INFO  | 2023-03-13 13:19:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysCHECKOUT_LA_TBX_LASTwith LOGIN_DATA_ALERT_USERNAME
-INFO  | 2023-03-13 13:19:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysCHECKOUT_LA_TBX_EMAILwith CHECKOUT_LA_DATA_EMAIL
-INFO  | 2023-03-13 13:19:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysCHECKOUT_LA_TBX_CFEMAILwith CHECKOUT_LA_DATA_EMAIL
-INFO  | 2023-03-13 13:19:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysCHECKOUT_LA_TBX_PHONEwith AFFIRM_DATA_PHONE
-INFO  | 2023-03-13 13:19:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysCHECKOUT_LA_TBX_STREETwith CHECKOUT_LA_DATA_STREET_1
-INFO  | 2023-03-13 13:19:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysCHECKOUT_LA_TBX_ZIPwith CHECKOUT_LA_DATA_CODE_1
-INFO  | 2023-03-13 13:19:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysCHECKOUT_LA_TBX_CITYwith CHECKOUT_LA_DATA_CITY_1
-INFO  | 2023-03-13 13:19:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
-INFO  | 2023-03-13 13:19:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:572) - verifyElementVisibleBTN_SAME_AS_BILLING
-INFO  | 2023-03-13 13:19:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:763) - compare from LA_TEXT_SAME with LA_CONTENT_TEXT_SAME
-INFO  | 2023-03-13 13:19:54 | [TestNG-tests-1] test.checkout.LoginAddressTest (LoginAddressTest.java:NLA_03:60) - NLA_03
-INFO  | 2023-03-13 13:19:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:640) - deleteAllCookies
-INFO  | 2023-03-13 13:19:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:313) - ReLoad Page...
-INFO  | 2023-03-13 13:20:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:510) -  scrolling to position 
-INFO  | 2023-03-13 13:20:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:530) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-03-13 13:20:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-03-13 13:20:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:677) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-03-13 13:20:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:530) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-03-13 13:20:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickBTN_COOKIES
-INFO  | 2023-03-13 13:20:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:318) - Navigating to URL...https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant
+INFO  | 2023-03-14 15:03:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:49) - Open browser
+INFO  | 2023-03-14 15:03:30 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 111.0.5563.64 (resolved driver for Chrome 111)
+INFO  | 2023-03-14 15:03:30 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\111.0.5563.64\chromedriver.exe
+INFO  | 2023-03-14 15:03:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:65) - open browser successfullyCHROME
+INFO  | 2023-03-14 15:03:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:68) - go to url: https://dev3.glamira.com/glgb/
+INFO  | 2023-03-14 15:03:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:69) - url: [Ljava.lang.String;@70cb9be0
+INFO  | 2023-03-14 15:03:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:303) - Maximizing browser window...
+INFO  | 2023-03-14 15:03:43 | [TestNG-tests-1] test.CreateAccountOnWebTest (CreateAccountOnWebTest.java:testCase_CreateAccountWithPhone:51) - testCase_CreateAccountWithPhone
+INFO  | 2023-03-14 15:03:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:510) -  scrolling to position 
+INFO  | 2023-03-14 15:03:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:530) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-14 15:04:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-14 15:04:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:677) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-14 15:04:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:530) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-03-14 15:04:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickBTN_COOKIES
+INFO  | 2023-03-14 15:04:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-03-14 15:04:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:677) - webDriverWaitForElementPresentLOGIN_BTN_FORGOT_PASSWORD
+INFO  | 2023-03-14 15:04:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:481) - scrollDownToElementSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2023-03-14 15:04:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2023-03-14 15:04:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:677) - webDriverWaitForElementPresentSIGNUP_FORM_DATA_INFORMATION
+INFO  | 2023-03-14 15:04:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
+INFO  | 2023-03-14 15:04:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2023-03-14 15:04:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_EXIST1
+INFO  | 2023-03-14 15:04:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_EMAIL_EXIST1
+INFO  | 2023-03-14 15:04:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-03-14 15:04:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-03-14 15:04:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysSIGNUP_WITH_PHONEwith DATA_CREATE_ACCOUNT_WITH_PHONE
+INFO  | 2023-03-14 15:04:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-03-14 15:04:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-03-14 15:04:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:191) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_DATA_PASSWORD_INFORMATION
+INFO  | 2023-03-14 15:04:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:572) - verifyElementVisibleSIGNUP_SELECT_TITLE
+INFO  | 2023-03-14 15:04:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickSIGNUP_SELECT_TITLE
+INFO  | 2023-03-14 15:04:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickSIGNUP_SELECT_OPTION_TITLE
+INFO  | 2023-03-14 15:04:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-03-14 15:04:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickSIGNUP_CHECKBOX_AGREE
+INFO  | 2023-03-14 15:04:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:140) - clickSIGNUP_BTN_CREATE_ACCOUNT
