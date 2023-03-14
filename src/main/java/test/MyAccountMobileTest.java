@@ -137,7 +137,7 @@ public class MyAccountMobileTest extends BaseTest {
     }
     @Test(priority = 22, description = "Check function icon return  of completed order")
     public void testCase_Myorder_03() throws InterruptedException {
-        testMyAccountMobile.viewReturn();
+        testMyAccount.viewReturn();
     }
      // case My Overview
     @Test(priority = 23, description = "Check order status = Order Confirmation ,display in tab Recent Orders ")

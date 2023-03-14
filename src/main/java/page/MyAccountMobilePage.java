@@ -182,14 +182,14 @@ public class MyAccountMobilePage extends BasePage {
         objMyAccount.viewOrder("MAC_MY_ORD_TEXT_ID_ITEM", "MAC_MY_ORD_BTN_VIEW", "MAC_MY_ORD_VERIFY_TEXT_ID_ITEM");
     }
 
-    public void viewReturn() throws InterruptedException {
-        keyword.untilJqueryIsDone(50L);
-        keyword.switchToTab(1);
-        keyword.deleteAllCookies();
-        keyword.reLoadPage();
-        keyword.switchToTab(0);
-        objMyAccount.viewReturn();
-    }
+//    public void viewReturn() throws InterruptedException {
+//        keyword.untilJqueryIsDone(50L);
+//        keyword.switchToTab(1);
+//        keyword.deleteAllCookies();
+//        keyword.reLoadPage();
+//        keyword.switchToTab(0);
+//        objMyAccount.viewReturn();
+//    }
 
     public void checkStatusConfirmation(String baseURL) throws InterruptedException {
         keyword.openNewTab(baseURL + "sales/order/history/");
