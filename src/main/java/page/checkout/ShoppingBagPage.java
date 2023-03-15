@@ -636,13 +636,13 @@ public class ShoppingBagPage extends BasePage {
     //calculate the discount
     public void discount(boolean flag) throws InterruptedException {
         if (flag){
-            Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_PRICE","£"));
+            Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
             logger.info(String.valueOf(rawPrice));
             String totalPrice = String.valueOf(calculateMoney(rawPrice, 1));
             keyword.untilJqueryIsDone(50L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-            Thread.sleep(5000);
             String actualPrice = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
+            logger.info(actualPrice);
             String lastPrice = keyword.removeLastChar(actualPrice);
             PropertiesFile.serPropValue("CHECKOUT_TOTAL_AMOUNT",actualPrice);
             keyword.simpleAssertEquals(totalPrice, lastPrice);

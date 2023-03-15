@@ -36,7 +36,6 @@ public class ShoppingBagTest extends BaseTest {
         //objRegist.chooseLanguages();
         objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE",
                 "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
-      //  objLogin.loginOnMobile("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
     }
     public void commonShopping1() throws InterruptedException {
         objShoppingBagPage = new ShoppingBagPage(this.keyword);
@@ -276,7 +275,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_SP_26_RV_02_04_dev(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_26");
-        commonShopping1();
+        //commonShopping1();
         objShoppingBagPage.clickShoppingBagPage();
         //objShoppingBagPage.clickGiftWrapping();
         objShoppingBagPage.moveToPagecheckOut();
