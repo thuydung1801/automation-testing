@@ -15,9 +15,11 @@ public class CreateAccountOnWebTest extends BaseTest {
     private CreateAccountOnWebPage objCreateAccOnWeb;
     public CreateAccountOnWebTest() {
         super();
+        objCreateAccOnWeb = new CreateAccountOnWebPage(this.keyword);
+        objRegist = new RegisterPage(this.keyword);
     }
     public void installation() throws Exception {
-        objCreateAccOnWeb = new CreateAccountOnWebPage(this.keyword);
+
         objRegist.acceptAllCookies();
     }
     @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")

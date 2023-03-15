@@ -19,16 +19,21 @@ import java.util.Objects;
 public class MyAccountPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     private LoginPage objLogin;
-    private RegisterPage objRegister ;
+    private RegisterPage objRegister;
     private SignInPage signInPage;
     public int countAdd;
-    public MyAccountPage(){super();}
-    public MyAccountPage(KeywordWeb key){
+
+    public MyAccountPage() {
+        super();
+    }
+
+    public MyAccountPage(KeywordWeb key) {
         super(key);
         objLogin = new LoginPage();
         objRegister = new RegisterPage();
         signInPage = new SignInPage();
     }
+
     public void setUp() throws InterruptedException {
      //   objLogin.loginOnAlert();
 //        keyword.navigateToUrl("https://dev3.glamira.com/glus/");
@@ -45,6 +50,7 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
     }
+
     public void setUp1() throws InterruptedException {
 //        objLogin.loginOnAlert();
        keyword.navigateToUrl("https://stage.glamira.co.uk/");
@@ -64,6 +70,7 @@ public class MyAccountPage extends BasePage {
 //        keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
     }
+
     public void commonPersonalInf(String checkBox) throws InterruptedException {
         keyword.untilJqueryIsDone(70L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -77,6 +84,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
+
     public void inpFullName(String firstName, String lastName) throws InterruptedException {
         boolean check;
         keyword.clearText("MAC_INP_FIRST_NAME");
@@ -91,6 +99,7 @@ public class MyAccountPage extends BasePage {
 
 
     }
+
     public void inputChangeMail() throws InterruptedException {
         commonPersonalInf("MAC_CLICK_CHECKBOX_EMAIL");
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
@@ -103,6 +112,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
+
     public void inpChangePassword() throws InterruptedException {
         commonPersonalInf("MAC_CLICK_CHECKBOX_PASS");
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
@@ -116,6 +126,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
+
     public void logOut() throws InterruptedException {
          keyword.click("MAC_BTN_LOGOUT");
         keyword.untilJqueryIsDone(60L);
@@ -148,12 +159,12 @@ public class MyAccountPage extends BasePage {
             test = false;
         }
         logger.info("check change password....");
-        Assert.assertEquals(test,true);
-
+        Assert.assertEquals(test, true);
 
 
     }
-    public void checkVerifyChangeSuccess(String element, String message,String change,String eleChange, String verify) throws InterruptedException {
+
+    public void checkVerifyChangeSuccess(String element, String message, String change, String eleChange, String verify) throws InterruptedException {
 
         if(keyword.verifyElementVisible(element)){
             boolean test ;
@@ -208,8 +219,7 @@ public class MyAccountPage extends BasePage {
                     logger.info("NULL....");
                     break;
             }
-        }
-        else {
+        } else {
             logger.info("Erorr....");
         }
     }
@@ -229,13 +239,14 @@ public class MyAccountPage extends BasePage {
 
     public void changeFullnameWithDataNUll() throws InterruptedException {
         commonPersonalInf(null);
-        inpFullName("COM_DATA_NULL","COM_DATA_NULL");
+        inpFullName("COM_DATA_NULL", "COM_DATA_NULL");
         checkVerifyInputNull();
 //        checkVerifyChangeSuccess("COM_TEXT_ERROR", "COM_DATA_MESSAGES_NULL",null, null,null);
     }
+
     public void changeEmail() throws InterruptedException {
         inputChangeMail();
-        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","email","MAC_VERIFY_EMAIL_CHANGE","COM_INP_DATA_EMAIL_STAGE");
+        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE", "MAC_VERIFY_DATA_FULLNAME", "email", "MAC_VERIFY_EMAIL_CHANGE", "COM_INP_DATA_EMAIL_STAGE");
 
     }
 
@@ -243,34 +254,35 @@ public class MyAccountPage extends BasePage {
 //        setUp1();
         keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/");
         inpChangePassword();
-        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE","MAC_VERIFY_DATA_FULLNAME","pass","MAC_VERIFY_PASS_CHANGE","COM_INP_DATA_PASS_STAGE");
+        checkVerifyChangeSuccess("CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE", "MAC_VERIFY_DATA_FULLNAME", "pass", "MAC_VERIFY_PASS_CHANGE", "COM_INP_DATA_PASS_STAGE");
 
     }
-    public void deleteAccount(String data) throws InterruptedException {
+
+    public void deleteAccount(String data, String baseURL) throws InterruptedException {
 //        setUp1();
-        keyword.openNewTab("https://stage.glamira.co.uk/customer/account/edit/");
+        keyword.openNewTab(baseURL+"customer/account/edit/");
         keyword.click("MAC_DELETE_ACCOUNT");
         Thread.sleep(2000);
         keyword.untilJqueryIsDone(30L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.sendKeys("MAC_DELETE_ACCOUNT_INP_PASS",data);
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.sendKeys("MAC_DELETE_ACCOUNT_INP_PASS", data);
         keyword.click("MAC_DELETE_ACCOUNT_BTN_DELETE");
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.click("MAC_DELETE_ACCOUNT_BTN_OK");
         keyword.untilJqueryIsDone(30L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        if(keyword.verifyElementVisible("MAC_DELETE_ACCOUNT_VERIFY_MESSAGE")){
-            keyword.assertEquals("MAC_DELETE_ACCOUNT_DATA_MESSAGE","MAC_DELETE_ACCOUNT_VERIFY_MESSAGE");
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        if (keyword.verifyElementVisible("MAC_DELETE_ACCOUNT_VERIFY_MESSAGE")) {
+            keyword.assertEquals("MAC_DELETE_ACCOUNT_DATA_MESSAGE", "MAC_DELETE_ACCOUNT_VERIFY_MESSAGE");
         }
     }
 
-    public void commonMyAddress(String element,String elementEdit,String domain) throws InterruptedException {
-//        keyword.openNewTab("https://stage.glamira.co.uk/customer/address/index/#");
-//        keyword.click(element);
-        if(domain.equalsIgnoreCase("web")){
+    public void commonMyAddress(String element, String elementEdit, String domain) throws InterruptedException {
+        if (domain.equalsIgnoreCase("web")) {
             keyword.openNewTab("https://stage.glamira.co.uk/customer/address/index/#");
-        }else{
+        } else {
+            keyword.untilJqueryIsDone(30L);
             keyword.click("BTN_MYACCOUNT_ON_MOBILE");
+            keyword.untilJqueryIsDone(30L);
         }
         keyword.click(element);
 
@@ -296,8 +308,8 @@ public class MyAccountPage extends BasePage {
         keyword.sendKeys("MAC_INP_PHONE_NUM","MAC_DATA_PHONE_NUM");
         keyword.clearText("MAC_INP_STREET");
         keyword.imWait(3);
-        keyword.sendKeys("MAC_INP_STREET",textStreet);
-        if(melissa){
+        keyword.sendKeys("MAC_INP_STREET", textStreet);
+        if (melissa) {
 
             Thread.sleep(1000);
             keyword.keysBoardWithDOWN("MAC_INP_STREET_DIV");
@@ -305,8 +317,7 @@ public class MyAccountPage extends BasePage {
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             Thread.sleep(1000);
 
-        }
-        else {
+        } else {
             keyword.clearText("MAC_INP_CITY");
             keyword.sendKeys("MAC_INP_CITY","MAC_INP_DATA_CITY");
             keyword.keysBoardWithDOWN("MAC_INP_STATE");
@@ -382,25 +393,31 @@ public class MyAccountPage extends BasePage {
             default:
                 logger.info("NULL...");
                 break;
+
         }
 
     }
+
     public void editBillingAddress() throws InterruptedException {
         inpEditAddress("billing","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_BILLING_ADDRESS","MAC_DATA_STREET1",false,"web");
     }
+
     public void editShippingAddress() throws InterruptedException {
        // setUp();
         inpEditAddress("shipping","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_EDIT_SHIPPING_ADDRESS","MAC_DATA_STREET2",false,"web");
     }
+
     public void addNewAddress() throws InterruptedException {
         //setUp();
         inpEditAddress("add","MAC_MY_ADDRESS_DIRECTORY","MAC_BTN_ADD_NEW_ADDRESS","MAC_DATA_STREET9",false,"web");
 
     }
+
     public void editAdditionalAddressEntries() throws InterruptedException {
         //setUp();
         inpEditAddress("edit","MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","MAC_DATA_STREET3",false,"web");
     }
+
     public void deleteAdditionalAddressEntries() throws InterruptedException {
 //        keyword.openNewTab("https://dev3.glamira.com/glde/customer/address/index/#");
         keyword.click("MAC_MY_ADDRESS_DIRECTORY");
@@ -408,7 +425,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         boolean check;
         int countAddress = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
-        System.out.printf("a===" + countAddress +"\n");
+        System.out.printf("a===" + countAddress + "\n");
         keyword.executeJavaScript("window.scrollBy(0,300)");
         keyword.click("MAC_LINKTEXT_DELETE");
         keyword.untilJqueryIsDone(60L);
@@ -461,11 +478,12 @@ public class MyAccountPage extends BasePage {
         logger.info("check verify address...");
         Assert.assertEquals(check,true);
     }
-    public void editSetAsDefaultAddress(String address,String checkBox,String eleText) throws InterruptedException {
-       // commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT");
-        keyword.sendKeys("MAC_INP_STREET",address);
+
+    public void editSetAsDefaultAddress(String address, String checkBox, String eleText) throws InterruptedException {
+        // commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT");
+        keyword.sendKeys("MAC_INP_STREET", address);
         keyword.keysBoardWithDOWN("MAC_INP_STREET_DIV");
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.click(checkBox);
         boolean check;
         String textAddress = PropertiesFile.getPropValue(address);
@@ -490,16 +508,19 @@ public class MyAccountPage extends BasePage {
         Assert.assertEquals(check,true);
 
     }
+
     public void editSetDefaultBilling() throws InterruptedException {
-        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","web");
-        editSetAsDefaultAddress("MAC_DATA_STREET6","MAC_CHECKBOX_DEFAULT_BILLING","MAC_VERIFY_SETAS_BILLING_ADDRESS");
+        commonMyAddress("MAC_MY_ADDRESS_DIRECTORY", "MAC_LINKTEXT_EDIT", "web");
+        editSetAsDefaultAddress("MAC_DATA_STREET6", "MAC_CHECKBOX_DEFAULT_BILLING", "MAC_VERIFY_SETAS_BILLING_ADDRESS");
 
     }
+
     public void editSetDefaultShipping() throws InterruptedException {
         commonMyAddress("MAC_MY_ADDRESS_DIRECTORY","MAC_LINKTEXT_EDIT","web");
         editSetAsDefaultAddress("MAC_DATA_STREET7","MAC_CHECKBOX_DEFAULT_SHIPPING","MAC_VERIFY_SETAS_SHIPPING_ADDRESS");
 
     }
+
     public void commonWishList(String element) throws InterruptedException {
         int count;
         boolean check;
@@ -546,24 +567,25 @@ public class MyAccountPage extends BasePage {
 //        setUp1();
 
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.navigateToUrl("https://stage.glamira.co.uk/catalog/product_compare/index/");
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.navigateToUrl(baseURL+"catalog/product_compare/index/");
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.navigateToUrl("URL_WISHLIST_PRODUCT_DETAIL");
         commonWishList("MAC_BTN_HEART");
 
     }
+
     public void saveItemFormProductList() throws InterruptedException {
         keyword.navigateToUrl("URL_WISHLIST_PRODUCT_LIST");
         commonWishList("MAC_ICON_HEART");
     }
+
     public void commonViewWishList(String element) throws InterruptedException {
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.scrollDownToElement(element);
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+
         keyword.click(element);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -572,15 +594,16 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
+
     public void compareMyWishProduct(String element) throws InterruptedException {
         boolean check;
         keyword.navigateToUrl("URL_WISHLIST_PRODUCT_LIST");
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.click(element);
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        keyword.click("MAC_WISHLIST_ICON_HEART");
         String textTitle = keyword.getText("MAC_WISHLIST_GET_TITLE");
         System.out.printf("a==== " + textTitle + "\n");
-        commonViewWishList("MAC_LINK_HEART");
+        commonViewWishList(element);
         String textTitleComp = keyword.getText("MAC_WISHLIST_GET_TITLE_COMPARE");
         System.out.printf("s====" + textTitleComp + "\n");
         if(textTitle.equalsIgnoreCase(textTitleComp)){
@@ -591,7 +614,8 @@ public class MyAccountPage extends BasePage {
         logger.info("check verify compare item...");
         Assert.assertEquals(check,true);
     }
-    public int checkCountRemove(){
+
+    public int checkCountRemove() {
         String textTitle = keyword.getText("MAC_WISHLIST_TITLLE_COUNT_SAVE");
         System.out.printf("a=== " + textTitle + "\n");
         String split = textTitle.split("\\s" , 0)[0];
@@ -617,6 +641,7 @@ public class MyAccountPage extends BasePage {
         Assert.assertEquals(check,true);
 
     }
+
     public void checkVerifyAdmin() throws InterruptedException {
         signInPage.openNewTabs();
         signInPage.loginAdmin("LOGIN_DATA_USER_NAME_DUNG", "LOGIN_DATA_PASS_WORD_DUNG");
@@ -628,6 +653,7 @@ public class MyAccountPage extends BasePage {
                 "SIGNUP_VERIFY_EMAIL_LOG");
         adminChooseEmailLog("EMAIL_ADDRESS");
     }
+
     public void adminChooseEmailLog(String text) throws InterruptedException {
 
 //        keyword.untilJqueryIsDone(30L);
@@ -661,8 +687,9 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
 
     }
+
     public void emailSelectItem(String element) throws InterruptedException {
-     //   setUp1();
+        //   setUp1();
         commonViewWishList(element);
         keyword.click("MAC_WISHLIST_EMAIL_BTN");
         keyword.untilJqueryIsDone(60L);
@@ -677,9 +704,9 @@ public class MyAccountPage extends BasePage {
         keyword.click("MAC_WISHLIST_EMAIL_CHECKBOX_SUB");
         keyword.click("MAC_WISHLIST_EMAIL_BTN_SUBMIT");
         keyword.untilJqueryIsDone(60L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        if(keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")){
-            keyword.assertEquals("MAC_VERIFY_DATA_WISHLIST_EMAIL","CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
+        keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+        if (keyword.verifyElementVisible("CUS_VERIFY_NEWSLETTER_SUBSCRIBE")) {
+            keyword.assertEquals("MAC_VERIFY_DATA_WISHLIST_EMAIL", "CUS_VERIFY_NEWSLETTER_SUBSCRIBE");
         }
         checkVerifyAdmin();
     }
@@ -698,6 +725,7 @@ public class MyAccountPage extends BasePage {
         Assert.assertEquals(textIDComp,textID);
 
     }
+
     public void viewOrderComplete() throws InterruptedException {
 //        setUp1();
         keyword.openNewTab("https://stage.glamira.co.uk/sales/order/history/");
@@ -707,6 +735,7 @@ public class MyAccountPage extends BasePage {
         viewOrder("MAC_MY_ORD_TEXT_ID_COMPLETE","MAC_MY_ORD_BTN_VIEW_COMPLETE","MAC_MY_ORD_VERIFY_TEXT_ID_COMPLETE");
 
     }
+
     public void viewOrderRecent() throws InterruptedException {
         keyword.back();
         keyword.untilJqueryIsDone(60L);
@@ -714,6 +743,7 @@ public class MyAccountPage extends BasePage {
         viewOrder("MAC_MY_ORD_TEXT_ID_ITEM","MAC_MY_ORD_BTN_VIEW","MAC_MY_ORD_VERIFY_TEXT_ID_ITEM");
 
     }
+
     public void loginAdmin() throws InterruptedException {
         signInPage.openNewTabs();
         signInPage.loginAdmin("LOGIN_DATA_USER_NAME_DUNG", "LOGIN_DATA_PASS_WORD_DUNG");
@@ -721,6 +751,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
     }
+
     public void viewReturn() throws InterruptedException {
         loginAdmin();
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC");
@@ -770,6 +801,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.verifyElementVisible("MAC_MY_ORD_VERIFY_RETURN");
     }
+
     public boolean checkOrderLoginCus() throws InterruptedException {
         boolean check = false;
             int count = Integer.parseInt(PropertiesFile.getPropValue("COUNT_ITEM"));
@@ -806,6 +838,7 @@ public class MyAccountPage extends BasePage {
             return check;
 
     }
+
     public void searchElement() throws InterruptedException {
         while(true) {
             boolean check = checkOrderLoginCus();
@@ -822,6 +855,7 @@ public class MyAccountPage extends BasePage {
             }
         }
     }
+
     public boolean verifyIdReturn() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -837,6 +871,7 @@ public class MyAccountPage extends BasePage {
             return true;
         }
     }
+
     public void stepReturn() throws InterruptedException {
 
         viewReturn();
@@ -864,25 +899,24 @@ public class MyAccountPage extends BasePage {
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             keyword.click("MAC_MY_ORD_RETURN_STEP1_CHECKBOX2");
 
-            if(keyword.verifyElementVisible("MAC_MY_ORD_RETURN_STEP1_TEXTAREA")){
-                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_TEXTAREA","MAC_MY_ORD_RETURN_STEP1_DATA_TEXTAREA");
-                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG1","C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemhop.jpg");
-                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG2","C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemly.jpg");
-                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG3","C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemque.jpg");
+            if (keyword.verifyElementVisible("MAC_MY_ORD_RETURN_STEP1_TEXTAREA")) {
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_TEXTAREA", "MAC_MY_ORD_RETURN_STEP1_DATA_TEXTAREA");
+                keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG1", "C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemhop.jpg");
+                keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG2", "C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemly.jpg");
+                keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG3", "C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemque.jpg");
 
-            }
-            else{
-                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+            } else {
+                keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
                 keyword.click("MAC_MY_ORD_RETURN_STEP1_SELECT2");
-                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
                 keyword.doubleClick("MAC_MY_ORD_RETURN_STEP1_SELECT2_OPTION");
                 keyword.untilJqueryIsDone(60L);
-                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
                 keyword.doubleClick("//div[@class='column main']");
-                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
             }
             keyword.scrollDownToElement("MAC_MY_ORD_RETURN_STEP2");
             keyword.doubleClick("MAC_MY_ORD_RETURN_STEP2");
@@ -901,6 +935,7 @@ public class MyAccountPage extends BasePage {
             PropertiesFile.serPropValue("KEY_ID_ORDER",id);
         }else {Assert.assertTrue(false);}
     }
+
     public void upLoadItemOrder() throws InterruptedException {
         boolean check;
         keyword.back();
@@ -947,6 +982,7 @@ public class MyAccountPage extends BasePage {
         }
 
     }
+
     public void checkStatusConfirmation() throws InterruptedException {
        // setUp1();
         keyword.openNewTab("https://stage.glamira.co.uk/sales/order/history/");
@@ -954,6 +990,7 @@ public class MyAccountPage extends BasePage {
         checkStatus("confirmation","MAC_OVER_ID_ORDER_STATUS_CONFIR","MAC_OVER_STATUS_CONFIR_ICON",
                 "MAC_OVER_STATUS_CONFIR","MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR","MAC_OVER_DATA_STATUS_CONFIR");
     }
+
     public void checkStatusDelivery() throws InterruptedException {
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(60L);
@@ -961,6 +998,7 @@ public class MyAccountPage extends BasePage {
         checkStatus("delivery","MAC_OVER_ID_ORDER_STATUS_DELIVERY","MAC_OVER_STATUS_DELIVERY_ICON",
                 "MAC_OVER_STATUS_DELIVERY","MAC_OVER_DATA_ID_ORDER_STATUS_DELIVERY","MAC_OVER_DATA_STATUS_DELIVERY");
     }
+
     public void setUp2() throws InterruptedException {
         objLogin.loginOnAlert();
 
@@ -993,15 +1031,18 @@ public class MyAccountPage extends BasePage {
         logger.info("check verify My overview....");
         Assert.assertEquals(check,true);
     }
+
     public void checkContactInfo() throws InterruptedException {
         keyword.back();
         checkFunctionInfoCustomer("MAC_OVER_EDIT_CONTACT_INFO","MAC_OVER_VERIFY_GET_CONTACT_INFO","MAC_OVER_VERIFY_DATA_CONTACT_INFO");
     }
+
     public void checkChangePassword() throws InterruptedException {
 //        setUp2();
         keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/");
         checkFunctionInfoCustomer("MAC_OVER_LINK_CHANGE_PASS","MAC_OVER_VERIFY_GET_CHANGE_PASS","MAC_OVER_VERIFY_DATA_CHANGE_PASS");
     }
+
     public void checkChangeShippingAddress() throws InterruptedException {
         keyword.back();
         checkFunctionInfoCustomer("MAC_OVER_EDIT_SHIPPING_ADDRESS","MAC_OVER_VERIFY_GET_TITTLE_ADDRESS","MAC_VERIFY_DATA_TITTLE_ADDRESS");
@@ -1010,6 +1051,7 @@ public class MyAccountPage extends BasePage {
         keyword.back();
         checkFunctionInfoCustomer("MAC_OVER_EDIT_BILLING_ADDRESS","MAC_OVER_VERIFY_GET_TITTLE_ADDRESS","MAC_VERIFY_DATA_TITTLE_ADDRESS");
     }
+
     public void checkChangeNewsLetter() throws InterruptedException {
         keyword.back();
         checkFunctionInfoCustomer("MAC_OVER_EDIT_NEWSLETTER","MAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER","MAC_VERIFY_DATA_TITTLE_NEWSLETTER");

@@ -16,7 +16,9 @@ import org.testng.Assert;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+
 import org.openqa.selenium.Dimension;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -34,8 +36,8 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.util.function.Function;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 public class KeywordWeb {
@@ -91,8 +93,8 @@ public class KeywordWeb {
         }
     }
 
-    public void resizeBrowser(int width, int height){
-        Dimension d = new Dimension(width,height);
+    public void resizeBrowser(int width, int height) {
+        Dimension d = new Dimension(width, height);
         //Resize the current window to the given dimension
         driver.manage().window().setSize(d);
     }
@@ -506,6 +508,7 @@ public class KeywordWeb {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,5000)");
     }
+
     public void scrollToPositionByScript(String jsScript) {
         logger.info(" scrolling to position ");
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -556,7 +559,7 @@ public class KeywordWeb {
 
     }
 
-    public void switchToCurrentTab(){
+    public void switchToCurrentTab() {
         logger.info("switchToCurrentTabSuccess");
         String currentTab = driver.getWindowHandle();
         Set<String> tabs = driver.getWindowHandles();
@@ -919,6 +922,7 @@ public class KeywordWeb {
         }
         return driver.findElement(By.xpath(text)).getText().replaceAll("[^0-9]", "");
     }
+
     public void assertEqualsAfterCutting(String expected, String actual, int indexStart, int indexEnd) {
         logger.info("compare from " + expected + " with " + actual);
         String xPathElement1 = PropertiesFile.getPropValue(expected);
@@ -932,11 +936,13 @@ public class KeywordWeb {
         String actualText = driver.findElement(By.xpath(xPathElement2)).getText().substring(indexStart, indexEnd);
         Assert.assertEquals(actualText, xPathElement1);
     }
+
     public void scrollToTheBottomPage() {
         logger.info("scrollDownToElementWithJavaExecutor");
         JavascriptExecutor js = ((JavascriptExecutor) driver);
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
+
     public void compareTheValueOfStrings(String expected, String actual, int indexStart, int indexEnd) {
         logger.info("compare from " + expected + " with " + actual);
         String xPathElement1 = PropertiesFile.getPropValue(expected);
@@ -950,11 +956,12 @@ public class KeywordWeb {
         String actualText = driver.findElement(By.xpath(xPathElement2)).getAttribute("style").substring(indexStart, indexEnd);
         Assert.assertEquals(actualText, xPathElement1);
     }
-    public void pressEnter(){
+
+    public void pressEnter() {
         logger.info("press enter");
         Actions actions = new Actions(driver);
         // Enter the Current Address
-       actions.sendKeys(Keys.ENTER);
+        actions.sendKeys(Keys.ENTER);
 
     }
 

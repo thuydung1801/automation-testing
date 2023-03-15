@@ -16,12 +16,15 @@ public class SignInPage extends BasePage {
     private LoginPage objLogin;
     private RegisterPage objRegist;
     private SignInPage objSigin;
+
     public SignInPage(KeywordWeb key) {
         super(key);
     }
+
     public SignInPage() {
         super();
     }
+
     public void checkGoToFormLoginWithEmail() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
@@ -30,22 +33,15 @@ public class SignInPage extends BasePage {
         inputBlankAndVerify("SIGNIN_XPATH_EMAIL_REQUIRED_FIELD",
                 "SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_MESSAGE_REQUIRED_FIELD");
     }
-    public void setup() throws InterruptedException {
-        objRegist = new RegisterPage(this.keyword);
-        keyword.untilJqueryIsDone(50L);
-        objRegist.chooseLanguages();
-    }
 
     public void checkGoToFormLoginWithPhone() throws InterruptedException {
-        objRegist = new RegisterPage(this.keyword);
         keyword.deleteAllCookies();
         keyword.navigateToUrl("https://dev3.glamira.com/glcn/");
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         keyword.click("SIGNIN_BTN_ACC");
         keyword.untilJqueryIsDone(50L);
-        objRegist.chooseLanguages();
-//        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
         Thread.sleep(2000);
         keyword.click("SIGNIN_TAB_LOGIN_IN_WITH_PHONE");
         keyword.untilJqueryIsDone(10L);
@@ -120,7 +116,7 @@ public class SignInPage extends BasePage {
         selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT", "LOGIN_SELECT_ACTIVE",
                 "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG", "LOGIN_POPUP_MESSAGE_PASSWORD_RESET"
         );
-        getCodeEnterTextInField("LOGIN_IFRAME_DEV3", "LOGIN_INPUT_VERIFY_CODE",
+        getCodeEnterTextInField("LOGIN_IFRAME", "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNIN_INPUT_ENTER_CODE", "SIGNIN_BTN_SUBMIT_SEND_CODE");
         keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_SEND_KEY");
         keyword.untilJqueryIsDone(70L);
@@ -230,7 +226,7 @@ public class SignInPage extends BasePage {
 
     //    create New Password Success
     public void createNewPasswordSuccess() throws InterruptedException {
-        String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss ").format(new Date());
+        String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String pass = "Ngoc*" + timestamp + "@";
         keyword.untilJqueryIsDone(10L);
         PropertiesFile.serPropValue("SIGNUP_CREATE_PASSWORD_PHONE_RD", pass);
@@ -258,21 +254,22 @@ public class SignInPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("SIGN_MESSAGE_SUCCESS");
     }
+
     //Invalid phone number entered
     public void enterInvalidPhoneNumber() throws InterruptedException {
         keyword.sendKeys("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_DATA_PHONE_NUMBER");
         keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_PHONE");
-        keyword.untilJqueryIsDone(50L);
-//        objRegist.chooseLanguages();
-        keyword.untilJqueryIsDone(50L);
         keyword.click("SIGNIN_BTN_SUBMIT_FORM_PHONE");
         keyword.assertEquals("请输入有效的手机号码。", "SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
     }
+
     // open new right tabs
     public void openNewTabs() throws InterruptedException {
         keyword.executeJavaScript("window.open()");
         keyword.switchToTab(1);
-        keyword.navigateToUrl("URL_BE_DEV3");
+        keyword.maximizeWindow();
+        keyword.navigateToUrl("ADMIN_URL");
+//        keyword.webDriverWaitForElementPresent("LOGIN_FORM_LOGIN_BACKEND", 50);
     }
     public void openTabBE(String urlBe) throws InterruptedException {
         keyword.executeJavaScript("window.open()");
@@ -296,21 +293,20 @@ public class SignInPage extends BasePage {
         keyword.scrollDownToElement(scrollToElement);
         keyword.click(clickItem);
         keyword.webDriverWaitForElementPresent(verifyItem, 20);
-        keyword.untilJqueryIsDone(30L);
+        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
         keyword.click(clickItemSub);
         keyword.webDriverWaitForElementPresent(verifyItemSub, 20);
     }
 
     // Select Action Email Log
     public void selectActionEmailLog(String selectAction, String verifySelectForm, String selectView, String verifyForm) throws InterruptedException {
-        keyword.imWait(50);
+        keyword.imWait(30);
         keyword.click(selectAction);
-//        keyword.webDriverWaitForElementPresent(verifySelectForm, 30);
-        keyword.untilJqueryIsDone(50L);
-        keyword.verifyElementVisible(selectView);
-        keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent(verifySelectForm, 20);
+        keyword.untilJqueryIsDone(30L);
         keyword.click(selectView);
-        keyword.webDriverWaitForElementPresent(verifyForm, 30);
+        keyword.webDriverWaitForElementPresent(verifyForm, 20);
     }
 
     // Get text and Enter the copy data -> switch to first tabs
@@ -340,5 +336,19 @@ public class SignInPage extends BasePage {
         keyword.click("SIGNIN_BTN_SUBMIT_FORM_PHONE");
         keyword.assertEquals(expected1, actual1);
         keyword.assertEquals(expected2, "SIGNIN_XPATH_PASSWORD_REQUIRED_FIELD");
+    }
+
+
+    // Create new password for entering and to use your account
+    public void createNewPassWord() {
+
+        keyword.webDriverWaitForElementPresent("LOGIN_FORM_NEW_PASS_WORD", 30);
+        keyword.sendKeys("LOGIN_INPUT_NEW_PASSWORD", "LOGIN_NEW_PASSWORD");
+        keyword.click("LOGIN_BTN_SUBMIT_RESET_PASSWORD");
+        keyword.webDriverWaitForElementPresent("LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS", 10);
+    }
+
+    public boolean checkElement(String checkElement) {
+        return keyword.verifyElementPresent(checkElement);
     }
 }
