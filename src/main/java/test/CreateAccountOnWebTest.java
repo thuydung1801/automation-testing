@@ -15,7 +15,6 @@ public class CreateAccountOnWebTest extends BaseTest {
     private SignUpPage objSignUp;
     private RegisterPage objRegist;
     private CreateAccountOnWebPage objCreateAccOnWeb;
-
     public CreateAccountOnWebTest() {
         super();
         objCreateAccOnWeb = new CreateAccountOnWebPage(this.keyword);

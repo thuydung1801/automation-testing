@@ -67,7 +67,7 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
-        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(10L);
         keyword.verifyElementVisible("BTN_VIEW_CART");
         keyword.click("BTN_VIEW_CART");
         keyword.untilJqueryIsDone(50L);
