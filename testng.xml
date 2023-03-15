@@ -41,7 +41,6 @@
 <!--                    <include name="testCase_SP_04"/>-->
 <!--                    <include name="testCase_RV_07"/>-->
 
-
                     <include name="testCase_SP_02"/>
                     <include name="testCase_CheckoutWithGiftCard"/>
                     <include name="testCase_SP_03"/>
