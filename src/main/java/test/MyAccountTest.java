@@ -100,11 +100,9 @@ public class MyAccountTest extends BaseTest {
     public void testCase_Myorder_02() throws InterruptedException {
         testMyAccount.viewOrderRecent();
     }
-<<<<<<< HEAD
+
     @Test(priority = 21,description = "Check function icon view order of Recent  orders")
-=======
-    //    @Test(priority = 21,description = "Check function icon view order of Recent  orders")
->>>>>>> master
+
     public void testCase_Myorder_04() throws InterruptedException {
         testMyAccount.upLoadItemOrder();
     }
@@ -112,11 +110,8 @@ public class MyAccountTest extends BaseTest {
     public void testCase_Myorder_03() throws InterruptedException {
         testMyAccount.viewReturn();
     }
-<<<<<<< HEAD
+
     @Test(priority = 22,description = "Check  return  of completed order")
-=======
-    //    @Test(priority = 22,description = "Check  return  of completed order")
->>>>>>> master
     public void testCase_Myorder_05() throws InterruptedException {
         testMyAccount.stepReturn();
     }
