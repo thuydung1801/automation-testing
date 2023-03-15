@@ -30,42 +30,41 @@ public class CreateAccountOnWebTest extends BaseTest {
     }
 
     @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
-    public void testCase_CreateAccount() throws Exception {
-        logger.info("testCase_CreateAccount");
+    public void testCaseWeb_CreateAccount() throws Exception {
+        logger.info("testCaseWeb_CreateAccount");
         installation();
         objCreateAccOnWeb.CreateNewCustomerSuccessfully();
     }
 
     @Test(priority = 2, description = "forgot password")
-    public void testCase_forgotPassWord() throws Exception {
-        logger.info("testCase_forGotPassWord");
+    public void testCaseWeb_forgotPassWord() throws Exception {
+        logger.info("testCaseWeb_forgotPassWord");
         objCreateAccOnWeb.forgotPassword("URL_BE_DEV3");
     }
 
     @Test(priority = 3, description = "forgot password - checkOut")
-    public void testCase_forgotPassWordCheckOut() throws Exception {
-        logger.info("testCase_forgotPassWordCheckOut");
+    public void testCaseWeb_forgotPassWordCheckOut() throws Exception {
+        logger.info("testCaseWeb_forgotPassWordCheckOut");
         objCreateAccOnWeb.forgotPasswordCheckOut("URL_DATA_PRODUCT", "URL_BE_DEV3");
     }
-
     //  ------------------------------- WITH PHONE--------------------------
     @Test(priority = 4, description = "Create new customer successfully with store enable phone confirm")
 //    @Parameters("baseURL")
-    public void testCaseWithPhon_CreateAccount() throws Exception {
-        logger.info("testCaseWithPhon_CreateAccount");
+    public void testWebPhone_CreateAccount() throws Exception {
+        logger.info("testWebPhone_CreateAccount");
         installation();
         objCreateAccOnWeb.CreateNewCustomerWithPhone();
     }
 
     @Test(priority = 5, description = "forgot password")
-    public void testCaseWithPhone_forgotPassWord() throws Exception {
-        logger.info("testCaseWithPhone_forgotPassWord");
+    public void testWebPhone_forgotPassWord() throws Exception {
+        logger.info("testWebPhone_forgotPassWord");
         objCreateAccOnWeb.forgotPasswordPhone();
     }
 
     @Test(priority = 6, description = "Login")
-    public void testCaseWithPhone_login() throws Exception {
-        logger.info("testCaseWithPhone_login");
+    public void testWebPhone_loginWeb() throws Exception {
+        logger.info("testWebPhone_loginWeb");
         objCreateAccOnWeb.LoginSuccess();
     }
 

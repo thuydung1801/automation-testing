@@ -39,7 +39,7 @@ public class CreateAccountMobileTest extends BaseTest {
 
     @Test(priority = 3, description = "forgot password - checkOut")
     public void testCaseMb_forgotPassWordCheckOut() throws Exception {
-        logger.info("testCase_forGotPassWordCheckOut");
+        logger.info("testCaseMb_forgotPassWordCheckOut");
         objCreateAccountMobile.forgotPasswordCheckOut("URL_BE_DEV3");
     }
 
@@ -52,14 +52,14 @@ public class CreateAccountMobileTest extends BaseTest {
 
     @Test(priority = 5, description = "forgot password")
     public void testCaseMBPhone_forgotPassWord() throws Exception {
-        logger.info("testCase_forGotPassWord");
+        logger.info("testCaseMBPhone_forgotPassWord");
         keyword.resizeBrowser(319, 848);
         CreateAccountOnWeb.forgotPasswordPhone();
     }
 
     @Test(priority = 6, description = "Login")
-    public void testCaseWithPhone_login() throws Exception {
-        logger.info("testCaseWithPhone_login");
+    public void testCaseMBPhone_login() throws Exception {
+        logger.info("testCaseMBPhone_login");
         keyword.resizeBrowser(319, 848);
         objCreateAccountMobile.LoginSuccessWithPhone("DATA_CREATE_ACCOUNT_WITH_PHONE", "PASS_NEW_RD");
     }
