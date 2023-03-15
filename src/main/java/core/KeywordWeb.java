@@ -214,7 +214,7 @@ public class KeywordWeb {
             xPathElement2 = oldChar;
 
         }
-        return driver.findElement(By.xpath(xPathElement1)).getText().replace(xPathElement2, "");
+        return driver.findElement(By.xpath(xPathElement1)).getText().replace(xPathElement2, "").replace(",","");
     }
 
 
@@ -439,7 +439,7 @@ public class KeywordWeb {
         if (xPathElement2 == null) {
             xPathElement2 = actual;
         }
-        Assert.assertEquals(xPathElement1, xPathElement2);
+        Assert.assertEquals(xPathElement2, xPathElement1);
 
     }
 
