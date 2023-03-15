@@ -563,7 +563,7 @@ public class MyAccountPage extends BasePage {
         }
 
     }
-    public void saveItemFormProductView() throws InterruptedException {
+    public void saveItemFormProductView(String baseURL) throws InterruptedException {
 //        setUp1();
 
         keyword.untilJqueryIsDone(60L);
