@@ -576,7 +576,6 @@ public class MyAccountPage extends BasePage {
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-
         keyword.click(element);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
