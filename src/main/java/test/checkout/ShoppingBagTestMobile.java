@@ -245,7 +245,7 @@ public class ShoppingBagTestMobile extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_05(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_05");
-        commonShopping();
+//        commonShopping();
 //        https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithGift(baseURL+"universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
@@ -288,7 +288,7 @@ public class ShoppingBagTestMobile extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_17_19(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_17_19");
-        commonShopping();
+//        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithGift(baseURL+"universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
@@ -307,17 +307,17 @@ public class ShoppingBagTestMobile extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_18(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_18");
-        //commonShopping();
+//        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithGift(baseURL+"universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        objShoppingBagPage.applyCoupon("AUTOTEST1",true);
+        objShoppingBagPage.applyCoupon("TNZ_491_FX63",true);
         objShoppingBagPage.getOrderNumber();
         objShoppingBagPage.openNewTab();
         objShoppingBagPage.verifyOrderStatus("ORDER_STATUS_PENDING");
-        objShoppingBagPage.checkGiftCardStatus("AUTOTEST1");
+        objShoppingBagPage.checkGiftCardStatus("TNZ_491_FX63");
         keyword.resizeBrowser(319,848);
     }
 
@@ -326,13 +326,13 @@ public class ShoppingBagTestMobile extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_20(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_20");
-        //commonShopping();
+//        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithGift(baseURL+"universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        objShoppingBagPage.applyUsedCoupon("AUTOTEST1");
+        objShoppingBagPage.applyUsedCoupon("TNZ_491_FX63");
         keyword.resizeBrowser(319,848);
     }
     @Test
@@ -343,7 +343,7 @@ public class ShoppingBagTestMobile extends BaseTest {
 //        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
-        objShoppingBagPage.addShippingLabel(baseURL);
+        objShoppingBagPage.addShippingLabel(baseURL,false);
 
     }
 
@@ -369,7 +369,7 @@ public class ShoppingBagTestMobile extends BaseTest {
 //        commonShopping();
         //https://stage.glamira.co.uk/
 //        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
-        objShoppingBagPage.addShippingLabel(baseURL);
+        objShoppingBagPage.addShippingLabel(baseURL,true);
 
     }
 

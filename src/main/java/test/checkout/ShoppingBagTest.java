@@ -529,7 +529,7 @@ public class ShoppingBagTest extends BaseTest {
 //        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
-        objShoppingBagPage.addShippingLabel(baseURL);
+        objShoppingBagPage.addShippingLabel(baseURL,false);
 
     }
 
@@ -555,7 +555,7 @@ public class ShoppingBagTest extends BaseTest {
         commonShopping();
         //https://stage.glamira.co.uk/
 //        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
-        objShoppingBagPage.addShippingLabel(baseURL);
+        objShoppingBagPage.addShippingLabel(baseURL,true);
 
     }
 

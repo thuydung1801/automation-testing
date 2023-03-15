@@ -42,27 +42,27 @@
 <!--                    <include name="testCase_RV_07"/>-->
 
 
-<!--                    <include name="testCase_SP_02"/>-->
-<!--                    <include name="testCase_CheckoutWithGiftCard"/>-->
-<!--                    <include name="testCase_SP_03"/>-->
-<!--                    <include name="testCase_SP_15"/>-->
-<!--                    <include name="testCase_SP_01"/>-->
-<!--                    <include name="testCase_SP_04"/>-->
-<!--                    <include name="testCase_SP_05"/>-->
-<!--                    <include name="testCase_SP_16"/>-->
-<!--                    <include name="testCase_SP_17"/>-->
-<!--                    <include name="testCase_SP_18"/>-->
-<!--                    <include name="testCase_SP_19"/>-->
-<!--                    <include name="testCase_SP_21"/>-->
-<!--                    <include name="testCase_SP_24"/>-->
-<!--                    <include name="testCase_SP_25"/>-->
-<!--                    <include name="testCase_SP_26_RV_02_04"/>-->
+                    <include name="testCase_SP_02"/>
+                    <include name="testCase_CheckoutWithGiftCard"/>
+                    <include name="testCase_SP_03"/>
+                    <include name="testCase_SP_15"/>
+                    <include name="testCase_SP_01"/>
+                    <include name="testCase_SP_04"/>
+                    <include name="testCase_SP_05"/>
+                    <include name="testCase_SP_16"/>
+                    <include name="testCase_SP_17"/>
+                    <include name="testCase_SP_18"/>
+                    <include name="testCase_SP_19"/>
+                    <include name="testCase_SP_21"/>
+                    <include name="testCase_SP_24"/>
+                    <include name="testCase_SP_25"/>
+                    <include name="testCase_SP_26_RV_02_04"/>
 
-<!--                    <include name="testCase_RV_05"/>-->
-<!--                    <include name="testCase_RV_06"/>-->
+                    <include name="testCase_RV_05"/>
+                    <include name="testCase_RV_06"/>
 
 <!--&lt;!&ndash;                    <include name="testCase_RV_10"/>&ndash;&gt;-->
-<!--                    <include name="testCase_RV_07"/>-->
+                    <include name="testCase_RV_07"/>
 <!--&lt;!&ndash;                    <include name="testCase_RV_09"/>&ndash;&gt;-->
 <!--&lt;!&ndash;                    <include name="testCase_RV_08"/>&ndash;&gt;-->
 <!--&lt;!&ndash;                    <include name="testCase_RV_11"/>&ndash;&gt;-->

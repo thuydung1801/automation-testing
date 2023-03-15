@@ -256,15 +256,21 @@ public class ShoppingBagPage extends BasePage {
 
     }
 
-    public void addShippingLabel(String url) throws InterruptedException {
+    public void addShippingLabel(String url,Boolean flag) throws InterruptedException {
         //https://dev3.glamira.com/glgb/
         keyword.navigateToUrl(url+"catalog/product/view/id/103896");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         clickShoppingBagPage();
         moveToPagecheckOut();
-        checkOutLbl();
-        checkOutWithPayPal();
-//        checkOutWithBankTransfer();
+        if(flag){
+            checkOutLbl();
+
+        }
+        else{
+            checkOut();
+            checkOutWithPayPal();
+        }
+
     }
 
     //click button Edit depends on the type of product
@@ -440,10 +446,11 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_CHECKOUT_SHIPMENT_LBL",5);
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("CHECKOUT_BTN_CHECKOUT_SHIPMENT_LBL");
-        //keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT_PAYMENT",10);
+        Thread.sleep(2000);
+        keyword.click("CHECKOUT_BTN_ORDER");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 20);
+        keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
     }
     @Step("submit order")
     public void submit() throws InterruptedException {
@@ -629,17 +636,16 @@ public class ShoppingBagPage extends BasePage {
     //calculate the discount
     public void discount(boolean flag) throws InterruptedException {
         if (flag){
-            Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
+            Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_PRICE","£"));
             logger.info(String.valueOf(rawPrice));
             String totalPrice = String.valueOf(calculateMoney(rawPrice, 1));
             keyword.untilJqueryIsDone(50L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             Thread.sleep(5000);
             String actualPrice = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
-            logger.info(actualPrice);
-//            String lastPrice = keyword.removeLastChar(actualPrice);
+            String lastPrice = keyword.removeLastChar(actualPrice);
             PropertiesFile.serPropValue("CHECKOUT_TOTAL_AMOUNT",actualPrice);
-            keyword.simpleAssertEquals(totalPrice, actualPrice);
+            keyword.simpleAssertEquals(totalPrice, lastPrice);
         }else {
             keyword.untilJqueryIsDone(50L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -742,6 +748,11 @@ public class ShoppingBagPage extends BasePage {
     public void applyUsedCoupon(String couponCode) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(keyword.verifyElementVisible("CHECKOUT_BTN_SHOW_COUPON")){
+            keyword.click("CHECKOUT_BTN_SHOW_COUPON");
+        }
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_LBL_COUPON");
         keyword.sendKeys("CHECKOUT_TBX_COUPON",couponCode);
         keyword.click("CHECKOUT_BTN_COUPON");
@@ -760,7 +771,8 @@ public class ShoppingBagPage extends BasePage {
     }
     //get order number when the order is completed
     public void getOrderNumber(){
-        String text = keyword.getTextWithOutCharacters("CHECKOUT_ORDER_NUMBER","Your Order Number Is ");
+        String text = keyword.getTextWithOutCharacters("CHECKOUT_ORDER_NUMBER","Your order number is ");
+        logger.info("textIDorder====" + text);
         PropertiesFile.serPropValue("CHECKOUT_DATA_ORDER_NUMBER",text);
     }
 
@@ -788,6 +800,9 @@ public class ShoppingBagPage extends BasePage {
         Thread.sleep(2000);
         keyword.click("BE_ORDER_BTN_SEARCH");
         keyword.webDriverWaitForElementPresent("BE_ORDER_GRV",10);
+        Thread.sleep(2000);
+        logger.info("status====expected "+ PropertiesFile.getPropValue(status));
+        logger.info("actual===="+ keyword.getText("BE_ORDER_GRV_STATUS"));
         keyword.assertEquals(status,"BE_ORDER_GRV_STATUS");
     }
 
