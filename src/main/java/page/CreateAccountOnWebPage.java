@@ -5,6 +5,7 @@ import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
 import org.slf4j.Logger;
+import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 import page.signinSignup.SignUpPage;
@@ -17,12 +18,16 @@ public class CreateAccountOnWebPage extends BasePage {
     private RegisterPage objRegist;
     private SignInPage objSignIn;
     private CreateAccountOnMobilePage objCreateAccMobile;
+    private MyAccountPage objMyAccount;
+    private LoginPage objLogin;
 
     public CreateAccountOnWebPage(KeywordWeb key) {
         super(key);
         objRegist = new RegisterPage(this.keyword);
         objSignIn = new SignInPage(this.keyword);
         objSignUp = new SignUpPage(this.keyword);
+        objMyAccount = new MyAccountPage();
+        objLogin = new LoginPage();
     }
 
     public void goToFormCreateAccount() throws InterruptedException {
@@ -63,7 +68,7 @@ public class CreateAccountOnWebPage extends BasePage {
 
     public void setupForgot(String url) throws InterruptedException {
         keyword.navigateToUrl(url);
-        objRegist.acceptAllCookies();
+//        objRegist.acceptAllCookies();
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
@@ -195,9 +200,17 @@ public class CreateAccountOnWebPage extends BasePage {
         getCodeVerifyForm("LOGIN_DATA_USER_NAME", "BE_ADMIN_PASSWORD", "URL_BE_DEV");
     }
 
+    public void LoginSuccess() throws InterruptedException {
+        keyword.reLoadPage();
+        objLogin.loginOnWebsite("SIGNUP_EMAIL_EXIST1", "SIGNUP_DATA_PASSWORD_INFORMATION",
+                "DATA_CREATE_ACCOUNT_WITH_PHONE", "PASS_NEW_RD", true);
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("MAC_VERIFY_NAME");
+    }
+
     public void forgotPasswordPhone() throws InterruptedException {
         setUpFormForgot();
-        keyword.click("MOBILE_NUMBER");
+//        keyword.click("MOBILE_NUMBER");
         keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "DATA_CREATE_ACCOUNT_WITH_PHONE");
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(50L);
@@ -205,4 +218,5 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         sendPassWord();
     }
+
 }

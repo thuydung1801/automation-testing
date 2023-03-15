@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.CreateAccountOnWebPage;
+import page.MyAccountPage;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignUpPage;
@@ -15,31 +16,33 @@ public class CreateAccountOnWebTest extends BaseTest {
     private SignUpPage objSignUp;
     private RegisterPage objRegist;
     private CreateAccountOnWebPage objCreateAccOnWeb;
+
     public CreateAccountOnWebTest() {
         super();
         objCreateAccOnWeb = new CreateAccountOnWebPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
         objSignUp = new SignUpPage(this.keyword);
+
     }
 
     public void installation() throws Exception {
         objRegist.acceptAllCookies();
     }
 
-    //    @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
+    @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
     public void testCase_CreateAccount() throws Exception {
         logger.info("testCase_CreateAccount");
         installation();
         objCreateAccOnWeb.CreateNewCustomerSuccessfully();
     }
 
-    //    @Test(priority = 2, description = "forgot password")
+    @Test(priority = 2, description = "forgot password")
     public void testCase_forgotPassWord() throws Exception {
         logger.info("testCase_forGotPassWord");
         objCreateAccOnWeb.forgotPassword("URL_BE_DEV3");
     }
 
-    //    @Test(priority = 3, description = "forgot password - checkOut")
+    @Test(priority = 3, description = "forgot password - checkOut")
     public void testCase_forgotPassWordCheckOut() throws Exception {
         logger.info("testCase_forgotPassWordCheckOut");
         objCreateAccOnWeb.forgotPasswordCheckOut("URL_DATA_PRODUCT", "URL_BE_DEV3");
@@ -60,10 +63,10 @@ public class CreateAccountOnWebTest extends BaseTest {
         objCreateAccOnWeb.forgotPasswordPhone();
     }
 
-    @Test(priority = 6, description = "forgot password - checkOut")
-    public void testCaseWithPhone_forgotPassWordCheckOut() throws Exception {
-        logger.info("testCase_forgotPassWordCheckOut");
-        objCreateAccOnWeb.forgotPasswordCheckOut("URL_DATA_PRODUCT", "URL_BE_DEV3");
+    @Test(priority = 6, description = "Login")
+    public void testCaseWithPhone_login() throws Exception {
+        logger.info("testCaseWithPhone_login");
+        objCreateAccOnWeb.LoginSuccess();
     }
 
 }
