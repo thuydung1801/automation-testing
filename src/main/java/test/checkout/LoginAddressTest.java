@@ -316,7 +316,6 @@ public class LoginAddressTest extends BaseTest {
     public void NLA_32() throws InterruptedException {
         objLoginAddress.forgotPassword("blank code");
     }
-
     @Test(priority = 28, description = "Add new billing address using suggest address with store having state")
     public void NLA_04() throws InterruptedException {
         customerNotLogin();
