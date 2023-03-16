@@ -250,17 +250,27 @@ public class ShoppingBagPage extends BasePage {
 
     //click button view detail depends on the type of product
     public void viewDetail(String typeOfProduct) throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click(typeOfProduct);
 
     }
 
-    public void addShippingLabel(String url) throws InterruptedException {
+    public void addShippingLabel(String url,Boolean flag) throws InterruptedException {
+        //https://dev3.glamira.com/glgb/
         keyword.navigateToUrl(url+"catalog/product/view/id/103896");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         clickShoppingBagPage();
         moveToPagecheckOut();
-        checkOutLbl();
-        checkOutWithPayPal();
+        if(flag){
+            checkOutLbl();
+
+        }
+        else{
+            checkOut();
+            checkOutWithPayPal();
+        }
+
     }
 
     //click button Edit depends on the type of product
@@ -273,6 +283,12 @@ public class ShoppingBagPage extends BasePage {
 
     //edit option of ring to check update case
     public void editOptions() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(keyword.verifyElementVisible("CHECKOUT_CBX_STONE")){
+            keyword.click("CHECKOUT_CBX_STONE");
+            keyword.untilJqueryIsDone(50L);
+        }
         keyword.click("CHECKOUT_CBX_BLACKDIAMOND");
         keyword.untilJqueryIsDone(30L);
         keyword.click("CHECKOUT_LBL_METAL");
@@ -309,7 +325,7 @@ public class ShoppingBagPage extends BasePage {
         //keyword.webDriverWaitForElementPresent("CHECKOUT_MESSAGES_UPDATE_23",10);
     }
     //input engraving of single ring
-    public void inputEngravingwithSingleRing(String data, String btnAdd, String engraving) throws InterruptedException {
+    public void inputEngravingwithSingleRing(String domain,String data, String btnAdd, String engraving) throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_VIEWDETAIL",5);
         keyword.untilJqueryIsDone(30L);
         keyword.verifyElementPresent(btnAdd);
@@ -324,6 +340,11 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(domain.equalsIgnoreCase("mobile")){
+            viewDetail("CHECKOUT_BTN_VIEWDETAIL_GLAMIRARING_MOBILE");
+            keyword.untilJqueryIsDone(30L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        }
         keyword.assertEquals(data, engraving);
     }
     //input engraving of couple rings
@@ -349,6 +370,11 @@ public class ShoppingBagPage extends BasePage {
     public void inputCorrectly(String data, String engraving) throws InterruptedException {
         keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
         Thread.sleep(10000);
+        if(keyword.verifyElementVisible("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE")){
+            viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE");
+            keyword.untilJqueryIsDone(30L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        }
         String actual = keyword.getText(engraving);
         String expect = PropertiesFile.getPropValue(data);
         keyword.simpleAssertEquals(expect+ " - "+ expect
@@ -362,6 +388,11 @@ public class ShoppingBagPage extends BasePage {
             keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
             Thread.sleep(10000);
             String expect = PropertiesFile.getPropValue(dataExpected);
+            if(keyword.verifyElementVisible("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE")){
+                viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE");
+                keyword.untilJqueryIsDone(30L);
+                keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+            }
             keyword.assertEquals(expect + " - " + expect, engraving);
         }
     }
@@ -393,7 +424,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_BTN_CHECKOUT");
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT",20);
     }
     @Step("common checkout")
@@ -404,20 +435,22 @@ public class ShoppingBagPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_CHECKOUT_SHIPMENT",5);
         keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.scrollDownToElement("CHECKOUT_BTN_CHECKOUT_SHIPMENT");
         keyword.click("CHECKOUT_BTN_CHECKOUT_SHIPMENT");
         //keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT_PAYMENT",10);
     }
     @Step("common checkout")
     public void checkOutLbl() throws InterruptedException {
-        keyword.untilJqueryIsDone(100L);
-        Thread.sleep(5000);
+        keyword.untilJqueryIsDone(50L);
         keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.webDriverWaitForElementPresent("CHECKOUT_BTN_CHECKOUT_SHIPMENT_LBL",5);
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("CHECKOUT_BTN_CHECKOUT_SHIPMENT_LBL");
-        //keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_CHECKOUT_PAYMENT",10);
+        Thread.sleep(2000);
+        keyword.click("CHECKOUT_BTN_ORDER");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 20);
+        keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
     }
     @Step("submit order")
     public void submit() throws InterruptedException {
@@ -690,12 +723,19 @@ public class ShoppingBagPage extends BasePage {
     public void applyCoupon(String couponCode, boolean flag) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(keyword.verifyElementVisible("CHECKOUT_BTN_SHOW_COUPON")){
+            keyword.click("CHECKOUT_BTN_SHOW_COUPON");
+        }
+        Thread.sleep(5000);
         keyword.click("CHECKOUT_LBL_COUPON");
         keyword.sendKeys("CHECKOUT_TBX_COUPON",couponCode);
         keyword.click("CHECKOUT_BTN_COUPON");
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         discount(flag);
         if (flag){
-            checkOutWithBankTransfer();
+            checkOutWithPayPal();
         }else {
             keyword.click("CHECKOUT_BTN_ORDER");
             keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 20);
@@ -706,6 +746,11 @@ public class ShoppingBagPage extends BasePage {
     }
     @Step("apply the coupon is used")
     public void applyUsedCoupon(String couponCode) throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        if(keyword.verifyElementVisible("CHECKOUT_BTN_SHOW_COUPON")){
+            keyword.click("CHECKOUT_BTN_SHOW_COUPON");
+        }
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_LBL_COUPON");
@@ -726,7 +771,8 @@ public class ShoppingBagPage extends BasePage {
     }
     //get order number when the order is completed
     public void getOrderNumber(){
-        String text = keyword.getTextWithOutCharacters("CHECKOUT_ORDER_NUMBER","Your Order Number Is ");
+        String text = keyword.getTextWithOutCharacters("CHECKOUT_ORDER_NUMBER","Your order number is ");
+        logger.info("textIDorder====" + text);
         PropertiesFile.serPropValue("CHECKOUT_DATA_ORDER_NUMBER",text);
     }
 
@@ -734,30 +780,36 @@ public class ShoppingBagPage extends BasePage {
     public void openNewTab() throws InterruptedException {
         objSignIn = new SignInPage(this.keyword);
         keyword.openNewTabFromTabBase(1,"BE_URL");
-        objSignIn.loginAdmin("BE_ADMIN_USERNAME","BE_ADMIN_PASSWORD");
+        keyword.maximizeWindow();
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        objSignIn.loginAdmin("LOGIN_DATA_USER_NAME_DUNG","LOGIN_DATA_PASS_WORD_DUNG");
     }
 
     //go to BE and verify order's status
 
-    public void verifyOrderStatus(String status, String url) throws InterruptedException {
+    public void verifyOrderStatus(String status) throws InterruptedException {
         //go to BE
         //https://dev3.glamira.com/
-        keyword.navigateToUrl(url + "secured2021/sales/order/");
+        keyword.navigateToUrl("https://stage.glamira.com/secured2021/sales/order/");
         //verify status
         keyword.webDriverWaitForElementPresent("BE_ORDER_TBX_SEARCH",10);
         keyword.clearText("BE_ORDER_TBX_SEARCH");
         keyword.sendKeys("BE_ORDER_TBX_SEARCH","CHECKOUT_DATA_ORDER_NUMBER");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(2000);
         keyword.click("BE_ORDER_BTN_SEARCH");
         keyword.webDriverWaitForElementPresent("BE_ORDER_GRV",10);
+        Thread.sleep(2000);
+        logger.info("status====expected "+ PropertiesFile.getPropValue(status));
+        logger.info("actual===="+ keyword.getText("BE_ORDER_GRV_STATUS"));
         keyword.assertEquals(status,"BE_ORDER_GRV_STATUS");
     }
 
     //check giftcard's status of a giftcode, that this giftcode's status is used
     public void checkGiftCardStatus(String code) throws InterruptedException {
         //go to giftcard screen
-        keyword.navigateToUrl("https://dev3.glamira.com/secured2021/amgcard/account/");
+        keyword.navigateToUrl("https://stage.glamira.com/secured2021/amgcard/account/");
         //check status by searching code
         keyword.webDriverWaitForElementPresent("GIFTCARD_HEADER",10);
         keyword.untilJqueryIsDone(50L);
@@ -781,6 +833,8 @@ public class ShoppingBagPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.webDriverWaitForElementPresent("BE_ORDER_BTN_INVOICE",10);
         keyword.click("BE_ORDER_BTN_INVOICE");
+        Thread.sleep(2000);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         String amount = keyword.getTextWithOutCharacters("BE_ORDER_STATUS_AMOUNT","£");
         keyword.simpleAssertEquals("CHECKOUT_TOTAL_AMOUNT",amount);
     }
