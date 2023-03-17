@@ -184,7 +184,7 @@ public class CreateAccountOnWebPage extends BasePage {
     }
 
     //    ------whthPhone
-    public void CreateNewCustomerWithPhone() throws Exception {
+    public void createNewCustomerWithPhone() throws Exception {
 //        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
         goToFormCreateAccount();
         sendKeyFormDataLogin();
@@ -200,7 +200,7 @@ public class CreateAccountOnWebPage extends BasePage {
         getCodeVerifyForm("LOGIN_DATA_USER_NAME", "BE_ADMIN_PASSWORD", "URL_BE_DEV");
     }
 
-    public void LoginSuccess() throws InterruptedException {
+    public void loginSuccess() throws InterruptedException {
         keyword.reLoadPage();
         objLogin.loginOnWebsite("SIGNUP_EMAIL_EXIST1", "SIGNUP_DATA_PASSWORD_INFORMATION",
                 "DATA_CREATE_ACCOUNT_WITH_PHONE", "PASS_NEW_RD", true);

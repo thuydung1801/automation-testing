@@ -159,7 +159,7 @@ public class SignUpTest extends BaseTest {
 
     @Test(priority = 21, description = "Register an account with the email already in the system")
     public void testCase_SU024() throws Exception {
-        logger.info("testCase_SU023");
+        logger.info("testCase_SU024");
         objSigUp.checkConditionAEmailExisted();
     }
     @Test(priority = 22, description = "Create new customer successfully with store enable phone number confirm")

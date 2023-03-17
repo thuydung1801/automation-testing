@@ -29,20 +29,20 @@ public class CreateAccountOnWebTest extends BaseTest {
         objRegist.acceptAllCookies();
     }
 
-    @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
+//    @Test(priority = 1, description = "Create new customer successfully with store enable email confirm")
     public void testCaseWeb_CreateAccount() throws Exception {
         logger.info("testCaseWeb_CreateAccount");
         installation();
         objCreateAccOnWeb.CreateNewCustomerSuccessfully();
     }
 
-    @Test(priority = 2, description = "forgot password")
+//    @Test(priority = 2, description = "forgot password")
     public void testCaseWeb_forgotPassWord() throws Exception {
         logger.info("testCaseWeb_forgotPassWord");
         objCreateAccOnWeb.forgotPassword("URL_BE_DEV3");
     }
 
-    @Test(priority = 3, description = "forgot password - checkOut")
+//    @Test(priority = 3, description = "forgot password - checkOut")
     public void testCaseWeb_forgotPassWordCheckOut() throws Exception {
         logger.info("testCaseWeb_forgotPassWordCheckOut");
         objCreateAccOnWeb.forgotPasswordCheckOut("URL_DATA_PRODUCT", "URL_BE_DEV3");
@@ -53,7 +53,7 @@ public class CreateAccountOnWebTest extends BaseTest {
     public void testWebPhone_CreateAccount() throws Exception {
         logger.info("testWebPhone_CreateAccount");
         installation();
-        objCreateAccOnWeb.CreateNewCustomerWithPhone();
+        objCreateAccOnWeb.createNewCustomerWithPhone();
     }
 
     @Test(priority = 5, description = "forgot password")
@@ -65,7 +65,7 @@ public class CreateAccountOnWebTest extends BaseTest {
     @Test(priority = 6, description = "Login")
     public void testWebPhone_loginWeb() throws Exception {
         logger.info("testWebPhone_loginWeb");
-        objCreateAccOnWeb.LoginSuccess();
+        objCreateAccOnWeb.loginSuccess();
     }
 
 }

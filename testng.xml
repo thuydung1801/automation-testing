@@ -35,16 +35,16 @@
     <test name="Run Test">
         <parameter name="devices" value="web"></parameter>
         <classes>
-            <class name="test.checkout.LoginAddressTest">
+            <class name="test.CreateAccountOnWebTest">
 <!--                <methods>-->
 <!--                    <include name="NLA_01_02"/>-->
-<!--&lt;!&ndash;                    <include name="NLA_03"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="NLA_06"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="NLA_08"/>&ndash;&gt;-->
-<!--                    <include name="NLA_05"/>-->
+<!--                    <include name="NLA_03"/>-->
 <!--                    <include name="NLA_06"/>-->
-<!--                    <include name="NLA_10"/>-->
-<!--                    <include name="NLA_11"/>-->
+<!--                    <include name="NLA_08"/>-->
+<!--                    <include name="NLA_05"/>-->
+<!--&lt;!&ndash;                    <include name="NLA_07"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="NLA_10"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="NLA_11"/>&ndash;&gt;-->
 <!--                </methods>-->
             </class>
         </classes>
