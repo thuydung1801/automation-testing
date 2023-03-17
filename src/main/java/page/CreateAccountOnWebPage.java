@@ -202,8 +202,9 @@ public class CreateAccountOnWebPage extends BasePage {
 
     public void loginSuccess() throws InterruptedException {
         keyword.reLoadPage();
+        objRegist.acceptAllCookies();
         objLogin.loginOnWebsite("SIGNUP_EMAIL_EXIST1", "SIGNUP_DATA_PASSWORD_INFORMATION",
-                "DATA_CREATE_ACCOUNT_WITH_PHONE", "PASS_NEW_RD", true);
+                "DATA_CREATE_ACCOUNT_WITH_PHONE", "PASS_NEW_RD", false);
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("MAC_VERIFY_NAME");
     }

@@ -27,7 +27,7 @@ public class CreateAccountMobileTest extends BaseTest {
     public void testCaseMb_CreateAccount() throws Exception {
         logger.info("testCase_CreateAccount");
         objRegist.acceptAllCookies();
-        objCreateAccountMobile.CreateNewCustomerSuccessfully();
+        objCreateAccountMobile.createNewCustomerSuccessfully();
     }
 
     @Test(priority = 2, description = "forgot password")
@@ -47,7 +47,7 @@ public class CreateAccountMobileTest extends BaseTest {
     @Test(priority = 4, description = "Create new customer successfully with store enable email confirm")
     public void testCaseMbPhone_CreateAccount() throws Exception {
         logger.info("testCaseMbPhone_CreateAccount");
-        objCreateAccountMobile.CreateNewCustomerWithPhone();
+        objCreateAccountMobile.createNewCustomerWithPhone();
     }
 
     @Test(priority = 5, description = "forgot password")
@@ -61,7 +61,7 @@ public class CreateAccountMobileTest extends BaseTest {
     public void testCaseMBPhone_login() throws Exception {
         logger.info("testCaseMBPhone_login");
         keyword.resizeBrowser(319, 848);
-        objCreateAccountMobile.LoginSuccessWithPhone("DATA_CREATE_ACCOUNT_WITH_PHONE", "PASS_NEW_RD");
+        objCreateAccountMobile.loginSuccessWithPhone("DATA_CREATE_ACCOUNT_WITH_PHONE", "PASS_NEW_RD");
     }
 
 }

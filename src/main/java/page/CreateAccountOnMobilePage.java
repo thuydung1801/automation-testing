@@ -20,7 +20,7 @@ public class CreateAccountOnMobilePage extends BasePage {
         objSignIn = new SignInPage(this.keyword);
     }
 
-    public void CreateNewCustomerSuccessfully() throws Exception {
+    public void createNewCustomerSuccessfully() throws Exception {
         selectMenu();
         objCreateAccount.createAndVerifyForm();
     }
@@ -48,11 +48,11 @@ public class CreateAccountOnMobilePage extends BasePage {
         keyword.resizeBrowser(319, 848);
         keyword.verifyElementVisible("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
     }
-    public void CreateNewCustomerWithPhone() throws Exception {
+    public void createNewCustomerWithPhone() throws Exception {
         selectMenu();
-        objCreateAccount.CreateNewCustomerWithPhone();
+        objCreateAccount.createNewCustomerWithPhone();
     }
-    public void LoginSuccessWithPhone(String phone, String phonePassword) throws InterruptedException {
+    public void loginSuccessWithPhone(String phone, String phonePassword) throws InterruptedException {
         selectMenu();
         keyword.sendKeys("LOGIN_TBX_PHONE_2", phone);
         Thread.sleep(2000);
