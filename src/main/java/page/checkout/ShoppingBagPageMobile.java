@@ -42,7 +42,7 @@ public class ShoppingBagPageMobile extends BasePage {
 //        logger.info(expect);
 //        keyword.simpleAssertEquals(expect+ " - "+ expect
 //                , actual);
-        shoppingBagPage.inputCorrectly(data,engraving);
+        shoppingBagPage.inputCorrectly(data,engraving,"mobile");
         keyword.click("PRD_BTN_CLOSE_VIEWDETAIL");
     }
 

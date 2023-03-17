@@ -52,8 +52,7 @@ public class LoginPage extends BasePage {
         if(keyword.verifyElementPresent("LOGIN_TBX_PHONE") && flag){
             keyword.sendKeys("LOGIN_TBX_PHONE", phone);
             Thread.sleep(2000);
-            keyword.sendKeys("LOGIN_TXT_PASSWORD", phonePassword);
-            Thread.sleep(2000);
+                       Thread.sleep(2000);
         }
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
         keyword.untilJqueryIsDone(50L);

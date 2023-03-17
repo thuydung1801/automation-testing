@@ -150,7 +150,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_ENGRAVING","CHECKOUT_HYPERLINK_ADD"
                 ,"CHECKOUT_TXT_WOMEN_ENGRAVING","CHECKOUT_TXT_MEN_ENGRAVING");
-        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING","CHECKOUT_LBL_ENGRAVING");
+        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING","CHECKOUT_LBL_ENGRAVING","web");
 
     }
     @Test
@@ -177,7 +177,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_ICON_ADD",
                 "CHECKOUT_TXT_WOMEN_ENGRAVING_18","CHECKOUT_TXT_MEN_ENGRAVING_18");
-        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_LBL_ENGRAVING");
+        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_LBL_ENGRAVING","web");
 
     }
     @Test
@@ -193,7 +193,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_19","CHECKOUT_ICON_ADD",
                 "CHECKOUT_TXT_WOMEN_ENGRAVING_18","CHECKOUT_TXT_MEN_ENGRAVING_18");
         objShoppingBagPage.inputError("CHECKOUT_LBL_MAXLENGTH_MESSAGES_1","CHECKOUT_LBL_MAXLENGTH_MESSAGES_2",
-                "CHECKOUT_DATA_19_OUTPUT","CHECKOUT_LBL_ENGRAVING", true);
+                "CHECKOUT_DATA_19_OUTPUT","CHECKOUT_LBL_ENGRAVING", true,"web");
 
     }
 //    @Test(priority = 11, description = "Add engraving with some special character don't allow input")
@@ -205,7 +205,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_20","CHECKOUT_ICON_ADD",
                 "CHECKOUT_TXT_WOMEN_ENGRAVING_18","CHECKOUT_TXT_MEN_ENGRAVING_18");
         objShoppingBagPage.inputError("CHECKOUT_LBL_ICON_MESSAGES_1","CHECKOUT_LBL_ICON_MESSAGES_2",
-                "","", false);
+                "","", false,"web");
 
     }
     @Test
@@ -477,17 +477,17 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_18(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_18");
-        //commonShopping();
+        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithGift(baseURL+"universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        objShoppingBagPage.applyCoupon("AUTOTEST1",true);
+        objShoppingBagPage.applyCoupon("TNZ_491_FX63",true);
         objShoppingBagPage.getOrderNumber();
         objShoppingBagPage.openNewTab();
         objShoppingBagPage.verifyOrderStatus("ORDER_STATUS_PENDING");
-        objShoppingBagPage.checkGiftCardStatus("AUTOTEST1");
+        objShoppingBagPage.checkGiftCardStatus("TNZ_491_FX63");
 
     }
 
@@ -502,7 +502,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
-        objShoppingBagPage.applyUsedCoupon("AUTOTEST1");
+        objShoppingBagPage.applyUsedCoupon("TNZ_491_FX63");
 
     }
 
@@ -551,7 +551,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_33(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_31");
-        commonShopping();
+//        commonShopping();
         //https://stage.glamira.co.uk/
 //        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.addShippingLabel(baseURL,true);

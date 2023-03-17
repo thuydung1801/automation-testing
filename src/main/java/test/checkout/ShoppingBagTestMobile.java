@@ -185,7 +185,7 @@ public class ShoppingBagTestMobile extends BaseTest {
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_19","CHECKOUT_ICON_ADD",
                 "CHECKOUT_TXT_WOMEN_ENGRAVING_18","CHECKOUT_TXT_MEN_ENGRAVING_18");
         objShoppingBagPage.inputError("CHECKOUT_LBL_MAXLENGTH_MESSAGES_1","CHECKOUT_LBL_MAXLENGTH_MESSAGES_2",
-                "CHECKOUT_DATA_19_OUTPUT","CHECKOUT_LBL_ENGRAVING_MOBILE", true);
+                "CHECKOUT_DATA_19_OUTPUT","CHECKOUT_LBL_ENGRAVING_MOBILE", true,"mobile");
 
     }
     @Test

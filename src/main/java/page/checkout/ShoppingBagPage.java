@@ -367,10 +367,10 @@ public class ShoppingBagPage extends BasePage {
 
     }
     @Step("Input valid data")
-    public void inputCorrectly(String data, String engraving) throws InterruptedException {
+    public void inputCorrectly(String data, String engraving, String domain) throws InterruptedException {
         keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
         Thread.sleep(10000);
-        if(keyword.verifyElementVisible("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE")){
+        if(domain.equalsIgnoreCase("mobile")){
             viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE");
             keyword.untilJqueryIsDone(30L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -381,14 +381,14 @@ public class ShoppingBagPage extends BasePage {
                 , actual);
     }
     @Step("Input invalid data")
-    public void inputError(String lblErrorMessage1, String lblErrorMessage2, String dataExpected, String engraving, boolean flag) throws InterruptedException {
+    public void inputError(String lblErrorMessage1, String lblErrorMessage2, String dataExpected, String engraving, boolean flag,String domain) throws InterruptedException {
         keyword.verifyElementPresent(lblErrorMessage1);
         keyword.verifyElementPresent(lblErrorMessage2);
         if(flag) {
             keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
             Thread.sleep(10000);
             String expect = PropertiesFile.getPropValue(dataExpected);
-            if(keyword.verifyElementVisible("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE")){
+            if(domain.equalsIgnoreCase("mobile")){
                 viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE");
                 keyword.untilJqueryIsDone(30L);
                 keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -636,9 +636,10 @@ public class ShoppingBagPage extends BasePage {
     //calculate the discount
     public void discount(boolean flag) throws InterruptedException {
         if (flag){
-            Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
+            Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_PRICE","£"));
             logger.info(String.valueOf(rawPrice));
             String totalPrice = String.valueOf(calculateMoney(rawPrice, 1));
+            logger.info("totalPrice==="+totalPrice);
             keyword.untilJqueryIsDone(50L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
             String actualPrice = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
@@ -799,8 +800,9 @@ public class ShoppingBagPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         Thread.sleep(2000);
         keyword.click("BE_ORDER_BTN_SEARCH");
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.webDriverWaitForElementPresent("BE_ORDER_GRV",10);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         logger.info("status====expected "+ PropertiesFile.getPropValue(status));
         logger.info("actual===="+ keyword.getText("BE_ORDER_GRV_STATUS"));
         keyword.assertEquals(status,"BE_ORDER_GRV_STATUS");
