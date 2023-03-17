@@ -159,13 +159,13 @@ public class SignUpTest extends BaseTest {
 
     @Test(priority = 21, description = "Register an account with the email already in the system")
     public void testCase_SU024() throws Exception {
-        logger.info("testCase_SU023");
+        logger.info("testCase_SU024");
         objSigUp.checkConditionAEmailExisted();
     }
     @Test(priority = 22, description = "Create new customer successfully with store enable phone number confirm")
     public void testCase_SU023_Case_14() throws Exception {
         logger.info("testCase_SU023_Case_14");
         objSigUp.createNewCustomerSuccessfullyWithPhone();
-        objSigUp.getActivationCode();
+        objSigUp.getActivationCode("SIGNUP_SWITCH_TO_TAB_CHECK2","感谢注册。","SIGNUP_CODE_RESEND");
     }
 }

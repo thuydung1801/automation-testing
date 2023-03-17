@@ -196,12 +196,10 @@ public class MyAccountMobilePage extends BasePage {
         objMyAccount.checkStatus("confirmation", "MAC_OVER_ID_ORDER_STATUS_CONFIR_MOBILE", "MAC_OVER_STATUS_CONFIR_ICON",
                 "MAC_OVER_STATUS_CONFIR_MOBILE", "MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR_MOBILE", "MAC_OVER_DATA_STATUS_CONFIR");
     }
-
     public void checkStatusDelivery() throws InterruptedException {
         keyword.reLoadPage();
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         objMyAccount.checkStatus("delivery", "MAC_OVER_ID_ORDER_STATUS_DELIVERY_MOBILE", "MAC_OVER_STATUS_DELIVERY_ICON_MOBILE",
                 "MAC_OVER_STATUS_DELIVERY_MOBILE", "MAC_OVER_DATA_ID_ORDER_STATUS_DELIVERY_MOBILE", "MAC_OVER_DATA_STATUS_DELIVERY");
     }
-
 }

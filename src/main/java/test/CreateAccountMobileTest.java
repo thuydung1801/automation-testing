@@ -5,6 +5,7 @@ import core.LogHelper;
 import org.slf4j.Logger;
 import org.testng.annotations.Test;
 import page.CreateAccountOnMobilePage;
+import page.CreateAccountOnWebPage;
 import page.home.RegisterPage;
 
 public class CreateAccountMobileTest extends BaseTest {
@@ -12,11 +13,13 @@ public class CreateAccountMobileTest extends BaseTest {
     private RegisterPage objRegist;
     private CreateAccountOnMobilePage objCreateAccountMobile;
     private CreateAccountOnWebTest objCreateAccountOnWeb;
+    private CreateAccountOnWebPage CreateAccountOnWeb;
 
     public CreateAccountMobileTest() {
         super();
         objCreateAccountMobile = new CreateAccountOnMobilePage(this.keyword);
         objCreateAccountOnWeb = new CreateAccountOnWebTest();
+        CreateAccountOnWeb = new CreateAccountOnWebPage(this.keyword);
         objRegist = new RegisterPage(this.keyword);
     }
 
@@ -24,7 +27,7 @@ public class CreateAccountMobileTest extends BaseTest {
     public void testCaseMb_CreateAccount() throws Exception {
         logger.info("testCase_CreateAccount");
         objRegist.acceptAllCookies();
-        objCreateAccountMobile.CreateNewCustomerSuccessfully();
+        objCreateAccountMobile.createNewCustomerSuccessfully();
     }
 
     @Test(priority = 2, description = "forgot password")
@@ -36,7 +39,29 @@ public class CreateAccountMobileTest extends BaseTest {
 
     @Test(priority = 3, description = "forgot password - checkOut")
     public void testCaseMb_forgotPassWordCheckOut() throws Exception {
-        logger.info("testCase_forGotPassWordCheckOut");
-        objCreateAccountMobile.forgotPasswordCheckOut();
+        logger.info("testCaseMb_forgotPassWordCheckOut");
+        objCreateAccountMobile.forgotPasswordCheckOut("URL_BE_DEV3");
     }
+
+    //    -------Mobile
+    @Test(priority = 4, description = "Create new customer successfully with store enable email confirm")
+    public void testCaseMbPhone_CreateAccount() throws Exception {
+        logger.info("testCaseMbPhone_CreateAccount");
+        objCreateAccountMobile.createNewCustomerWithPhone();
+    }
+
+    @Test(priority = 5, description = "forgot password")
+    public void testCaseMBPhone_forgotPassWord() throws Exception {
+        logger.info("testCaseMBPhone_forgotPassWord");
+        keyword.resizeBrowser(319, 848);
+        CreateAccountOnWeb.forgotPasswordPhone();
+    }
+
+    @Test(priority = 6, description = "Login")
+    public void testCaseMBPhone_login() throws Exception {
+        logger.info("testCaseMBPhone_login");
+        keyword.resizeBrowser(319, 848);
+        objCreateAccountMobile.loginSuccessWithPhone("DATA_CREATE_ACCOUNT_WITH_PHONE", "PASS_NEW_RD");
+    }
+
 }

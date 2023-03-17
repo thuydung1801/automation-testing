@@ -50,8 +50,8 @@ public class MyAccountMobileTest extends BaseTest {
     public void testCase_PI_06( String baseURL) throws InterruptedException {
         testMyAccount.deleteAccount("COM_PASSWORD_NEW_MOBILE",baseURL);
     }
-
-    //    -----------------------------
+//
+//        -----------------------------
     @Test(priority = 6, description = "Edit BILLING ADDRESS")
     public void testCase_MA_01() throws InterruptedException {
         testMyAccountMobile.editBillingAddress();

@@ -5,6 +5,7 @@ import core.KeywordWeb;
 import core.LogHelper;
 import core.PropertiesFile;
 import org.slf4j.Logger;
+import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 import page.signinSignup.SignUpPage;
@@ -17,44 +18,57 @@ public class CreateAccountOnWebPage extends BasePage {
     private RegisterPage objRegist;
     private SignInPage objSignIn;
     private CreateAccountOnMobilePage objCreateAccMobile;
+    private MyAccountPage objMyAccount;
+    private LoginPage objLogin;
 
     public CreateAccountOnWebPage(KeywordWeb key) {
         super(key);
         objRegist = new RegisterPage(this.keyword);
         objSignIn = new SignInPage(this.keyword);
         objSignUp = new SignUpPage(this.keyword);
+        objMyAccount = new MyAccountPage();
+        objLogin = new LoginPage();
     }
 
-    public void CreateNewCustomerSuccessfully() throws Exception {
+    public void goToFormCreateAccount() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(1000);
         keyword.click("LOGIN_BTN_LOGIN");
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_FORGOT_PASSWORD", 50);
         Thread.sleep(2000);
-        createAndVerifyForm();
-    }
-
-    public void createAndVerifyForm() throws Exception {
         keyword.scrollDownToElement("SIGNUP_BTN_CREATE_MY_ACCOUNT");
         keyword.untilJqueryIsDone(50L);
         keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
         keyword.webDriverWaitForElementPresent("SIGNUP_FORM_DATA_INFORMATION", 500);
+    }
+
+    public void CreateNewCustomerSuccessfully() throws Exception {
+        goToFormCreateAccount();
+        createAndVerifyForm();
+    }
+
+    public void createAndVerifyForm() throws Exception {
         sendKeyFormDataLogin();
         sendKeyFormPassword();
-        getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
+        getCodeVerifyForm("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD_DUNG", "URL_BE_STAGE");
+    }
+
+    public void getCodeVerifyForm(String userName, String pass, String url) throws Exception {
+        getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT", userName, pass, url);
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIST_SUCCESS_US");
         keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
     }
 
-    public void forgotPasswordCheckOut() throws Exception {
-        setupForgot("https://stage.glamira.co.uk/glamira-pendant-elsie.html?alloy=red_white-585&stone1=diamond-Brillant");
-        sendData();
+    public void forgotPasswordCheckOut(String dataURL, String url) throws Exception {
+        setupForgot(dataURL);
+        sendData(url);
         keyword.verifyElementVisible("SIGNIN_VERIFY_SUCCESS_SIGNIN_FORM");
     }
 
     public void setupForgot(String url) throws InterruptedException {
         keyword.navigateToUrl(url);
+//        objRegist.acceptAllCookies();
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
@@ -70,9 +84,9 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.click("CHECKOUT_LA_HPL_FORGOT_PASS");
     }
 
-    public void forgotPassword() throws Exception {
+    public void forgotPassword(String url) throws Exception {
         setUpFormForgot();
-        sendData();
+        sendData(url);
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(3000);
         keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
@@ -92,16 +106,16 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
     }
 
-    public void sendData() throws Exception {
+    public void sendData(String url) throws Exception {
         keyword.untilJqueryIsDone(50L);
         sendEmail();
-        objSignIn.openTabBE("https://stage.glamira.com/secured2021/");
+        objSignIn.openTabBE(url);
         keyword.deleteAllCookies();
         keyword.reLoadPage();
         keyword.deleteAllCookies();
         keyword.closeWindowByIndex(1);
         keyword.switchToTab(0);
-        getCodeSetup("LOGIN_INPUT_ENTER_DATA", "BTN_SUBMIT");
+        getCodeSetup("LOGIN_INPUT_ENTER_DATA", "BTN_SUBMIT", "LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD_DUNG", "URL_BE_STAGE");
         sendPassWord();
     }
 
@@ -127,12 +141,12 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.verifyElementVisible("SIGNIN_XPATH_ACTUAL_SENT_CODE");
     }
 
-    public void getCodeSetup(String code, String btnSubmit) throws Exception {
+    public void getCodeSetup(String code, String btnSubmit, String userName, String pass, String url) throws Exception {
         objSignIn = new SignInPage(this.keyword);
-        objSignIn.openTabBE("https://stage.glamira.com/secured2021/");
+        objSignIn.openTabBE(url);
         objSignIn.loginAdmin(
-                "nguyenngoc",
-                "Admin123");
+                userName,
+                pass);
         objSignIn.chooseItemCustomer(
                 "LOGIN_BTN_CUSTOMER",
                 "LOGIN_BTN_CUSTOMER",
@@ -169,8 +183,41 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
     }
 
-    boolean check(String element) throws InterruptedException {
+    //    ------whthPhone
+    public void createNewCustomerWithPhone() throws Exception {
+//        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
+        goToFormCreateAccount();
+        sendKeyFormDataLogin();
+        objSignUp = new SignUpPage(this.keyword);
+        String timestamp = new java.text.SimpleDateFormat("HHmmss").format(new Date());
+        String pass = "03" + timestamp + "77";
+        PropertiesFile.serPropValue("DATA_CREATE_ACCOUNT_WITH_PHONE", pass);
+        keyword.sendKeys("SIGNUP_WITH_PHONE", "DATA_CREATE_ACCOUNT_WITH_PHONE");
+        keyword.click("SIGNUP_XPATH_FOR_FORM");
+        keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
-        return keyword.verifyElementVisible(element);
+        sendKeyFormPassword();
+        getCodeVerifyForm("LOGIN_DATA_USER_NAME", "BE_ADMIN_PASSWORD", "URL_BE_DEV");
     }
+
+    public void loginSuccess() throws InterruptedException {
+        keyword.reLoadPage();
+        objRegist.acceptAllCookies();
+        objLogin.loginOnWebsite("SIGNUP_EMAIL_EXIST1", "SIGNUP_DATA_PASSWORD_INFORMATION",
+                "DATA_CREATE_ACCOUNT_WITH_PHONE", "PASS_NEW_RD", false);
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("MAC_VERIFY_NAME");
+    }
+
+    public void forgotPasswordPhone() throws InterruptedException {
+        setUpFormForgot();
+//        keyword.click("MOBILE_NUMBER");
+        keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "DATA_CREATE_ACCOUNT_WITH_PHONE");
+        keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
+        keyword.untilJqueryIsDone(50L);
+        objSignUp.getActivationCode("INPUT_SEND_CODE_PHONE", "DATA_FORM_PASSWORD_NEW", "ACTUAL_DATA_TITLE_PASSWORD_NEW");
+        keyword.untilJqueryIsDone(50L);
+        sendPassWord();
+    }
+
 }

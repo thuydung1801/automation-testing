@@ -66,7 +66,7 @@ public class SignInTest extends BaseTest {
         objSignin.resentTheCodeToEmail();
     }
 
-    @Test(priority = 9, description = "create valid new password")
+    @Test(priority = 9, description = "create valid new password & Forgot password successfully with store using email confirm")
     public void testCase_SI016_testCase_SI013() throws InterruptedException {
         objSignin.createNewPassword();
     }
@@ -101,7 +101,6 @@ public class SignInTest extends BaseTest {
     public void testCase_SI018() throws InterruptedException {
         objSignin.createNewPasswordWithInvalidPhone();
     }
-
     @Test(priority = 17, description = "create valid new password Success")
     public void testCase_SI019() throws InterruptedException {
         objSignin.createNewPasswordSuccess();

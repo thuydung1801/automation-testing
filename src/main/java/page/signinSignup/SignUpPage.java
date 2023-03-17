@@ -436,9 +436,12 @@ public class SignUpPage extends BasePage {
     }
 
     //    Create new customer successfully with store enable phone number confirm
-    public void getActivationCode() throws InterruptedException {
+    public void getActivationCode(String input, String data, String actual) throws InterruptedException {
         objSignIn = new SignInPage(this.keyword);
         objSignIn.openNewTabs();
+        keyword.deleteAllCookies();
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
         objSignIn.loginAdmin(
                 "LOGIN_DATA_USER_NAME",
                 "LOGIN_DATA_PASS_WORD");
@@ -452,11 +455,11 @@ public class SignUpPage extends BasePage {
 //        );
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(10000);
-        getCodeAndSendKey("SIGNUP_SWITCH_TO_TAB_CHECK2", "SIGNUP_BTN_SUBMIT2"
+        getCodeAndSendKey(input, "SIGNUP_BTN_SUBMIT2"
         );
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(5000);
-        keyword.assertEquals("感谢注册。", "SIGNUP_CODE_RESEND");
+        keyword.assertEquals(data,actual );
     }
 
 }
