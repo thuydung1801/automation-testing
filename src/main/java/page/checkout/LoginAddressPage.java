@@ -145,7 +145,6 @@ public class LoginAddressPage extends BasePage {
         keyword.sendKeys("CHECKOUT_LA_TBX_CITY_2","CHECKOUT_LA_DATA_CITY_4");
         keyword.click("CHECKOUT_LA_BTN_SAVE_ADDRESS");
     }
-
     public void resetAndRefillAddress() throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_LA_TBX_FIRST",20);
         keyword.clearText("CHECKOUT_LA_TBX_STREET");
@@ -222,7 +221,7 @@ public class LoginAddressPage extends BasePage {
         }
     }
     public void addNewBillingAddress(boolean isSuggestion, String street,
-                              String code, String city) throws InterruptedException {
+                                     String code, String city) throws InterruptedException {
         keyword.untilJqueryIsDone(70L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_HPL_NEW_ADDRESS_LOGIN");
