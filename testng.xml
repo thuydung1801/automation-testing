@@ -35,7 +35,7 @@
     <test name="Run Test">
         <parameter name="devices" value="web"></parameter>
         <classes>
-            <class name="test.CreateAccountOnWebTest">
+            <class name="test.LoginReturnFormTest">
 <!--                <methods>-->
 <!--                    <include name="NLA_01_02"/>-->
 <!--                    <include name="NLA_03"/>-->
