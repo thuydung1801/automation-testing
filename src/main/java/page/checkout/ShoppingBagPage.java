@@ -367,10 +367,10 @@ public class ShoppingBagPage extends BasePage {
 
     }
     @Step("Input valid data")
-    public void inputCorrectly(String data, String engraving) throws InterruptedException {
+    public void inputCorrectly(String data, String engraving, String domain) throws InterruptedException {
         keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
         Thread.sleep(10000);
-        if(keyword.verifyElementVisible("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE")){
+        if(domain.equalsIgnoreCase("mobile")){
             viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE");
             keyword.untilJqueryIsDone(30L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");

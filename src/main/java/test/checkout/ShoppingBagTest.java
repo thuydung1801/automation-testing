@@ -34,7 +34,7 @@ public class ShoppingBagTest extends BaseTest {
         //objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
         //objRegist.chooseLanguages();
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE",
+        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
                 "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
     }
     public void commonShopping1() throws InterruptedException {
@@ -45,13 +45,13 @@ public class ShoppingBagTest extends BaseTest {
         //objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
         //objRegist.chooseLanguages();
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL","COM_INP_DATA_PASS",
+        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
                 "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
         //  objLogin.loginOnMobile("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
     }
 
     @Test
-//            (priority = 4, description = "Remove item from cart succcessfully with the shopping bag having mutiple items")
+            (priority = 4, description = "Remove item from cart succcessfully with the shopping bag having mutiple items")
     @Parameters("baseURL")
     public void testCase_SP_01(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_01");
@@ -64,13 +64,13 @@ public class ShoppingBagTest extends BaseTest {
 
     }
     //pending with reCapcha
-    @Test
+    //@Test
     @Parameters("baseURL")
     public void testCase_CheckoutWithGiftCard(String baseURL) throws InterruptedException {
         objShoppingBagPage.createGiftCard(baseURL);
     }
     @Test
-//            (priority = 1, description = "Remove item from cart successfully with the shopping bag having 1 item")
+            (priority = 1, description = "Remove item from cart successfully with the shopping bag having 1 item")
     @Parameters("baseURL")
     public void testCase_SP_02(String baseURL) throws InterruptedException{
         logger.info("testCase_SP_02");
@@ -82,7 +82,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.confirmMessage("CHECKOUT_MESSAGES_EMPTY");
     }
     @Test
-//            (priority = 2, description="Remove item from cart successfully with the shopping bag having 1 normal item and 1 free gift")
+            (priority = 2, description="Remove item from cart successfully with the shopping bag having 1 normal item and 1 free gift")
     @Parameters("baseURL")
     public void testCase_SP_03(String baseURL) throws InterruptedException{
         logger.info("testCase_SP_03");
@@ -96,7 +96,7 @@ public class ShoppingBagTest extends BaseTest {
 
     }
     @Test
-//            (priority = 5, description = "Update quantity using qty button successfully")
+            (priority = 5, description = "Update quantity using qty button successfully")
     @Parameters("baseURL")
     public void testCase_SP_04(String baseURL) throws InterruptedException{
         logger.info("testCase_SP_04");
@@ -109,7 +109,7 @@ public class ShoppingBagTest extends BaseTest {
     }
 
     @Test
-//            (priority = 6, description = "Checking situation that add more than 4 products with same type")
+            (priority = 6, description = "Checking situation that add more than 4 products with same type")
     @Parameters("baseURL")
     public void testCase_SP_05(String baseURL) throws InterruptedException{
         logger.info("testCase_SP_05");
@@ -124,7 +124,7 @@ public class ShoppingBagTest extends BaseTest {
 
     }
     @Test
-//            (priority = 3, description = "Add engraving with single ring")
+            (priority = 3, description = "Add engraving with single ring")
     @Parameters("baseURL")
     public void testCase_SP_15(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_15");
@@ -139,9 +139,9 @@ public class ShoppingBagTest extends BaseTest {
 
     }
     @Test
-            //(priority = 8, description = "Add engraving for couple ring")
-    @Parameters("baseURL")
-    public void testCase_SP_17(String baseURL) throws InterruptedException {
+            (priority = 8, description = "Add engraving for couple ring")
+    @Parameters({"baseURL","devices"})
+    public void testCase_SP_17(String baseURL, String devices) throws InterruptedException {
         logger.info("testCase_SP_17");
 //        commonShopping();
         //https://stage.glamira.co.uk/
@@ -150,11 +150,11 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_ENGRAVING","CHECKOUT_HYPERLINK_ADD"
                 ,"CHECKOUT_TXT_WOMEN_ENGRAVING","CHECKOUT_TXT_MEN_ENGRAVING");
-        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING","CHECKOUT_LBL_ENGRAVING");
+        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING","CHECKOUT_LBL_ENGRAVING",devices);
 
     }
     @Test
-//            (priority = 7, description = "edit engraving")
+            (priority = 7, description = "edit engraving")
     @Parameters("baseURL")
     public void testCase_SP_16(String baseURL) throws Exception {
         logger.info("testCase_SP_16");
@@ -168,20 +168,20 @@ public class ShoppingBagTest extends BaseTest {
 
     }
     @Test
-//            (priority = 9, description = "Edit engraving for the bridal set item")
-    @Parameters("baseURL")
-    public void testCase_SP_18(String baseURL) throws InterruptedException {
+            (priority = 9, description = "Edit engraving for the bridal set item")
+    @Parameters({"baseURL","devices"})
+    public void testCase_SP_18(String baseURL, String devices) throws InterruptedException {
         logger.info("testCase_SP_18");
         //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_ICON_ADD",
                 "CHECKOUT_TXT_WOMEN_ENGRAVING_18","CHECKOUT_TXT_MEN_ENGRAVING_18");
-        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_LBL_ENGRAVING");
+        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_LBL_ENGRAVING",devices);
 
     }
     @Test
-//            (priority = 10, description="Add engraving with text > max lenght")
+            (priority = 10, description="Add engraving with text > max lenght")
     @Parameters("baseURL")
     public void testCase_SP_19(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_19");
@@ -209,7 +209,7 @@ public class ShoppingBagTest extends BaseTest {
 
     }
     @Test
-//            (priority = 12, description = "Edit product successfully with normal product")
+            (priority = 12, description = "Edit product successfully with normal product")
     @Parameters("baseURL")
     public void testCase_SP_21(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_21");
@@ -232,7 +232,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.editEaringOptions();
     }
     @Test
-            //(priority = 13, description ="Edit product with bridal set product")
+            (priority = 13, description ="Edit product with bridal set product")
     @Parameters("baseURL")
     public void testCase_SP_24(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_24");
@@ -248,7 +248,7 @@ public class ShoppingBagTest extends BaseTest {
     }
 
     @Test
-//            (priority = 14, description = "Edit product but missing fill required field")
+            (priority = 14, description = "Edit product but missing fill required field")
     @Parameters("baseURL")
     public void testCase_SP_25(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_25");
@@ -259,7 +259,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.compareData("CHECKOUT_MESSAGES_UPDATE_24","CHECKOUT_LBL_MESSAGES_UPDATE_24");
     }
     @Test
-            //(priority = 15, description = "Checkout successfully")
+            (priority = 15, description = "Checkout successfully")
     @Parameters("baseURL")
     public void testCase_SP_26_RV_02_04(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_26");
@@ -285,7 +285,7 @@ public class ShoppingBagTest extends BaseTest {
 
 
     @Test
-//            (priority = 16, description = "Place order with Credit card but missing information card")
+            (priority = 16, description = "Place order with Credit card but missing information card")
     @Parameters("baseURL")
     public void testCase_RV_05(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_05");
@@ -301,7 +301,7 @@ public class ShoppingBagTest extends BaseTest {
     }
 
     @Test
-//            (priority = 17, description = "Place order with Card issue")
+            (priority = 17, description = "Place order with Card issue")
     @Parameters("baseURL")
     public void testCase_RV_06(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_06");
@@ -314,7 +314,7 @@ public class ShoppingBagTest extends BaseTest {
     }
 
     @Test
-            //(priority = 19, description = "Place order with Paypal express /Affirm/... successfully")
+            (priority = 19, description = "Place order with Paypal express /Affirm/... successfully")
     @Parameters("baseURL")
     public void testCase_RV_07(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_07");
@@ -454,7 +454,7 @@ public class ShoppingBagTest extends BaseTest {
     }
 
     @Test
-//            (priority = 28, description = "Place order and apply full amount giftcard  successfully")
+            (priority = 28, description = "Place order and apply full amount giftcard  successfully")
 
     @Parameters("baseURL")
     public void testCase_RV_17_19(String baseURL) throws InterruptedException {
@@ -473,7 +473,7 @@ public class ShoppingBagTest extends BaseTest {
     }
 
     @Test
-//            (priority = 29, description = "Place order and apply partial giftcard  successfully")
+            (priority = 29, description = "Place order and apply partial giftcard  successfully")
     @Parameters("baseURL")
     public void testCase_RV_18(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_18");
@@ -492,7 +492,7 @@ public class ShoppingBagTest extends BaseTest {
     }
 
     @Test
-//            (priority = 30, description = "Apply a gift card having status Expired or Used")
+            (priority = 30, description = "Apply a gift card having status Expired or Used")
     @Parameters("baseURL")
     public void testCase_RV_20(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_20");
@@ -521,7 +521,7 @@ public class ShoppingBagTest extends BaseTest {
     }
 
     @Test
-//            (priority = 32, description = "Place order with shipping label successfully")
+            (priority = 32, description = "Place order with shipping label successfully")
     @Parameters("baseURL")
     public void testCase_RV_31(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_31");
@@ -533,7 +533,7 @@ public class ShoppingBagTest extends BaseTest {
     }
 
     @Test
-//            (priority = 33, description = "Place order and unchecked I have read and accepted the Terms & Conditions")
+            (priority = 33, description = "Place order and unchecked I have read and accepted the Terms & Conditions")
     @Parameters("baseURL")
     public void testCase_RV_32(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_32");
@@ -547,13 +547,10 @@ public class ShoppingBagTest extends BaseTest {
 
     }
     @Test
-//            (priority = 34, description = "Place order with shipping label successfully")
+            (priority = 34, description = "Place order with shipping label successfully")
     @Parameters("baseURL")
     public void testCase_RV_33(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_31");
-        commonShopping();
-        //https://stage.glamira.co.uk/
-//        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.addShippingLabel(baseURL,true);
 
     }
