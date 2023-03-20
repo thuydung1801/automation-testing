@@ -28,7 +28,24 @@ public class LoginAddressPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_CONTINUE_GUEST");
     }
+    public void moveToPagecheckOut() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.verifyElementPresent("CHECKOUT_BTN_CHECKOUT");
+        keyword.click("CHECKOUT_BTN_CHECKOUT");
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(3000);
+        keyword.webDriverWaitForElementPresent("CHECKOUT_LA_LBL_CHECKOUT",20);
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
+    }
 
     public void fillContactInformation(boolean isSuggestion, String street,
                                        String code, String city) throws InterruptedException {

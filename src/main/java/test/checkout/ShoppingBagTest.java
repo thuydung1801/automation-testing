@@ -125,65 +125,65 @@ public class ShoppingBagTest extends BaseTest {
     }
     @Test
 //            (priority = 3, description = "Add engraving with single ring")
-    @Parameters("baseURL")
-    public void testCase_SP_15(String baseURL) throws InterruptedException {
+    @Parameters({"baseURL","devices"})
+    public void testCase_SP_15(String baseURL,String devices) throws InterruptedException {
         logger.info("testCase_SP_15");
         //commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProduct(baseURL+"glamira-ring-zanessa.html?alloy=white-585&stone1=diamond-sapphire&stone2=diamond-sapphire");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_GLAMIRARING");
-        objShoppingBagPage.inputEngravingwithSingleRing("web","CHECKOUT_DATA_ENGRAVING",
+        objShoppingBagPage.inputEngravingwithSingleRing(devices,"CHECKOUT_DATA_ENGRAVING",
                 "CHECKOUT_HYPERLINK_ADD",
                 "CHECKOUT_LBL_ENGRAVING_GLAMIRA");
 
     }
     @Test
             //(priority = 8, description = "Add engraving for couple ring")
-    @Parameters("baseURL")
-    public void testCase_SP_17(String baseURL) throws InterruptedException {
+    @Parameters({"baseURL","devices"})
+    public void testCase_SP_17(String baseURL, String devices) throws InterruptedException {
         logger.info("testCase_SP_17");
-//        commonShopping();
+        commonShopping1();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithGift(baseURL+"charming-view.html?alloy=white-585&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_ENGRAVING","CHECKOUT_HYPERLINK_ADD"
                 ,"CHECKOUT_TXT_WOMEN_ENGRAVING","CHECKOUT_TXT_MEN_ENGRAVING");
-        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING","CHECKOUT_LBL_ENGRAVING","web");
+        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING","CHECKOUT_LBL_ENGRAVING",devices);
 
     }
     @Test
 //            (priority = 7, description = "edit engraving")
-    @Parameters("baseURL")
-    public void testCase_SP_16(String baseURL) throws Exception {
+    @Parameters({"baseURL","devices"})
+    public void testCase_SP_16(String baseURL,String devices) throws Exception {
         logger.info("testCase_SP_16");
         //commonShopping();
         //objShoppingBagPage.addProductWithEngraving("https://dev4.glamira.com/glau/glamira-ring-zanessa.html?alloy=white-585&stone1=diamond-sapphire&stone2=diamond-sapphire");
         //objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.backPage(baseURL);
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_GLAMIRARING");
-        objShoppingBagPage.inputEngravingwithSingleRing("web","CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_ICON_ADD",
+        objShoppingBagPage.inputEngravingwithSingleRing(devices,"CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_ICON_ADD",
                 "CHECKOUT_LBL_ENGRAVING_GLAMIRA");
 
     }
     @Test
 //            (priority = 9, description = "Edit engraving for the bridal set item")
-    @Parameters("baseURL")
-    public void testCase_SP_18(String baseURL) throws InterruptedException {
+    @Parameters({"baseURL","devices"})
+    public void testCase_SP_18(String baseURL, String devices) throws InterruptedException {
         logger.info("testCase_SP_18");
         //commonShopping();
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING");
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_ICON_ADD",
                 "CHECKOUT_TXT_WOMEN_ENGRAVING_18","CHECKOUT_TXT_MEN_ENGRAVING_18");
-        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_LBL_ENGRAVING","web");
+        objShoppingBagPage.inputCorrectly("CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_LBL_ENGRAVING",devices);
 
     }
     @Test
 //            (priority = 10, description="Add engraving with text > max lenght")
-    @Parameters("baseURL")
-    public void testCase_SP_19(String baseURL) throws InterruptedException {
+    @Parameters({"baseURL","devices"})
+    public void testCase_SP_19(String baseURL, String devices) throws InterruptedException {
         logger.info("testCase_SP_19");
 
         //commonShopping();
@@ -193,7 +193,7 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.inputEngravingwithCoupleRing("CHECKOUT_DATA_19","CHECKOUT_ICON_ADD",
                 "CHECKOUT_TXT_WOMEN_ENGRAVING_18","CHECKOUT_TXT_MEN_ENGRAVING_18");
         objShoppingBagPage.inputError("CHECKOUT_LBL_MAXLENGTH_MESSAGES_1","CHECKOUT_LBL_MAXLENGTH_MESSAGES_2",
-                "CHECKOUT_DATA_19_OUTPUT","CHECKOUT_LBL_ENGRAVING", true,"web");
+                "CHECKOUT_DATA_19_OUTPUT","CHECKOUT_LBL_ENGRAVING", true,devices);
 
     }
 //    @Test(priority = 11, description = "Add engraving with some special character don't allow input")

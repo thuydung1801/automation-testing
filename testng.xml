@@ -30,10 +30,13 @@
         <parameter name="devices" value="web"></parameter>
         <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
+            <class name="test.checkout.CatelogTest">
+
+            </class>
 
 
-            <class name="test.checkout.ShoppingBagTest">
-                <methods>
+<!--            <class name="test.checkout.ShoppingBagTest">-->
+<!--                <methods>-->
 <!--                    <include name="testCase_SP_02"/>-->
 <!--                    <include name="testCase_SP_17"/>-->
 <!--                    <include name="testCase_SP_26_RV_02_04"/>-->
@@ -72,21 +75,35 @@
 <!--&lt;!&ndash;                    <include name="testCase_RV_16"/>&ndash;&gt;-->
 
 <!--                    <include name="testCase_RV_17_19"/>-->
-                    <include name="testCase_RV_18"/>
-                    <include name="testCase_RV_20"/>
+<!--                    <include name="testCase_RV_18"/>-->
+<!--                    <include name="testCase_RV_20"/>-->
 <!--&lt;!&ndash;                    <include name="testCase_RV_21"/>&ndash;&gt;-->
 
-                    <include name="testCase_RV_31"/>
-                    <include name="testCase_RV_32"/>
-                    <include name="testCase_RV_33"/>
+<!--                    <include name="testCase_RV_31"/>-->
+<!--                    <include name="testCase_RV_32"/>-->
+<!--                    <include name="testCase_RV_33"/>-->
 
-                </methods>
-            </class>
-            <class name="test.MyAccountTest">
-                <methods>
-                    <include name="testCase_MW_05"/>
-                </methods>
-            </class>
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="test.checkout.LoginAddressTest">-->
+<!--                <methods>-->
+<!--                    <include name="NLA_01_02"/>-->
+<!--                    <include name="NLA_03_04"/>-->
+<!--                    <include name="NLA_05"/>-->
+<!--                    <include name="NLA_06"/>-->
+<!--                    <include name="NLA_08"/>-->
+<!--                    <include name="NLA_07"/>-->
+<!--                    <include name="NLA_10"/>-->
+<!--                    <include name="NLA_11"/>-->
+<!--                    <include name="NLA_12_16"/>-->
+<!--                    <include name="NLA_13_14_15"/>-->
+<!--                    <include name="NLA_17"/>-->
+<!--                    <include name="NLA_19"/>-->
+
+<!--                    <include name="NLA_20"/>-->
+
+<!--                </methods>-->
+<!--            </class>-->
         </classes>
     </test>
 </suite>

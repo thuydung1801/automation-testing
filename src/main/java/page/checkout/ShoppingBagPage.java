@@ -88,6 +88,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(5000);
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
