@@ -279,6 +279,9 @@ public class MyAccountPage extends BasePage {
     public void commonMyAddress(String element, String elementEdit, String domain) throws InterruptedException {
         if (domain.equalsIgnoreCase("web")) {
             keyword.openNewTab("https://stage.glamira.co.uk/customer/address/index/#");
+            keyword.untilJqueryIsDone(30L);
+            keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         } else {
             keyword.untilJqueryIsDone(30L);
             keyword.click("BTN_MYACCOUNT_ON_MOBILE");
@@ -969,6 +972,7 @@ public class MyAccountPage extends BasePage {
             case "delivery" :
                 keyword.untilJqueryIsDone(60L);
                 keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+                Thread.sleep(2000);
                 keyword.click("MAC_MY_ORD_BTN_COMPLETE");
                 logger.info("check verify id order....");
                 keyword.untilJqueryIsDone(60L);

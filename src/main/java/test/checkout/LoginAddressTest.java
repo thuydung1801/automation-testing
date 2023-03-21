@@ -91,7 +91,7 @@ public class LoginAddressTest extends BaseTest {
                 "CHECKOUT_LA_DATA_CODE_2", "CHECKOUT_LA_DATA_CITY_2");
         objLoginAddress.chooseAddressOnValidation(false,"CHECKOUT_LA_BTN_APPLY_ADDRESS");
         objLoginAddress.verifyMelissa();
-        objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA","CHECKOUT_LBL_ADDRESS_INFO");
+        objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA_5","CHECKOUT_LBL_ADDRESS_INFO");
     }
 
     @Test
@@ -174,7 +174,7 @@ public class LoginAddressTest extends BaseTest {
     @Parameters("baseURL")
     public void NLA_12_16(String baseURL) throws InterruptedException {
         objLoginAddress.editAddress("CHECKOUT_BTN_EDIT_ADDRESS");
-        objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA","CHECKOUT_LBL_ADDRESS_INFO_2");
+        objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA_12","CHECKOUT_LBL_ADDRESS_INFO_2");
         objLoginAddress.goBack("CHECKOUT_BTN_CONTINUE_GUEST");
         objLoginAddress.moveToAddressPage();
         //objLoginAddress.checkOutNotLogin();
@@ -205,10 +205,10 @@ public class LoginAddressTest extends BaseTest {
     @Parameters("baseURL")
     public void NLA_19(String baseURL) throws InterruptedException {
 //        customerNotLogin();
-        //objLoginAddress.resetForNewCase();
+        objLoginAddress.resetForNewCase();
         objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
-        objLoginAddress.moveToPagecheckOut();
+        objShoppingBagPage.moveToPagecheckOut();
         objLoginAddress.loginFailed("noEmail");
     }
 

@@ -45,12 +45,12 @@ public class CatelogPage extends BasePage {
             int count = 1;
             String[] name = {"All", "Rings", "Necklaces", "Earrings","Bracelets","Brooches","Anklets","Nose Pins","Best Sellers"};
             while (count<10){
-                String ele = PropertiesFile.getPropValue("CATELOG_NAME_FILTER") + count+"]/span";
-                String getText = keyword.getText(ele);
-                logger.info("getText===" + getText);
+                String ele = "//div["+ count+PropertiesFile.getPropValue("CATELOG_NAME_FILTER") ;
+//                String getText = keyword.getText(ele);
+                logger.info("getText===" + keyword.getText(ele));
                 logger.info("getName===" + name[count-1]);
                 keyword.untilJqueryIsDone(50L);
-                keyword.assertEquals(name[count-1],getText);
+                keyword.assertEquals(name[count-1],ele);
                 count++;
             }
         }

@@ -87,6 +87,7 @@ public class LoginAddressPage extends BasePage {
                               String code, String city, String btnAdd) throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(2000);
         keyword.click(btnAdd);
         keyword.untilJqueryIsDone(50L);
         keyword.webDriverWaitForElementPresent("CHECKOUT_LA_TBX_FIRST",20);
@@ -185,6 +186,9 @@ public class LoginAddressPage extends BasePage {
     }
 
     public void editBillingAddress() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("CHECKOUT_BTN_EDIT_BILLING_ADDRESS");
         resetAndRefillAddress();
         verifyMelissa();
