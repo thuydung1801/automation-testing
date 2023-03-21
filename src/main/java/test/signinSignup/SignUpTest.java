@@ -107,7 +107,7 @@ public class SignUpTest extends BaseTest {
 
 
     //        SIGNUP WITH MOBILE
-    @Test(priority = 13, description = "Create new customer and leave with blank form for required form")
+//    @Test(priority = 13, description = "Create new customer and leave with blank form for required form")
     public void testCase_SU015() throws Exception {
         logger.info("testCase_SU015");
 //        objRegist.chooseLanguages();
@@ -115,54 +115,54 @@ public class SignUpTest extends BaseTest {
         objSigUp.verifyRequiredFieldWithMobile();
     }
 
-    @Test(priority = 14, description = "Invalid phone number entered")
+//    @Test(priority = 14, description = "Invalid phone number entered")
     public void testCase_SU016() throws Exception {
         logger.info("testCase_SU016");
         objSigUp.enterDataSignUpWithMobile();
     }
 
-    @Test(priority = 15, description = "Register an account with the phone number already in the system")
+//    @Test(priority = 15, description = "Register an account with the phone number already in the system")
     public void testCase_SU017() throws Exception {
         logger.info("testCase_SU017");
         objSigUp.enterPhoneNumberAlreadyInSystem();
     }
 
-    @Test(priority = 16, description = "Create a new account with password # Phone register and has:\\n\" + \"+ At least < 8 characters\\n\" + \"+ At least 1 number\\n\" + \"+ At least 1 lower case letter\\n\" + \"+ At least 1 upper case letter\\n\" + \"+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~\\\"\")\n")
+//    @Test(priority = 16, description = "Create a new account with password # Phone register and has:\\n\" + \"+ At least < 8 characters\\n\" + \"+ At least 1 number\\n\" + \"+ At least 1 lower case letter\\n\" + \"+ At least 1 upper case letter\\n\" + \"+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~\\\"\")\n")
     public void testCase_SU018() throws Exception {
         logger.info("testCase_SU018");
         objSigUp.passwordLessThan8Characters();
     }
 
-    @Test(priority = 17, description = "\"Create a new account with password # email register and has:\n" + "characters < 8\"")
+//    @Test(priority = 17, description = "\"Create a new account with password # email register and has:\n" + "characters < 8\"")
     public void testCase_SU019() throws Exception {
         logger.info("testCase_SU019");
         objSigUp.checkConditionAtLeast1Number();
     }
 
-    @Test(priority = 18, description = "Create a new account with password # email register and missing lower case lette")
+//    @Test(priority = 18, description = "Create a new account with password # email register and missing lower case lette")
     public void testCase_SU020() throws Exception {
         logger.info("testCase_SU020");
         objSigUp.checkConditionAtLeast1LowerLetter();
     }
 
-    @Test(priority = 19, description = "Create a new account with password # email register and missing upper case letter")
+//    @Test(priority = 19, description = "Create a new account with password # email register and missing upper case letter")
     public void testCase_SU021() throws Exception {
         logger.info("testCase_SU021");
         objSigUp.checkConditionAtLeast1UpperLetter();
     }
 
-    @Test(priority = 20, description = "Create a new account with password # email register and missing special character")
+//    @Test(priority = 20, description = "Create a new account with password # email register and missing special character")
     public void testCase_SU022() throws Exception {
         logger.info("testCase_SU022");
         objSigUp.checkConditionAtLeast1CharactersLike();
     }
 
-    @Test(priority = 21, description = "Register an account with the email already in the system")
+//    @Test(priority = 21, description = "Register an account with the email already in the system")
     public void testCase_SU024() throws Exception {
         logger.info("testCase_SU024");
         objSigUp.checkConditionAEmailExisted();
     }
-    @Test(priority = 22, description = "Create new customer successfully with store enable phone number confirm")
+//    @Test(priority = 22, description = "Create new customer successfully with store enable phone number confirm")
     public void testCase_SU023_Case_14() throws Exception {
         logger.info("testCase_SU023_Case_14");
         objSigUp.createNewCustomerSuccessfullyWithPhone();

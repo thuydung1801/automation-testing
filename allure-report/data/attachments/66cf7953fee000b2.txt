@@ -1,0 +1,1 @@
+testCase_LA_05 failed and screenshot taken!

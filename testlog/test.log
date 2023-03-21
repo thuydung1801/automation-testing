@@ -1,47 +1,160 @@
-INFO  | 2023-03-20 16:21:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - Open browser
-INFO  | 2023-03-20 16:22:01 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 111.0.5563.64 (resolved driver for Chrome 111)
-INFO  | 2023-03-20 16:22:01 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\111.0.5563.64\chromedriver.exe
-INFO  | 2023-03-20 16:22:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - open browser successfullyCHROME
-INFO  | 2023-03-20 16:22:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:70) - go to url: https://dev3.glamira.com/glgb/
-INFO  | 2023-03-20 16:22:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:71) - url: [Ljava.lang.String;@9335373
-INFO  | 2023-03-20 16:22:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
-INFO  | 2023-03-20 16:22:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
-INFO  | 2023-03-20 16:22:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-03-20 16:22:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-03-20 16:22:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-03-20 16:22:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-03-20 16:22:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
-INFO  | 2023-03-20 16:22:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
-INFO  | 2023-03-20 16:22:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_RETURN_FORM_BTN_RETURN
-INFO  | 2023-03-20 16:22:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMENU_LEFT_RETURN_FORM
-INFO  | 2023-03-20 16:22:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_RETURN_FORM
-INFO  | 2023-03-20 16:23:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_RETURN_HAVE_SPACE
-INFO  | 2023-03-20 16:23:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-03-20 16:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentSIGNUP_PASSWORD_INFORMATION
-INFO  | 2023-03-20 16:23:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_PASSWORD_INFORMATIONwith DATA_PASSWORD_LOGIN_RETURN_FAIL
-INFO  | 2023-03-20 16:23:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-03-20 16:23:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from CHECKOUT_LA_DATA_ERROR_PASS with MESSAGE_FAIL_RETURN_FORM
-INFO  | 2023-03-20 16:23:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
-INFO  | 2023-03-20 16:23:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_INVALID
-INFO  | 2023-03-20 16:23:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-03-20 16:23:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from DATA_EMAIL_FAIL with EMAIL_ERROR
-INFO  | 2023-03-20 16:23:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
-INFO  | 2023-03-20 16:23:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_NOT_HAVE_ORDER_RETURN
-INFO  | 2023-03-20 16:23:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-03-20 16:23:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from MESSAGE_NOT_HAVE_ORDER_RETURN with RETURN_MESSAGE_CONTENT
-INFO  | 2023-03-20 16:23:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
-INFO  | 2023-03-20 16:23:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_SPACE
-INFO  | 2023-03-20 16:23:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-03-20 16:23:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_DATA_VERIFY_MESSAGE with EMAIL_ERROR
-INFO  | 2023-03-20 16:23:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
-INFO  | 2023-03-20 16:23:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_RETURN
-INFO  | 2023-03-20 16:23:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-03-20 16:24:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_PASSWORD_INFORMATIONwith DATA_PASSWORD_LOGIN_RETURN
-INFO  | 2023-03-20 16:24:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-03-20 16:25:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleFORM_MY_RETURN
-INFO  | 2023-03-20 16:25:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_ORDER_SELECT
-INFO  | 2023-03-20 16:25:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSELECT_OPTION
-INFO  | 2023-03-20 16:25:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofSELECT_OPTION
-INFO  | 2023-03-20 16:25:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_CREATE_RETURN
-INFO  | 2023-03-20 16:25:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from DATA_LABLE with STEP_LABLE
-INFO  | 2023-03-20 16:25:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofINPUT_TEXT_CONFIRM
+INFO  | 2023-03-21 18:20:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - Open browser
+INFO  | 2023-03-21 18:20:36 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 111.0.5563.64 (resolved driver for Chrome 111)
+INFO  | 2023-03-21 18:20:36 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\111.0.5563.64\chromedriver.exe
+INFO  | 2023-03-21 18:20:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - open browser successfullyCHROME
+INFO  | 2023-03-21 18:20:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:70) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-03-21 18:20:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:71) - url: [Ljava.lang.String;@64ea3f94
+INFO  | 2023-03-21 18:20:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-03-21 18:20:45 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU05:33) - testCase_SU05
+INFO  | 2023-03-21 18:20:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
+INFO  | 2023-03-21 18:20:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-21 18:21:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-21 18:21:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-21 18:21:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-03-21 18:21:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-03-21 18:21:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-21 18:21:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-03-21 18:21:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentLOGIN_BTN_FORGOT_PASSWORD
+INFO  | 2023-03-21 18:21:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2023-03-21 18:21:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2023-03-21 18:21:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_FORM_DATA_INFORMATION
+INFO  | 2023-03-21 18:21:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
+INFO  | 2023-03-21 18:21:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2023-03-21 18:21:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_EXIST
+INFO  | 2023-03-21 18:21:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_EMAIL_EXIST
+INFO  | 2023-03-21 18:21:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-03-21 18:21:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-03-21 18:21:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_MESSAGE_DUPLICATE with SIGNIN_MESSAGE_DATA_EXIST
+INFO  | 2023-03-21 18:21:33 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU02:41) - testCase_SU02
+INFO  | 2023-03-21 18:21:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-21 18:21:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_EMAIL_INVALID
+INFO  | 2023-03-21 18:21:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_EMAIL_CONFIRM_INVALID
+INFO  | 2023-03-21 18:21:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-03-21 18:21:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:675) - implicitlyWait
+INFO  | 2023-03-21 18:21:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_DATA_VERIFY_MESSAGE with SIGNUP_FIRSTNAME_ERROR
+INFO  | 2023-03-21 18:21:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_DATA_VERIFY_MESSAGE with SIGNUP_LASTNAME_ERROR
+INFO  | 2023-03-21 18:21:38 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU03:47) - testCase_SU03
+INFO  | 2023-03-21 18:21:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
+INFO  | 2023-03-21 18:21:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2023-03-21 18:21:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-21 18:21:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_EMAIL_FAIL
+INFO  | 2023-03-21 18:21:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-21 18:21:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_EMAIL_FAIL
+INFO  | 2023-03-21 18:21:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-03-21 18:21:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EMAIL_SHOW_MESSAGE with COM_TEXT_ERROR_EMAIL
+INFO  | 2023-03-21 18:21:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EMAIL_SHOW_MESSAGE with SIGNUP_ADDRESS_EMAIL_ERROR
+INFO  | 2023-03-21 18:21:41 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU04:53) - testCase_SU04
+INFO  | 2023-03-21 18:21:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-21 18:21:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_EMAIL_NEW_INFORMATION
+INFO  | 2023-03-21 18:21:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-21 18:21:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_EMAIL_CONFIRM_FAIL
+INFO  | 2023-03-21 18:21:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-03-21 18:21:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EMAIL_NOT_SAME with SIGNUP_ADDRESS_EMAIL_ERROR
+INFO  | 2023-03-21 18:21:42 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU06:59) - testCase_SU06
+INFO  | 2023-03-21 18:21:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-21 18:21:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_EMAIL_NEW_INFORMATION
+INFO  | 2023-03-21 18:21:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-03-21 18:21:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-03-21 18:21:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_DATA_EMAIL_NEW_INFORMATION
+INFO  | 2023-03-21 18:21:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleSIGNUP_SELECT_TITLE
+INFO  | 2023-03-21 18:22:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-03-21 18:22:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_CHECKBOX_AGREE
+INFO  | 2023-03-21 18:22:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_CREATE_ACCOUNT
+INFO  | 2023-03-21 18:22:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_MESSAGE_PASSWORD_NOT_SAME_MAIL with SIGNIN_MESSAGE_DATA_EXIST
+INFO  | 2023-03-21 18:22:28 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU07:66) - testCase_SU07
+INFO  | 2023-03-21 18:22:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-21 18:22:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNIN_EMAIL_REGIS
+INFO  | 2023-03-21 18:22:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-21 18:22:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNIN_EMAIL_REGIS
+INFO  | 2023-03-21 18:22:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-03-21 18:22:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-03-21 18:22:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_03
+INFO  | 2023-03-21 18:22:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleSIGNUP_SELECT_TITLE
+INFO  | 2023-03-21 18:23:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-03-21 18:23:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_CHECKBOX_AGREE
+INFO  | 2023-03-21 18:23:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-03-21 18:23:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGNUP_ACTUAL_MESSAGE04
+INFO  | 2023-03-21 18:23:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-03-21 18:23:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-03-21 18:23:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-03-21 18:23:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-03-21 18:23:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_ACTUAL_MESSAGE04
+INFO  | 2023-03-21 18:23:05 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU08:73) - testCase_SU08
+INFO  | 2023-03-21 18:23:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-21 18:23:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_02
+INFO  | 2023-03-21 18:23:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-03-21 18:23:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGN_MESSAGE_CHARACTERS
+INFO  | 2023-03-21 18:23:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_MESSAGE_ERROR_NUMBER
+INFO  | 2023-03-21 18:23:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-03-21 18:23:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-03-21 18:23:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-03-21 18:23:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_NUMBER
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU09:79) - testCase_SU09
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_04
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGN_MESSAGE_CHARACTERS
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_MESSAGE_ERROR_LOWER_LETTER
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_LOWER_LETTER
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU010:85) - testCase_SU010
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-21 18:23:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_05
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGN_MESSAGE_CHARACTERS
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_MESSAGE_ERROR_UPPER_LETTER
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_UPPER_LETTER
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU011:91) - testCase_SU011
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_06
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGN_MESSAGE_CHARACTERS
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE
+INFO  | 2023-03-21 18:23:08 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU012:97) - testCase_SU012
+INFO  | 2023-03-21 18:23:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:675) - implicitlyWait
+INFO  | 2023-03-21 18:23:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-21 18:23:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_PASSWORD_INFORMATIONwith LOGIN_NEW_PASSWORD
+INFO  | 2023-03-21 18:23:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_CREATE_ACCOUNT
+INFO  | 2023-03-21 18:23:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_INPUT_VERIFY_CODE
+INFO  | 2023-03-21 18:23:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_INPUT_VERIFY_CODEwith SIGNUP_CODE_DATA
+INFO  | 2023-03-21 18:23:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_SUBMIT_ACCOUNT
+INFO  | 2023-03-21 18:23:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_MESSAGE_CODE_ERROR with SIGNUP_MESSAGE_ACTUAL
+INFO  | 2023-03-21 18:23:29 | [TestNG-tests-1] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU013_and_testCase_01:104) - testCase_SU013_and_testCase_01
+INFO  | 2023-03-21 18:25:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_RESEND_CODE
+INFO  | 2023-03-21 18:25:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:675) - implicitlyWait
+INFO  | 2023-03-21 18:25:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_CODE_SENT with SIGNUP_CODE_RESEND
+INFO  | 2023-03-21 18:25:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
+INFO  | 2023-03-21 18:25:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-03-21 18:25:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-03-21 18:25:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.com/secured2021//
+INFO  | 2023-03-21 18:25:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME
+INFO  | 2023-03-21 18:25:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD
+INFO  | 2023-03-21 18:25:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2023-03-21 18:25:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPosition:507) -  scrolling to position 
+INFO  | 2023-03-21 18:25:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementLOGIN_BTN_CUSTOMER
+INFO  | 2023-03-21 18:25:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_CUSTOMER
+INFO  | 2023-03-21 18:25:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_VERIFY_CUSTOMER
+INFO  | 2023-03-21 18:25:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_EMAIL_LOG
+INFO  | 2023-03-21 18:25:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentSIGNUP_VERIFY_EMAIL_LOG
+INFO  | 2023-03-21 18:26:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:imWait:675) - implicitlyWait
+INFO  | 2023-03-21 18:26:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_CHECK_EMAIL_LOG_ACTION_SELECT
+INFO  | 2023-03-21 18:26:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentLOGIN_SELECT_ACTIVE
+INFO  | 2023-03-21 18:26:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_SELECT_VIEW_CHECK_EMAIL_LOG
+INFO  | 2023-03-21 18:26:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentLOGIN_POPUP_MESSAGE_PASSWORD_RESET
+INFO  | 2023-03-21 18:26:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToIFrameByXpath:402) - Switching to Iframe
+INFO  | 2023-03-21 18:26:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofLOGIN_INPUT_VERIFY_CODE
+INFO  | 2023-03-21 18:26:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:closeWindowByIndex:462) - closeWindowByIndex
+INFO  | 2023-03-21 18:26:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToWindowByIndex:417) - switchToWindowByIndex
+INFO  | 2023-03-21 18:26:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-03-21 18:26:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_INPUT_VERIFY_CODEwith 503501
+INFO  | 2023-03-21 18:26:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSIGNUP_BTN_SUBMIT_ACCOUNT
+INFO  | 2023-03-21 18:26:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU with SIGNUP_MESSAGE_REGIST_SUCCESS_US

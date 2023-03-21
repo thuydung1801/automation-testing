@@ -277,7 +277,7 @@ public class SignUpPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.imWait(50);
         keyword.assertEquals("SIGNUP_CODE_SENT", "SIGNUP_CODE_RESEND");
-        objSignIn.openTabBE("https://dev3.glamira.com/secured2021/");
+        objSignIn.openTabBE("https://stage.glamira.com/secured2021//");
         objSignIn.loginAdmin(
                 "LOGIN_DATA_USER_NAME",
                 "LOGIN_DATA_PASS_WORD");
@@ -293,9 +293,10 @@ public class SignUpPage extends BasePage {
                 "LOGIN_SELECT_ACTIVE",
                 "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
                 "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
-        objSignIn.getCodeEnterTextInField("LOGIN_IFRAME_DEV3",
+        objSignIn.getCodeEnterTextInField("IFRAME_STAGE",
                 "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
+        keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
 //        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIS_SUCCESS_US");
         keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
