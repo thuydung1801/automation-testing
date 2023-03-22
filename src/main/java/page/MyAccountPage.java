@@ -527,7 +527,7 @@ public class MyAccountPage extends BasePage {
     public void commonWishList(String element) throws InterruptedException {
         int count;
         boolean check;
-       keyword.untilJqueryIsDone(60L);
+        keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
         if(keyword.verifyElementVisible("MAC_WISHLISH_SAVE_NO_DISPLAY")){
@@ -546,10 +546,13 @@ public class MyAccountPage extends BasePage {
         if(keyword.verifyElementVisible("MAC_VERIFY_ICON_HEART")){
             keyword.untilJqueryIsDone(60L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-            Thread.sleep(25000);
+            Thread.sleep(10000);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 //            commonViewWishList();
 //            keyword.webDriverWaitForElementPresent("MAC_WISHLISH_COUNT_SAVE_DISPLAY",100);
+            keyword.verifyElementPresent("MAC_WISHLISH_COUNT_SAVE");
+            keyword.executeJavaScript("window.scrollTo(document.body.scrollHeight, 0)");
+            Thread.sleep(3000);
             String countSave = keyword.getText("MAC_WISHLISH_COUNT_SAVE");
             System.out.printf("s..... = " + countSave + "\n");
             if(countSave==null){
@@ -567,8 +570,8 @@ public class MyAccountPage extends BasePage {
 
     }
     public void saveItemFormProductView(String baseURL) throws InterruptedException {
-//        setUp1();
-
+//        setUp();
+        objRegister.acceptAllCookies();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.navigateToUrl(baseURL+"catalog/product_compare/index/");
@@ -973,7 +976,7 @@ public class MyAccountPage extends BasePage {
                 keyword.untilJqueryIsDone(60L);
                 keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
                 Thread.sleep(2000);
-                keyword.click("MAC_MY_ORD_BTN_COMPLETE");
+                keyword.doubleClick("MAC_MY_ORD_BTN_COMPLETE");
                 logger.info("check verify id order....");
                 keyword.untilJqueryIsDone(60L);
                 keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");

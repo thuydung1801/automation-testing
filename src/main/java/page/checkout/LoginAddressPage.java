@@ -76,6 +76,7 @@ public class LoginAddressPage extends BasePage {
 
     public void chooseAddressOnValidation(boolean isSuggest, String btnAdd) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         if (!isSuggest){
             keyword.click("CHECKOUT_LA_CBX_YOURINPUT");
         }
@@ -96,16 +97,32 @@ public class LoginAddressPage extends BasePage {
         keyword.sendKeys("CHECKOUT_LA_TBX_PHONE_2","AFFIRM_DATA_PHONE");
         if (isSuggestion){
             keyword.sendKeys("CHECKOUT_LA_TBX_STREET_2","CHECKOUT_LA_DATA_STREET_2");
-            Thread.sleep(5000);
+            Thread.sleep(2000);
             keyword.sendKeys("CHECKOUT_LA_TBX_STREET_2"," ");
-            keyword.webDriverWaitForElementPresent("CHECKOUT_LA_SUGGESTLIST_2",10);
-            keyword.click("CHECKOUT_LA_SUGGESTLIST_2");
+//            keyword.keysBoardWithDOWN("/html/body/div[4]/aside[4]/div[2]/div/div/form/div/div/fieldset/div/div/div");
+//            keyword.pressEnter();
+            if(street != null){
+                keyword.webDriverWaitForElementPresent("CHECKOUT_LA_SUGGESTLIST_45",10);
+                keyword.click("CHECKOUT_LA_SUGGESTLIST_45");
+
+            }else{
+                Thread.sleep(2000);
+                keyword.webDriverWaitForElementPresent("CHECKOUT_LA_SUGGESTLIST_2",10);
+                keyword.click("CHECKOUT_LA_SUGGESTLIST_2");
+            }
+
         }else {
             keyword.sendKeys("CHECKOUT_LA_TBX_STREET_2",street);
             keyword.sendKeys("CHECKOUT_LA_TBX_ZIP_2",code);
             keyword.sendKeys("CHECKOUT_LA_TBX_CITY_2",city);
         }
-        keyword.click("CHECKOUT_LA_BTN_SAVE_ADDRESS");
+        Thread.sleep(2000);
+        if(keyword.verifyElementPresent("CHECKOUT_LA_LBL_CODE")){
+            keyword.assertEquals("CHECKOUT_LA_MESSAGES_CODE","CHECKOUT_LA_LBL_CODE");
+        }else{
+            keyword.click("CHECKOUT_LA_BTN_SAVE_ADDRESS");
+        }
+
     }
 
     public void isAddNewAddress(){
@@ -141,7 +158,7 @@ public class LoginAddressPage extends BasePage {
         keyword.click(btnEdit);
         keyword.untilJqueryIsDone(50L);
         keyword.clearText("CHECKOUT_LA_TBX_ZIP_2");
-        keyword.sendKeys("CHECKOUT_LA_TBX_ZIP_2","BT62 4HX");
+        keyword.sendKeys("CHECKOUT_LA_TBX_ZIP_2","BT62 4HB");
         keyword.click("CHECKOUT_LA_BTN_SAVE_ADDRESS");
     }
 
@@ -304,9 +321,9 @@ public class LoginAddressPage extends BasePage {
         keyword.assertEquals("CHECKOUT_LA_MESSAGES_CODE","CHECKOUT_LA_LBL_CODE");
     }
 
-    public void invalidCodeSymbols() throws InterruptedException {
-        keyword.clearText("CHECKOUT_LA_TBX_ZIP");
-        keyword.sendKeys("CHECKOUT_LA_TBX_ZIP","CHECKOUT_LA_DATA_CODE_6");
+    public void invalidCodeSymbols(String zipCode) throws InterruptedException {
+        keyword.clearText(zipCode);
+        keyword.sendKeys(zipCode,"CHECKOUT_LA_DATA_CODE_6");
         keyword.assertEquals("CHECKOUT_LA_MESSAGES_CODE","CHECKOUT_LA_LBL_CODE");
         keyword.assertEquals("CHECKOUT_LA_MESSAGE_ERROR_SYMBOLS","CHECKOUT_LA_LBL_ERROR_SYMBOLS");
     }
@@ -343,6 +360,11 @@ public class LoginAddressPage extends BasePage {
                 keyword.assertEquals("CHECKOUT_LA_MESSAGE_CODE_2", "CHECKOUT_LA_LBL_MESSAGE_CODE");
                 break;
         }
+    }
+    public void inputZipCode(String zipCode, String content){
+        keyword.clearText(zipCode);
+        keyword.sendKeys(zipCode,content);
+        keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
     }
 
 }

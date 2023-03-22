@@ -38,7 +38,7 @@ public class LoginAddressTest extends BaseTest {
     }
     public void customerLogin() throws InterruptedException {
         keyword.navigateToUrl("https://stage.glamira.co.uk/");
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL","COM_INP_DATA_PASS",
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE",
                 "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
         keyword.untilJqueryIsDone(50L);
     }
@@ -100,7 +100,7 @@ public class LoginAddressTest extends BaseTest {
     public void NLA_06(String baseURL) throws InterruptedException {
         logger.info("NLA_06");
         objLoginAddress.resetForNewCase();
-        //customerNotLogin();
+//        customerNotLogin();
         objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objLoginAddress.moveToPagecheckOut();
@@ -218,107 +218,138 @@ public class LoginAddressTest extends BaseTest {
     public void NLA_20(String baseURL) throws InterruptedException {
         objLoginAddress.loginFailed("wrongPass");
     }
-    @Test(priority = 12, description = "Continue with Customer login and input email invalid")
+    @Test
+            //(priority = 12, description = "Continue with Customer login and input email invalid")
     public void NLA_21() throws InterruptedException {
         objLoginAddress.loginFailed("invalidEmail");
     }
-    @Test(priority = 12, description = "Add new billing address with all valid data and next page successfully")
-    public void NLA_35() throws InterruptedException {
+    @Test
+            //(priority = 12, description = "Add new billing address with all valid data and next page successfully")
+    @Parameters("baseURL")
+    public void NLA_35(String baseURL) throws InterruptedException {
+//        customerNotLogin();
         customerLogin();
-        objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
-        objLoginAddress.moveToPagecheckOut();
+        objShoppingBagPage.moveToPagecheckOut();
         objLoginAddress.addNewBillingAddress(false, "CHECKOUT_LA_DATA_STREET_1",
                 "CHECKOUT_LA_DATA_CODE_1", "CHECKOUT_LA_DATA_CITY_1");
         objLoginAddress.verifyMelissa();
     }
-    @Test(priority = 13, description = "Add new billing address using suggest address with store no state")
+    @Test
+            //(priority = 13, description = "Add new billing address using suggest address with store no state")
     public void NLA_36() throws InterruptedException {
         objLoginAddress.addNewBillingAddress(true, "CHECKOUT_LA_DATA_STREET_1",
                 "CHECKOUT_LA_DATA_CODE_1", "CHECKOUT_LA_DATA_CITY_1");
     }
-    @Test(priority = 14, description = "Remove billing address successfully")
+    @Test
+            //(priority = 14, description = "Remove billing address successfully")
     public void NLA_41() throws InterruptedException {
         objLoginAddress.removeAddress("CHECKOUT_LA_BTN_REMOVE_BILLING_ADDRESS");
     }
 
-    @Test(priority = 14, description = "Add new billing address and continue with your input options")
+    @Test
+            //(priority = 14, description = "Add new billing address and continue with your input options")
     public void NLA_38() throws InterruptedException {
         objLoginAddress.addNewBillingAddress(false, "CHECKOUT_LA_DATA_STREET_3",
                 "CHECKOUT_LA_DATA_CODE_2", "CHECKOUT_LA_DATA_CITY_2");
         objLoginAddress.chooseAddressOnValidation(false,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
         objLoginAddress.checkNumberOfAddress("4");
     }
-    @Test(priority = 15, description = "Add new billing address and continue with We Suggested option")
+    @Test
+            //(priority = 15, description = "Add new billing address and continue with We Suggested option")
     public void NLA_39_40() throws InterruptedException {
         objLoginAddress.addNewBillingAddress(false, "CHECKOUT_LA_DATA_STREET_3",
                 "CHECKOUT_LA_DATA_CODE_2", "CHECKOUT_LA_DATA_CITY_2");
         objLoginAddress.chooseAddressOnValidation(true,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
         objLoginAddress.checkNumberOfAddress("5");
     }
-    @Test(priority = 16, description = "Add new another shipping address")
+    @Test
+            //(priority = 16, description = "Add new another shipping address")
     public void NLA_42() throws InterruptedException {
         objLoginAddress.proceedAddress();
         objLoginAddress.addNewAddress(false,"CHECKOUT_LA_DATA_STREET_4",
                 "CHECKOUT_LA_DATA_CODE_2","CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
     }
-    @Test(priority = 17, description = "Add new another shipping and using suggest address")
+    @Test
+            //(priority = 17, description = "Add new another shipping and using suggest address")
     public void NLA_43() throws InterruptedException {
         objLoginAddress.addNewAddress(true,"CHECKOUT_LA_DATA_STREET_4",
                 "CHECKOUT_LA_DATA_CODE_2","CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
     }
-    @Test(priority = 18, description = "Add new shipping address with invalid data and using Your input option")
+    @Test
+            //(priority = 18, description = "Add new shipping address with invalid data and using Your input option")
     public void NLA_45() throws InterruptedException {
         objLoginAddress.addNewAddress(false, "CHECKOUT_LA_DATA_STREET_3",
                 "CHECKOUT_LA_DATA_CODE_2", "CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
         objLoginAddress.chooseAddressOnValidation(false,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
-        objLoginAddress.checkNumberOfAddress("6");
+        objLoginAddress.checkNumberOfAddress("8");
     }
 
-    @Test(priority = 19, description = "Add new shipping address with invalid data and using We suggest option")
+    @Test
+            //(priority = 19, description = "Add new shipping address with invalid data and using We suggest option")
     public void NLA_46() throws InterruptedException {
         objLoginAddress.addNewAddress(false, "CHECKOUT_LA_DATA_STREET_3",
                 "CHECKOUT_LA_DATA_CODE_2", "CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
         objLoginAddress.chooseAddressOnValidation(true,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
-        objLoginAddress.checkNumberOfAddress("7");
+        objLoginAddress.checkNumberOfAddress("9");
     }
 
-    @Test(priority = 20, description = "Edit shipping address same as billing")
-    public void NLA_47_49() throws InterruptedException {
+    @Test
+            //(priority = 20, description = "Edit shipping address same as billing")
+    public void NLA_47_48_49() throws InterruptedException {
         objLoginAddress.editAddress("CHECKOUT_BTN_EDIT_SHIP_ADDRESS");
         objLoginAddress.chooseAddressOnValidation(false,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
     }
 
-    @Test(priority = 21, description = "Edit shipping address with address not same as billing")
+    @Test
+            //(priority = 21, description = "Edit shipping address with address not same as billing")
     public void NLA_50() throws InterruptedException {
         objLoginAddress.editFullShippingAddress();
     }
 
-    @Test(priority = 22, description = "Remove shipping address successfully")
+    @Test
+            //(priority = 22, description = "Remove shipping address successfully")
     public void NLA_51() throws InterruptedException {
         objLoginAddress.removeShippingAddress();
     }
 
-    @Test(priority = 23, description = "Using back button with customer login")
+    @Test
+            //(priority = 23, description = "Using back button with customer login")
     public void NLA_52() throws InterruptedException {
         objLoginAddress.goBack("CHECKOUT_BTN_CHECKOUT");
     }
-    @Test(priority = 24, description = "Add new address and input wrong format postcode on the page, customer not login")
-    public void NLA_53() throws InterruptedException {
-        customerNotLogin();
-        //objLoginAddress.resetForNewCase();
-        objShoppingBagPage.addProductWithOutOptions("https://dev3.glamira.com/glgb/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+    @Test
+            //(priority = 24, description = "Add new address and input wrong format postcode on the page, customer not login")
+    @Parameters("baseURL")
+    public void NLA_53(String baseURL) throws InterruptedException {
+//        customerNotLogin();
+        objLoginAddress.resetForNewCase();
+        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objLoginAddress.moveToAddressPage();
         objLoginAddress.wrongFormatCode();
     }
-    @Test(priority = 25, description = "Add new address and input postcode more than 12 symbols")
+    @Test
+            //(priority = 25, description = "Add new address and input postcode more than 12 symbols")
     public void NLA_54() throws InterruptedException {
-        objLoginAddress.invalidCodeSymbols();
+        objLoginAddress.invalidCodeSymbols("CHECKOUT_LA_TBX_ZIP");
+    }
+    @Test
+    public void NLA_55() throws InterruptedException {
+        objLoginAddress.inputZipCode("CHECKOUT_LA_TBX_ZIP","BT62 4HX");
+        objLoginAddress.addNewAddress(false, "CHECKOUT_LA_DATA_STREET_3",
+                "CHECKOUT_LA_DATA_CODE_5", "CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
+
+    }
+    @Test
+    public void NLA_56() throws InterruptedException {
+        objLoginAddress.invalidCodeSymbols("CHECKOUT_LA_TBX_ZIP_2");
     }
 
-    @Test(priority = 25, description = "Forgot password but didn't input Email / Phone")
+    @Test
+            //(priority = 25, description = "Forgot password but didn't input Email / Phone")
     public void NLA_26() throws InterruptedException {
         objLoginAddress.goBack("CHECKOUT_BTN_CONTINUE_GUEST");
         objLoginAddress.forgotPassword("noEmail");
