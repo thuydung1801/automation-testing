@@ -78,6 +78,7 @@ public class LoginAddressPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         if (!isSuggest){
+            Thread.sleep(2000);
             keyword.click("CHECKOUT_LA_CBX_YOURINPUT");
         }
         keyword.untilJqueryIsDone(50L);
@@ -200,7 +201,7 @@ public class LoginAddressPage extends BasePage {
         keyword.click("CHECKOUT_LA_BTN_BACK");
         keyword.untilJqueryIsDone(50L);
         keyword.webDriverWaitForElementPresent(verifyElement,30);
-    }
+    }//a[@class="actions action-back-to-cart"]
 
     public void editBillingAddress() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);

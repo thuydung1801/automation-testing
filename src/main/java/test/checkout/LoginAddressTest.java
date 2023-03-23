@@ -154,8 +154,8 @@ public class LoginAddressTest extends BaseTest {
     @Parameters("baseURL")
     public void NLA_11(String baseURL) throws InterruptedException {
         logger.info("NLA_11");
-        //customerNotLogin();
-        objLoginAddress.resetForNewCase();
+        customerNotLogin();
+//        objLoginAddress.resetForNewCase();
         objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objLoginAddress.moveToPagecheckOut();
@@ -175,6 +175,7 @@ public class LoginAddressTest extends BaseTest {
     public void NLA_12_16(String baseURL) throws InterruptedException {
         objLoginAddress.editAddress("CHECKOUT_BTN_EDIT_ADDRESS");
         objLoginAddress.compareAddress("CHECKOUT_DATA_EXPECT_DATA_12","CHECKOUT_LBL_ADDRESS_INFO_2");
+        objLoginAddress.chooseAddressOnValidation(false,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
         objLoginAddress.goBack("CHECKOUT_BTN_CONTINUE_GUEST");
         objLoginAddress.moveToAddressPage();
         //objLoginAddress.checkOutNotLogin();
