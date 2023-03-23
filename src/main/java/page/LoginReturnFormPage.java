@@ -16,11 +16,9 @@ public class LoginReturnFormPage extends BasePage {
     private RegisterPage objRegister;
     private LoginPage loginPage;
     public SignInPage signInPage;
-
     public LoginReturnFormPage() {
         super();
     }
-
     public void loginSuccess() throws InterruptedException {
         boolean check;
         keyword.reLoadPage();

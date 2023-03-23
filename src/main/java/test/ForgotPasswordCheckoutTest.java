@@ -15,6 +15,7 @@ public class ForgotPasswordCheckoutTest extends BaseTest {
     private LoginReturnFormPage objLoginReturn;
     private ForgotPasswordCheckOutPage objForgotPassWord;
     public CreateAccountOnWebPage objCreateAccount;
+
     public ForgotPasswordCheckoutTest() {
         super();
         objRegist = new RegisterPage(this.keyword);
@@ -26,8 +27,8 @@ public class ForgotPasswordCheckoutTest extends BaseTest {
 //        keyword.scrollToPositionByScript("window.scrollBy(0,300)");
         objRegist.acceptAllCookies();
     }
-    @Test(priority = 22, description = "Forgot password successfully with Email option")
-    public void testCase_LNA22() throws InterruptedException {
+    @Test(priority = 24, description = "Forgot password successfully with Email option")
+    public void testCase_LNA24() throws InterruptedException {
         logger.info("testCaseWeb_forgotPassWord");
         setup();
         objForgotPassWord.forgotPasswordCheckout();

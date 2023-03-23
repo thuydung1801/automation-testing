@@ -286,21 +286,17 @@ public class KeywordWeb {
         WebElement elementRep = driver.findElement(By.xpath(xPathElement));
         action.moveToElement(elementRep).clickAndHold();
     }
-
     public void executeJavaScript(String command) {
         logger.info("Executing JavaScript");
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript(command);
     }
-
-
     public void takeScreenshot(String imgformat, String srcpath) throws
             IOException, InterruptedException, AWTException {
         logger.info("Taking screenshot save to:" + srcpath);
         BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
         ImageIO.write(image, imgformat, new File(srcpath));
     }
-
     public void maximizeWindow() {
         logger.info("Maximizing browser window...");
         driver.manage().window().maximize();

@@ -114,12 +114,12 @@ public class SignUpPage extends BasePage {
     public void getCodeAndSendKey(String dataInput, String btnSubmit) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         String text = keyword.numberOnly("SIGNUP_GET_CODE_SMS");
+        System.out.println("-----------------:"+text);
         keyword.switchToTab(0);
         keyword.sendKeys(dataInput, text);
         System.out.println("value copied");
         keyword.click(btnSubmit);
     }
-
     //    confirm password entry condition
     public void confirmPasswordEntryCondition(String titleError, String Message, String characters, String number, String lowerLetter, String upperLetter, String charactersLike, String checkElement) throws InterruptedException {
         keyword.assertEquals(titleError, Message);
@@ -444,8 +444,8 @@ public class SignUpPage extends BasePage {
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
         objSignIn.loginAdmin(
-                "LOGIN_DATA_USER_NAME",
-                "LOGIN_DATA_PASS_WORD");
+                "nguyenngoc",
+                "Admin123");
         objSignIn.chooseItemCustomer(
                 "SIGNUP_STORES_ITEM", "SIGNUP_STORES_ITEM",
                 "LOGIN_FORM_CUSTOMER", "SIGNUP_ELEMENT_SMS_LOG", "SIGNUP_VERIFY_SMS"
