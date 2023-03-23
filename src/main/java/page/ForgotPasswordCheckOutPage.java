@@ -22,8 +22,9 @@ public class ForgotPasswordCheckOutPage extends BasePage {
         objSignUp = new SignUpPage(this.keyword);
     }
 
-    public void forgotPasswordSuccess() throws InterruptedException {
+    public void forgotPasswordWithPhone() throws InterruptedException {
         objCreateAccount.setupForgot("URL_DATA_PRODUCT_AU");
+        keyword.untilJqueryIsDone(50L);
         if (keyword.verifyElementPresent("INPUT_MOBILE_NUMBER")) {
             keyword.untilJqueryIsDone(50L);
             keyword.click("INPUT_MOBILE_NUMBER");
@@ -43,17 +44,59 @@ public class ForgotPasswordCheckOutPage extends BasePage {
         objSignUp.getActivationCode();
         keyword.untilJqueryIsDone(50L);
         objSignUp.getCodeAndSendKey("INPUT_SEND_CODE_PHONE", "SIGNUP_BTN_SUBMIT2");
-//        String text1 = keyword.getText("SIGNUP_GET_CODE_SMS");
-//        String text = text1.substring(text1.length() - 6);
-//        System.out.println("-----------------:" + text);
-//        keyword.switchToTab(0);
-//        keyword.sendKeys("INPUT_SEND_CODE_PHONE", text);
-//        System.out.println("value copied");
-//        keyword.click("SIGNUP_BTN_SUBMIT2");
+    }
+
+    //    "LOGIN_PHONE_NUMBER" "DATA_PHONE_FAIL"
+    public void forgotPasswordPhoneNotExist() throws InterruptedException {
+        forgotPasswordSenData("LOGIN_PHONE_NUMBER", "DATA_PHONE_NOT_EXIST", "SIGNIN_MESSAGE_PHONE_INCORRECT", "SIGNIN_INPUT_MESSAGE_PHONE_INCORRECT", "LOGIN_BTN_SUBMIT_FORGOT_PASSWORD", "SIGNIN_CLICK_FORM");
+    }
+
+    public void sendDataPasswordHollow() throws InterruptedException {
+        verifyDataPassword("COM_DATA_PASS_ON_MOBILE", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_MESSAGE_ERROR_NUMBER",
+                "SIGNUP_MESSAGE_ERROR_LOWER_LETTER", "SIGNUP_MESSAGE_ERROR_UPPER_LETTER");
+    }
+
+    public void sendPasswordInvalid() throws InterruptedException {
+        verifyDataPassword("DATA_PASSWORD_INVALID", "CONTENT_CHARACTER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
+                "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER");
+    }
+
+    public void forgotSuccess() throws InterruptedException {
+        forgotPasswordSenData("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "DATA_PASSWORD", "SIGNIN_UPDATE_PASSWORD_SUCCESS", "INPUT_MESSAGE_UPDATE_SUCCESS_PASSWORD", "BTN_SUBMIT_PASSWORD", "FORM_RESET_PASSWORD");
+    }
+
+    public void forgotPasswordInvalidCode() throws InterruptedException {
+        forgotPasswordSenData("LOGIN_PHONE_NUMBER", "DATA_PHONE_FORGOT_CHECKOUT", "CONTENT_MESSAGE_CONFIRM_CODE", "MESSAGE_CONTENT", "LOGIN_BTN_SUBMIT_FORGOT_PASSWORD", "SIGNIN_CLICK_FORM");
+//        ----------Forgot password and didn't input verify code
+        sendKeyAndVerifyMessage("SIGNIN_INPUT_ENTER_CODE", "DATA_PHONE_ZERO", "SIGNUP_DATA_VERIFY_MESSAGE", "INPUT_CODE_ERROR");
+//        ----------Forgot password and input invalid verify code.
+        sendKeyAndVerifyMessage("SIGNIN_INPUT_ENTER_CODE", "AFFIRM_DATA_PHONE", "SIGNIN_MESSAGE_UNABLE_CODE", "SIGNIN_INPUT_MESSAGE_PHONE_INCORRECT");
+    }
+
+    public void forgotPasswordSenData(String clearText, String dataKey, String expected, String actual, String btnSubmit, String form) throws InterruptedException {
+        objSignUp.clearTextAndSendKey(clearText, clearText, dataKey);
+        keyword.untilJqueryIsDone(20L);
+        keyword.click(form);
+        keyword.click(btnSubmit);
+//        keyword.assertEquals(expected, actual);
+        keyword.untilJqueryIsDone(50L);
+    }
+
+    public void sendKeyAndVerifyMessage(String inputSendKey, String dataKey, String expected, String actual) throws InterruptedException {
+        keyword.sendKeys(inputSendKey, dataKey);
+        keyword.click("SIGNIN_BTN_SUBMIT_SEND_CODE");
+        keyword.untilJqueryIsDone(50L);
+        keyword.assertEquals(expected, actual);
+    }
+
+    public void verifyDataPassword(String data, String Character, String number,
+                                   String lowerLetter, String upperLetter) throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
-        keyword.sendKeys("INPUT_RESET_PASSWORD", "DATA_PASSWORD");
+        keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD", data);
         keyword.click("BTN_SUBMIT_PASSWORD");
-//        keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "INPUT_MESSAGE_UPDATE_SUCCESS_PASSWORD");
+        objSignUp.confirmPasswordEntryCondition("SIGNUP_MESSAGE_PASSWORD_FAIL01", "SIGNIN_MESSAGE_CREATE_NEW_PW", Character,
+                number, lowerLetter, upperLetter,
+                "SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE", "SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE");
     }
 
     public void forgotPasswordInvalidInputData(String value, String data) throws InterruptedException {
@@ -64,12 +107,5 @@ public class ForgotPasswordCheckOutPage extends BasePage {
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(30L);
         keyword.assertEquals("SIGNUP_VALID_NUMBER_FIELD", "SIGNIN_MESSAGE_VALID_PHONE_");
-    }
-    //    "LOGIN_PHONE_NUMBER" "DATA_PHONE_FAIL"
-    public void forgotPasswordPhoneNotExist() throws InterruptedException {
-        objSignUp.clearTextAndSendKey("LOGIN_PHONE_NUMBER","LOGIN_PHONE_NUMBER","DATA_PHONE_NOT_EXIST");
-        keyword.doubleClick("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
-        keyword.untilJqueryIsDone(30L);
-        keyword.assertEquals("SIGNIN_MESSAGE_PHONE_INCORRECT", "SIGNIN_INPUT_MESSAGE_PHONE_INCORRECT");
     }
 }
