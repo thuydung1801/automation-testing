@@ -166,6 +166,7 @@ public void setUp()throws InterruptedException {
     public void testCase_SU023_Case_14() throws Exception {
         logger.info("testCase_SU023_Case_14");
         objSigUp.createNewCustomerSuccessfullyWithPhone();
-        objSigUp.getActivationCode("SIGNUP_SWITCH_TO_TAB_CHECK2","感谢注册。","SIGNUP_CODE_RESEND");
+        objSigUp.getActivationCode();
+        objSigUp.getCodeBE("SIGNUP_SWITCH_TO_TAB_CHECK2","感谢注册。","SIGNUP_CODE_RESEND");
     }
 }

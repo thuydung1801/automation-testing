@@ -80,7 +80,7 @@ public class SignUpPage extends BasePage {
     public void sendKeyFullDataFormPasswordInformation(String inputPassword, String password, String selectTitle, String selectOneOptionTitle) throws InterruptedException {
         keyword.sendKeys(inputPassword, password);
         keyword.untilJqueryIsDone(30L);
-        if ( keyword.verifyElementVisible(selectTitle)) {
+        if (keyword.verifyElementVisible(selectTitle)) {
             keyword.click(selectTitle);
 //            keyword.checkStatusIsDisplay(selectOneOptionTitle);
             keyword.click(selectOneOptionTitle);
@@ -91,6 +91,7 @@ public class SignUpPage extends BasePage {
             keyword.click("SIGNUP_CHECKBOX_AGREE");
         }
     }
+
     //    Filters function
     public void filterSort(String elementFilter, String inputFilter, String sendKeyFilter, String buttonApplyFilter) throws InterruptedException {
         keyword.webDriverWaitForElementPresent(elementFilter, 20);
@@ -113,13 +114,21 @@ public class SignUpPage extends BasePage {
     //    Get code and send key
     public void getCodeAndSendKey(String dataInput, String btnSubmit) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        String text = keyword.numberOnly("SIGNUP_GET_CODE_SMS");
-        System.out.println("-----------------:"+text);
+//        String text = keyword.numberOnly("SIGNUP_GET_CODE_SMS");
+//        System.out.println("-----------------:" + text);
+//        keyword.switchToTab(0);
+//        keyword.sendKeys(dataInput, text);
+//        System.out.println("value copied");
+//        keyword.click(btnSubmit);
+        String text1 = keyword.getText("SIGNUP_GET_CODE_SMS");
+        String text = text1.substring(text1.length() - 6);
+        System.out.println("-----------------:" + text);
         keyword.switchToTab(0);
         keyword.sendKeys(dataInput, text);
         System.out.println("value copied");
         keyword.click(btnSubmit);
     }
+
     //    confirm password entry condition
     public void confirmPasswordEntryCondition(String titleError, String Message, String characters, String number, String lowerLetter, String upperLetter, String charactersLike, String checkElement) throws InterruptedException {
         keyword.assertEquals(titleError, Message);
@@ -437,7 +446,7 @@ public class SignUpPage extends BasePage {
     }
 
     //    Create new customer successfully with store enable phone number confirm
-    public void getActivationCode(String input, String data, String actual) throws InterruptedException {
+    public void getActivationCode() throws InterruptedException {
         objSignIn = new SignInPage(this.keyword);
         objSignIn.openNewTabs();
         keyword.deleteAllCookies();
@@ -456,12 +465,14 @@ public class SignUpPage extends BasePage {
 //        );
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(10000);
+    }
+
+    public void getCodeBE(String input, String data, String actual) throws InterruptedException {
         getCodeAndSendKey(input, "SIGNUP_BTN_SUBMIT2"
         );
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(5000);
-        keyword.assertEquals(data,actual );
+        keyword.assertEquals(data, actual);
     }
-
 }
 

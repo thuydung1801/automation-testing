@@ -215,7 +215,8 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "DATA_CREATE_ACCOUNT_WITH_PHONE");
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(50L);
-        objSignUp.getActivationCode("INPUT_SEND_CODE_PHONE", "DATA_FORM_PASSWORD_NEW", "ACTUAL_DATA_TITLE_PASSWORD_NEW");
+        objSignUp.getActivationCode();
+        objSignUp.getCodeBE("INPUT_SEND_CODE_PHONE", "DATA_FORM_PASSWORD_NEW", "ACTUAL_DATA_TITLE_PASSWORD_NEW");
         keyword.untilJqueryIsDone(50L);
         sendPassWord();
     }

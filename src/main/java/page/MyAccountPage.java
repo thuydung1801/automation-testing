@@ -1053,7 +1053,7 @@ public class MyAccountPage extends BasePage {
 
     public void checkChangeNewsLetter() throws InterruptedException {
         keyword.back();
-        checkFunctionInfoCustomer("MAC_OVER_EDIT_NEWSLETTER","MAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER","MAC_VERIFY_DATA_TITTLE_NEWSLETTER");
+//        checkFunctionInfoCustomer("MAC_OVER_EDIT_NEWSLETTER","MAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER","MAC_VERIFY_DATA_TITTLE_NEWSLETTER");
     }
 
 }

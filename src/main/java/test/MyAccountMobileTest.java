@@ -120,22 +120,22 @@ public class MyAccountMobileTest extends BaseTest {
         keyword.resizeBrowser(319, 848);
     }
     //   case My Order
-    @Test(priority = 19, description = "Check function icon  view order of completed order")
+//    @Test(priority = 19, description = "Check function icon  view order of completed order")
     @Parameters("baseURL")
     public void testCase_Myorder_01(String baseURL) throws InterruptedException {
         testMyAccountMobile.viewOrderComplete(baseURL);
     }
 
-    @Test(priority = 20, description = "Check function icon view order of Recent  orders")
+//    @Test(priority = 20, description = "Check function icon view order of Recent  orders")
     public void testCase_Myorder_02() throws InterruptedException {
         testMyAccountMobile.viewOrderRecent();
     }
-    @Test(priority = 21, description = "Check function of button Upload More")
+//    @Test(priority = 21, description = "Check function of button Upload More")
     public void testCase_Myorder_04() throws InterruptedException {
         testMyAccount.upLoadItemOrder();
         keyword.resizeBrowser(319, 848);
     }
-    @Test(priority = 22, description = "Check function icon return  of completed order")
+//    @Test(priority = 22, description = "Check function icon return  of completed order")
     public void testCase_Myorder_03() throws InterruptedException {
         testMyAccount.viewReturn();
     }

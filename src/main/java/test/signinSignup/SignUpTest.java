@@ -91,21 +91,17 @@ public class SignUpTest extends BaseTest {
         logger.info("testCase_SU011");
         objSigUp.confirmPasswordEntryConditionCharactersLike();
     }
-
     @Test(priority = 11, description = "Enter the wrong code sent to the email")
     public void testCase_SU012() throws InterruptedException {
         logger.info("testCase_SU012");
         objSigUp.confirmAndProcessGetCodeWrong();
     }
-
     //
     @Test(priority = 12, description = "Resend the code to email and Signup Success")
     public void testCase_SU013_and_testCase_01() throws Exception {
         logger.info("testCase_SU013_and_testCase_01");
         objSigUp.resendAndGetCodeBack();
     }
-
-
     //        SIGNUP WITH MOBILE
 //    @Test(priority = 13, description = "Create new customer and leave with blank form for required form")
     public void testCase_SU015() throws Exception {
@@ -166,6 +162,7 @@ public class SignUpTest extends BaseTest {
     public void testCase_SU023_Case_14() throws Exception {
         logger.info("testCase_SU023_Case_14");
         objSigUp.createNewCustomerSuccessfullyWithPhone();
-        objSigUp.getActivationCode("SIGNUP_SWITCH_TO_TAB_CHECK2","感谢注册。","SIGNUP_CODE_RESEND");
+        objSigUp.getActivationCode();
+        objSigUp.getCodeBE("SIGNUP_SWITCH_TO_TAB_CHECK2","感谢注册。","SIGNUP_CODE_RESEND");
     }
 }
