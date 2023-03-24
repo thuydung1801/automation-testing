@@ -155,6 +155,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(2000);
         keyword.click("CHECKOUT_CHECKBOX_WOMENRING_GIFT");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -273,6 +274,19 @@ public class ShoppingBagPage extends BasePage {
 
     }
 
+    public void addImageProduct(String url) throws InterruptedException {
+        keyword.navigateToUrl(url+"glamira-pendant-tate.html?accent=black&alloy=white-375&stone1=diamond-Brillant");
+        keyword.untilJqueryIsDone(50L);
+        keyword.scrollDownToElement("CHECKOUT_CHOOSE_IMAGE_1");
+        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_1","C:\\Users\\hoailinh\\Desktop\\17932103b07ca950f547fb68e006793e.jpg");
+        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_2","C:\\Users\\hoailinh\\Desktop\\17932103b07ca950f547fb68e006793e.jpg");
+        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_3","C:\\Users\\hoailinh\\Desktop\\17932103b07ca950f547fb68e006793e.jpg");
+        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_4","C:\\Users\\hoailinh\\Desktop\\17932103b07ca950f547fb68e006793e.jpg");
+        keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
+
+    }
+
     //click button Edit depends on the type of product
     public void clickEdit(String btnEdit) throws InterruptedException {
         keyword.webDriverWaitForElementPresent("CHECKOUT_LBL_HEADER",10);
@@ -381,14 +395,14 @@ public class ShoppingBagPage extends BasePage {
                 , actual);
     }
     @Step("Input invalid data")
-    public void inputError(String lblErrorMessage1, String lblErrorMessage2, String dataExpected, String engraving, boolean flag) throws InterruptedException {
+    public void inputError(String lblErrorMessage1, String lblErrorMessage2, String dataExpected, String engraving, boolean flag, String domain) throws InterruptedException {
         keyword.verifyElementPresent(lblErrorMessage1);
         keyword.verifyElementPresent(lblErrorMessage2);
         if(flag) {
             keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
             Thread.sleep(10000);
             String expect = PropertiesFile.getPropValue(dataExpected);
-            if(keyword.verifyElementVisible("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE")){
+            if(domain.equalsIgnoreCase("mobile")){
                 viewDetail("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE");
                 keyword.untilJqueryIsDone(30L);
                 keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -636,7 +650,7 @@ public class ShoppingBagPage extends BasePage {
     //calculate the discount
     public void discount(boolean flag) throws InterruptedException {
         if (flag){
-            Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
+            Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_PRICE","£"));
             logger.info(String.valueOf(rawPrice));
             String totalPrice = String.valueOf(calculateMoney(rawPrice, 1));
             keyword.untilJqueryIsDone(50L);
@@ -782,7 +796,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.openNewTabFromTabBase(1,"BE_URL");
         keyword.maximizeWindow();
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        objSignIn.loginAdmin("LOGIN_DATA_USER_NAME_DUNG","LOGIN_DATA_PASS_WORD_DUNG");
+        objSignIn.loginAdmin("linhhoai","linh123");
     }
 
     //go to BE and verify order's status
@@ -790,6 +804,9 @@ public class ShoppingBagPage extends BasePage {
     public void verifyOrderStatus(String status) throws InterruptedException {
         //go to BE
         //https://dev3.glamira.com/
+        keyword.navigateToUrl("https://stage.glamira.com/secured2021/sales/order/");
+        keyword.untilJqueryIsDone(50L);
+        keyword.reLoadPage();
         keyword.navigateToUrl("https://stage.glamira.com/secured2021/sales/order/");
         //verify status
         keyword.webDriverWaitForElementPresent("BE_ORDER_TBX_SEARCH",10);
