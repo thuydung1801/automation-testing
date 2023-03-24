@@ -79,7 +79,7 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(2000);
-        keyword.waitForElementNotVisible(30,"//div[@class='loading-mask']");
+        keyword.waitForElementNotVisible(30, "//div[@class='loading-mask']");
         keyword.click("LA_BTN_PROCEED_TO_CHECKOUT");
         keyword.untilJqueryIsDone(70L);
         keyword.verifyElementVisible("FORM_CHECKOUT_VRF");
@@ -166,12 +166,14 @@ public class CreateAccountOnWebPage extends BasePage {
                 "LOGIN_INPUT_VERIFY_CODE",
                 code, btnSubmit);
     }
+
     public void sendKeyFormPassword() throws InterruptedException {
         objSignUp.sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION",
                 "SIGNUP_DATA_PASSWORD_INFORMATION", "SIGNUP_SELECT_TITLE",
                 "SIGNUP_SELECT_OPTION_TITLE");
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
     }
+
     public void sendKeyFormDataLogin() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
@@ -183,6 +185,7 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
     }
+
     //    ------whthPhone
     public void createNewCustomerWithPhone() throws Exception {
 //        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
@@ -221,4 +224,23 @@ public class CreateAccountOnWebPage extends BasePage {
         sendPassWord();
     }
 
+    public void forgotPasswordInvalidEmail() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("CHECKOUT_LA_HPL_FORGOT_PASS");
+        keyword.verifyElementVisible("LOGIN_BOX_FORGOT_PASSWORD");
+        keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
+        keyword.assertEquals("SIGNIN_MESSAGE_REQUIRED_FIELD", "EMAIL_ERROR");
+    }
+
+    public void emailWrongFormat() throws InterruptedException {
+        keyword.sendKeys("FORM_EMAIL_ERROR", "SIGNUP_EMAIL_INVALID");
+        keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
+        keyword.assertEquals("LA_MESSAGE_EMAIL_INVALID", "EMAIL_ERROR");
+    }
+
+    public void emailCustomerExist() throws InterruptedException {
+        objSignUp.clearTextAndSendKey("FORM_EMAIL_ERROR", "INPUT_EMIAL_FORGOT_PASSWORD", "EMAIL_NOT_EXIST");
+        keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
+//        keyword.assertEquals("MESSAGE_EMAIL_NOT_EXIST", "EMAIL_ERROR");
+    }
 }

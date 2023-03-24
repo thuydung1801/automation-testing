@@ -4,17 +4,15 @@ import core.BaseTest;
 import core.LogHelper;
 import org.slf4j.Logger;
 import org.testng.annotations.Test;
-import page.CreateAccountOnMobilePage;
-import page.CreateAccountOnWebPage;
 import page.LoginReturnFormPage;
 import page.home.RegisterPage;
 
-public class LoginReturnFormTest extends BaseTest {
+public class LoginReturnFormMobileTest extends BaseTest {
     private static Logger logger = LogHelper.getLogger();
     private RegisterPage objRegist;
     private LoginReturnFormPage objLoginReturn;
 
-    public LoginReturnFormTest() {
+    public LoginReturnFormMobileTest() {
         super();
         objRegist = new RegisterPage(this.keyword);
         objLoginReturn = new LoginReturnFormPage();
@@ -25,7 +23,7 @@ public class LoginReturnFormTest extends BaseTest {
 
     }
 
-//            @Test(priority = 1, description = "Submit Return form, login successfully")
+    //            @Test(priority = 1, description = "Submit Return form, login successfully")
     public void testCase_LS_01() throws InterruptedException {
         setUpLogin();
         objLoginReturn.loginSuccess();
@@ -60,11 +58,9 @@ public class LoginReturnFormTest extends BaseTest {
         objLoginReturn.loginSuccess();
     }
 
-//    @Test(priority = 8, description = "Return order with the order haven't the item avaiable resizing")
+    //    @Test(priority = 8, description = "Return order with the order haven't the item avaiable resizing")
     public void testCase_LS_08() throws InterruptedException {
         objLoginReturn.loginSuccess();
 
     }
-
-
 }

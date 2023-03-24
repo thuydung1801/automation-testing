@@ -33,10 +33,10 @@
 <!--</suite>-->
 <suite name="LAT" parallel="tests">
     <test name="Run Test">
-        <parameter name="devices" value="web"></parameter>
+        <parameter name="devices" value="mobile"></parameter>
         <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
-            <class name="test.ForgotPasswordCheckoutTest">
+            <class name="test.ForgotPasswordCheckoutMobileTest">
                 <!--                                <methods>-->
                 <!--                                    <include name="testCase_SP_02"/>-->
                 <!--&lt;!&ndash;                                    <include name="NLA_03"/>&ndash;&gt;-->
