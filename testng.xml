@@ -36,7 +36,7 @@
         <parameter name="devices" value="mobile"></parameter>
         <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
-            <class name="test.ForgotPasswordCheckoutMobileTest">
+            <class name="test.LoginReturnFormTest">
                 <!--                                <methods>-->
                 <!--                                    <include name="testCase_SP_02"/>-->
                 <!--&lt;!&ndash;                                    <include name="NLA_03"/>&ndash;&gt;-->

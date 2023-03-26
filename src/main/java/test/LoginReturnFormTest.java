@@ -26,10 +26,10 @@ public class LoginReturnFormTest extends BaseTest {
     }
 
 //            @Test(priority = 1, description = "Submit Return form, login successfully")
-    public void testCase_LS_01() throws InterruptedException {
-        setUpLogin();
-        objLoginReturn.loginSuccess();
-    }
+//    public void testCase_LS_01() throws InterruptedException {
+//        setUpLogin();
+//        objLoginReturn.loginSuccess();
+//    }
 
     @Test(priority = 2, description = "Input email or order having space")
     public void testCase_LS_03() throws InterruptedException {
@@ -51,20 +51,14 @@ public class LoginReturnFormTest extends BaseTest {
     public void testCase_LS_05() throws InterruptedException {
         objLoginReturn.customerDataInvalid("DATA_EMAIL_NOT_HAVE_ORDER_RETURN", "MESSAGE_NOT_HAVE_ORDER_RETURN", "RETURN_MESSAGE_CONTENT");
     }
+
     @Test(priority = 6, description = "Submit Return form, Next step and not input Email")
     public void testCase_LS_06() throws InterruptedException {
         objLoginReturn.customerDataInvalid("DATA_EMAIL_SPACE", "SIGNUP_DATA_VERIFY_MESSAGE", "EMAIL_ERROR");
     }
+
     @Test(priority = 7, description = " loginSuccess Return order with the order > 60days")
-    public void testCase_LS_07_LS_01() throws InterruptedException {
+    public void testCase_LS_01() throws InterruptedException {
         objLoginReturn.loginSuccess();
     }
-
-//    @Test(priority = 8, description = "Return order with the order haven't the item avaiable resizing")
-    public void testCase_LS_08() throws InterruptedException {
-        objLoginReturn.loginSuccess();
-
-    }
-
-
 }

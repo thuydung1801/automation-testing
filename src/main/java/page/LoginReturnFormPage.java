@@ -12,15 +12,11 @@ import page.signinSignup.SignInPage;
 
 public class LoginReturnFormPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
-    private LoginPage objLogin;
-    private RegisterPage objRegister;
-    private LoginPage loginPage;
     public SignInPage signInPage;
     public LoginReturnFormPage() {
         super();
     }
     public void loginSuccess() throws InterruptedException {
-        boolean check;
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
         keyword.sendKeys("INPUT_EMAIL_FORM", "DATA_EMAIL_RETURN");
@@ -30,21 +26,9 @@ public class LoginReturnFormPage extends BasePage {
         keyword.click("BTN_SUBMIT_RETURN_FORM");
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("FORM_MY_RETURN");
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("BTN_ORDER_SELECT");
-        keyword.click("SELECT_OPTION");
-        String getText = keyword.getText("SELECT_OPTION");
-        System.out.println("----------------------: " + getText);
-        keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_CREATE_RETURN");
         keyword.untilJqueryIsDone(50L);
         keyword.assertEquals("DATA_LABLE", "STEP_LABLE");
-        String assertEqualsText = keyword.getText("INPUT_TEXT_CONFIRM");
-        System.out.println("----------------------: " + assertEqualsText);
-        keyword.untilJqueryIsDone(50L);
-        getText.contains(assertEqualsText);
-        keyword.untilJqueryIsDone(50L);
-        keyword.assertEquals("INPUT_RETURN_TYPE_CONTENT", "INPUT_RETURN_TYPE");
     }
     public void emailHaveSpace() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);

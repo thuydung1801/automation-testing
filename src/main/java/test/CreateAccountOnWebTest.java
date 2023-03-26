@@ -41,7 +41,7 @@ public class CreateAccountOnWebTest extends BaseTest {
         objCreateAccOnWeb.forgotPassword("URL_BE_DEV3");
     }
     @Test(priority = 3, description = "Forgot password successfully and using Resend code with Email")
-    public void testCaseWeb_forgotPassWordCheckOut_LNA26() throws Exception {
+    public void testCaseWeb_forgotPassWordCheckOut_LNA22() throws Exception {
         logger.info("testCaseWeb_forgotPassWordCheckOut");
 //        installation();
         objCreateAccOnWeb.forgotPasswordCheckOut("URL_DATA_PRODUCT", "URL_BE_DEV3");
