@@ -212,4 +212,58 @@ public class LoginAddressTestMobile extends BaseTest {
     public void NLA_21() throws InterruptedException {
         objLoginAddress.loginFailed("invalidEmail");
     }
+    @Test
+    //(priority = 12, description = "Add new billing address with all valid data and next page successfully")
+    @Parameters("baseURL")
+    public void NLA_35(String baseURL) throws InterruptedException {
+//        customerNotLogin();
+        customerLogin();
+        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objLoginAddress.addNewBillingAddress(false, "CHECKOUT_LA_DATA_STREET_1",
+                "CHECKOUT_LA_DATA_CODE_1", "CHECKOUT_LA_DATA_CITY_1");
+        objLoginAddress.verifyMelissa();
+    }
+    @Test
+    //(priority = 13, description = "Add new billing address using suggest address with store no state")
+    public void NLA_36() throws InterruptedException {
+        objLoginAddress.addNewBillingAddress(true, "CHECKOUT_LA_DATA_STREET_1",
+                "CHECKOUT_LA_DATA_CODE_1", "CHECKOUT_LA_DATA_CITY_1");
+    }
+    @Test
+    //(priority = 14, description = "Remove billing address successfully")
+    public void NLA_41() throws InterruptedException {
+        objLoginAddress.removeAddress("CHECKOUT_LA_BTN_REMOVE_BILLING_ADDRESS");
+    }
+
+    @Test
+    //(priority = 14, description = "Add new billing address and continue with your input options")
+    public void NLA_38() throws InterruptedException {
+        objLoginAddress.addNewBillingAddress(false, "CHECKOUT_LA_DATA_STREET_3",
+                "CHECKOUT_LA_DATA_CODE_2", "CHECKOUT_LA_DATA_CITY_2");
+        objLoginAddress.chooseAddressOnValidation(false,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
+        objLoginAddress.checkNumberOfAddress("4");
+    }
+    @Test
+    //(priority = 15, description = "Add new billing address and continue with We Suggested option")
+    public void NLA_39_40() throws InterruptedException {
+        objLoginAddress.addNewBillingAddress(false, "CHECKOUT_LA_DATA_STREET_3",
+                "CHECKOUT_LA_DATA_CODE_2", "CHECKOUT_LA_DATA_CITY_2");
+        objLoginAddress.chooseAddressOnValidation(true,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
+        objLoginAddress.checkNumberOfAddress("5");
+    }
+    @Test
+    //(priority = 16, description = "Add new another shipping address")
+    public void NLA_42() throws InterruptedException {
+        objLoginAddress.proceedAddress();
+        objLoginAddress.addNewAddress(false,"CHECKOUT_LA_DATA_STREET_4",
+                "CHECKOUT_LA_DATA_CODE_2","CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
+    }
+    @Test
+    //(priority = 17, description = "Add new another shipping and using suggest address")
+    public void NLA_43() throws InterruptedException {
+        objLoginAddress.addNewAddress(true,"CHECKOUT_LA_DATA_STREET_4",
+                "CHECKOUT_LA_DATA_CODE_2","CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
+    }
 }

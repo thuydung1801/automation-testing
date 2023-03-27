@@ -154,8 +154,8 @@ public class LoginAddressTest extends BaseTest {
     @Parameters("baseURL")
     public void NLA_11(String baseURL) throws InterruptedException {
         logger.info("NLA_11");
-        customerNotLogin();
-//        objLoginAddress.resetForNewCase();
+//        customerNotLogin();
+        objLoginAddress.resetForNewCase();
         objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objLoginAddress.moveToPagecheckOut();
