@@ -36,10 +36,16 @@ public class LoginAddressTest extends BaseTest {
         objRegist.acceptAllCookies();
         //objRegist.chooseLanguages();
     }
-    public void customerLogin() throws InterruptedException {
+    public void customerLogin(String devices) throws InterruptedException {
         keyword.navigateToUrl("https://stage.glamira.co.uk/");
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE",
-                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
+        if(devices.equalsIgnoreCase("mobile")){
+            objLogin.loginOnMobile("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE");
+        }
+        else{
+            objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE",
+                    "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
+        }
+
         keyword.untilJqueryIsDone(50L);
     }
 
@@ -226,10 +232,10 @@ public class LoginAddressTest extends BaseTest {
     }
     @Test
             //(priority = 12, description = "Add new billing address with all valid data and next page successfully")
-    @Parameters("baseURL")
-    public void NLA_35(String baseURL) throws InterruptedException {
+    @Parameters({"baseURL","devices"})
+    public void NLA_35(String baseURL,String devices) throws InterruptedException {
 //        customerNotLogin();
-        customerLogin();
+        customerLogin(devices);
         objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();

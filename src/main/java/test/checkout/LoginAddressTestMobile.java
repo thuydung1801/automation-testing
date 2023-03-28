@@ -35,6 +35,7 @@ public class LoginAddressTestMobile extends BaseTest {
     }
     public void customerLogin() throws InterruptedException {
         keyword.navigateToUrl("https://stage.glamira.co.uk/");
+//        objRegist.acceptAllCookies();
         objLogin.loginOnMobile("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE");
         keyword.untilJqueryIsDone(50L);
     }
@@ -144,8 +145,8 @@ public class LoginAddressTestMobile extends BaseTest {
     @Parameters("baseURL")
     public void NLA_11(String baseURL) throws InterruptedException {
         logger.info("NLA_11");
-        objRegist.acceptAllCookies();
-//        objLoginAddress.resetForNewCase();
+//        objRegist.acceptAllCookies();
+        objLoginAddress.resetForNewCase();
         objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objLoginAddress.moveToPagecheckOut();
@@ -266,4 +267,75 @@ public class LoginAddressTestMobile extends BaseTest {
         objLoginAddress.addNewAddress(true,"CHECKOUT_LA_DATA_STREET_4",
                 "CHECKOUT_LA_DATA_CODE_2","CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
     }
+    @Test
+    //(priority = 18, description = "Add new shipping address with invalid data and using Your input option")
+    public void NLA_45() throws InterruptedException {
+        objLoginAddress.addNewAddress(false, "CHECKOUT_LA_DATA_STREET_3",
+                "CHECKOUT_LA_DATA_CODE_2", "CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
+        objLoginAddress.chooseAddressOnValidation(false,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
+        objLoginAddress.checkNumberOfAddress("8");
+    }
+
+    @Test
+    //(priority = 19, description = "Add new shipping address with invalid data and using We suggest option")
+    public void NLA_46() throws InterruptedException {
+        objLoginAddress.addNewAddress(false, "CHECKOUT_LA_DATA_STREET_3",
+                "CHECKOUT_LA_DATA_CODE_2", "CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
+        objLoginAddress.chooseAddressOnValidation(true,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
+        objLoginAddress.checkNumberOfAddress("9");
+    }
+
+    @Test
+    //(priority = 20, description = "Edit shipping address same as billing")
+    public void NLA_47_48_49() throws InterruptedException {
+        objLoginAddress.editAddress("CHECKOUT_BTN_EDIT_SHIP_ADDRESS");
+        objLoginAddress.chooseAddressOnValidation(false,"CHECKOUT_LA_BTN_APPLY_ADDRESS_2");
+    }
+
+    @Test
+    //(priority = 21, description = "Edit shipping address with address not same as billing")
+    public void NLA_50() throws InterruptedException {
+        objLoginAddress.editFullShippingAddress();
+    }
+
+    @Test
+    //(priority = 22, description = "Remove shipping address successfully")
+    public void NLA_51() throws InterruptedException {
+        objLoginAddress.removeShippingAddress();
+    }
+
+    @Test
+    //(priority = 23, description = "Using back button with customer login")
+    public void NLA_52() throws InterruptedException {
+        objLoginAddress.goBack("CHECKOUT_BTN_CHECKOUT");
+    }
+    @Test
+    //(priority = 24, description = "Add new address and input wrong format postcode on the page, customer not login")
+    @Parameters("baseURL")
+    public void NLA_53(String baseURL) throws InterruptedException {
+//        customerNotLogin();
+        objLoginAddress.resetForNewCase();
+        objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objLoginAddress.moveToAddressPage();
+        objLoginAddress.wrongFormatCode();
+    }
+    @Test
+    //(priority = 25, description = "Add new address and input postcode more than 12 symbols")
+    public void NLA_54() throws InterruptedException {
+        objLoginAddress.invalidCodeSymbols("CHECKOUT_LA_TBX_ZIP");
+    }
+    @Test
+    public void NLA_55() throws InterruptedException {
+        objLoginAddress.inputZipCode("CHECKOUT_LA_TBX_ZIP","BT62 4HX");
+        objLoginAddress.addNewAddress(false, "CHECKOUT_LA_DATA_STREET_3",
+                "CHECKOUT_LA_DATA_CODE_5", "CHECKOUT_LA_DATA_CITY_2","CHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN");
+
+    }
+    @Test
+    public void NLA_56() throws InterruptedException {
+        objLoginAddress.invalidCodeSymbols("CHECKOUT_LA_TBX_ZIP_2");
+    }
+
 }
