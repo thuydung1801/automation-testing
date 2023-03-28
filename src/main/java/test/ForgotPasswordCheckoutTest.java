@@ -28,35 +28,35 @@ public class ForgotPasswordCheckoutTest extends BaseTest {
         objRegist.acceptAllCookies();
     }
     @Test(priority = 1, description = "Forgot password and didn't input password")
-    public void testCase_LNA33() throws InterruptedException {
-        logger.info("testCase_LNA33");
+    public void testCase_NLA_33() throws InterruptedException {
+        logger.info("testCase_NLA_33");
         setup();
         objForgotPassWord.forgotPasswordWithPhone();
         objForgotPassWord.sendDataPasswordHollow();
     }
     @Test(priority = 2, description = "Forgot password and input invalid password")
-    public void testCase_LNA34() throws InterruptedException {
-        logger.info("testCase_LNA34");
+    public void testCase_NLA_34() throws InterruptedException {
+        logger.info("testCase_NLA_34");
         objForgotPassWord.sendPasswordInvalid();
     }
     @Test(priority = 3, description = "Forgot password successfully and using Resend code with Mobile")
-    public void testCase_LNA24_25() throws InterruptedException {
-        logger.info("testCase_LNA24_25");
+    public void testCase_NLA_24_25() throws InterruptedException {
+        logger.info("testCase_NLA_24_25");
         objForgotPassWord.forgotSuccess();
     }
     @Test(priority = 4, description = "Forgot password and input Phone wrong format")
-    public void testCase_LNA29() throws InterruptedException {
-        logger.info("testCase_LNA29");
+    public void testCase_NLA_29() throws InterruptedException {
+        logger.info("testCase_NLA_29");
         objForgotPassWord.forgotPasswordInvalidInputData("LOGIN_PHONE_NUMBER", "DATA_PHONE_FAIL");
     }
     @Test(priority = 5, description = "Forgot password and input Phone not exist on customer ")
-    public void testCase_LNA30() throws InterruptedException {
-        logger.info("testCase_LNA30");
+    public void testCase_NLA_30() throws InterruptedException {
+        logger.info("testCase_NLA_30");
         objForgotPassWord.forgotPasswordPhoneNotExist();
     }
     @Test(priority = 6, description = " Forgot password and didn't input verify code + Forgot password and input invalid verify code")
-    public void testCase_LNA31_LNA32() throws InterruptedException {
-        logger.info("testCase_LNA31_LNA32");
+    public void testCase_NLA31_NLA32() throws InterruptedException {
+        logger.info("testCase_NLA31_NLA32");
         objForgotPassWord.forgotPasswordInvalidCode();
     }
 }

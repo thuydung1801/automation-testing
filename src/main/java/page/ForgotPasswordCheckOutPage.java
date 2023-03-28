@@ -48,7 +48,7 @@ public class ForgotPasswordCheckOutPage extends BasePage {
 
     //    "LOGIN_PHONE_NUMBER" "DATA_PHONE_FAIL"
     public void forgotPasswordPhoneNotExist() throws InterruptedException {
-        forgotPasswordSenData("LOGIN_PHONE_NUMBER", "DATA_PHONE_NOT_EXIST", "SIGNIN_MESSAGE_PHONE_INCORRECT", "SIGNIN_INPUT_MESSAGE_PHONE_INCORRECT", "LOGIN_BTN_SUBMIT_FORGOT_PASSWORD", "SIGNIN_CLICK_FORM");
+        forgotPasswordSendData("LOGIN_PHONE_NUMBER", "DATA_PHONE_NOT_EXIST", "SIGNIN_MESSAGE_PHONE_INCORRECT", "SIGNIN_INPUT_MESSAGE_PHONE_INCORRECT", "LOGIN_BTN_SUBMIT_FORGOT_PASSWORD", "SIGNIN_CLICK_FORM");
     }
 
     public void sendDataPasswordHollow() throws InterruptedException {
@@ -62,18 +62,18 @@ public class ForgotPasswordCheckOutPage extends BasePage {
     }
 
     public void forgotSuccess() throws InterruptedException {
-        forgotPasswordSenData("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "DATA_PASSWORD", "SIGNIN_UPDATE_PASSWORD_SUCCESS", "INPUT_MESSAGE_UPDATE_SUCCESS_PASSWORD", "BTN_SUBMIT_PASSWORD", "FORM_RESET_PASSWORD");
+        forgotPasswordSendData("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "DATA_PASSWORD", "SIGNIN_UPDATE_PASSWORD_SUCCESS", "INPUT_MESSAGE_UPDATE_SUCCESS_PASSWORD", "BTN_SUBMIT_PASSWORD", "FORM_RESET_PASSWORD");
     }
 
     public void forgotPasswordInvalidCode() throws InterruptedException {
-        forgotPasswordSenData("LOGIN_PHONE_NUMBER", "DATA_PHONE_FORGOT_CHECKOUT", "CONTENT_MESSAGE_CONFIRM_CODE", "MESSAGE_CONTENT", "LOGIN_BTN_SUBMIT_FORGOT_PASSWORD", "SIGNIN_CLICK_FORM");
+        forgotPasswordSendData("LOGIN_PHONE_NUMBER", "DATA_PHONE_FORGOT_CHECKOUT", "CONTENT_MESSAGE_CONFIRM_CODE", "MESSAGE_CONTENT", "LOGIN_BTN_SUBMIT_FORGOT_PASSWORD", "SIGNIN_CLICK_FORM");
 //        ----------Forgot password and didn't input verify code
         sendKeyAndVerifyMessage("SIGNIN_INPUT_ENTER_CODE", "DATA_PHONE_ZERO", "SIGNUP_DATA_VERIFY_MESSAGE", "INPUT_CODE_ERROR");
 //        ----------Forgot password and input invalid verify code.
         sendKeyAndVerifyMessage("SIGNIN_INPUT_ENTER_CODE", "AFFIRM_DATA_PHONE", "SIGNIN_MESSAGE_UNABLE_CODE", "SIGNIN_INPUT_MESSAGE_PHONE_INCORRECT");
     }
 
-    public void forgotPasswordSenData(String clearText, String dataKey, String expected, String actual, String btnSubmit, String form) throws InterruptedException {
+    public void forgotPasswordSendData(String clearText, String dataKey, String expected, String actual, String btnSubmit, String form) throws InterruptedException {
         objSignUp.clearTextAndSendKey(clearText, clearText, dataKey);
         keyword.untilJqueryIsDone(20L);
         keyword.click(form);

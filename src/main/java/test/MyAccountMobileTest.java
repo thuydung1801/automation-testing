@@ -5,15 +5,18 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.MyAccountMobilePage;
 import page.MyAccountPage;
+import page.home.RegisterPage;
 
 public class MyAccountMobileTest extends BaseTest {
     private MyAccountPage testMyAccount;
     private MyAccountMobilePage testMyAccountMobile;
+    private RegisterPage objRegister;
 
     public MyAccountMobileTest() {
         super();
         testMyAccount = new MyAccountPage(this.keyword);
         testMyAccountMobile = new MyAccountMobilePage(this.keyword);
+        objRegister = new RegisterPage(this.keyword);
     }
 
 
@@ -47,10 +50,11 @@ public class MyAccountMobileTest extends BaseTest {
 
     @Test(priority = 5, description = "DELETE ACCOUNT")
     @Parameters("baseURL")
-    public void testCase_PI_06( String baseURL) throws InterruptedException {
-        testMyAccount.deleteAccount("COM_PASSWORD_NEW_MOBILE",baseURL);
+    public void testCase_PI_06(String baseURL) throws InterruptedException {
+        testMyAccount.deleteAccount("COM_PASSWORD_NEW_MOBILE", baseURL);
     }
-//
+
+    //
 //        -----------------------------
     @Test(priority = 6, description = "Edit BILLING ADDRESS")
     public void testCase_MA_01() throws InterruptedException {
@@ -77,6 +81,7 @@ public class MyAccountMobileTest extends BaseTest {
     public void testCase_MA_04(String baseURL) throws InterruptedException {
         testMyAccountMobile.deleteAdditionalAddressEntries(baseURL);
     }
+
     @Test(priority = 11, description = "  Set as Default a address in section Additional Address Entries")
     public void testCase_MA_05() throws InterruptedException {
         testMyAccount.setAsDefaultAddress();
@@ -119,6 +124,7 @@ public class MyAccountMobileTest extends BaseTest {
         testMyAccount.emailSelectItem("MAC_LINK_HEART_MOBILE");
         keyword.resizeBrowser(319, 848);
     }
+
     //   case My Order
 //    @Test(priority = 19, description = "Check function icon  view order of completed order")
     @Parameters("baseURL")
@@ -126,20 +132,24 @@ public class MyAccountMobileTest extends BaseTest {
         testMyAccountMobile.viewOrderComplete(baseURL);
     }
 
-//    @Test(priority = 20, description = "Check function icon view order of Recent  orders")
+    //    @Test(priority = 20, description = "Check function icon view order of Recent  orders")
     public void testCase_Myorder_02() throws InterruptedException {
         testMyAccountMobile.viewOrderRecent();
     }
-//    @Test(priority = 21, description = "Check function of button Upload More")
+
+    @Test(priority = 21, description = "Check function of button Upload More")
     public void testCase_Myorder_04() throws InterruptedException {
+        objRegister.acceptAllCookies();
         testMyAccount.upLoadItemOrder();
         keyword.resizeBrowser(319, 848);
     }
-//    @Test(priority = 22, description = "Check function icon return  of completed order")
+
+    //    @Test(priority = 22, description = "Check function icon return  of completed order")
     public void testCase_Myorder_03() throws InterruptedException {
         testMyAccount.viewReturn();
     }
-     // case My Overview
+
+    // case My Overview
     @Test(priority = 23, description = "Check order status = Order Confirmation ,display in tab Recent Orders ")
     @Parameters("baseURL")
     public void testCase_MO_03(String baseURL) throws InterruptedException {

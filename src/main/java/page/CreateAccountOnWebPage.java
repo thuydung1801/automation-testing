@@ -104,6 +104,8 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         objRegist.acceptAllCookies();
         keyword.untilJqueryIsDone(50L);
+        Thread.sleep(1000);
+        keyword.click("LOGIN_BTN_LOGIN");
         keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_FORGOT_PASSWORD_NEW");
         keyword.untilJqueryIsDone(50L);
@@ -222,6 +224,9 @@ public class CreateAccountOnWebPage extends BasePage {
         objSignUp.getCodeBE("INPUT_SEND_CODE_PHONE", "DATA_FORM_PASSWORD_NEW", "ACTUAL_DATA_TITLE_PASSWORD_NEW");
         keyword.untilJqueryIsDone(50L);
         sendPassWord();
+        keyword.sendKeys("SIGN_INPUT_PHONE_CHINA","DATA_CREATE_ACCOUNT_WITH_PHONE");
+        keyword.sendKeys("SIGNIN_PASSWORD_INPUT","Ngoc1962@");
+
     }
 
     public void forgotPasswordInvalidEmail() throws InterruptedException {

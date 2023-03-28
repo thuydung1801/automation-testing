@@ -44,7 +44,8 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.navigateToUrl("https://stage.glamira.co.uk/");
         keyword.untilJqueryIsDone(30L);
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE", "COM_INP_DATA_PASS_STAGE",null,null,true);
+        objLogin.loginOnMobile("COM_INP_DATA_EMAIL_MOBILE", "COM_PASSWORD_NEW_MOBILE");
+//        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE", "COM_INP_DATA_PASS_STAGE",null,null,true);
         keyword.untilJqueryIsDone(30L);
         keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/edit/");
         keyword.untilJqueryIsDone(30L);
@@ -310,7 +311,6 @@ public class MyAccountPage extends BasePage {
         keyword.imWait(3);
         keyword.sendKeys("MAC_INP_STREET", textStreet);
         if (melissa) {
-
             Thread.sleep(1000);
             keyword.keysBoardWithDOWN("MAC_INP_STREET_DIV");
             keyword.untilJqueryIsDone(60L);
@@ -661,7 +661,6 @@ public class MyAccountPage extends BasePage {
         keyword.webDriverWaitForElementPresent("ADMIN_CUS_EMAILLOG_BTN_FILTER",20);
         Thread.sleep(2000);
         keyword.click("ADMIN_CUS_EMAILLOG_BTN_FILTER");
-
         keyword.untilJqueryIsDone(30L);
 
         keyword.clearText("ADMIN_CUS_EMAILLOG_FILTER_INP_RECIPIENT");
@@ -872,7 +871,6 @@ public class MyAccountPage extends BasePage {
     }
 
     public void stepReturn() throws InterruptedException {
-
         viewReturn();
         boolean check;
         keyword.untilJqueryIsDone(30L);
@@ -888,7 +886,6 @@ public class MyAccountPage extends BasePage {
             //PropertiesFile.serPropValue("KEY_ID_ORDER",id);
             check= true;
         }
-
         //create new return
         if(check ){
             keyword.untilJqueryIsDone(60L);
@@ -936,6 +933,7 @@ public class MyAccountPage extends BasePage {
     }
 
     public void upLoadItemOrder() throws InterruptedException {
+        setUp();
         boolean check;
         keyword.back();
         keyword.untilJqueryIsDone(60L);
