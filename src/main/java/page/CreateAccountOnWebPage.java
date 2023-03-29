@@ -104,8 +104,6 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         objRegist.acceptAllCookies();
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(1000);
-        keyword.click("LOGIN_BTN_LOGIN");
         keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_FORGOT_PASSWORD_NEW");
         keyword.untilJqueryIsDone(50L);
@@ -187,7 +185,6 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
     }
-
     //    ------whthPhone
     public void createNewCustomerWithPhone() throws Exception {
 //        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
@@ -204,7 +201,6 @@ public class CreateAccountOnWebPage extends BasePage {
         sendKeyFormPassword();
         getCodeVerifyForm("LOGIN_DATA_USER_NAME", "BE_ADMIN_PASSWORD", "URL_BE_DEV");
     }
-
     public void loginSuccess() throws InterruptedException {
         keyword.reLoadPage();
         objRegist.acceptAllCookies();
@@ -213,7 +209,6 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("MAC_VERIFY_NAME");
     }
-
     public void forgotPasswordPhone() throws InterruptedException {
         setUpFormForgot();
 //        keyword.click("MOBILE_NUMBER");
@@ -226,7 +221,6 @@ public class CreateAccountOnWebPage extends BasePage {
         sendPassWord();
         keyword.sendKeys("SIGN_INPUT_PHONE_CHINA","DATA_CREATE_ACCOUNT_WITH_PHONE");
         keyword.sendKeys("SIGNIN_PASSWORD_INPUT","Ngoc1962@");
-
     }
 
     public void forgotPasswordInvalidEmail() throws InterruptedException {

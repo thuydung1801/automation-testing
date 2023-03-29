@@ -36,10 +36,10 @@
         <parameter name="devices" value="web"></parameter>
         <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
-            <class name="test.CreateAccountOnWebTest">
+            <class name="test.LoginReturnFormTest">
                 <methods>
-<!--                    <include name="testCaseWeb_CreateAccount"/>-->
-                    <include name="testWebPhone_forgotPassWord"/>
+                    <include name="testCase_LS_07"/>
+<!--                    <include name="testWebPhone_forgotPassWord"/>-->
                     <!--                                    <include name="NLA_06"/>-->
                     <!--                                    <include name="NLA_08"/>-->
                     <!--                                    <include name="NLA_05"/>-->

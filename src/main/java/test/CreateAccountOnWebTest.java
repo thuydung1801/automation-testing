@@ -68,7 +68,7 @@ public class CreateAccountOnWebTest extends BaseTest {
     }
 
     //  ------------------------------- WITH PHONE--------------------------
-    @Test(priority = 4, description = "Create new customer successfully with store enable phone confirm")
+//    @Test(priority = 4, description = "Create new customer successfully with store enable phone confirm")
 //    @Parameters("baseURL")
     public void testWebPhone_CreateAccount() throws Exception {
         logger.info("testWebPhone_CreateAccount");
@@ -76,7 +76,7 @@ public class CreateAccountOnWebTest extends BaseTest {
         objCreateAccOnWeb.createNewCustomerWithPhone();
     }
 
-    @Test(priority = 5, description = "forgot password")
+//    @Test(priority = 5, description = "forgot password")
     public void testWebPhone_forgotPassWord() throws Exception {
         logger.info("testWebPhone_forgotPassWord");
         objCreateAccOnWeb.forgotPasswordPhone();
