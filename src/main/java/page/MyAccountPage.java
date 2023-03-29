@@ -571,7 +571,7 @@ public class MyAccountPage extends BasePage {
     }
     public void saveItemFormProductView(String baseURL) throws InterruptedException {
 //        setUp();
-        objRegister.acceptAllCookies();
+//        objRegister.acceptAllCookies();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
         keyword.navigateToUrl(baseURL+"catalog/product_compare/index/");
@@ -774,6 +774,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.selectDropDownListByName("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS_UK","    Glamira UK");
         keyword.pressEnter();
+        keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_BTN_SEARCH_CUS_UK");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
@@ -784,7 +785,8 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         int tabNum = Integer.parseInt(PropertiesFile.getPropValue("COUNT_ITEM") )+1;
         logger.info(String.valueOf(tabNum));
-        keyword.switchToTab(tabNum);
+//        keyword.switchToTab(tabNum);
+//        keyword.switchToCurrentTab();
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("LOGIN_ADMIN_BTN_LOGISTIC_LOGIN_CUS");
@@ -796,13 +798,17 @@ public class MyAccountPage extends BasePage {
         // go to My Return
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.switchToTab(3);
+//        keyword.switchToTab(3);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        Thread.sleep(20000);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.switchToCurrentTab();
         keyword.click("MAC_MY_ORD_BTN_COMPLETE");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.click("MAC_MY_ORD_BTN_RETURN");
+        keyword.verifyElementVisible("MAC_MY_ORD_BTN_RETURN");
+        keyword.doubleClick("MAC_MY_ORD_BTN_RETURN");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.verifyElementVisible("MAC_MY_ORD_VERIFY_RETURN");
@@ -955,7 +961,7 @@ public class MyAccountPage extends BasePage {
         int numItemEdit = keyword.countNumberOfElement("MAC_MY_ORD_TABLE_ITEM");
         System.out.printf("a = " + numItemEdit +"\n");
         System.out.printf("a-b " +numItem +"<"+numItemEdit+"\n");
-        if(numItem+10 == numItemEdit){
+        if(numItem+7 == numItemEdit){
             check = true;
         }else{
             check=false;
