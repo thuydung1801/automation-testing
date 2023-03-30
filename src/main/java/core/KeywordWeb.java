@@ -9,7 +9,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.*;
 import org.slf4j.Logger;
 import org.testng.Assert;
@@ -27,7 +26,6 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
@@ -36,8 +34,6 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.util.function.Function;
-
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 public class KeywordWeb {
@@ -958,10 +954,7 @@ public class KeywordWeb {
         Actions actions = new Actions(driver);
         // Enter the Current Address
         actions.sendKeys(Keys.ENTER);
-
     }
-
-
 }
 
 

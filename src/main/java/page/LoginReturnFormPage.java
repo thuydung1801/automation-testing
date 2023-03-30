@@ -4,25 +4,30 @@ import core.BasePage;
 import core.LogHelper;
 import io.cucumber.java.hr.Kad;
 import org.bouncycastle.asn1.cms.KEKIdentifier;
+import org.openqa.selenium.Keys;
 import org.slf4j.Logger;
 import org.testng.Assert;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
+import org.openqa.selenium.Keys;
 
 public class LoginReturnFormPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
     public SignInPage signInPage;
     public RegisterPage objRegister;
+    public SignInPage objSignIn;
 
     public LoginReturnFormPage() {
         super();
         objRegister = new RegisterPage(this.keyword);
+        objSignIn = new SignInPage(this.keyword);
     }
 
     public void goToFormLoginReturn() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.executeJavaScript("window.scrollTo(0, document.body.scrollHeight)");
+        keyword.untilJqueryIsDone(50L);
         keyword.click("LOGIN_RETURN_FORM_BTN_RETURN");
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
@@ -58,11 +63,28 @@ public class LoginReturnFormPage extends BasePage {
         }
     }
 
-    public void orderDate(String dataEmail, String dataPassWord, String checkShow, String selectElement) throws InterruptedException {
+    public void orderDate() throws InterruptedException {
+        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "CHECK_WITHDRAWAL", "OPTION_RESIZE");
+    }
+
+    public void orderNotResize() throws InterruptedException {
+        orderReturn("EMAIL_RETURN_LOGIN_NOT_RESIZE", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_RESIZE", "CHECK_WITHDRAWAL");
+    }
+
+    public void orderNotEngraving() throws InterruptedException {
+        orderReturn("EMIAL_RETURN_ORDER_ENGRAVING", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL");
+    }
+
+    public void orderReturned() throws InterruptedException {
+        orderReturn("EMIAL_RETURN_ORDER_RETURNED", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL");
+    }
+
+    public void orderReturn(String dataEmail, String dataPassWord, String checkShow, String selectElement) throws InterruptedException {
         keyword.reLoadPage();
         keyword.deleteAllCookies();
         keyword.untilJqueryIsDone(30L);
         keyword.deleteAllCookies();
+        keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
         objRegister.acceptAllCookies();
         goToFormLoginReturn();
@@ -89,16 +111,24 @@ public class LoginReturnFormPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.click(selectElement);
         keyword.untilJqueryIsDone(20L);
-        if (keyword.verifyElementPresent("SELECT_ITEM_RESIZE")) {
-            keyword.click("SELECT_ITEM_RESIZE");
+        keyword.click("SELECT_ITEM_RESIZE");
+        if (keyword.verifyElementPresent("MAC_MY_ORD_RETURN_STEP1_SELECT2")) {
             keyword.untilJqueryIsDone(30L);
             keyword.click("MAC_MY_ORD_RETURN_STEP1_SELECT2");
             keyword.untilJqueryIsDone(30L);
             keyword.click("SELECT_SIZE_RETURN");
         } else {
-
+            keyword.untilJqueryIsDone(50L);
+            keyword.click("SELECT_REASON_ORDER_RETURN");
+            keyword.untilJqueryIsDone(30L);
+            keyword.click("ITEM_SELECT_REASON");
+            keyword.untilJqueryIsDone(50L);
+            getCodeReturn();
+            keyword.untilJqueryIsDone(50L);
+            keyword.click("SELECT_METHOD_PAYMENT");
+            keyword.untilJqueryIsDone(50L);
+            keyword.click("SELECT_METHOD_OPTION");
         }
-
 //        STEP 2 / 3
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("CHOSE_SHIPPING");
@@ -122,6 +152,34 @@ public class LoginReturnFormPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.assertEquals("MESSAGE_CANCEL_SUCCESS", "SIGNUP_CODE_RESEND");
 //        keyword.assertEquals("DATA_CANCEL","BTN_NOTE_CANCEL");
+    }
 
+    public void getCodeReturn() throws InterruptedException {
+        String getOrderId = keyword.numberOnly("ORDER_NUMBER");
+        System.out.println("-----------------------------" + getOrderId);
+        keyword.untilJqueryIsDone(50L);
+        objSignIn.openTabBE("ADMIN_URL");
+        keyword.deleteAllCookies();
+        keyword.deleteAllCookies();
+        keyword.reLoadPage();
+        objSignIn.loginAdmin(
+                "LOGIN_DATA_USER_NAME",
+                "LOGIN_DATA_PASS_WORD");
+        objSignIn.chooseItemCustomer(
+                "ITEM_INVENTORY",
+                "ITEM_INVENTORY",
+                "ITEM_INSTOCK_REQUEST",
+                "ITEM_INSTOCK_REQUEST",
+                "FOEM_INSTOCK"
+        );
+        keyword.untilJqueryIsDone(70L);
+        Thread.sleep(2000);
+        keyword.sendKeys("SEARCH_ORDER_ID", getOrderId + "\n");
+        keyword.untilJqueryIsDone(50L);
+        String getCode = keyword.getText("GET_CODE_RETURN");
+        keyword.closeTab(1);
+        keyword.switchToTab(0);
+        keyword.untilJqueryIsDone(50L);
+        keyword.sendKeys("INPUT_SEND_CODE_RETURN", getCode);
     }
 }

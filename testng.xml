@@ -38,7 +38,10 @@
         <classes>
             <class name="test.LoginReturnFormTest">
                 <methods>
+                    <include name="testCase_LS_01_03"/>
                     <include name="testCase_LS_07"/>
+                    <include name="testCase_LS_08"/>
+                    <include name="testCase_LS_09"/>
 <!--                    <include name="testWebPhone_forgotPassWord"/>-->
                     <!--                                    <include name="NLA_06"/>-->
                     <!--                                    <include name="NLA_08"/>-->

@@ -337,16 +337,6 @@ public class SignInPage extends BasePage {
         keyword.assertEquals(expected2, "SIGNIN_XPATH_PASSWORD_REQUIRED_FIELD");
     }
 
-
-    // Create new password for entering and to use your account
-    public void createNewPassWord() {
-
-        keyword.webDriverWaitForElementPresent("LOGIN_FORM_NEW_PASS_WORD", 30);
-        keyword.sendKeys("LOGIN_INPUT_NEW_PASSWORD", "LOGIN_NEW_PASSWORD");
-        keyword.click("LOGIN_BTN_SUBMIT_RESET_PASSWORD");
-        keyword.webDriverWaitForElementPresent("LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS", 10);
-    }
-
     public boolean checkElement(String checkElement) {
         return keyword.verifyElementPresent(checkElement);
     }
