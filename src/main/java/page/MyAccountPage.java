@@ -291,6 +291,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         countAdd = keyword.countNumberOfElement("MAC_COUNT_ADDRESS");
         if(elementEdit!=null){
+            keyword.scrollToPositionByScript("window.scrollBy(0,500)");
             keyword.click(elementEdit);
             keyword.untilJqueryIsDone(30L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");

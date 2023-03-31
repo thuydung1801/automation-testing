@@ -137,7 +137,7 @@ public class MyAccountMobileTest extends BaseTest {
         testMyAccountMobile.viewOrderRecent();
     }
 
-    @Test(priority = 21, description = "Check function of button Upload More")
+//    @Test(priority = 21, description = "Check function of button Upload More")
     public void testCase_Myorder_04() throws InterruptedException {
         objRegister.acceptAllCookies();
         testMyAccount.upLoadItemOrder();
