@@ -87,6 +87,11 @@ public class LoginReturnFormPage extends BasePage {
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
         objRegister.acceptAllCookies();
+        keyword.untilJqueryIsDone(30L);
+        if (keyword.verifyElementPresent("CHECK_FORM_LOGIN")) {
+            keyword.untilJqueryIsDone(50L);
+            keyword.click("BTN_CLOSE_MODAL_LOGIN");
+        }
         goToFormLoginReturn();
         dataFormLoginReturnForm(dataEmail, dataPassWord, false, "DATA_LABLE", "STEP_LABLE");
         checkShowTitle(checkShow, selectElement);

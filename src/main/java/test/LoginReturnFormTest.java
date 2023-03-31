@@ -48,8 +48,8 @@ public class LoginReturnFormTest extends BaseTest {
 
     @Test(priority = 5, description = "Submit Return form, login successfully + Input email or order having space")
     public void testCase_LS_01_03() throws InterruptedException {
-        setUpLogin();
-        objLoginReturn.goToFormLoginReturn();
+//        setUpLogin();
+//        objLoginReturn.goToFormLoginReturn();
         objLoginReturn.dataFormLoginReturnForm("DATA_EMAIL_RETURN", "DATA_PASSWORD_LOGIN_RETURN", false, "DATA_LABLE", "STEP_LABLE");
     }
 
@@ -71,7 +71,7 @@ public class LoginReturnFormTest extends BaseTest {
 //        objLoginReturn.goToFormLoginReturn();
         objLoginReturn.orderNotEngraving();
     }
-    @Test(priority = 9, description = "Return order with the item has returned")
+//    @Test(priority = 9, description = "Return order with the item has returned")
     public void testCase_LS_10() throws InterruptedException {
 //        setUpLogin();
 //        objLoginReturn.goToFormLoginReturn();

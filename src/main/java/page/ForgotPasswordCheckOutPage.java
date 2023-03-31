@@ -78,7 +78,7 @@ public class ForgotPasswordCheckOutPage extends BasePage {
         keyword.untilJqueryIsDone(20L);
         keyword.click(form);
         keyword.click(btnSubmit);
-//        keyword.assertEquals(expected, actual);
+        keyword.assertEquals(expected, actual);
         keyword.untilJqueryIsDone(50L);
     }
 
