@@ -170,6 +170,10 @@ public class LoginReturnFormPage extends BasePage {
         objSignIn.loginAdmin(
                 "LOGIN_DATA_USER_NAME",
                 "LOGIN_DATA_PASS_WORD");
+        keyword.untilJqueryIsDone(30L);
+        if(keyword.verifyElementPresent("CHECK_SHOW_INCOMING_MODAL_BE")){
+            keyword.click("CLOSE_BTN_INCOMING");
+        }
         objSignIn.chooseItemCustomer(
                 "ITEM_INVENTORY",
                 "ITEM_INVENTORY",
