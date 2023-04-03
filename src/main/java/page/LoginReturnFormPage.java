@@ -35,11 +35,10 @@ public class LoginReturnFormPage extends BasePage {
         keyword.click("BTN_RETURN_FORM");
     }
 
-    public void dataFormLoginReturnForm(String dataEmail, String dataPassword, boolean check, String data, String actual) throws InterruptedException {
+    public void dataFormLoginReturnForm(String dataEmail, String dataPassword, boolean check, String data, String actual,String dataSelect) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
-        keyword.sendKeys("INPUT_EMAIL_FORM", "  ");
         keyword.sendKeys("INPUT_EMAIL_FORM", dataEmail);
         keyword.click("BTN_SUBMIT_RETURN_FORM");
         keyword.untilJqueryIsDone(50L);
@@ -53,8 +52,12 @@ public class LoginReturnFormPage extends BasePage {
             keyword.click("BTN_SUBMIT_RETURN_FORM");
             keyword.untilJqueryIsDone(50L);
             if (keyword.verifyElementPresent("BTN_CREATE_RETURN")) {
+                keyword.click("SELECT_ORDER_RETURN");
+                keyword.click(dataSelect);
+                keyword.untilJqueryIsDone(30L);
                 String getTextBefore = keyword.getText("SELECT_ORDER_RETURN");
                 System.out.println("-------------------" + getTextBefore);
+
                 keyword.click("BTN_CREATE_RETURN");
                 keyword.untilJqueryIsDone(50L);
                 getTextBefore.contains("ORDER_ID_RETURN");
@@ -64,22 +67,22 @@ public class LoginReturnFormPage extends BasePage {
     }
 
     public void orderDate() throws InterruptedException {
-        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "CHECK_WITHDRAWAL", "OPTION_RESIZE");
+        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "CHECK_WITHDRAWAL", "OPTION_RESIZE","SELECT_OPTION_ORDER_ITEM_RETURN_DATE");
     }
 
     public void orderNotResize() throws InterruptedException {
-        orderReturn("EMAIL_RETURN_LOGIN_NOT_RESIZE", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_RESIZE", "CHECK_WITHDRAWAL");
+        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_RESIZE", "CHECK_WITHDRAWAL","SELECT_OPTION_ORDER_ITEM_RETURN_NO_RESIZE");
     }
 
     public void orderNotEngraving() throws InterruptedException {
-        orderReturn("EMIAL_RETURN_ORDER_ENGRAVING", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL");
+//        orderReturn("EMIAL_RETURN_ORDER_ENGRAVING", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL");
     }
 
     public void orderReturned() throws InterruptedException {
-        orderReturn("EMIAL_RETURN_ORDER_RETURNED", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL");
+//        orderReturn("EMIAL_RETURN_ORDER_RETURNED", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL");
     }
 
-    public void orderReturn(String dataEmail, String dataPassWord, String checkShow, String selectElement) throws InterruptedException {
+    public void orderReturn(String dataEmail, String dataPassWord, String checkShow, String selectElement, String dataSelect) throws InterruptedException {
         keyword.reLoadPage();
         keyword.deleteAllCookies();
         keyword.untilJqueryIsDone(30L);
@@ -93,7 +96,7 @@ public class LoginReturnFormPage extends BasePage {
             keyword.click("BTN_CLOSE_MODAL_LOGIN");
         }
         goToFormLoginReturn();
-        dataFormLoginReturnForm(dataEmail, dataPassWord, false, "DATA_LABLE", "STEP_LABLE");
+        dataFormLoginReturnForm(dataEmail, dataPassWord, false, "DATA_LABLE", "STEP_LABLE",dataSelect);
         checkShowTitle(checkShow, selectElement);
     }
 

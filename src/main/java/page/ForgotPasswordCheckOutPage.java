@@ -72,17 +72,15 @@ public class ForgotPasswordCheckOutPage extends BasePage {
 ////        ----------Forgot password and input invalid verify code.
         sendKeyAndVerifyMessage("SIGNIN_INPUT_ENTER_CODE", "AFFIRM_DATA_PHONE", "SIGNIN_MESSAGE_UNABLE_CODE", "SIGNIN_INPUT_MESSAGE_PHONE_INCORRECT");
     }
-
-    public void testLogin(String dataPhone, String dataPassWord, Boolean check) throws InterruptedException {
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("BTN_CLOSE_MODAL_SEND_CODE");
-        if (check) {
-            keyword.untilJqueryIsDone(50L);
-            keyword.click("TAB_MOBILE");
-//           keyword.sendKeys("");
-        }
-    }
-
+//    public void testLogin(String dataPhone, String dataPassWord, Boolean check) throws InterruptedException {
+//        keyword.untilJqueryIsDone(50L);
+//        keyword.click("BTN_CLOSE_MODAL_SEND_CODE");
+//        if (check) {
+//            keyword.untilJqueryIsDone(50L);
+//            keyword.click("TAB_MOBILE");
+////           keyword.sendKeys("");
+//        }
+//    }
     public void forgotPasswordSendData(String clearText, String dataKey, String expected, String actual, String btnSubmit, String form) throws InterruptedException {
         objSignUp.clearTextAndSendKey(clearText, clearText, dataKey);
         keyword.untilJqueryIsDone(20L);

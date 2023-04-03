@@ -44,8 +44,7 @@ public class MyAccountPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         keyword.navigateToUrl("https://stage.glamira.co.uk/");
         keyword.untilJqueryIsDone(30L);
-        objLogin.loginOnMobile("COM_INP_DATA_EMAIL_MOBILE", "COM_PASSWORD_NEW_MOBILE");
-//        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE", "COM_INP_DATA_PASS_STAGE",null,null,true);
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE", "COM_INP_DATA_PASS_STAGE",null,null,true);
         keyword.untilJqueryIsDone(30L);
         keyword.navigateToUrl("https://stage.glamira.co.uk/customer/account/edit/");
         keyword.untilJqueryIsDone(30L);
@@ -1052,7 +1051,7 @@ public class MyAccountPage extends BasePage {
 
     public void checkChangeNewsLetter() throws InterruptedException {
         keyword.back();
-//        checkFunctionInfoCustomer("MAC_OVER_EDIT_NEWSLETTER","MAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER","MAC_VERIFY_DATA_TITTLE_NEWSLETTER");
+        checkFunctionInfoCustomer("MAC_OVER_EDIT_NEWSLETTER","MAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER","MAC_VERIFY_DATA_TITTLE_NEWSLETTER");
     }
 
 }
