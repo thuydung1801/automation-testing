@@ -13,3 +13,9 @@ INFO  | 2023-04-04 02:15:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:
 INFO  | 2023-04-04 02:15:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
 INFO  | 2023-04-04 02:15:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
 INFO  | 2023-04-04 02:15:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_RETURN_FORM_BTN_RETURN
+INFO  | 2023-04-04 02:15:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMENU_LEFT_RETURN_FORM
+INFO  | 2023-04-04 02:15:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_RETURN_FORM
+INFO  | 2023-04-04 02:16:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-04-04 02:16:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-04-04 02:16:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-04-04 02:16:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
