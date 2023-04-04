@@ -63,6 +63,7 @@ public class ForgotPasswordCheckOutPage extends BasePage {
 
     public void forgotSuccess() throws InterruptedException {
         forgotPasswordSendData("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "DATA_PASSWORD", "SIGNIN_UPDATE_PASSWORD_SUCCESS", "INPUT_MESSAGE_UPDATE_SUCCESS_PASSWORD", "BTN_SUBMIT_PASSWORD", "FORM_RESET_PASSWORD3");
+
     }
 
     public void forgotPasswordInvalidCode() throws InterruptedException {

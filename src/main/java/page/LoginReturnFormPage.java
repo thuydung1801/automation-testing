@@ -35,7 +35,7 @@ public class LoginReturnFormPage extends BasePage {
         keyword.click("BTN_RETURN_FORM");
     }
 
-    public void dataFormLoginReturnForm(String dataEmail, String dataPassword, boolean check, String data, String actual,String dataSelect) throws InterruptedException {
+    public void dataFormLoginReturnForm(String dataEmail, String dataPassword, boolean check, String data, String actual, String dataSelect) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
@@ -65,21 +65,19 @@ public class LoginReturnFormPage extends BasePage {
             keyword.assertEquals(data, actual);
         }
     }
-
     public void orderDate() throws InterruptedException {
-        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "CHECK_WITHDRAWAL", "OPTION_RESIZE","SELECT_OPTION_ORDER_ITEM_RETURN_DATE");
+        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "CHECK_WITHDRAWAL", "OPTION_RESIZE", "SELECT_OPTION_ORDER_ITEM_RETURN_DATE");
     }
 
     public void orderNotResize() throws InterruptedException {
-        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_RESIZE", "CHECK_WITHDRAWAL","SELECT_OPTION_ORDER_ITEM_RETURN_NO_RESIZE");
+        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_RESIZE", "CHECK_WITHDRAWAL", "SELECT_OPTION_ORDER_ITEM_RETURN_NO_RESIZE");
     }
-
     public void orderNotEngraving() throws InterruptedException {
-//        orderReturn("EMIAL_RETURN_ORDER_ENGRAVING", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL");
+        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL", "SELECT_OPTION_ORDER_ITEM_RETURN_NO_ENGRAVING");
     }
 
     public void orderReturned() throws InterruptedException {
-//        orderReturn("EMIAL_RETURN_ORDER_RETURNED", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL");
+        orderReturn("DATA_PASSWORD_LOGIN_RETURN", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL", "SELECT_OPTION_ORDER_ITEM_RETURN");
     }
 
     public void orderReturn(String dataEmail, String dataPassWord, String checkShow, String selectElement, String dataSelect) throws InterruptedException {
@@ -96,7 +94,7 @@ public class LoginReturnFormPage extends BasePage {
             keyword.click("BTN_CLOSE_MODAL_LOGIN");
         }
         goToFormLoginReturn();
-        dataFormLoginReturnForm(dataEmail, dataPassWord, false, "DATA_LABLE", "STEP_LABLE",dataSelect);
+        dataFormLoginReturnForm(dataEmail, dataPassWord, false, "DATA_LABLE", "STEP_LABLE", dataSelect);
         checkShowTitle(checkShow, selectElement);
     }
 
@@ -174,7 +172,7 @@ public class LoginReturnFormPage extends BasePage {
                 "LOGIN_DATA_USER_NAME",
                 "LOGIN_DATA_PASS_WORD");
         keyword.untilJqueryIsDone(30L);
-        if(keyword.verifyElementPresent("CHECK_SHOW_INCOMING_MODAL_BE")){
+        if (keyword.verifyElementPresent("CHECK_SHOW_INCOMING_MODAL_BE")) {
             keyword.click("CLOSE_BTN_INCOMING");
         }
         objSignIn.chooseItemCustomer(
@@ -186,12 +184,33 @@ public class LoginReturnFormPage extends BasePage {
         );
         keyword.untilJqueryIsDone(70L);
         Thread.sleep(2000);
+        keyword.untilJqueryIsDone(50L);
         keyword.sendKeys("SEARCH_ORDER_ID", getOrderId + "\n");
         keyword.untilJqueryIsDone(50L);
-        String getCode = keyword.getText("GET_CODE_RETURN");
-        keyword.closeTab(1);
-        keyword.switchToTab(0);
-        keyword.untilJqueryIsDone(50L);
-        keyword.sendKeys("INPUT_SEND_CODE_RETURN", getCode);
+        if (keyword.verifyElementPresent("MESSAGE_NOT_FILTER")) {
+            objSignIn.chooseItemCustomer(
+                    "PRODUCT_OPTION",
+                    "PRODUCT_OPTION",
+                    "SELECT_OPTION_PRODUCT",
+                    "SELECT_OPTION_PRODUCT",
+                    "FORM_MANAGRE_PRODUCT"
+            );
+            keyword.untilJqueryIsDone(50L);
+            keyword.sendKeys("SEARCH_ORDER_ID_PRODUCT", getOrderId + "\n");
+            keyword.untilJqueryIsDone(70L);
+            String getCode = keyword.getText("GET_CODE_RETURN_PRODUCT");
+            System.out.println("-----------------------------" + getCode);
+//            keyword.closeTab(1);
+            keyword.switchToTab(0);
+            keyword.untilJqueryIsDone(50L);
+            keyword.sendKeys("INPUT_SEND_CODE_RETURN", getCode);
+        } else {
+            keyword.untilJqueryIsDone(50L);
+            String getCode = keyword.getText("GET_CODE_RETURN");
+            keyword.closeTab(1);
+            keyword.switchToTab(0);
+            keyword.untilJqueryIsDone(50L);
+            keyword.sendKeys("INPUT_SEND_CODE_RETURN", getCode);
+        }
     }
 }

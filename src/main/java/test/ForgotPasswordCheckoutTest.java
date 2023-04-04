@@ -18,17 +18,19 @@ public class ForgotPasswordCheckoutTest extends BaseTest {
 
     public ForgotPasswordCheckoutTest() throws InterruptedException {
         super();
+    }
+    public void setup() throws InterruptedException {
         objRegist = new RegisterPage(this.keyword);
         objLoginReturn = new LoginReturnFormPage();
         objCreateAccount = new CreateAccountOnWebPage(this.keyword);
         objForgotPassWord = new ForgotPasswordCheckOutPage();
-
+        objRegist.acceptAllCookies();
+        objForgotPassWord.forgotPasswordWithPhone();
     }
     @Test(priority = 1, description = "Forgot password and didn't input password")
     public void testCase_NLA_33() throws InterruptedException {
         logger.info("testCase_NLA_33");
-        objRegist.acceptAllCookies();
-        objForgotPassWord.forgotPasswordWithPhone();
+        setup();
         objForgotPassWord.sendDataPasswordHollow();
     }
 
@@ -41,6 +43,7 @@ public class ForgotPasswordCheckoutTest extends BaseTest {
     @Test(priority = 3, description = "Forgot password successfully and using Resend code with Mobile")
     public void testCase_NLA_24_25() throws InterruptedException {
         logger.info("testCase_NLA_24_25");
+//        setup();
         objForgotPassWord.forgotSuccess();
     }
 
