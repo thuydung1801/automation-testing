@@ -35,7 +35,7 @@ public class MyReturnPage extends BasePage {
         keyword.click("BTN_RETURN_FORM");
     }
 
-    public void dataFormLoginReturnForm(String dataEmail, String dataPassword, boolean check, String data, String actual,String dataSelect) throws InterruptedException {
+    public void dataFormLoginReturnForm(String dataEmail, String dataPassword, boolean check, String data, String actual, String dataSelect) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
@@ -65,8 +65,9 @@ public class MyReturnPage extends BasePage {
             keyword.assertEquals(data, actual);
         }
     }
+
     public void returnSuccess() throws InterruptedException {
-        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_RESIZE", "CHECK_WITHDRAWAL","SELECT_OPTION_ORDER_ITEM_RETURN_DATE");
+        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_RESIZE", "CHECK_WITHDRAWAL", "SELECT_OPTION_ORDER_ITEM_RETURN_DATE");
     }
 
     public void orderReturn(String dataEmail, String dataPassWord, String checkShow, String selectElement, String dataSelect) throws InterruptedException {
@@ -83,7 +84,7 @@ public class MyReturnPage extends BasePage {
             keyword.click("BTN_CLOSE_MODAL_LOGIN");
         }
         goToFormLoginReturn();
-        dataFormLoginReturnForm(dataEmail, dataPassWord, false, "DATA_LABLE", "STEP_LABLE",dataSelect);
+        dataFormLoginReturnForm(dataEmail, dataPassWord, false, "DATA_LABLE", "STEP_LABLE", dataSelect);
         checkShowTitle(checkShow, selectElement);
     }
 
@@ -146,7 +147,10 @@ public class MyReturnPage extends BasePage {
         keyword.click("BTN_OK_CANCEL");
         keyword.untilJqueryIsDone(50L);
         keyword.assertEquals("MESSAGE_CANCEL_SUCCESS", "SIGNUP_CODE_RESEND");
-//        keyword.assertEquals("DATA_CANCEL","BTN_NOTE_CANCEL");
+        keyword.untilJqueryIsDone(30L);
+        keyword.assertEquals("TEXT_CANCEL", "TEXT_CANCEL_PATH");
+        keyword.untilJqueryIsDone(30L);
+        keyword.assertEquals("TEXT_REOPEN", "TEXT_REOPEN_PATH");
     }
 
     public void getCodeReturn() throws InterruptedException {
@@ -161,7 +165,7 @@ public class MyReturnPage extends BasePage {
                 "LOGIN_DATA_USER_NAME",
                 "LOGIN_DATA_PASS_WORD");
         keyword.untilJqueryIsDone(30L);
-        if(keyword.verifyElementPresent("CHECK_SHOW_INCOMING_MODAL_BE")){
+        if (keyword.verifyElementPresent("CHECK_SHOW_INCOMING_MODAL_BE")) {
             keyword.click("CLOSE_BTN_INCOMING");
         }
         objSignIn.chooseItemCustomer(

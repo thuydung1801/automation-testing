@@ -1,62 +1,64 @@
-INFO  | 2023-04-04 09:06:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - Open browser
-INFO  | 2023-04-04 09:06:25 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 111.0.5563.64 (resolved driver for Chrome 111)
-INFO  | 2023-04-04 09:06:25 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\111.0.5563.64\chromedriver.exe
-INFO  | 2023-04-04 09:06:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - open browser successfullyCHROME
-INFO  | 2023-04-04 09:06:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:70) - go to url: https://stage.glamira.co.uk/
-INFO  | 2023-04-04 09:06:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:71) - url: [Ljava.lang.String;@7de35f8b
-INFO  | 2023-04-04 09:06:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
-INFO  | 2023-04-04 09:06:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
-INFO  | 2023-04-04 09:06:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-04 09:06:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-04 09:06:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-04-04 09:06:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-04-04 09:07:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
-INFO  | 2023-04-04 09:07:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
-INFO  | 2023-04-04 09:07:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_RETURN_FORM_BTN_RETURN
-INFO  | 2023-04-04 09:07:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMENU_LEFT_RETURN_FORM
-INFO  | 2023-04-04 09:07:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_RETURN_FORM
-INFO  | 2023-04-04 09:07:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
-INFO  | 2023-04-04 09:07:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
-INFO  | 2023-04-04 09:07:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
-INFO  | 2023-04-04 09:07:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
-INFO  | 2023-04-04 09:07:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
-INFO  | 2023-04-04 09:07:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-04 09:07:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-04 09:07:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-04-04 09:07:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-04-04 09:07:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
-INFO  | 2023-04-04 09:07:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECK_FORM_LOGIN
-INFO  | 2023-04-04 09:07:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
-INFO  | 2023-04-04 09:07:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_RETURN_FORM_BTN_RETURN
-INFO  | 2023-04-04 09:07:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMENU_LEFT_RETURN_FORM
-INFO  | 2023-04-04 09:07:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_RETURN_FORM
-INFO  | 2023-04-04 09:07:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
-INFO  | 2023-04-04 09:07:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_RETURN2
-INFO  | 2023-04-04 09:07:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-04 09:08:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleSIGNUP_PASSWORD_INFORMATION
-INFO  | 2023-04-04 09:08:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_PASSWORD_INFORMATIONwith DATA_PASSWORD_LOGIN_RETURN
-INFO  | 2023-04-04 09:08:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-04 09:08:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_CREATE_RETURN
-INFO  | 2023-04-04 09:08:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSELECT_ORDER_RETURN
-INFO  | 2023-04-04 09:08:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSELECT_OPTION_ORDER_ITEM_RETURN_DATE
-INFO  | 2023-04-04 09:08:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofSELECT_ORDER_RETURN
-INFO  | 2023-04-04 09:08:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_CREATE_RETURN
-INFO  | 2023-04-04 09:08:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from DATA_LABLE with STEP_LABLE
-INFO  | 2023-04-04 09:08:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_RETURN_STEP1_SELECT1
-INFO  | 2023-04-04 09:08:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt OPTION_RESIZE not visible
-INFO  | 2023-04-04 09:08:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_RETURN_STEP1_CHECKBOX1
-INFO  | 2023-04-04 09:08:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_RETURN_STEP1_SELECT1
-INFO  | 2023-04-04 09:08:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECK_WITHDRAWAL
-INFO  | 2023-04-04 09:08:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSELECT_ITEM_RESIZE
-INFO  | 2023-04-04 09:08:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentMAC_MY_ORD_RETURN_STEP1_SELECT2
-INFO  | 2023-04-04 09:08:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_RETURN_STEP1_SELECT2
-INFO  | 2023-04-04 09:08:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSELECT_SIZE_RETURN
-INFO  | 2023-04-04 09:08:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHOSE_SHIPPING
-INFO  | 2023-04-04 09:08:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHOSE_SHIPPING
-INFO  | 2023-04-04 09:08:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_RETURN_STEP3
-INFO  | 2023-04-04 09:08:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_RETURN_SUBMIT
-INFO  | 2023-04-04 09:08:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from MESSAGE_RETURNSUCCESS with INPUT_MESSAGE_SUCCESS
-INFO  | 2023-04-04 09:08:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCLICK_LINK_HEAR
-INFO  | 2023-04-04 09:09:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_CANCEL_MY_RETURN
-INFO  | 2023-04-04 09:09:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_OK_CANCEL
-INFO  | 2023-04-04 09:09:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from MESSAGE_CANCEL_SUCCESS with SIGNUP_CODE_RESEND
+INFO  | 2023-04-04 09:17:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - Open browser
+INFO  | 2023-04-04 09:17:54 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 111.0.5563.64 (resolved driver for Chrome 111)
+INFO  | 2023-04-04 09:17:54 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\111.0.5563.64\chromedriver.exe
+INFO  | 2023-04-04 09:17:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - open browser successfullyCHROME
+INFO  | 2023-04-04 09:17:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:70) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-04-04 09:17:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:71) - url: [Ljava.lang.String;@13740bce
+INFO  | 2023-04-04 09:18:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-04-04 09:18:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
+INFO  | 2023-04-04 09:18:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-04-04 09:18:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-04-04 09:18:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-04-04 09:18:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-04-04 09:18:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-04-04 09:18:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
+INFO  | 2023-04-04 09:18:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_RETURN_FORM_BTN_RETURN
+INFO  | 2023-04-04 09:18:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMENU_LEFT_RETURN_FORM
+INFO  | 2023-04-04 09:18:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_RETURN_FORM
+INFO  | 2023-04-04 09:18:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-04-04 09:18:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-04-04 09:18:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-04-04 09:18:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-04-04 09:18:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
+INFO  | 2023-04-04 09:18:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-04-04 09:19:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-04-04 09:19:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-04-04 09:19:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-04-04 09:19:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-04-04 09:19:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECK_FORM_LOGIN
+INFO  | 2023-04-04 09:19:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
+INFO  | 2023-04-04 09:19:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_RETURN_FORM_BTN_RETURN
+INFO  | 2023-04-04 09:19:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMENU_LEFT_RETURN_FORM
+INFO  | 2023-04-04 09:19:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_RETURN_FORM
+INFO  | 2023-04-04 09:19:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-04-04 09:19:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_RETURN2
+INFO  | 2023-04-04 09:19:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_RETURN_FORM
+INFO  | 2023-04-04 09:19:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleSIGNUP_PASSWORD_INFORMATION
+INFO  | 2023-04-04 09:19:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysSIGNUP_PASSWORD_INFORMATIONwith DATA_PASSWORD_LOGIN_RETURN
+INFO  | 2023-04-04 09:19:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_SUBMIT_RETURN_FORM
+INFO  | 2023-04-04 09:19:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_CREATE_RETURN
+INFO  | 2023-04-04 09:19:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSELECT_ORDER_RETURN
+INFO  | 2023-04-04 09:19:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSELECT_OPTION_ORDER_ITEM_RETURN_DATE
+INFO  | 2023-04-04 09:19:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofSELECT_ORDER_RETURN
+INFO  | 2023-04-04 09:19:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_CREATE_RETURN
+INFO  | 2023-04-04 09:19:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from DATA_LABLE with STEP_LABLE
+INFO  | 2023-04-04 09:19:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_RETURN_STEP1_SELECT1
+INFO  | 2023-04-04 09:19:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt OPTION_RESIZE not visible
+INFO  | 2023-04-04 09:19:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_RETURN_STEP1_CHECKBOX1
+INFO  | 2023-04-04 09:19:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_RETURN_STEP1_SELECT1
+INFO  | 2023-04-04 09:19:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECK_WITHDRAWAL
+INFO  | 2023-04-04 09:20:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSELECT_ITEM_RESIZE
+INFO  | 2023-04-04 09:20:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentMAC_MY_ORD_RETURN_STEP1_SELECT2
+INFO  | 2023-04-04 09:20:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_RETURN_STEP1_SELECT2
+INFO  | 2023-04-04 09:20:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickSELECT_SIZE_RETURN
+INFO  | 2023-04-04 09:20:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHOSE_SHIPPING
+INFO  | 2023-04-04 09:20:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHOSE_SHIPPING
+INFO  | 2023-04-04 09:20:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_RETURN_STEP3
+INFO  | 2023-04-04 09:20:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_RETURN_SUBMIT
+INFO  | 2023-04-04 09:20:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from MESSAGE_RETURNSUCCESS with INPUT_MESSAGE_SUCCESS
+INFO  | 2023-04-04 09:20:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCLICK_LINK_HEAR
+INFO  | 2023-04-04 09:20:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_CANCEL_MY_RETURN
+INFO  | 2023-04-04 09:20:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_OK_CANCEL
+INFO  | 2023-04-04 09:20:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from MESSAGE_CANCEL_SUCCESS with SIGNUP_CODE_RESEND
+INFO  | 2023-04-04 09:20:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from TEXT_CANCEL with TEXT_CANCEL_PATH
+INFO  | 2023-04-04 09:20:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from TEXT_REOPEN with TEXT_REOPEN_PATH
