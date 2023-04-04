@@ -66,7 +66,7 @@ public class MyReturnPage extends BasePage {
         }
     }
     public void returnSuccess() throws InterruptedException {
-        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_RESIZE", "CHECK_WITHDRAWAL","SELECT_OPTION_ORDER_ITEM_RETURN_NO_RESIZE");
+        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_RESIZE", "CHECK_WITHDRAWAL","SELECT_OPTION_ORDER_ITEM_RETURN_DATE");
     }
 
     public void orderReturn(String dataEmail, String dataPassWord, String checkShow, String selectElement, String dataSelect) throws InterruptedException {
