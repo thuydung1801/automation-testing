@@ -84,7 +84,6 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.untilJqueryIsDone(70L);
         keyword.verifyElementVisible("FORM_CHECKOUT_VRF");
         keyword.untilJqueryIsDone(70L);
-        keyword.click("CHECKOUT_LA_HPL_FORGOT_PASS");
     }
 
     public void forgotPassword(String url) throws Exception {

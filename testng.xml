@@ -38,9 +38,13 @@
         <classes>
             <class name="test.ForgotPasswordCheckoutTest">
                 <methods>
+                    <include name="testCase_NLA_29"/>
+                    <include name="testCase_NLA_30"/>
+                    <include name="testCase_NLA31_NLA32"/>
                     <include name="testCase_NLA_33"/>
                     <include name="testCase_NLA_34"/>
                     <include name="testCase_NLA_24_25"/>
+<!--                    <include name="testCase_NLA_24_25"/>-->
 <!--                    <include name="testCase_LS_09"/>-->
 <!--                    <include name="testWebPhone_forgotPassWord"/>-->
                     <!--                                    <include name="NLA_06"/>-->

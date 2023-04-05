@@ -22,21 +22,25 @@ public class ForgotPasswordCheckOutPage extends BasePage {
         objSignUp = new SignUpPage(this.keyword);
     }
 
-    public void forgotPasswordWithPhone() throws InterruptedException {
-        objCreateAccount.setupForgot("URL_DATA_PRODUCT_AU");
+    public void forgotPasswordWithPhone(String dataPhone, String expected, String actual) throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("CHECKOUT_LA_HPL_FORGOT_PASS");
         keyword.untilJqueryIsDone(50L);
         if (keyword.verifyElementPresent("INPUT_MOBILE_NUMBER")) {
             keyword.untilJqueryIsDone(50L);
             keyword.click("INPUT_MOBILE_NUMBER");
-            keyword.sendKeys("LOGIN_PHONE_NUMBER", "DATA_PHONE_FORGOT_CHECKOUT");
+            keyword.sendKeys("LOGIN_PHONE_NUMBER", dataPhone);
         } else {
             keyword.untilJqueryIsDone(50L);
-            keyword.sendKeys("LOGIN_PHONE_NUMBER", "DATA_PHONE_FORGOT_CHECKOUT");
+            keyword.sendKeys("LOGIN_PHONE_NUMBER", dataPhone);
         }
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(50L);
-        keyword.assertEquals("CONTENT_MESSAGE_CONFIRM_CODE", "MESSAGE_CONTENT");
-        Thread.sleep(122000);
+        keyword.assertEquals(expected, actual);
+    }
+
+    public void getCode() throws InterruptedException {
+        Thread.sleep(120000);
         keyword.verifyElementPresent("BTN_RESENCODE");
         keyword.click("BTN_RESENCODE");
         keyword.untilJqueryIsDone(30L);
@@ -45,43 +49,59 @@ public class ForgotPasswordCheckOutPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         objSignUp.getCodeAndSendKey("INPUT_SEND_CODE_PHONE", "SIGNUP_BTN_SUBMIT2");
     }
-
     //    "LOGIN_PHONE_NUMBER" "DATA_PHONE_FAIL"
     public void forgotPasswordPhoneNotExist() throws InterruptedException {
         forgotPasswordSendData("LOGIN_PHONE_NUMBER", "DATA_PHONE_NOT_EXIST", "SIGNIN_MESSAGE_PHONE_INCORRECT", "SIGNIN_INPUT_MESSAGE_PHONE_INCORRECT", "LOGIN_BTN_SUBMIT_FORGOT_PASSWORD", "SIGNIN_CLICK_FORM");
     }
-
     public void sendDataPasswordHollow() throws InterruptedException {
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
+        forgotPasswordWithPhone("DATA_PHONE_FORGOT_CHECKOUT","CONTENT_MESSAGE_CONFIRM_CODE","MESSAGE_CONTENT");
+        getCode();
         verifyDataPassword(" ", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_MESSAGE_ERROR_NUMBER",
                 "SIGNUP_MESSAGE_ERROR_LOWER_LETTER", "SIGNUP_MESSAGE_ERROR_UPPER_LETTER");
     }
-
     public void sendPasswordInvalid() throws InterruptedException {
         verifyDataPassword("DATA_PASSWORD_INVALID", "CONTENT_CHARACTER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
                 "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER");
     }
-
     public void forgotSuccess() throws InterruptedException {
+//        keyword.reLoadPage();
+//        keyword.untilJqueryIsDone(50L);
+//        forgotPasswordWithPhone("DATA_PHONE_FORGOT_CHECKOUT","CONTENT_MESSAGE_CONFIRM_CODE","MESSAGE_CONTENT");
+//        getCode();
         forgotPasswordSendData("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "DATA_PASSWORD", "SIGNIN_UPDATE_PASSWORD_SUCCESS", "INPUT_MESSAGE_UPDATE_SUCCESS_PASSWORD", "BTN_SUBMIT_PASSWORD", "FORM_RESET_PASSWORD3");
-
+        keyword.untilJqueryIsDone(50L);
+        if (keyword.verifyElementPresent("PHONE_FORGGOT_CHECKOUT")) {
+            keyword.click("PHONE_FORGGOT_CHECKOUT");
+            keyword.sendKeys("INPUT_CHECKOUT_PHONE", "DATA_PHONE_FORGOT_CHECKOUT");
+            keyword.sendKeys("CHECKOUT_DATA_PASSWORD", "DATA_PASSWORD");
+            keyword.click("CHECKOUT_LA_BTN_LOGIN");
+            keyword.untilJqueryIsDone(50L);
+            keyword.verifyElementVisible("NEXT_FORM_LOGIN_SUCCESS");
+        }
     }
 
     public void forgotPasswordInvalidCode() throws InterruptedException {
-        forgotPasswordSendData("LOGIN_PHONE_NUMBER", "DATA_PHONE_FORGOT_CHECKOUT", "CONTENT_MESSAGE_CONFIRM_CODE", "MESSAGE_CONTENT", "LOGIN_BTN_SUBMIT_FORGOT_PASSWORD", "MODAL_CONTENT");
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
+        forgotPasswordWithPhone("DATA_PHONE_FORGOT_CHECKOUT","CONTENT_MESSAGE_CONFIRM_CODE","MESSAGE_CONTENT");
 //        ----------Forgot password and didn't input verify code
         sendKeyAndVerifyMessage("SIGNIN_INPUT_ENTER_CODE", " ", "SIGNUP_DATA_VERIFY_MESSAGE_FAIL", "INPUT_CODE_ERROR");
 ////        ----------Forgot password and input invalid verify code.
         sendKeyAndVerifyMessage("SIGNIN_INPUT_ENTER_CODE", "AFFIRM_DATA_PHONE", "SIGNIN_MESSAGE_UNABLE_CODE", "SIGNIN_INPUT_MESSAGE_PHONE_INCORRECT");
     }
-//    public void testLogin(String dataPhone, String dataPassWord, Boolean check) throws InterruptedException {
-//        keyword.untilJqueryIsDone(50L);
-//        keyword.click("BTN_CLOSE_MODAL_SEND_CODE");
-//        if (check) {
-//            keyword.untilJqueryIsDone(50L);
-//            keyword.click("TAB_MOBILE");
-////           keyword.sendKeys("");
-//        }
-//    }
+
+    public void phoneWrong() throws InterruptedException {
+        forgotPasswordWithPhone("DATA_PHONE_FAIL","SIGNUP_VALID_NUMBER_FIELD","SIGNIN_MESSAGE_VALID_PHONE");
+    }
+    public void phoneExist()throws InterruptedException {
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
+        forgotPasswordWithPhone("DATA_PHONE_NOT_EXIST","SIGNIN_MESSAGE_PHONE_INCORRECT", "SIGNIN_INPUT_MESSAGE_PHONE_INCORRECT");
+    }
+
     public void forgotPasswordSendData(String clearText, String dataKey, String expected, String actual, String btnSubmit, String form) throws InterruptedException {
         objSignUp.clearTextAndSendKey(clearText, clearText, dataKey);
         keyword.untilJqueryIsDone(20L);
@@ -112,12 +132,9 @@ public class ForgotPasswordCheckOutPage extends BasePage {
 
     public void forgotPasswordInvalidInputData(String value, String data) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        keyword.waitForElementNotVisible(30, "//div[@class='loading-mask']");
-        keyword.click("CHECKOUT_LA_HPL_FORGOT_PASS");
-        keyword.untilJqueryIsDone(30L);
         keyword.sendKeys(value, data);
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(30L);
-        keyword.assertEquals("SIGNUP_VALID_NUMBER_FIELD", "SIGNIN_MESSAGE_VALID_PHONE_");
+        keyword.assertEquals("SIGNUP_VALID_NUMBER_FIELD", "SIGNIN_MESSAGE_VALID_PHONE");
     }
 }

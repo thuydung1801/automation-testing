@@ -33,7 +33,7 @@ public class ForgotPasswordCheckoutMobileTest extends BaseTest {
     public void testCaseMB_NLA_33() throws InterruptedException {
         logger.info("testCase_NLA_33");
         setup();
-        objForgotPassWord.forgotPasswordWithPhone();
+//        objForgotPassWord.forgotPasswordWithPhone();
         keyword.resizeBrowser(319, 848);
         objForgotPassWord.sendDataPasswordHollow();
 
