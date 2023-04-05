@@ -2,6 +2,7 @@ package page;
 
 import core.BasePage;
 import core.LogHelper;
+import core.PropertiesFile;
 import io.cucumber.java.hr.Kad;
 import org.bouncycastle.asn1.cms.KEKIdentifier;
 import org.openqa.selenium.Keys;
@@ -11,6 +12,8 @@ import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 import org.openqa.selenium.Keys;
+
+import java.util.Date;
 
 public class MyReturnPage extends BasePage {
     private static Logger logger = LogHelper.getLogger();
@@ -71,13 +74,13 @@ public class MyReturnPage extends BasePage {
     }
 
     public void orderReturn(String dataEmail, String dataPassWord, String checkShow, String selectElement, String dataSelect) throws InterruptedException {
-        keyword.reLoadPage();
-        keyword.deleteAllCookies();
-        keyword.untilJqueryIsDone(30L);
-        keyword.deleteAllCookies();
-        keyword.reLoadPage();
-        keyword.untilJqueryIsDone(50L);
-        objRegister.acceptAllCookies();
+//        keyword.reLoadPage();
+//        keyword.deleteAllCookies();
+//        keyword.untilJqueryIsDone(30L);
+//        keyword.deleteAllCookies();
+//        keyword.reLoadPage();
+//        keyword.untilJqueryIsDone(50L);
+//        objRegister.acceptAllCookies();
         keyword.untilJqueryIsDone(30L);
         if (keyword.verifyElementPresent("CHECK_FORM_LOGIN")) {
             keyword.untilJqueryIsDone(50L);
@@ -151,6 +154,9 @@ public class MyReturnPage extends BasePage {
         keyword.assertEquals("TEXT_CANCEL", "TEXT_CANCEL_PATH");
         keyword.untilJqueryIsDone(30L);
         keyword.assertEquals("TEXT_REOPEN", "TEXT_REOPEN_PATH");
+       String getText = keyword.numberOnly("DATA_ORDER_ID");
+       String content = getText;
+       PropertiesFile.serPropValue("DATA_RETURN_ORDER",content);
     }
 
     public void getCodeReturn() throws InterruptedException {
