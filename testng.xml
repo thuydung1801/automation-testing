@@ -32,7 +32,7 @@
         <classes>
             <class name="test.MyAccountTest">
                 <methods>
-                    <include name="testCase_PI_01"/>
+<!--                    <include name="testCase_PI_01"/>-->
                     <include name="testCase_Myorder_05"/>
 <!--                    <include name="testCase_MW_02"/>-->
 <!--                    <include name="testCase_MW_03"/>-->

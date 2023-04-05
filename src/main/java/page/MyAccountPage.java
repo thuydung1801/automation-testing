@@ -805,6 +805,7 @@ public class MyAccountPage extends BasePage {
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.switchToCurrentTab();
         keyword.click("MAC_MY_ORD_BTN_COMPLETE");
+        Thread.sleep(6000);
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.verifyElementVisible("MAC_MY_ORD_BTN_RETURN");
@@ -914,11 +915,11 @@ public class MyAccountPage extends BasePage {
             if (keyword.verifyElementVisible("MAC_MY_ORD_RETURN_STEP1_TEXTAREA")) {
                 keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_TEXTAREA", "MAC_MY_ORD_RETURN_STEP1_DATA_TEXTAREA");
                 keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG1", "C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemhop.jpg");
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG1", "C:\\Users\\nongt\\OneDrive\\Pictures\\Screenshots\\2023-03-31.png");
                 keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG2", "C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemly.jpg");
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG2", "C:\\Users\\nongt\\OneDrive\\Pictures\\Screenshots\\2023-03-31.png");
                 keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG3", "C:\\Users\\Thuy Dung\\Documents\\Kiến trúc và thiết kế phần mềm\\Assigntment45\\media\\images\\products\\main\\kemque.jpg");
+                keyword.sendKeys("MAC_MY_ORD_RETURN_STEP1_UPLOAD_IMG3", "C:\\Users\\nongt\\OneDrive\\Pictures\\Screenshots\\2023-03-31.png");
 
             } else {
                 keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
@@ -931,6 +932,7 @@ public class MyAccountPage extends BasePage {
                 keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
             }
             keyword.scrollDownToElement("MAC_MY_ORD_RETURN_STEP2");
+
             keyword.doubleClick("MAC_MY_ORD_RETURN_STEP2");
             keyword.untilJqueryIsDone(60L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
