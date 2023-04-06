@@ -330,8 +330,8 @@ public class LoginAddressTest extends BaseTest {
             //(priority = 24, description = "Add new address and input wrong format postcode on the page, customer not login")
     @Parameters("baseURL")
     public void NLA_53(String baseURL) throws InterruptedException {
-//        customerNotLogin();
-        objLoginAddress.resetForNewCase();
+        customerNotLogin();
+//        objLoginAddress.resetForNewCase();
         objShoppingBagPage.addProductWithOutOptions(baseURL+"glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();

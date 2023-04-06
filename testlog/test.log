@@ -1,3 +1,430 @@
+INFO  | 2023-03-31 17:39:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - Open browser
+INFO  | 2023-03-31 17:39:50 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 111.0.5563.64 (resolved driver for Chrome 111)
+INFO  | 2023-03-31 17:39:50 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Thuy Dung\.cache\selenium\chromedriver\win32\111.0.5563.64\chromedriver.exe
+INFO  | 2023-03-31 17:39:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - open browser successfullyCHROME
+INFO  | 2023-03-31 17:39:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:70) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-03-31 17:39:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:71) - url: [Ljava.lang.String;@7b1e7723
+INFO  | 2023-03-31 17:40:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-03-31 17:40:04 | [TestNG-tests-1] test.checkout.LoginAddressTest (LoginAddressTest.java:NLA_01_02:56) - NLA_02
+INFO  | 2023-03-31 17:40:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position
+INFO  | 2023-03-31 17:40:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:40:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:40:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:40:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:40:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-03-31 17:40:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant
+INFO  | 2023-03-31 17:40:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:40:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:41:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:41:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:41:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:41:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:41:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_MINICART
+INFO  | 2023-03-31 17:41:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:41:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_MINICART_VIEWALL
+INFO  | 2023-03-31 17:42:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:42:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:42:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:42:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:42:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:42:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:42:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_LBL_CHECKOUT
+INFO  | 2023-03-31 17:42:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:42:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:42:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:42:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:42:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
+INFO  | 2023-03-31 17:42:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_FIRSTwith LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:42:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_LASTwith LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:42:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_EMAILwith CHECKOUT_LA_DATA_EMAIL
+INFO  | 2023-03-31 17:42:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CFEMAILwith CHECKOUT_LA_DATA_EMAIL
+INFO  | 2023-03-31 17:42:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_PHONEwith AFFIRM_DATA_PHONE
+INFO  | 2023-03-31 17:42:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREETwith CHECKOUT_LA_DATA_STREET_1
+INFO  | 2023-03-31 17:42:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_ZIPwith CHECKOUT_LA_DATA_CODE_1
+INFO  | 2023-03-31 17:42:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CITYwith CHECKOUT_LA_DATA_CITY_1
+INFO  | 2023-03-31 17:42:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
+INFO  | 2023-03-31 17:42:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_SHIPMENT_SELECTED
+INFO  | 2023-03-31 17:42:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_MELISSA_ENABLE
+INFO  | 2023-03-31 17:42:46 | [TestNG-tests-1] test.checkout.LoginAddressTest (LoginAddressTest.java:NLA_03_04:72) - NLA_03
+INFO  | 2023-03-31 17:42:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-31 17:42:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-31 17:42:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position
+INFO  | 2023-03-31 17:43:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:43:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:43:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:43:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:43:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-03-31 17:43:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant
+INFO  | 2023-03-31 17:43:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:43:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:43:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:43:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:43:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:43:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:43:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_MINICART
+INFO  | 2023-03-31 17:43:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:43:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_MINICART_VIEWALL
+INFO  | 2023-03-31 17:43:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:43:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:44:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:44:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:44:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:44:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:44:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_LBL_CHECKOUT
+INFO  | 2023-03-31 17:44:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:44:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:44:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:44:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:44:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
+INFO  | 2023-03-31 17:44:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_FIRSTwith LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:44:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_LASTwith LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:44:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_EMAILwith CHECKOUT_LA_DATA_EMAIL
+INFO  | 2023-03-31 17:44:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CFEMAILwith CHECKOUT_LA_DATA_EMAIL
+INFO  | 2023-03-31 17:44:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_PHONEwith AFFIRM_DATA_PHONE
+INFO  | 2023-03-31 17:44:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREETwith CHECKOUT_LA_DATA_STREET_2
+INFO  | 2023-03-31 17:44:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREETwith
+INFO  | 2023-03-31 17:44:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_SUGGESTLIST
+INFO  | 2023-03-31 17:44:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_SUGGESTLIST
+INFO  | 2023-03-31 17:44:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
+INFO  | 2023-03-31 17:44:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_SHIPMENT_SELECTED
+INFO  | 2023-03-31 17:44:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_MELISSA_ENABLE
+INFO  | 2023-03-31 17:44:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LBL_ADDRESS_INFO
+INFO  | 2023-03-31 17:44:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from CHECKOUT_DATA_EXPECT_DATA_4 with CHECKOUT_LBL_ADDRESS_INFO
+INFO  | 2023-03-31 17:44:21 | [TestNG-tests-1] test.checkout.LoginAddressTest (LoginAddressTest.java:NLA_06:107) - NLA_06
+INFO  | 2023-03-31 17:44:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-31 17:44:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-31 17:44:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position
+INFO  | 2023-03-31 17:44:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:44:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:44:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:44:45 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:44:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-03-31 17:44:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant
+INFO  | 2023-03-31 17:45:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:45:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:45:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:45:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:45:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:45:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:45:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_MINICART
+INFO  | 2023-03-31 17:45:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:45:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_MINICART_VIEWALL
+INFO  | 2023-03-31 17:47:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:47:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:47:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:47:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:47:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:47:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:47:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_LBL_CHECKOUT
+INFO  | 2023-03-31 17:47:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:47:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:47:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:47:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:47:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
+INFO  | 2023-03-31 17:47:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_FIRSTwith LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:47:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_LASTwith LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:47:52 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_EMAILwith CHECKOUT_LA_DATA_EMAIL
+INFO  | 2023-03-31 17:47:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CFEMAILwith CHECKOUT_LA_DATA_EMAIL
+INFO  | 2023-03-31 17:47:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_PHONEwith AFFIRM_DATA_PHONE
+INFO  | 2023-03-31 17:47:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREETwith CHECKOUT_LA_DATA_STREET_3
+INFO  | 2023-03-31 17:47:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_ZIPwith CHECKOUT_LA_DATA_CODE_2
+INFO  | 2023-03-31 17:47:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CITYwith CHECKOUT_LA_DATA_CITY_2
+INFO  | 2023-03-31 17:47:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
+INFO  | 2023-03-31 17:47:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:47:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_APPLY_ADDRESS
+INFO  | 2023-03-31 17:48:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_SHIPMENT_SELECTED
+INFO  | 2023-03-31 17:48:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_MELISSA_ENABLE
+INFO  | 2023-03-31 17:48:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LBL_ADDRESS_INFO
+INFO  | 2023-03-31 17:48:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from CHECKOUT_DATA_EXPECT_DATA_2 with CHECKOUT_LBL_ADDRESS_INFO
+INFO  | 2023-03-31 17:48:02 | [TestNG-tests-1] test.checkout.LoginAddressTest (LoginAddressTest.java:NLA_08:125) - NLA_08
+INFO  | 2023-03-31 17:48:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:48:05 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_HPL_NEW_ADDRESS
+INFO  | 2023-03-31 17:48:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
+INFO  | 2023-03-31 17:48:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_FIRST_2with LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:48:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_LAST_2with LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:48:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_PHONE_2with AFFIRM_DATA_PHONE
+INFO  | 2023-03-31 17:48:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREET_2with CHECKOUT_LA_DATA_STREET_2
+INFO  | 2023-03-31 17:48:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREET_2with
+INFO  | 2023-03-31 17:48:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_SUGGESTLIST_2
+INFO  | 2023-03-31 17:48:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_SUGGESTLIST_2
+INFO  | 2023-03-31 17:48:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_LA_LBL_CODE
+INFO  | 2023-03-31 17:48:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_SAVE_ADDRESS
+INFO  | 2023-03-31 17:48:13 | [TestNG-tests-1] test.checkout.LoginAddressTest (LoginAddressTest.java:NLA_05:89) - NLA_05
+INFO  | 2023-03-31 17:48:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-31 17:48:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-31 17:48:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position
+INFO  | 2023-03-31 17:48:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:48:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:48:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:48:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:48:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-03-31 17:48:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant
+INFO  | 2023-03-31 17:48:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:48:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:48:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:49:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:49:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:49:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:49:07 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_MINICART
+INFO  | 2023-03-31 17:49:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:49:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_MINICART_VIEWALL
+INFO  | 2023-03-31 17:49:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:49:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:49:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:49:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:49:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:49:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:49:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_LBL_CHECKOUT
+INFO  | 2023-03-31 17:49:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:49:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:49:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:49:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:49:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
+INFO  | 2023-03-31 17:49:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_FIRSTwith LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:49:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_LASTwith LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:49:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_EMAILwith CHECKOUT_LA_DATA_EMAIL
+INFO  | 2023-03-31 17:49:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CFEMAILwith CHECKOUT_LA_DATA_EMAIL
+INFO  | 2023-03-31 17:49:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_PHONEwith AFFIRM_DATA_PHONE
+INFO  | 2023-03-31 17:49:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREETwith CHECKOUT_LA_DATA_STREET_3
+INFO  | 2023-03-31 17:49:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_ZIPwith CHECKOUT_LA_DATA_CODE_2
+INFO  | 2023-03-31 17:49:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CITYwith CHECKOUT_LA_DATA_CITY_2
+INFO  | 2023-03-31 17:49:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
+INFO  | 2023-03-31 17:49:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:49:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_CBX_YOURINPUT
+INFO  | 2023-03-31 17:49:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_APPLY_ADDRESS
+INFO  | 2023-03-31 17:49:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_SHIPMENT_SELECTED
+INFO  | 2023-03-31 17:49:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_MELISSA_ENABLE
+INFO  | 2023-03-31 17:49:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LBL_ADDRESS_INFO
+INFO  | 2023-03-31 17:49:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from CHECKOUT_DATA_EXPECT_DATA_5 with CHECKOUT_LBL_ADDRESS_INFO
+INFO  | 2023-03-31 17:49:46 | [TestNG-tests-1] test.checkout.LoginAddressTest (LoginAddressTest.java:NLA_07:133) - NLA_07
+INFO  | 2023-03-31 17:49:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:49:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_HPL_NEW_ADDRESS
+INFO  | 2023-03-31 17:49:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
+INFO  | 2023-03-31 17:49:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_FIRST_2with LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:49:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_LAST_2with LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:49:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_PHONE_2with AFFIRM_DATA_PHONE
+INFO  | 2023-03-31 17:49:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREET_2with CHECKOUT_LA_DATA_STREET_4
+INFO  | 2023-03-31 17:49:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_ZIP_2with CHECKOUT_LA_DATA_CODE_2
+INFO  | 2023-03-31 17:49:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CITY_2with CHECKOUT_LA_DATA_CITY_2
+INFO  | 2023-03-31 17:49:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_LA_LBL_CODE
+INFO  | 2023-03-31 17:49:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_SAVE_ADDRESS
+INFO  | 2023-03-31 17:49:53 | [TestNG-tests-1] test.checkout.LoginAddressTest (LoginAddressTest.java:NLA_10:142) - NLA_10
+INFO  | 2023-03-31 17:49:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-31 17:49:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-31 17:49:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position
+INFO  | 2023-03-31 17:50:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:50:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:50:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:50:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:50:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-03-31 17:50:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant
+INFO  | 2023-03-31 17:50:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:50:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:50:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:50:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:50:41 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:50:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:50:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_MINICART
+INFO  | 2023-03-31 17:50:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:50:53 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_MINICART_VIEWALL
+INFO  | 2023-03-31 17:51:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:51:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:51:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:51:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:51:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:51:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:51:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_LBL_CHECKOUT
+INFO  | 2023-03-31 17:51:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:51:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:51:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:51:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:51:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
+INFO  | 2023-03-31 17:51:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_FIRSTwith LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:51:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_LASTwith LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:51:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_EMAILwith CHECKOUT_LA_DATA_EMAIL
+INFO  | 2023-03-31 17:51:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CFEMAILwith CHECKOUT_LA_DATA_EMAIL
+INFO  | 2023-03-31 17:51:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_PHONEwith AFFIRM_DATA_PHONE
+INFO  | 2023-03-31 17:51:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREETwith CHECKOUT_LA_DATA_STREET_3
+INFO  | 2023-03-31 17:51:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_ZIPwith CHECKOUT_LA_DATA_CODE_2
+INFO  | 2023-03-31 17:51:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CITYwith CHECKOUT_LA_DATA_CITY_2
+INFO  | 2023-03-31 17:51:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
+INFO  | 2023-03-31 17:51:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:51:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_APPLY_ADDRESS
+INFO  | 2023-03-31 17:51:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:51:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_HPL_NEW_ADDRESS
+INFO  | 2023-03-31 17:51:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
+INFO  | 2023-03-31 17:51:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_FIRST_2with LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:51:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_LAST_2with LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:51:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_PHONE_2with AFFIRM_DATA_PHONE
+INFO  | 2023-03-31 17:51:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREET_2with CHECKOUT_LA_DATA_STREET_3
+INFO  | 2023-03-31 17:51:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_ZIP_2with CHECKOUT_LA_DATA_CODE_2
+INFO  | 2023-03-31 17:51:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CITY_2with CHECKOUT_LA_DATA_CITY_2
+INFO  | 2023-03-31 17:51:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_LA_LBL_CODE
+INFO  | 2023-03-31 17:51:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_SAVE_ADDRESS
+INFO  | 2023-03-31 17:51:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:51:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_APPLY_ADDRESS_2
+INFO  | 2023-03-31 17:51:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_MELISSA_ENABLE_2
+INFO  | 2023-03-31 17:51:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_MELISSA_ENABLE_3
+INFO  | 2023-03-31 17:51:36 | [TestNG-tests-1] test.checkout.LoginAddressTest (LoginAddressTest.java:NLA_11:162) - NLA_11
+INFO  | 2023-03-31 17:51:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-31 17:51:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-31 17:51:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position
+INFO  | 2023-03-31 17:51:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:51:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:51:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:51:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:52:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-03-31 17:52:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant
+INFO  | 2023-03-31 17:52:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:52:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:52:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:52:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:52:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:52:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:52:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_MINICART
+INFO  | 2023-03-31 17:52:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:52:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_MINICART_VIEWALL
+INFO  | 2023-03-31 17:52:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:52:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:52:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:52:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:52:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:52:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:52:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_LBL_CHECKOUT
+INFO  | 2023-03-31 17:52:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:52:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:52:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:52:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:52:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
+INFO  | 2023-03-31 17:52:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_FIRSTwith LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:52:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_LASTwith LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:52:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_EMAILwith CHECKOUT_LA_DATA_EMAIL
+INFO  | 2023-03-31 17:52:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CFEMAILwith CHECKOUT_LA_DATA_EMAIL
+INFO  | 2023-03-31 17:52:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_PHONEwith AFFIRM_DATA_PHONE
+INFO  | 2023-03-31 17:52:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREETwith CHECKOUT_LA_DATA_STREET_3
+INFO  | 2023-03-31 17:52:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_ZIPwith CHECKOUT_LA_DATA_CODE_2
+INFO  | 2023-03-31 17:52:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CITYwith CHECKOUT_LA_DATA_CITY_2
+INFO  | 2023-03-31 17:52:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
+INFO  | 2023-03-31 17:53:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:53:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_APPLY_ADDRESS
+INFO  | 2023-03-31 17:53:06 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:53:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_HPL_NEW_ADDRESS
+INFO  | 2023-03-31 17:53:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
+INFO  | 2023-03-31 17:53:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_FIRST_2with LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:53:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_LAST_2with LOGIN_DATA_ALERT_USERNAME
+INFO  | 2023-03-31 17:53:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_PHONE_2with AFFIRM_DATA_PHONE
+INFO  | 2023-03-31 17:53:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREET_2with CHECKOUT_LA_DATA_STREET_3
+INFO  | 2023-03-31 17:53:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_ZIP_2with CHECKOUT_LA_DATA_CODE_2
+INFO  | 2023-03-31 17:53:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CITY_2with CHECKOUT_LA_DATA_CITY_2
+INFO  | 2023-03-31 17:53:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_LA_LBL_CODE
+INFO  | 2023-03-31 17:53:12 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_SAVE_ADDRESS
+INFO  | 2023-03-31 17:53:14 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:53:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_CBX_YOURINPUT
+INFO  | 2023-03-31 17:53:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_APPLY_ADDRESS_2
+INFO  | 2023-03-31 17:53:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_MELISSA_ENABLE_2
+INFO  | 2023-03-31 17:53:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_MELISSA_ENABLE_3
+INFO  | 2023-03-31 17:53:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_EDIT_ADDRESS
+INFO  | 2023-03-31 17:53:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-31 17:53:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_ZIP_2with BT62 4HB
+INFO  | 2023-03-31 17:53:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_SAVE_ADDRESS
+INFO  | 2023-03-31 17:53:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LBL_ADDRESS_INFO_2
+INFO  | 2023-03-31 17:53:20 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from CHECKOUT_DATA_EXPECT_DATA_12 with CHECKOUT_LBL_ADDRESS_INFO_2
+INFO  | 2023-03-31 17:53:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:53:25 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_CBX_YOURINPUT
+INFO  | 2023-03-31 17:53:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_APPLY_ADDRESS_2
+INFO  | 2023-03-31 17:53:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHECKOUT_LA_BTN_BACK
+INFO  | 2023-03-31 17:53:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:53:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_BACK
+INFO  | 2023-03-31 17:53:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:53:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:53:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:53:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CONTINUE_GUEST
+INFO  | 2023-03-31 17:53:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:53:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_EDIT_BILLING_ADDRESS
+INFO  | 2023-03-31 17:53:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_TBX_FIRST
+INFO  | 2023-03-31 17:53:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-31 17:53:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-31 17:53:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-31 17:53:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_STREET_3with CHECKOUT_LA_DATA_STREET_5
+INFO  | 2023-03-31 17:53:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_ZIP_3with CHECKOUT_LA_DATA_CODE_3
+INFO  | 2023-03-31 17:53:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_CITY_3with CHECKOUT_LA_DATA_CITY_3
+INFO  | 2023-03-31 17:53:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
+INFO  | 2023-03-31 17:53:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_SHIPMENT_SELECTED
+INFO  | 2023-03-31 17:53:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_MELISSA_ENABLE
+INFO  | 2023-03-31 17:53:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LBL_ADDRESS_INFO
+INFO  | 2023-03-31 17:53:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from CHECKOUT_DATA_EXPECT_DATA_3 with CHECKOUT_LBL_ADDRESS_INFO
+INFO  | 2023-03-31 17:53:36 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-31 17:53:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-31 17:53:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position
+INFO  | 2023-03-31 17:53:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:53:57 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:53:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:53:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:54:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-03-31 17:54:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant
+INFO  | 2023-03-31 17:54:15 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:54:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:54:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:54:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:54:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:54:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:54:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_MINICART
+INFO  | 2023-03-31 17:54:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:54:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_MINICART_VIEWALL
+INFO  | 2023-03-31 17:54:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:54:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:54:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:54:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:54:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT
+INFO  | 2023-03-31 17:54:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:54:58 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_LBL_CHECKOUT
+INFO  | 2023-03-31 17:54:59 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:55:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_USERNAMEwith LOGIN_DATA_EMAIL
+INFO  | 2023-03-31 17:55:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_PASSwith LOGIN_DATA_PASSWORD
+INFO  | 2023-03-31 17:55:00 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_LA_BTN_LOGIN
+INFO  | 2023-03-31 17:55:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LBL_CHECKOUT
+INFO  | 2023-03-31 17:55:08 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-03-31 17:55:09 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-03-31 17:55:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position
+INFO  | 2023-03-31 17:55:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:55:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:55:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:55:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-03-31 17:55:35 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant
+INFO  | 2023-03-31 17:55:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:55:39 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:55:44 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
+INFO  | 2023-03-31 17:55:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_USERNAMEwith LOGIN_DATA_EMAIL
+INFO  | 2023-03-31 17:55:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysCHECKOUT_LA_TBX_USERNAMEwith LOGIN_DATA_PASSWORD
+INFO  | 2023-03-31 17:55:46 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/
+INFO  | 2023-03-31 17:55:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:55:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-03-31 17:55:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:55:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_HPL_NEW_ADDRESS_LOGIN
+INFO  | 2023-03-31 17:55:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_BTN_REMOVE_BILLING_ADDRESS
+INFO  | 2023-03-31 17:56:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:56:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_HPL_NEW_ADDRESS_LOGIN
+INFO  | 2023-03-31 17:56:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:56:19 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_HPL_NEW_ADDRESS_LOGIN
+INFO  | 2023-03-31 17:56:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
+INFO  | 2023-03-31 17:56:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:56:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN
+INFO  | 2023-03-31 17:56:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:56:28 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN
+INFO  | 2023-03-31 17:56:29 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-03-31 17:56:31 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_HPL_NEW_SHIP_ADDRESS_LOGIN
+INFO  | 2023-03-31 17:56:32 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_EDIT_SHIP_ADDRESS
+INFO  | 2023-03-31 17:56:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_EDIT_SHIP_ADDRESS_2
+INFO  | 2023-03-31 17:56:33 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element CHECKOUT_LA_LIST_SHIPPING_ADDRESS
+INFO  | 2023-03-31 17:56:34 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentCHECKOUT_LA_BTN_REMOVE_SHIPPING_ADDRESS
+INFO  | 2023-03-31 17:56:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHECKOUT_LA_BTN_BACK
+INFO  | 2023-03-31 17:56:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position
+INFO  | 2023-03-31 17:57:04 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:57:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-03-31 17:57:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-03-31 17:58:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-31 17:58:01 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-03-31 17:58:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
 INFO  | 2023-04-04 15:02:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - Open browser
 INFO  | 2023-04-04 15:02:57 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 111.0.5563.64 (resolved driver for Chrome 111)
 INFO  | 2023-04-04 15:02:57 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\nongt\.cache\selenium\chromedriver\win32\111.0.5563.64\chromedriver.exe

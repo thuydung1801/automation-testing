@@ -41,7 +41,7 @@ public class MyAccountTest extends BaseTest {
     public void testCase_MA_02() throws InterruptedException {
         testMyAccount.editShippingAddress();
     }
-    @Test(priority = 7,description = "ADD NEW ADDRESS")
+    @Test(priority = 7,description = "ADD NEW ADDRESS- When customer account there are no any  addresses yet")
     public void testCase_MA_09() throws InterruptedException {
         testMyAccount.addNewAddress();
     }
@@ -111,10 +111,10 @@ public class MyAccountTest extends BaseTest {
 //        testMyAccount.viewReturn();
 //    }
 
-    @Test(priority = 22,description = "Check  return  of completed order")
-    public void testCase_Myorder_05() throws InterruptedException {
-        testMyAccount.stepReturn();
-    }
+//    @Test(priority = 22,description = "Check  return  of completed order")
+//    public void testCase_Myorder_05() throws InterruptedException {
+//        testMyAccount.stepReturn();
+//    }
     // case My Overview
     @Test(priority = 23,description = "Check order status = Order Confirmation ,display in tab Recent Orders ")
     public void testCase_MO_03() throws InterruptedException {
