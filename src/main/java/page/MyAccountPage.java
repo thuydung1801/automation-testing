@@ -654,7 +654,6 @@ public class MyAccountPage extends BasePage {
     }
 
     public void adminChooseEmailLog(String text) throws InterruptedException {
-
 //        keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(30L);

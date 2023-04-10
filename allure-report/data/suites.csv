@@ -1,122 +1,72 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Mar 23 17:56:56 ICT 2023","Thu Mar 23 17:58:15 ICT 2023","78666","LAT","Run Test","test.CreateAccountOnWebTest","test.CreateAccountOnWebTest","testCaseWeb_forgotPassWord","forgot password",""
-"passed","Thu Mar 23 21:53:19 ICT 2023","Thu Mar 23 21:53:31 ICT 2023","12565","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MW_04","Remove a item saved ",""
-"passed","Thu Mar 23 21:52:49 ICT 2023","Thu Mar 23 21:53:06 ICT 2023","16327","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MW_01","Save a item form product view",""
-"passed","Thu Mar 23 21:09:21 ICT 2023","Thu Mar 23 21:11:07 ICT 2023","106305","LAT","Run Test","test.CreateAccountOnWebTest","test.CreateAccountOnWebTest","testCaseWeb_CreateAccount","Create new customer successfully with store enable email confirm",""
-"passed","Thu Mar 23 21:54:34 ICT 2023","Thu Mar 23 21:54:43 ICT 2023","8189","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_05","Check order status = Delivery, display in tab Recent Orders ",""
-"passed","Thu Mar 23 21:51:08 ICT 2023","Thu Mar 23 21:51:24 ICT 2023","15920","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_02","Edit SHIPPING ADDRESS",""
-"passed","Thu Mar 23 21:53:31 ICT 2023","Thu Mar 23 21:54:30 ICT 2023","58278","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MW_05","Check function of Email Selected Items",""
-"passed","Thu Mar 23 20:54:12 ICT 2023","Thu Mar 23 20:54:34 ICT 2023","21572","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU012","Enter the wrong code sent to the email",""
-"passed","Thu Mar 23 20:54:34 ICT 2023","Thu Mar 23 20:57:13 ICT 2023","158926","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU013_and_testCase_01","Resend the code to email and Signup Success",""
-"passed","Thu Mar 23 17:38:09 ICT 2023","Thu Mar 23 17:39:35 ICT 2023","86170","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU05","Create new customer and input email exist on database",""
-"passed","Thu Mar 23 21:04:12 ICT 2023","Thu Mar 23 21:04:44 ICT 2023","31590","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI01","Login successfully on Login modal",""
-"passed","Thu Mar 23 21:53:18 ICT 2023","Thu Mar 23 21:53:19 ICT 2023","1031","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MW_03","Compare My Wishlist - product_compare",""
-"passed","Thu Mar 23 21:54:43 ICT 2023","Thu Mar 23 21:54:51 ICT 2023","8701","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_06","Check -Change Password- function in contact information ",""
-"passed","Thu Mar 23 21:52:23 ICT 2023","Thu Mar 23 21:52:33 ICT 2023","10511","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_06","Set Default Billing Address when edit address",""
-"passed","Thu Mar 23 17:41:05 ICT 2023","Thu Mar 23 17:41:06 ICT 2023","420","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU010","""Create a new account with password # email register and has:
+"passed","Thu Apr 06 13:39:00 ICT 2023","Thu Apr 06 13:39:43 ICT 2023","42685","LAT","Run Test 2","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI015","Resend the code to email",""
+"passed","Thu Apr 06 14:37:20 ICT 2023","Thu Apr 06 14:37:29 ICT 2023","8819","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_05","  Set as Default a address in section Additional Address Entries",""
+"passed","Thu Apr 06 14:35:34 ICT 2023","Thu Apr 06 14:35:56 ICT 2023","22403","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_01","Edit BILLING ADDRESS",""
+"passed","Thu Apr 06 13:39:48 ICT 2023","Thu Apr 06 13:40:19 ICT 2023","31486","LAT","Run Test 2","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI01","Login successfully on Login modal",""
+"passed","Thu Apr 06 13:38:39 ICT 2023","Thu Apr 06 13:38:39 ICT 2023","416","LAT","Run Test 2","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI03","Login with email and leave the password field blank",""
+"passed","Thu Apr 06 14:36:42 ICT 2023","Thu Apr 06 14:37:04 ICT 2023","22114","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_03","Edit a address in section Additional Address Entries",""
+"passed","Thu Apr 06 14:33:21 ICT 2023","Thu Apr 06 14:33:37 ICT 2023","15941","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_PI_02","Change PERSONAL INFORMATION : forgot enter value First/last name  ",""
+"passed","Thu Apr 06 13:38:46 ICT 2023","Thu Apr 06 13:38:50 ICT 2023","4098","LAT","Run Test 2","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI06","Login with wrong password",""
+"passed","Thu Apr 06 14:38:01 ICT 2023","Thu Apr 06 14:38:22 ICT 2023","21595","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MW_01","Save a item form product view",""
+"passed","Thu Apr 06 14:40:32 ICT 2023","Thu Apr 06 14:40:43 ICT 2023","11313","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_08","Check -Shipping Address- edit function",""
+"passed","Thu Apr 06 13:38:39 ICT 2023","Thu Apr 06 13:38:41 ICT 2023","1442","LAT","Run Test 2","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI04","Login with password and leave the email field blank",""
+"passed","Thu Apr 06 14:38:22 ICT 2023","Thu Apr 06 14:38:40 ICT 2023","17635","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MW_02","Save a item form product list",""
+"passed","Thu Apr 06 13:35:18 ICT 2023","Thu Apr 06 13:38:01 ICT 2023","162421","LAT","Run Test1","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU013_and_testCase_01","Resend the code to email and Signup Success",""
+"passed","Thu Apr 06 14:41:25 ICT 2023","Thu Apr 06 14:44:10 ICT 2023","165133","LAT","Run Test 4","test.LoginReturnFormTest","test.LoginReturnFormTest","testCase_LS_07","The order having order date before >60days",""
+"passed","Thu Apr 06 14:39:57 ICT 2023","Thu Apr 06 14:40:04 ICT 2023","6821","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_03","Check order status = Order Confirmation ,display in tab Recent Orders ",""
+"passed","Thu Apr 06 14:35:15 ICT 2023","Thu Apr 06 14:35:34 ICT 2023","18593","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_PI_06","DELETE ACCOUNT",""
+"passed","Thu Apr 06 14:41:07 ICT 2023","Thu Apr 06 14:41:14 ICT 2023","7663","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_10","Check -Newsletters- edit function",""
+"passed","Thu Apr 06 14:38:41 ICT 2023","Thu Apr 06 14:38:59 ICT 2023","17557","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MW_04","Remove a item saved ",""
+"passed","Thu Apr 06 13:38:53 ICT 2023","Thu Apr 06 13:39:00 ICT 2023","7636","LAT","Run Test 2","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI014","Entered the wrong code sent to the email",""
+"passed","Thu Apr 06 13:33:14 ICT 2023","Thu Apr 06 13:33:18 ICT 2023","4383","LAT","Run Test1","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU02","Create new customer and leave with blank form for required form",""
+"passed","Thu Apr 06 13:33:18 ICT 2023","Thu Apr 06 13:33:24 ICT 2023","5873","LAT","Run Test1","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU03","Create new customer and input invalid data for email form",""
+"passed","Thu Apr 06 13:33:25 ICT 2023","Thu Apr 06 13:34:10 ICT 2023","45725","LAT","Run Test1","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU06","Create an account with the same password as the register email",""
+"passed","Thu Apr 06 13:38:41 ICT 2023","Thu Apr 06 13:38:46 ICT 2023","5250","LAT","Run Test 2","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI05","Login wrong email - password",""
+"passed","Thu Apr 06 13:38:08 ICT 2023","Thu Apr 06 13:38:39 ICT 2023","31149","LAT","Run Test 2","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI02","Log in and leave the email and password fields blank  
+or register to the form to login the mobile",""
+"passed","Thu Apr 06 14:35:56 ICT 2023","Thu Apr 06 14:36:16 ICT 2023","19623","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_02","Edit SHIPPING ADDRESS",""
+"passed","Thu Apr 06 13:38:50 ICT 2023","Thu Apr 06 13:38:53 ICT 2023","2450","LAT","Run Test 2","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI07","Enter the wrong email format",""
+"passed","Thu Apr 06 13:34:50 ICT 2023","Thu Apr 06 13:34:50 ICT 2023","735","LAT","Run Test1","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU09","""Create a new account with password # email register and has:
++ At least > 8 characters
++ At least 1 number
++ At least 1 upper case letter
++ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~""",""
+"passed","Thu Apr 06 13:39:43 ICT 2023","Thu Apr 06 13:39:48 ICT 2023","4824","LAT","Run Test 2","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI016_testCase_SI013","create valid new password & Forgot password successfully with store using email confirm",""
+"passed","Thu Apr 06 14:37:29 ICT 2023","Thu Apr 06 14:37:40 ICT 2023","10792","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_06","Set Default Billing Address when edit address",""
+"passed","Thu Apr 06 13:32:18 ICT 2023","Thu Apr 06 13:33:13 ICT 2023","54730","LAT","Run Test1","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU05","Create new customer and input email exist on database",""
+"passed","Thu Apr 06 14:37:04 ICT 2023","Thu Apr 06 14:37:20 ICT 2023","15653","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_04"," Delete a address in section Additional Address Entries",""
+"passed","Thu Apr 06 14:40:13 ICT 2023","Thu Apr 06 14:40:24 ICT 2023","10921","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_06","Check -Change Password- function in contact information ",""
+"passed","Thu Apr 06 14:33:54 ICT 2023","Thu Apr 06 14:35:15 ICT 2023","80851","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_PI_04_LO_01","CHANGE PASSWORD",""
+"passed","Thu Apr 06 13:34:50 ICT 2023","Thu Apr 06 13:34:51 ICT 2023","508","LAT","Run Test1","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU010","""Create a new account with password # email register and has:
 + At least > 8 characters
 + At least 1 number
 + At least 1 lower case letter
 + At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~""",""
-"passed","Thu Mar 23 17:41:25 ICT 2023","Thu Mar 23 17:44:02 ICT 2023","156494","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU013_and_testCase_01","Resend the code to email and Signup Success",""
-"passed","Thu Mar 23 21:51:24 ICT 2023","Thu Mar 23 21:51:40 ICT 2023","16597","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_09","ADD NEW ADDRESS",""
-"passed","Thu Mar 23 20:53:33 ICT 2023","Thu Mar 23 20:54:09 ICT 2023","35674","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU07","Create a new account with password # email register and has:
+"passed","Thu Apr 06 14:38:40 ICT 2023","Thu Apr 06 14:38:41 ICT 2023","1029","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MW_03","Compare My Wishlist - product_compare",""
+"passed","Thu Apr 06 13:34:51 ICT 2023","Thu Apr 06 13:35:18 ICT 2023","27087","LAT","Run Test1","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU012","Enter the wrong code sent to the email",""
+"passed","Thu Apr 06 14:37:40 ICT 2023","Thu Apr 06 14:38:01 ICT 2023","21098","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_08","Add New Address",""
+"passed","Thu Apr 06 14:36:16 ICT 2023","Thu Apr 06 14:36:42 ICT 2023","26654","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_09","ADD NEW ADDRESS",""
+"passed","Thu Apr 06 13:34:48 ICT 2023","Thu Apr 06 13:34:50 ICT 2023","1797","LAT","Run Test1","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU08","""Create a new account with password # email register and has:
 + At least < 8 characters
 + At least 1 number
 + At least 1 lower case letter
 + At least 1 upper case letter
 + At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~""",""
-"passed","Thu Mar 23 21:51:40 ICT 2023","Thu Mar 23 21:51:58 ICT 2023","17739","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_03","Edit a address in section Additional Address Entries",""
-"passed","Thu Mar 23 21:50:49 ICT 2023","Thu Mar 23 21:51:08 ICT 2023","18342","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_01","Edit BILLING ADDRESS",""
-"passed","Thu Mar 23 21:49:27 ICT 2023","Thu Mar 23 21:49:41 ICT 2023","13123","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_PI_03","Change email ",""
-"passed","Thu Mar 23 20:54:12 ICT 2023","Thu Mar 23 20:54:12 ICT 2023","477","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU011","""Create a new account with password # email register and has:
+"passed","Thu Apr 06 13:34:10 ICT 2023","Thu Apr 06 13:34:48 ICT 2023","37493","LAT","Run Test1","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU07","Create a new account with password # email register and has:
++ At least < 8 characters
++ At least 1 number
++ At least 1 lower case letter
++ At least 1 upper case letter
++ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~""",""
+"passed","Thu Apr 06 13:34:51 ICT 2023","Thu Apr 06 13:34:51 ICT 2023","476","LAT","Run Test1","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU011","""Create a new account with password # email register and has:
 + At least > 8 characters
 + At least 1 number
 + At least 1 lower case letter
 At least 1 upper case letter",""
-"passed","Thu Mar 23 20:52:51 ICT 2023","Thu Mar 23 20:53:33 ICT 2023","42024","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU06","Create an account with the same password as the register email",""
-"passed","Thu Mar 23 21:53:06 ICT 2023","Thu Mar 23 21:53:18 ICT 2023","11872","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MW_02","Save a item form product list",""
-"passed","Thu Mar 23 20:54:11 ICT 2023","Thu Mar 23 20:54:12 ICT 2023","434","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU010","""Create a new account with password # email register and has:
-+ At least > 8 characters
-+ At least 1 number
-+ At least 1 lower case letter
-+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~""",""
-"passed","Thu Mar 23 21:03:22 ICT 2023","Thu Mar 23 21:03:24 ICT 2023","2296","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI07","Enter the wrong email format",""
-"passed","Thu Mar 23 21:49:41 ICT 2023","Thu Mar 23 21:50:35 ICT 2023","54190","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_PI_04_LO_01","CHANGE PASSWORD",""
-"passed","Thu Mar 23 21:03:24 ICT 2023","Thu Mar 23 21:03:30 ICT 2023","6492","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI014","Entered the wrong code sent to the email",""
-"passed","Thu Mar 23 17:39:35 ICT 2023","Thu Mar 23 17:39:40 ICT 2023","4547","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU02","Create new customer and leave with blank form for required form",""
-"passed","Thu Mar 23 17:53:02 ICT 2023","Thu Mar 23 17:53:03 ICT 2023","352","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI03","Login with email and leave the password field blank",""
-"passed","Thu Mar 23 17:40:25 ICT 2023","Thu Mar 23 17:41:03 ICT 2023","38213","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU07","Create a new account with password # email register and has:
-+ At least < 8 characters
-+ At least 1 number
-+ At least 1 lower case letter
-+ At least 1 upper case letter
-+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~""",""
-"passed","Thu Mar 23 17:52:33 ICT 2023","Thu Mar 23 17:53:02 ICT 2023","29656","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI02","Log in and leave the email and password fields blank  
-or register to the form to login the mobile",""
-"passed","Thu Mar 23 21:50:35 ICT 2023","Thu Mar 23 21:50:49 ICT 2023","14676","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_PI_06","DELETE ACCOUNT",""
-"passed","Thu Mar 23 21:55:00 ICT 2023","Thu Mar 23 21:55:09 ICT 2023","8999","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_08","Check -Shipping Address- edit function",""
-"passed","Thu Mar 23 21:49:20 ICT 2023","Thu Mar 23 21:49:27 ICT 2023","7443","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_PI_02","Change PERSONAL INFORMATION : forgot enter value First/last name  ",""
-"passed","Thu Mar 23 17:41:06 ICT 2023","Thu Mar 23 17:41:06 ICT 2023","437","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU011","""Create a new account with password # email register and has:
-+ At least > 8 characters
-+ At least 1 number
-+ At least 1 lower case letter
-At least 1 upper case letter",""
-"passed","Thu Mar 23 17:53:09 ICT 2023","Thu Mar 23 17:53:12 ICT 2023","3029","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI06","Login with wrong password",""
-"passed","Thu Mar 23 17:53:03 ICT 2023","Thu Mar 23 17:53:04 ICT 2023","1437","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI04","Login with password and leave the email field blank",""
-"passed","Thu Mar 23 21:04:08 ICT 2023","Thu Mar 23 21:04:12 ICT 2023","4325","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI016_testCase_SI013","create valid new password & Forgot password successfully with store using email confirm",""
-"passed","Thu Mar 23 17:53:12 ICT 2023","Thu Mar 23 17:53:14 ICT 2023","2318","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI07","Enter the wrong email format",""
-"passed","Thu Mar 23 21:03:11 ICT 2023","Thu Mar 23 21:03:11 ICT 2023","408","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI03","Login with email and leave the password field blank",""
-"passed","Thu Mar 23 21:03:17 ICT 2023","Thu Mar 23 21:03:21 ICT 2023","4141","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI06","Login with wrong password",""
-"passed","Thu Mar 23 17:41:06 ICT 2023","Thu Mar 23 17:41:25 ICT 2023","18968","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU012","Enter the wrong code sent to the email",""
-"passed","Thu Mar 23 21:55:17 ICT 2023","Thu Mar 23 21:55:20 ICT 2023","2999","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_10","Check -Newsletters- edit function",""
-"passed","Thu Mar 23 21:51:58 ICT 2023","Thu Mar 23 21:52:14 ICT 2023","16135","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_04"," Delete a address in section Additional Address Entries",""
-"passed","Thu Mar 23 17:39:40 ICT 2023","Thu Mar 23 17:39:40 ICT 2023","681","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU03","Create new customer and input invalid data for email form",""
-"passed","Thu Mar 23 20:51:53 ICT 2023","Thu Mar 23 20:52:44 ICT 2023","50660","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU05","Create new customer and input email exist on database",""
-"passed","Thu Mar 23 17:54:00 ICT 2023","Thu Mar 23 17:54:31 ICT 2023","31526","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI01","Login successfully on Login modal",""
-"passed","Thu Mar 23 21:54:30 ICT 2023","Thu Mar 23 21:54:34 ICT 2023","4807","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_03","Check order status = Order Confirmation ,display in tab Recent Orders ",""
-"passed","Thu Mar 23 21:03:11 ICT 2023","Thu Mar 23 21:03:13 ICT 2023","1434","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI04","Login with password and leave the email field blank",""
-"passed","Thu Mar 23 17:53:56 ICT 2023","Thu Mar 23 17:54:00 ICT 2023","3703","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI016_testCase_SI013","create valid new password & Forgot password successfully with store using email confirm",""
-"passed","Thu Mar 23 17:39:40 ICT 2023","Thu Mar 23 17:39:41 ICT 2023","522","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU04","Create new customer and input confirm email not same email form",""
-"passed","Thu Mar 23 20:54:11 ICT 2023","Thu Mar 23 20:54:11 ICT 2023","543","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU09","""Create a new account with password # email register and has:
-+ At least > 8 characters
-+ At least 1 number
-+ At least 1 upper case letter
-+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~""",""
-"passed","Thu Mar 23 21:52:14 ICT 2023","Thu Mar 23 21:52:23 ICT 2023","8492","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_05","  Set as Default a address in section Additional Address Entries",""
-"passed","Thu Mar 23 21:52:33 ICT 2023","Thu Mar 23 21:52:49 ICT 2023","16207","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MA_08","Add New Address",""
-"passed","Thu Mar 23 20:54:09 ICT 2023","Thu Mar 23 20:54:11 ICT 2023","1613","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU08","""Create a new account with password # email register and has:
-+ At least < 8 characters
-+ At least 1 number
-+ At least 1 lower case letter
-+ At least 1 upper case letter
-+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~""",""
-"passed","Thu Mar 23 21:03:13 ICT 2023","Thu Mar 23 21:03:17 ICT 2023","4524","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI05","Login wrong email - password",""
-"passed","Thu Mar 23 17:55:21 ICT 2023","Thu Mar 23 17:56:56 ICT 2023","95109","LAT","Run Test","test.CreateAccountOnWebTest","test.CreateAccountOnWebTest","testCaseWeb_CreateAccount","Create new customer successfully with store enable email confirm",""
-"passed","Thu Mar 23 17:41:03 ICT 2023","Thu Mar 23 17:41:05 ICT 2023","1532","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU08","""Create a new account with password # email register and has:
-+ At least < 8 characters
-+ At least 1 number
-+ At least 1 lower case letter
-+ At least 1 upper case letter
-+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~""",""
-"passed","Thu Mar 23 21:48:16 ICT 2023","Thu Mar 23 21:49:20 ICT 2023","63967","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_PI_01","Change PERSONAL INFORMATION ",""
-"passed","Thu Mar 23 21:11:08 ICT 2023","Thu Mar 23 21:12:25 ICT 2023","77617","LAT","Run Test","test.CreateAccountOnWebTest","test.CreateAccountOnWebTest","testCaseWeb_forgotPassWord","forgot password",""
-"passed","Thu Mar 23 21:03:30 ICT 2023","Thu Mar 23 21:04:08 ICT 2023","37558","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI015","Resend the code to email",""
-"passed","Thu Mar 23 20:52:49 ICT 2023","Thu Mar 23 20:52:50 ICT 2023","772","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU03","Create new customer and input invalid data for email form",""
-"passed","Thu Mar 23 17:41:05 ICT 2023","Thu Mar 23 17:41:05 ICT 2023","451","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU09","""Create a new account with password # email register and has:
-+ At least > 8 characters
-+ At least 1 number
-+ At least 1 upper case letter
-+ At least 1 characters like: # & $ ( ) * + , - . : , . = ? @ { } ~""",""
-"passed","Thu Mar 23 17:53:14 ICT 2023","Thu Mar 23 17:53:21 ICT 2023","6604","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI014","Entered the wrong code sent to the email",""
-"passed","Thu Mar 23 17:39:41 ICT 2023","Thu Mar 23 17:40:25 ICT 2023","44302","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU06","Create an account with the same password as the register email",""
-"passed","Thu Mar 23 17:58:15 ICT 2023","Thu Mar 23 18:00:04 ICT 2023","109330","LAT","Run Test","test.CreateAccountOnWebTest","test.CreateAccountOnWebTest","testCaseWeb_forgotPassWordCheckOut","forgot password - checkOut",""
-"passed","Thu Mar 23 20:52:44 ICT 2023","Thu Mar 23 20:52:49 ICT 2023","4744","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU02","Create new customer and leave with blank form for required form",""
-"passed","Thu Mar 23 17:53:04 ICT 2023","Thu Mar 23 17:53:09 ICT 2023","4394","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI05","Login wrong email - password",""
-"passed","Thu Mar 23 21:54:51 ICT 2023","Thu Mar 23 21:55:00 ICT 2023","8350","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_07","Check -Contact Information- edit function",""
-"passed","Thu Mar 23 17:53:21 ICT 2023","Thu Mar 23 17:53:56 ICT 2023","35368","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI015","Resend the code to email",""
-"passed","Thu Mar 23 20:52:50 ICT 2023","Thu Mar 23 20:52:51 ICT 2023","1469","LAT","Run Test","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU04","Create new customer and input confirm email not same email form",""
-"passed","Thu Mar 23 21:55:09 ICT 2023","Thu Mar 23 21:55:17 ICT 2023","8765","LAT","Run Test","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_09","Check -Billing Address- edit function ",""
-"passed","Thu Mar 23 21:02:41 ICT 2023","Thu Mar 23 21:03:11 ICT 2023","30146","LAT","Run Test","test.signinSignup.SignInTest","test.signinSignup.SignInTest","testCase_SI02","Log in and leave the email and password fields blank  
-or register to the form to login the mobile",""
-"passed","Thu Mar 23 21:12:25 ICT 2023","Thu Mar 23 21:13:58 ICT 2023","93033","LAT","Run Test","test.CreateAccountOnWebTest","test.CreateAccountOnWebTest","testCaseWeb_forgotPassWordCheckOut","forgot password - checkOut",""
+"passed","Thu Apr 06 14:33:37 ICT 2023","Thu Apr 06 14:33:54 ICT 2023","17281","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_PI_03","Change email ",""
+"passed","Thu Apr 06 14:38:59 ICT 2023","Thu Apr 06 14:39:57 ICT 2023","58709","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MW_05","Check function of Email Selected Items",""
+"passed","Thu Apr 06 14:32:04 ICT 2023","Thu Apr 06 14:33:21 ICT 2023","76860","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_PI_01","Change PERSONAL INFORMATION ",""
+"passed","Thu Apr 06 14:40:24 ICT 2023","Thu Apr 06 14:40:32 ICT 2023","7576","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_07","Check -Contact Information- edit function",""
+"passed","Thu Apr 06 14:40:43 ICT 2023","Thu Apr 06 14:41:07 ICT 2023","23470","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_09","Check -Billing Address- edit function ",""
+"passed","Thu Apr 06 13:33:24 ICT 2023","Thu Apr 06 13:33:25 ICT 2023","730","LAT","Run Test1","test.signinSignup.SignUpTest","test.signinSignup.SignUpTest","testCase_SU04","Create new customer and input confirm email not same email form",""
+"passed","Thu Apr 06 14:40:04 ICT 2023","Thu Apr 06 14:40:13 ICT 2023","9225","LAT","Run Test 3","test.MyAccountMobileTest","test.MyAccountMobileTest","testCase_MO_05","Check order status = Delivery, display in tab Recent Orders ",""
