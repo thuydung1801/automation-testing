@@ -5,51 +5,12 @@
 <!--        <classes>-->
 <!--            <class name="test.checkout.ShoppingBagTest">-->
 <!--            <methods>-->
-<!--&lt;!&ndash;                <include name="testCase_SP_02"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="testCase_CheckoutWithGiftCard"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="testCase_SP_17"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="testCase_SP_26_RV_02_04"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="testCase_SP_24"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="testCase_SP_04"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="testCase_RV_07"/>&ndash;&gt;-->
-<!--                <include name="testCase_RV_33"/>-->
-<!--            </methods>-->
-<!--            </class>-->
-<!--            <class name="test.MyAccountTest">-->
-<!--                <methods>-->
-<!--                    <include name="testCase_Myorder_05"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="test.CreateAccountOnWebTest">-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--&lt;!&ndash;    <test name="Mobile">&ndash;&gt;-->
-<!--&lt;!&ndash;        <parameter name="devices" value="mobile"></parameter>&ndash;&gt;-->
-<!--&lt;!&ndash;        <classes>&ndash;&gt;-->
-<!--&lt;!&ndash;            <class name="test.CreateAccountMobileTest"></class>&ndash;&gt;-->
-<!--&lt;!&ndash;        </classes>&ndash;&gt;-->
-<!--&lt;!&ndash;    </test>&ndash;&gt;-->
-<!--</suite>-->
-<suite name="LAT" parallel="tests">
-    <test name="Run Test">
-        <parameter name="devices" value="web"></parameter>
-        <classes>
-            <class name="test.CreateAccountOnWebTest">
-<!--                <methods>-->
-<!--                    <include name="NLA_01_02"/>-->
-<!--                    <include name="NLA_03"/>-->
-<!--                    <include name="NLA_06"/>-->
-<!--                    <include name="NLA_08"/>-->
-<!--                    <include name="NLA_05"/>-->
-<!--&lt;!&ndash;                    <include name="NLA_07"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="NLA_10"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="NLA_11"/>&ndash;&gt;-->
-<!--                </methods>-->
-            </class>
-        </classes>
-    </test>
-</suite>
+<!--                <include name="testCase_SP_02"/>-->
+<!--                <include name="testCase_SP_17"/>-->
+<!--                <include name="testCase_SP_26_RV_02_04"/>-->
+<!--                <include name="testCase_SP_24"/>-->
+<!--                <include name="testCase_RV_07"/>-->
+<!--                <include name="testCase_SP_04"/>-->
 <!--                <include name="testCase_RV_08"/>-->
 <!--                <include name="checkOutStageDE"/>-->
 <!--            </methods>-->
@@ -62,42 +23,33 @@
 <!--        </classes>-->
 <!--    </test>-->
 <!--</suite>-->
-<!--<<<<<<< HEAD-->
-<!--<suite name="Test Mobile" parallel="tests">-->
-<!--    <test name="IPhone 12 Pro">-->
-<!--        <parameter name="devices" value="web"></parameter>-->
-<!--&lt;!&ndash;        <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>&ndash;&gt;-->
-<!--        <classes>-->
-<!--            <class name="test.CreateAccountOnWebTest">-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--        &lt;!&ndash;                <methods>&ndash;&gt;-->
-<!--        &lt;!&ndash;                    <include name="testCase_SP_02"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;                    <include name="testCase_SP_17"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;                    <include name="testCase_SP_26_RV_02_04"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;                    <include name="testCase_SP_24"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;                    <include name="testCase_SP_04"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;                    <include name="testCase_RV_07"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;                    <include name="testCase_Myorder_Return"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;                </methods>&ndash;&gt;-->
+<suite name="Test Mobile" parallel="tests">
+    <test name="IPhone 12 Pro">
+        
 
-<!--    </test>-->
-<!--</suite>-->
-
-<!--        <parameter name="devices" value="mobile"></parameter>-->
-<!--        <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>-->
-<!--        <classes>-->
+        <parameter name="devices" value="web"></parameter>
+        <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
+        <classes>
+            <class name="test.MyAccountTest">
+                <methods>
+<!--                    <include name="testCase_PI_01"/>-->
+<!--                    <include name="testCase_Myorder_05"/>-->
+<!--                    <include name="testCase_MW_02"/>-->
+<!--                    <include name="testCase_MW_03"/>-->
+<!--                    <include name="testCase_MW_04"/>-->
+                    <include name="testCase_MA_07"/>
+                </methods>
+            </class>
 
 
-<!--            <class name="test.checkout.ShoppingBagTestMobile">-->
+<!--            <class name="test.checkout.ShoppingBagTest">-->
 <!--                <methods>-->
-<!--&lt;!&ndash;                    <include name="testCase_SP_02"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="testCase_SP_17"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="testCase_SP_26_RV_02_04"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="testCase_SP_24"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="testCase_SP_04"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="testCase_RV_07"/>&ndash;&gt;-->
-
+<!--                    <include name="testCase_SP_02"/>-->
+<!--                    <include name="testCase_SP_17"/>-->
+<!--                    <include name="testCase_SP_26_RV_02_04"/>-->
+<!--                    <include name="testCase_SP_24"/>-->
+<!--                    <include name="testCase_SP_04"/>-->
+<!--                    <include name="testCase_RV_07"/>-->
 
 <!--                    <include name="testCase_SP_02"/>-->
 <!--                    <include name="testCase_CheckoutWithGiftCard"/>-->
@@ -118,21 +70,21 @@
 <!--                    <include name="testCase_RV_05"/>-->
 <!--                    <include name="testCase_RV_06"/>-->
 
-<!--&lt;!&ndash;&lt;!&ndash;                    <include name="testCase_RV_10"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_10"/>&ndash;&gt;-->
 <!--                    <include name="testCase_RV_07"/>-->
-<!--&lt;!&ndash;&lt;!&ndash;                    <include name="testCase_RV_09"/>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                    <include name="testCase_RV_08"/>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                    <include name="testCase_RV_11"/>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                    <include name="testCase_RV_12"/>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                    <include name="testCase_RV_13"/>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                    <include name="testCase_RV_14"/>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                    <include name="testCase_RV_15"/>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                    <include name="testCase_RV_16"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_09"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_08"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_11"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_12"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_13"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_14"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_15"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_16"/>&ndash;&gt;-->
 
 <!--                    <include name="testCase_RV_17_19"/>-->
 <!--                    <include name="testCase_RV_18"/>-->
 <!--                    <include name="testCase_RV_20"/>-->
-<!--&lt;!&ndash;&lt;!&ndash;                    <include name="testCase_RV_21"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_21"/>&ndash;&gt;-->
 
 <!--                    <include name="testCase_RV_31"/>-->
 <!--                    <include name="testCase_RV_32"/>-->
@@ -140,11 +92,44 @@
 
 <!--                </methods>-->
 <!--            </class>-->
-<!--            <class name="test.MyAccountTest">-->
+<!--            <class name="test.checkout.LoginAddressTest">-->
 <!--                <methods>-->
-<!--                    <include name="testCase_MW_05"/>-->
+<!--                    <include name="NLA_01_02"/>-->
+<!--                    <include name="NLA_03_04"/>-->
+
+<!--                    <include name="NLA_06"/>-->
+<!--                    <include name="NLA_08"/>-->
+<!--                    <include name="NLA_05"/>-->
+<!--                    <include name="NLA_07"/>-->
+<!--                    <include name="NLA_10"/>-->
+<!--                    <include name="NLA_11"/>-->
+<!--                    <include name="NLA_12_16"/>-->
+<!--                    <include name="NLA_13_14_15"/>-->
+<!--                    <include name="NLA_17"/>-->
+<!--                    <include name="NLA_19"/>-->
+<!--                    <include name="NLA_20"/>-->
+
+<!--                    <include name="NLA_21"/>-->
+<!--                    <include name="NLA_35"/>-->
+<!--                    <include name="NLA_36"/>-->
+<!--                    <include name="NLA_41"/>-->
+<!--                    <include name="NLA_38"/>-->
+<!--                    <include name="NLA_39_40"/>-->
+<!--                    <include name="NLA_42"/>-->
+<!--                    <include name="NLA_43"/>-->
+<!--                    <include name="NLA_45"/>-->
+<!--                    <include name="NLA_46"/>-->
+<!--                    <include name="NLA_47_48_49"/>-->
+<!--                    <include name="NLA_50"/>-->
+<!--                    <include name="NLA_51"/>-->
+<!--                    <include name="NLA_52"/>-->
+<!--                    <include name="NLA_53"/>-->
+<!--                    <include name="NLA_54"/>-->
+<!--                    <include name="NLA_55"/>-->
+<!--                    <include name="NLA_56"/>-->
+
 <!--                </methods>-->
 <!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--</suite>-->
+        </classes>
+    </test>
+</suite>

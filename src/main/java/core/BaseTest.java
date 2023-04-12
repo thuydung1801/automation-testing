@@ -1,66 +1,50 @@
 package core;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
-
-import org.testng.ITestResult;
 import org.testng.annotations.*;
+//import org.testng.annotations.BeforeSuite;
 
-import java.io.File;
-
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import static core.KeywordWeb.driver;
-
-
 
 public class BaseTest {
     private static Logger logger = LogHelper.getLogger();
     protected KeywordWeb keyword;
 
-    public BaseTest() {
+    //    public static AndroidDriver<MobileElement> driver;
+    public static WebDriverWait                wait;
+    public BaseTest() throws MalformedURLException {
         keyword = new KeywordWeb();
     }
-    public static WebDriver getDriver() {
+    public static AndroidDriver<MobileElement> getDriver() {
         return driver;
     }
-
     @BeforeSuite
     public void beforeSuite() throws Exception {
         PropertiesFile.setPropertiesFile();
     }
-    @Parameters("devices")
     @BeforeTest
 
-    public void beforeTest(String devices) throws Exception {
-        keyword.openBrowser(PropertiesFile.getPropValue("BROWSER_NAME"), PropertiesFile.getPropValue("BASE_URL"));
-        if (devices.equalsIgnoreCase("mobile")){
-            keyword.resizeBrowser(319,848);
-        }else {
-            keyword.maximizeWindow();
-        }
+    public void beforeTest() throws Exception {
+        //String platformName, String platformVersion,String deviceName,String appPackage,String appActivity
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("platformname", PropertiesFile.getPropValue("platformName"));
+        capabilities.setCapability("platformVersion", PropertiesFile.getPropValue("platformVersion"));
+        capabilities.setCapability("deviceName", PropertiesFile.getPropValue("deviceName"));
+        capabilities.setCapability("appPackage", PropertiesFile.getPropValue("appPackage"));
+        capabilities.setCapability("appActivity", PropertiesFile.getPropValue("appActivity"));
+        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        wait = new WebDriverWait(driver, 10);
     }
-    public void takeScreenshot(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            try {
-                TakesScreenshot ts = (TakesScreenshot) driver;
-                File source = ts.getScreenshotAs(OutputType.FILE);
-                File theDir = new File("./screenshots/");
-                if (!theDir.exists()) {
-                    theDir.mkdirs();
-                }
-                // result.getName() lấy tên của test case xong gán cho tên File chụp màn hình
-                FileHandler.copy(source, new File("./screenshots/" + result.getName() + ".png"));
-                System.out.println("Taked screenshot: " + result.getName());
-            } catch (Exception e) {
-                System.out.println("Exception while taking screenshot " + e.getMessage());
-            }
-        }
-    }
-    @AfterTest
-    public void afterTest() throws Exception {
-//        keyword.closeBrowser();
-    }
+//    @AfterMethod
+//    public void teardown() {
+//        driver.quit();
+//    }
 }
