@@ -28,28 +28,28 @@ public class LoginReturnFormTest extends BaseTest {
     @Test(priority = 1, description = "Next step with customer invalid")
     public void testCase_LS_04() throws InterruptedException {
         setUpLogin();
-        objLoginReturn.dataFormLoginReturnForm("DATA_EMAIL_INVALID", "", true, "DATA_EMAIL_FAIL", "EMAIL_ERROR", "");
+        objLoginReturn.dataFormLoginReturnForm("DATA_EMAIL_INVALID", "", true, "DATA_EMAIL_FAIL", "EMAIL_ERROR", "", true);
     }
 
     @Test(priority = 2, description = "Next step with customer valid but don't have any order return avaiable")
     public void testCase_LS_05() throws InterruptedException {
-        objLoginReturn.dataFormLoginReturnForm("DATA_EMAIL_NOT_HAVE_ORDER_RETURN", "", true, "MESSAGE_NOT_HAVE_ORDER_RETURN", "RETURN_MESSAGE_CONTENT", "");
+        objLoginReturn.dataFormLoginReturnForm("DATA_EMAIL_NOT_HAVE_ORDER_RETURN", "", true, "MESSAGE_NOT_HAVE_ORDER_RETURN", "RETURN_MESSAGE_CONTENT", "", true);
     }
 
     @Test(priority = 3, description = "Submit Return form, Next step and not input Email")
     public void testCase_LS_06() throws InterruptedException {
-        objLoginReturn.dataFormLoginReturnForm("", "", true, "SIGNUP_DATA_VERIFY_MESSAGE", "EMAIL_ERROR", "");
+        objLoginReturn.dataFormLoginReturnForm("", "", true, "SIGNUP_DATA_VERIFY_MESSAGE", "EMAIL_ERROR", "", true);
     }
 
     @Test(priority = 4, description = "Next step return form, login with password not matching email customer")
     public void testCase_LS_02() throws InterruptedException {
-        objLoginReturn.dataFormLoginReturnForm("DATA_EMAIL_RETURN", "REGIST_DATA_PASSWORD", false, "LA_MESSAGE_INVALID_LOGIN", "MESSAGE_FAIL_RETURN_FORM", "");
+        objLoginReturn.dataFormLoginReturnForm("DATA_EMAIL_RETURN", "REGIST_DATA_PASSWORD", false, "LA_MESSAGE_INVALID_LOGIN", "MESSAGE_FAIL_RETURN_FORM", "", true);
     }
 
     @Test(priority = 5, description = "Submit Return form, login successfully + Input email or order having space")
     public void testCase_LS_01_03() throws InterruptedException {
 //        setUpLogin();
-        objLoginReturn.dataFormLoginReturnForm(" " + "DATA_EMAIL_RETURN", "DATA_PASSWORD_LOGIN_RETURN", false, "DATA_LABLE", "STEP_LABLE", "");
+        objLoginReturn.dataFormLoginReturnForm("DATA_EMAIL_RETURN", "DATA_PASSWORD_LOGIN_RETURN", false, "DATA_LABLE", "STEP_LABLE", "SELECT_ORER_RETURN", true);
     }
 
     @Test(priority = 6, description = "The order having order date before >60days")
@@ -57,29 +57,40 @@ public class LoginReturnFormTest extends BaseTest {
         setUpLogin();
         objLoginReturn.orderDate();
     }
-
     @Test(priority = 7, description = "Return order with the order haven't the item avaiable resizing")
     public void testCase_LS_08() throws InterruptedException {
-        setUpLogin();
+//        setUpLogin();
         objLoginReturn.orderNotResize();
     }
-
     @Test(priority = 8, description = "Return order with the order haven't the item avaiable engraving")
     public void testCase_LS_09() throws InterruptedException {
 //        setUpLogin();
         objLoginReturn.orderNotEngraving();
     }
-
     @Test(priority = 9, description = "Return order with the item has returned")
     public void testCase_LS_10() throws InterruptedException {
 //        setUpLogin();
         objLoginReturn.orderReturned();
     }
-
-    //MY RETURN
-    @Test(priority = 10, description = "View Detail return successfully")
-    public void testCase_MR_O2() throws InterruptedException {
+//    MY RETURN
+    @Test(priority = 10, description = "Cancel My Return successfully on viewDetail")
+    public void testCase_MR_O3() throws InterruptedException {
 //        setUpLogin();
-//        objLoginReturn.VIEW();
+        objLoginReturn.CancelMyReturn(true);
+    }
+    @Test(priority = 11, description = "Cancel My Return successfully on viewDetail")
+    public void testCase_MR_O4() throws InterruptedException {
+//        setUpLogin();
+        objLoginReturn.CancelMyReturn(true);
+    }
+    @Test(priority = 11, description = "Click Save button on the return detail and not add any tracking infomation")
+    public void testCase_MR_O5() throws InterruptedException {
+//        setUpLogin();
+        objLoginReturn.CancelMyReturn(true);
+    }
+    @Test(priority = 11, description = "Edit tracking infomation successfully")
+    public void testCase_MR_O6() throws InterruptedException {
+//        setUpLogin();
+        objLoginReturn.CancelMyReturn(true);
     }
 }

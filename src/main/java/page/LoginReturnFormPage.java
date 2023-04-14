@@ -3,6 +3,7 @@ package page;
 import core.BasePage;
 import core.LogHelper;
 import io.cucumber.java.hr.Kad;
+import org.asynchttpclient.request.body.generator.PushBody;
 import org.bouncycastle.asn1.cms.KEKIdentifier;
 import org.openqa.selenium.Keys;
 import org.slf4j.Logger;
@@ -35,7 +36,7 @@ public class LoginReturnFormPage extends BasePage {
         keyword.click("BTN_RETURN_FORM");
     }
 
-    public void dataFormLoginReturnForm(String dataEmail, String dataPassword, boolean check, String data, String actual, String dataSelect) throws InterruptedException {
+    public void dataFormLoginReturnForm(String dataEmail, String dataPassword, boolean check, String data, String actual, String dataSelect, boolean checkRun) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
@@ -51,20 +52,25 @@ public class LoginReturnFormPage extends BasePage {
             keyword.sendKeys("SIGNUP_PASSWORD_INFORMATION", dataPassword);
             keyword.click("BTN_SUBMIT_RETURN_FORM");
             keyword.untilJqueryIsDone(50L);
-            if (keyword.verifyElementPresent("BTN_CREATE_RETURN")) {
-                keyword.click("SELECT_ORDER_RETURN");
-                keyword.click(dataSelect);
-                keyword.untilJqueryIsDone(30L);
-                String getTextBefore = keyword.getText("SELECT_ORDER_RETURN");
-                System.out.println("-------------------" + getTextBefore);
+            if (checkRun) {
+                if (keyword.verifyElementPresent("BTN_CREATE_RETURN")) {
+                    keyword.click("SELECT_ORDER_RETURN");
+                    keyword.click(dataSelect);
+                    keyword.untilJqueryIsDone(30L);
+                    String getTextBefore = keyword.getText("SELECT_ORDER_RETURN");
+                    System.out.println("-------------------" + getTextBefore);
 
-                keyword.click("BTN_CREATE_RETURN");
-                keyword.untilJqueryIsDone(50L);
-                getTextBefore.contains("ORDER_ID_RETURN");
+                    keyword.click("BTN_CREATE_RETURN");
+                    keyword.untilJqueryIsDone(50L);
+                    getTextBefore.contains("ORDER_ID_RETURN");
+                }
+                keyword.assertEquals(data, actual);
+            } else {
+
             }
-            keyword.assertEquals(data, actual);
         }
     }
+
     public void orderDate() throws InterruptedException {
         orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "CHECK_WITHDRAWAL", "OPTION_RESIZE", "SELECT_OPTION_ORDER_ITEM_RETURN_DATE");
     }
@@ -72,15 +78,26 @@ public class LoginReturnFormPage extends BasePage {
     public void orderNotResize() throws InterruptedException {
         orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_RESIZE", "CHECK_WITHDRAWAL", "SELECT_OPTION_ORDER_ITEM_RETURN_NO_RESIZE");
     }
+
     public void orderNotEngraving() throws InterruptedException {
         orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL", "SELECT_OPTION_ORDER_ITEM_RETURN_NO_ENGRAVING");
     }
 
     public void orderReturned() throws InterruptedException {
-        orderReturn("DATA_PASSWORD_LOGIN_RETURN", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL", "SELECT_OPTION_ORDER_ITEM_RETURN");
+        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL", "SELECT_OPTION_ORDER_ITEM_RETURN");
     }
 
-    public void orderReturn(String dataEmail, String dataPassWord, String checkShow, String selectElement, String dataSelect) throws InterruptedException {
+    public void CancelMyReturn(boolean checkCancel) throws InterruptedException {
+        reloadAdDeleteCookies();
+        goToFormLoginReturn();
+        dataFormLoginReturnForm("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", false, "DATA_LABLE", "STEP_LABLE", "", false);
+        viewDetail();
+        if(checkCancel){
+            cancelOrderReturn();
+        }
+    }
+
+    public void reloadAdDeleteCookies() throws InterruptedException {
         keyword.reLoadPage();
         keyword.deleteAllCookies();
         keyword.untilJqueryIsDone(30L);
@@ -93,8 +110,23 @@ public class LoginReturnFormPage extends BasePage {
             keyword.untilJqueryIsDone(50L);
             keyword.click("BTN_CLOSE_MODAL_LOGIN");
         }
+    }
+
+    public void viewDetail() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("NEW_RETURN");
+        String getText = keyword.getText("ORDER_ID_RETURN_SUCCESS");
+        keyword.verifyElementVisible("BTN_VIEW_DETAIL");
+        keyword.click("BTN_VIEW_DETAIL");
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("FORM_MY_RETURN_DETAIL");
+        keyword.assertEquals("#" + getText, "ORDER_ID_ACTUAL");
+    }
+
+    public void orderReturn(String dataEmail, String dataPassWord, String checkShow, String selectElement, String dataSelect) throws InterruptedException {
+        reloadAdDeleteCookies();
         goToFormLoginReturn();
-        dataFormLoginReturnForm(dataEmail, dataPassWord, false, "DATA_LABLE", "STEP_LABLE", dataSelect);
+        dataFormLoginReturnForm(dataEmail, dataPassWord, false, "DATA_LABLE", "STEP_LABLE", dataSelect, true);
         checkShowTitle(checkShow, selectElement);
     }
 
@@ -150,7 +182,9 @@ public class LoginReturnFormPage extends BasePage {
 
     public void cancelOrderReturn() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        keyword.click("CLICK_LINK_HEAR");
+        if(keyword.verifyElementPresent("CLICK_LINK_HEAR")){
+            keyword.click("CLICK_LINK_HEAR");
+        }
         keyword.untilJqueryIsDone(30L);
         keyword.click("BTN_CANCEL_MY_RETURN");
         keyword.untilJqueryIsDone(30L);

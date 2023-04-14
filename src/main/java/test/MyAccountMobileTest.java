@@ -185,4 +185,5 @@ public class MyAccountMobileTest extends BaseTest {
     public void testCase_MO_10() throws InterruptedException {
         testMyAccount.checkChangeNewsLetter();
     }
+
 }

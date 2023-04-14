@@ -261,6 +261,7 @@ public class MyAccountPage extends BasePage {
     public void deleteAccount(String data, String baseURL) throws InterruptedException {
 //        setUp1();
         keyword.openNewTab(baseURL+"customer/account/edit/");
+        keyword.untilJqueryIsDone(50L);
         keyword.click("MAC_DELETE_ACCOUNT");
         Thread.sleep(2000);
         keyword.untilJqueryIsDone(30L);
@@ -325,6 +326,7 @@ public class MyAccountPage extends BasePage {
             keyword.clearText("MAC_INP_CODE_CITY");
             keyword.sendKeys("MAC_INP_CODE_CITY","MAC_INP_DATA_CODE_CITY");
         }
+        keyword.untilJqueryIsDone(60L);
         keyword.click("MAC_BTN_SAVE_ADDRESS");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");

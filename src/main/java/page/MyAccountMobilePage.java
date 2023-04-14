@@ -132,6 +132,7 @@ public class MyAccountMobilePage extends BasePage {
         PropertiesFile.serPropValue("COM_PASSWORD_NEW_MOBILE", pass);
         keyword.sendKeys("MAC_INP_PASS_NEW", "COM_PASSWORD_NEW_MOBILE");
         keyword.sendKeys("MAC_INP_PASS_CONFIRM", "COM_PASSWORD_NEW_MOBILE");
+        keyword.untilJqueryIsDone(60L);
         keyword.click("MAC_BTN_SAVE_3");
         keyword.untilJqueryIsDone(60L);
         keyword.assertEquals("MAC_VERIFY_DATA_FULLNAME", "CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE");
