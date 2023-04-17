@@ -88,13 +88,14 @@ public class LoginReturnFormPage extends BasePage {
     }
 
     public void CancelMyReturn(boolean checkCancel) throws InterruptedException {
-        reloadAdDeleteCookies();
-        goToFormLoginReturn();
-        dataFormLoginReturnForm("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", false, "DATA_LABLE", "STEP_LABLE", "", false);
-        viewDetail();
-        if(checkCancel){
-            cancelOrderReturn();
-        }
+//        reloadAdDeleteCookies();
+//        goToFormLoginReturn();
+//        dataFormLoginReturnForm("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", false, "DATA_LABLE", "STEP_LABLE", "", false);
+//        viewDetail();
+//        if(checkCancel){
+//            cancelOrderReturn();
+//        }
+        orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL", "SELECT_OPTION_ORDER_ITEM_RETURN");
     }
 
     public void reloadAdDeleteCookies() throws InterruptedException {
@@ -181,6 +182,10 @@ public class LoginReturnFormPage extends BasePage {
     }
 
     public void cancelOrderReturn() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("BTN_MYRETUREN");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("BTN_VIEW_DETAIL_ORDER_RETURN");
         keyword.untilJqueryIsDone(50L);
         if(keyword.verifyElementPresent("CLICK_LINK_HEAR")){
             keyword.click("CLICK_LINK_HEAR");

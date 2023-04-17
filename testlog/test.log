@@ -1,36 +1,88 @@
-INFO  | 2023-04-14 14:52:21 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:47) - Open browser
-INFO  | 2023-04-14 14:52:25 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 112.0.5615.49 (resolved driver for Chrome 112)
-INFO  | 2023-04-14 14:52:25 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\112.0.5615.49\chromedriver.exe
-INFO  | 2023-04-14 14:52:28 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:63) - open browser successfullyCHROME
-INFO  | 2023-04-14 14:52:28 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:66) - go to url: https://stage.glamira.co.uk/
-INFO  | 2023-04-14 14:52:28 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - url: [Ljava.lang.String;@2b058bfd
-INFO  | 2023-04-14 14:52:34 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:297) - Maximizing browser window...
-INFO  | 2023-04-14 14:52:34 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-14 14:52:36 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-04-14 14:52:37 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-04-14 14:52:37 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-14 14:52:41 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-04-14 14:52:49 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-14 14:52:56 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-14 14:52:56 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:672) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-04-14 14:52:56 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-04-14 14:53:02 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
-INFO  | 2023-04-14 14:53:05 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentCHECK_FORM_LOGIN
-INFO  | 2023-04-14 14:53:06 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:286) - Executing JavaScript
-INFO  | 2023-04-14 14:53:07 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_RETURN_FORM_BTN_RETURN
-INFO  | 2023-04-14 14:53:13 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleMENU_LEFT_RETURN_FORM
-INFO  | 2023-04-14 14:53:13 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_RETURN_FORM
-INFO  | 2023-04-14 14:53:18 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-14 14:53:21 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_RETURN2
-INFO  | 2023-04-14 14:53:21 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-14 14:53:24 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleSIGNUP_PASSWORD_INFORMATION
-INFO  | 2023-04-14 14:53:25 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith DATA_PASSWORD_LOGIN_RETURN
-INFO  | 2023-04-14 14:53:25 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-14 14:53:34 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleNEW_RETURN
-INFO  | 2023-04-14 14:53:34 | [main] core.KeywordWeb (KeywordWeb.java:getText:180) - get Text ofORDER_ID_RETURN_SUCCESS
-INFO  | 2023-04-14 14:53:34 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleBTN_VIEW_DETAIL
-INFO  | 2023-04-14 14:53:34 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_VIEW_DETAIL
-INFO  | 2023-04-14 14:53:48 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleFORM_MY_RETURN_DETAIL
-INFO  | 2023-04-14 14:53:48 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:758) - compare from #729339791 with ORDER_ID_ACTUAL
-INFO  | 2023-04-14 14:53:50 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentCLICK_LINK_HEAR
-INFO  | 2023-04-14 14:53:51 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_CANCEL_MY_RETURN
+INFO  | 2023-04-17 17:36:15 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:47) - Open browser
+INFO  | 2023-04-17 17:36:19 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 112.0.5615.49 (resolved driver for Chrome 112)
+INFO  | 2023-04-17 17:36:20 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\112.0.5615.49\chromedriver.exe
+INFO  | 2023-04-17 17:36:22 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:63) - open browser successfullyCHROME
+INFO  | 2023-04-17 17:36:22 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:66) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-04-17 17:36:22 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - url: [Ljava.lang.String;@3291d9c2
+INFO  | 2023-04-17 17:36:27 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:297) - Maximizing browser window...
+INFO  | 2023-04-17 17:36:28 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-04-17 17:36:29 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
+INFO  | 2023-04-17 17:36:30 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
+INFO  | 2023-04-17 17:36:30 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-04-17 17:36:33 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
+INFO  | 2023-04-17 17:36:41 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-04-17 17:36:48 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-04-17 17:36:49 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:672) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-04-17 17:36:49 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-04-17 17:36:55 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
+INFO  | 2023-04-17 17:36:57 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentCHECK_FORM_LOGIN
+INFO  | 2023-04-17 17:36:59 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:286) - Executing JavaScript
+INFO  | 2023-04-17 17:37:00 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_RETURN_FORM_BTN_RETURN
+INFO  | 2023-04-17 17:37:04 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleMENU_LEFT_RETURN_FORM
+INFO  | 2023-04-17 17:37:04 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_RETURN_FORM
+INFO  | 2023-04-17 17:37:08 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-04-17 17:37:11 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_RETURN2
+INFO  | 2023-04-17 17:37:11 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
+INFO  | 2023-04-17 17:37:15 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleSIGNUP_PASSWORD_INFORMATION
+INFO  | 2023-04-17 17:37:16 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith DATA_PASSWORD_LOGIN_RETURN
+INFO  | 2023-04-17 17:37:16 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
+INFO  | 2023-04-17 17:37:22 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_RETURN
+INFO  | 2023-04-17 17:37:22 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSELECT_ORDER_RETURN
+INFO  | 2023-04-17 17:37:22 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSELECT_OPTION_ORDER_ITEM_RETURN
+INFO  | 2023-04-17 17:37:24 | [main] core.KeywordWeb (KeywordWeb.java:getText:180) - get Text ofSELECT_ORDER_RETURN
+INFO  | 2023-04-17 17:37:24 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_CREATE_RETURN
+INFO  | 2023-04-17 17:37:29 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:758) - compare from DATA_LABLE with STEP_LABLE
+INFO  | 2023-04-17 17:37:30 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickMAC_MY_ORD_RETURN_STEP1_SELECT1
+INFO  | 2023-04-17 17:37:32 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:719) - elemnt OPTION_ENGRAVING not visible
+INFO  | 2023-04-17 17:37:34 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickMAC_MY_ORD_RETURN_STEP1_CHECKBOX1
+INFO  | 2023-04-17 17:37:36 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickMAC_MY_ORD_RETURN_STEP1_SELECT1
+INFO  | 2023-04-17 17:37:37 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickCHECK_WITHDRAWAL
+INFO  | 2023-04-17 17:37:39 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSELECT_ITEM_RESIZE
+INFO  | 2023-04-17 17:37:40 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentMAC_MY_ORD_RETURN_STEP1_SELECT2
+INFO  | 2023-04-17 17:37:42 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSELECT_REASON_ORDER_RETURN
+INFO  | 2023-04-17 17:37:43 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickITEM_SELECT_REASON
+INFO  | 2023-04-17 17:37:44 | [main] core.KeywordWeb (KeywordWeb.java:numberOnly:910) - get Text ofORDER_NUMBER
+INFO  | 2023-04-17 17:37:45 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:286) - Executing JavaScript
+INFO  | 2023-04-17 17:37:45 | [main] core.KeywordWeb (KeywordWeb.java:switchToTab:439) - switchToTab
+INFO  | 2023-04-17 17:37:45 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:297) - Maximizing browser window...
+INFO  | 2023-04-17 17:37:45 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...ADMIN_URL
+INFO  | 2023-04-17 17:37:49 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
+INFO  | 2023-04-17 17:37:49 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
+INFO  | 2023-04-17 17:37:49 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-04-17 17:37:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME
+INFO  | 2023-04-17 17:37:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD
+INFO  | 2023-04-17 17:37:51 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2023-04-17 17:37:59 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentCHECK_SHOW_INCOMING_MODAL_BE
+INFO  | 2023-04-17 17:38:00 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:499) -  scrolling to position 
+INFO  | 2023-04-17 17:38:00 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:475) - scrollDownToElementITEM_INVENTORY
+INFO  | 2023-04-17 17:38:01 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickITEM_INVENTORY
+INFO  | 2023-04-17 17:38:01 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:672) - webDriverWaitForElementPresentITEM_INSTOCK_REQUEST
+INFO  | 2023-04-17 17:38:04 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickITEM_INSTOCK_REQUEST
+INFO  | 2023-04-17 17:38:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:672) - webDriverWaitForElementPresentFOEM_INSTOCK
+INFO  | 2023-04-17 17:38:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSEARCH_ORDER_IDwith 729339812
+
+INFO  | 2023-04-17 17:38:20 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentMESSAGE_NOT_FILTER
+INFO  | 2023-04-17 17:38:21 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:499) -  scrolling to position 
+INFO  | 2023-04-17 17:38:21 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:475) - scrollDownToElementPRODUCT_OPTION
+INFO  | 2023-04-17 17:38:21 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickPRODUCT_OPTION
+INFO  | 2023-04-17 17:38:21 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:672) - webDriverWaitForElementPresentSELECT_OPTION_PRODUCT
+INFO  | 2023-04-17 17:38:23 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSELECT_OPTION_PRODUCT
+INFO  | 2023-04-17 17:38:29 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:672) - webDriverWaitForElementPresentFORM_MANAGRE_PRODUCT
+INFO  | 2023-04-17 17:38:30 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSEARCH_ORDER_ID_PRODUCTwith 729339812
+
+INFO  | 2023-04-17 17:38:33 | [main] core.KeywordWeb (KeywordWeb.java:getText:180) - get Text ofGET_CODE_RETURN_PRODUCT
+INFO  | 2023-04-17 17:38:33 | [main] core.KeywordWeb (KeywordWeb.java:switchToTab:439) - switchToTab
+INFO  | 2023-04-17 17:38:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysINPUT_SEND_CODE_RETURNwith 83fca770
+INFO  | 2023-04-17 17:38:35 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSELECT_METHOD_PAYMENT
+INFO  | 2023-04-17 17:38:36 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSELECT_METHOD_OPTION
+INFO  | 2023-04-17 17:38:38 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:475) - scrollDownToElementCHOSE_SHIPPING
+INFO  | 2023-04-17 17:38:38 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickCHOSE_SHIPPING
+INFO  | 2023-04-17 17:38:39 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickMAC_MY_ORD_RETURN_STEP3
+INFO  | 2023-04-17 17:38:41 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickMAC_MY_ORD_RETURN_SUBMIT
+INFO  | 2023-04-17 17:38:46 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:758) - compare from MESSAGE_RETURNSUCCESS with INPUT_MESSAGE_SUCCESS
+INFO  | 2023-04-17 17:38:49 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_MYRETUREN
+INFO  | 2023-04-17 17:38:53 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_VIEW_DETAIL_ORDER_RETURN
+INFO  | 2023-04-17 17:38:57 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentCLICK_LINK_HEAR
+INFO  | 2023-04-17 17:38:58 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_CANCEL_MY_RETURN
+INFO  | 2023-04-17 17:39:00 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_OK_CANCEL
+INFO  | 2023-04-17 17:39:07 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:758) - compare from MESSAGE_CANCEL_SUCCESS with SIGNUP_CODE_RESEND
