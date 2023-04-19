@@ -285,6 +285,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
 
+
     }
 
     //click button Edit depends on the type of product
@@ -868,10 +869,14 @@ public class ShoppingBagPage extends BasePage {
         //paying by Affirm and finish order then go back success page on glamira site
         keyword.webDriverWaitForElementPresent("AFFIRM_TBX_PHONE", 300);
         keyword.sendKeys("AFFIRM_TBX_PHONE", "AFFIRM_DATA_PHONE");
+        keyword.webDriverWaitForElementPresent("AFFIRM_BTN_CONTINUE", 300);
         keyword.click("AFFIRM_BTN_CONTINUE");
+        keyword.webDriverWaitForElementPresent("AFFIRM_TBX_CODE", 300);
         keyword.sendKeys("AFFIRM_TBX_CODE","1234");
-        keyword.webDriverWaitForElementPresent("AFFIRM_LBL_APROVED",300);
+        keyword.webDriverWaitForElementPresent("AFFIRM_BTN_3MONTHS",300);
         keyword.click("AFFIRM_BTN_3MONTHS");
+        keyword.webDriverWaitForElementPresent("AFFIRM_BTN_CONTINUE",10);
+        keyword.click("AFFIRM_BTN_CONTINUE");
         keyword.webDriverWaitForElementPresent("AFFIRM_CBX_ARGEE",10);
         keyword.click("AFFIRM_CBX_ARGEE");
         keyword.click("AFFIRM_BTN_CONTINUE");

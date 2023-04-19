@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"48991912c9eea5da91ccef1af7ed035f","name":"Test Staging Suite","statistic":{"failed":0,"broken":7,"skipped":0,"passed":16,"unknown":0,"total":23}}]}
+{"total":1,"items":[{"uid":"48991912c9eea5da91ccef1af7ed035f","name":"Test Staging Suite","statistic":{"failed":0,"broken":1,"skipped":0,"passed":17,"unknown":0,"total":18}}]}

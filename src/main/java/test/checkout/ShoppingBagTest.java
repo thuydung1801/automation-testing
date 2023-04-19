@@ -254,6 +254,7 @@ public class ShoppingBagTest extends BaseTest {
     public void testCase_SP_25(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_25");
         //commonShopping();
+
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.clickEdit("CHECKOUT_BTN_EDIT_UNIVERSE");
         objShoppingBagPage.missingFillSize();
@@ -264,7 +265,8 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_SP_26_RV_02_04(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_26");
-//        commonShopping();
+        //commonShopping();
+        //objShoppingBagPage.addProductWithGift(baseURL+"universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         //objShoppingBagPage.clickGiftWrapping();
         objShoppingBagPage.moveToPagecheckOut();
@@ -276,7 +278,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_SP_26_RV_02_04_dev(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_26");
-        //commonShopping1();
+        commonShopping1();
         objShoppingBagPage.clickShoppingBagPage();
         //objShoppingBagPage.clickGiftWrapping();
         objShoppingBagPage.moveToPagecheckOut();
@@ -319,8 +321,22 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters({"baseURL"})
     public void testcase_addImageProduct(String baseURL) throws InterruptedException {
         logger.info("Add product that must to choose language");
+        keyword.navigateToUrl("https://stage.glamira.com/");
         commonShopping();
         objShoppingBagPage.addImageProduct(baseURL);
+    }
+
+    @Test
+            (description = "Check out success with Affirm Payment Method")
+    @Parameters({"baseURL"})
+    public void testcase_checkoutAffirm(String baseURL) throws InterruptedException {
+        logger.info("Add product that must to choose language");
+//        keyword.navigateToUrl("https://stage.glamira.com/");
+//        commonShopping();
+        objShoppingBagPage.clickShoppingBagPage();
+        objShoppingBagPage.moveToPagecheckOut();
+        objShoppingBagPage.checkOut();
+        objShoppingBagPage.checkOutWithAffirm();
     }
 
     @Test
