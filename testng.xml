@@ -38,7 +38,7 @@
         <classes>
             <class name="test.LoginReturnFormTest">
              <methods>
-                    <include name="testCase_MR_O3"/>
+                    <include name="testCase_MR_02_O3"/>
                 </methods>
             </class>
         </classes>

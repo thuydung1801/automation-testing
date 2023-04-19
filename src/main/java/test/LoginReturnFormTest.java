@@ -73,12 +73,12 @@ public class LoginReturnFormTest extends BaseTest {
         objLoginReturn.orderReturned();
     }
 //    MY RETURN
-    @Test(priority = 10, description = "Cancel My Return successfully on viewDetail")
-    public void testCase_MR_O3() throws InterruptedException {
+    @Test(priority = 10, description = "View Detail return successfully & Cancel My Return successfully on viewDetail")
+    public void testCase_MR_02_O3() throws InterruptedException {
 //        setUpLogin();
         objLoginReturn.CancelMyReturn(true);
     }
-    @Test(priority = 11, description = "Cancel My Return successfully on viewDetail")
+    @Test(priority = 11, description = "Add tracking infomation successfully")
     public void testCase_MR_O4() throws InterruptedException {
 //        setUpLogin();
         objLoginReturn.CancelMyReturn(true);
