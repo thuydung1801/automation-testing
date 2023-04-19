@@ -32,7 +32,7 @@ public class ShoppingBagPageMobile extends BasePage {
         myAccountPage = new MyAccountPage();
         shoppingBagPage=new ShoppingBagPage();
     }
-    public void inputCorrectly(String data, String engraving) throws InterruptedException {
+    public void inputCorrectly(String data, String engraving, String domain) throws InterruptedException {
 //        keyword.click("CHECKOUT_VIEWDETAIL_BTN_SAVE");
 //        Thread.sleep(10000);
 //        keyword.click("CHECKOUT_BTN_VIEWDETAIL_COUPLERING_MOBILE");
@@ -42,7 +42,7 @@ public class ShoppingBagPageMobile extends BasePage {
 //        logger.info(expect);
 //        keyword.simpleAssertEquals(expect+ " - "+ expect
 //                , actual);
-        shoppingBagPage.inputCorrectly(data,engraving);
+        shoppingBagPage.inputCorrectly(data,engraving, domain);
         keyword.click("PRD_BTN_CLOSE_VIEWDETAIL");
     }
 

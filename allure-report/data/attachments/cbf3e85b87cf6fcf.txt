@@ -1,1 +1,0 @@
-testCase_SP_16 failed and screenshot taken!
