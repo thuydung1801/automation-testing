@@ -661,6 +661,17 @@ public class KeywordWeb {
         int xpathCount = driver.findElements(By.xpath(xPathElement)).size();
         return xpathCount + 1;
     }
+
+    public void chooseFile(String element, String path){
+        logger.info("choose file from " + path);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        WebElement chooseFile = driver.findElement(By.xpath(xPathElement));
+        //path is absolute path to link to file that you want to choose
+        chooseFile.sendKeys(path);
+    }
     // wait keywords
 
     public void imWait(long timeout) {

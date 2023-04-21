@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"total":1,"items":[{"uid":"6f97c5c33c26e6c22b6fdf009e7bb340","name":"LAT","statistic":{"failed":0,"broken":0,"skipped":0,"passed":48,"unknown":0,"total":48}}]}
+=======
+{"total":1,"items":[{"uid":"48991912c9eea5da91ccef1af7ed035f","name":"Test Staging Suite","statistic":{"failed":0,"broken":1,"skipped":0,"passed":17,"unknown":0,"total":18}}]}
+>>>>>>> master

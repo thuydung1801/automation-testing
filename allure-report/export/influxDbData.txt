@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 launch_status failed=0 1680767115000000000
 launch_status broken=0 1680767115000000000
 launch_status passed=48 1680767115000000000
@@ -9,3 +10,17 @@ launch_time max_duration=165133 1680767115000000000
 launch_time sum_duration=1188723 1680767115000000000
 launch_retries retries=104 1680767115000000000
 launch_retries run=48 1680767115000000000
+=======
+launch_status failed=0 1680778295000000000
+launch_status broken=1 1680778295000000000
+launch_status passed=17 1680778295000000000
+launch_status skipped=0 1680778295000000000
+launch_status unknown=0 1680778295000000000
+launch_time duration=6037227 1680778295000000000
+launch_time min_duration=13908 1680778295000000000
+launch_time max_duration=169330 1680778295000000000
+launch_time sum_duration=1225441 1680778295000000000
+launch_problems test_defects=1 1680778295000000000
+launch_retries retries=0 1680778295000000000
+launch_retries run=18 1680778295000000000
+>>>>>>> master

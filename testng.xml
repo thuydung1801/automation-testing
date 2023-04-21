@@ -1,71 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!--<suite name="Test Staging Suite" parallel="tests">-->
-<!--    <test name="RunTest">-->
-<!--        <classes>-->
-<!--            <class name="test.checkout.ShoppingBagTest">-->
-<!--            <methods>-->
-<!--&lt;!&ndash;                <include name="testCase_SP_02"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="testCase_CheckoutWithGiftCard"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="testCase_SP_17"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="testCase_SP_26_RV_02_04"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="testCase_SP_24"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="testCase_SP_04"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="testCase_RV_07"/>&ndash;&gt;-->
-<!--                <include name="testCase_RV_33"/>-->
-<!--            </methods>-->
-<!--            </class>-->
-<!--            <class name="test.MyAccountTest">-->
-<!--                <methods>-->
-<!--                    <include name="testCase_Myorder_05"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="test.CreateAccountOnWebTest">-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--&lt;!&ndash;    <test name="Mobile">&ndash;&gt;-->
-<!--&lt;!&ndash;        <parameter name="devices" value="mobile"></parameter>&ndash;&gt;-->
-<!--&lt;!&ndash;        <classes>&ndash;&gt;-->
-<!--&lt;!&ndash;            <class name="test.CreateAccountMobileTest"></class>&ndash;&gt;-->
-<!--&lt;!&ndash;        </classes>&ndash;&gt;-->
-<!--&lt;!&ndash;    </test>&ndash;&gt;-->
-<!--</suite>-->
-<suite name="LAT">
-    <test name="Run Test1">
+<suite name="Test Staging Suite">
+    <test name="RunTest">
         <parameter name="devices" value="web"></parameter>
         <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
+
             <class name="test.LoginReturnFormTest">
-             <methods>
-                    <include name="testCase_MR_02_O3"/>
-                </methods>
+<!--                <methods>-->
+<!--                    <include name="testCase_SP_02"/>-->
+<!--                    <include name="testCase_SP_03"/>-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_15"/>&                       ndash;&gt;-->
+<!--                    <include name="testCase_SP_01"/>-->
+<!--                    <include name="testCase_SP_04"/>-->
+<!--                    <include name="testCase_SP_05"/>-->
+<!--                    <include name="testCase_SP_16"/>-->
+<!--                    <include name="testCase_SP_17"/>-->
+<!--                    <include name="testCase_SP_18"/>-->
+<!--                    <include name="testCase_SP_19"/>-->
+<!--                    <include name="testCase_SP_21"/>-->
+<!--                    <include name="testCase_SP_24"/>-->
+<!--                    <include name="testCase_SP_25"/>-->
+<!--                    <include name="testCase_SP_26_RV_02_04"/>-->
+<!--                    <include name="testCase_RV_05"/>-->
+<!--                    <include name="testCase_RV_06"/>-->
+<!--                    <include name="testCase_RV_07"/>-->
+
+<!--                </methods>-->
             </class>
         </classes>
     </test>
-    <!--    <test name="Run Test 2">-->
-    <!--        <classes>-->
-    <!--            <parameter name="devices" value="web"></parameter>-->
-    <!--            <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>-->
-    <!--            <class name="test.signinSignup.SignInTest"></class>-->
-    <!--        </classes>-->
-    <!--    </test>-->
-    <!--&lt;!&ndash;    <test name="Run Test 3">&ndash;&gt;-->
-    <!--&lt;!&ndash;        <parameter name="devices" value="mobile"></parameter>&ndash;&gt;-->
-    <!--&lt;!&ndash;        <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>&ndash;&gt;-->
-    <!--&lt;!&ndash;        <classes>&ndash;&gt;-->
-    <!--&lt;!&ndash;            <class name="test.MyAccountMobileTest"></class>&ndash;&gt;-->
-    <!--&lt;!&ndash;        </classes>&ndash;&gt;-->
-    <!--&lt;!&ndash;    </test>&ndash;&gt;-->
-    <!--    <test name="Run Test 4">-->
-    <!--        <parameter name="devices" value="web"></parameter>-->
-    <!--        <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>-->
-    <!--        <classes>-->
-    <!--            <class name="test.LoginReturnFormTest">-->
-    <!--                <methods>-->
-    <!--                    <include name="testCase_LS_07"/>-->
-    <!--                </methods>-->
-    <!--            </class>-->
-    <!--        </classes>-->
-    <!--    </test>-->
+<!--    <test name="Mobile">-->
+<!--        <parameter name="devices" value="web"></parameter>-->
+<!--        <parameter name="baseURL" value="https://stage.glamira.com/"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="test.checkout.ShoppingBagTest">-->
+<!--                <methods>-->
+<!--                    <include name="testcase_addImageProduct"/>-->
+<!--                    <include name="testcase_checkoutAffirm"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
+

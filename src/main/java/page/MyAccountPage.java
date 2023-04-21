@@ -573,7 +573,6 @@ public class MyAccountPage extends BasePage {
         keyword.navigateToUrl(baseURL+"catalog/product_compare/index/");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10, "//div[@class='loading-mask']");
-        keyword.navigateToUrl("URL_WISHLIST_PRODUCT_DETAIL");
         commonWishList("MAC_BTN_HEART");
 
     }
