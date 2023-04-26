@@ -7,10 +7,10 @@
         <classes>
 
             <class name="test.LoginReturnFormTest">
-<!--                <methods>-->
-<!--                    <include name="testCase_SP_02"/>-->
+                <methods>
+                    <include name="testCase_Login_return_issue"/>
 <!--                    <include name="testCase_SP_03"/>-->
-<!--&lt;!&ndash;                    <include name="testCase_SP_15"/>&                       ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_15"/>&ndash;&gt;-->
 <!--                    <include name="testCase_SP_01"/>-->
 <!--                    <include name="testCase_SP_04"/>-->
 <!--                    <include name="testCase_SP_05"/>-->
@@ -25,22 +25,21 @@
 <!--                    <include name="testCase_RV_05"/>-->
 <!--                    <include name="testCase_RV_06"/>-->
 <!--                    <include name="testCase_RV_07"/>-->
-
-<!--                </methods>-->
+                </methods>
             </class>
         </classes>
     </test>
-<!--    <test name="Mobile">-->
-<!--        <parameter name="devices" value="web"></parameter>-->
-<!--        <parameter name="baseURL" value="https://stage.glamira.com/"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="test.checkout.ShoppingBagTest">-->
-<!--                <methods>-->
-<!--                    <include name="testcase_addImageProduct"/>-->
-<!--                    <include name="testcase_checkoutAffirm"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <!--    <test name="Mobile">-->
+    <!--        <parameter name="devices" value="web"></parameter>-->
+    <!--        <parameter name="baseURL" value="https://stage.glamira.com/"></parameter>-->
+    <!--        <classes>-->
+    <!--            <class name="test.checkout.ShoppingBagTest">-->
+    <!--                <methods>-->
+    <!--                    <include name="testcase_addImageProduct"/>-->
+    <!--                    <include name="testcase_checkoutAffirm"/>-->
+    <!--                </methods>-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
 </suite>
 

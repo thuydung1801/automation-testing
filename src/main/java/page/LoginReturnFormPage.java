@@ -18,11 +18,13 @@ public class LoginReturnFormPage extends BasePage {
     public SignInPage signInPage;
     public RegisterPage objRegister;
     public SignInPage objSignIn;
+    public RegisterPage objRegist;
 
     public LoginReturnFormPage() {
         super();
         objRegister = new RegisterPage(this.keyword);
         objSignIn = new SignInPage(this.keyword);
+        objRegist = new RegisterPage(this.keyword);
     }
 
     public void goToFormLoginReturn() throws InterruptedException {
@@ -96,6 +98,19 @@ public class LoginReturnFormPage extends BasePage {
 //            cancelOrderReturn();
 //        }
         orderReturn("DATA_EMAIL_RETURN2", "DATA_PASSWORD_LOGIN_RETURN", "OPTION_ENGRAVING", "CHECK_WITHDRAWAL", "SELECT_OPTION_ORDER_ITEM_RETURN");
+    }
+
+//    login issue
+
+    public void returnFormIssue() throws InterruptedException {
+        keyword.navigateToUrl("https://stage.glamira.com/");
+        objRegist.acceptAllCookies();
+        goToFormLoginReturn();
+        if (keyword.verifyElementPresent("EMAIL_USER")) {
+            keyword.untilJqueryIsDone(50L);
+            dataFormLoginReturnForm("DATA_EMAIL_RETURN_PHONE", "DATA_PASSWORD_LOGIN_RETURN_PHONE", false, "DATA_MESSAGE_MISSING", "ACTUAL_MESSAGE_MISSING", "", false);
+        }
+
     }
 
     public void reloadAdDeleteCookies() throws InterruptedException {
@@ -187,7 +202,7 @@ public class LoginReturnFormPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_VIEW_DETAIL_ORDER_RETURN");
         keyword.untilJqueryIsDone(50L);
-        if(keyword.verifyElementPresent("CLICK_LINK_HEAR")){
+        if (keyword.verifyElementPresent("CLICK_LINK_HEAR")) {
             keyword.click("CLICK_LINK_HEAR");
         }
         keyword.untilJqueryIsDone(30L);

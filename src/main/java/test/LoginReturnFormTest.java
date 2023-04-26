@@ -83,14 +83,21 @@ public class LoginReturnFormTest extends BaseTest {
 //        setUpLogin();
         objLoginReturn.CancelMyReturn(true);
     }
-    @Test(priority = 11, description = "Click Save button on the return detail and not add any tracking infomation")
+    @Test(priority = 12, description = "Click Save button on the return detail and not add any tracking infomation")
     public void testCase_MR_O5() throws InterruptedException {
 //        setUpLogin();
         objLoginReturn.CancelMyReturn(true);
     }
-    @Test(priority = 11, description = "Edit tracking infomation successfully")
+    @Test(priority = 13, description = "Edit tracking infomation successfully")
     public void testCase_MR_O6() throws InterruptedException {
 //        setUpLogin();
         objLoginReturn.CancelMyReturn(true);
     }
+
+    @Test(priority = 14, description = "Return form issue with site has login with mobile")
+    public void testCase_Login_return_issue() throws InterruptedException {
+//        setUpLogin();
+        objLoginReturn.returnFormIssue();
+    }
+
 }

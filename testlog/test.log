@@ -1,99 +1,25 @@
-INFO  | 2023-04-20 22:41:32 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:47) - Open browser
-INFO  | 2023-04-20 22:41:36 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 112.0.5615.49 (resolved driver for Chrome 112)
-INFO  | 2023-04-20 22:41:36 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\112.0.5615.49\chromedriver.exe
-INFO  | 2023-04-20 22:41:39 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:63) - open browser successfullyCHROME
-INFO  | 2023-04-20 22:41:39 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:66) - go to url: https://stage.glamira.co.uk/
-INFO  | 2023-04-20 22:41:39 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - url: [Ljava.lang.String;@45cec376
-INFO  | 2023-04-20 22:41:47 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:297) - Maximizing browser window...
-INFO  | 2023-04-20 22:41:49 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-04-20 22:41:57 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-20 22:42:04 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-20 22:42:05 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-04-20 22:42:05 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-04-20 22:42:11 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
-INFO  | 2023-04-20 22:42:14 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:286) - Executing JavaScript
-INFO  | 2023-04-20 22:42:15 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_RETURN_FORM_BTN_RETURN
-INFO  | 2023-04-20 22:42:24 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleMENU_LEFT_RETURN_FORM
-INFO  | 2023-04-20 22:42:24 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_RETURN_FORM
-INFO  | 2023-04-20 22:42:33 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:42:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_INVALID
-INFO  | 2023-04-20 22:42:39 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-20 22:42:40 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from DATA_EMAIL_FAIL with EMAIL_ERROR
-INFO  | 2023-04-20 22:42:42 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:42:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_NOT_HAVE_ORDER_RETURN
-INFO  | 2023-04-20 22:42:48 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-20 22:42:52 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from MESSAGE_NOT_HAVE_ORDER_RETURN with RETURN_MESSAGE_CONTENT
-INFO  | 2023-04-20 22:42:53 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:42:56 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysINPUT_EMAIL_FORMwith 
-INFO  | 2023-04-20 22:42:56 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-20 22:42:57 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_DATA_VERIFY_MESSAGE with EMAIL_ERROR
-INFO  | 2023-04-20 22:42:58 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:43:02 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_RETURN
-INFO  | 2023-04-20 22:43:02 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-20 22:43:05 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleSIGNUP_PASSWORD_INFORMATION
-INFO  | 2023-04-20 22:43:06 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith REGIST_DATA_PASSWORD
-INFO  | 2023-04-20 22:43:07 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-20 22:43:10 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_RETURN
-INFO  | 2023-04-20 22:43:10 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from LA_MESSAGE_INVALID_LOGIN with MESSAGE_FAIL_RETURN_FORM
-INFO  | 2023-04-20 22:43:11 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:43:14 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_RETURN
-INFO  | 2023-04-20 22:43:14 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-20 22:43:18 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleSIGNUP_PASSWORD_INFORMATION
-INFO  | 2023-04-20 22:43:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith DATA_PASSWORD_LOGIN_RETURN
-INFO  | 2023-04-20 22:43:19 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-20 22:43:22 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_RETURN
-INFO  | 2023-04-20 22:43:22 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from DATA_LABLE with STEP_LABLE
-INFO  | 2023-04-20 22:43:23 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-04-20 22:43:31 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-20 22:43:31 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-04-20 22:44:22 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:44:24 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-04-20 22:44:26 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-04-20 22:44:26 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:44:35 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-04-20 22:44:43 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-20 22:44:50 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-20 22:44:50 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-04-20 22:44:50 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-04-20 22:44:56 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
-INFO  | 2023-04-20 22:45:02 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentCHECK_FORM_LOGIN
-INFO  | 2023-04-20 22:45:03 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:286) - Executing JavaScript
-INFO  | 2023-04-20 22:45:04 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_RETURN_FORM_BTN_RETURN
-INFO  | 2023-04-20 22:45:08 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleMENU_LEFT_RETURN_FORM
-INFO  | 2023-04-20 22:45:09 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_RETURN_FORM
-INFO  | 2023-04-20 22:45:13 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:45:16 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_RETURN2
-INFO  | 2023-04-20 22:45:16 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-20 22:45:19 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleSIGNUP_PASSWORD_INFORMATION
-INFO  | 2023-04-20 22:45:21 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith DATA_PASSWORD_LOGIN_RETURN
-INFO  | 2023-04-20 22:45:21 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:45:22 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-04-20 22:45:25 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-04-20 22:45:25 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:45:30 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-04-20 22:45:38 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-20 22:45:45 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-20 22:45:45 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-04-20 22:45:45 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-04-20 22:45:51 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
-INFO  | 2023-04-20 22:45:54 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentCHECK_FORM_LOGIN
-INFO  | 2023-04-20 22:45:55 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:286) - Executing JavaScript
-INFO  | 2023-04-20 22:45:56 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_RETURN_FORM_BTN_RETURN
-INFO  | 2023-04-20 22:46:01 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleMENU_LEFT_RETURN_FORM
-INFO  | 2023-04-20 22:46:01 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_RETURN_FORM
-INFO  | 2023-04-20 22:46:06 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:46:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_RETURN2
-INFO  | 2023-04-20 22:46:10 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
-INFO  | 2023-04-20 22:46:14 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleSIGNUP_PASSWORD_INFORMATION
-INFO  | 2023-04-20 22:46:15 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith DATA_PASSWORD_LOGIN_RETURN
-INFO  | 2023-04-20 22:46:15 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:46:19 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-04-20 22:46:20 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-04-20 22:46:20 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-04-20 22:46:25 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-04-20 22:46:33 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-20 22:46:40 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-20 22:46:41 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-04-20 22:46:41 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-04-20 22:46:47 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
-INFO  | 2023-04-20 22:46:47 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-04-26 17:45:56 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:47) - Open browser
+INFO  | 2023-04-26 17:45:58 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 112.0.5615.49 (resolved driver for Chrome 112)
+INFO  | 2023-04-26 17:45:58 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\112.0.5615.49\chromedriver.exe
+INFO  | 2023-04-26 17:46:01 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:63) - open browser successfullyCHROME
+INFO  | 2023-04-26 17:46:01 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:66) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-04-26 17:46:01 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - url: [Ljava.lang.String;@47b67fcb
+INFO  | 2023-04-26 17:46:10 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:297) - Maximizing browser window...
+INFO  | 2023-04-26 17:46:12 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...https://stage.glamira.com/
+INFO  | 2023-04-26 17:46:17 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
+INFO  | 2023-04-26 17:46:26 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-04-26 17:46:33 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-04-26 17:46:33 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-04-26 17:46:33 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-04-26 17:46:39 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
+INFO  | 2023-04-26 17:46:43 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:286) - Executing JavaScript
+INFO  | 2023-04-26 17:46:44 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_RETURN_FORM_BTN_RETURN
+INFO  | 2023-04-26 17:46:51 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleMENU_LEFT_RETURN_FORM
+INFO  | 2023-04-26 17:46:52 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_RETURN_FORM
+INFO  | 2023-04-26 17:46:57 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentEMAIL_USER
+INFO  | 2023-04-26 17:46:59 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-04-26 17:47:04 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysINPUT_EMAIL_FORMwith DATA_EMAIL_RETURN_PHONE
+INFO  | 2023-04-26 17:47:05 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
+INFO  | 2023-04-26 17:47:13 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleSIGNUP_PASSWORD_INFORMATION
+INFO  | 2023-04-26 17:47:14 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith DATA_PASSWORD_LOGIN_RETURN_PHONE
+INFO  | 2023-04-26 17:47:14 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SUBMIT_RETURN_FORM
