@@ -26,11 +26,12 @@
 <suite name="Test Mobile" parallel="tests">
     <test name="IPhone 12 Pro">
         
-
+<!--https://stage.glamira.co.uk/-->
+<!--https://www.glamira.com/-->
         <parameter name="devices" value="web"></parameter>
-        <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
+        <parameter name="baseURL" value="https://www.glamira.com/"></parameter>
         <classes>
-            <class name="test.MyAccountTest">
+<!--            <class name="test.MyAccountTest">-->
 <!--                <methods>-->
 <!--                    <include name="testCase_PI_01"/>-->
 <!--                    <include name="testCase_Myorder_05"/>-->
@@ -39,6 +40,19 @@
 <!--                    <include name="testCase_MW_04"/>-->
 <!--                    <include name="testCase_MW_05"/>-->
 <!--                </methods>-->
+<!--            </class>-->
+            <class name="test.ProductDetailTest">
+                                <methods>
+<!--                                    <include name="testCase_NPP_12"/>-->
+<!--                                    <include name="testCase_NPP_13"/>-->
+<!--                                    <include name="testCase_NPP_14"/>-->
+<!--                                    <include name="testCase_PP_01"/>-->
+<!--                                    <include name="testCase_PP_02"/>-->
+                                    <include name="testCase_PP_03"/>
+                <!--                    <include name="testCase_MW_03"/>-->
+                <!--                    <include name="testCase_MW_04"/>-->
+                <!--                    <include name="testCase_MW_05"/>-->
+                                </methods>
             </class>
 
 

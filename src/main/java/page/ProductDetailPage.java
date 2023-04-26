@@ -519,7 +519,118 @@ public class ProductDetailPage extends BasePage {
 
     }
 
+    public void checkChangePrice(String beforePrice, String afterPrice,String verifyImg){
+        boolean check;
+        if(keyword.verifyElementVisible(verifyImg) && !beforePrice.equalsIgnoreCase(afterPrice)){
+            check=true;
+        } else{
+            check=false;
+        }
+        Assert.assertEquals(check,true);
+    }
+    public void checkPrice(String beforePrice, String afterPrice){
+        boolean check;
+        if(beforePrice.equalsIgnoreCase(afterPrice)){
+            check=true;
+        }else{
+            check=false;
+        }
+        Assert.assertEquals(check,true);
+    }
+    public void commonVerifyProductPageWithOption1(String beforePrice, String afterPrice,String option,String backUrl,String verifyImg ) throws InterruptedException {
+//        boolean check;
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(30L);
+        String bfPrice = keyword.getText(beforePrice);
+        keyword.untilJqueryIsDone(30L);
+        if (backUrl!=null){
+            keyword.navigateToUrl(backUrl);
+        }
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+        keyword.click(option);
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+        String afPrice = keyword.getText(afterPrice);
+        System.out.printf("before : " + bfPrice + "\n" + "after : " + afPrice + "\n");
+        if(verifyImg!=null){
+            checkChangePrice(bfPrice,afPrice,verifyImg);
+        }
+        else {
+            checkPrice(bfPrice,afPrice);
+        }
 
+    }
 
+    public void newNPP12(String baseURL) throws InterruptedException {
+        setUp();
+        keyword.navigateToUrl(baseURL + "glamira-ring-leila-skug100425.html?alloy=white-585&stone1=diamond-Brillant&stone2=diamond-Brillant");
+        commonVerifyProductPageWithOption1("PRD_NEW_PAGE_GET_PRICE","PRD_NEW_PAGE_GET_PRICE",
+                    "PRD_NEW_PAGE_OPTION_STONE",null,"PRD_NEW_PAGE_VERIFY_IMG_1");
+    }
+    public void newNPP13(String baseURL) throws InterruptedException {
+        keyword.navigateToUrl(baseURL + "glamira-ring-alceste.html?alloy=white-585&stone1=diamond-Brillant&stone2=diamond-Brillant&stone3=diamond-Brillant");
+        commonVerifyProductPageWithOption1("PRD_NEW_PAGE_GET_PRICE","PRD_NEW_PAGE_GET_PRICE",
+                    "PRD_NEW_PAGE_OPTION_STONE", null,"PRD_NEW_PAGE_VERIFY_LAYER_IMG_1");
+    }
+    public void newNPP14(String baseURL) throws InterruptedException {
+        keyword.navigateToUrl(baseURL +  "glamira-halskette-maria-skug100700.html?alloy=white-585&stone1=diamond-sapphire");
+        keyword.untilJqueryIsDone(30L);
+        keyword.click("PRD_METAL_ALLOY");
+        keyword.executeJavaScript("window.scrollTo(0, 500)");
+        keyword.untilJqueryIsDone(30L);
+        keyword.click("PRD_NEW_PAGE_OPTION_COLOR");
+        keyword.untilJqueryIsDone(30L);
+        commonVerifyProductPageWithOption1("PRD_NEW_PAGE_GET_PRICE","PRD_NEW_PAGE_GET_PRICE",
+                "PRD_NEW_PAGE_OPTION_METAL", null,"PRD_NEW_PAGE_VERIFY_IMG_CHAIN");
+    }
+    public void pricePP01(String baseURL) throws InterruptedException {
+        setUp();
+        //https://www.glamira.com/
+        keyword.navigateToUrl(baseURL + "glamira-ring-verde.html");
+        commonVerifyProductPageWithOption1("PRD_PAGE_GET_PRICE","PRD_PAGE_GET_PRICE",
+                "PRD_PAGE_CLICK_PRD_PP01", baseURL + "diamond-rings/diamond/",null);
+
+    }
+    public void pricePP02(String baseURL) throws InterruptedException{
+        setUp();
+        keyword.navigateToUrl(baseURL + "exclusive-deals/");
+        commonVerifyProductPageWithOption1("PRD_LIST_PAGE_PRICE_PRD_PP02","PRD_PAGE_GET_PRICE",
+                "PRD_LIST_PAGE_CLICK_PRD_PP02", null,null);
+
+    }
+    public void pricePP03(String baseURL) throws InterruptedException{
+        setUp();
+        boolean check;
+        keyword.navigateToUrl(baseURL + "diamond-rings/");
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+        keyword.executeJavaScript("window.scrollTo(0, 900)");
+        keyword.click("PRD_LIST_PAGE_FILTER_SHAPE");
+        keyword.click("PRD_LIST_PAGE_FILTER_SHAPE_OPTION");
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+        String beforePrice = keyword.getText("PRD_LIST_PAGE_PRICE_PRD_PP03");
+
+        keyword.click("PRD_LIST_PAGE_CLICK_PRD_PP03");
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+        String afterPrice = keyword.getText("PRD_PAGE_GET_PRICE");
+
+        keyword.executeJavaScript("window.scrollTo(0, 700)");
+        keyword.click("PRD_LIST_PAGE_BTN_MORE_DETAIL");
+        String getTextShape = keyword.getText("PRD_LIST_PAGE_PRD_DETAIL_GET_SHAPE");
+        System.out.printf("before : " + beforePrice + "\n" + "after : " + afterPrice + "\n");
+        System.out.printf("shape == " + getTextShape);
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+
+        if(getTextShape.equalsIgnoreCase(PropertiesFile.getPropValue("PRD_LIST_PAGE_PRD_DETAIL_DATA_SHAPE")) &&
+                beforePrice.equalsIgnoreCase(afterPrice) ){
+            check=true;
+        }else{
+            check=false;
+        }
+        Assert.assertEquals(check,true);
+    }
 
 }

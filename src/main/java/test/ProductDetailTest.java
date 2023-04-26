@@ -1,6 +1,7 @@
 package test;
 
 import core.BaseTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.ProductDetailPage;
 
@@ -124,6 +125,36 @@ public class ProductDetailTest extends BaseTest {
     @Test (priority = 26, description = "Edit set option for product wedding set and then still select old option on modal")
     public void testCase_NPP_08() throws InterruptedException {
         testProductDetail.newNPP08();
+    }
+    @Test (priority = 27, description = "Check stone quality for stone that are not layer image")
+    @Parameters("baseURL")
+    public void testCase_NPP_12(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP12(baseURL);
+    }
+    @Test (priority = 28, description = "Check stone quality for stone that are layer image")
+    @Parameters("baseURL")
+    public void testCase_NPP_13(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP13(baseURL);
+    }
+    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
+    @Parameters("baseURL")
+    public void testCase_NPP_14(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP14(baseURL);
+    }
+    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
+    @Parameters("baseURL")
+    public void testCase_PP_01(String baseURL) throws InterruptedException {
+        testProductDetail.pricePP01(baseURL);
+    }
+    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
+    @Parameters("baseURL")
+    public void testCase_PP_02(String baseURL) throws InterruptedException {
+        testProductDetail.pricePP02(baseURL);
+    }
+    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
+    @Parameters("baseURL")
+    public void testCase_PP_03(String baseURL) throws InterruptedException {
+        testProductDetail.pricePP03(baseURL);
     }
 
 }
