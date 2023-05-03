@@ -73,7 +73,7 @@ public class SignInTest extends BaseTest {
 
     @Test(priority = 10, description = "Login successfully on Login modal")
     public void testCase_SI01() throws InterruptedException {
-        objSignin.loginSuccessfully();
+        objSignin.loginSuccessfully("SIGNIN_DATA_EMAIL","SIGNIN_DATA_PASSWORD_NEW");
     }
     //----PHONE WHIT
     @Test(priority = 12, description = "Invalid phone number entered")

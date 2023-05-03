@@ -82,7 +82,7 @@ public class SignInMobileTest extends BaseTest {
 
     @Test(priority = 10, description = "Login successfully on Login modal")
     public void testCase_SI01() throws InterruptedException {
-        objSign.loginSuccessfully();
+        objSign.loginSuccessfully("SIGNIN_DATA_EMAIL","SIGNIN_DATA_PASSWORD_NEW");
     }
 
     //----WITH PHONE.

@@ -16,6 +16,7 @@ public class SignUpPage extends BasePage {
     private SignInPage objSignIn;
     private SignUpPage objSignUp;
     private RegisterPage objRegist;
+    public SignUpPage(){super();}
 
     public SignUpPage(KeywordWeb key) {
         super();

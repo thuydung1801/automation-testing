@@ -141,10 +141,10 @@ public class SignInPage extends BasePage {
     }
 
     //Login successfully on Login modal
-    public void loginSuccessfully() throws InterruptedException {
+    public void loginSuccessfully(String email, String pass) throws InterruptedException {
         keyword.untilJqueryIsDone(10L);
-        keyword.sendKeys("SIGNIN_EMAIL_LOG", "SIGNIN_DATA_EMAIL");
-        keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_NEW");
+        keyword.sendKeys("SIGNIN_EMAIL_LOG", email);
+        keyword.sendKeys("SIGNIN_PASSWORD_INPUT", pass);
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
         keyword.verifyElementVisible("LOGIN_MESSAGE_SUCCESS");
     }

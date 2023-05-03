@@ -136,11 +136,27 @@ public class ProductDetailTest extends BaseTest {
     public void testCase_NPP_13(String baseURL) throws InterruptedException {
         testProductDetail.newNPP13(baseURL);
     }
-    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
+    @Test (priority = 29, description = "Check chain option of product necklaces")
     @Parameters("baseURL")
     public void testCase_NPP_14(String baseURL) throws InterruptedException {
         testProductDetail.newNPP14(baseURL);
     }
+    @Test (priority = 30, description = "Submit form Bracelet with account not login successfully")
+    @Parameters("baseURL")
+    public void testCase_NPP_15(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP15(baseURL);
+    }
+    @Test (priority = 31, description = "Submit form Bracelet sucessfully with register account")
+    @Parameters("baseURL")
+    public void testCase_NPP_16(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP16(baseURL);
+    }
+    @Test (priority = 32, description = "Submit form Bracelet sucessfully with account login")
+    @Parameters("baseURL")
+    public void testCase_NPP_18_17(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP18_NPP17(baseURL);
+    }
+
     @Test (priority = 29, description = "Check stone quality for stone that are layer image")
     @Parameters("baseURL")
     public void testCase_PP_01(String baseURL) throws InterruptedException {
