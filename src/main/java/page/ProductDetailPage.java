@@ -121,9 +121,15 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void optionSize() throws InterruptedException {
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("PRD_DROPDOWN");
-        keyword.imWait(2);
+        Thread.sleep(2000);
+        keyword.untilJqueryIsDone(30L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.executeJavaScript("window.scrollTo(0, 300)");
         keyword.click("PRD_OPTION_SIZE");
+        Thread.sleep(2000);
+        System.out.printf("done");
     }
 
     public void productInfo() throws InterruptedException {
@@ -276,12 +282,6 @@ public class ProductDetailPage extends BasePage {
         keyword.assertEquals("PRD_DATA_TEXT_ENGRAVING3","PRD_GET_TEXT_ENGRAVING");
         removeItemProduct();
 
-    }
-    public void chooseOptionFreeSize() throws InterruptedException {
-        System.out.printf("---------test 3:check optionFreeSize " +"\n");
-        keyword.openNewTab("URL_PRODUCT_DETAIL");
-        optionFreeSize();
-        System.out.printf("=> test 3 done");
     }
 
     public void commonFindSize() throws InterruptedException {
@@ -598,7 +598,18 @@ public class ProductDetailPage extends BasePage {
         keyword.untilJqueryIsDone(60L);
         keyword.click("PRD_NEW_PAGE_CLICK_LENGTH");
         keyword.untilJqueryIsDone(60L);
+        Thread.sleep(2000);
         keyword.click("PRD_NEW_PAGE_CLICK_FIND_BRACELET_SIZE");
+    }
+    public void commonSubmitFormBraceletAndOrderRingSize() throws InterruptedException {
+//        keyword.navigateToUrl(baseURL +  "glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant");
+////        keyword.executeJavaScript("window.scrollTo(0, 300)");
+//        keyword.click("PRD_LIST_PAGE_BTN_MORE_DETAIL");
+//        keyword.untilJqueryIsDone(60L);
+//        keyword.click("PRD_NEW_PAGE_CLICK_LENGTH");
+//        keyword.untilJqueryIsDone(60L);
+//        Thread.sleep(2000);
+//        keyword.click("PRD_NEW_PAGE_CLICK_FIND_BRACELET_SIZE");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
         Thread.sleep(3000);
@@ -643,8 +654,9 @@ public class ProductDetailPage extends BasePage {
     }
 // NPP15-18 : https://dev3.glamira.com/glgb/
     public void newNPP15(String baseURL) throws InterruptedException {
-        setUp();
+//        setUp();
         commonSubmitFormBracelet(baseURL);
+        commonSubmitFormBraceletAndOrderRingSize();
         signInPage.loginSuccessfully("COM_INP_DATA_EMAIL","COM_INP_DATA_PASS");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
@@ -660,14 +672,22 @@ public class ProductDetailPage extends BasePage {
         PropertiesFile.serPropValue("COM_INP_DATA_PASS_RANDOM",pass);
         keyword.untilJqueryIsDone(60L);
     }
-    public void submitformBraceletSucessfullyWithRegisterAccount() throws InterruptedException {
+    public void submitformBraceletAndOrderRingSizeSucessfullyWithRegisterAccount(String type) throws InterruptedException {
         keyword.click("SIGNUP_BTN_CREATE_MY_ACCOUNT");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
 
         commonInputEmailAndPasswordRandom();
+        if(type.equalsIgnoreCase("Bracelet")){
+            signUpPage.sendKeyFullDataFormInformation("thuy","dung","COM_INP_DATA_EMAIL_RANDOM","COM_INP_DATA_EMAIL_RANDOM",null);
 
-        signUpPage.sendKeyFullDataFormInformation("thuy","dung","COM_INP_DATA_EMAIL_RANDOM","COM_INP_DATA_EMAIL_RANDOM");
+        }
+        else{
+            String timestamp = new java.text.SimpleDateFormat("MMddHHmm").format(new Date());
+            String phone = "03"+timestamp;
+            signUpPage.sendKeyFullDataFormInformation("thuy","dung","COM_INP_DATA_EMAIL_RANDOM","COM_INP_DATA_EMAIL_RANDOM",phone);
+
+        }
         keyword.click("PRD_NEW_PAGE_BTN_NEXT");
         keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
 
@@ -680,20 +700,23 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void newNPP16(String baseURL) throws InterruptedException {
-        objLoginAddress.resetForNewCase();
+        setUp();
+//        objLoginAddress.resetForNewCase();
         commonSubmitFormBracelet(baseURL);
-        submitformBraceletSucessfullyWithRegisterAccount();
+        commonSubmitFormBraceletAndOrderRingSize();
+        submitformBraceletAndOrderRingSizeSucessfullyWithRegisterAccount("Bracelet");
         commonInputInformationOrderBraceletSizer(false);
     }
     public void newNPP18_NPP17(String baseURL) throws InterruptedException {
         objLoginAddress.resetForNewCase();
-        commonInputEmailAndPasswordRandom();
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_RANDOM","COM_INP_DATA_PASS_RANDOM",null,null,true);
+//        commonInputEmailAndPasswordRandom();
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL","COM_INP_DATA_PASS",null,null,true);
         commonSubmitFormBracelet(baseURL);
+        commonSubmitFormBraceletAndOrderRingSize();
         keyword.click("PRD_NEW_PAGE_SUBMIT");
         keyword.assertEquals("COM_DATA_MESSAGES_NULL","COM_TEXT_ERROR");
         // NPP17
-        commonSubmitFormBracelet(baseURL);
+//        commonSubmitFormBracelet(baseURL);
         commonInputInformationOrderBraceletSizer(true);
     }
 //    public void newNPP17(String baseURL) throws InterruptedException {
@@ -702,7 +725,75 @@ public class ProductDetailPage extends BasePage {
 //        commonSubmitFormBracelet(baseURL);
 //        commonInputInformationOrderBraceletSizer(true);
 //    }
+    public void commonSubmitFormOrderRingSize(String baseURL) throws InterruptedException {
+        keyword.navigateToUrl(baseURL + "glamira-ring-hayley.html?alloy=yellow-750&stone1=emerald");
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+        keyword.executeJavaScript("window.scrollTo(0, 900)");
+        optionFreeSize();
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
 
+    }
+// NPP19-22 : https://dev1.glamira.com/glgb/
+    public void newNPP19(String baseURL) throws InterruptedException {
+        setUp();
+        commonSubmitFormOrderRingSize(baseURL);
+        commonSubmitFormBraceletAndOrderRingSize();
+        keyword.sendKeys("SIGNIN_EMAIL_LOG_DEV1", "COM_INP_DATA_EMAIL_DEV1");
+        keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "COM_INP_DATA_PASS_DEV1");
+        keyword.click("LOGIN_BTN_SUBMITLOGIN");
+//        signInPage.loginSuccessfully("COM_INP_DATA_EMAIL_DEV1","COM_INP_DATA_PASS_DEV1");
+        keyword.untilJqueryIsDone(60L);
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        Thread.sleep(3000);
+        commonInputInformationOrderBraceletSizer(false);
+    }
+    public void newNPP20(String baseURL) throws InterruptedException {
+        setUp();
+//        objLoginAddress.resetForNewCase();
+        commonSubmitFormOrderRingSize(baseURL);
+        commonSubmitFormBraceletAndOrderRingSize();
+        submitformBraceletAndOrderRingSizeSucessfullyWithRegisterAccount("RingSize");
+        commonInputInformationOrderBraceletSizer(false);
+
+    }
+    public void newNPP22_NPP21(String baseURL) throws InterruptedException {
+        objLoginAddress.resetForNewCase();
+//        commonInputEmailAndPasswordRandom();
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_DEV1","COM_INP_DATA_PASS_DEV1",null,null,true);
+        commonSubmitFormOrderRingSize(baseURL);
+        commonSubmitFormBraceletAndOrderRingSize();
+        keyword.click("PRD_NEW_PAGE_SUBMIT");
+        keyword.assertEquals("COM_DATA_MESSAGES_NULL","COM_TEXT_ERROR");
+        // NPP17
+//        commonSubmitFormBracelet(baseURL);
+        commonInputInformationOrderBraceletSizer(true);
+    }
+// NPP25-26 : https://www.glamira.co.uk/
+    public void newNPP25(String baseURL) throws InterruptedException {
+        keyword.navigateToUrl(baseURL + "glamira-bracelet-tanel.html?alloy=white_yellow-375&stone1=diamond-Brillant");
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+        keyword.click("PRD_METAL_ALLOY");
+        keyword.untilJqueryIsDone(60L);
+        keyword.click("PRD_METAL_ALLOY_OPTION");
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.verifyElementVisible("PRD_NEW_PAGE_VERIFY_IMG_COLOR_WHITE");
+
+    }
+    public void newNPP26_27(String baseURL) throws InterruptedException {
+        keyword.navigateToUrl(baseURL + "glamira-ring-josafina.html?alloy=white-585&stone2=diamond-Brillant&stone3=diamond-Brillant&stone1=emerald");
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+        keyword.click("PRD_NEW_PAGE_BTN_LAB_STONE");
+        keyword.untilJqueryIsDone(60L);
+        keyword.click("PRD_NEW_PAGE_BTN_CREATE_LAB_STONE");
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.verifyElementVisible("PRD_NEW_PAGE_TITLE_LAB_STONE");
+        if(keyword.verifyElementVisible("PRD_NEW_PAGE_LINK_BACK_NATURAL_STONE")){
+            keyword.click("PRD_NEW_PAGE_LINK_BACK_NATURAL_STONE");
+        }
+    }
 
     public void pricePP01(String baseURL) throws InterruptedException {
 //        setUp();

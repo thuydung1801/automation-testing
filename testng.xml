@@ -30,8 +30,9 @@
 <!--https://www.glamira.com/-->
 <!--https://www.glamira.co.uk/-->
 <!--https://dev3.glamira.com/glgb/-->
+<!--https://dev1.glamira.com/glgb/ -->
         <parameter name="devices" value="web"></parameter>
-        <parameter name="baseURL" value="https://dev3.glamira.com/glgb/"></parameter>
+        <parameter name="baseURL" value="https://dev1.glamira.com/glgb/"></parameter>
         <classes>
 <!--            <class name="test.MyAccountTest">-->
 <!--                <methods>-->
@@ -45,9 +46,9 @@
 <!--            </class>-->
             <class name="test.ProductDetailTest">
                                 <methods>
-                                    <include name="testCase_NPP_15"/>
-                                    <include name="testCase_NPP_16"/>
-                                    <include name="testCase_NPP_18_17"/>
+<!--                                    <include name="testCase_NPP_19"/>-->
+                                    <include name="testCase_NPP_20"/>
+<!--                                    <include name="testCase_NPP_22_21"/>-->
 <!--                                    <include name="testCase_PP_01"/>-->
 <!--                                    <include name="testCase_PP_02"/>-->
 <!--                                    <include name="testCase_PP_03"/>-->
@@ -147,5 +148,6 @@
 <!--                </methods>-->
 <!--            </class>-->
         </classes>
+
     </test>
 </suite>

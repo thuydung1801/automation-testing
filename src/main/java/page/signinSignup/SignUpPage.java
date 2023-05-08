@@ -57,7 +57,7 @@ public class SignUpPage extends BasePage {
     public void createCustomerWithEmail() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION"
-                , "SIGNUP_EMAIL_EXIST", "SIGNUP_EMAIL_EXIST");
+                , "SIGNUP_EMAIL_EXIST", "SIGNUP_EMAIL_EXIST",null);
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
@@ -65,9 +65,12 @@ public class SignUpPage extends BasePage {
     }
 
     // sendKey full data form information
-    public void sendKeyFullDataFormInformation(String firstName, String lastName, String email, String emailConfirm) throws InterruptedException {
+    public void sendKeyFullDataFormInformation(String firstName, String lastName, String email, String emailConfirm, String phone) throws InterruptedException {
         keyword.sendKeys("SIGNUP_FIRST_NAME_INFORMATION", firstName);
         keyword.sendKeys("SIGNUP_LAST_NAME_INFORMATION", lastName);
+        if(phone!=null){
+            keyword.sendKeys("SIGNUP_PHONE_INFORMATION",phone);
+        }
         keyword.sendKeys("SIGNUP_EMAIL_INFORMATION", email);
         keyword.sendKeys("SIGNUP_EMAIL_CONFIRMATION_INFORMATION", emailConfirm);
     }
@@ -312,7 +315,7 @@ public class SignUpPage extends BasePage {
 
     //Create new customer and leave with blank form for required form
     public void enterDataSignUpWithMobile() throws InterruptedException {
-        sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION", "SIGNUP_EMAIL_EXIST2", "SIGNUP_EMAIL_EXIST2");
+        sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION", "SIGNUP_EMAIL_EXIST2", "SIGNUP_EMAIL_EXIST2",null);
         keyword.click("SIGNUP_SELECT_PHONE_CHINA");
         keyword.untilJqueryIsDone(30L);
         keyword.click("SIGNUP_PHONE_CHINA");

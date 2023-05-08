@@ -163,7 +163,7 @@ public class CreateAccountOnWebPage extends BasePage {
         String emailCreateAcc = "NgocNT" + timestamp + "@gmail.com";
         PropertiesFile.serPropValue("SIGNUP_EMAIL_EXIST1", emailCreateAcc);
         objSignUp.sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION"
-                , "SIGNUP_EMAIL_EXIST1", "SIGNUP_EMAIL_EXIST1");
+                , "SIGNUP_EMAIL_EXIST1", "SIGNUP_EMAIL_EXIST1",null);
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);

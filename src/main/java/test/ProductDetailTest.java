@@ -156,6 +156,32 @@ public class ProductDetailTest extends BaseTest {
     public void testCase_NPP_18_17(String baseURL) throws InterruptedException {
         testProductDetail.newNPP18_NPP17(baseURL);
     }
+    @Test (priority = 33, description = "Order a ringsizer with account not login successfully")
+    @Parameters("baseURL")
+    public void testCase_NPP_19(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP19(baseURL);
+    }
+    @Test (priority = 34, description = "Order a ringsizer sucessfully with register account")
+    @Parameters("baseURL")
+    public void testCase_NPP_20(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP20(baseURL);
+    }
+    @Test (priority = 35, description = "Order a ringsizer sucessfully with account login")
+    @Parameters("baseURL")
+    public void testCase_NPP_22_21(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP22_NPP21(baseURL);
+    }
+    @Test (priority = 36, description = "Check Metal select logic")
+    @Parameters("baseURL")
+    public void testCase_NPP_25(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP25(baseURL);
+    }
+    @Test (priority = 37, description = "Check Lab stone option in product page")
+    @Parameters("baseURL")
+    public void testCase_NPP_26_27_28(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP26_27(baseURL);
+    }
+
 
     @Test (priority = 29, description = "Check stone quality for stone that are layer image")
     @Parameters("baseURL")
