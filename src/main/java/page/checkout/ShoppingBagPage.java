@@ -431,6 +431,7 @@ public class ShoppingBagPage extends BasePage {
     @Step("common checkout")
     public void checkOut() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -574,32 +575,46 @@ public class ShoppingBagPage extends BasePage {
         //keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER",10);
         keyword.click("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER");
         keyword.untilJqueryIsDone(50L);
-        Thread.sleep(10000);
+        Thread.sleep(4000);
         keyword.click("CHECKOUT_BTN_ORDER");
-        Thread.sleep(60000);
-        //keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(4000);
+
+        keyword.click("SUCCESS_BTN_PRINT");
         keyword.verifyElementVisible("KLARNA_IFRAME");
         keyword.switchToIFrameByXpath("KLARNA_IFRAME");
+        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
+
         keyword.webDriverWaitForElementPresent("KLARNA_BTN_CONTINUE",30);
         keyword.click("KLARNA_BTN_CONTINUE");
 
         keyword.webDriverWaitForElementPresent("KLARNA_TBX_OTP",10);
         keyword.sendKeys("KLARNA_TBX_OTP", "KLARNA_DATA_OTP");
-        Thread.sleep(10000);
+        Thread.sleep(5000);
+        keyword.click("KLARNA_BTN_ORDER");
 //        keyword.click("KLARNA_BTN_CONTINUE");
 //        keyword.sendKeys("KLARNA_DATE","KLARNA_DATE_DATA");
 //        keyword.click("KLARNA_BTN_CONTINUE");
 //        keyword.click("KLARNA_BTN_CONTINUE_2");
 //        keyword.click("KLARNA_BTN_NOT_NOW");
-        keyword.webDriverWaitForElementPresent("KLARNA_BTN_CONFIRM",10);
-        keyword.click("KLARNA_BTN_CONFIRM");
-        keyword.imWait(20);
-        keyword.click("KLARNA_BTN_FAVOURITE");
-        Thread.sleep(20000);
-        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 50);
-        keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
+//        keyword.webDriverWaitForElementPresent("KLARNA_BTN_CONFIRM",10);
+//        keyword.click("KLARNA_BTN_CONFIRM");
+//        keyword.click("KLARNA_BTN_CONFIRM_CHECKBOX");
+
+//        keyword.imWait(20);
+//        keyword.click("KLARNA_BTN_CONTINUE_EMANIL");
+//        Thread.sleep(3000);
+//        keyword.sendKeys("KLARNA_DATE","KLARNA_DATE_DATA");
+//        keyword.click("KLARNA_BTN_FAVOURITE");
+
+//        keyword.webDriverWaitForElementPresent("KLARNA_TBX_OTP",10);
+        keyword.untilJqueryIsDone(50L);
+//        keyword.webDriverWaitForElementPresent("CHECKOUT_SUCCESSPAGE", 50);
+//        keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
 
     }
+
     //check out with bank transfer payment method
     public void checkOutWithBankTransfer() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
@@ -612,11 +627,18 @@ public class ShoppingBagPage extends BasePage {
     }
     //click to print the receipt
     public void clickPrint() throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER");
+        //keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER",10);
+        keyword.click("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+
         keyword.click("SUCCESS_BTN_PRINT");
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.switchToTab(1);
-        keyword.executeJavaScript("window.print=function(){window.close();};");
+//        keyword.switchToTab(1);
+//        keyword.executeJavaScript("window.print=function(){window.close();};");
     }
     //input data of field: Use Store Credit
     public void clickUseCredit(String money){

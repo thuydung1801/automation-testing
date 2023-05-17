@@ -34,8 +34,11 @@ public class ShoppingBagTest extends BaseTest {
         //objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
         //objRegist.chooseLanguages();
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE",
+//        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE",
+//                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_DE","COM_INP_DATA_PASS_DE",
                 "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
+
     }
     public void commonShopping1() throws InterruptedException {
         objShoppingBagPage = new ShoppingBagPage(this.keyword);
@@ -351,18 +354,18 @@ public class ShoppingBagTest extends BaseTest {
         objShoppingBagPage.checkOutWithBankTransfer();
     }
 
-//    @Test
-            //(priority = 21, description = "Place order with Klanar method successfully")
+    @Test
+            (priority = 21, description = "Place order with Klanar method successfully")
     @Parameters("baseURL")
     public void testCase_RV_08(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_08");
-        //commonShopping();
-        //objShoppingBagPage.addProductWithGift("https://stage.glamira.co.uk/universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
+        commonShopping();
+//        objShoppingBagPage.addProductWithGift(baseURL + "universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.moveToPagecheckOut();
         objShoppingBagPage.checkOut();
         objShoppingBagPage.checkOutWithKlarnaLater();
-        //objShoppingBagPage.clickPrint();
+//        objShoppingBagPage.clickPrint();
     }
 
 //    @Test
