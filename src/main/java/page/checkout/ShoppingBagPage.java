@@ -1000,5 +1000,6 @@ public class ShoppingBagPage extends BasePage {
     public Float moreMoney(float total, float storeCredit){
         return total + storeCredit;
     }
+    //abc
 
 }
