@@ -318,7 +318,6 @@ public class SignUpPage extends BasePage {
         keyword.untilJqueryIsDone(30L);
         verifyMessageFormInvalid();
     }
-
     //Create new customer and leave with blank form for required form
     public void enterDataSignUpWithMobile() throws InterruptedException {
         sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION", "SIGNUP_DATA_LAST_NAME_INFORMATION", "SIGNUP_EMAIL_EXIST2", "SIGNUP_EMAIL_EXIST2");
@@ -329,7 +328,6 @@ public class SignUpPage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_CHINA");
         keyword.assertEquals("请输入有效的手机号码。", "SIGNUP_PHONE_ERROR");
     }
-
     // delete old data Register an account with the phone number already in the system
     public void enterPhoneNumberAlreadyInSystem() throws InterruptedException {
         clearTextAndSendKey("SIGNUP_WITH_PHONE", "SIGNUP_WITH_PHONE", "SIGNIN_PHONE_CHINA");
