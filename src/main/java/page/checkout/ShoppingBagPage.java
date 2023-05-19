@@ -278,10 +278,10 @@ public class ShoppingBagPage extends BasePage {
         keyword.navigateToUrl(url+"glamira-pendant-tate.html?accent=black&alloy=white-375&stone1=diamond-Brillant");
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("CHECKOUT_CHOOSE_IMAGE_1");
-        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_1","C:\\Users\\hoailinh\\Desktop\\17932103b07ca950f547fb68e006793e.jpg");
-        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_2","C:\\Users\\hoailinh\\Desktop\\17932103b07ca950f547fb68e006793e.jpg");
-        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_3","C:\\Users\\hoailinh\\Desktop\\17932103b07ca950f547fb68e006793e.jpg");
-        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_4","C:\\Users\\hoailinh\\Desktop\\17932103b07ca950f547fb68e006793e.jpg");
+        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_1","/home/toanlt/Downloads/pika.jpg");
+        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_2","/home/toanlt/Downloads/pika.jpg");
+        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_3","/home/toanlt/Downloads/pika.jpg");
+        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_4","/home/toanlt/Downloads/pika.jpg");
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
 
@@ -325,7 +325,7 @@ public class ShoppingBagPage extends BasePage {
     }
     //edit couple ring is already in the cart
     public void editCoupleRings(){
-        keyword.click("CHECKOUT_LBL_STONE");
+        keyword.click("CHECKOUT_LBL_STONE"); // fixed xpath
         keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_DIAMOND",10);
         keyword.click("CHECKOUT_CBX_DIAMOND");
         keyword.scrollDownToElement("CHECKOUT_LBL_PROFILE");
@@ -347,7 +347,7 @@ public class ShoppingBagPage extends BasePage {
         keyword.click(btnAdd);
         keyword.imWait(30);
         keyword.webDriverWaitForElementPresent("CHECKOUT_TITLE_ENGRAVING",5);
-        keyword.imWait(30);
+//        keyword.imWait(30);
         keyword.clearText("CHECKOUT_TXT_ENGRAVING");
         keyword.untilJqueryIsDone(30L);
         keyword.sendKeys("CHECKOUT_TXT_ENGRAVING", data);
@@ -1000,6 +1000,5 @@ public class ShoppingBagPage extends BasePage {
     public Float moreMoney(float total, float storeCredit){
         return total + storeCredit;
     }
-    //abc
 
 }
