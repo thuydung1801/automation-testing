@@ -278,10 +278,10 @@ public class ShoppingBagPage extends BasePage {
         keyword.navigateToUrl(url+"glamira-pendant-tate.html?accent=black&alloy=white-375&stone1=diamond-Brillant");
         keyword.untilJqueryIsDone(50L);
         keyword.scrollDownToElement("CHECKOUT_CHOOSE_IMAGE_1");
-        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_1","C:\\Users\\hoailinh\\Desktop\\17932103b07ca950f547fb68e006793e.jpg");
-        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_2","C:\\Users\\hoailinh\\Desktop\\17932103b07ca950f547fb68e006793e.jpg");
-        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_3","C:\\Users\\hoailinh\\Desktop\\17932103b07ca950f547fb68e006793e.jpg");
-        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_4","C:\\Users\\hoailinh\\Desktop\\17932103b07ca950f547fb68e006793e.jpg");
+        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_1","C:\\Users\\Admin\\Desktop\\pngtree-blue-background-image_264071.jpg");
+        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_2","C:\\Users\\Admin\\Desktop\\pngtree-blue-background-image_264071.jpg");
+        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_3","C:\\Users\\Admin\\Desktop\\pngtree-blue-background-image_264071.jpg");
+        keyword.chooseFile("CHECKOUT_CHOOSE_IMAGE_4","C:\\Users\\Admin\\Desktop\\pngtree-blue-background-image_264071.jpg");
         keyword.scrollDownToElement("CHECKOUT_ADDPRODUCT_BTN_ADD");
         keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
 

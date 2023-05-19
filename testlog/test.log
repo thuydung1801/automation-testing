@@ -1,61 +1,429 @@
-INFO  | 2023-04-14 13:26:41 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - Open browser
-INFO  | 2023-04-14 13:26:42 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 112.0.5615.49 (resolved driver for Chrome 112)
-INFO  | 2023-04-14 13:26:42 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\hoailinh\.cache\selenium\chromedriver\win32\112.0.5615.49\chromedriver.exe
-INFO  | 2023-04-14 13:26:44 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - open browser successfullyCHROME
-INFO  | 2023-04-14 13:26:44 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:70) - go to url: https://stage.glamira.co.uk/
-INFO  | 2023-04-14 13:26:44 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:71) - url: [Ljava.lang.String;@5909ae90
-INFO  | 2023-04-14 13:26:48 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
-INFO  | 2023-04-14 13:26:48 | [main] test.checkout.ShoppingBagTest (ShoppingBagTest.java:testcase_checkoutAffirm:333) - Add product that must to choose language
-INFO  | 2023-04-14 13:26:48 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.com/
-INFO  | 2023-04-14 13:26:52 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
-INFO  | 2023-04-14 13:27:00 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-14 13:27:07 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-04-14 13:27:08 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-04-14 13:27:08 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-04-14 13:27:14 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
-INFO  | 2023-04-14 13:27:16 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-04-14 13:27:17 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LOGIN
-INFO  | 2023-04-14 13:27:17 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
-INFO  | 2023-04-14 13:27:20 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_TXT_EMAIL_2
-INFO  | 2023-04-14 13:27:20 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_TXT_EMAIL_2with LOGIN_DATA_EMAIL
-INFO  | 2023-04-14 13:27:22 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_TXT_PASSWORDwith LOGIN_DATA_PASSWORD
-INFO  | 2023-04-14 13:27:25 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_TXT_EMAIL
-INFO  | 2023-04-14 13:27:25 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_TBX_PHONE
-INFO  | 2023-04-14 13:27:25 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_SUBMITLOGIN
-INFO  | 2023-04-14 13:27:32 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-04-14 13:27:38 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-04-14 13:27:39 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_MINICART
-INFO  | 2023-04-14 13:27:40 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-04-14 13:27:45 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_MINICART_VIEWALL
-INFO  | 2023-04-14 13:27:55 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-04-14 13:27:56 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-04-14 13:27:59 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-04-14 13:27:59 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_BTN_CHECKOUT
-INFO  | 2023-04-14 13:27:59 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT
-INFO  | 2023-04-14 13:28:06 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-04-14 13:28:10 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentCHECKOUT_LBL_CHECKOUT
-INFO  | 2023-04-14 13:28:11 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT_ADDRESS
-INFO  | 2023-04-14 13:28:16 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-04-14 13:28:20 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentCHECKOUT_BTN_CHECKOUT_SHIPMENT
-INFO  | 2023-04-14 13:28:21 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-04-14 13:28:21 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementCHECKOUT_BTN_CHECKOUT_SHIPMENT
-INFO  | 2023-04-14 13:28:21 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_CHECKOUT_SHIPMENT
-INFO  | 2023-04-14 13:28:27 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-04-14 13:28:27 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_CBX_CHECKOUT_AFFIRM
-INFO  | 2023-04-14 13:28:31 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-04-14 13:28:32 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_BTN_ORDER
-INFO  | 2023-04-14 13:28:32 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentAFFIRM_TBX_PHONE
-INFO  | 2023-04-14 13:28:42 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysAFFIRM_TBX_PHONEwith AFFIRM_DATA_PHONE
-INFO  | 2023-04-14 13:28:42 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentAFFIRM_BTN_CONTINUE
-INFO  | 2023-04-14 13:28:42 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickAFFIRM_BTN_CONTINUE
-INFO  | 2023-04-14 13:28:42 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentAFFIRM_TBX_CODE
-INFO  | 2023-04-14 13:28:44 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysAFFIRM_TBX_CODEwith 1234
-INFO  | 2023-04-14 13:28:44 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentAFFIRM_BTN_3MONTHS
-INFO  | 2023-04-14 13:29:02 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickAFFIRM_BTN_3MONTHS
-INFO  | 2023-04-14 13:29:02 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentAFFIRM_BTN_CONTINUE
-INFO  | 2023-04-14 13:29:02 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickAFFIRM_BTN_CONTINUE
-INFO  | 2023-04-14 13:29:02 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentAFFIRM_CBX_ARGEE
-INFO  | 2023-04-14 13:29:04 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickAFFIRM_CBX_ARGEE
-INFO  | 2023-04-14 13:29:04 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickAFFIRM_BTN_CONTINUE
-INFO  | 2023-04-14 13:29:04 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentCHECKOUT_SUCCESSPAGE
-INFO  | 2023-04-14 13:29:29 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentCHECKOUT_SUCCESSPAGE
+INFO  | 2023-05-19 09:05:02 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - Open browser
+INFO  | 2023-05-19 09:05:03 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
+INFO  | 2023-05-19 09:05:03 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
+INFO  | 2023-05-19 09:05:05 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - open browser successfullyCHROME
+INFO  | 2023-05-19 09:05:05 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:70) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-05-19 09:05:05 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:71) - url: [Ljava.lang.String;@25464154
+INFO  | 2023-05-19 09:05:10 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-05-19 09:05:11 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:05:12 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
+INFO  | 2023-05-19 09:05:20 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-05-19 09:05:27 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-05-19 09:05:27 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-05-19 09:05:27 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-05-19 09:05:33 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-05-19 09:05:36 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/
+INFO  | 2023-05-19 09:05:39 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:05:40 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-05-19 09:05:40 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
+INFO  | 2023-05-19 09:05:43 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_TXT_EMAIL_2
+INFO  | 2023-05-19 09:05:43 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_TXT_EMAIL
+INFO  | 2023-05-19 09:05:43 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL_STAGE
+INFO  | 2023-05-19 09:05:45 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_TXT_PASSWORDwith COM_INP_DATA_PASS_STAGE
+INFO  | 2023-05-19 09:05:47 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_TBX_PHONE
+INFO  | 2023-05-19 09:05:47 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2023-05-19 09:05:54 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/account/edit/
+INFO  | 2023-05-19 09:05:58 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:05:58 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:05:58 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
+INFO  | 2023-05-19 09:05:58 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:05:59 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
+INFO  | 2023-05-19 09:05:59 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_1
+INFO  | 2023-05-19 09:06:06 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
+INFO  | 2023-05-19 09:06:06 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_VERIFY_DATA_FULLNAME with CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
+INFO  | 2023-05-19 09:06:07 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:07 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_NAME
+INFO  | 2023-05-19 09:06:07 | [main] page.MyAccountPage (MyAccountPage.java:checkVerifyChangeSuccess:186) - check change name....
+INFO  | 2023-05-19 09:06:08 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:08 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_PERSONAL_INF
+INFO  | 2023-05-19 09:06:12 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:12 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:12 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:06:12 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith COM_DATA_NULL
+INFO  | 2023-05-19 09:06:12 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:06:13 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith COM_DATA_NULL
+INFO  | 2023-05-19 09:06:13 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_1
+INFO  | 2023-05-19 09:06:14 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleCOM_TEXT_ERROR
+INFO  | 2023-05-19 09:06:14 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from COM_DATA_MESSAGES_NULL with COM_TEXT_ERROR
+INFO  | 2023-05-19 09:06:15 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:15 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_PERSONAL_INF
+INFO  | 2023-05-19 09:06:16 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:16 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_CLICK_CHECKBOX_EMAIL
+INFO  | 2023-05-19 09:06:16 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:16 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_EMAIL_NEWwith COM_INP_DATA_EMAIL_STAGE
+INFO  | 2023-05-19 09:06:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PASS_CURENT_1with COM_INP_DATA_PASS_STAGE
+INFO  | 2023-05-19 09:06:17 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_2
+INFO  | 2023-05-19 09:06:25 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:25 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
+INFO  | 2023-05-19 09:06:25 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_VERIFY_DATA_FULLNAME with CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
+INFO  | 2023-05-19 09:06:26 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:26 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_EMAIL_CHANGE
+INFO  | 2023-05-19 09:06:26 | [main] page.MyAccountPage (MyAccountPage.java:checkVerifyChangeSuccess:197) - check change email....
+INFO  | 2023-05-19 09:06:26 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/account/
+INFO  | 2023-05-19 09:06:30 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:30 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_PERSONAL_INF
+INFO  | 2023-05-19 09:06:34 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:34 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_CLICK_CHECKBOX_PASS
+INFO  | 2023-05-19 09:06:34 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PASS_CURENT_2with COM_INP_DATA_PASS_STAGE
+INFO  | 2023-05-19 09:06:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PASS_NEWwith COM_INP_DATA_PASS_STAGE
+INFO  | 2023-05-19 09:06:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PASS_CONFIRMwith COM_INP_DATA_PASS_STAGE
+INFO  | 2023-05-19 09:06:34 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_3
+INFO  | 2023-05-19 09:06:41 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:41 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
+INFO  | 2023-05-19 09:06:41 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_VERIFY_DATA_FULLNAME with CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
+INFO  | 2023-05-19 09:06:42 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:42 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_LOGOUT
+INFO  | 2023-05-19 09:06:43 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LOGOUT_OK
+INFO  | 2023-05-19 09:06:49 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:49 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMAC_LOGOUT_VERIFY_MESSAGE
+INFO  | 2023-05-19 09:06:49 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_LOGOUT_DATA_MESSAGE with MAC_LOGOUT_VERIFY_MESSAGE
+INFO  | 2023-05-19 09:06:54 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMAC_LOGOUT_VERIFY_HOMEPAGE
+INFO  | 2023-05-19 09:06:55 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:56 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:06:57 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-05-19 09:06:57 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:691) - webDriverWaitForElementPresentLOGIN_LBL_LOGIN
+INFO  | 2023-05-19 09:07:00 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_TXT_EMAIL_2
+INFO  | 2023-05-19 09:07:00 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_TXT_EMAIL
+INFO  | 2023-05-19 09:07:00 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_TXT_EMAILwith COM_INP_DATA_EMAIL_STAGE
+INFO  | 2023-05-19 09:07:02 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_TXT_PASSWORDwith COM_INP_DATA_PASS_STAGE
+INFO  | 2023-05-19 09:07:04 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_TBX_PHONE
+INFO  | 2023-05-19 09:07:04 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2023-05-19 09:07:11 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:11 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_ACCOUNT
+INFO  | 2023-05-19 09:07:15 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:15 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_NAME
+INFO  | 2023-05-19 09:07:15 | [main] page.MyAccountPage (MyAccountPage.java:logOutLogIn:161) - check change password....
+INFO  | 2023-05-19 09:07:16 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/account/edit/
+INFO  | 2023-05-19 09:07:18 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_DELETE_ACCOUNT
+INFO  | 2023-05-19 09:07:22 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:22 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_DELETE_ACCOUNT_INP_PASSwith COM_INP_DATA_PASS_STAGE
+INFO  | 2023-05-19 09:07:22 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_DELETE_ACCOUNT_BTN_DELETE
+INFO  | 2023-05-19 09:07:22 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:22 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_DELETE_ACCOUNT_BTN_OK
+INFO  | 2023-05-19 09:07:27 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:27 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMAC_DELETE_ACCOUNT_VERIFY_MESSAGE
+INFO  | 2023-05-19 09:07:27 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_DELETE_ACCOUNT_DATA_MESSAGE with MAC_DELETE_ACCOUNT_VERIFY_MESSAGE
+INFO  | 2023-05-19 09:07:27 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/address/index/#
+INFO  | 2023-05-19 09:07:30 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ADDRESS_DIRECTORY
+INFO  | 2023-05-19 09:07:32 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:32 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element MAC_COUNT_ADDRESS
+INFO  | 2023-05-19 09:07:32 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_EDIT_BILLING_ADDRESS
+INFO  | 2023-05-19 09:07:35 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:35 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:35 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_COMPANYwith COM_DATA_TITLE
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PHONE_NUMwith MAC_DATA_PHONE_NUM
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:imWait:686) - implicitlyWait
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET1
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CITYwith MAC_INP_DATA_CITY
+INFO  | 2023-05-19 09:07:36 | [main] core.KeywordWeb (KeywordWeb.java:imWait:686) - implicitlyWait
+INFO  | 2023-05-19 09:07:37 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:37 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:37 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CODE_CITYwith MAC_INP_DATA_CODE_CITY
+INFO  | 2023-05-19 09:07:37 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
+INFO  | 2023-05-19 09:07:42 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:43 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:07:43 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:07:44 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:44 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
+INFO  | 2023-05-19 09:07:44 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
+INFO  | 2023-05-19 09:07:44 | [main] page.MyAccountPage (MyAccountPage.java:inpEditAddress:351) - check verify edit billing address...
+INFO  | 2023-05-19 09:07:44 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/address/index/#
+INFO  | 2023-05-19 09:07:44 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ADDRESS_DIRECTORY
+INFO  | 2023-05-19 09:07:45 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:45 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element MAC_COUNT_ADDRESS
+INFO  | 2023-05-19 09:07:45 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_EDIT_SHIPPING_ADDRESS
+INFO  | 2023-05-19 09:07:49 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:49 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:49 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
+INFO  | 2023-05-19 09:07:49 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
+INFO  | 2023-05-19 09:07:49 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_COMPANYwith COM_DATA_TITLE
+INFO  | 2023-05-19 09:07:49 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:50 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PHONE_NUMwith MAC_DATA_PHONE_NUM
+INFO  | 2023-05-19 09:07:50 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:50 | [main] core.KeywordWeb (KeywordWeb.java:imWait:686) - implicitlyWait
+INFO  | 2023-05-19 09:07:50 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET2
+INFO  | 2023-05-19 09:07:50 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:50 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CITYwith MAC_INP_DATA_CITY
+INFO  | 2023-05-19 09:07:50 | [main] core.KeywordWeb (KeywordWeb.java:imWait:686) - implicitlyWait
+INFO  | 2023-05-19 09:07:50 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:50 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:07:50 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CODE_CITYwith MAC_INP_DATA_CODE_CITY
+INFO  | 2023-05-19 09:07:51 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
+INFO  | 2023-05-19 09:07:56 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:56 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:07:56 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:07:57 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:58 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
+INFO  | 2023-05-19 09:07:58 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_SHIPPING_ADDRESS
+INFO  | 2023-05-19 09:07:58 | [main] page.MyAccountPage (MyAccountPage.java:inpEditAddress:361) - check verify edit shipping address...
+INFO  | 2023-05-19 09:07:58 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/address/index/#
+INFO  | 2023-05-19 09:07:58 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ADDRESS_DIRECTORY
+INFO  | 2023-05-19 09:07:59 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:07:59 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element MAC_COUNT_ADDRESS
+INFO  | 2023-05-19 09:07:59 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_ADD_NEW_ADDRESS
+INFO  | 2023-05-19 09:08:03 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:03 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:03 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:03 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
+INFO  | 2023-05-19 09:08:03 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:03 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
+INFO  | 2023-05-19 09:08:03 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:03 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_COMPANYwith COM_DATA_TITLE
+INFO  | 2023-05-19 09:08:03 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:03 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PHONE_NUMwith MAC_DATA_PHONE_NUM
+INFO  | 2023-05-19 09:08:03 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:04 | [main] core.KeywordWeb (KeywordWeb.java:imWait:686) - implicitlyWait
+INFO  | 2023-05-19 09:08:04 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET9
+INFO  | 2023-05-19 09:08:04 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:04 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CITYwith MAC_INP_DATA_CITY
+INFO  | 2023-05-19 09:08:04 | [main] core.KeywordWeb (KeywordWeb.java:imWait:686) - implicitlyWait
+INFO  | 2023-05-19 09:08:04 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:04 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:04 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CODE_CITYwith MAC_INP_DATA_CODE_CITY
+INFO  | 2023-05-19 09:08:04 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
+INFO  | 2023-05-19 09:08:10 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:10 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:08:10 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:08:11 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:11 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
+INFO  | 2023-05-19 09:08:11 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element MAC_COUNT_ADDRESS
+INFO  | 2023-05-19 09:08:11 | [main] page.MyAccountPage (MyAccountPage.java:inpEditAddress:374) - check add...
+INFO  | 2023-05-19 09:08:11 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:11 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/address/index/#
+INFO  | 2023-05-19 09:08:11 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ADDRESS_DIRECTORY
+INFO  | 2023-05-19 09:08:12 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:12 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element MAC_COUNT_ADDRESS
+INFO  | 2023-05-19 09:08:12 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINKTEXT_EDIT
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_COMPANYwith COM_DATA_TITLE
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PHONE_NUMwith MAC_DATA_PHONE_NUM
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:imWait:686) - implicitlyWait
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET3
+INFO  | 2023-05-19 09:08:17 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:18 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CITYwith MAC_INP_DATA_CITY
+INFO  | 2023-05-19 09:08:18 | [main] core.KeywordWeb (KeywordWeb.java:imWait:686) - implicitlyWait
+INFO  | 2023-05-19 09:08:18 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:18 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:08:18 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CODE_CITYwith MAC_INP_DATA_CODE_CITY
+INFO  | 2023-05-19 09:08:18 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
+INFO  | 2023-05-19 09:08:24 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:24 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:08:24 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:08:25 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:25 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
+INFO  | 2023-05-19 09:08:25 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_EDIT_ENTRIES
+INFO  | 2023-05-19 09:08:25 | [main] page.MyAccountPage (MyAccountPage.java:inpEditAddress:388) - check edit Additional Address Entries...
+INFO  | 2023-05-19 09:08:25 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ADDRESS_DIRECTORY
+INFO  | 2023-05-19 09:08:26 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:27 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element MAC_COUNT_ADDRESS
+INFO  | 2023-05-19 09:08:27 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
+INFO  | 2023-05-19 09:08:27 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINKTEXT_DELETE
+INFO  | 2023-05-19 09:08:28 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_DELETE_OK
+INFO  | 2023-05-19 09:08:33 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:08:33 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_VERIFY_DATA_DELETE_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:08:33 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element MAC_COUNT_ADDRESS
+INFO  | 2023-05-19 09:08:33 | [main] page.MyAccountPage (MyAccountPage.java:deleteAdditionalAddressEntries:445) - check delete...
+INFO  | 2023-05-19 09:08:33 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:34 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:34 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_ADDRESS
+INFO  | 2023-05-19 09:08:34 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINKTEXT_SETAS
+INFO  | 2023-05-19 09:08:40 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:40 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:08:40 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:08:41 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:41 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_SHIPPING_ADDRESS
+INFO  | 2023-05-19 09:08:41 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
+INFO  | 2023-05-19 09:08:41 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_SHIPPING_ADDRESS
+INFO  | 2023-05-19 09:08:41 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
+INFO  | 2023-05-19 09:08:41 | [main] page.MyAccountPage (MyAccountPage.java:setAsDefaultAddress:478) - check verify address...
+INFO  | 2023-05-19 09:08:41 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/address/index/#
+INFO  | 2023-05-19 09:08:41 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ADDRESS_DIRECTORY
+INFO  | 2023-05-19 09:08:43 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:43 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element MAC_COUNT_ADDRESS
+INFO  | 2023-05-19 09:08:43 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINKTEXT_EDIT
+INFO  | 2023-05-19 09:08:47 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:47 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:47 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET6
+INFO  | 2023-05-19 09:08:47 | [main] core.KeywordWeb (KeywordWeb.java:imWait:686) - implicitlyWait
+INFO  | 2023-05-19 09:08:47 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:47 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_CHECKBOX_DEFAULT_BILLING
+INFO  | 2023-05-19 09:08:47 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
+INFO  | 2023-05-19 09:08:53 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:53 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
+INFO  | 2023-05-19 09:08:53 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
+INFO  | 2023-05-19 09:08:53 | [main] page.MyAccountPage (MyAccountPage.java:editSetAsDefaultAddress:507) - check verify address...
+INFO  | 2023-05-19 09:08:53 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/address/index/#
+INFO  | 2023-05-19 09:08:53 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ADDRESS_DIRECTORY
+INFO  | 2023-05-19 09:08:54 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:54 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element MAC_COUNT_ADDRESS
+INFO  | 2023-05-19 09:08:54 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINKTEXT_EDIT
+INFO  | 2023-05-19 09:08:58 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:58 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:58 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET7
+INFO  | 2023-05-19 09:08:58 | [main] core.KeywordWeb (KeywordWeb.java:imWait:686) - implicitlyWait
+INFO  | 2023-05-19 09:08:59 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:08:59 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_CHECKBOX_DEFAULT_SHIPPING
+INFO  | 2023-05-19 09:08:59 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
+INFO  | 2023-05-19 09:09:05 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:05 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_SHIPPING_ADDRESS
+INFO  | 2023-05-19 09:09:05 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_SHIPPING_ADDRESS
+INFO  | 2023-05-19 09:09:05 | [main] page.MyAccountPage (MyAccountPage.java:editSetAsDefaultAddress:507) - check verify address...
+INFO  | 2023-05-19 09:09:05 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/address/index/#
+INFO  | 2023-05-19 09:09:05 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ADDRESS_DIRECTORY
+INFO  | 2023-05-19 09:09:06 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:06 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element MAC_COUNT_ADDRESS
+INFO  | 2023-05-19 09:09:06 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_ADD_NEW_ADDRESS
+INFO  | 2023-05-19 09:09:10 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:10 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:10 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:09:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_FIRST_NAMEwith MAC_DATA_FIRST_NAME_STAGE
+INFO  | 2023-05-19 09:09:10 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:09:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_LAST_NAMEwith MAC_DATA_LAST_NAME_STAGE
+INFO  | 2023-05-19 09:09:10 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:09:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_COMPANYwith COM_DATA_TITLE
+INFO  | 2023-05-19 09:09:11 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:09:11 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_PHONE_NUMwith MAC_DATA_PHONE_NUM
+INFO  | 2023-05-19 09:09:11 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:09:11 | [main] core.KeywordWeb (KeywordWeb.java:imWait:686) - implicitlyWait
+INFO  | 2023-05-19 09:09:11 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_STREETwith MAC_DATA_STREET9
+INFO  | 2023-05-19 09:09:11 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:09:11 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CITYwith MAC_INP_DATA_CITY
+INFO  | 2023-05-19 09:09:11 | [main] core.KeywordWeb (KeywordWeb.java:imWait:686) - implicitlyWait
+INFO  | 2023-05-19 09:09:11 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:11 | [main] core.KeywordWeb (KeywordWeb.java:clearText:133) - clearText
+INFO  | 2023-05-19 09:09:11 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysMAC_INP_CODE_CITYwith MAC_INP_DATA_CODE_CITY
+INFO  | 2023-05-19 09:09:11 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_SAVE_ADDRESS
+INFO  | 2023-05-19 09:09:17 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:17 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleCUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:09:17 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_VERIFY_DATA_ADDRESS with CUS_VERIFY_NEWSLETTER_SUBSCRIBE
+INFO  | 2023-05-19 09:09:18 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:19 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_VERIFY_SETAS_BILLING_ADDRESS
+INFO  | 2023-05-19 09:09:19 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element MAC_COUNT_ADDRESS
+INFO  | 2023-05-19 09:09:19 | [main] page.MyAccountPage (MyAccountPage.java:inpEditAddress:374) - check add...
+INFO  | 2023-05-19 09:09:19 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:20 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:20 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/catalog/product_compare/index/
+INFO  | 2023-05-19 09:09:25 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:25 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...URL_WISHLIST_PRODUCT_DETAIL
+INFO  | 2023-05-19 09:09:30 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:30 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMAC_WISHLISH_SAVE_NO_DISPLAY
+INFO  | 2023-05-19 09:09:32 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_WISHLISH_COUNT_SAVE
+INFO  | 2023-05-19 09:09:32 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementMAC_BTN_HEART
+INFO  | 2023-05-19 09:09:32 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_BTN_HEART
+INFO  | 2023-05-19 09:09:34 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:35 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMAC_VERIFY_ICON_HEART
+INFO  | 2023-05-19 09:09:37 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...URL_WISHLIST_PRODUCT_LIST
+INFO  | 2023-05-19 09:09:48 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:48 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMAC_WISHLISH_SAVE_NO_DISPLAY
+INFO  | 2023-05-19 09:09:48 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:483) - scrollDownToElementMAC_ICON_HEART
+INFO  | 2023-05-19 09:09:48 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_ICON_HEART
+INFO  | 2023-05-19 09:09:51 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:09:51 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisibleMAC_VERIFY_ICON_HEART
+INFO  | 2023-05-19 09:09:52 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:10:17 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:10:18 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_WISHLISH_COUNT_SAVE
+INFO  | 2023-05-19 09:10:18 | [main] page.MyAccountPage (MyAccountPage.java:commonWishList:561) - check verify save item...
+INFO  | 2023-05-19 09:10:18 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...URL_WISHLIST_PRODUCT_LIST
+INFO  | 2023-05-19 09:10:21 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:10:21 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_WISHLIST_ICON_HEART
+INFO  | 2023-05-19 09:10:22 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_WISHLIST_GET_TITLE
+INFO  | 2023-05-19 09:10:22 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-05-19 09:10:24 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:10:24 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINK_HEART
+INFO  | 2023-05-19 09:10:24 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-05-19 09:10:28 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:10:28 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINK_HEART
+INFO  | 2023-05-19 09:10:28 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-05-19 09:10:30 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:10:31 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_LINK_HEART
+INFO  | 2023-05-19 09:10:31 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/sales/order/history/
+INFO  | 2023-05-19 09:10:35 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:10:35 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_BTN_COMPLETE
+INFO  | 2023-05-19 09:10:37 | [main] core.KeywordWeb (KeywordWeb.java:back:310) - Back window...
+INFO  | 2023-05-19 09:10:39 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:10:40 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:10:40 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_MY_ORD_TEXT_ID_ITEM
+INFO  | 2023-05-19 09:10:43 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/sales/order/history/
+INFO  | 2023-05-19 09:10:46 | [main] page.MyAccountPage (MyAccountPage.java:checkStatus:962) - check verify id order....
+INFO  | 2023-05-19 09:10:46 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:777) - compare from MAC_OVER_DATA_ID_ORDER_STATUS_CONFIR with MAC_OVER_ID_ORDER_STATUS_CONFIR
+INFO  | 2023-05-19 09:10:48 | [main] core.KeywordWeb (KeywordWeb.java:back:310) - Back window...
+INFO  | 2023-05-19 09:10:51 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:10:51 | [main] core.KeywordWeb (KeywordWeb.java:countNumberOfElement:664) - count the number of element MAC_MY_ORD_TABLE_ITEM
+INFO  | 2023-05-19 09:10:54 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_BTN_UPLAOD_MORE
+INFO  | 2023-05-19 09:10:56 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-05-19 09:10:59 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:00 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:00 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_MY_ORD_BTN_COMPLETE
+INFO  | 2023-05-19 09:11:02 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
+INFO  | 2023-05-19 09:11:02 | [main] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-05-19 09:11:02 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-05-19 09:11:02 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...ADMIN_URL
+INFO  | 2023-05-19 09:11:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME_DUNG
+INFO  | 2023-05-19 09:11:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD_DUNG
+INFO  | 2023-05-19 09:11:08 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2023-05-19 09:11:11 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:13 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_ADMIN_BTN_LOGISTIC
+INFO  | 2023-05-19 09:11:15 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:291) - Executing JavaScript
+INFO  | 2023-05-19 09:11:15 | [main] core.KeywordWeb (KeywordWeb.java:switchToTab:447) - switchToTab
+INFO  | 2023-05-19 09:11:15 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-05-19 09:11:15 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...ADMIN_URL
+INFO  | 2023-05-19 09:11:18 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME_DUNG
+INFO  | 2023-05-19 09:11:18 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD_DUNG
+INFO  | 2023-05-19 09:11:18 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2023-05-19 09:11:20 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:22 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_ADMIN_BTN_LOGISTIC
+INFO  | 2023-05-19 09:11:24 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/customer/account/
+INFO  | 2023-05-19 09:11:29 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:29 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_OVER_LINK_CHANGE_PASS
+INFO  | 2023-05-19 09:11:33 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:33 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_CHANGE_PASS
+INFO  | 2023-05-19 09:11:33 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_CHANGE_PASS
+INFO  | 2023-05-19 09:11:33 | [main] page.MyAccountPage (MyAccountPage.java:checkFunctionInfoCustomer:1030) - check verify My overview....
+INFO  | 2023-05-19 09:11:33 | [main] core.KeywordWeb (KeywordWeb.java:back:310) - Back window...
+INFO  | 2023-05-19 09:11:37 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:37 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_OVER_EDIT_CONTACT_INFO
+INFO  | 2023-05-19 09:11:41 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:41 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_CONTACT_INFO
+INFO  | 2023-05-19 09:11:41 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_CONTACT_INFO
+INFO  | 2023-05-19 09:11:41 | [main] page.MyAccountPage (MyAccountPage.java:checkFunctionInfoCustomer:1030) - check verify My overview....
+INFO  | 2023-05-19 09:11:41 | [main] core.KeywordWeb (KeywordWeb.java:back:310) - Back window...
+INFO  | 2023-05-19 09:11:45 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:45 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_OVER_EDIT_SHIPPING_ADDRESS
+INFO  | 2023-05-19 09:11:49 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:49 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_TITTLE_ADDRESS
+INFO  | 2023-05-19 09:11:49 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_TITTLE_ADDRESS
+INFO  | 2023-05-19 09:11:49 | [main] page.MyAccountPage (MyAccountPage.java:checkFunctionInfoCustomer:1030) - check verify My overview....
+INFO  | 2023-05-19 09:11:49 | [main] core.KeywordWeb (KeywordWeb.java:back:310) - Back window...
+INFO  | 2023-05-19 09:11:52 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:52 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_OVER_EDIT_BILLING_ADDRESS
+INFO  | 2023-05-19 09:11:55 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:55 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_TITTLE_ADDRESS
+INFO  | 2023-05-19 09:11:56 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_TITTLE_ADDRESS
+INFO  | 2023-05-19 09:11:56 | [main] page.MyAccountPage (MyAccountPage.java:checkFunctionInfoCustomer:1030) - check verify My overview....
+INFO  | 2023-05-19 09:11:56 | [main] core.KeywordWeb (KeywordWeb.java:back:310) - Back window...
+INFO  | 2023-05-19 09:11:59 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:11:59 | [main] core.KeywordWeb (KeywordWeb.java:click:142) - clickMAC_OVER_EDIT_NEWSLETTER
+INFO  | 2023-05-19 09:12:03 | [main] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:738) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-05-19 09:12:03 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER
+INFO  | 2023-05-19 09:12:03 | [main] core.KeywordWeb (KeywordWeb.java:getText:184) - get Text ofMAC_OVER_VERIFY_GET_TITTLE_NEWSLETTER
+INFO  | 2023-05-19 09:12:03 | [main] page.MyAccountPage (MyAccountPage.java:checkFunctionInfoCustomer:1030) - check verify My overview....

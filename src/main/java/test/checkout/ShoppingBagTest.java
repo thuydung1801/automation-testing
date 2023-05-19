@@ -55,7 +55,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_SP_01(String baseURL) throws InterruptedException {
         logger.info("testCase_SP_01");
-//        commonShopping();
+        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProduct(baseURL+"womens-ring-smart-ornament-skub7047.html?alloy=white-silber");
         objShoppingBagPage.addProduct(baseURL+"mens-ring-smart-queen-skup7013.html?alloy=white-375&utm_widget=recommendation");
@@ -128,7 +128,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters({"baseURL","devices"})
     public void testCase_SP_15(String baseURL, String devices) throws InterruptedException {
         logger.info("testCase_SP_15");
-        //commonShopping();
+       // commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProduct(baseURL+"glamira-ring-zanessa.html?alloy=white-585&stone1=diamond-sapphire&stone2=diamond-sapphire");
         objShoppingBagPage.clickShoppingBagPage();
