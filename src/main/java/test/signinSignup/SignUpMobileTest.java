@@ -5,7 +5,7 @@ import core.LogHelper;
 import org.testng.annotations.Test;
 import page.home.LoginPage;
 import page.home.RegisterPage;
-import page.signinSignup.SignInPage;
+//import page.signinSignup.SignInPage;
 import page.signinSignup.SignUpMobilePage;
 import page.signinSignup.SignUpPage;
 import org.slf4j.Logger;
@@ -15,7 +15,7 @@ public class SignUpMobileTest extends BaseTest {
     private RegisterPage objRegist;
     private SignUpMobilePage objSigUpMobile;
     private  SignUpPage objSigUp;
-    private SignInPage objSignIn;
+//    private SignInPage objSignIn;
     private static Logger logger = LogHelper.getLogger();
 
     public SignUpMobileTest() {

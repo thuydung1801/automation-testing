@@ -6,25 +6,25 @@
         <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
 
-            <class name="test.LoginReturnFormTest">
+            <class name="test.signinSignup.SignUpTest">
                 <methods>
-                    <include name="testCase_Login_return_issue"/>
-<!--                    <include name="testCase_SP_03"/>-->
-<!--&lt;!&ndash;                    <include name="testCase_SP_15"/>&ndash;&gt;-->
-<!--                    <include name="testCase_SP_01"/>-->
-<!--                    <include name="testCase_SP_04"/>-->
-<!--                    <include name="testCase_SP_05"/>-->
-<!--                    <include name="testCase_SP_16"/>-->
-<!--                    <include name="testCase_SP_17"/>-->
-<!--                    <include name="testCase_SP_18"/>-->
-<!--                    <include name="testCase_SP_19"/>-->
-<!--                    <include name="testCase_SP_21"/>-->
-<!--                    <include name="testCase_SP_24"/>-->
-<!--                    <include name="testCase_SP_25"/>-->
-<!--                    <include name="testCase_SP_26_RV_02_04"/>-->
-<!--                    <include name="testCase_RV_05"/>-->
-<!--                    <include name="testCase_RV_06"/>-->
-<!--                    <include name="testCase_RV_07"/>-->
+                                        <include name="testCase_SU015"/>
+                                        <include name="testCase_SU016"/>
+                                        <include name="testCase_SU017"/>
+                                        <include name="testCase_SU018"/>
+                                        <include name="testCase_SU019"/>
+                                        <include name="testCase_SU020"/>
+                                        <include name="testCase_SU021"/>
+                                        <include name="testCase_SU022"/>
+                                        <include name="testCase_SU024"/>
+                                        <include name="testCase_SU023_Case_14"/>
+<!--                                        <include name="testCase_SP_21"/>-->
+                    <!--                    <include name="testCase_SP_24"/>-->
+                    <!--                    <include name="testCase_SP_25"/>-->
+                    <!--                    <include name="testCase_SP_26_RV_02_04"/>-->
+                    <!--                    <include name="testCase_RV_05"/>-->
+                    <!--                    <include name="testCase_RV_06"/>-->
+                    <!--                    <include name="testCase_RV_07"/>-->
                 </methods>
             </class>
         </classes>
