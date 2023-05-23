@@ -569,7 +569,8 @@ public class ShoppingBagPage extends BasePage {
         keyword.verifyElementPresent("CHECKOUT_SUCCESSPAGE");
     }
     //check out with klarna payment method
-    public void checkOutWithKlarnaLater() throws InterruptedException {
+    public void
+    checkOutWithKlarnaLater() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER");
         //keyword.webDriverWaitForElementPresent("CHECKOUT_CBX_CHECKOUT_KLARNA_LATER",10);
