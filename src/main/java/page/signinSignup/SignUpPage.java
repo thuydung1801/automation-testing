@@ -492,7 +492,7 @@ public class SignUpPage extends BasePage {
         keyword.click("BTN_SEND_CODE");
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
-//        keyword.assertEquals("SIGNUP_CODE_SENT", "MESSAGE_SED_CODE");
+        keyword.assertEquals("SIGNUP_CODE_SENT", "MESSAGE_SED_CODE");
     }
 
     //    Create new customer successfully with store enable phone number confirm
@@ -505,6 +505,10 @@ public class SignUpPage extends BasePage {
         objSignIn.loginAdmin(
                 "LOGIN_DATA_USER_NAME",
                 "LOGIN_DATA_PASS_WORD");
+        keyword.untilJqueryIsDone(50L);
+        if (keyword.verifyElementPresent("CHECK_SHOW_INCOMING_MODAL_BE")) {
+            keyword.click("CLOSE_BTN_INCOMING");
+        }
         objSignIn.chooseItemCustomer(
                 "SIGNUP_STORES_ITEM", "SIGNUP_STORES_ITEM",
                 "LOGIN_FORM_CUSTOMER", "SIGNUP_ELEMENT_SMS_LOG", "SIGNUP_VERIFY_SMS"
@@ -570,6 +574,7 @@ public class SignUpPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         objRegist.acceptAllCookies();
         if (keyword.verifyElementPresent("CHECK_PHONE_NUMBER")) {
+            keyword.untilJqueryIsDone(50L);
             keyword.click("CHECK_PHONE_NUMBER");
         }
         keyword.sendKeys("PHONE_NUMBER", "EMAIL_ONE_SYSTEM2");
