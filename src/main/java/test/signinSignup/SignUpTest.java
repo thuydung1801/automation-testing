@@ -106,7 +106,7 @@ public class SignUpTest extends BaseTest {
         objSigUp.resendAndGetCodeBack();
     }
 
-    //        SIGNUP WITH MOBILE
+//            SIGNUP WITH MOBILE
     @Test(priority = 13, description = "Create new customer and leave with blank form for required form")
     public void testCase_SU015() throws Exception {
         objSigUp.goToFormSignup(true, "LOGIN_BTN_LOGIN");

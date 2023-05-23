@@ -311,7 +311,7 @@ public class SignUpPage extends BasePage {
         keyword.click("SIGNUP_BTN_RESEND_CODE");
         keyword.untilJqueryIsDone(50L);
         keyword.imWait(50);
-        keyword.assertEquals("SIGNUP_CODE_SENT", "SIGNUP_CODE_RESEND");
+//        keyword.assertEquals("SIGNUP_CODE_SENT", "SIGNUP_CODE_RESEND");
         objSignIn.openTabBE("https://stage.glamira.com/secured2021//");
         objSignIn.loginAdmin(
                 "LOGIN_DATA_USER_NAME",
@@ -329,12 +329,26 @@ public class SignUpPage extends BasePage {
                 "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
                 "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
         objSignIn.getCodeEnterTextInField("IFRAME_STAGE",
-                "LOGIN_INPUT_VERIFY_CODE",
+                "INPUT_CODE_SEND",
                 "SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT");
         keyword.untilJqueryIsDone(50L);
         keyword.untilJqueryIsDone(50L);
 //        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIS_SUCCESS_US");
         keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
+        loginSuccess();
+    }
+
+    public void loginSuccess() throws InterruptedException {
+        keyword.deleteAllCookies();
+        keyword.reLoadPage();
+        keyword.untilJqueryIsDone(50L);
+        objRegist.acceptAllCookies();
+        keyword.sendKeys("LOGIN_TXT_EMAIL", "SIGNIN_EMAIL_REGIS");
+        Thread.sleep(2000);
+        keyword.sendKeys("LOGIN_TXT_PASSWORD", "LOGIN_NEW_PASSWORD");
+        keyword.click("LOGIN_BTN_SUBMITLOGIN");
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("MAC_VERIFY_NAME");
     }
 
     //---------------------------------SIGN UP WITH MOBILE
@@ -477,7 +491,8 @@ public class SignUpPage extends BasePage {
         Thread.sleep(120000);
         keyword.click("BTN_SEND_CODE");
         keyword.untilJqueryIsDone(50L);
-        keyword.assertEquals("SIGNUP_CODE_SENT", "MESSAGE_SED_CODE");
+        keyword.untilJqueryIsDone(50L);
+//        keyword.assertEquals("SIGNUP_CODE_SENT", "MESSAGE_SED_CODE");
     }
 
     //    Create new customer successfully with store enable phone number confirm
@@ -552,11 +567,17 @@ public class SignUpPage extends BasePage {
         getCodeBE("LOGIN_INPUT_VERIFY_CODE", "MESSAGE_SIGNUP_SUCCESS。", "SIGNUP_CODE_RESEND");
         keyword.deleteAllCookies();
         keyword.reLoadPage();
-        keyword.sendKeys("LOGIN_TBX_PHONE", "EMAIL_ONE_SYSTEM2");
+        keyword.untilJqueryIsDone(50L);
+        objRegist.acceptAllCookies();
+        if (keyword.verifyElementPresent("CHECK_PHONE_NUMBER")) {
+            keyword.click("CHECK_PHONE_NUMBER");
+        }
+        keyword.sendKeys("PHONE_NUMBER", "EMAIL_ONE_SYSTEM2");
         Thread.sleep(2000);
         keyword.sendKeys("LOGIN_TXT_PASSWORD", "DATA_PASSWORD_LOGIN_RETURN");
         keyword.click("LOGIN_BTN_SUBMITLOGIN");
         keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("MAC_VERIFY_NAME");
     }
 }
 

@@ -1,67 +1,291 @@
-INFO  | 2023-05-22 18:00:55 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:47) - Open browser
-INFO  | 2023-05-22 18:00:57 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
-INFO  | 2023-05-22 18:00:57 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
-INFO  | 2023-05-22 18:01:01 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:63) - open browser successfullyCHROME
-INFO  | 2023-05-22 18:01:01 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:66) - go to url: https://stage.glamira.co.uk/
-INFO  | 2023-05-22 18:01:01 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - url: [Ljava.lang.String;@78e043e4
-INFO  | 2023-05-22 18:01:08 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:297) - Maximizing browser window...
-INFO  | 2023-05-22 18:01:09 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...https://stage.glamira.com/
-INFO  | 2023-05-22 18:01:15 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-05-22 18:01:23 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-22 18:01:30 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-22 18:01:30 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-05-22 18:01:30 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-05-22 18:01:36 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
-INFO  | 2023-05-22 18:01:40 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleLOGIN_BTN_LOGIN
-INFO  | 2023-05-22 18:01:40 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LOGIN
-INFO  | 2023-05-22 18:01:43 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_NEW_ACCOUNT
-INFO  | 2023-05-22 18:01:44 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_CREATE_NEW_ACCOUNT
-INFO  | 2023-05-22 18:01:55 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_WITH_PHONEwith DATA_PHONE_NUMBER
-INFO  | 2023-05-22 18:01:55 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_SIGNUP
-INFO  | 2023-05-22 18:01:56 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRM_ERRORwith SIGNUP_EMAIL_SIGNUP
-INFO  | 2023-05-22 18:01:57 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
-INFO  | 2023-05-22 18:01:57 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from COM_DATA_MESSAGES_NULL with MESSAGE_REQUIRED_FAILED_FRIST_NAME
-INFO  | 2023-05-22 18:01:57 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from COM_DATA_MESSAGES_NULL with MESSAGE_REQUIRED_FAILED_LAST_NAME
-INFO  | 2023-05-22 18:01:58 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-05-22 18:02:05 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_NEW_ACCOUNT
-INFO  | 2023-05-22 18:02:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith Nguyen
-INFO  | 2023-05-22 18:02:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_LAST_NAME_INFORMATIONwith Nguyen
-INFO  | 2023-05-22 18:02:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_WITH_PHONEwith DATA_PHONE_INVALID
-INFO  | 2023-05-22 18:02:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_SIGNUP
-INFO  | 2023-05-22 18:02:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRM_ERRORwith SIGNUP_EMAIL_SIGNUP
-INFO  | 2023-05-22 18:02:11 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
-INFO  | 2023-05-22 18:02:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_VALID_NUMBER_FIELD with MOBILE_NUMBER_ERROR
-INFO  | 2023-05-22 18:02:13 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-05-22 18:02:18 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_NEW_ACCOUNT
-INFO  | 2023-05-22 18:02:23 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith Nguyen
-INFO  | 2023-05-22 18:02:23 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_LAST_NAME_INFORMATIONwith Nguyen
-INFO  | 2023-05-22 18:02:23 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_WITH_PHONEwith EMAIL_ONE_SYSTEM
-INFO  | 2023-05-22 18:02:23 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_SIGNUP
-INFO  | 2023-05-22 18:02:23 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRM_ERRORwith SIGNUP_EMAIL_SIGNUP
-INFO  | 2023-05-22 18:02:24 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
-INFO  | 2023-05-22 18:02:26 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_DUPLICATE with MESSAGE_ERROR_PHONE_NUMBER
-INFO  | 2023-05-22 18:02:28 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-05-22 18:02:53 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_NEW_ACCOUNT
-INFO  | 2023-05-22 18:02:57 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith Nguyen
-INFO  | 2023-05-22 18:02:58 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_LAST_NAME_INFORMATIONwith Nguyen
-INFO  | 2023-05-22 18:02:58 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_WITH_PHONEwith EMAIL_ONE_SYSTEM2
-INFO  | 2023-05-22 18:02:58 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_SIGNUP2
-INFO  | 2023-05-22 18:02:58 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRM_ERRORwith SIGNUP_EMAIL_SIGNUP2
-INFO  | 2023-05-22 18:02:59 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
-INFO  | 2023-05-22 18:03:02 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_03
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGNUP_ACTUAL_MESSAGE04
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_ACTUAL_MESSAGE04
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGNUP_ACTUAL_MESSAGE04
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
-INFO  | 2023-05-22 18:03:04 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_ACTUAL_MESSAGE04
-INFO  | 2023-05-22 18:03:07 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
-INFO  | 2023-05-22 18:03:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_02
+INFO  | 2023-05-23 15:32:37 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:47) - Open browser
+INFO  | 2023-05-23 15:32:40 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
+INFO  | 2023-05-23 15:32:40 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
+INFO  | 2023-05-23 15:32:44 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:63) - open browser successfullyCHROME
+INFO  | 2023-05-23 15:32:44 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:66) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-05-23 15:32:44 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - url: [Ljava.lang.String;@16fc5622
+INFO  | 2023-05-23 15:32:58 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:297) - Maximizing browser window...
+INFO  | 2023-05-23 15:32:58 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU05:34) - testCase_SU05
+INFO  | 2023-05-23 15:33:00 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
+INFO  | 2023-05-23 15:33:08 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-05-23 15:33:15 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-05-23 15:33:15 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-05-23 15:33:15 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-05-23 15:33:21 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
+INFO  | 2023-05-23 15:33:24 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-05-23 15:33:28 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-05-23 15:33:28 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentLOGIN_BTN_FORGOT_PASSWORD
+INFO  | 2023-05-23 15:33:32 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:475) - scrollDownToElementSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2023-05-23 15:33:34 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2023-05-23 15:33:38 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_FORM_DATA_INFORMATION
+INFO  | 2023-05-23 15:33:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
+INFO  | 2023-05-23 15:33:39 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2023-05-23 15:33:40 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_EXIST
+INFO  | 2023-05-23 15:33:40 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_EMAIL_EXIST
+INFO  | 2023-05-23 15:33:40 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-05-23 15:33:40 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-05-23 15:33:43 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_DUPLICATE with SIGNIN_MESSAGE_DATA_EXIST
+INFO  | 2023-05-23 15:33:44 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU02:42) - testCase_SU02
+INFO  | 2023-05-23 15:33:44 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-05-23 15:33:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_EMAIL_INVALID
+INFO  | 2023-05-23 15:33:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_EMAIL_CONFIRM_INVALID
+INFO  | 2023-05-23 15:33:48 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-05-23 15:33:48 | [main] core.KeywordWeb (KeywordWeb.java:imWait:678) - implicitlyWait
+INFO  | 2023-05-23 15:33:48 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_DATA_VERIFY_MESSAGE with SIGNUP_FIRSTNAME_ERROR
+INFO  | 2023-05-23 15:33:48 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_DATA_VERIFY_MESSAGE with SIGNUP_LASTNAME_ERROR
+INFO  | 2023-05-23 15:33:48 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU03:48) - testCase_SU03
+INFO  | 2023-05-23 15:33:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
+INFO  | 2023-05-23 15:33:48 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2023-05-23 15:33:49 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:33:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_EMAIL_FAIL
+INFO  | 2023-05-23 15:33:49 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:33:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_EMAIL_FAIL
+INFO  | 2023-05-23 15:33:49 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-05-23 15:33:49 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EMAIL_SHOW_MESSAGE with COM_TEXT_ERROR_EMAIL
+INFO  | 2023-05-23 15:33:49 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EMAIL_SHOW_MESSAGE with SIGNUP_ADDRESS_EMAIL_ERROR
+INFO  | 2023-05-23 15:33:49 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU04:54) - testCase_SU04
+INFO  | 2023-05-23 15:33:49 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:33:49 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_DATA_EMAIL_NEW_INFORMATION
+INFO  | 2023-05-23 15:33:49 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:33:50 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_EMAIL_CONFIRM_FAIL
+INFO  | 2023-05-23 15:33:50 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-05-23 15:33:51 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EMAIL_NOT_SAME with SIGNUP_ADDRESS_EMAIL_ERROR
+INFO  | 2023-05-23 15:33:51 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU06:60) - testCase_SU06
+INFO  | 2023-05-23 15:33:51 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:33:51 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_DATA_EMAIL_NEW_INFORMATION
+INFO  | 2023-05-23 15:33:52 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-05-23 15:33:52 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-05-23 15:33:53 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_DATA_EMAIL_NEW_INFORMATION
+INFO  | 2023-05-23 15:33:54 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleSIGNUP_SELECT_TITLE
+INFO  | 2023-05-23 15:34:24 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-05-23 15:34:25 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_CHECKBOX_AGREE
+INFO  | 2023-05-23 15:34:25 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_CREATE_ACCOUNT
+INFO  | 2023-05-23 15:34:34 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_NOT_SAME_MAIL with SIGNIN_MESSAGE_DATA_EXIST
+INFO  | 2023-05-23 15:34:34 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU07:67) - testCase_SU07
+INFO  | 2023-05-23 15:34:34 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:34:34 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNIN_EMAIL_REGIS
+INFO  | 2023-05-23 15:34:35 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:34:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNIN_EMAIL_REGIS
+INFO  | 2023-05-23 15:34:35 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-05-23 15:34:35 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-05-23 15:34:37 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_03
+INFO  | 2023-05-23 15:34:39 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleSIGNUP_SELECT_TITLE
+INFO  | 2023-05-23 15:35:09 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-05-23 15:35:09 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_CHECKBOX_AGREE
+INFO  | 2023-05-23 15:35:09 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-05-23 15:35:09 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGNUP_ACTUAL_MESSAGE04
+INFO  | 2023-05-23 15:35:09 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-05-23 15:35:09 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-05-23 15:35:09 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-05-23 15:35:09 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-05-23 15:35:09 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_ACTUAL_MESSAGE04
+INFO  | 2023-05-23 15:35:09 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU08:74) - testCase_SU08
+INFO  | 2023-05-23 15:35:09 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:35:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_02
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGN_MESSAGE_CHARACTERS
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_MESSAGE_ERROR_NUMBER
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_NUMBER
+INFO  | 2023-05-23 15:35:11 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU09:80) - testCase_SU09
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_04
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGN_MESSAGE_CHARACTERS
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_MESSAGE_ERROR_LOWER_LETTER
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_LOWER_LETTER
+INFO  | 2023-05-23 15:35:11 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU010:86) - testCase_SU010
+INFO  | 2023-05-23 15:35:11 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_05
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGN_MESSAGE_CHARACTERS
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_MESSAGE_ERROR_UPPER_LETTER
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_UPPER_LETTER
+INFO  | 2023-05-23 15:35:12 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU011:92) - testCase_SU011
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_06
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGN_MESSAGE_CHARACTERS
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE
+INFO  | 2023-05-23 15:35:12 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE
+INFO  | 2023-05-23 15:35:12 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU012:98) - testCase_SU012
+INFO  | 2023-05-23 15:35:13 | [main] core.KeywordWeb (KeywordWeb.java:imWait:678) - implicitlyWait
+INFO  | 2023-05-23 15:35:13 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:35:14 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith LOGIN_NEW_PASSWORD
+INFO  | 2023-05-23 15:35:14 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_CREATE_ACCOUNT
+INFO  | 2023-05-23 15:35:22 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_INPUT_VERIFY_CODE
+INFO  | 2023-05-23 15:35:27 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_INPUT_VERIFY_CODEwith SIGNUP_CODE_DATA
+INFO  | 2023-05-23 15:35:28 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_SUBMIT_ACCOUNT
+INFO  | 2023-05-23 15:35:34 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_CODE_ERROR with SIGNUP_MESSAGE_ACTUAL
+INFO  | 2023-05-23 15:35:34 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU013_and_testCase_01:105) - testCase_SU013_and_testCase_01
+INFO  | 2023-05-23 15:37:16 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_RESEND_CODE
+INFO  | 2023-05-23 15:37:27 | [main] core.KeywordWeb (KeywordWeb.java:imWait:678) - implicitlyWait
+INFO  | 2023-05-23 15:37:27 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:286) - Executing JavaScript
+INFO  | 2023-05-23 15:37:27 | [main] core.KeywordWeb (KeywordWeb.java:switchToTab:439) - switchToTab
+INFO  | 2023-05-23 15:37:27 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:297) - Maximizing browser window...
+INFO  | 2023-05-23 15:37:27 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...https://stage.glamira.com/secured2021//
+INFO  | 2023-05-23 15:37:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME
+INFO  | 2023-05-23 15:37:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD
+INFO  | 2023-05-23 15:37:35 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2023-05-23 15:37:47 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:499) -  scrolling to position 
+INFO  | 2023-05-23 15:37:47 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:475) - scrollDownToElementLOGIN_BTN_CUSTOMER
+INFO  | 2023-05-23 15:37:47 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_CUSTOMER
+INFO  | 2023-05-23 15:37:48 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_VERIFY_CUSTOMER
+INFO  | 2023-05-23 15:37:52 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_EMAIL_LOG
+INFO  | 2023-05-23 15:37:55 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_VERIFY_EMAIL_LOG
+INFO  | 2023-05-23 15:37:56 | [main] core.KeywordWeb (KeywordWeb.java:imWait:678) - implicitlyWait
+INFO  | 2023-05-23 15:37:56 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_CHECK_EMAIL_LOG_ACTION_SELECT
+INFO  | 2023-05-23 15:37:59 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentLOGIN_SELECT_ACTIVE
+INFO  | 2023-05-23 15:38:00 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_SELECT_VIEW_CHECK_EMAIL_LOG
+INFO  | 2023-05-23 15:38:01 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentLOGIN_POPUP_MESSAGE_PASSWORD_RESET
+INFO  | 2023-05-23 15:38:02 | [main] core.KeywordWeb (KeywordWeb.java:switchToIFrameByXpath:394) - Switching to Iframe
+INFO  | 2023-05-23 15:38:02 | [main] core.KeywordWeb (KeywordWeb.java:getText:180) - get Text ofINPUT_CODE_SEND
+INFO  | 2023-05-23 15:38:02 | [main] core.KeywordWeb (KeywordWeb.java:closeWindowByIndex:454) - closeWindowByIndex
+INFO  | 2023-05-23 15:38:02 | [main] core.KeywordWeb (KeywordWeb.java:switchToWindowByIndex:409) - switchToWindowByIndex
+INFO  | 2023-05-23 15:38:02 | [main] core.KeywordWeb (KeywordWeb.java:switchToTab:439) - switchToTab
+INFO  | 2023-05-23 15:38:02 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_INPUT_VERIFY_CODEwith 963992
+INFO  | 2023-05-23 15:38:03 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_SUBMIT_ACCOUNT
+INFO  | 2023-05-23 15:38:12 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU with SIGNUP_MESSAGE_REGIST_SUCCESS_US
+INFO  | 2023-05-23 15:38:12 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
+INFO  | 2023-05-23 15:38:12 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-05-23 15:38:33 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
+INFO  | 2023-05-23 15:38:42 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-05-23 15:38:49 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-05-23 15:38:49 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-05-23 15:38:49 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-05-23 15:38:55 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
+INFO  | 2023-05-23 15:38:55 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_TXT_EMAILwith SIGNIN_EMAIL_REGIS
+INFO  | 2023-05-23 15:38:57 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_TXT_PASSWORDwith LOGIN_NEW_PASSWORD
+INFO  | 2023-05-23 15:38:57 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_SUBMITLOGIN
+INFO  | 2023-05-23 15:39:25 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleMAC_VERIFY_NAME
+INFO  | 2023-05-23 15:39:25 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...https://stage.glamira.com/
+INFO  | 2023-05-23 15:39:31 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
+INFO  | 2023-05-23 15:39:40 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-05-23 15:39:47 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-05-23 15:39:47 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-05-23 15:39:47 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-05-23 15:39:53 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
+INFO  | 2023-05-23 15:39:57 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleLOGIN_BTN_LOGIN
+INFO  | 2023-05-23 15:39:57 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-05-23 15:39:59 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_NEW_ACCOUNT
+INFO  | 2023-05-23 15:40:00 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_CREATE_NEW_ACCOUNT
+INFO  | 2023-05-23 15:40:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_WITH_PHONEwith DATA_PHONE_NUMBER
+INFO  | 2023-05-23 15:40:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_SIGNUP
+INFO  | 2023-05-23 15:40:10 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRM_ERRORwith SIGNUP_EMAIL_SIGNUP
+INFO  | 2023-05-23 15:40:10 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-05-23 15:40:10 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from COM_DATA_MESSAGES_NULL with MESSAGE_REQUIRED_FAILED_FRIST_NAME
+INFO  | 2023-05-23 15:40:10 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from COM_DATA_MESSAGES_NULL with MESSAGE_REQUIRED_FAILED_LAST_NAME
+INFO  | 2023-05-23 15:40:10 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-05-23 15:40:22 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_NEW_ACCOUNT
+INFO  | 2023-05-23 15:40:56 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith Nguyen
+INFO  | 2023-05-23 15:40:57 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_LAST_NAME_INFORMATIONwith Nguyen
+INFO  | 2023-05-23 15:40:57 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_WITH_PHONEwith DATA_PHONE_INVALID
+INFO  | 2023-05-23 15:40:57 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_SIGNUP
+INFO  | 2023-05-23 15:40:57 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRM_ERRORwith SIGNUP_EMAIL_SIGNUP
+INFO  | 2023-05-23 15:40:57 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-05-23 15:40:57 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_VALID_NUMBER_FIELD with MOBILE_NUMBER_ERROR
+INFO  | 2023-05-23 15:41:05 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-05-23 15:41:11 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_NEW_ACCOUNT
+INFO  | 2023-05-23 15:41:45 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith Nguyen
+INFO  | 2023-05-23 15:41:46 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_LAST_NAME_INFORMATIONwith Nguyen
+INFO  | 2023-05-23 15:41:46 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_WITH_PHONEwith EMAIL_ONE_SYSTEM
+INFO  | 2023-05-23 15:41:46 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_SIGNUP
+INFO  | 2023-05-23 15:41:46 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRM_ERRORwith SIGNUP_EMAIL_SIGNUP
+INFO  | 2023-05-23 15:41:46 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-05-23 15:41:49 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_DUPLICATE with MESSAGE_ERROR_PHONE_NUMBER
+INFO  | 2023-05-23 15:41:50 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-05-23 15:41:53 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_NEW_ACCOUNT
+INFO  | 2023-05-23 15:42:27 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith Nguyen
+INFO  | 2023-05-23 15:42:27 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_LAST_NAME_INFORMATIONwith Nguyen
+INFO  | 2023-05-23 15:42:28 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_WITH_PHONEwith EMAIL_ONE_SYSTEM2
+INFO  | 2023-05-23 15:42:28 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_SIGNUP2
+INFO  | 2023-05-23 15:42:28 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRM_ERRORwith SIGNUP_EMAIL_SIGNUP2
+INFO  | 2023-05-23 15:42:28 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-05-23 15:42:31 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_03
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGNUP_ACTUAL_MESSAGE04
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_ACTUAL_MESSAGE04
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGNUP_ACTUAL_MESSAGE04
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-05-23 15:42:32 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_ACTUAL_MESSAGE04
+INFO  | 2023-05-23 15:42:34 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:42:35 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_02
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGN_MESSAGE_CHARACTERS
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_MESSAGE_ERROR_NUMBER
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_NUMBER
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_04
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGN_MESSAGE_CHARACTERS
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_MESSAGE_ERROR_LOWER_LETTER
+INFO  | 2023-05-23 15:42:36 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_LOWER_LETTER
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_05
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGN_MESSAGE_CHARACTERS
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_MESSAGE_ERROR_UPPER_LETTER
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_UPPER_LETTER
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_CREATE_PASSWORD_FAIL_06
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_PASSWORD_FAIL01 with SIGNUP_ACTUAL_MESSAGE01
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_01 with SIGN_MESSAGE_CHARACTERS
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_05 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_02 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_03 with SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_EXPECTED_MESSAGE_PASSWORD_07 with SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE
+INFO  | 2023-05-23 15:42:37 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE
+INFO  | 2023-05-23 15:42:39 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_BACK
+INFO  | 2023-05-23 15:42:39 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_BACK
+INFO  | 2023-05-23 15:42:39 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-05-23 15:42:44 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_NEW_ACCOUNT
+INFO  | 2023-05-23 15:43:18 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith Nguyen
+INFO  | 2023-05-23 15:43:18 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_LAST_NAME_INFORMATIONwith Nguyen
+INFO  | 2023-05-23 15:43:18 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_WITH_PHONEwith EMAIL_ONE_SYSTEM2
+INFO  | 2023-05-23 15:43:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith DATA_EMAIL_RETURN2
+INFO  | 2023-05-23 15:43:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRM_ERRORwith DATA_EMAIL_RETURN2
+INFO  | 2023-05-23 15:43:19 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-05-23 15:43:24 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_MESSAGE_DUPLICATE with MESSAGE_ERROR_PHONE_NUMBER
+INFO  | 2023-05-23 15:43:24 | [main] test.signinSignup.SignUpTest (SignUpTest.java:testCase_SU023_Case_14:161) - testCase_SU023_Case_14
+INFO  | 2023-05-23 15:43:25 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-05-23 15:43:29 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_CREATE_NEW_ACCOUNT
+INFO  | 2023-05-23 15:44:03 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith Nguyen
+INFO  | 2023-05-23 15:44:03 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_LAST_NAME_INFORMATIONwith Nguyen
+INFO  | 2023-05-23 15:44:03 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_WITH_PHONEwith EMAIL_ONE_SYSTEM2
+INFO  | 2023-05-23 15:44:04 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_SIGNUP_REGISTER
+INFO  | 2023-05-23 15:44:04 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRM_ERRORwith SIGNUP_EMAIL_SIGNUP_REGISTER
+INFO  | 2023-05-23 15:44:04 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-05-23 15:44:08 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith DATA_PASSWORD_LOGIN_RETURN
+INFO  | 2023-05-23 15:44:09 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickACCEPT_AGREE
+INFO  | 2023-05-23 15:44:10 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_CREATE_ACCOUNT
+INFO  | 2023-05-23 15:44:28 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_INPUT_VERIFY_CODEwith DATA_SEND_SEND_CODE
+INFO  | 2023-05-23 15:44:29 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_ACTIVE_ACCOUNT
+INFO  | 2023-05-23 15:46:34 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_SEND_CODE

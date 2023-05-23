@@ -7,25 +7,25 @@
         <classes>
 
             <class name="test.signinSignup.SignUpTest">
-                <methods>
-                                        <include name="testCase_SU015"/>
-                                        <include name="testCase_SU016"/>
-                                        <include name="testCase_SU017"/>
-                                        <include name="testCase_SU018"/>
-                                        <include name="testCase_SU019"/>
-                                        <include name="testCase_SU020"/>
-                                        <include name="testCase_SU021"/>
-                                        <include name="testCase_SU022"/>
-                                        <include name="testCase_SU024"/>
-                                        <include name="testCase_SU023_Case_14"/>
-<!--                                        <include name="testCase_SP_21"/>-->
-                    <!--                    <include name="testCase_SP_24"/>-->
-                    <!--                    <include name="testCase_SP_25"/>-->
-                    <!--                    <include name="testCase_SP_26_RV_02_04"/>-->
-                    <!--                    <include name="testCase_RV_05"/>-->
-                    <!--                    <include name="testCase_RV_06"/>-->
-                    <!--                    <include name="testCase_RV_07"/>-->
-                </methods>
+<!--                <methods>-->
+<!--                                        <include name="testCase_SU015"/>-->
+<!--                                        <include name="testCase_SU016"/>-->
+<!--                                        <include name="testCase_SU017"/>-->
+<!--                                        <include name="testCase_SU018"/>-->
+<!--                                        <include name="testCase_SU019"/>-->
+<!--                                        <include name="testCase_SU020"/>-->
+<!--                                        <include name="testCase_SU021"/>-->
+<!--                                        <include name="testCase_SU022"/>-->
+<!--                                        <include name="testCase_SU024"/>-->
+<!--                                        <include name="testCase_SU023_Case_14"/>-->
+<!--&lt;!&ndash;                                        <include name="testCase_SP_21"/>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <include name="testCase_SP_24"/>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <include name="testCase_SP_25"/>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <include name="testCase_SP_26_RV_02_04"/>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <include name="testCase_RV_05"/>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <include name="testCase_RV_06"/>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <include name="testCase_RV_07"/>&ndash;&gt;-->
+<!--                </methods>-->
             </class>
         </classes>
     </test>
