@@ -33,9 +33,9 @@
 <!--https://dev1.glamira.com/glgb/ -->
 <!--https://stage.glamira.de/        RV_08    -->
         <parameter name="devices" value="web"></parameter>
-        <parameter name="baseURL" value="https://stage.glamira.de/"></parameter>
+        <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
-<!--            <class name="test.MyAccountTest">-->
+            <class name="test.MyAccountTest">
 <!--                <methods>-->
 <!--                    <include name="testCase_PI_01"/>-->
 <!--                    <include name="testCase_Myorder_05"/>-->
@@ -44,7 +44,7 @@
 <!--                    <include name="testCase_MW_04"/>-->
 <!--                    <include name="testCase_MW_05"/>-->
 <!--                </methods>-->
-<!--            </class>-->
+            </class>
 <!--            <class name="test.ProductDetailTest">-->
 <!--                                <methods>-->
 <!--                                    <include name="testCase_NPP_19"/>-->
@@ -60,8 +60,8 @@
 <!--            </class>-->
 
 
-            <class name="test.checkout.ShoppingBagTest">
-                <methods>
+<!--            <class name="test.checkout.ShoppingBagTest">-->
+<!--                <methods>-->
 <!--                    <include name="testCase_SP_02"/>-->
 <!--                    <include name="testCase_SP_17"/>-->
 <!--                    <include name="testCase_SP_26_RV_02_04"/>-->
@@ -91,7 +91,7 @@
 <!--&lt;!&ndash;                    <include name="testCase_RV_10"/>&ndash;&gt;-->
 <!--                    <include name="testCase_RV_07"/>-->
 <!--&lt;!&ndash;                    <include name="testCase_RV_09"/>&ndash;&gt;-->
-                    <include name="testCase_RV_08"/>
+<!--                    <include name="testCase_RV_08"/>-->
 <!--&lt;!&ndash;                    <include name="testCase_RV_11"/>&ndash;&gt;-->
 <!--&lt;!&ndash;                    <include name="testCase_RV_12"/>&ndash;&gt;-->
 <!--&lt;!&ndash;                    <include name="testCase_RV_13"/>&ndash;&gt;-->
@@ -108,8 +108,8 @@
 <!--                    <include name="testCase_RV_32"/>-->
 <!--                    <include name="testCase_RV_33"/>-->
 
-                </methods>
-            </class>
+<!--                </methods>-->
+<!--            </class>-->
 <!--            <class name="test.checkout.LoginAddressTest">-->
 <!--                <methods>-->
 <!--                    <include name="NLA_01_02"/>-->

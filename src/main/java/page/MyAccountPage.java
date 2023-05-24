@@ -104,13 +104,13 @@ public class MyAccountPage extends BasePage {
         commonPersonalInf("MAC_CLICK_CHECKBOX_EMAIL");
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String mail = "dung"+timestamp+"@gmail.com";
-        PropertiesFile.serPropValue("COM_INP_DATA_EMAIL_STAGE",mail);
-        keyword.sendKeys("MAC_INP_EMAIL_NEW","COM_INP_DATA_EMAIL_STAGE");
+//        PropertiesFile.serPropValue("COM_INP_DATA_EMAIL_STAGE",mail);
+        keyword.sendKeys("MAC_INP_EMAIL_NEW",mail);
         keyword.sendKeys("MAC_INP_PASS_CURENT_1","COM_INP_DATA_PASS_STAGE");
         keyword.click("MAC_BTN_SAVE_2");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
+        PropertiesFile.serPropValue("COM_INP_DATA_EMAIL_STAGE",mail);
     }
 
     public void inpChangePassword() throws InterruptedException {
