@@ -127,15 +127,6 @@ public class SignUpPage extends BasePage {
         keyword.click(buttonApplyFilter);
     }
 
-    // verify input invalid with store China
-    public void verifyMessageFormInvalid() throws InterruptedException {
-        keyword.untilJqueryIsDone(50L);
-        keyword.untilJqueryIsDone(50L);
-        keyword.assertEquals("必填项。", "LBL_ERROR_MESSAGE");
-        keyword.assertEquals("必填项。", "SIGNUP_LASTNAME_ERROR");
-        keyword.assertEquals("必填项。", "SIGNUP_PHONE_ERROR");
-    }
-
     //    Get code and send key
     public void getCodeAndSendKey(String dataInput, String btnSubmit) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
@@ -165,18 +156,6 @@ public class SignUpPage extends BasePage {
         keyword.assertEquals("SIGNUP_EXPECTED_MESSAGE_PASSWORD_07", charactersLike);
         keyword.webDriverWaitForElementPresent(checkElement, 10);
     }
-
-    //    confirm password entry condition WITH  Chinese
-    public void confirmPasswordEntryConditionWithChinese(String Message, String characters, String number, String lowerLetter, String upperLetter, String charactersLike, String checkElement) throws InterruptedException {
-        keyword.assertEquals("您的密码应与您的电子邮件地址不同，并包含", Message);
-        keyword.assertEquals("至少8个字符", characters);
-        keyword.assertEquals("至少1个号码", number);
-        keyword.assertEquals("至少1个小写", lowerLetter);
-        keyword.assertEquals("至少1个大写", upperLetter);
-        keyword.assertEquals("至少1个字符，例如：# & $ ( ) * + , - . : , . = ? @ { } ~ !", charactersLike);
-        keyword.webDriverWaitForElementPresent(checkElement, 10);
-    }
-
     //Create new customer and leave with blank form for required form
     public void createCustomerWithBlankFormRequired() throws InterruptedException {
         keyword.reLoadPage();
@@ -411,49 +390,6 @@ public class SignUpPage extends BasePage {
                 "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_MESSAGE_ERROR_NUMBER",
                 "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
                 "SIGNUP_MESSAGE_ERROR_NUMBER"
-        );
-    }
-
-    //    checkConditionAtLeast1Number
-    public void checkConditionAtLeast1Number() throws InterruptedException {
-        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_02");
-        keyword.untilJqueryIsDone(50L);
-        confirmPasswordEntryConditionWithChinese(
-                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS_SUCCESS", "SIGNUP_MESSAGE_ERROR_NUMBER",
-                "SIGN_MESSAGE_CHARACTERS_MOBILE", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
-                "SIGNUP_MESSAGE_ERROR_NUMBER"
-        );
-    }
-
-    //    checkConditionAtLeast1LowerLetter
-    public void checkConditionAtLeast1LowerLetter() throws InterruptedException {
-        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_04");
-        keyword.untilJqueryIsDone(50L);
-        confirmPasswordEntryConditionWithChinese(
-                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
-                "SIGNUP_MESSAGE_ERROR_LOWER_LETTER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
-                "SIGNUP_MESSAGE_ERROR_LOWER_LETTER"
-        );
-    }
-
-    //    checkConditionAtLeast1UpperLetter
-    public void checkConditionAtLeast1UpperLetter() throws InterruptedException {
-        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_05");
-        keyword.untilJqueryIsDone(50L);
-        confirmPasswordEntryConditionWithChinese(
-                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
-                "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_MESSAGE_ERROR_UPPER_LETTER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_CHARACTERS",
-                "SIGNUP_MESSAGE_ERROR_UPPER_LETTER"
-        );
-    }
-
-    //    checkConditionAtLeast1CharactersLike
-    public void checkConditionAtLeast1CharactersLike() throws InterruptedException {
-        clearTextAndSendKey("SIGNUP_PASSWORD_INFORMATION", "SIGNUP_PASSWORD_INFORMATION", "SIGNUP_CREATE_PASSWORD_FAIL_06");
-        confirmPasswordEntryConditionWithChinese(
-                "SIGNUP_ACTUAL_MESSAGE01", "SIGN_MESSAGE_CHARACTERS", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_NUMBER",
-                "SIGNUP_ACTUAL_MESSAGE_AT_LAST_LOWER", "SIGNUP_ACTUAL_MESSAGE_AT_LAST_UPPER", "SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE_CHINA",
-                "SIGNUP_MESSAGE_ERROR_CHARACTERS_LIKE_CHINA"
         );
     }
 

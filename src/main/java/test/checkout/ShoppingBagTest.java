@@ -36,7 +36,7 @@ public class ShoppingBagTest extends BaseTest {
         objRegist.acceptAllCookies();
         keyword.untilJqueryIsDone(50L);
         //objRegist.chooseLanguages();
-        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
+        objLogin.loginOnWebsite("DATA_EMAIL_RETURN2","DATA_PASSWORD_LOGIN_RETURN",
                 "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
     }
     public void commonShopping1() throws InterruptedException {
@@ -47,7 +47,7 @@ public class ShoppingBagTest extends BaseTest {
         //objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
         //objRegist.chooseLanguages();
-        objLogin.loginOnWebsite("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD",
+        objLogin.loginOnWebsite("DATA_EMAIL_RETURN2","DATA_PASSWORD_LOGIN_RETURN",
                 "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
         //  objLogin.loginOnMobile("LOGIN_DATA_EMAIL","LOGIN_DATA_PASSWORD");
     }

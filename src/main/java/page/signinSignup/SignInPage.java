@@ -19,6 +19,8 @@ public class SignInPage extends BasePage {
 
     public SignInPage(KeywordWeb key) {
         super(key);
+        objRegist = new RegisterPage(this.keyword);
+        objSignUp = new SignUpPage(this.keyword);
     }
 
     public SignInPage() {
@@ -34,10 +36,12 @@ public class SignInPage extends BasePage {
                 "SIGNIN_MESSAGE_REQUIRED_FIELD", "SIGNIN_MESSAGE_REQUIRED_FIELD");
     }
 
-    public void checkGoToFormLoginWithPhone() throws InterruptedException {
+    public void checkGoToFormLoginWithPhone(Boolean check, String dataPhone, String dataPass, String expected, String actual) throws InterruptedException {
         keyword.deleteAllCookies();
-        keyword.navigateToUrl("https://dev3.glamira.com/glcn/");
+        keyword.reLoadPage();
+        keyword.navigateToUrl("https://stage.glamira.com/");
         keyword.untilJqueryIsDone(50L);
+        objRegist.acceptAllCookies();
         Thread.sleep(5000);
         keyword.click("SIGNIN_BTN_ACC");
         keyword.untilJqueryIsDone(50L);
@@ -45,7 +49,21 @@ public class SignInPage extends BasePage {
         Thread.sleep(2000);
         keyword.click("SIGNIN_TAB_LOGIN_IN_WITH_PHONE");
         keyword.untilJqueryIsDone(10L);
-        inputBlankAndVerify("SIGNIN_MESSAGE_FAIL_WITH_MOBILE", "必填项。", "必填项。");
+        if (check) {
+            keyword.sendKeys("SIGNIN_INPUT_PHONE_NUMBER", dataPhone);
+            keyword.sendKeys("SIGNIN_PASSWORD_INPUT", dataPass);
+            keyword.click("SIGNIN_BTN_SUBMIT_FORM_PHONE");
+            keyword.untilJqueryIsDone(50L);
+            keyword.assertEquals(expected, actual);
+        } else {
+            keyword.untilJqueryIsDone(50L);
+            keyword.click("LOGIN_BTN_FORGOT_PASSWORD");
+            keyword.untilJqueryIsDone(50L);
+            if (keyword.verifyElementPresent("MOBILE_NUMBER")) {
+                keyword.click("MOBILE_NUMBER");
+            }
+        }
+
     }
 
     // Login with email and leave the password field blank
@@ -104,6 +122,7 @@ public class SignInPage extends BasePage {
         keyword.untilJqueryIsDone(20L);
 //        keyword.assertEquals("SIGNIN_MESSAGE_UNABLE_CODE", "SIGNIN_XPATH_UNABLE_CODE");
     }
+
     //Resend the code to email
     public void resentTheCodeToEmail() throws Exception {
         keyword.clearText("SIGNIN_INPUT_ENTER_CODE");
@@ -115,7 +134,7 @@ public class SignInPage extends BasePage {
         selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT", "LOGIN_SELECT_ACTIVE",
                 "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG", "LOGIN_POPUP_MESSAGE_PASSWORD_RESET"
         );
-        getCodeEnterTextInField("IFRAME_STAGE", "LOGIN_INPUT_VERIFY_CODE",
+        getCodeEnterTextInField("IFRAME_STAGE", "LOGIN_INPUT_VERIFY_CODE2",
                 "SIGNIN_INPUT_ENTER_CODE", "SIGNIN_BTN_SUBMIT_SEND_CODE");
         keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_SEND_KEY");
         keyword.untilJqueryIsDone(70L);
@@ -156,36 +175,32 @@ public class SignInPage extends BasePage {
         keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "");
     }
 
-
     //Login wrong phone number
     public void enterInvalidPhone() throws InterruptedException {
-        clearTextSendKeyAndVerify("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_INPUT_PHONE_NUMBER",
-                "SIGNIN_PASSWORD_WRONG", "SIGNIN_BTN_SUBMIT_FORM_PHONE",
-                "用户名或者密码不正确", "SIGNIN_INPUT_MESSAGE_INVALID");
+        invalidPhone();
     }
 
     //   Login wrong password
     public void enterWrongPassword() throws InterruptedException {
-        objSignUp = new SignUpPage(this.keyword);
-        objSignUp.clearTextAndSendKey("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_INPUT_PHONE_NUMBER", "SIGNUP_DATA_PHONE");
-        clearTextSendKeyAndVerify("SIGNIN_PASSWORD_INPUT", "SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_WRONG_PHONE",
-                "SIGNIN_BTN_SUBMIT_FORM_PHONE", "用户名或者密码不正确", "SIGNIN_INPUT_MESSAGE_INVALID");
+        checkGoToFormLoginWithPhone(true, "EMAIL_ONE_SYSTEM2", "SIGNIN_DATA_PASSWORD_PHONE", "SIGNIN_MESSAGE_PASSWORD_ACTUAL", "SIGNIN_MESSAGE_INVALID");
     }
 
     //for got Pass Enter Phone Is Not The System
-    public void forgotPassEnterPhoneIsNotTheSystem() throws InterruptedException {
-        keyword.click("SIGNIN_XPATH_FORGOT_PASSWORD");
+    public void sendDataForgotPassword(String dataPhone) throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.untilJqueryIsDone(50L);
+        keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", dataPhone);
         keyword.untilJqueryIsDone(30L);
-        keyword.click("SIGNIN_TAB_PHONE_FORGOT_PASSWORD");
-        keyword.untilJqueryIsDone(10L);
-        keyword.click("SIGNIN_SELECT_PHONE");
-        keyword.untilJqueryIsDone(10L);
-        keyword.click("SIGNIN_CHINA_PHONE");
-        keyword.untilJqueryIsDone(10L);
-        keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "SIGNIN_VALID_PHONE_CHINA");
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(50L);
-        keyword.assertEquals("你的电话号码不正确。请验证手机号码後重试。", "SIGNIN_INPUT_MESSAGE_PHONE_FAIL");
+        keyword.untilJqueryIsDone(50L);
+
+    }
+
+    public void forgotPassEnterPhoneIsNotTheSystem() throws InterruptedException {
+        checkGoToFormLoginWithPhone(false, "EMAIL_ONE_SYSTEM2", "SIGNIN_DATA_PASSWORD_PHONE", "SIGNIN_MESSAGE_PASSWORD_ACTUAL", "SIGNIN_MESSAGE_INVALID");
+        sendDataForgotPassword("SIGNIN_DATA_PHONE_NUMBER_NOT_SYSTEM");
+        keyword.assertEquals( "SIGNIN_MESSAGE_PHONE_INCORRECT", "MESSAGE_FAIL_RESEND_CODE");
     }
 
     //   create New Password With Invalid Phone
@@ -216,11 +231,11 @@ public class SignInPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.sendKeys("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_DATA_SEND_KEY");
         keyword.untilJqueryIsDone(30L);
-        objSignUp.confirmPasswordEntryConditionWithChinese(
-                "SIGNIN_MESSAGE_CREATE_NEW_PW", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_CHINA",
-                "SIGNUP_ACTUAL_MESSAGE_CHINA1", "SIGNUP_ACTUAL_MESSAGE_CHINA2", "SIGNUP_ACTUAL_MESSAGE_CHINA3",
-                "SIGNUP_ACTUAL_MESSAGE04"
-        );
+//        objSignUp.confirmPasswordEntryConditionWithChinese(
+//                "SIGNIN_MESSAGE_CREATE_NEW_PW", "SIGNUP_ACTUAL_MESSAGE04", "SIGNUP_ACTUAL_MESSAGE_CHINA",
+//                "SIGNUP_ACTUAL_MESSAGE_CHINA1", "SIGNUP_ACTUAL_MESSAGE_CHINA2", "SIGNUP_ACTUAL_MESSAGE_CHINA3",
+//                "SIGNUP_ACTUAL_MESSAGE04"
+//        );
     }
 
     //    create New Password Success
@@ -229,6 +244,8 @@ public class SignInPage extends BasePage {
         String pass = "Ngoc*" + timestamp + "@";
         keyword.untilJqueryIsDone(10L);
         PropertiesFile.serPropValue("SIGNUP_CREATE_PASSWORD_PHONE_RD", pass);
+        checkGoToFormLoginWithPhone(false, "EMAIL_ONE_SYSTEM2", "SIGNIN_DATA_PASSWORD_PHONE", "SIGNIN_MESSAGE_PASSWORD_ACTUAL", "SIGNIN_MESSAGE_INVALID");
+        sendDataForgotPassword("EMAIL_ONE_SYSTEM2");
         objSignUp.clearTextAndSendKey("SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNIN_INPUT_CREATE_NEW_PASSWORD", "SIGNUP_CREATE_PASSWORD_PHONE_RD");
         keyword.click("SIGNIN_BTN_SUBMIT_RESET_PASSWORD");
         keyword.untilJqueryIsDone(100L);
@@ -238,28 +255,8 @@ public class SignInPage extends BasePage {
 
     //login With Phone Success
     public void loginWithPhoneSuccess() throws InterruptedException {
-        keyword.untilJqueryIsDone(20L);
-        keyword.click("SIGN_INPUT_SELECT_PHONE");
-        keyword.untilJqueryIsDone(10L);
-        keyword.click("SIGNIN_SELECT_PHONE_CHINA");
-        keyword.untilJqueryIsDone(10L);
-        keyword.click("SIGN_BTN_LOGIN_STORE_CHINA");
-        keyword.assertEquals("必填项。", "SIGN_MESSAGE_FAIL");
-        keyword.assertEquals("必填项。", "SIGNIN_MESSAGE_PASSWORD_INVALID");
-        keyword.untilJqueryIsDone(10L);
-        keyword.sendKeys("SIGN_INPUT_PHONE_CHINA", "SIGNIN_PHONE_CHINA");
-        keyword.sendKeys("SIGN_INPUT_PASSWORD", "SIGNUP_CREATE_PASSWORD_PHONE_RD");
-        keyword.click("SIGN_BTN_LOGIN_STORE_CHINA");
-        keyword.untilJqueryIsDone(50L);
-        keyword.verifyElementVisible("SIGN_MESSAGE_SUCCESS");
-    }
-
-    //Invalid phone number entered
-    public void enterInvalidPhoneNumber() throws InterruptedException {
-        keyword.sendKeys("SIGNIN_INPUT_PHONE_NUMBER", "SIGNIN_DATA_PHONE_NUMBER");
-        keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "SIGNIN_DATA_PASSWORD_PHONE");
-        keyword.click("SIGNIN_BTN_SUBMIT_FORM_PHONE");
-        keyword.assertEquals("请输入有效的手机号码。", "SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
+        checkGoToFormLoginWithPhone(true, "", "", "COM_DATA_MESSAGES_NULL", "SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
+        keyword.assertEquals("COM_DATA_MESSAGES_NULL", "SIGNIN_MESSAGE_PASSWORD_INVALID");
     }
 
     // open new right tabs
@@ -270,6 +267,7 @@ public class SignInPage extends BasePage {
         keyword.navigateToUrl("ADMIN_URL");
 //        keyword.webDriverWaitForElementPresent("LOGIN_FORM_LOGIN_BACKEND", 50);
     }
+
     public void openTabBE(String urlBe) throws InterruptedException {
         keyword.executeJavaScript("window.open()");
         keyword.switchToTab(1);
@@ -339,5 +337,13 @@ public class SignInPage extends BasePage {
 
     public boolean checkElement(String checkElement) {
         return keyword.verifyElementPresent(checkElement);
+    }
+
+    public void invalidPhone() throws InterruptedException {
+        checkGoToFormLoginWithPhone(true, "SIGNIN_DATA_PHONE_NUMBER", "SIGNIN_DATA_PASSWORD_PHONE", "MESSAGE_NUMBER_FAIL", "SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
+    }
+
+    public void enterWrongPhone() throws InterruptedException {
+        checkGoToFormLoginWithPhone(true, "SIGNIN_DATA_PHONE_NUMBER_WRONG", "SIGNIN_DATA_PASSWORD_PHONE", "SIGNUP_VALID_NUMBER_FIELD", "SIGNIN_MESSAGE_FAIL_WITH_MOBILE");
     }
 }

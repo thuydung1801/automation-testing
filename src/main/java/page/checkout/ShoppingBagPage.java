@@ -694,46 +694,46 @@ public class ShoppingBagPage extends BasePage {
 
     }
     //checkout with store credit in cases where the balance is greater than, equal to or less than the amount payable
-    public void checkOutWithStoreCredit(String flag) throws InterruptedException {
-        keyword.untilJqueryIsDone(50L);
-        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_STORE_CREDIT"));
-        //keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),10);
-        Float credit = Float.valueOf(1);
-        switch (flag){
-            //The balance is equal to the amount payable
-            case "equals":
-                String price = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
-                clickUseCredit(price);
-                useCredit(true);
-                break;
-            //The balance is less than the amount payable
-            case "less":
-                clickUseCredit(String.valueOf(credit));
-                Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
-                logger.info(String.valueOf(rawPrice));
-                String totalPrice = String.valueOf(calculateMoney(rawPrice, credit));
-                discount(true);
-                checkOutWithBankTransfer();
-                break;
-            //The balance is more than the amount payable
-            case "more":
-                Float rawPrice1 = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
-                String totalPrice1 = String.valueOf(moreMoney(rawPrice1, credit));
-                clickUseCredit(totalPrice1);
-                useCredit(true);
-                break;
-            //Input invalid data on field Use Store Credit
-            case "wrong":
-               clickUseCredit("-100");
-               useCredit(false);
-                break;
-            //Input data > the balance on field Use Store Credit
-            case "max":
-                clickUseCredit("10000000000000");
-                keyword.verifyElementPresent("CHECKOUT_LBL_USE_CREDIT_ERROR");
-        }
-    }
+//    public void checkOutWithStoreCredit(String flag) throws InterruptedException {
+//        keyword.untilJqueryIsDone(50L);
+//        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+//        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_STORE_CREDIT"));
+//        //keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),10);
+//        Float credit = Float.valueOf(1);
+//        switch (flag){
+//            //The balance is equal to the amount payable
+//            case "equals":
+//                String price = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
+//                clickUseCredit(price);
+//                useCredit(true);
+//                break;
+//            //The balance is less than the amount payable
+//            case "less":
+//                clickUseCredit(String.valueOf(credit));
+//                Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
+//                logger.info(String.valueOf(rawPrice));
+//                String totalPrice = String.valueOf(calculateMoney(rawPrice, credit));
+//                discount(true);
+//                checkOutWithBankTransfer();
+//                break;
+//            //The balance is more than the amount payable
+//            case "more":
+//                Float rawPrice1 = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
+//                String totalPrice1 = String.valueOf(moreMoney(rawPrice1, credit));
+//                clickUseCredit(totalPrice1);
+//                useCredit(true);
+//                break;
+//            //Input invalid data on field Use Store Credit
+//            case "wrong":
+//               clickUseCredit("-100");
+//               useCredit(false);
+//                break;
+//            //Input data > the balance on field Use Store Credit
+//            case "max":
+//                clickUseCredit("10000000000000");
+//                keyword.verifyElementPresent("CHECKOUT_LBL_USE_CREDIT_ERROR");
+//        }
+//    }
     //apply active coupon with 2 situations: > total and < total money
     public void applyCoupon(String couponCode, boolean flag) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
@@ -1001,4 +1001,44 @@ public class ShoppingBagPage extends BasePage {
         return total + storeCredit;
     }
 
+    public void checkOutWithStoreCredit(String flag) throws InterruptedException {
+        keyword.untilJqueryIsDone(50L);
+        keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
+        keyword.click(PropertiesFile.getPropValue("CHECKOUT_BTN_STORE_CREDIT"));
+        //keyword.webDriverWaitForElementPresent(PropertiesFile.getPropValue("CHECKOUT_TXT_STORE_CREDIT"),10);
+        Float credit = Float.valueOf(1);
+        switch (flag){
+            //The balance is equal to the amount payable
+            case "equals":
+                String price = keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£");
+                clickUseCredit(price);
+                useCredit(true);
+                break;
+            //The balance is less than the amount payable
+            case "less":
+                clickUseCredit(String.valueOf(credit));
+                Float rawPrice = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
+                logger.info(String.valueOf(rawPrice));
+                String totalPrice = String.valueOf(calculateMoney(rawPrice, credit));
+                discount(true);
+                checkOutWithBankTransfer();
+                break;
+            //The balance is more than the amount payable
+            case "more":
+                Float rawPrice1 = Float.valueOf(keyword.getTextWithOutCharacters("CHECKOUT_LBL_TOTAL_PRICE","£"));
+                String totalPrice1 = String.valueOf(moreMoney(rawPrice1, credit));
+                clickUseCredit(totalPrice1);
+                useCredit(true);
+                break;
+            //Input invalid data on field Use Store Credit
+            case "wrong":
+                clickUseCredit("-100");
+                useCredit(false);
+                break;
+            //Input data > the balance on field Use Store Credit
+            case "max":
+                clickUseCredit("10000000000000");
+                keyword.verifyElementPresent("CHECKOUT_LBL_USE_CREDIT_ERROR");
+        }
+    }
 }
