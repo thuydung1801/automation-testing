@@ -24,7 +24,7 @@ public class CreateAccountOnWebPageLy extends BasePage {
     private LoginPage objLogin;
 
     public void goToFormCreateAccount() throws InterruptedException {
-        keyword.reLoadPage();
+        //keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(1000);
         keyword.click("LOGIN_BTN_LOGIN");
@@ -34,18 +34,17 @@ public class CreateAccountOnWebPageLy extends BasePage {
         keyword.webDriverWaitForElementPresent("SIGNUP_TXT_LOGIN_INFOMATION", 50);
     }
 
-    public void inputDataLogin() throws Exception {
+    public void inputDataLogin(String fisrtName, String lastname,String email, String password,String nameCountry) throws Exception {
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String emailCreateAcc = "lyttk" + timestamp + "@gmail.com";
         PropertiesFile.serPropValue("SIGNUP_EMAIL_EXIST2", emailCreateAcc);
-        inputEmail("SIGNUP_DATA_FIRST_NAME_INFORMATION2", "SIGNUP_DATA_LAST_NAME_INFORMATION2"
-                , "SIGNUP_EMAIL_EXIST2", "SIGNUP_EMAIL_EXIST2");
+        inputEmail(fisrtName, lastname,email,email);
         keyword.click("SIGNUP_XPATH_FOR_FORM");
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
         String passwordCreateAcc = "Ly@" + timestamp ;
-        PropertiesFile.serPropValue("SIGNUP_PASSWORD_EXIST2", passwordCreateAcc);
-        inputPassword("SIGNUP_PASSWORD_EXIST2", "SIGNUP_SELECT_COUNTRY","SIGNUP_NAME_COUNTRY");
+        PropertiesFile.serPropValue(password, passwordCreateAcc);
+        inputPassword(password, "SIGNUP_SELECT_COUNTRY",nameCountry);
         keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
     }
     public void inputEmail(String firstName, String lastName, String email, String emailConfirm) throws InterruptedException {
@@ -64,11 +63,11 @@ public class CreateAccountOnWebPageLy extends BasePage {
             keyword.click("SIGNUP_CHECKBOX_AGREE");
         }
     }
-    public void getCode() throws Exception{
+    public void getCode(String url,String userName,String passWord) throws Exception{
         objSignIn = new SignInPage(this.keyword);
         keyword.untilJqueryIsDone(50L);
-        objSignIn.openTabBE("URL_BE_STAGE");
-        objSignIn.loginAdmin("LOGIN_DATA_USER_NAME_LY", "LOGIN_DATA_PASSWORD_LY");
+        objSignIn.openTabBE(url);
+        objSignIn.loginAdmin(userName,passWord );
         keyword.untilJqueryIsDone(50L);
         keyword.webDriverWaitForElementPresent("LOGIN_BTN_CUSTOMER", 20);
         keyword.click("LOGIN_BTN_CUSTOMER");
@@ -77,12 +76,13 @@ public class CreateAccountOnWebPageLy extends BasePage {
         keyword.click("LOGIN_BTN_EMAIL_LOG");
         keyword.webDriverWaitForElementPresent("SIGNUP_VERIFY_EMAIL_LOG", 20);
         keyword.untilJqueryIsDone(50L);
+        keyword.webDriverWaitForElementPresent("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT", 20);
         keyword.click("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT");
         keyword.untilJqueryIsDone(50L);
         keyword.click("LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG");
     }
-    public void getCodeVerifyAccountNew() throws Exception {
-        getCode();
+    public void getCodeVerifyAccountNew(String url,String userName,String passWord) throws Exception {
+        getCode(url,userName, passWord);
         getCodeEnterTextInField("IFRAME_STAGE",
                 "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNUP_INPUT_VERIFY_CODE","SIGNUP_BTN_SUBMIT_ACCOUNT");
@@ -90,19 +90,18 @@ public class CreateAccountOnWebPageLy extends BasePage {
         keyword.webDriverWaitForElementPresent("SIGNUP_MESSAGE_REGIST_SUCCESS_US",20);
         keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
     }
-    public void getCodeVerifyAccount() throws Exception {
-        getCode();
+    public void getCodeVerifyAccount(String url,String userName,String passWord) throws Exception {
+        getCode(url,userName, passWord);
         getCodeEnterTextInField("IFRAME_STAGE",
                 "LOGIN_INPUT_VERIFY_CODE",
                 "SIGNUP_INPUT_VERIFY_CODE_FORGOT_PASSWORD","SIGNUP_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(50L);
-        inputPasswordNew();
     }
-    public void inputPasswordNew() throws Exception {
+    public void inputPasswordNew(String password) throws Exception {
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String passwordNew = "Ly@" + timestamp ;
-        PropertiesFile.serPropValue("SIGNUP_PASSWORD_EXIST2", passwordNew);
-        keyword.sendKeys("INPUT_CODE_NEW_EMAIL","SIGNUP_PASSWORD_EXIST2");
+        PropertiesFile.serPropValue(password, passwordNew);
+        keyword.sendKeys("INPUT_CODE_NEW_EMAIL",password);
         keyword.untilJqueryIsDone(50L);
         keyword.click("BTN_SUBMIT_PASSWORD");
         keyword.untilJqueryIsDone(50L);
@@ -111,82 +110,17 @@ public class CreateAccountOnWebPageLy extends BasePage {
 
     }
 
-    public void getCodeEnterTextInField(String iframe, String getTextInPutVerify, String dataInput, String btnSubmit) throws Exception {
-        keyword.untilJqueryIsDone(20L);
+    public void getCodeEnterTextInField(String iframe, String getCode, String inputCode, String btnSubmit) throws Exception {
+        keyword.untilJqueryIsDone(50L);
         keyword.switchToIFrameByXpath(iframe);
-        String text = keyword.getText(getTextInPutVerify);
+        String code = keyword.getText(getCode);
         keyword.closeWindowByIndex(1);
         keyword.switchToTab(0);
-        keyword.sendKeys(dataInput, text);
+        keyword.untilJqueryIsDone(50L);
+        keyword.sendKeys(inputCode,code);
         System.out.println("value code:");
-        keyword.untilJqueryIsDone(20L);
+        keyword.untilJqueryIsDone(50L);
         keyword.click(btnSubmit);
-    }
-
-    public void sendKeyFormPassword() throws InterruptedException {
-        objSignUp.sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION",
-                "SIGNUP_DATA_PASSWORD_INFORMATION", "SIGNUP_SELECT_TITLE",
-                "SIGNUP_SELECT_OPTION_TITLE");
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-    }
-    public void sendKeyFormDataLogin() throws InterruptedException {
-        objSignUp = new SignUpPage(this.keyword);
-        String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        String emailCreateAcc = "lyttk" + timestamp + "@gmail.com";
-        PropertiesFile.serPropValue("SIGNUP_EMAIL_EXIST2", emailCreateAcc);
-        objSignUp.sendKeyFullDataFormInformation("SIGNUP_DATA_FIRST_NAME_INFORMATION2", "SIGNUP_DATA_LAST_NAME_INFORMATION2"
-                , "SIGNUP_EMAIL_EXIST2", "SIGNUP_EMAIL_EXIST2");
-        keyword.click("SIGNUP_XPATH_FOR_FORM");
-        keyword.click("SIGNUP_BTN_NEXT_STEEP");
-        keyword.untilJqueryIsDone(50L);
-        String passwordCreateAcc = "Ly@" + timestamp ;
-        PropertiesFile.serPropValue("SIGNUP_PASSWORD_EXIST2", passwordCreateAcc);
-        objSignUp.sendKeyFullDataFormPasswordInformation("SIGNUP_PASSWORD_INFORMATION",
-                "SIGNUP_PASSWORD_EXIST2", "SIGNUP_SELECT_TITLE",
-                "SIGNUP_SELECT_OPTION_TITLE");
-        keyword.click("SIGNUP_BTN_CREATE_ACCOUNT");
-    }
-
-
-    public void getCodeSetup(String code, String btnSubmit, String userName, String pass, String url) throws Exception {
-        objSignIn = new SignInPage(this.keyword);
-        objSignIn.openTabBE(url);
-        objSignIn.loginAdmin(userName,pass);
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("LOGIN_BTN_CUSTOMER");
-        keyword.webDriverWaitForElementPresent("LOGIN_BTN_CUSTOMER", 20);
-        keyword.untilJqueryIsDone(50L);
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("LOGIN_BTN_EMAIL_LOG");
-        keyword.webDriverWaitForElementPresent("SIGNUP_VERIFY_EMAIL_LOG", 20);
-        keyword.untilJqueryIsDone(50L);
-        objSignIn.selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT", "LOGIN_SELECT_ACTIVE",
-                "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG", "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
-        objSignIn.getCodeEnterTextInField("IFRAME_STAGE", "LOGIN_INPUT_VERIFY_CODE", code, btnSubmit);
-    }
-
-    public void getCodeVerifyForm(String userName, String pass, String url) throws Exception {
-        objSignIn = new SignInPage(this.keyword);
-        objSignIn.openTabBE(url);
-        objSignIn.loginAdmin(userName,pass);
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("LOGIN_BTN_CUSTOMER");
-        keyword.webDriverWaitForElementPresent("LOGIN_BTN_CUSTOMER", 20);
-        keyword.untilJqueryIsDone(50L);
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("LOGIN_BTN_EMAIL_LOG");
-        keyword.webDriverWaitForElementPresent("SIGNUP_VERIFY_EMAIL_LOG", 20);
-        keyword.untilJqueryIsDone(50L);
-        objSignIn.selectActionEmailLog("LOGIN_CHECK_EMAIL_LOG_ACTION_SELECT",
-                "LOGIN_SELECT_ACTIVE",
-                "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
-                "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
-        objSignIn.getCodeEnterTextInField("IFRAME_STAGE",
-                "LOGIN_INPUT_VERIFY_CODE",
-                "SIGNUP_INPUT_VERIFY_CODE","SIGNUP_BTN_SUBMIT_ACCOUNT");
-        keyword.untilJqueryIsDone(50L);
-        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIST_SUCCESS_US");
-        keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
     }
     public void goToFormForgotPassword() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
@@ -199,111 +133,32 @@ public class CreateAccountOnWebPageLy extends BasePage {
         keyword.webDriverWaitForElementPresent("LOGIN_INPUT_FORGOT_PASSWORD", 50);
     }
 
-    public void inputEmailForgotPassword() throws InterruptedException {
-        keyword.sendKeys("LOGIN_INPUT_FORGOT_PASSWORD", "SIGNUP_EMAIL_EXIST2");
+    public void inputEmailForgotPassword(String email) throws InterruptedException {
+        keyword.sendKeys("LOGIN_INPUT_FORGOT_PASSWORD",email);
         keyword.untilJqueryIsDone(50L);
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.webDriverWaitForElementPresent("SIGNIN_TXT_VERIFY_SENT_CODE",60);
-
     }
-
-    public void forgotPassword(String url) throws Exception {
-        keyword.untilJqueryIsDone(50L);
-        keyword.reLoadPage();
-        sendData(url);
-        keyword.untilJqueryIsDone(50L);
-        Thread.sleep(3000);
-        keyword.assertEquals("SIGNIN_UPDATE_PASSWORD_SUCCESS", "LOGIN_MESSAGE_RESET_PASSWORD_SUCCESS");
-    }
-
-    public void setUpFormForgot() throws InterruptedException {
-        keyword.untilJqueryIsDone(50L);
-        keyword.reLoadPage();
-        keyword.deleteAllCookies();
-        keyword.deleteAllCookies();
-        keyword.reLoadPage();
-        keyword.untilJqueryIsDone(50L);
-        objRegist.acceptAllCookies();
-        keyword.untilJqueryIsDone(50L);
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("BTN_FORGOT_PASSWORD_NEW");
-        keyword.untilJqueryIsDone(50L);
-    }
-
-    public void sendData(String url) throws Exception {
-        keyword.untilJqueryIsDone(50L);
-        sendEmail();
-        objSignIn.openTabBE(url);
-        keyword.deleteAllCookies();
-        keyword.reLoadPage();
-        keyword.deleteAllCookies();
-        keyword.closeWindowByIndex(1);
-        keyword.switchToTab(0);
-        getCodeSetup("LOGIN_INPUT_ENTER_DATA", "BTN_SUBMIT", "LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD_DUNG", "URL_BE_STAGE");
-        sendPassWord();
-    }
-
-    public void sendPassWord() throws InterruptedException {
-        keyword.verifyElementVisible("INPUT_CODE_NEW_EMAIL");
+    public void changePassword(String passWordOld, String passWordNew) throws InterruptedException {
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        String pass = "Ngoc*" + timestamp + "@";
-        keyword.untilJqueryIsDone(10L);
-        PropertiesFile.serPropValue("PASS_NEW_RD", pass);
-        Thread.sleep(2000);
-        keyword.click("INPUT_CODE_NEW_EMAIL");
-        keyword.sendKeys("INPUT_CODE_NEW_EMAIL", "PASS_NEW_RD");
+        String pass = "Ly@"+timestamp;
+        keyword.webDriverWaitForElementPresent("MAC_BTN_SAVE_3",60);
+        keyword.sendKeys("MAC_INP_PASS_CURENT_2",passWordOld);
+        PropertiesFile.serPropValue(passWordNew,pass);
+        keyword.sendKeys("MAC_INP_PASS_NEW",passWordNew);
+        keyword.sendKeys("MAC_INP_PASS_CONFIRM",passWordNew);
+        keyword.click("MAC_BTN_SAVE_3");
+        //keyword.untilJqueryIsDone(60L);
+        keyword.verifyElementVisible("SI_TXT_SAVED_SUCCESSFUL");
+    }
+    public void goToFormChangePassword() throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
-        keyword.click("BTN_SUBMIT_PASSWORD");
+        Thread.sleep(1000);
+        keyword.click("SI_BTN_CHANGE_PASSWORD");
+        keyword.webDriverWaitForElementPresent("SI_BTN_CHANGE_PASSWORD2",60);
+        keyword.click("SI_BTN_CHANGE_PASSWORD2");
 
     }
 
-    public void sendEmail() throws InterruptedException {
-        keyword.verifyElementVisible("LOGIN_INPUT_FORGOT_PASSWORD");
-        keyword.sendKeys("LOGIN_INPUT_FORGOT_PASSWORD", "SIGNUP_EMAIL_EXIST1");
-        keyword.untilJqueryIsDone(50L);
-        keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
-        keyword.verifyElementVisible("SIGNIN_XPATH_ACTUAL_SENT_CODE");
-    }
-
-
-
-
-
-    //    ------whthPhone
-    public void createNewCustomerWithPhone() throws Exception {
-//        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
-        goToFormCreateAccount();
-        sendKeyFormDataLogin();
-        objSignUp = new SignUpPage(this.keyword);
-        String timestamp = new java.text.SimpleDateFormat("HHmmss").format(new Date());
-        String pass = "03" + timestamp + "77";
-        PropertiesFile.serPropValue("DATA_CREATE_ACCOUNT_WITH_PHONE", pass);
-        keyword.sendKeys("SIGNUP_WITH_PHONE", "DATA_CREATE_ACCOUNT_WITH_PHONE");
-        keyword.click("SIGNUP_XPATH_FOR_FORM");
-        keyword.click("SIGNUP_BTN_NEXT_STEEP");
-        keyword.untilJqueryIsDone(50L);
-        sendKeyFormPassword();
-        getCodeVerifyForm("LOGIN_DATA_USER_NAME", "BE_ADMIN_PASSWORD", "URL_BE_DEV");
-    }
-
-    public void loginSuccess() throws InterruptedException {
-        keyword.reLoadPage();
-        objRegist.acceptAllCookies();
-        objLogin.loginOnWebsite("SIGNUP_EMAIL_EXIST1", "SIGNUP_DATA_PASSWORD_INFORMATION",
-                "DATA_CREATE_ACCOUNT_WITH_PHONE", "PASS_NEW_RD", false);
-        keyword.untilJqueryIsDone(50L);
-        keyword.verifyElementVisible("MAC_VERIFY_NAME");
-    }
-
-    public void forgotPasswordPhone() throws InterruptedException {
-        setUpFormForgot();
-//        keyword.click("MOBILE_NUMBER");
-        keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "DATA_CREATE_ACCOUNT_WITH_PHONE");
-        keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
-        keyword.untilJqueryIsDone(50L);
-        objSignUp.getActivationCode("INPUT_SEND_CODE_PHONE", "DATA_FORM_PASSWORD_NEW", "ACTUAL_DATA_TITLE_PASSWORD_NEW");
-        keyword.untilJqueryIsDone(50L);
-        sendPassWord();
-    }
 
 }

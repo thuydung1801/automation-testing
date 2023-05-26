@@ -34,8 +34,9 @@ public class CreateAccountOnWebTestLy extends BaseTest {
         logger.info("testCaseWeb_CreateAccount");
         commonShopping();
         objCreateAccOnWeb.goToFormCreateAccount();
-        objCreateAccOnWeb.inputDataLogin();
-        objCreateAccOnWeb.getCodeVerifyAccountNew();
+        objCreateAccOnWeb.inputDataLogin("SIGNUP_DATA_FIRST_NAME_INFORMATION2","SIGNUP_DATA_LAST_NAME_INFORMATION2",
+                "SIGNUP_EMAIL_EXIST2","SIGNUP_PASSWORD_EXIST2","SIGNUP_NAME_COUNTRY");
+        objCreateAccOnWeb.getCodeVerifyAccountNew("URL_BE_STAGE","LOGIN_DATA_USER_NAME_LY","LOGIN_DATA_PASSWORD_LY");
     }
 
     @Test(priority = 1, description = "forgot password")
@@ -43,14 +44,16 @@ public class CreateAccountOnWebTestLy extends BaseTest {
         logger.info("testCaseWeb_forgotPassWord");
         commonShopping();
         objCreateAccOnWeb.goToFormForgotPassword();
-        objCreateAccOnWeb.inputEmailForgotPassword();
-        objCreateAccOnWeb.getCodeVerifyAccount();
+        objCreateAccOnWeb.inputEmailForgotPassword("SIGNUP_EMAIL_EXIST2");
+        objCreateAccOnWeb.getCodeVerifyAccount("URL_BE_STAGE","LOGIN_DATA_USER_NAME_LY","LOGIN_DATA_PASSWORD_LY");
+        objCreateAccOnWeb.inputPasswordNew("SIGNUP_PASSWORD_EXIST2");
     }
 
-        @Test(priority = 3, description = "changeEmail")
-    public void testCaseWeb_changeEmail() throws Exception {
-        logger.info("testCaseWeb_changeEmail");
-        //objCreateAccOnWeb.forgotPasswordCheckOut("URL_DATA_PRODUCT", "URL_BE_DEV3");
+    @Test(priority = 3, description = "changePassword")
+    public void testCaseWeb_changePassword() throws Exception {
+        logger.info("testCaseWeb_changePassword");
+        objCreateAccOnWeb.goToFormChangePassword();
+        objCreateAccOnWeb.changePassword("SIGNUP_PASSWORD_EXIST2","SIGNUP_PASSWORD_EXIST2");
     }
 
 
