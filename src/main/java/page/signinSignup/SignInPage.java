@@ -202,7 +202,6 @@ public class SignInPage extends BasePage {
         sendDataForgotPassword("SIGNIN_DATA_PHONE_NUMBER_NOT_SYSTEM");
         keyword.assertEquals( "SIGNIN_MESSAGE_PHONE_INCORRECT", "MESSAGE_FAIL_RESEND_CODE");
     }
-
     //   create New Password With Invalid Phone
     public void createNewPasswordWithInvalidPhone() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);

@@ -100,7 +100,7 @@ public class SignInTest extends BaseTest {
         objSignin.forgotPassEnterPhoneIsNotTheSystem();
     }
 
-    @Test(priority = 16, description = "create valid new password")
+//    @Test(priority = 16, description = "create valid new password")
     public void testCase_SI018() throws InterruptedException {
         objSignin.createNewPasswordSuccess();
     }

@@ -1,103 +1,47 @@
-INFO  | 2023-05-25 18:07:16 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:47) - Open browser
-INFO  | 2023-05-25 18:07:21 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
-INFO  | 2023-05-25 18:07:22 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
-INFO  | 2023-05-25 18:07:28 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:63) - open browser successfullyCHROME
-INFO  | 2023-05-25 18:07:28 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:66) - go to url: https://stage.glamira.co.uk/
-INFO  | 2023-05-25 18:07:28 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - url: [Ljava.lang.String;@ca2be53
-INFO  | 2023-05-25 18:07:35 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:297) - Maximizing browser window...
-INFO  | 2023-05-25 18:07:36 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-05-25 18:07:36 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-05-25 18:07:39 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...https://stage.glamira.com/
-INFO  | 2023-05-25 18:07:50 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-05-25 18:07:58 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-25 18:08:05 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-25 18:08:06 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-05-25 18:08:06 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-05-25 18:08:12 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
-INFO  | 2023-05-25 18:08:17 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_BTN_ACC
-INFO  | 2023-05-25 18:08:23 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_TAB_LOGIN_IN_WITH_PHONE
-INFO  | 2023-05-25 18:08:24 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNIN_INPUT_PHONE_NUMBERwith SIGNIN_DATA_PHONE_NUMBER
-INFO  | 2023-05-25 18:08:24 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNIN_PASSWORD_INPUTwith SIGNIN_DATA_PASSWORD_PHONE
-INFO  | 2023-05-25 18:08:24 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_BTN_SUBMIT_FORM_PHONE
-INFO  | 2023-05-25 18:08:26 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from MESSAGE_NUMBER_FAIL with SIGNIN_MESSAGE_FAIL_WITH_MOBILE
-INFO  | 2023-05-25 18:08:26 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-05-25 18:08:27 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-05-25 18:08:29 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...https://stage.glamira.com/
-INFO  | 2023-05-25 18:08:33 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-05-25 18:08:42 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-25 18:08:49 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-25 18:08:49 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-05-25 18:08:49 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-05-25 18:08:55 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
-INFO  | 2023-05-25 18:09:00 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_BTN_ACC
-INFO  | 2023-05-25 18:09:06 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_TAB_LOGIN_IN_WITH_PHONE
-INFO  | 2023-05-25 18:09:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNIN_INPUT_PHONE_NUMBERwith SIGNIN_DATA_PHONE_NUMBER_WRONG
-INFO  | 2023-05-25 18:09:07 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNIN_PASSWORD_INPUTwith SIGNIN_DATA_PASSWORD_PHONE
-INFO  | 2023-05-25 18:09:07 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_BTN_SUBMIT_FORM_PHONE
-INFO  | 2023-05-25 18:09:08 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNUP_VALID_NUMBER_FIELD with SIGNIN_MESSAGE_FAIL_WITH_MOBILE
-INFO  | 2023-05-25 18:09:08 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-05-25 18:09:09 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-05-25 18:09:12 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...https://stage.glamira.com/
-INFO  | 2023-05-25 18:09:16 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-05-25 18:09:24 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-25 18:09:31 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-25 18:09:31 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-05-25 18:09:31 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-05-25 18:09:38 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
-INFO  | 2023-05-25 18:09:43 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_BTN_ACC
-INFO  | 2023-05-25 18:09:48 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_TAB_LOGIN_IN_WITH_PHONE
-INFO  | 2023-05-25 18:09:50 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNIN_INPUT_PHONE_NUMBERwith EMAIL_ONE_SYSTEM2
-INFO  | 2023-05-25 18:09:50 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNIN_PASSWORD_INPUTwith SIGNIN_DATA_PASSWORD_PHONE
-INFO  | 2023-05-25 18:09:50 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_BTN_SUBMIT_FORM_PHONE
-INFO  | 2023-05-25 18:09:52 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNIN_MESSAGE_PASSWORD_ACTUAL with SIGNIN_MESSAGE_INVALID
-INFO  | 2023-05-25 18:09:53 | [main] test.signinSignup.SignInTest (SignInTest.java:testCase_SI012:95) - testCase_SI08_And_SI012
-INFO  | 2023-05-25 18:09:53 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-05-25 18:09:53 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-05-25 18:09:56 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...https://stage.glamira.com/
-INFO  | 2023-05-25 18:10:00 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-05-25 18:10:08 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-25 18:10:15 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-25 18:10:15 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-05-25 18:10:15 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-05-25 18:10:21 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
-INFO  | 2023-05-25 18:10:27 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_BTN_ACC
-INFO  | 2023-05-25 18:10:32 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_TAB_LOGIN_IN_WITH_PHONE
-INFO  | 2023-05-25 18:10:33 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNIN_INPUT_PHONE_NUMBERwith 
-INFO  | 2023-05-25 18:10:33 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNIN_PASSWORD_INPUTwith 
-INFO  | 2023-05-25 18:10:33 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_BTN_SUBMIT_FORM_PHONE
-INFO  | 2023-05-25 18:10:34 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from COM_DATA_MESSAGES_NULL with SIGNIN_MESSAGE_FAIL_WITH_MOBILE
-INFO  | 2023-05-25 18:10:34 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from COM_DATA_MESSAGES_NULL with SIGNIN_MESSAGE_PASSWORD_INVALID
-INFO  | 2023-05-25 18:10:34 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-05-25 18:10:35 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-05-25 18:10:37 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...https://stage.glamira.com/
-INFO  | 2023-05-25 18:10:41 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-05-25 18:10:49 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-25 18:10:57 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-25 18:10:57 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-05-25 18:10:57 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-05-25 18:11:03 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
-INFO  | 2023-05-25 18:11:08 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_BTN_ACC
-INFO  | 2023-05-25 18:11:13 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_TAB_LOGIN_IN_WITH_PHONE
-INFO  | 2023-05-25 18:11:15 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_FORGOT_PASSWORD
-INFO  | 2023-05-25 18:11:17 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentMOBILE_NUMBER
-INFO  | 2023-05-25 18:11:17 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickMOBILE_NUMBER
-INFO  | 2023-05-25 18:11:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNIN_INPUT_PHONE_ENTERwith SIGNIN_DATA_PHONE_NUMBER_NOT_SYSTEM
-INFO  | 2023-05-25 18:11:20 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
-INFO  | 2023-05-25 18:11:24 | [main] core.KeywordWeb (KeywordWeb.java:assertEquals:769) - compare from SIGNIN_MESSAGE_PHONE_INCORRECT with MESSAGE_FAIL_RESEND_CODE
-INFO  | 2023-05-25 18:11:25 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
-INFO  | 2023-05-25 18:11:25 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
-INFO  | 2023-05-25 18:11:27 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...https://stage.glamira.com/
-INFO  | 2023-05-25 18:11:31 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
-INFO  | 2023-05-25 18:11:39 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-25 18:11:46 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-05-25 18:11:46 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-05-25 18:11:46 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-05-25 18:11:53 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
-INFO  | 2023-05-25 18:11:58 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_BTN_ACC
-INFO  | 2023-05-25 18:12:04 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNIN_TAB_LOGIN_IN_WITH_PHONE
-INFO  | 2023-05-25 18:12:06 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_FORGOT_PASSWORD
-INFO  | 2023-05-25 18:12:07 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentMOBILE_NUMBER
-INFO  | 2023-05-25 18:12:07 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickMOBILE_NUMBER
-INFO  | 2023-05-25 18:12:09 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNIN_INPUT_PHONE_ENTERwith EMAIL_ONE_SYSTEM2
-INFO  | 2023-05-25 18:12:11 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_SUBMIT_FORGOT_PASSWORD
-INFO  | 2023-05-25 18:12:14 | [main] core.KeywordWeb (KeywordWeb.java:clearText:129) - clearText
+INFO  | 2023-05-26 12:23:29 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:47) - Open browser
+INFO  | 2023-05-26 12:23:31 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 113.0.5672.63 (resolved driver for Chrome 113)
+INFO  | 2023-05-26 12:23:31 | [main] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win32\113.0.5672.63\chromedriver.exe
+INFO  | 2023-05-26 12:23:34 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:63) - open browser successfullyCHROME
+INFO  | 2023-05-26 12:23:34 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:66) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-05-26 12:23:34 | [main] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - url: [Ljava.lang.String;@62ab5e63
+INFO  | 2023-05-26 12:23:43 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:297) - Maximizing browser window...
+INFO  | 2023-05-26 12:23:43 | [main] test.CreateAccountOnWebTest (CreateAccountOnWebTest.java:testCaseWeb_CreateAccount:34) - testCaseWeb_CreateAccount
+INFO  | 2023-05-26 12:23:45 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
+INFO  | 2023-05-26 12:23:53 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-05-26 12:24:00 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-05-26 12:24:00 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-05-26 12:24:01 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-05-26 12:24:07 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickBTN_COOKIES
+INFO  | 2023-05-26 12:24:11 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_LOGIN
+INFO  | 2023-05-26 12:24:11 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentLOGIN_BTN_FORGOT_PASSWORD
+INFO  | 2023-05-26 12:24:14 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:475) - scrollDownToElementSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2023-05-26 12:24:15 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_CREATE_MY_ACCOUNT
+INFO  | 2023-05-26 12:24:25 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_FORM_DATA_INFORMATION
+INFO  | 2023-05-26 12:24:26 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_FIRST_NAME_INFORMATIONwith SIGNUP_DATA_FIRST_NAME_INFORMATION
+INFO  | 2023-05-26 12:24:27 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_LAST_NAME_INFORMATIONwith SIGNUP_DATA_LAST_NAME_INFORMATION
+INFO  | 2023-05-26 12:24:28 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_INFORMATIONwith SIGNUP_EMAIL_EXIST1
+INFO  | 2023-05-26 12:24:28 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_EMAIL_CONFIRMATION_INFORMATIONwith SIGNUP_EMAIL_EXIST1
+INFO  | 2023-05-26 12:24:29 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-05-26 12:24:33 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_NEXT_STEEP
+INFO  | 2023-05-26 12:24:38 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysSIGNUP_PASSWORD_INFORMATIONwith SIGNUP_DATA_PASSWORD_INFORMATION
+INFO  | 2023-05-26 12:24:39 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:567) - verifyElementVisibleSIGNUP_SELECT_TITLE
+INFO  | 2023-05-26 12:24:39 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_XPATH_FOR_FORM
+INFO  | 2023-05-26 12:24:39 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_CHECKBOX_AGREE
+INFO  | 2023-05-26 12:24:39 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_CREATE_ACCOUNT
+INFO  | 2023-05-26 12:24:48 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:286) - Executing JavaScript
+INFO  | 2023-05-26 12:24:48 | [main] core.KeywordWeb (KeywordWeb.java:switchToTab:439) - switchToTab
+INFO  | 2023-05-26 12:24:48 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:297) - Maximizing browser window...
+INFO  | 2023-05-26 12:24:48 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...URL_BE_STAGE
+INFO  | 2023-05-26 12:24:53 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME
+INFO  | 2023-05-26 12:24:53 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD_DUNG
+INFO  | 2023-05-26 12:24:53 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2023-05-26 12:24:56 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:499) -  scrolling to position 
+INFO  | 2023-05-26 12:24:56 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:475) - scrollDownToElementLOGIN_BTN_CUSTOMER
+INFO  | 2023-05-26 12:24:56 | [main] test.CreateAccountOnWebTest (CreateAccountOnWebTest.java:testCaseWeb_forgotPassWord:41) - testCaseWeb_forgotPassWord
+INFO  | 2023-05-26 12:24:58 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-05-26 12:25:01 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
+INFO  | 2023-05-26 12:25:01 | [main] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:635) - deleteAllCookies
+INFO  | 2023-05-26 12:25:01 | [main] core.KeywordWeb (KeywordWeb.java:reLoadPage:307) - ReLoad Page...
+INFO  | 2023-05-26 12:25:06 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:505) -  scrolling to position 
+INFO  | 2023-05-26 12:25:15 | [main] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:525) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-05-26 12:25:15 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentBTN_COOKIES

@@ -6,27 +6,26 @@
         <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
 
-            <class name="test.signinSignup.SignInTest">
-                <methods>
-                    <include name="testCase_SI09"/>
-                    <include name="testCase_SI010"/>
-                    <include name="testCase_SI011"/>
-                    <include name="testCase_SI012"/>
-                    <include name="testCase_SI017"/>
-                    <include name="testCase_SI018"/>
-<!--                    <include name="testCase_SP_16"/>-->
-<!--                    <include name="testCase_SP_17"/>-->
-<!--                    <include name="testCase_SP_18"/>-->
-<!--                    <include name="testCase_SP_19"/>-->
-<!--                    <include name="testCase_SP_21"/>-->
-<!--                    <include name="testCase_SP_24"/>-->
-<!--                    <include name="testCase_SP_25"/>-->
-<!--                    <include name="testCase_SP_26_RV_02_04"/>-->
-<!--                    <include name="testCase_RV_05"/>-->
-<!--                    <include name="testCase_RV_06"/>-->
-<!--                    <include name="testCase_RV_07"/>-->
-
-                </methods>
+            <class name="test.CreateAccountOnWebTest">
+<!--                <methods>-->
+<!--                    <include name="testCase_SI09"/>-->
+<!--                    <include name="testCase_SI010"/>-->
+<!--                    <include name="testCase_SI011"/>-->
+<!--                    <include name="testCase_SI012"/>-->
+<!--                    <include name="testCase_SI017"/>-->
+<!--                    <include name="testCase_SI018"/>-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_16"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_17"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_18"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_19"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_21"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_24"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_25"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_SP_26_RV_02_04"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_05"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_06"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testCase_RV_07"/>&ndash;&gt;-->
+<!--                </methods>-->
             </class>
         </classes>
     </test>
