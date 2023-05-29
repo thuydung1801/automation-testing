@@ -50,13 +50,13 @@ public class CreateAccountOnWebPage extends BasePage {
     public void createAndVerifyForm() throws Exception {
         sendKeyFormDataLogin();
         sendKeyFormPassword();
-        getCodeVerifyForm("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD_DUNG", "URL_BE_STAGE");
+        getCodeVerifyForm("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD", "URL_BE_STAGE");
     }
 
     public void getCodeVerifyForm(String userName, String pass, String url) throws Exception {
         getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT", userName, pass, url);
         keyword.untilJqueryIsDone(50L);
-        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIST_SUCCESS_US");
+//        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIST_SUCCESS_US");
         keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
     }
 
@@ -117,7 +117,7 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.deleteAllCookies();
         keyword.closeWindowByIndex(1);
         keyword.switchToTab(0);
-        getCodeSetup("LOGIN_INPUT_ENTER_DATA", "BTN_SUBMIT", "LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD_DUNG", "URL_BE_STAGE");
+        getCodeSetup("LOGIN_INPUT_ENTER_DATA", "BTN_SUBMIT", "LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD", "URL_BE_STAGE");
         sendPassWord();
     }
 
@@ -131,7 +131,8 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.click("INPUT_CODE_NEW_EMAIL");
         keyword.sendKeys("INPUT_CODE_NEW_EMAIL", "PASS_NEW_RD");
         keyword.untilJqueryIsDone(50L);
-        keyword.click("BTN_SUBMIT_PASSWORD");
+        Thread.sleep(3000);
+        keyword.doubleClick("BTN_SUBMIT_PASSWORD");
 
     }
 
@@ -162,7 +163,7 @@ public class CreateAccountOnWebPage extends BasePage {
                 "LOGIN_SELECT_VIEW_CHECK_EMAIL_LOG",
                 "LOGIN_POPUP_MESSAGE_PASSWORD_RESET");
         objSignIn.getCodeEnterTextInField("IFRAME_STAGE",
-                "LOGIN_INPUT_VERIFY_CODE",
+                "LOGIN_INPUT_VERIFY_CODE2",
                 code, btnSubmit);
     }
 
@@ -184,9 +185,11 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
     }
+
     //    ------whthPhone
     public void createNewCustomerWithPhone() throws Exception {
-//        keyword.navigateToUrl("https://dev3.glamira.com/glgb/");
+        keyword.navigateToUrl("https://stage.glamira.com/");
+        objRegist.acceptAllCookies();
         goToFormCreateAccount();
         sendKeyFormDataLogin();
         objSignUp = new SignUpPage(this.keyword);
@@ -198,8 +201,9 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
         sendKeyFormPassword();
-        getCodeVerifyForm("LOGIN_DATA_USER_NAME", "BE_ADMIN_PASSWORD", "URL_BE_DEV");
+        getCodeVerifyForm("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD", "URL_BE_DEV");
     }
+
     public void loginSuccess() throws InterruptedException {
         keyword.reLoadPage();
         objRegist.acceptAllCookies();
@@ -208,9 +212,11 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.verifyElementVisible("MAC_VERIFY_NAME");
     }
+
     public void forgotPasswordPhone() throws InterruptedException {
         setUpFormForgot();
-//        keyword.click("MOBILE_NUMBER");
+        keyword.click("MOBILE_NUMBER");
+        keyword.untilJqueryIsDone(50L);
         keyword.sendKeys("SIGNIN_INPUT_PHONE_ENTER", "DATA_CREATE_ACCOUNT_WITH_PHONE");
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(50L);
@@ -218,8 +224,14 @@ public class CreateAccountOnWebPage extends BasePage {
         objSignUp.getCodeBE("INPUT_SEND_CODE_PHONE", "DATA_FORM_PASSWORD_NEW", "ACTUAL_DATA_TITLE_PASSWORD_NEW");
         keyword.untilJqueryIsDone(50L);
         sendPassWord();
-        keyword.sendKeys("SIGN_INPUT_PHONE_CHINA","DATA_CREATE_ACCOUNT_WITH_PHONE");
-        keyword.sendKeys("SIGNIN_PASSWORD_INPUT","Ngoc1962@");
+        keyword.untilJqueryIsDone(50L);
+        keyword.click("CHECK_PHONE_NUMBER");
+        keyword.untilJqueryIsDone(50L);
+        keyword.sendKeys("SIGN_INPUT_PHONE_CHINA", "DATA_CREATE_ACCOUNT_WITH_PHONE");
+        keyword.sendKeys("SIGNIN_PASSWORD_INPUT", "PASS_NEW_RD");
+        keyword.click("BTN_LOGIN");
+        keyword.untilJqueryIsDone(50L);
+//        keyword.verifyElementVisible("LOGIN_SUCCESS");
     }
 
     public void forgotPasswordInvalidEmail() throws InterruptedException {

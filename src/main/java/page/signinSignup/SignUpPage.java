@@ -140,7 +140,6 @@ public class SignUpPage extends BasePage {
         String text = text1.substring(text1.length() - 6);
         System.out.println("-----------------:" + text);
         keyword.switchToTab(0);
-        keyword.reLoadPage();
         keyword.untilJqueryIsDone(50L);
         keyword.sendKeys(dataInput, text);
         keyword.click(btnSubmit);
@@ -458,7 +457,7 @@ public class SignUpPage extends BasePage {
     }
 
     public void getCodeBE(String input, String data, String actual) throws InterruptedException {
-        getCodeAndSendKey(input, "SIGNUP_BTN_ACTIVE_ACCOUNT"
+        getCodeAndSendKey(input, "FORM_CODE"
         );
         keyword.untilJqueryIsDone(50L);
         Thread.sleep(5000);

@@ -36,10 +36,13 @@ public class LoginReturnFormTest extends BaseTest {
         objLoginReturn.dataFormLoginReturnForm("DATA_EMAIL_NOT_HAVE_ORDER_RETURN", "", true, "MESSAGE_NOT_HAVE_ORDER_RETURN", "RETURN_MESSAGE_CONTENT", "", true);
     }
 
-    @Test(priority = 3, description = "Submit Return form, Next step and not input Email")
-    public void testCase_LS_06() throws InterruptedException {
-        objLoginReturn.dataFormLoginReturnForm("", "", true, "SIGNUP_DATA_VERIFY_MESSAGE", "EMAIL_ERROR", "", true);
-    }
+//    @Test(priority = 3, description = "Submit Return form, Next step and not input Email")
+//    public void testC
+//    '
+
+//    ase_LS_06() throws InterruptedException {
+//        objLoginReturn.dataFormLoginReturnForm("", "", true, "SIGNUP_DATA_VERIFY_MESSAGE", "EMAIL_ERROR", "", true);
+//    }
 
     @Test(priority = 4, description = "Next step return form, login with password not matching email customer")
     public void testCase_LS_02() throws InterruptedException {

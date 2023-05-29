@@ -127,7 +127,10 @@ public class SignInPage extends BasePage {
     public void resentTheCodeToEmail() throws Exception {
         keyword.clearText("SIGNIN_INPUT_ENTER_CODE");
         openNewTabs();
+        keyword.deleteAllCookies();
         loginAdmin("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD");
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(10000);
         chooseItemCustomer("LOGIN_BTN_CUSTOMER", "LOGIN_BTN_CUSTOMER", "SIGNUP_VERIFY_CUSTOMER",
                 "LOGIN_BTN_EMAIL_LOG", "SIGNUP_VERIFY_EMAIL_LOG"
         );
@@ -200,8 +203,9 @@ public class SignInPage extends BasePage {
     public void forgotPassEnterPhoneIsNotTheSystem() throws InterruptedException {
         checkGoToFormLoginWithPhone(false, "EMAIL_ONE_SYSTEM2", "SIGNIN_DATA_PASSWORD_PHONE", "SIGNIN_MESSAGE_PASSWORD_ACTUAL", "SIGNIN_MESSAGE_INVALID");
         sendDataForgotPassword("SIGNIN_DATA_PHONE_NUMBER_NOT_SYSTEM");
-        keyword.assertEquals( "SIGNIN_MESSAGE_PHONE_INCORRECT", "MESSAGE_FAIL_RESEND_CODE");
+        keyword.assertEquals("SIGNIN_MESSAGE_PHONE_INCORRECT", "MESSAGE_FAIL_RESEND_CODE");
     }
+
     //   create New Password With Invalid Phone
     public void createNewPasswordWithInvalidPhone() throws InterruptedException {
         objSignUp = new SignUpPage(this.keyword);
