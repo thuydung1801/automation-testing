@@ -34,3 +34,12 @@ INFO  | 2023-05-31 08:46:10 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWi
 INFO  | 2023-05-31 08:46:10 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...URL_BE_STAGE
 INFO  | 2023-05-31 08:46:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME
 INFO  | 2023-05-31 08:46:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD
+INFO  | 2023-05-31 08:46:20 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_FORM_BTN_SUBMIT_BACKEND
+INFO  | 2023-05-31 08:46:28 | [main] core.KeywordWeb (KeywordWeb.java:scrollToPosition:499) -  scrolling to position 
+INFO  | 2023-05-31 08:46:28 | [main] core.KeywordWeb (KeywordWeb.java:scrollDownToElement:475) - scrollDownToElementLOGIN_BTN_CUSTOMER
+INFO  | 2023-05-31 08:46:28 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_CUSTOMER
+INFO  | 2023-05-31 08:46:28 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_VERIFY_CUSTOMER
+INFO  | 2023-05-31 08:46:32 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_BTN_EMAIL_LOG
+INFO  | 2023-05-31 08:46:34 | [main] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:683) - webDriverWaitForElementPresentSIGNUP_VERIFY_EMAIL_LOG
+INFO  | 2023-05-31 08:46:36 | [main] core.KeywordWeb (KeywordWeb.java:imWait:678) - implicitlyWait
+INFO  | 2023-05-31 08:46:36 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickLOGIN_CHECK_EMAIL_LOG_ACTION_SELECT
