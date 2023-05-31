@@ -50,14 +50,14 @@ public class CreateAccountOnWebPage extends BasePage {
     public void createAndVerifyForm() throws Exception {
         sendKeyFormDataLogin();
         sendKeyFormPassword();
-        getCodeVerifyForm("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD", "URL_BE_STAGE");
+        getCodeVerifyForm("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD", "URL_BE_STAGE", "SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU");
     }
 
-    public void getCodeVerifyForm(String userName, String pass, String url) throws Exception {
+    public void getCodeVerifyForm(String userName, String pass, String url, String dataActual) throws Exception {
         getCodeSetup("SIGNUP_INPUT_VERIFY_CODE", "SIGNUP_BTN_SUBMIT_ACCOUNT", userName, pass, url);
         keyword.untilJqueryIsDone(50L);
 //        keyword.verifyElementVisible("SIGNUP_MESSAGE_REGIST_SUCCESS_US");
-        keyword.assertEquals("SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU", "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
+        keyword.assertEquals(dataActual, "SIGNUP_MESSAGE_REGIST_SUCCESS_US");
     }
 
     public void forgotPasswordCheckOut(String dataURL, String url) throws Exception {
@@ -83,6 +83,8 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.click("LA_BTN_PROCEED_TO_CHECKOUT");
         keyword.untilJqueryIsDone(70L);
         keyword.verifyElementVisible("FORM_CHECKOUT_VRF");
+        keyword.untilJqueryIsDone(70L);
+        keyword.click("CHECKOUT_BTN_FORGOT_PASSWORD");
         keyword.untilJqueryIsDone(70L);
     }
 
@@ -137,7 +139,8 @@ public class CreateAccountOnWebPage extends BasePage {
     }
 
     public void sendEmail() throws InterruptedException {
-        keyword.verifyElementVisible("LOGIN_INPUT_FORGOT_PASSWORD");
+//        keyword.verifyElementVisible("LOGIN_INPUT_FORGOT_PASSWORD");
+        keyword.untilJqueryIsDone(50L);
         keyword.sendKeys("LOGIN_INPUT_FORGOT_PASSWORD", "SIGNUP_EMAIL_EXIST1");
         keyword.untilJqueryIsDone(50L);
         keyword.click("LOGIN_BTN_SUBMIT_FORGOT_PASSWORD");
@@ -201,7 +204,7 @@ public class CreateAccountOnWebPage extends BasePage {
         keyword.click("SIGNUP_BTN_NEXT_STEEP");
         keyword.untilJqueryIsDone(50L);
         sendKeyFormPassword();
-        getCodeVerifyForm("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD", "URL_BE_DEV");
+        getCodeVerifyForm("LOGIN_DATA_USER_NAME", "LOGIN_DATA_PASS_WORD", "URL_BE_DEV", "SIGNUP_MESSAGE_SIGNUP_SUCCESS_AU1");
     }
 
     public void loginSuccess() throws InterruptedException {

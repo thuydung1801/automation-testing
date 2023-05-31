@@ -5,17 +5,16 @@
         <parameter name="devices" value="web"></parameter>
         <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
-
             <class name="test.CreateAccountOnWebTest">
                 <methods>
-<!--                    <include name="testWebPhone_CreateAccount"/>-->
-<!--                    <include name="testWebPhone_forgotPassWord"/>-->
-<!--                    <include name="testCase_SI011"/>-->
-<!--                    <include name="testCase_SI012"/>-->
-<!--                    <include name="testCase_SI017"/>-->
-<!--                    <include name="testCase_SI018"/>-->
-<!--                    <include name="testCase_SP_16"/>-->
-<!--                    <include name="testCase_SP_17"/>-->
+                    <include name="testCaseWeb_CreateAccount"/>
+                    <include name="testCaseWeb_forgotPassWord"/>
+                    <include name="testCaseWeb_forgotPassWordCheckOut_LNA22"/>
+                    <include name="testCase_LNA26"/>
+                    <include name="testCase_LNA27"/>
+                    <include name="testCase_LNA28"/>
+                    <include name="testCase_SP_16"/>
+                    <include name="testCase_SP_17"/>
 <!--                    <include name="testCase_SP_18"/>-->
 <!--                    <include name="testCase_SP_19"/>-->
 <!--                    <include name="testCase_SP_21"/>-->
@@ -29,17 +28,17 @@
             </class>
         </classes>
     </test>
-<!--    <test name="Mobile">-->
-<!--        <parameter name="devices" value="web"></parameter>-->
-<!--        <parameter name="baseURL" value="https://stage.glamira.com/"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="test.checkout.ShoppingBagTest">-->
-<!--                <methods>-->
-<!--                    <include name="testcase_addImageProduct"/>-->
-<!--                    <include name="testcase_checkoutAffirm"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Mobile">
+        <parameter name="devices" value="web"></parameter>
+        <parameter name="baseURL" value="https://stage.glamira.com/"></parameter>
+        <classes>
+            <class name="test.CreateAccountOnWebTest">
+                <methods>
+                    <include name="testWebPhone_CreateAccount"/>
+                    <include name="testWebPhone_forgotPassWord"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
 
