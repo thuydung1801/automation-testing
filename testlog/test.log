@@ -28,3 +28,9 @@ INFO  | 2023-05-31 08:46:02 | [main] core.KeywordWeb (KeywordWeb.java:verifyElem
 INFO  | 2023-05-31 08:46:02 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_XPATH_FOR_FORM
 INFO  | 2023-05-31 08:46:02 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_CHECKBOX_AGREE
 INFO  | 2023-05-31 08:46:02 | [main] core.KeywordWeb (KeywordWeb.java:click:138) - clickSIGNUP_BTN_CREATE_ACCOUNT
+INFO  | 2023-05-31 08:46:10 | [main] core.KeywordWeb (KeywordWeb.java:executeJavaScript:286) - Executing JavaScript
+INFO  | 2023-05-31 08:46:10 | [main] core.KeywordWeb (KeywordWeb.java:switchToTab:439) - switchToTab
+INFO  | 2023-05-31 08:46:10 | [main] core.KeywordWeb (KeywordWeb.java:maximizeWindow:297) - Maximizing browser window...
+INFO  | 2023-05-31 08:46:10 | [main] core.KeywordWeb (KeywordWeb.java:navigateToUrl:312) - Navigating to URL...URL_BE_STAGE
+INFO  | 2023-05-31 08:46:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_FORM_USER_NAME_BACKENDwith LOGIN_DATA_USER_NAME
+INFO  | 2023-05-31 08:46:19 | [main] core.KeywordWeb (KeywordWeb.java:sendKeys:189) - send keysLOGIN_FORM_PASSWORD_BACKENDwith LOGIN_DATA_PASS_WORD
