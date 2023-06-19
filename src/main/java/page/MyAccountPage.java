@@ -118,13 +118,13 @@ public class MyAccountPage extends BasePage {
         String timestamp = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String pass = "Dung*"+timestamp;
         keyword.sendKeys("MAC_INP_PASS_CURENT_2","COM_INP_DATA_PASS_STAGE");
-        PropertiesFile.serPropValue("COM_INP_DATA_PASS_STAGE",pass);
-        keyword.sendKeys("MAC_INP_PASS_NEW","COM_INP_DATA_PASS_STAGE");
-        keyword.sendKeys("MAC_INP_PASS_CONFIRM","COM_INP_DATA_PASS_STAGE");
+//        PropertiesFile.serPropValue("COM_INP_DATA_PASS_STAGE",pass);
+        keyword.sendKeys("MAC_INP_PASS_NEW",pass);
+        keyword.sendKeys("MAC_INP_PASS_CONFIRM",pass);
         keyword.click("MAC_BTN_SAVE_3");
         keyword.untilJqueryIsDone(60L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
-
+        PropertiesFile.serPropValue("COM_INP_DATA_PASS_STAGE",pass);
     }
 
     public void logOut() throws InterruptedException {

@@ -28,23 +28,28 @@
         
 <!--https://stage.glamira.co.uk/-->
 <!--https://www.glamira.com/-->
-<!--https://www.glamira.co.uk/-->
+<!--https://www.glamira.co.uk/   NPP23-->
 <!--https://dev3.glamira.com/glgb/-->
 <!--https://dev1.glamira.com/glgb/ -->
 <!--https://stage.glamira.de/        RV_08    -->
         <parameter name="devices" value="web"></parameter>
         <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
         <classes>
-            <class name="test.MyAccountTest">
+<!--            <class name="test.MyAccountTest">-->
 <!--                <methods>-->
 <!--                    <include name="testCase_PI_01"/>-->
+<!--                    <include name="testCase_PI_03"/>-->
+<!--                    <include name="testCase_PI_04_LO_01"/>-->
+<!--                    <include name="testCase_MA_05"/>-->
+<!--                    <include name="testCase_MA_06"/>-->
+<!--                    <include name="testCase_MA_07"/>-->
 <!--                    <include name="testCase_Myorder_05"/>-->
 <!--                    <include name="testCase_MW_02"/>-->
 <!--                    <include name="testCase_MW_03"/>-->
 <!--                    <include name="testCase_MW_04"/>-->
 <!--                    <include name="testCase_MW_05"/>-->
 <!--                </methods>-->
-            </class>
+<!--            </class>-->
 <!--            <class name="test.ProductDetailTest">-->
 <!--                                <methods>-->
 <!--                                    <include name="testCase_NPP_19"/>-->

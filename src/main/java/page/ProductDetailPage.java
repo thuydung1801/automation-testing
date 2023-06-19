@@ -781,6 +781,15 @@ public class ProductDetailPage extends BasePage {
         keyword.verifyElementVisible("PRD_NEW_PAGE_VERIFY_IMG_COLOR_WHITE");
 
     }
+    public void checkVerifyElementNotDisplayed(String element) throws InterruptedException {
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+        keyword.checkElementIsNotDisplayed(element);
+    }
+    public void newNPP29(String baseURL) throws InterruptedException {
+        keyword.navigateToUrl(baseURL + "glamira-ring-alhertine.html?stone1=diamond-Brillant&alloy=white-585");
+        checkVerifyElementNotDisplayed("PRD_NEW_PAGE_BTN_LAB_STONE");
+    }
     public void newNPP26_27(String baseURL) throws InterruptedException {
         keyword.navigateToUrl(baseURL + "glamira-ring-josafina.html?alloy=white-585&stone2=diamond-Brillant&stone3=diamond-Brillant&stone1=emerald");
         keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
@@ -793,6 +802,31 @@ public class ProductDetailPage extends BasePage {
         if(keyword.verifyElementVisible("PRD_NEW_PAGE_LINK_BACK_NATURAL_STONE")){
             keyword.click("PRD_NEW_PAGE_LINK_BACK_NATURAL_STONE");
         }
+    }
+    public void CheckDimensionGuideSection(String imgData, String btnGuide,String btnShowImg, String imgVerify) throws InterruptedException {
+        keyword.verifyElementPresent(imgData);
+        keyword.click(btnGuide);
+        keyword.untilJqueryIsDone(60L);
+        keyword.click(btnShowImg);
+        keyword.untilJqueryIsDone(60L);
+        keyword.verifyElementPresent(imgVerify);
+    }
+    public void newNPP30(String baseURL) throws InterruptedException {
+//        keyword.navigateToUrl(baseURL+"glamira-ring-josafina.html?alloy=white-585&stone2=diamond-Brillant&stone3=diamond-Brillant&stone1=emerald");
+//        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+//        keyword.untilJqueryIsDone(60L);
+        CheckDimensionGuideSection("PRD_NEW_PAGE_DATA_IMG_EMERALD_DIMENSION_GUIDE","PRD_NEW_PAGE_LINK_DIMENSION_GUIDE",
+                "PRD_NEW_PAGE_BTN_VIEW_3D", "PRD_NEW_PAGE_VERIFY_IMG_EMERALD_DIMENSION_GUIDE");
+
+    }
+    public void newNPP31(String baseURL) throws InterruptedException {
+        keyword.navigateToUrl(baseURL + "dreamy-twinkle-6-mm.html");
+        checkVerifyElementNotDisplayed("PRD_NEW_PAGE_LINK_DIMENSION_GUIDE");
+    }
+    public void newNPP32(String baseURL) throws InterruptedException {
+        keyword.navigateToUrl(baseURL + "glamira-ring-josafina.html?alloy=white-585&stone2=diamond-Brillant&stone3=diamond-Brillant&synthetic=labsapphire");
+        CheckDimensionGuideSection("PRD_NEW_PAGE_DATA_IMG_SAPPHIRE_DIMENSION_GUIDE","PRD_NEW_PAGE_LINK_DIMENSION_GUIDE",
+                "PRD_NEW_PAGE_BTN_VIEW_3D", "PRD_NEW_PAGE_VERIFY_IMG_SAPPHIRE_DIMENSION_GUIDE");
     }
 
     public void pricePP01(String baseURL) throws InterruptedException {

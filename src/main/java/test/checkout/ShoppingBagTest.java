@@ -34,10 +34,10 @@ public class ShoppingBagTest extends BaseTest {
         //objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
         //objRegist.chooseLanguages();
-//        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE",
-//                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
-        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_DE","COM_INP_DATA_PASS_DE",
+        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_STAGE","COM_INP_DATA_PASS_STAGE",
                 "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
+//        objLogin.loginOnWebsite("COM_INP_DATA_EMAIL_DE","COM_INP_DATA_PASS_DE",
+//                "LOGIN_DATA_PHONE_LINH","LOGIN_DATA_PHONE_PASS", true);
 
     }
     public void commonShopping1() throws InterruptedException {
@@ -70,6 +70,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test
     @Parameters("baseURL")
     public void testCase_CheckoutWithGiftCard(String baseURL) throws InterruptedException {
+        commonShopping();
         objShoppingBagPage.createGiftCard(baseURL);
     }
     @Test

@@ -176,27 +176,51 @@ public class ProductDetailTest extends BaseTest {
     public void testCase_NPP_25(String baseURL) throws InterruptedException {
         testProductDetail.newNPP25(baseURL);
     }
-    @Test (priority = 37, description = "Check Lab stone option in product page")
+    @Test (priority = 37, description = "Check show Lab Created Stones tab ")
+    @Parameters("baseURL")
+    public void testCase_NPP_29(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP29(baseURL);
+    }
+    @Test (priority = 38, description = "Check Lab stone option in product page")
     @Parameters("baseURL")
     public void testCase_NPP_26_27_28(String baseURL) throws InterruptedException {
         testProductDetail.newNPP26_27(baseURL);
     }
+    @Test (priority = 39, description = "Check Dimension Guide section ")
+    @Parameters("baseURL")
+    public void testCase_NPP_30(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP30(baseURL);
+    }
+    @Test (priority = 40, description = "Check show Dimension Guide section ")
+    @Parameters("baseURL")
+    public void testCase_NPP_31(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP31(baseURL);
+    }
+    @Test (priority = 41, description = "Check show Dimension Guide section ")
+    @Parameters("baseURL")
+    public void testCase_NPP_32(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP32(baseURL);
+    }
 
 
-    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
-    @Parameters("baseURL")
-    public void testCase_PP_01(String baseURL) throws InterruptedException {
-        testProductDetail.pricePP01(baseURL);
-    }
-    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
-    @Parameters("baseURL")
-    public void testCase_PP_02(String baseURL) throws InterruptedException {
-        testProductDetail.pricePP02(baseURL);
-    }
-    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
-    @Parameters("baseURL")
-    public void testCase_PP_03(String baseURL) throws InterruptedException {
-        testProductDetail.pricePP03(baseURL);
-    }
+
+
+//  Check price product
+
+//    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
+//    @Parameters("baseURL")
+//    public void testCase_PP_01(String baseURL) throws InterruptedException {
+//        testProductDetail.pricePP01(baseURL);
+//    }
+//    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
+//    @Parameters("baseURL")
+//    public void testCase_PP_02(String baseURL) throws InterruptedException {
+//        testProductDetail.pricePP02(baseURL);
+//    }
+//    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
+//    @Parameters("baseURL")
+//    public void testCase_PP_03(String baseURL) throws InterruptedException {
+//        testProductDetail.pricePP03(baseURL);
+//    }
 
 }

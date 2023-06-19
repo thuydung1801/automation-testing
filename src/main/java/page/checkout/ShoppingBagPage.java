@@ -52,7 +52,8 @@ public class ShoppingBagPage extends BasePage {
         Assert.assertEquals(check,true);
         moveToPagecheckOut();
         keyword.untilJqueryIsDone(50L);
-        keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
+//        keyword.click("CHECKOUT_BTN_CHECKOUT_ADDRESS");
+        checkOut();
         keyword.untilJqueryIsDone(50L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
         checkOutWithVisa("success","stage");
