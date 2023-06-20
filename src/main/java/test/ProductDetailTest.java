@@ -201,6 +201,26 @@ public class ProductDetailTest extends BaseTest {
     public void testCase_NPP_32(String baseURL) throws InterruptedException {
         testProductDetail.newNPP32(baseURL);
     }
+    @Test (priority = 42, description = "Check Upload Your Photo in product page")
+    @Parameters("baseURL")
+    public void testCase_NPP_33_36(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP33_36(baseURL);
+    }
+    @Test (priority = 43, description = "Check Upload Your Photo in product page")
+    @Parameters("baseURL")
+    public void testCase_NPP_34(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP34(baseURL);
+    }
+    @Test (priority = 44, description = "Check Upload Your Photo in product page - Delete images")
+    @Parameters("baseURL")
+    public void testCase_NPP_35(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP35(baseURL);
+    }
+    @Test (priority = 45, description = "Check Upload Your Photo in product page-Required field")
+    @Parameters("baseURL")
+    public void testCase_NPP_37(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP37(baseURL);
+    }
 
 
 

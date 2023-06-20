@@ -787,6 +787,7 @@ public class ProductDetailPage extends BasePage {
         keyword.checkElementIsNotDisplayed(element);
     }
     public void newNPP29(String baseURL) throws InterruptedException {
+        objLoginAddress.resetForNewCase();
         keyword.navigateToUrl(baseURL + "glamira-ring-alhertine.html?stone1=diamond-Brillant&alloy=white-585");
         checkVerifyElementNotDisplayed("PRD_NEW_PAGE_BTN_LAB_STONE");
     }
@@ -827,6 +828,54 @@ public class ProductDetailPage extends BasePage {
         keyword.navigateToUrl(baseURL + "glamira-ring-josafina.html?alloy=white-585&stone2=diamond-Brillant&stone3=diamond-Brillant&synthetic=labsapphire");
         CheckDimensionGuideSection("PRD_NEW_PAGE_DATA_IMG_SAPPHIRE_DIMENSION_GUIDE","PRD_NEW_PAGE_LINK_DIMENSION_GUIDE",
                 "PRD_NEW_PAGE_BTN_VIEW_3D", "PRD_NEW_PAGE_VERIFY_IMG_SAPPHIRE_DIMENSION_GUIDE");
+    }
+    public void inputUploadImg(String baseURL,String inpImg) throws InterruptedException {
+        keyword.navigateToUrl(baseURL + "catalog/product/view/id/114565#");
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+        //input file upload
+        for (int i=1;i<5;i++){
+            String ele = "PRD_NEW_PAGE_UPLOAD_IMG" +i;
+            keyword.sendKeys(ele,inpImg);
+        }
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        checkVerifyElementNotDisplayed("PRD_NEW_PAGE_ICON_UPLOAD_IMG");
+    }
+    public void uploadImgAndVerifyMessage(String baseURL, String type, String inpImg) throws InterruptedException {
+        inputUploadImg(baseURL,inpImg);
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.untilJqueryIsDone(60L);
+        //verify mess
+        if(type.equals("success")){
+            keyword.assertEquals("PRD_NEW_PAGE_VERIFY_MESS_ADDPRODUCT", "CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE");
+
+        }else{
+            for (int j=1;j<5;j++){
+                String ele = "PRD_NEW_PAGE_DATA_MESS_ERROR_UPLOAD_IMG" +j;
+                logger.info(ele);
+                String mess = "PRD_NEW_PAGE_VERIFY_MESS_ERROR_UPLOAD_IMG"+j;
+                logger.info(mess);
+                keyword.assertEquals(mess, ele);
+            }
+        }
+
+    }
+    public void newNPP33_36(String baseURL) throws InterruptedException {
+        uploadImgAndVerifyMessage(baseURL,"success","C:\\Users\\nongt\\Downloads\\11.jpg");
+    }
+    public void newNPP34(String baseURL) throws InterruptedException {
+        uploadImgAndVerifyMessage(baseURL,"error","C:\\Users\\nongt\\Downloads\\image_2023_06_20T03_46_43_718Z.png");
+    }
+    public void newNPP35(String baseURL) throws InterruptedException {
+        inputUploadImg(baseURL,"C:\\Users\\nongt\\Downloads\\image_2023_06_20T03_46_43_718Z.png");
+        keyword.click("PRD_NEW_PAGE_ICON_DELETE_IMG");
+        keyword.verifyElementVisible("PRD_NEW_PAGE_ICON_UPLOAD_IMG");
+    }
+    public void newNPP37(String baseURL) throws InterruptedException {
+        keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
+        keyword.click("CHECKOUT_ADDPRODUCT_BTN_ADD");
+        keyword.assertEquals("COM_DATA_MESSAGES_NULL","COM_TEXT_ERROR");
     }
 
     public void pricePP01(String baseURL) throws InterruptedException {

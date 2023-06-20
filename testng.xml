@@ -28,7 +28,7 @@
         
 <!--https://stage.glamira.co.uk/-->
 <!--https://www.glamira.com/-->
-<!--https://www.glamira.co.uk/   NPP23-->
+<!--https://www.glamira.co.uk/   NPP23 - NPP32-->
 <!--https://dev3.glamira.com/glgb/-->
 <!--https://dev1.glamira.com/glgb/ -->
 <!--https://stage.glamira.de/        RV_08    -->
@@ -50,19 +50,21 @@
 <!--                    <include name="testCase_MW_05"/>-->
 <!--                </methods>-->
 <!--            </class>-->
-<!--            <class name="test.ProductDetailTest">-->
-<!--                                <methods>-->
-<!--                                    <include name="testCase_NPP_19"/>-->
-<!--                                    <include name="testCase_NPP_20"/>-->
-<!--                                    <include name="testCase_NPP_22_21"/>-->
+            <class name="test.ProductDetailTest">
+                                <methods>
+                                    <include name="testCase_NPP_29"/>
+                                    <include name="testCase_NPP_26_27_28"/>
+                                    <include name="testCase_NPP_30"/>
+                                    <include name="testCase_NPP_31"/>
+                                    <include name="testCase_NPP_32"/>
 <!--                                    <include name="testCase_PP_01"/>-->
 <!--                                    <include name="testCase_PP_02"/>-->
 <!--                                    <include name="testCase_PP_03"/>-->
                 <!--                    <include name="testCase_MW_03"/>-->
                 <!--                    <include name="testCase_MW_04"/>-->
                 <!--                    <include name="testCase_MW_05"/>-->
-<!--                                </methods>-->
-<!--            </class>-->
+                                </methods>
+            </class>
 
 
 <!--            <class name="test.checkout.ShoppingBagTest">-->
