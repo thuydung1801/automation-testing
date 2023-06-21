@@ -47,16 +47,16 @@
 <!--                    <include name="testCase_MW_02"/>-->
 <!--                    <include name="testCase_MW_03"/>-->
 <!--                    <include name="testCase_MW_04"/>-->
-<!--                    <include name="testCase_MW_05"/>-->
+<!--                    <include name="testCase_Myorder_05"/>-->
 <!--                </methods>-->
 <!--            </class>-->
             <class name="test.ProductDetailTest">
                                 <methods>
-                                    <include name="testCase_NPP_29"/>
-                                    <include name="testCase_NPP_26_27_28"/>
-                                    <include name="testCase_NPP_30"/>
-                                    <include name="testCase_NPP_31"/>
-                                    <include name="testCase_NPP_32"/>
+                                    <include name="testCase_NPP_33_36"/>
+                                    <include name="testCase_NPP_34"/>
+                                    <include name="testCase_NPP_35"/>
+                                    <include name="testCase_NPP_37"/>
+<!--                                    <include name="testCase_NPP_32"/>-->
 <!--                                    <include name="testCase_PP_01"/>-->
 <!--                                    <include name="testCase_PP_02"/>-->
 <!--                                    <include name="testCase_PP_03"/>-->

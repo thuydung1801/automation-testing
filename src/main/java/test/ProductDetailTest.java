@@ -221,6 +221,42 @@ public class ProductDetailTest extends BaseTest {
     public void testCase_NPP_37(String baseURL) throws InterruptedException {
         testProductDetail.newNPP37(baseURL);
     }
+    @Test (priority = 46, description = "Check show More Details section")
+    @Parameters("baseURL")
+    public void testCase_NPP_38_39(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP38_39(baseURL);
+    }
+    @Test (priority = 47, description = "Check item show under Add to Cart button only for product wedding ring")
+    @Parameters("baseURL")
+    public void testCase_NPP_41(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP41_50();
+    }
+    @Test (priority = 48, description = "Check width information beside product name")
+    @Parameters("baseURL")
+    public void testCase_NPP_43(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP43(baseURL);
+    }
+    @Test (priority = 49, description = "Check show width information beside product name")
+    @Parameters("baseURL")
+    public void testCase_NPP_44(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP44(baseURL);
+    }
+    @Test (priority = 50, description = "Check Carat information beside product name")
+    @Parameters("baseURL")
+    public void testCase_NPP_45(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP45(baseURL);
+    }
+
+    @Test (priority = 51, description = "Check item show under Add to Cart button only for others product")
+    @Parameters("baseURL")
+    public void testCase_NPP_42(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP42(baseURL);
+    }
+    @Test (priority = 52, description = "Check show Carats information beside product name")
+    @Parameters("baseURL")
+    public void testCase_NPP_46(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP46(baseURL);
+    }
 
 
 
