@@ -52,10 +52,13 @@
 <!--            </class>-->
             <class name="test.ProductDetailTest">
                                 <methods>
-                                    <include name="testCase_NPP_33_36"/>
-                                    <include name="testCase_NPP_34"/>
-                                    <include name="testCase_NPP_35"/>
-                                    <include name="testCase_NPP_37"/>
+<!--                                    <include name="testCase_NPP_38_39"/>-->
+<!--                                    <include name="testCase_NPP_41"/>-->
+<!--                                    <include name="testCase_NPP_43"/>-->
+<!--                                    <include name="testCase_NPP_44"/>-->
+                                    <include name="testCase_NPP_45"/>
+<!--                                    <include name="testCase_NPP_42"/>-->
+<!--                                    <include name="testCase_NPP_46"/>-->
 <!--                                    <include name="testCase_NPP_32"/>-->
 <!--                                    <include name="testCase_PP_01"/>-->
 <!--                                    <include name="testCase_PP_02"/>-->

@@ -1,64 +1,18 @@
-INFO  | 2023-06-21 15:15:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - Open browser
-INFO  | 2023-06-21 15:15:19 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
-INFO  | 2023-06-21 15:15:19 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\nongt\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
-INFO  | 2023-06-21 15:15:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - open browser successfullyCHROME
-INFO  | 2023-06-21 15:15:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:70) - go to url: https://stage.glamira.co.uk/
-INFO  | 2023-06-21 15:15:21 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:71) - url: [Ljava.lang.String;@7d5e972
-INFO  | 2023-06-21 15:15:37 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
-INFO  | 2023-06-21 15:15:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
-INFO  | 2023-06-21 15:15:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
-INFO  | 2023-06-21 15:15:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
-INFO  | 2023-06-21 15:15:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
-INFO  | 2023-06-21 15:15:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
-INFO  | 2023-06-21 15:15:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
-INFO  | 2023-06-21 15:15:56 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
-INFO  | 2023-06-21 15:16:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
-INFO  | 2023-06-21 15:16:02 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/catalog/product/view/id/114565#
-INFO  | 2023-06-21 15:16:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-06-21 15:16:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysPRD_NEW_PAGE_UPLOAD_IMG1with C:\Users\nongt\Downloads\11.jpg
-INFO  | 2023-06-21 15:16:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysPRD_NEW_PAGE_UPLOAD_IMG2with C:\Users\nongt\Downloads\11.jpg
-INFO  | 2023-06-21 15:16:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysPRD_NEW_PAGE_UPLOAD_IMG3with C:\Users\nongt\Downloads\11.jpg
-INFO  | 2023-06-21 15:16:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysPRD_NEW_PAGE_UPLOAD_IMG4with C:\Users\nongt\Downloads\11.jpg
-INFO  | 2023-06-21 15:16:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-06-21 15:16:13 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-06-21 15:16:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:checkElementIsNotDisplayed:591) - checkElementVisibleOrNotPRD_NEW_PAGE_ICON_UPLOAD_IMG
-INFO  | 2023-06-21 15:16:16 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
-INFO  | 2023-06-21 15:16:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-06-21 15:16:22 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from PRD_NEW_PAGE_VERIFY_MESS_ADDPRODUCT with CUS_VERIFY_NEWSLETTER_UNSUBSCRIBE
-INFO  | 2023-06-21 15:16:23 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/catalog/product/view/id/114565#
-INFO  | 2023-06-21 15:16:24 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-06-21 15:16:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysPRD_NEW_PAGE_UPLOAD_IMG1with C:\Users\nongt\Downloads\image_2023_06_20T03_46_43_718Z.png
-INFO  | 2023-06-21 15:16:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysPRD_NEW_PAGE_UPLOAD_IMG2with C:\Users\nongt\Downloads\image_2023_06_20T03_46_43_718Z.png
-INFO  | 2023-06-21 15:16:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysPRD_NEW_PAGE_UPLOAD_IMG3with C:\Users\nongt\Downloads\image_2023_06_20T03_46_43_718Z.png
-INFO  | 2023-06-21 15:16:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysPRD_NEW_PAGE_UPLOAD_IMG4with C:\Users\nongt\Downloads\image_2023_06_20T03_46_43_718Z.png
-INFO  | 2023-06-21 15:16:26 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-06-21 15:16:27 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-06-21 15:16:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:checkElementIsNotDisplayed:591) - checkElementVisibleOrNotPRD_NEW_PAGE_ICON_UPLOAD_IMG
-INFO  | 2023-06-21 15:16:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
-INFO  | 2023-06-21 15:16:30 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] page.ProductDetailPage (ProductDetailPage.java:uploadImgAndVerifyMessage:856) - PRD_NEW_PAGE_DATA_MESS_ERROR_UPLOAD_IMG1
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] page.ProductDetailPage (ProductDetailPage.java:uploadImgAndVerifyMessage:858) - PRD_NEW_PAGE_VERIFY_MESS_ERROR_UPLOAD_IMG1
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from PRD_NEW_PAGE_VERIFY_MESS_ERROR_UPLOAD_IMG1 with PRD_NEW_PAGE_DATA_MESS_ERROR_UPLOAD_IMG1
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] page.ProductDetailPage (ProductDetailPage.java:uploadImgAndVerifyMessage:856) - PRD_NEW_PAGE_DATA_MESS_ERROR_UPLOAD_IMG2
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] page.ProductDetailPage (ProductDetailPage.java:uploadImgAndVerifyMessage:858) - PRD_NEW_PAGE_VERIFY_MESS_ERROR_UPLOAD_IMG2
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from PRD_NEW_PAGE_VERIFY_MESS_ERROR_UPLOAD_IMG2 with PRD_NEW_PAGE_DATA_MESS_ERROR_UPLOAD_IMG2
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] page.ProductDetailPage (ProductDetailPage.java:uploadImgAndVerifyMessage:856) - PRD_NEW_PAGE_DATA_MESS_ERROR_UPLOAD_IMG3
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] page.ProductDetailPage (ProductDetailPage.java:uploadImgAndVerifyMessage:858) - PRD_NEW_PAGE_VERIFY_MESS_ERROR_UPLOAD_IMG3
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from PRD_NEW_PAGE_VERIFY_MESS_ERROR_UPLOAD_IMG3 with PRD_NEW_PAGE_DATA_MESS_ERROR_UPLOAD_IMG3
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] page.ProductDetailPage (ProductDetailPage.java:uploadImgAndVerifyMessage:856) - PRD_NEW_PAGE_DATA_MESS_ERROR_UPLOAD_IMG4
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] page.ProductDetailPage (ProductDetailPage.java:uploadImgAndVerifyMessage:858) - PRD_NEW_PAGE_VERIFY_MESS_ERROR_UPLOAD_IMG4
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from PRD_NEW_PAGE_VERIFY_MESS_ERROR_UPLOAD_IMG4 with PRD_NEW_PAGE_DATA_MESS_ERROR_UPLOAD_IMG4
-INFO  | 2023-06-21 15:16:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/catalog/product/view/id/114565#
-INFO  | 2023-06-21 15:16:40 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-06-21 15:16:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysPRD_NEW_PAGE_UPLOAD_IMG1with C:\Users\nongt\Downloads\image_2023_06_20T03_46_43_718Z.png
-INFO  | 2023-06-21 15:16:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysPRD_NEW_PAGE_UPLOAD_IMG2with C:\Users\nongt\Downloads\image_2023_06_20T03_46_43_718Z.png
-INFO  | 2023-06-21 15:16:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysPRD_NEW_PAGE_UPLOAD_IMG3with C:\Users\nongt\Downloads\image_2023_06_20T03_46_43_718Z.png
-INFO  | 2023-06-21 15:16:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:sendKeys:193) - send keysPRD_NEW_PAGE_UPLOAD_IMG4with C:\Users\nongt\Downloads\image_2023_06_20T03_46_43_718Z.png
-INFO  | 2023-06-21 15:16:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-06-21 15:16:42 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-06-21 15:16:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:checkElementIsNotDisplayed:591) - checkElementVisibleOrNotPRD_NEW_PAGE_ICON_UPLOAD_IMG
-INFO  | 2023-06-21 15:16:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickPRD_NEW_PAGE_ICON_DELETE_IMG
-INFO  | 2023-06-21 15:16:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisiblePRD_NEW_PAGE_ICON_UPLOAD_IMG
-INFO  | 2023-06-21 15:16:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
-INFO  | 2023-06-21 15:16:47 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickCHECKOUT_ADDPRODUCT_BTN_ADD
-INFO  | 2023-06-21 15:16:48 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:assertEquals:766) - compare from COM_DATA_MESSAGES_NULL with COM_TEXT_ERROR
+INFO  | 2023-06-22 17:25:38 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:51) - Open browser
+INFO  | 2023-06-22 17:25:41 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:resolveDriverVersion:958) - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+INFO  | 2023-06-22 17:25:41 | [TestNG-tests-1] bonigarcia.wdm.WebDriverManager (WebDriverManager.java:exportDriver:1013) - Exporting webdriver.chrome.driver as C:\Users\nongt\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+INFO  | 2023-06-22 17:25:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:67) - open browser successfullyCHROME
+INFO  | 2023-06-22 17:25:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:70) - go to url: https://stage.glamira.co.uk/
+INFO  | 2023-06-22 17:25:43 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:openBrowser:71) - url: [Ljava.lang.String;@2c3c891c
+INFO  | 2023-06-22 17:25:49 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:maximizeWindow:305) - Maximizing browser window...
+INFO  | 2023-06-22 17:25:50 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:deleteAllCookies:643) - deleteAllCookies
+INFO  | 2023-06-22 17:25:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:reLoadPage:315) - ReLoad Page...
+INFO  | 2023-06-22 17:25:55 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:scrollToPositionByScript:513) -  scrolling to position 
+INFO  | 2023-06-22 17:26:03 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentLOGIN_BTN_LANGUAGE
+INFO  | 2023-06-22 17:26:10 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickLOGIN_BTN_LANGUAGE
+INFO  | 2023-06-22 17:26:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:webDriverWaitForElementPresent:680) - webDriverWaitForElementPresentBTN_COOKIES
+INFO  | 2023-06-22 17:26:11 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementPresent:533) - verifyElementPresentBTN_COOKIES
+INFO  | 2023-06-22 17:26:17 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:click:142) - clickBTN_COOKIES
+INFO  | 2023-06-22 17:26:18 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:navigateToUrl:320) - Navigating to URL...https://stage.glamira.co.uk/glamira-pendant-telema.html?alloy=white_red-375&stone1=blackdiamond
+INFO  | 2023-06-22 17:26:51 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:waitForElementNotVisible:727) - elemnt //div[@class='loading-mask'] not visible
+INFO  | 2023-06-22 17:26:54 | [TestNG-tests-1] core.KeywordWeb (KeywordWeb.java:verifyElementVisible:575) - verifyElementVisiblePRD_NEW_PAGE_VIEW_CARAT

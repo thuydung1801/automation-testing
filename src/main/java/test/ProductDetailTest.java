@@ -257,6 +257,31 @@ public class ProductDetailTest extends BaseTest {
     public void testCase_NPP_46(String baseURL) throws InterruptedException {
         testProductDetail.newNPP46(baseURL);
     }
+    @Test (priority = 53, description = "Products with Rhodium Plated option - The product is assigned to the collection")
+    @Parameters("baseURL")
+    public void testCase_NPP_52_55(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP52_55(baseURL);
+    }
+    @Test (priority = 54, description = "Products with Rhodium Plated option")
+    @Parameters("baseURL")
+    public void testCase_NPP_53(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP53(baseURL);
+    }
+    @Test (priority = 55, description = "Dont have assign any collection")
+    @Parameters("baseURL")
+    public void testCase_NPP_56(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP56(baseURL);
+    }
+    @Test (priority = 56, description = "Check show banner on Explore More section")
+    @Parameters("baseURL")
+    public void testCase_NPP_58(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP58(baseURL);
+    }
+    @Test (priority = 57, description = "Check Dont show banner on Explore More section")
+    @Parameters("baseURL")
+    public void testCase_NPP_59(String baseURL) throws InterruptedException {
+        testProductDetail.newNPP59(baseURL);
+    }
 
 
 

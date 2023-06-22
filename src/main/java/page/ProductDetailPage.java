@@ -862,7 +862,7 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void newNPP33_36(String baseURL) throws InterruptedException {
-        objLoginAddress.resetForNewCase();
+//        objLoginAddress.resetForNewCase();
         uploadImgAndVerifyMessage(baseURL,"success","C:\\Users\\nongt\\Downloads\\11.jpg");
     }
     public void newNPP34(String baseURL) throws InterruptedException {
@@ -879,6 +879,7 @@ public class ProductDetailPage extends BasePage {
         keyword.assertEquals("COM_DATA_MESSAGES_NULL","COM_TEXT_ERROR");
     }
     public void newNPP38_39(String baseURL) throws InterruptedException {
+//        objLoginAddress.resetForNewCase();
         keyword.navigateToUrl(baseURL + "heavenly-blaze-4-mm.html");
         keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(60L);
@@ -900,11 +901,22 @@ public class ProductDetailPage extends BasePage {
         keyword.navigateToUrl(baseURL +"strong-love-5-mm.html");
         checkVerifyElementNotDisplayed("PRD_NEW_PAGE_VIEW_WIDTH");
     }
-    public void newNPP45(String baseURL) throws InterruptedException {
-        keyword.navigateToUrl(baseURL + "glamira-pendant-telema.html?alloy=white_red-375&stone1=blackdiamond");
+    public void checkVerifyVisible(String URL,String element, boolean type) throws InterruptedException {
+        keyword.navigateToUrl(URL);
         keyword.waitForElementNotVisible(60,"//div[@class='loading-mask']");
         keyword.untilJqueryIsDone(60L);
-        keyword.verifyElementVisible("PRD_NEW_PAGE_VIEW_CARAT");
+        if(type){
+            keyword.verifyElementVisible(element);
+        }
+        else{
+            keyword.checkElementIsNotDisplayed(element);
+        }
+
+    }
+    public void newNPP45(String baseURL) throws InterruptedException {
+        objLoginAddress.resetForNewCase();
+        checkVerifyVisible(baseURL + "glamira-pendant-telema.html?alloy=white_red-375&stone1=blackdiamond",
+                "PRD_NEW_PAGE_VIEW_CARAT",true );
     }
 
     public void newNPP42(String baseURL) throws InterruptedException {
@@ -916,6 +928,33 @@ public class ProductDetailPage extends BasePage {
     public void newNPP46(String baseURL) throws InterruptedException {
         checkVerifyElementNotDisplayed("PRD_NEW_PAGE_VIEW_CARAT");
     }
+    public void newNPP52_55(String baseURL) throws InterruptedException {
+        checkVerifyVisible(baseURL + "glamira-pendant-yanisyarvi.html?alloy=white_yellow-375&stone1=blackdiamond&stone2=diamond-Brillant",
+                "PRD_NEW_PAGE_VIEW_VALUE_RHODIUM",true );
+        keyword.verifyElementVisible("PRD_NEW_PAGE_VIEW_EXPLORE_MORE");
+    }
+    public void newNPP53(String baseURL) throws InterruptedException {
+        checkVerifyVisible(baseURL + "glamira-pendant-yanisyarvi.html?alloy=white-platin&stone1=blackdiamond&stone2=diamond-Brillant",
+                "PRD_NEW_PAGE_VIEW_VALUE_RHODIUM",false );
+
+    }
+    public void newNPP56(String baseURL) throws InterruptedException {
+        checkVerifyVisible(baseURL + "glamira-collier-ely.html",
+                "PRD_NEW_PAGE_VIEW_EXPLORE_MORE",false );
+
+    }
+    public void newNPP58(String baseURL) throws InterruptedException {
+        checkVerifyVisible(baseURL + "glamira-ring-consecratedness-a.html?alloy=white-silber",
+                "PRD_NEW_PAGE_VIEW_BANNER",true );
+
+    }
+    public void newNPP59(String baseURL) throws InterruptedException {
+        checkVerifyVisible(baseURL + "glamira-pendant-tate.html",
+                "PRD_NEW_PAGE_VIEW_BANNER",false );
+
+    }
+
+
 
 
     public void pricePP01(String baseURL) throws InterruptedException {
