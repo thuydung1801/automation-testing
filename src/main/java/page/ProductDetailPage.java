@@ -914,7 +914,7 @@ public class ProductDetailPage extends BasePage {
 
     }
     public void newNPP45(String baseURL) throws InterruptedException {
-        objLoginAddress.resetForNewCase();
+//        objLoginAddress.resetForNewCase();
         checkVerifyVisible(baseURL + "glamira-pendant-telema.html?alloy=white_red-375&stone1=blackdiamond",
                 "PRD_NEW_PAGE_VIEW_CARAT",true );
     }
@@ -929,6 +929,7 @@ public class ProductDetailPage extends BasePage {
         checkVerifyElementNotDisplayed("PRD_NEW_PAGE_VIEW_CARAT");
     }
     public void newNPP52_55(String baseURL) throws InterruptedException {
+//        objLoginAddress.resetForNewCase();
         checkVerifyVisible(baseURL + "glamira-pendant-yanisyarvi.html?alloy=white_yellow-375&stone1=blackdiamond&stone2=diamond-Brillant",
                 "PRD_NEW_PAGE_VIEW_VALUE_RHODIUM",true );
         keyword.verifyElementVisible("PRD_NEW_PAGE_VIEW_EXPLORE_MORE");
@@ -953,9 +954,12 @@ public class ProductDetailPage extends BasePage {
                 "PRD_NEW_PAGE_VIEW_BANNER",false );
 
     }
-
-
-
+    public void newNPP51(String baseURL) throws InterruptedException {
+        objLoginAddress.resetForNewCase();
+        checkVerifyVisible(baseURL + "glamira-pendant-yanisyarvi.html?alloy=white_yellow-375&stone1=blackdiamond&stone2=diamond-Brillant",
+                "PRD_NEW_PAGE_VIEW_VALUE_RHODIUM",true );
+        keyword.verifyElementVisible("PRD_NEW_PAGE_VIEW_EXPLORE_MORE");
+    }
 
     public void pricePP01(String baseURL) throws InterruptedException {
 //        setUp();

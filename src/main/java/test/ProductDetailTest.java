@@ -284,24 +284,22 @@ public class ProductDetailTest extends BaseTest {
     }
 
 
-
-
 //  Check price product
 
-//    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
-//    @Parameters("baseURL")
-//    public void testCase_PP_01(String baseURL) throws InterruptedException {
-//        testProductDetail.pricePP01(baseURL);
-//    }
-//    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
-//    @Parameters("baseURL")
-//    public void testCase_PP_02(String baseURL) throws InterruptedException {
-//        testProductDetail.pricePP02(baseURL);
-//    }
-//    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
-//    @Parameters("baseURL")
-//    public void testCase_PP_03(String baseURL) throws InterruptedException {
-//        testProductDetail.pricePP03(baseURL);
-//    }
+    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
+    @Parameters("baseURL")
+    public void testCase_PP_01(String baseURL) throws InterruptedException {
+        testProductDetail.pricePP01(baseURL);
+    }
+    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
+    @Parameters("baseURL")
+    public void testCase_PP_02(String baseURL) throws InterruptedException {
+        testProductDetail.pricePP02(baseURL);
+    }
+    @Test (priority = 29, description = "Check stone quality for stone that are layer image")
+    @Parameters("baseURL")
+    public void testCase_PP_03(String baseURL) throws InterruptedException {
+        testProductDetail.pricePP03(baseURL);
+    }
 
 }

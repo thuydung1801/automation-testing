@@ -70,7 +70,7 @@ public class ShoppingBagTest extends BaseTest {
     @Test
     @Parameters("baseURL")
     public void testCase_CheckoutWithGiftCard(String baseURL) throws InterruptedException {
-        commonShopping();
+//        commonShopping();
         objShoppingBagPage.createGiftCard(baseURL);
     }
     @Test
@@ -163,8 +163,8 @@ public class ShoppingBagTest extends BaseTest {
     public void testCase_SP_16(String baseURL,String devices) throws Exception {
         logger.info("testCase_SP_16");
         //commonShopping();
-        //objShoppingBagPage.addProductWithEngraving("https://dev4.glamira.com/glau/glamira-ring-zanessa.html?alloy=white-585&stone1=diamond-sapphire&stone2=diamond-sapphire");
-        //objShoppingBagPage.clickShoppingBagPage();
+//        objShoppingBagPage.addProductWithEngraving("https://dev4.glamira.com/glau/glamira-ring-zanessa.html?alloy=white-585&stone1=diamond-sapphire&stone2=diamond-sapphire");
+        objShoppingBagPage.clickShoppingBagPage();
         objShoppingBagPage.backPage(baseURL);
         objShoppingBagPage.viewDetail("CHECKOUT_BTN_VIEWDETAIL_GLAMIRARING");
         objShoppingBagPage.inputEngravingwithSingleRing(devices,"CHECKOUT_DATA_ENGRAVING_2","CHECKOUT_ICON_ADD",
@@ -463,7 +463,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_17_19(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_17_19");
-        commonShopping();
+//        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithGift(baseURL+"universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();
@@ -481,7 +481,7 @@ public class ShoppingBagTest extends BaseTest {
     @Parameters("baseURL")
     public void testCase_RV_18(String baseURL) throws InterruptedException {
         logger.info("testCase_RV_18");
-        commonShopping();
+//        commonShopping();
         //https://stage.glamira.co.uk/
         objShoppingBagPage.addProductWithGift(baseURL+"universe-adore-5-mm.html?alloy=white_red-585&profile=prA&thickness=tn_1.6&womenstone=diamond-zirconia");
         objShoppingBagPage.clickShoppingBagPage();

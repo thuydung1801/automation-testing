@@ -50,13 +50,13 @@
 <!--                    <include name="testCase_Myorder_05"/>-->
 <!--                </methods>-->
 <!--            </class>-->
-            <class name="test.ProductDetailTest">
-                                <methods>
-<!--                                    <include name="testCase_NPP_38_39"/>-->
-<!--                                    <include name="testCase_NPP_41"/>-->
-<!--                                    <include name="testCase_NPP_43"/>-->
-<!--                                    <include name="testCase_NPP_44"/>-->
-                                    <include name="testCase_NPP_45"/>
+<!--            <class name="test.ProductDetailTest">-->
+<!--                                <methods>-->
+<!--                                    <include name="testCase_NPP_52_55"/>-->
+<!--                                    <include name="testCase_NPP_53"/>-->
+<!--                                    <include name="testCase_NPP_56"/>-->
+<!--                                    <include name="testCase_NPP_58"/>-->
+<!--                                    <include name="testCase_NPP_59"/>-->
 <!--                                    <include name="testCase_NPP_42"/>-->
 <!--                                    <include name="testCase_NPP_46"/>-->
 <!--                                    <include name="testCase_NPP_32"/>-->
@@ -66,12 +66,12 @@
                 <!--                    <include name="testCase_MW_03"/>-->
                 <!--                    <include name="testCase_MW_04"/>-->
                 <!--                    <include name="testCase_MW_05"/>-->
-                                </methods>
-            </class>
+<!--                                </methods>-->
+<!--            </class>-->
 
 
-<!--            <class name="test.checkout.ShoppingBagTest">-->
-<!--                <methods>-->
+            <class name="test.checkout.ShoppingBagTest">
+                <methods>
 <!--                    <include name="testCase_SP_02"/>-->
 <!--                    <include name="testCase_SP_17"/>-->
 <!--                    <include name="testCase_SP_26_RV_02_04"/>-->
@@ -79,21 +79,21 @@
 <!--                    <include name="testCase_SP_04"/>-->
 <!--                    <include name="testCase_RV_07"/>-->
 
-<!--                    <include name="testCase_SP_02"/>-->
-<!--                    <include name="testCase_CheckoutWithGiftCard"/>-->
-<!--                    <include name="testCase_SP_03"/>-->
-<!--                    <include name="testCase_SP_15"/>-->
-<!--                    <include name="testCase_SP_01"/>-->
-<!--                    <include name="testCase_SP_04"/>-->
-<!--                    <include name="testCase_SP_05"/>-->
-<!--                    <include name="testCase_SP_16"/>-->
-<!--                    <include name="testCase_SP_17"/>-->
-<!--                    <include name="testCase_SP_18"/>-->
-<!--                    <include name="testCase_SP_19"/>-->
-<!--                    <include name="testCase_SP_21"/>-->
-<!--                    <include name="testCase_SP_24"/>-->
-<!--                    <include name="testCase_SP_25"/>-->
-<!--                    <include name="testCase_SP_26_RV_02_04"/>-->
+                    <include name="testCase_SP_02"/>
+                    <include name="testCase_CheckoutWithGiftCard"/>
+                    <include name="testCase_SP_03"/>
+                    <include name="testCase_SP_15"/>
+                    <include name="testCase_SP_01"/>
+                    <include name="testCase_SP_04"/>
+                    <include name="testCase_SP_05"/>
+                    <include name="testCase_SP_16"/>
+                    <include name="testCase_SP_17"/>
+                    <include name="testCase_SP_18"/>
+                    <include name="testCase_SP_19"/>
+                    <include name="testCase_SP_21"/>
+                    <include name="testCase_SP_24"/>
+                    <include name="testCase_SP_25"/>
+                    <include name="testCase_SP_26_RV_02_04"/>
 
 <!--                    <include name="testCase_RV_05"/>-->
 <!--                    <include name="testCase_RV_06"/>-->
@@ -118,8 +118,8 @@
 <!--                    <include name="testCase_RV_32"/>-->
 <!--                    <include name="testCase_RV_33"/>-->
 
-<!--                </methods>-->
-<!--            </class>-->
+                </methods>
+            </class>
 <!--            <class name="test.checkout.LoginAddressTest">-->
 <!--                <methods>-->
 <!--                    <include name="NLA_01_02"/>-->
@@ -161,4 +161,5 @@
         </classes>
 
     </test>
+
 </suite>
