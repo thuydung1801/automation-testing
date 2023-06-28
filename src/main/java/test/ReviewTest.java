@@ -1,6 +1,7 @@
 package test;
 
 import core.BaseTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.ProductDetailPage;
 import page.ReviewPage;
@@ -60,7 +61,7 @@ public class ReviewTest extends BaseTest {
         keyword.navigateToUrl("URL_REVIEW_ORDER");
         reviewPage.writeAReviewNotSubmit("REVIEW_BTN_WRITE_REVIEW_PRODUCT");
     }
-    @Test(priority = 6, description = "Check function \"Write A Review\" - Enter all required values")
+    @Test(priority = 6, description = "Check function \"Write A Review\" - Enter all required values for an order with multiple items")
     public void testCase_MPR_02() throws InterruptedException {
         keyword.navigateToUrl("URL_REVIEW_ORDER");
         reviewPage.writeAReviewSuccessfully("REVIEW_BTN_WRITE_REVIEW_PRODUCT");
@@ -74,4 +75,26 @@ public class ReviewTest extends BaseTest {
     public void testCase_MPR_08() throws InterruptedException {
         reviewPage.checkRedirectLinkToTheProductView("REVIEW_TXT_NAME_PRODUCT_REVIEWED");
     }
+    @Parameters("baseURL")
+    @Test(priority = 2,description = "Check the \"Write a review\" function when not loggin")
+    public void testCase_WAR_02(String baseURL) throws InterruptedException {
+        keyword.deleteAllCookies();
+        keyword.openNewTab("https://stage.glamira.co.uk/");
+        objRegist.acceptAllCookies();
+        reviewPage.checkWriteAReviewInProductPage(baseURL +"glamira-diamonds-ring-madison-skug100620.html?alloy=white-585&stone1=diamond-Brillant&stone2=diamond-Brillant","NotLogin");
+    }
+    @Parameters("baseURL")
+    @Test(priority = 3,description = "Check the \"Write a review\" function in the product view of the item that is not in the Item To review section")
+    public void testCase_WAR_03(String baseURL) throws InterruptedException {
+        keyword.deleteAllCookies();
+        keyword.openNewTab("https://stage.glamira.co.uk/");
+        commonReview("LOGIN_DATA_EMAIL_LY","LOGIN_DATA_PASSWORD_LY");
+        reviewPage.checkWriteAReviewInProductPage(baseURL +"glamira-diamonds-ring-olivia-skug100515.html?alloy=white-585&stone1=diamond-Brillant","LoginWithItemNotInReview");
+    }
+    @Parameters("baseURL")
+    @Test(priority = 4,description = "Check the \"Write a review\" function in the product view of the item that in the Item To review section")
+    public void testCase_WAR_01(String baseURL) throws InterruptedException {
+        reviewPage.checkWriteAReviewInProductPage(baseURL +"glamira-diamonds-ring-madison-skug100620.html?alloy=white-585&stone1=diamond-Brillant&stone2=diamond-Brillant","LoginWithItemInReview");
+    }
+
 }

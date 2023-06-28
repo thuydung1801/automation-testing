@@ -6,9 +6,11 @@ import core.LogHelper;
 import core.PropertiesFile;
 import org.slf4j.Logger;
 import org.testng.Assert;
+import page.home.LoginPage;
 
 
 public class ReviewPage extends BasePage {
+    private static Logger logger = LogHelper.getLogger();
     public ReviewPage() {
         super();
     }
@@ -39,6 +41,7 @@ public class ReviewPage extends BasePage {
             keyword.assertEquals("REVIEW_DATA_EMPTY_REVIEW","REVIEW_TXT_EMPTY_REVIEW");
         }
         else {
+            keyword.untilJqueryIsDone(50L);
             keyword.verifyElementVisible(order);
             keyword.verifyElementVisible("REVIEW_PROP_RATING_VALUE");
             keyword.assertEquals("REVIEW_DATA_NAME_PRODUCT", "REVIEW_TXT_NAME_PRODUCT_REVIEWED");
@@ -82,20 +85,36 @@ public class ReviewPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click(order);
         keyword.untilJqueryIsDone(50L);
-        keyword.click(chooseRating);
-        keyword.clearText("REVIEW_INP_TITLE");
-        keyword.sendKeys("REVIEW_INP_TITLE", dataTitle);
-        keyword.clearText("REVIEW_INP_REVIEW");
-        keyword.sendKeys("REVIEW_INP_REVIEW",dataReview);
-        keyword.chooseFile("REVIEW_CHOOSE_IMAGE1", pathPhoto);
-        keyword.chooseFile("REVIEW_CHOOSE_IMAGE2", pathPhoto);
-        keyword.chooseFile("REVIEW_CHOOSE_IMAGE3",pathPhoto);
-        keyword.click(chooseTerm);
-        keyword.click(choosePolicy);
+        keyword.verifyElementPresent("REVIEW_LBL_LEAVE_A_FEEDBACK");
+        checkClickField(chooseRating);
+        checkInputField("REVIEW_INP_TITLE", dataTitle);
+        checkInputField("REVIEW_INP_REVIEW",dataReview);
+        checkChooseFile("REVIEW_CHOOSE_IMAGE1", pathPhoto);
+        checkChooseFile("REVIEW_CHOOSE_IMAGE2", pathPhoto);
+        checkChooseFile("REVIEW_CHOOSE_IMAGE3",pathPhoto);
+        checkClickField(chooseTerm);
+        checkClickField(choosePolicy);
         keyword.switchToIFrameByXpath("REVIEW_IFRAME_RECAPTCHA");
-        keyword.click(chooseRecaptcha);
+        checkClickField(chooseRecaptcha);
         keyword.switchToDefaultContent();
     }
+    public void checkClickField (String field) {
+        if(field!=null) {
+            keyword.click(field);
+        }
+    }
+    public void checkInputField ( String field,String content) {
+        if(content!=null) {
+            keyword.clearText(field);
+            keyword.sendKeys(field, content);
+        }
+    }
+    public void checkChooseFile( String field,String xpath) {
+        if(xpath!=null) {
+            keyword.chooseFile(field,xpath);
+        }
+    }
+
     public void checkRedirectLinkToTheProductView(String order) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.click(order);
@@ -103,9 +122,35 @@ public class ReviewPage extends BasePage {
         keyword.assertEquals("REVIEW_DATA_NAME_PRODUCT","REVIEW_TXT_TITLE_PRODUCT_PAGE");
         String getStone= keyword.getText("REVIEW_TXT_STONE_PRODUCT_PAGE");
         String stone = getStone.substring(1,getStone.length()-6);
+        logger.info("check verify stone product....");
         Assert.assertEquals(stone,PropertiesFile.getPropValue("REVIEW_DATA_STONE_PRODUCT_REVIEWED"));
         String getColor= keyword.getText("REVIEW_TXT_COLOR_PRODUCT_PAGE");
         String color = getColor.substring(1,getColor.length()-1);
+        logger.info("check verify color product....");
         Assert.assertEquals(color,PropertiesFile.getPropValue("REVIEW_DATA_COLOR_PRODUCT_REVIEWED"));
+    }
+    public void checkWriteAReviewInProductPage(String urlProduct,String condition) throws InterruptedException {
+        keyword.navigateToUrl(urlProduct);
+        keyword.untilJqueryIsDone(50L);
+        keyword.scrollToPositionByScript("window.scrollBy(0,800)");
+        keyword.scrollToPositionByScript("window.scrollBy(0,800)");
+        keyword.scrollToPositionByScript("window.scrollBy(0,800)");
+        keyword.verifyElementPresent("REVIEW_BTN_WRITE_A_REVIEW");
+        keyword.click("REVIEW_BTN_WRITE_A_REVIEW");
+        keyword.untilJqueryIsDone(50L);
+        switch (condition) {
+            case "NotLogin":
+                logger.info("check verify redirect to login page...");
+                keyword.assertEquals("LOGIN_DATA_LBL_LOGIN","LOGIN_LBL_LOGIN");
+                break;
+            case "LoginWithItemNotInReview":
+                logger.info("check verify redirect to My Product review page interface...");
+                keyword.assertEquals("REVIEW_DATA_MY_PRODUCT_REVIEW", "REVIEW_TXT_MY_PRODUCT_REVIEW");
+                break;
+            case "LoginWithItemInReview":
+                logger.info("check verify redirect to The item's write review popup...");
+                keyword.assertEquals("REVIEW_DATA_LEAVE_A_FEEDBACK", "REVIEW_LBL_LEAVE_A_FEEDBACK");
+                break;
+        }
     }
 }
