@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Test Staging Suite">
-<!--    <test name="RunTest">-->
-<!--        <parameter name="devices" value="web"></parameter>-->
-<!--        <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>-->
-<!--        <classes>-->
+    <test name="RunTest">
+        <parameter name="devices" value="web"></parameter>
+        <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
+        <classes>
 
-<!--            <class name="test.checkout.ShoppingBagTest">-->
-<!--                <methods>-->
+            <class name="test.ReviewTest">
+                <methods>
 <!--                    <include name="testCase_SP_02"/>-->
 <!--                    <include name="testCase_SP_03"/>-->
 <!--                    <include name="testCase_SP_15"/>-->
@@ -26,10 +26,10 @@
 <!--                    <include name="testCase_RV_06"/>-->
 <!--                    <include name="testCase_RV_07"/>-->
 
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+                </methods>
+            </class>
+        </classes>
+    </test>
 <!--    <test name="Mobile">-->
 <!--        <parameter name="devices" value="web"></parameter>-->
 <!--        <parameter name="baseURL" value="https://stage.glamira.com/"></parameter>-->
@@ -42,15 +42,5 @@
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
-    <test name="Review">
-        <parameter name="devices" value="web"></parameter>
-        <parameter name="baseURL" value="https://stage.glamira.co.uk/"></parameter>
-        <classes>
-            <class name="test.ReviewTest">
-                <methods>
-                </methods>
-            </class>
-        </classes>
-    </test>
 </suite>
 

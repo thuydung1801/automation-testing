@@ -6,7 +6,6 @@ import core.LogHelper;
 import core.PropertiesFile;
 import org.slf4j.Logger;
 import org.testng.Assert;
-import page.home.LoginPage;
 
 
 public class ReviewPage extends BasePage {
@@ -81,7 +80,8 @@ public class ReviewPage extends BasePage {
         keyword.assertEquals("REVIEW_DATA_EMPTY","REVIEW_INP_TITLE");
         keyword.assertEquals("REVIEW_DATA_EMPTY","REVIEW_INP_REVIEW");
     }
-    public void writeAReview(String order,String chooseRating, String dataTitle,String dataReview,String pathPhoto,String chooseTerm,String choosePolicy, String chooseRecaptcha) throws InterruptedException {
+    public void writeAReview(String order,String chooseRating, String dataTitle,String dataReview,
+                             String pathPhoto,String chooseTerm,String choosePolicy, String chooseRecaptcha) throws InterruptedException {
         keyword.untilJqueryIsDone(50L);
         keyword.click(order);
         keyword.untilJqueryIsDone(50L);
@@ -129,13 +129,15 @@ public class ReviewPage extends BasePage {
         logger.info("check verify color product....");
         Assert.assertEquals(color,PropertiesFile.getPropValue("REVIEW_DATA_COLOR_PRODUCT_REVIEWED"));
     }
-    public void checkWriteAReviewInProductPage(String urlProduct,String condition) throws InterruptedException {
+    public void goToReviewInProductPage(String urlProduct) throws InterruptedException {
         keyword.navigateToUrl(urlProduct);
         keyword.untilJqueryIsDone(50L);
-        keyword.scrollToPositionByScript("window.scrollBy(0,800)");
-        keyword.scrollToPositionByScript("window.scrollBy(0,800)");
-        keyword.scrollToPositionByScript("window.scrollBy(0,800)");
+        keyword.scrollToPositionByScript("window.scrollBy(0,5000)");
+        Thread.sleep(5000);
         keyword.verifyElementPresent("REVIEW_BTN_WRITE_A_REVIEW");
+    }
+    public void checkWriteAReviewInProductPage(String urlProduct,String condition) throws InterruptedException {
+        goToReviewInProductPage(urlProduct);
         keyword.click("REVIEW_BTN_WRITE_A_REVIEW");
         keyword.untilJqueryIsDone(50L);
         switch (condition) {
@@ -151,6 +153,60 @@ public class ReviewPage extends BasePage {
                 logger.info("check verify redirect to The item's write review popup...");
                 keyword.assertEquals("REVIEW_DATA_LEAVE_A_FEEDBACK", "REVIEW_LBL_LEAVE_A_FEEDBACK");
                 break;
+        }
+    }
+    public void checkNumberReviewDisplay(String urlProduct) throws InterruptedException {
+        goToReviewInProductPage(urlProduct);
+        int count =keyword.countNumberOfElement("REVIEW_TXT_TITLE_REVIEW");
+        boolean page1 = (count > 3) ?false:true;
+        logger.info("check verify number review display than 3....");
+        Assert.assertEquals(page1,true);
+        if(keyword.verifyElementPresent("REVIEW_BTN_SHOW_MORE")) {
+            keyword.click("REVIEW_BTN_SHOW_MORE");
+            keyword.untilJqueryIsDone(50L);
+            int count2 =keyword.countNumberOfElement("REVIEW_TXT_TITLE_REVIEW");
+            boolean page2 = (count2 > 10) ?false:true;
+            logger.info("check verify number review display than 10....");
+            Assert.assertEquals(page2,true);
+        }
+    }
+    public void checkFunctionTranslation(String urlProduct) throws InterruptedException {
+        goToReviewInProductPage(urlProduct);
+        String text= keyword.getText("REVIEW_TXT_TRANSLATION");
+        if(text.equalsIgnoreCase("Show original language")){
+            keyword.click("REVIEW_BTN_TRANSLATION");
+            Thread.sleep(5000);
+            keyword.assertEquals("REVIEW_DATA_TRANSLATE_REVIEW","REVIEW_TXT_TRANSLATION");
+        }
+        else {
+            keyword.click("REVIEW_BTN_TRANSLATION");
+            Thread.sleep(10000);
+            keyword.assertEquals("REVIEW_DATA_SHOW_ORIGINAL_LANGUAGE","REVIEW_TXT_TRANSLATION");
+        }
+    }
+    public void checkLazyLoadTranslation(String urlProduct) throws InterruptedException {
+        goToReviewInProductPage(urlProduct);
+        keyword.click("REVIEW_BTN_SHOW_MORE");
+        keyword.assertEquals("REVIEW_DATA_TRANSLATE_REVIEW","REVIEW_TXT_TRANSLATION4");
+        keyword.scrollToPositionByScript("window.scrollBy(0,-100)");
+        keyword.assertEquals("REVIEW_DATA_SHOW_ORIGINAL_LANGUAGE","REVIEW_TXT_TRANSLATION4");
+    }
+    public void CheckTheHelpfulFunction(String urlProduct, boolean login) throws InterruptedException {
+        goToReviewInProductPage(urlProduct);
+        int count = Integer.parseInt(keyword.getText("REVIEW_COUNT_LIKE"));
+        System.out.println(count);
+        keyword.click("REVIEW_ICON_LIKE");
+        if(!login) {
+            int count2= Integer.parseInt(keyword.getText("REVIEW_COUNT_LIKE"));
+            logger.info("compare count before and after click like!");
+            Assert.assertEquals(count,count2);
+            keyword.assertEquals("REVIEW_DATA_PLEASE_LOGIN", "REVIEW_POPUP_PLEASE_LOGIN");
+        }
+        else {
+            int count2= Integer.parseInt(keyword.getText("REVIEW_COUNT_LIKE"));
+            logger.info("compare count before and after click like!");
+            Assert.assertEquals(count,count2-1);
+
         }
     }
 }
