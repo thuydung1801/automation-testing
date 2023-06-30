@@ -167,7 +167,17 @@ public class KeywordWeb {
         weblist.get(randnMumber).click();
 
     }
-
+    public String getTextRandomElement(String element) {
+        logger.info("get Text of" + element);
+        String xPathElement = PropertiesFile.getPropValue(element);
+        if (xPathElement == null) {
+            xPathElement = element;
+        }
+        List<WebElement> weblist = driver.findElements(By.xpath(xPathElement));
+        int size = weblist.size();
+        int randnMumber = ThreadLocalRandom.current().nextInt(0, size);
+        return weblist.get(randnMumber).getText();
+    }
     public void randomConcatElement(String element, int num) throws InterruptedException {
         ThreadLocalRandom random = ThreadLocalRandom.current();
         int randomNumber = random.nextInt(1, num);
@@ -787,7 +797,6 @@ public class KeywordWeb {
         Assert.assertEquals(actualText, xPathElement1);
 
     }
-
     public void openNewTabFromTabBase(int tabNum, String url) {
         logger.info("open new tab from tab base");
         String xPathElement1 = PropertiesFile.getPropValue(url);

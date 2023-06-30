@@ -10,8 +10,6 @@ import page.signinSignup.SignInPage;
 
 public class ReviewTest extends BaseTest {
     private ReviewPage reviewPage ;
-
-
     private LoginPage objLogin;
 
     public SignInPage objSignIn;
@@ -52,21 +50,20 @@ public class ReviewTest extends BaseTest {
     @Parameters("baseURL")
     @Test(priority = 4,description = "When \"MY REVIEW\" tab doesn't have any item  reviewed")
     public void testCase_MPR_06(String baseURL) throws InterruptedException {
-        //keyword.deleteAllCookies();
+        keyword.deleteAllCookies();
         keyword.openNewTab(baseURL);
         commonReview("LOGIN_DATA_EMAIL_NO_REVIEW","LOGIN_DATA_PASSWORD_LY");
         reviewPage.checkOrderDisplayInMyReview(null);
     }
     @Parameters("baseURL")
-    @Test( priority = 5,description = "check if the order is displayed in the \"ITEMS TO REVIEW\" tab")
-    public void testCase_MPR_01(String baseURL) throws InterruptedException {
-        keyword.deleteAllCookies();
-        keyword.openNewTab(baseURL);
+    @Test( priority = 1,description = "check if the order is displayed in the \"ITEMS TO REVIEW\" tab")
+    public void testCase_MPR_01() throws InterruptedException {
         commonReview("LOGIN_DATA_EMAIL_LY","LOGIN_DATA_PASSWORD_LY");
         reviewPage.checkOrderDisplayInItemToReview("REVIEW_TXT_NAME_PRODUCT");
     }
     @Test( priority = 6,description = "Check function \"Write A Review\" - do not enter required values")
     public void testCase_MPR_03() throws InterruptedException {
+        commonReview("LOGIN_DATA_EMAIL_LY","LOGIN_DATA_PASSWORD_LY");
         reviewPage.writeAReviewWithDataNUll("REVIEW_BTN_WRITE_REVIEW_PRODUCT");
     }
     @Test(priority = 7,description = "Check the entered values when the form is not submitted")
@@ -74,7 +71,7 @@ public class ReviewTest extends BaseTest {
         keyword.navigateToUrl("URL_REVIEW_ORDER");
         reviewPage.writeAReviewNotSubmit("REVIEW_BTN_WRITE_REVIEW_PRODUCT");
     }
-    @Test(priority = 8, description = "Check function \"Write A Review\" - Enter all required values for an order with multiple items")
+    @Test(priority = 2, description = "Check function \"Write A Review\" - Enter all required values for an order with multiple items")
     public void testCase_MPR_02() throws InterruptedException {
         keyword.navigateToUrl("URL_REVIEW_ORDER");
         reviewPage.writeAReviewSuccessfully("REVIEW_BTN_WRITE_REVIEW_PRODUCT");
@@ -84,6 +81,12 @@ public class ReviewTest extends BaseTest {
         keyword.navigateToUrl("URL_REVIEW_ORDER");
         reviewPage.checkOrderDisplayInMyReview("REVIEW_TXT_NAME_PRODUCT_REVIEWED");
     }
+    @Test(priority = 3, description = "Check the display of the created review in the product view")
+    public void testCase_MPD_01() throws InterruptedException {
+        keyword.navigateToUrl("URL_REVIEW_ORDER");
+        reviewPage.checkAReviewCreatedDisplay("REVIEW_TXT_NAME_PRODUCT_REVIEWED");
+    }
+
     @Test(priority = 10,description = "Check the redirect link to the product view of that item")
     public void testCase_MPR_08() throws InterruptedException {
         reviewPage.checkRedirectLinkToTheProductView("REVIEW_TXT_NAME_PRODUCT_REVIEWED");
@@ -118,8 +121,13 @@ public class ReviewTest extends BaseTest {
         reviewPage.checkLazyLoadTranslation(baseURL +"glamira-diamonds-ring-madison-skug100620.html?alloy=white-585&stone1=diamond-Brillant&stone2=diamond-Brillant");
     }
     @Parameters("baseURL")
-    @Test(priority = 16,description = "Check the helpful/not helpful function when login  ")
+    @Test(priority = 16,description = "Check the helpful function when login  ")
+    public void testCase_MPD_06(String baseURL) throws InterruptedException {
+        reviewPage.CheckTheHelpfulFunction(baseURL +"glamira-diamonds-ring-madison-skug100620.html?alloy=white-585&stone1=diamond-Brillant&stone2=diamond-Brillant","REVIEW_ICON_LIKE",true);
+    }
+    @Parameters("baseURL")
+    @Test(priority = 16,description = "Check the not helpful function when login  ")
     public void testCase_MPD_07(String baseURL) throws InterruptedException {
-        reviewPage.CheckTheHelpfulFunction(baseURL +"glamira-diamonds-ring-madison-skug100620.html?alloy=white-585&stone1=diamond-Brillant&stone2=diamond-Brillant",true);
+        reviewPage.CheckTheHelpfulFunction(baseURL +"glamira-diamonds-ring-madison-skug100620.html?alloy=white-585&stone1=diamond-Brillant&stone2=diamond-Brillant","REVIEW_ICON_DISLIKE",true);
     }
 }
