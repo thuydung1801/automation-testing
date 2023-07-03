@@ -170,7 +170,7 @@ public class ReviewPage extends BasePage {
         keyword.untilJqueryIsDone(50L);
         keyword.click(order);
         keyword.untilJqueryIsDone(50L);
-       // keyword.assertEquals("REVIEW_DATA_NAME_PRODUCT","REVIEW_TXT_TITLE_PRODUCT_PAGE");
+        keyword.assertEquals("REVIEW_DATA_NAME_PRODUCT","REVIEW_TXT_TITLE_PRODUCT_PAGE");
         String getStone= keyword.getText("REVIEW_TXT_STONE_PRODUCT_PAGE");
         String stone = getStone.substring(1,getStone.length()-6);
         logger.info("check verify stone product....");
@@ -241,7 +241,14 @@ public class ReviewPage extends BasePage {
         logger.info("compare text Review display show original language!");
         Assert.assertEquals(keyword.getTextRandomElement("REVIEW_TXT_TRANSLATION"),PropertiesFile.getPropValue("REVIEW_DATA_SHOW_ORIGINAL_LANGUAGE"));
     }
-    public void CheckTheHelpfulFunction(String urlProduct,String icon, boolean login) throws InterruptedException {
+    public void checkFunctionShowMoreOrLessReview(String urlProduct) throws InterruptedException {
+        goToReviewInProductPage(urlProduct);
+        keyword.verifyElementPresent("REVIEW_BTN_SHOW_MORE_TEXT");
+        keyword.click("REVIEW_BTN_SHOW_MORE_TEXT");
+        keyword.verifyElementPresent("REVIEW_BTN_SHOW_LESS_TEXT");
+        keyword.click("REVIEW_BTN_SHOW_LESS_TEXT");
+    }
+    public void checkTheHelpfulFunction(String urlProduct,String icon, boolean login) throws InterruptedException {
         goToReviewInProductPage(urlProduct);
         int count = Integer.parseInt(keyword.getText(icon));
         System.out.println(count);
