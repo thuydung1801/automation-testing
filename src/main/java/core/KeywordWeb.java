@@ -325,9 +325,9 @@ public class KeywordWeb {
         driver.navigate().to(xPathElement);
     }
 
-    public void getCurrentPageUrl() {
+    public String getCurrentPageUrl() {
         logger.info("Navigating to URL...");
-        driver.getCurrentUrl();
+        return driver.getCurrentUrl();
     }
 
     public void acceptAlert() {

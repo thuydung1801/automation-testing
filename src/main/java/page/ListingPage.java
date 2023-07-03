@@ -2,12 +2,16 @@ package page;
 
 import core.*;
 import io.cucumber.java.sl.In;
+import org.openqa.selenium.By;
+import org.slf4j.Logger;
+import org.testng.Assert;
 import page.home.LoginPage;
 import page.home.RegisterPage;
 import page.signinSignup.SignInPage;
 import page.signinSignup.SignUpPage;
 
 public class ListingPage extends BasePage {
+    private static Logger logger = LogHelper.getLogger();
     public ListingPage(KeywordWeb key) {
         super(key);
     }
@@ -61,12 +65,11 @@ public class ListingPage extends BasePage {
     public void goToAllProduct() throws InterruptedException {
         keyword.untilJqueryIsDone(30L);
         keyword.webDriverWaitForElementPresent("LTP_TEXT_PAGE", 50);
-        keyword.hoverAndClick("LTP_TEXT_MOVE");
-        keyword.webDriverWaitForElementPresent("LTP_CLICK_PRODUCT", 10);
+        keyword.click("LISTING_BTN_JEWELRY");
+        keyword.webDriverWaitForElementPresent("LISTING_BTN_MENU_RING", 10);
         keyword.untilJqueryIsDone(30L);
-        keyword.click("LTP_CLICK_PRODUCT");
+        keyword.rightClick("LISTING_BTN_MENU_RING","LISTING_BTN_MENU_DIAMOND_RING");
         keyword.untilJqueryIsDone(30L);
-        scrollAndClick("ALL_RING_BTN", "ALL_RING_BTN");
         keyword.scrollToPosition();
         keyword.verifyElementVisible("LTP_LEFT_FILTER");
     }
@@ -91,16 +94,41 @@ public class ListingPage extends BasePage {
         enterDataFilterAndVerify("LTP_DATA_MIN", "LTP_MAX", "LTP_MESSAGE_NOTIFY", "LTP_ACTUAL");
     }
 
-    //
+    //check upload page when click load more
     public void checkUploadPage() throws InterruptedException {
         keyword.scrollDownToElement("LTP_PRODUCT_VIEW");
         keyword.untilJqueryIsDone(70L);
         keyword.verifyElementVisible("LTP_CHECK_VIEW_PERCENT");
         keyword.untilJqueryIsDone(50L);
-        keyword.verifyElementVisible("LTP_BTN_LOADING_MORE");
+        keyword.scrollDownToElement("LTP_BTN_LOADING_MORE");
         keyword.untilJqueryIsDone(50L);
-        scrollAndClick("LTP_BTN_LOADING_MORE", "LTP_BTN_LOADING_MORE");
+        keyword.verifyElementVisible("LTP_BTN_LOADING_MORE");
+        // get number page url
+        String titleURL= keyword.getCurrentPageUrl();
+        int page= Integer.parseInt(titleURL.substring(titleURL.length() - 1));
+        // get number product view and total product on listing
+        String getText= keyword.getText("LISTING_COUNT_VIEW_PRODUCT");
+        int numberProduct= Integer.parseInt(getText.substring(14,getText.length()-17));
+        System.out.println(numberProduct);
+        int totalProduct= Integer.parseInt(getText.substring(21,getText.length()-9));
+        System.out.println(totalProduct);
+        keyword.click("LTP_BTN_LOADING_MORE");
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(10000);
         keyword.verifyElementVisible("LTP_LOADING_MORE_ITEM");
+        //get url after click load more
+        String titleURL2 = keyword.getCurrentPageUrl();
+        int page2= Integer.parseInt(titleURL2.substring(titleURL2.length() - 1));
+        //get number product view and total product on listing after click load more
+        String getText2= keyword.getText("LISTING_COUNT_VIEW_PRODUCT");
+        int numberProduct2= Integer.parseInt(getText2.substring(14,getText.length()-17));
+        int totalProduct2= Integer.parseInt(getText2.substring(21,getText.length()-9));
+        logger.info("compare number product view before and after click loading more");
+        Assert.assertEquals(numberProduct +60 ,numberProduct2);
+        logger.info("compare number total product view before and after click loading more");
+        Assert.assertEquals(totalProduct,totalProduct2);
+        logger.info("compare number page before and after click loading more");
+        Assert.assertEquals(page +1,page2);
     }
 
     //    check add  more 30 item

@@ -25,11 +25,15 @@ public class ListingPageTest extends BaseTest {
         testListingPage = new ListingPage((this.keyword));
         objRegist = new RegisterPage(this.keyword);
         objLogin = new LoginPage(this.keyword);
-        objLogin.loginOnAlert();
         objRegist.acceptAllCookies();
         testListingPage.goToAllProduct();
         testListingPage.filterPrice();
         testListingPage.enterPrice();
+    }
+    @Test(priority = 9, description = "Click to UPLOAD MORE button")
+    public void testCase_LP22() throws InterruptedException {
+        logger.info("testCase_LP22");
+        testListingPage.checkUploadPage();
     }
 
     @Test(priority = 9, description = "Loading page endless with Upload more button instead of pagination")
@@ -66,6 +70,7 @@ public void testCase_LTP020() throws InterruptedException {
     logger.info("testCase_LP020");
     testListingPage.checkButtonUploadMoreWhenShowFullProduct();
 }
+
     @Test(priority = 12, description = "Check function saved this item")
     public void testCase_LTP040() throws InterruptedException {
         logger.info("testCase_LP043");
