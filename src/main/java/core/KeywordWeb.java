@@ -834,14 +834,14 @@ public class KeywordWeb {
         act.keyUp(Keys.CONTROL).build().perform();
     }
 
-    public String getAttribute(String element) {
+    public String getAttribute(String element, String attribute) {
         logger.info("get Attribute of" + element);
         String xPathElement = PropertiesFile.getPropValue(element);
         if (xPathElement == null) {
             xPathElement = element;
         }
         WebElement b = driver.findElement(By.xpath(xPathElement));
-        String c = b.getAttribute("style");
+        String c = b.getAttribute(attribute);
         logger.info(c);
         return c;
     }

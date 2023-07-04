@@ -17,6 +17,7 @@ public class ListingPage extends BasePage {
     }
 
     private ListingPage objListingPage;
+    private RegisterPage objRegist = new RegisterPage(this.keyword);
     private SignUpPage objSignUp;
 
     public void acceptAllCookies() {
@@ -96,13 +97,15 @@ public class ListingPage extends BasePage {
 
     //check upload page when click load more
     public void checkUploadPage() throws InterruptedException {
-        keyword.scrollDownToElement("LTP_PRODUCT_VIEW");
-        keyword.untilJqueryIsDone(70L);
-        keyword.verifyElementVisible("LTP_CHECK_VIEW_PERCENT");
         keyword.untilJqueryIsDone(50L);
-        keyword.scrollDownToElement("LTP_BTN_LOADING_MORE");
-        keyword.untilJqueryIsDone(50L);
+        keyword.scrollToTheBottomPage();
+        Thread.sleep(10000);
         keyword.verifyElementVisible("LTP_BTN_LOADING_MORE");
+        keyword.verifyElementVisible("LTP_PRODUCT_VIEW");
+        keyword.verifyElementVisible("LTP_CHECK_VIEW_PERCENT");
+    }
+    public void checkUploadMore() throws InterruptedException {
+       // checkUploadPage();
         // get number page url
         String titleURL= keyword.getCurrentPageUrl();
         int page= Integer.parseInt(titleURL.substring(titleURL.length() - 1));
@@ -130,7 +133,6 @@ public class ListingPage extends BasePage {
         logger.info("compare number page before and after click loading more");
         Assert.assertEquals(page +1,page2);
     }
-
     //    check add  more 30 item
     public void checkUploadMore30Item() throws InterruptedException {
         scrollAndClick("LTP_BOX_CARAT", "LTP_SELECT_CARAT");
@@ -169,16 +171,52 @@ public class ListingPage extends BasePage {
 
     //    Check show button: Upload more when all the products on the page have been loaded  then go back to top and scrolling again
     public void checkButtonUploadMoreWhenShowFullProduct() throws InterruptedException {
-        keyword.navigateToUrl("https://dev3.glamira.com/glgb/diamond-rings/blue-topaz/950-platinum/?p=15");
-        keyword.untilJqueryIsDone(50L);
-        scrollAndClick("LTP_TOP_LINK", "LTP_TOP_LINK");
         keyword.scrollToTheBottomPage();
+        Thread.sleep(1000);
+        keyword.click("LTP_TOP_LINK");
         keyword.scrollDownToElement("LTP_VIEW_FULL_PRODUCT");
         keyword.untilJqueryIsDone(20L);
         keyword.compareTheValueOfStrings("LTP_VALUE_FULL_PRODUCT", "LTP_VIEW_FULL_OPTION", 7, 11);
         keyword.verifyElementVisible("LTP_BTN_DISPLAY_NONE");
         keyword.assertEquals("LTP_MESSAGE_SHOW_FULL_PRODUCT", "LYP_VIEW_LABEL_TEXT");
     }
+    public void checkPopupProductRelate() throws InterruptedException {
+        keyword.scrollToPositionByScript("window.scrollBy(0,500)");
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementVisible("LISTING_TITLE_PRODUCT1");
+        //Check different icon for each related product
+        keyword.click("LISTING_TXT_ATTRIBUTE_DIAMONDS");
+        String icon1=keyword.getAttribute("LISTING_IMAGE_ATTRIBUTE_DIAMONDS1","alt");
+        String icon2=keyword.getAttribute("LISTING_IMAGE_ATTRIBUTE_DIAMONDS2","alt");
+        boolean check =(icon1.equalsIgnoreCase(icon2)) ? false:true;
+        Assert.assertTrue(check);
+        //click this icon => open the popup
+        //Show all related products include price/option/name product/ Product image..
+        keyword.click("LISTING_IMAGE_ATTRIBUTE_DIAMONDS1");
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(5000);
+        keyword.verifyElementPresent("LISTING_IMG_PRODUCT");
+        keyword.verifyElementPresent("LISTING_TXT_PRODUCT_NAME");
+        keyword.verifyElementPresent("LISTING_TXT_PRODUCT_PRICE");
+        keyword.verifyElementPresent("LISTING_TXT_PRODUCT_STONE");
+        //Click and go to other product in this popup
+        keyword.click("LISTING_IMAGE_ATTRIBUTE_DIAMONDS2");
+        keyword.untilJqueryIsDone(50L);
+        Thread.sleep(5000);
+        keyword.verifyElementPresent("LISTING_IMG_PRODUCT2");
+        keyword.verifyElementPresent("LISTING_TXT_PRODUCT_NAME2");
+        keyword.verifyElementPresent("LISTING_TXT_PRODUCT_PRICE2");
+        keyword.verifyElementPresent("LISTING_TXT_PRODUCT_STONE2");
+        //Can close this popup
+        keyword.click("LISTING_TXT_ATTRIBUTE_DIAMONDS");
+    }
+    public void checkFunctionSavedItem() throws InterruptedException {
+        //Click to icon ♡
+        keyword.randomElement("LISTING_ICON_FAVORITES");
+        keyword.untilJqueryIsDone(50L);
+        keyword.verifyElementPresent("LISTING_TXT_VIEW_WISHLIST");
+    }
+
 
     //Auto loading product with 6 pages
     public void removeItemsFilter() throws InterruptedException {

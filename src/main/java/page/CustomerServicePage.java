@@ -143,7 +143,7 @@ public class CustomerServicePage extends BasePage {
 
     }
     public boolean checkHighestRatting(String verify1,String verify2) throws InterruptedException {
-        String vrf1 = keyword.getAttribute(verify1);
+        String vrf1 = keyword.getAttribute(verify1,"style");
         String verify_1 = vrf1.substring(7,vrf1.length()-2);
         keyword.untilJqueryIsDone(30L);
         keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
@@ -152,7 +152,7 @@ public class CustomerServicePage extends BasePage {
             keyword.untilJqueryIsDone(30L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
-            String vrf2 = keyword.getAttribute(verify2);
+            String vrf2 = keyword.getAttribute(verify2,"style");
             String verify_2 = vrf2.substring(7,vrf2.length()-2);
             if(Integer.parseInt(verify_1) >= Integer.parseInt(verify_2) ){
                 return true;
@@ -177,14 +177,14 @@ public class CustomerServicePage extends BasePage {
         Assert.assertEquals(check, true);
     }
     public boolean checkLowestRatting(String verify1,String verify2) throws InterruptedException{
-        String vrf1 = keyword.getAttribute(verify1);
+        String vrf1 = keyword.getAttribute(verify1,"style");
         String verify_1 = vrf1.substring(7,vrf1.length()-2);
         boolean stutas = keyword.verifyElementVisible(verify2);
         if(stutas){
             keyword.untilJqueryIsDone(30L);
             keyword.waitForElementNotVisible(10,"//div[@class='loading-mask']");
 
-            String vrf2 = keyword.getAttribute(verify2);
+            String vrf2 = keyword.getAttribute(verify2,"style");
             String verify_2 = vrf2.substring(7,vrf2.length()-2);
             if(Integer.parseInt(verify_1) <= Integer.parseInt(verify_2) ){
                 return true;
